@@ -1,0 +1,809 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"2032 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"2254
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"2476
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"2698
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"2920
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"552
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"788
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"996
+[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
+"1184
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"1326
+[v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
+"1532
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"1644
+[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
+"1756
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"1868
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"1980
+[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
+"73 MCAL_Layer/GPIO/HAL_GPIO.h
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . PORT PIN DIRECTION LOGIC ]
+"34 MCAL_Layer/GPIO/HAL_GPIO.c
+[c E3659 0 1 .. ]
+[n E3659 . E_NOT_OK E_OK  ]
+"48
+[c E3683 0 1 .. ]
+[n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
+"90
+[c E3687 0 1 .. ]
+[n E3687 . GPIO_LOW GPIO_HIGH  ]
+"196
+[c E3666 0 1 2 3 4 .. ]
+[n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
+"54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
+[; <" SSPMSK equ 0F77h ;# ">
+"124
+[; <" SLRCON equ 0F78h ;# ">
+"168
+[; <" CM2CON1 equ 0F79h ;# ">
+"207
+[; <" CM2CON0 equ 0F7Ah ;# ">
+"277
+[; <" CM1CON0 equ 0F7Bh ;# ">
+"347
+[; <" WPUB equ 0F7Ch ;# ">
+"409
+[; <" IOCB equ 0F7Dh ;# ">
+"448
+[; <" ANSEL equ 0F7Eh ;# ">
+"510
+[; <" ANSELH equ 0F7Fh ;# ">
+"554
+[; <" PORTA equ 0F80h ;# ">
+"790
+[; <" PORTB equ 0F81h ;# ">
+"998
+[; <" PORTC equ 0F82h ;# ">
+"1186
+[; <" PORTD equ 0F83h ;# ">
+"1328
+[; <" PORTE equ 0F84h ;# ">
+"1534
+[; <" LATA equ 0F89h ;# ">
+"1646
+[; <" LATB equ 0F8Ah ;# ">
+"1758
+[; <" LATC equ 0F8Bh ;# ">
+"1870
+[; <" LATD equ 0F8Ch ;# ">
+"1982
+[; <" LATE equ 0F8Dh ;# ">
+"2034
+[; <" TRISA equ 0F92h ;# ">
+"2039
+[; <" DDRA equ 0F92h ;# ">
+"2256
+[; <" TRISB equ 0F93h ;# ">
+"2261
+[; <" DDRB equ 0F93h ;# ">
+"2478
+[; <" TRISC equ 0F94h ;# ">
+"2483
+[; <" DDRC equ 0F94h ;# ">
+"2700
+[; <" TRISD equ 0F95h ;# ">
+"2705
+[; <" DDRD equ 0F95h ;# ">
+"2922
+[; <" TRISE equ 0F96h ;# ">
+"2927
+[; <" DDRE equ 0F96h ;# ">
+"3074
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"3144
+[; <" PIE1 equ 0F9Dh ;# ">
+"3221
+[; <" PIR1 equ 0F9Eh ;# ">
+"3298
+[; <" IPR1 equ 0F9Fh ;# ">
+"3375
+[; <" PIE2 equ 0FA0h ;# ">
+"3455
+[; <" PIR2 equ 0FA1h ;# ">
+"3535
+[; <" IPR2 equ 0FA2h ;# ">
+"3615
+[; <" EECON1 equ 0FA6h ;# ">
+"3681
+[; <" EECON2 equ 0FA7h ;# ">
+"3688
+[; <" EEDATA equ 0FA8h ;# ">
+"3695
+[; <" EEADR equ 0FA9h ;# ">
+"3757
+[; <" EEADRH equ 0FAAh ;# ">
+"3783
+[; <" RCSTA equ 0FABh ;# ">
+"3788
+[; <" RCSTA1 equ 0FABh ;# ">
+"3993
+[; <" TXSTA equ 0FACh ;# ">
+"3998
+[; <" TXSTA1 equ 0FACh ;# ">
+"4249
+[; <" TXREG equ 0FADh ;# ">
+"4254
+[; <" TXREG1 equ 0FADh ;# ">
+"4261
+[; <" RCREG equ 0FAEh ;# ">
+"4266
+[; <" RCREG1 equ 0FAEh ;# ">
+"4273
+[; <" SPBRG equ 0FAFh ;# ">
+"4278
+[; <" SPBRG1 equ 0FAFh ;# ">
+"4285
+[; <" SPBRGH equ 0FB0h ;# ">
+"4292
+[; <" T3CON equ 0FB1h ;# ">
+"4404
+[; <" TMR3 equ 0FB2h ;# ">
+"4411
+[; <" TMR3L equ 0FB2h ;# ">
+"4418
+[; <" TMR3H equ 0FB3h ;# ">
+"4425
+[; <" CVRCON2 equ 0FB4h ;# ">
+"4452
+[; <" CVRCON equ 0FB5h ;# ">
+"4531
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4613
+[; <" PWM1CON equ 0FB7h ;# ">
+"4683
+[; <" BAUDCON equ 0FB8h ;# ">
+"4688
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4849
+[; <" PSTRCON equ 0FB9h ;# ">
+"4893
+[; <" CCP2CON equ 0FBAh ;# ">
+"4957
+[; <" CCPR2 equ 0FBBh ;# ">
+"4964
+[; <" CCPR2L equ 0FBBh ;# ">
+"4971
+[; <" CCPR2H equ 0FBCh ;# ">
+"4978
+[; <" CCP1CON equ 0FBDh ;# ">
+"5060
+[; <" CCPR1 equ 0FBEh ;# ">
+"5067
+[; <" CCPR1L equ 0FBEh ;# ">
+"5074
+[; <" CCPR1H equ 0FBFh ;# ">
+"5081
+[; <" ADCON2 equ 0FC0h ;# ">
+"5152
+[; <" ADCON1 equ 0FC1h ;# ">
+"5203
+[; <" ADCON0 equ 0FC2h ;# ">
+"5322
+[; <" ADRES equ 0FC3h ;# ">
+"5329
+[; <" ADRESL equ 0FC3h ;# ">
+"5336
+[; <" ADRESH equ 0FC4h ;# ">
+"5343
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5405
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5475
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5700
+[; <" SSPADD equ 0FC8h ;# ">
+"5707
+[; <" SSPBUF equ 0FC9h ;# ">
+"5714
+[; <" T2CON equ 0FCAh ;# ">
+"5785
+[; <" PR2 equ 0FCBh ;# ">
+"5790
+[; <" MEMCON equ 0FCBh ;# ">
+"5895
+[; <" TMR2 equ 0FCCh ;# ">
+"5902
+[; <" T1CON equ 0FCDh ;# ">
+"6005
+[; <" TMR1 equ 0FCEh ;# ">
+"6012
+[; <" TMR1L equ 0FCEh ;# ">
+"6019
+[; <" TMR1H equ 0FCFh ;# ">
+"6026
+[; <" RCON equ 0FD0h ;# ">
+"6159
+[; <" WDTCON equ 0FD1h ;# ">
+"6187
+[; <" HLVDCON equ 0FD2h ;# ">
+"6192
+[; <" LVDCON equ 0FD2h ;# ">
+"6457
+[; <" OSCCON equ 0FD3h ;# ">
+"6534
+[; <" T0CON equ 0FD5h ;# ">
+"6604
+[; <" TMR0 equ 0FD6h ;# ">
+"6611
+[; <" TMR0L equ 0FD6h ;# ">
+"6618
+[; <" TMR0H equ 0FD7h ;# ">
+"6625
+[; <" STATUS equ 0FD8h ;# ">
+"6696
+[; <" FSR2 equ 0FD9h ;# ">
+"6703
+[; <" FSR2L equ 0FD9h ;# ">
+"6710
+[; <" FSR2H equ 0FDAh ;# ">
+"6717
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6724
+[; <" PREINC2 equ 0FDCh ;# ">
+"6731
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6738
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6745
+[; <" INDF2 equ 0FDFh ;# ">
+"6752
+[; <" BSR equ 0FE0h ;# ">
+"6759
+[; <" FSR1 equ 0FE1h ;# ">
+"6766
+[; <" FSR1L equ 0FE1h ;# ">
+"6773
+[; <" FSR1H equ 0FE2h ;# ">
+"6780
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6787
+[; <" PREINC1 equ 0FE4h ;# ">
+"6794
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6801
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6808
+[; <" INDF1 equ 0FE7h ;# ">
+"6815
+[; <" WREG equ 0FE8h ;# ">
+"6827
+[; <" FSR0 equ 0FE9h ;# ">
+"6834
+[; <" FSR0L equ 0FE9h ;# ">
+"6841
+[; <" FSR0H equ 0FEAh ;# ">
+"6848
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6855
+[; <" PREINC0 equ 0FECh ;# ">
+"6862
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6869
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6876
+[; <" INDF0 equ 0FEFh ;# ">
+"6883
+[; <" INTCON3 equ 0FF0h ;# ">
+"6975
+[; <" INTCON2 equ 0FF1h ;# ">
+"7045
+[; <" INTCON equ 0FF2h ;# ">
+"7162
+[; <" PROD equ 0FF3h ;# ">
+"7169
+[; <" PRODL equ 0FF3h ;# ">
+"7176
+[; <" PRODH equ 0FF4h ;# ">
+"7183
+[; <" TABLAT equ 0FF5h ;# ">
+"7192
+[; <" TBLPTR equ 0FF6h ;# ">
+"7199
+[; <" TBLPTRL equ 0FF6h ;# ">
+"7206
+[; <" TBLPTRH equ 0FF7h ;# ">
+"7213
+[; <" TBLPTRU equ 0FF8h ;# ">
+"7222
+[; <" PCLAT equ 0FF9h ;# ">
+"7229
+[; <" PC equ 0FF9h ;# ">
+"7236
+[; <" PCL equ 0FF9h ;# ">
+"7243
+[; <" PCLATH equ 0FFAh ;# ">
+"7250
+[; <" PCLATU equ 0FFBh ;# ">
+"7257
+[; <" STKPTR equ 0FFCh ;# ">
+"7331
+[; <" TOS equ 0FFDh ;# ">
+"7338
+[; <" TOSL equ 0FFDh ;# ">
+"7345
+[; <" TOSH equ 0FFEh ;# ">
+"7352
+[; <" TOSU equ 0FFFh ;# ">
+"14 MCAL_Layer/GPIO/HAL_GPIO.c
+[v _TRIS_REGs `*Vuc ~T0 @X0 -> 5 `i e ]
+[i _TRIS_REGs
+:U ..
+&U _TRISA
+&U _TRISB
+&U _TRISC
+&U _TRISD
+&U _TRISE
+..
+]
+"15
+[v _PORT_REGs `*Vuc ~T0 @X0 -> 5 `i e ]
+[i _PORT_REGs
+:U ..
+&U _PORTA
+&U _PORTB
+&U _PORTC
+&U _PORTD
+&U _PORTE
+..
+]
+"16
+[v _LAT_REGs `*Vuc ~T0 @X0 -> 5 `i e ]
+[i _LAT_REGs
+:U ..
+&U _LATA
+&U _LATB
+&U _LATC
+&U _LATD
+&U _LATE
+..
+]
+"34
+[v _GPIO_PIN_DIRECTION_INIT `(E3659 ~T0 @X0 1 ef1`*CS306 ]
+{
+[e :U _GPIO_PIN_DIRECTION_INIT ]
+[v _pin `*CS306 ~T0 @X0 1 r1 ]
+[f ]
+"35
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"36
+[e $ ! || == -> -> -> 0 `i `*v `*CS306 _pin >= -> . *U _pin 1 `i -> -> -> 8 `i `uc `i 308  ]
+{
+"37
+[e = _Retval . `E3659 0 ]
+"38
+}
+[e $U 309  ]
+"39
+[e :U 308 ]
+{
+"40
+[e $U 311  ]
+{
+"41
+[e :U 312 ]
+"42
+[e =& *U *U + &U _TRIS_REGs * -> . *U _pin 0 `ux -> -> # *U &U _TRIS_REGs `ui `ux -> ~ -> -> << -> -> -> 1 `i `uc `i -> . *U _pin 1 `i `uc `i `uc ]
+"43
+[e $U 310  ]
+"44
+[e :U 313 ]
+"45
+[e =| *U *U + &U _TRIS_REGs * -> . *U _pin 0 `ux -> -> # *U &U _TRIS_REGs `ui `ux -> -> << -> -> -> 1 `i `uc `i -> . *U _pin 1 `i `uc `uc ]
+"46
+[e $U 310  ]
+"47
+[e :U 314 ]
+[e = _Retval . `E3659 0 ]
+"48
+}
+[e $U 310  ]
+[e :U 311 ]
+[e [\ . *U _pin 2 , $ . `E3683 0 312
+ , $ . `E3683 1 313
+ 314 ]
+[e :U 310 ]
+"49
+}
+[e :U 309 ]
+"50
+[e ) _Retval ]
+[e $UE 307  ]
+"51
+[e :UE 307 ]
+}
+"66
+[v _GPIO_PIN_GET_DIRECTION_STATUS `(E3659 ~T0 @X0 1 ef2`*CS306`*E3683 ]
+{
+[e :U _GPIO_PIN_GET_DIRECTION_STATUS ]
+[v _pin `*CS306 ~T0 @X0 1 r1 ]
+[v _direction `*E3683 ~T0 @X0 1 r2 ]
+[f ]
+"67
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"68
+[e $ ! || || == -> -> -> 0 `i `*v `*CS306 _pin >= -> . *U _pin 1 `i -> -> -> 8 `i `uc `i == -> -> -> 0 `i `*v `*E3683 _direction 316  ]
+{
+"69
+[e = _Retval . `E3659 0 ]
+"70
+}
+[e $U 317  ]
+"71
+[e :U 316 ]
+{
+"72
+[e = *U _direction -> & >> -> *U *U + &U _TRIS_REGs * -> . *U _pin 0 `ux -> -> # *U &U _TRIS_REGs `ui `ux `i -> . *U _pin 1 `i -> -> -> 1 `i `uc `i `E3683 ]
+"73
+}
+[e :U 317 ]
+"74
+[e ) _Retval ]
+[e $UE 315  ]
+"75
+[e :UE 315 ]
+}
+"90
+[v _GPIO_PIN_WRITE_LOGIC `(E3659 ~T0 @X0 1 ef2`*CS306`E3687 ]
+{
+[e :U _GPIO_PIN_WRITE_LOGIC ]
+[v _pin `*CS306 ~T0 @X0 1 r1 ]
+[v _logic `E3687 ~T0 @X0 1 r2 ]
+[f ]
+"91
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"92
+[e $ ! || == -> -> -> 0 `i `*v `*CS306 _pin >= -> . *U _pin 1 `i -> -> -> 8 `i `uc `i 319  ]
+{
+"93
+[e = _Retval . `E3659 0 ]
+"94
+}
+[e $U 320  ]
+"95
+[e :U 319 ]
+{
+"96
+[e $U 322  ]
+{
+"97
+[e :U 323 ]
+"98
+[e =& *U *U + &U _LAT_REGs * -> . *U _pin 0 `ux -> -> # *U &U _LAT_REGs `ui `ux -> ~ -> -> << -> -> -> 1 `i `uc `i -> . *U _pin 1 `i `uc `i `uc ]
+"99
+[e $U 321  ]
+"100
+[e :U 324 ]
+"101
+[e =| *U *U + &U _LAT_REGs * -> . *U _pin 0 `ux -> -> # *U &U _LAT_REGs `ui `ux -> -> << -> -> -> 1 `i `uc `i -> . *U _pin 1 `i `uc `uc ]
+"102
+[e $U 321  ]
+"103
+[e :U 325 ]
+"104
+[e = _Retval . `E3659 0 ]
+"105
+[e $U 321  ]
+"106
+}
+[e $U 321  ]
+[e :U 322 ]
+[e [\ -> _logic `ui , $ -> . `E3687 0 `ui 323
+ , $ -> . `E3687 1 `ui 324
+ 325 ]
+[e :U 321 ]
+"107
+}
+[e :U 320 ]
+"108
+[e ) _Retval ]
+[e $UE 318  ]
+"109
+[e :UE 318 ]
+}
+"124
+[v _GPIO_PIN_READ_LOGIC `(E3659 ~T0 @X0 1 ef2`*CS306`*E3687 ]
+{
+[e :U _GPIO_PIN_READ_LOGIC ]
+[v _pin `*CS306 ~T0 @X0 1 r1 ]
+[v _logic `*E3687 ~T0 @X0 1 r2 ]
+[f ]
+"125
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"126
+[e $ ! || || == -> -> -> 0 `i `*v `*CS306 _pin >= -> . *U _pin 1 `i -> -> -> 8 `i `uc `i == -> -> -> 0 `i `*v `*E3687 _logic 327  ]
+{
+"127
+[e = _Retval . `E3659 0 ]
+"128
+}
+[e $U 328  ]
+"129
+[e :U 327 ]
+{
+"130
+[e = *U _logic -> & >> -> *U *U + &U _PORT_REGs * -> . *U _pin 0 `ux -> -> # *U &U _PORT_REGs `ui `ux `i -> . *U _pin 1 `i -> -> -> 1 `i `uc `i `E3687 ]
+"131
+}
+[e :U 328 ]
+"132
+[e ) _Retval ]
+[e $UE 326  ]
+"133
+[e :UE 326 ]
+}
+"147
+[v _GPIO_PIN_TOGGLE_LOGIC `(E3659 ~T0 @X0 1 ef1`*CS306 ]
+{
+[e :U _GPIO_PIN_TOGGLE_LOGIC ]
+[v _pin `*CS306 ~T0 @X0 1 r1 ]
+[f ]
+"148
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"149
+[e $ ! || == -> -> -> 0 `i `*v `*CS306 _pin >= -> . *U _pin 1 `i -> -> -> 8 `i `uc `i 330  ]
+{
+"150
+[e = _Retval . `E3659 0 ]
+"151
+}
+[e $U 331  ]
+"152
+[e :U 330 ]
+{
+"153
+[e =^ *U *U + &U _LAT_REGs * -> . *U _pin 0 `ux -> -> # *U &U _LAT_REGs `ui `ux -> -> << -> -> -> 1 `i `uc `i -> . *U _pin 1 `i `uc `uc ]
+"154
+}
+[e :U 331 ]
+"155
+[e ) _Retval ]
+[e $UE 329  ]
+"156
+[e :UE 329 ]
+}
+"170
+[v _GPIO_PIN_INIT `(E3659 ~T0 @X0 1 ef1`*CS306 ]
+{
+[e :U _GPIO_PIN_INIT ]
+[v _pin `*CS306 ~T0 @X0 1 r1 ]
+[f ]
+"171
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"172
+[e $ ! || == -> -> -> 0 `i `*v `*CS306 _pin >= -> . *U _pin 1 `i -> -> -> 8 `i `uc `i 333  ]
+{
+"173
+[e = _Retval . `E3659 0 ]
+"174
+}
+[e $U 334  ]
+"175
+[e :U 333 ]
+{
+"176
+[e = _Retval ( _GPIO_PIN_DIRECTION_INIT (1 _pin ]
+"177
+[e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , _pin -> . *U _pin 3 `E3687 ]
+"178
+}
+[e :U 334 ]
+"179
+[e ) _Retval ]
+[e $UE 332  ]
+"180
+[e :UE 332 ]
+}
+"196
+[v _GPIO_PORT_DIRECTION_INIT `(E3659 ~T0 @X0 1 ef2`CE3666`uc ]
+{
+[e :U _GPIO_PORT_DIRECTION_INIT ]
+[v _port `CE3666 ~T0 @X0 1 r1 ]
+[v _direction `uc ~T0 @X0 1 r2 ]
+[f ]
+"197
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"198
+[e $ ! >= -> _port `ui -> -> -> 5 `i `uc `ui 336  ]
+{
+"199
+[e = _Retval . `E3659 0 ]
+"200
+}
+[e $U 337  ]
+"201
+[e :U 336 ]
+{
+"202
+[e = *U *U + &U _TRIS_REGs * -> _port `ux -> -> # *U &U _TRIS_REGs `ui `ux _direction ]
+"203
+}
+[e :U 337 ]
+"204
+[e ) _Retval ]
+[e $UE 335  ]
+"205
+[e :UE 335 ]
+}
+"220
+[v _GPIO_PORT_GET_DIRECTION_STATUS `(E3659 ~T0 @X0 1 ef2`CE3666`*uc ]
+{
+[e :U _GPIO_PORT_GET_DIRECTION_STATUS ]
+[v _port `CE3666 ~T0 @X0 1 r1 ]
+[v _direction `*uc ~T0 @X0 1 r2 ]
+[f ]
+"221
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"222
+[e $ ! || >= -> _port `ui -> -> -> 5 `i `uc `ui == -> -> -> 0 `i `*v `*uc _direction 339  ]
+{
+"223
+[e = _Retval . `E3659 0 ]
+"224
+}
+[e $U 340  ]
+"225
+[e :U 339 ]
+{
+"226
+[e = *U _direction *U *U + &U _TRIS_REGs * -> _port `ux -> -> # *U &U _TRIS_REGs `ui `ux ]
+"227
+}
+[e :U 340 ]
+"228
+[e ) _Retval ]
+[e $UE 338  ]
+"229
+[e :UE 338 ]
+}
+"244
+[v _GPIO_PORT_WRITE_LOGIC `(E3659 ~T0 @X0 1 ef2`CE3666`uc ]
+{
+[e :U _GPIO_PORT_WRITE_LOGIC ]
+[v _port `CE3666 ~T0 @X0 1 r1 ]
+[v _logic `uc ~T0 @X0 1 r2 ]
+[f ]
+"245
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"246
+[e $ ! >= -> _port `ui -> -> -> 5 `i `uc `ui 342  ]
+{
+"247
+[e = _Retval . `E3659 0 ]
+"248
+}
+[e $U 343  ]
+"249
+[e :U 342 ]
+{
+"250
+[e = *U *U + &U _LAT_REGs * -> _port `ux -> -> # *U &U _LAT_REGs `ui `ux _logic ]
+"251
+}
+[e :U 343 ]
+"252
+[e ) _Retval ]
+[e $UE 341  ]
+"253
+[e :UE 341 ]
+}
+"268
+[v _GPIO_PORT_READ_LOGIC `(E3659 ~T0 @X0 1 ef2`CE3666`*uc ]
+{
+[e :U _GPIO_PORT_READ_LOGIC ]
+[v _port `CE3666 ~T0 @X0 1 r1 ]
+[v _logic `*uc ~T0 @X0 1 r2 ]
+[f ]
+"269
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"270
+[e $ ! || >= -> _port `ui -> -> -> 5 `i `uc `ui == -> -> -> 0 `i `*v `*uc _logic 345  ]
+{
+"271
+[e = _Retval . `E3659 0 ]
+"272
+}
+[e $U 346  ]
+"273
+[e :U 345 ]
+{
+"274
+[e = *U _logic *U *U + &U _PORT_REGs * -> _port `ux -> -> # *U &U _PORT_REGs `ui `ux ]
+"275
+}
+[e :U 346 ]
+"276
+[e ) _Retval ]
+[e $UE 344  ]
+"277
+[e :UE 344 ]
+}
+"291
+[v _GPIO_PORT_TOGGLE_LOGIC `(E3659 ~T0 @X0 1 ef1`CE3666 ]
+{
+[e :U _GPIO_PORT_TOGGLE_LOGIC ]
+[v _port `CE3666 ~T0 @X0 1 r1 ]
+[f ]
+"292
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"293
+[e $ ! >= -> _port `ui -> -> -> 5 `i `uc `ui 348  ]
+{
+"294
+[e = _Retval . `E3659 0 ]
+"295
+}
+[e $U 349  ]
+"296
+[e :U 348 ]
+{
+"297
+[e =^ *U *U + &U _LAT_REGs * -> _port `ux -> -> # *U &U _LAT_REGs `ui `ux -> -> -> 255 `i `uc `uc ]
+"298
+}
+[e :U 349 ]
+"299
+[e ) _Retval ]
+[e $UE 347  ]
+"300
+[e :UE 347 ]
+}
+"316
+[v _GPIO_PORT_INIT `(E3659 ~T0 @X0 1 ef3`CE3666`uc`uc ]
+{
+[e :U _GPIO_PORT_INIT ]
+[v _port `CE3666 ~T0 @X0 1 r1 ]
+[v _direction `uc ~T0 @X0 1 r2 ]
+[v _logic `uc ~T0 @X0 1 r3 ]
+[f ]
+"317
+[v _Retval `E3659 ~T0 @X0 1 a ]
+[e = _Retval . `E3659 1 ]
+"318
+[e $ ! >= -> _port `ui -> -> -> 5 `i `uc `ui 351  ]
+{
+"319
+[e = _Retval . `E3659 0 ]
+"320
+}
+[e $U 352  ]
+"321
+[e :U 351 ]
+{
+"322
+[e = _Retval ( _GPIO_PORT_DIRECTION_INIT (2 , _port _direction ]
+"323
+[e = _Retval ( _GPIO_PORT_WRITE_LOGIC (2 , _port _logic ]
+"324
+}
+[e :U 352 ]
+"325
+[e ) _Retval ]
+[e $UE 350  ]
+"326
+[e :UE 350 ]
+}

@@ -1,0 +1,244 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F46K20 ]
+[d frameptr 4065 ]
+"12 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+[e E3672 . `uc
+gpio_portA 0
+gpio_portB 1
+gpio_portC 2
+gpio_portD 3
+gpio_portE 4
+]
+[e E3679 . `uc
+gpio_pin0 0
+gpio_pin1 1
+gpio_pin2 2
+gpio_pin3 3
+gpio_pin4 4
+gpio_pin5 5
+gpio_pin6 6
+gpio_pin7 7
+]
+[e E3689 . `uc
+gpio_output 0
+gpio_input 1
+]
+[e E3693 . `uc
+gpio_low 0
+gpio_high 1
+]
+"26
+[e E3659 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
+[e E3659 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"44
+[e E3689 . `uc
+gpio_output 0
+gpio_input 1
+]
+"60
+[e E3693 . `uc
+gpio_low 0
+gpio_high 1
+]
+"119
+[e E3672 . `uc
+gpio_portA 0
+gpio_portB 1
+gpio_portC 2
+gpio_portD 3
+gpio_portE 4
+]
+"4 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"33 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+[v _main main `(i  1 e 2 0 ]
+"28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
+[v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
+"49
+[v _gpio_pin_get_direction_status gpio_pin_get_direction_status `(E3659  1 e 1 0 ]
+"60
+[v _gpio_pin_write_logic gpio_pin_write_logic `(E3659  1 e 1 0 ]
+"81
+[v _gpio_pin_read_logic gpio_pin_read_logic `(E3659  1 e 1 0 ]
+"92
+[v _gpio_pin_toggle_logic gpio_pin_toggle_logic `(E3659  1 e 1 0 ]
+"103
+[v _gpio_pin_init gpio_pin_init `(E3659  1 e 1 0 ]
+"119
+[v _gpio_port_direction_init gpio_port_direction_init `(E3659  1 e 1 0 ]
+"141
+[v _gpio_port_write_logic gpio_port_write_logic `(E3659  1 e 1 0 ]
+"552 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"788
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"996
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"1184
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+"1326
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+"1532
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"1644
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"1756
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"1868
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"1980
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"2032
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"2254
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"2476
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"2698
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"2920
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"12 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+[v _led led `S24  1 e 1 0 ]
+"19
+[v _btn btn `S24  1 e 1 0 ]
+"26
+[v _ret ret `E3659  1 e 1 0 ]
+"27
+[v _logic logic `E3693  1 e 1 0 ]
+"29
+[v _dir dir `E3689  1 e 1 0 ]
+"14 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
+[v _tris_regs tris_regs `C[5]*.39VEuc  1 e 10 0 ]
+"15
+[v _port_regs port_regs `C[5]*.39VEuc  1 e 10 0 ]
+"16
+[v _lat_regs lat_regs `C[5]*.39VEuc  1 e 10 0 ]
+"33 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+[v _main main `(i  1 e 2 0 ]
+{
+"61
+} 0
+"92 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU Interfacing/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
+[v _gpio_pin_toggle_logic gpio_pin_toggle_logic `(E3659  1 e 1 0 ]
+{
+"93
+[v gpio_pin_toggle_logic@Retval Retval `E3659  1 a 1 6 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"92
+[v gpio_pin_toggle_logic@pin pin `*.30CS24  1 p 1 0 ]
+"101
+} 0
+"81
+[v _gpio_pin_read_logic gpio_pin_read_logic `(E3659  1 e 1 0 ]
+{
+"82
+[v gpio_pin_read_logic@Retval Retval `E3659  1 a 1 7 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"81
+[v gpio_pin_read_logic@pin pin `*.30CS24  1 p 1 0 ]
+[v gpio_pin_read_logic@logic logic `*.30E3693  1 p 1 1 ]
+"90
+} 0
+"103
+[v _gpio_pin_init gpio_pin_init `(E3659  1 e 1 0 ]
+{
+"104
+[v gpio_pin_init@Retval Retval `E3659  1 a 1 11 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"103
+[v gpio_pin_init@pin pin `*.30CS24  1 p 1 9 ]
+"113
+} 0
+"60
+[v _gpio_pin_write_logic gpio_pin_write_logic `(E3659  1 e 1 0 ]
+{
+"61
+[v gpio_pin_write_logic@Retval Retval `E3659  1 a 1 8 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"60
+[v gpio_pin_write_logic@pin pin `*.30CS24  1 p 1 0 ]
+[v gpio_pin_write_logic@logic logic `E3693  1 p 1 1 ]
+"79
+} 0
+"28
+[v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
+{
+"29
+[v gpio_pin_direction_init@Retval Retval `E3659  1 a 1 7 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"28
+[v gpio_pin_direction_init@pin pin `*.30CS24  1 p 1 0 ]
+"47
+} 0
+"49
+[v _gpio_pin_get_direction_status gpio_pin_get_direction_status `(E3659  1 e 1 0 ]
+{
+"50
+[v gpio_pin_get_direction_status@Retval Retval `E3659  1 a 1 7 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"49
+[v gpio_pin_get_direction_status@pin pin `*.30CS24  1 p 1 0 ]
+[v gpio_pin_get_direction_status@direction direction `*.30E3689  1 p 1 1 ]
+"58
+} 0
