@@ -37,7 +37,8 @@ typedef enum{
 
 typedef struct{
     gpio_pin_cfg pin  ;
-    led_con con       ;
+    led_logic    state;
+    led_con      con  ;
 }gpio_led;
 
 /******************* Section 5 : Software Interfaces Declarations (APIs) *******************/

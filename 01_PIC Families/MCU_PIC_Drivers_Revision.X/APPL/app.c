@@ -13,39 +13,61 @@ gpio_led led1 = {
     .pin.port = gpio_portC,
     .pin.pin = gpio_pin0,
     .pin.direction = gpio_output,
-    .pin.logic = gpio_low,     // initial logic
-    .con = led_sink
+    .con = led_source,
+    .state = led_off
 };
 
-led_logic current_state = led_off;
+gpio_led led2 = {
+    .pin.port = gpio_portC,
+    .pin.pin = gpio_pin1,
+    .pin.direction = gpio_output,
+    .con = led_source,
+    .state = led_off
+};
 
+gpio_btn btn1 = {
+    .pin.port = gpio_portC,
+    .pin.pin = gpio_pin2,
+    .pin.direction = gpio_input,
+    .pin.logic = gpio_low,
+    .connection = btn_active_high,
+    .state = btn_released
+};
+
+gpio_btn btn2 = {
+    .pin.port = gpio_portD,
+    .pin.pin = gpio_pin0,
+    .pin.direction = gpio_input,
+    .pin.logic = gpio_high,
+    .connection = btn_active_low,
+    .state = btn_released
+};
+
+btn_state st1 = btn_released,st2 = btn_released;
 int main() {
     Std_ReturnType ret = E_NOT_OK;
 
-    // Initialize LED
     ret = gpio_led_init(&led1);
-
+    ret = gpio_led_init(&led2);
+    ret = gpio_btn_init(&btn1);
+    ret = gpio_btn_init(&btn2);
+    
     while (1) {
-        // Turn LED ON
-        gpio_led_turn_on(&led1);
-
-        // Read current logic
-        gpio_led_read_logic(&led1, &current_state);
-
-        __delay_ms(500);
-
-
-        // Toggle LED
-        gpio_led_turn_toggle(&led1);
+//        ret = gpio_btn_read_status(&btn1, &st1);
+//        if(st1 == btn_pressed){
+//            ret = gpio_led_turn_on(&led1);
+//        }
+//        else{
+//            ret = gpio_led_turn_off(&led1);
+//        }
         
-        // Read current logic
-        gpio_led_read_logic(&led1, &current_state);
-        
-        __delay_ms(500);
-
-        // Turn LED OFF
-        gpio_led_turn_off(&led1);
-        __delay_ms(500);
+        ret = gpio_btn_read_status(&btn2, &st2);
+        if(st2 == btn_pressed){
+            ret = gpio_led_turn_on(&led2);
+        }
+        else{
+            ret = gpio_led_turn_off(&led2);
+        }
     }
 
     return (EXIT_SUCCESS);

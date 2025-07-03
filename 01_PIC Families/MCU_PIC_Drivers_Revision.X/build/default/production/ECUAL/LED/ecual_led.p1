@@ -5,33 +5,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S306 . port pin direction logic ]
 "24 ECUAL/LED/ecual_led.c
 [; ;ECUAL/LED/ecual_led.c: 24: Std_ReturnType gpio_led_init(const gpio_led *led){
+[c E3736 0 1 .. ]
+[n E3736 . led_off led_on  ]
 [c E3740 0 1 .. ]
 [n E3740 . led_sink led_source  ]
 "38 ECUAL/LED/ecual_led.h
 [; ;ECUAL/LED/ecual_led.h: 38: typedef struct{
-[s S307 `S306 1 `E3740 1 ]
-[n S307 . pin con ]
+[s S307 `S306 1 `E3736 1 `E3740 1 ]
+[n S307 . pin state con ]
 "24 ECUAL/LED/ecual_led.c
 [; ;ECUAL/LED/ecual_led.c: 24: Std_ReturnType gpio_led_init(const gpio_led *led){
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"86 ECUAL/LED/../../MCAL/GPIO/hal_gpio.h
-[; ;ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 86: Std_ReturnType gpio_pin_init(const gpio_pin_cfg *pin);
-[v _gpio_pin_init `(E3659 ~T0 @X0 0 ef1`*CS306 ]
-"35 ECUAL/LED/ecual_led.c
-[; ;ECUAL/LED/ecual_led.c: 35: Std_ReturnType gpio_led_read_logic(const gpio_led *led, led_logic *logic){
-[c E3736 0 1 .. ]
-[n E3736 . led_off led_on  ]
-"41
-[; ;ECUAL/LED/ecual_led.c: 41:         Retval = gpio_pin_read_logic(&(led->pin), logic);
+"81 ECUAL/LED/../../MCAL/GPIO/hal_gpio.h
+[; ;ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 81: Std_ReturnType gpio_pin_direction_init(const gpio_pin_cfg *pin);
+[v _gpio_pin_direction_init `(E3659 ~T0 @X0 0 ef1`*CS306 ]
+"31 ECUAL/LED/ecual_led.c
+[; ;ECUAL/LED/ecual_led.c: 31:         gpio_logic logic;
 [c E3693 0 1 .. ]
 [n E3693 . gpio_low gpio_high  ]
-"84 ECUAL/LED/../../MCAL/GPIO/hal_gpio.h
-[; ;ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 84: Std_ReturnType gpio_pin_read_logic(const gpio_pin_cfg *pin, gpio_logic *logic);
-[v _gpio_pin_read_logic `(E3659 ~T0 @X0 0 ef2`*CS306`*E3693 ]
-"83
+"83 ECUAL/LED/../../MCAL/GPIO/hal_gpio.h
 [; ;ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 83: Std_ReturnType gpio_pin_write_logic(const gpio_pin_cfg *pin, gpio_logic logic);
 [v _gpio_pin_write_logic `(E3659 ~T0 @X0 0 ef2`*CS306`E3693 ]
+"84
+[; ;ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 84: Std_ReturnType gpio_pin_read_logic(const gpio_pin_cfg *pin, gpio_logic *logic);
+[v _gpio_pin_read_logic `(E3659 ~T0 @X0 0 ef2`*CS306`*E3693 ]
 "85
 [; ;ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 85: Std_ReturnType gpio_pin_toggle_logic(const gpio_pin_cfg *pin);
 [v _gpio_pin_toggle_logic `(E3659 ~T0 @X0 0 ef1`*CS306 ]
@@ -503,274 +501,491 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 309 ]
 {
 "30
-[; ;ECUAL/LED/ecual_led.c: 30:         Retval = gpio_pin_init(&(led->pin));
-[e = _Retval ( _gpio_pin_init (1 &U . *U _led 0 ]
+[; ;ECUAL/LED/ecual_led.c: 30:         Retval = gpio_pin_direction_init(&(led->pin));
+[e = _Retval ( _gpio_pin_direction_init (1 &U . *U _led 0 ]
 "31
-[; ;ECUAL/LED/ecual_led.c: 31:     }
+[; ;ECUAL/LED/ecual_led.c: 31:         gpio_logic logic;
+[v _logic `E3693 ~T0 @X0 1 a ]
+"32
+[; ;ECUAL/LED/ecual_led.c: 32:         switch(led->con){
+[e $U 312  ]
+{
+"33
+[; ;ECUAL/LED/ecual_led.c: 33:             case led_sink:
+[e :U 313 ]
+"34
+[; ;ECUAL/LED/ecual_led.c: 34:                 if(led->state == led_off){
+[e $ ! == -> . *U _led 1 `ui -> . `E3736 0 `ui 314  ]
+{
+"35
+[; ;ECUAL/LED/ecual_led.c: 35:                     logic = gpio_high;
+[e = _logic . `E3693 1 ]
+"36
+[; ;ECUAL/LED/ecual_led.c: 36:                 }
+}
+[e $U 315  ]
+"37
+[; ;ECUAL/LED/ecual_led.c: 37:                 else if(led->state == led_on){
+[e :U 314 ]
+[e $ ! == -> . *U _led 1 `ui -> . `E3736 1 `ui 316  ]
+{
+"38
+[; ;ECUAL/LED/ecual_led.c: 38:                     logic = gpio_low;
+[e = _logic . `E3693 0 ]
+"39
+[; ;ECUAL/LED/ecual_led.c: 39:                 }
+}
+[e $U 317  ]
+"40
+[; ;ECUAL/LED/ecual_led.c: 40:                 else{
+[e :U 316 ]
+{
+"41
+[; ;ECUAL/LED/ecual_led.c: 41:                     Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"42
+[; ;ECUAL/LED/ecual_led.c: 42:                 }
+}
+[e :U 317 ]
+[e :U 315 ]
+"43
+[; ;ECUAL/LED/ecual_led.c: 43:                 break;
+[e $U 311  ]
+"44
+[; ;ECUAL/LED/ecual_led.c: 44:             case led_source:
+[e :U 318 ]
+"45
+[; ;ECUAL/LED/ecual_led.c: 45:                 if(led->state == led_off){
+[e $ ! == -> . *U _led 1 `ui -> . `E3736 0 `ui 319  ]
+{
+"46
+[; ;ECUAL/LED/ecual_led.c: 46:                     logic = gpio_low;
+[e = _logic . `E3693 0 ]
+"47
+[; ;ECUAL/LED/ecual_led.c: 47:                 }
+}
+[e $U 320  ]
+"48
+[; ;ECUAL/LED/ecual_led.c: 48:                 else if(led->state == led_on){
+[e :U 319 ]
+[e $ ! == -> . *U _led 1 `ui -> . `E3736 1 `ui 321  ]
+{
+"49
+[; ;ECUAL/LED/ecual_led.c: 49:                     logic = gpio_high;
+[e = _logic . `E3693 1 ]
+"50
+[; ;ECUAL/LED/ecual_led.c: 50:                 }
+}
+[e $U 322  ]
+"51
+[; ;ECUAL/LED/ecual_led.c: 51:                 else{
+[e :U 321 ]
+{
+"52
+[; ;ECUAL/LED/ecual_led.c: 52:                     Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"53
+[; ;ECUAL/LED/ecual_led.c: 53:                 }
+}
+[e :U 322 ]
+[e :U 320 ]
+"54
+[; ;ECUAL/LED/ecual_led.c: 54:                 break;
+[e $U 311  ]
+"55
+[; ;ECUAL/LED/ecual_led.c: 55:             default :
+[e :U 323 ]
+"56
+[; ;ECUAL/LED/ecual_led.c: 56:                 Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"57
+[; ;ECUAL/LED/ecual_led.c: 57:                 break;
+[e $U 311  ]
+"58
+[; ;ECUAL/LED/ecual_led.c: 58:         }
+}
+[e $U 311  ]
+[e :U 312 ]
+[e [\ -> . *U _led 2 `ui , $ -> . `E3740 0 `ui 313
+ , $ -> . `E3740 1 `ui 318
+ 323 ]
+[e :U 311 ]
+"59
+[; ;ECUAL/LED/ecual_led.c: 59:         Retval = gpio_pin_write_logic(&(led->pin), logic);
+[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 _logic ]
+"60
+[; ;ECUAL/LED/ecual_led.c: 60:     }
 }
 [e :U 310 ]
-"32
-[; ;ECUAL/LED/ecual_led.c: 32:     return Retval;
+"61
+[; ;ECUAL/LED/ecual_led.c: 61:     return Retval;
 [e ) _Retval ]
 [e $UE 308  ]
-"33
-[; ;ECUAL/LED/ecual_led.c: 33: }
+"62
+[; ;ECUAL/LED/ecual_led.c: 62: }
 [e :UE 308 ]
 }
-"35
-[; ;ECUAL/LED/ecual_led.c: 35: Std_ReturnType gpio_led_read_logic(const gpio_led *led, led_logic *logic){
+"64
+[; ;ECUAL/LED/ecual_led.c: 64: Std_ReturnType gpio_led_read_logic(const gpio_led *led, led_logic *logic){
 [v _gpio_led_read_logic `(E3659 ~T0 @X0 1 ef2`*CS307`*E3736 ]
 {
 [e :U _gpio_led_read_logic ]
 [v _led `*CS307 ~T0 @X0 1 r1 ]
 [v _logic `*E3736 ~T0 @X0 1 r2 ]
 [f ]
-"36
-[; ;ECUAL/LED/ecual_led.c: 36:     Std_ReturnType Retval = E_OK;
+"65
+[; ;ECUAL/LED/ecual_led.c: 65:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"37
-[; ;ECUAL/LED/ecual_led.c: 37:     if(((void*)0) == led || ((void*)0) == logic){
-[e $ ! || == -> -> -> 0 `i `*v `*CS307 _led == -> -> -> 0 `i `*v `*E3736 _logic 312  ]
+"66
+[; ;ECUAL/LED/ecual_led.c: 66:     if(((void*)0) == led || ((void*)0) == logic){
+[e $ ! || == -> -> -> 0 `i `*v `*CS307 _led == -> -> -> 0 `i `*v `*E3736 _logic 325  ]
 {
-"38
-[; ;ECUAL/LED/ecual_led.c: 38:         Retval = E_NOT_OK;
+"67
+[; ;ECUAL/LED/ecual_led.c: 67:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"39
-[; ;ECUAL/LED/ecual_led.c: 39:     }
+"68
+[; ;ECUAL/LED/ecual_led.c: 68:     }
 }
-[e $U 313  ]
-"40
-[; ;ECUAL/LED/ecual_led.c: 40:     else{
-[e :U 312 ]
+[e $U 326  ]
+"69
+[; ;ECUAL/LED/ecual_led.c: 69:     else{
+[e :U 325 ]
 {
-"41
-[; ;ECUAL/LED/ecual_led.c: 41:         Retval = gpio_pin_read_logic(&(led->pin), logic);
-[e = _Retval ( _gpio_pin_read_logic (2 , &U . *U _led 0 -> _logic `*E3693 ]
-"42
-[; ;ECUAL/LED/ecual_led.c: 42:     }
+"70
+[; ;ECUAL/LED/ecual_led.c: 70:         gpio_logic status;
+[v _status `E3693 ~T0 @X0 1 a ]
+"71
+[; ;ECUAL/LED/ecual_led.c: 71:         Retval = gpio_pin_read_logic(&(led->pin), &status);
+[e = _Retval ( _gpio_pin_read_logic (2 , &U . *U _led 0 &U _status ]
+"72
+[; ;ECUAL/LED/ecual_led.c: 72:         switch(led->con){
+[e $U 328  ]
+{
+"73
+[; ;ECUAL/LED/ecual_led.c: 73:             case led_sink:
+[e :U 329 ]
+"74
+[; ;ECUAL/LED/ecual_led.c: 74:                 if(status == gpio_high){
+[e $ ! == -> _status `ui -> . `E3693 1 `ui 330  ]
+{
+"75
+[; ;ECUAL/LED/ecual_led.c: 75:                     *logic = led_off;
+[e = *U _logic . `E3736 0 ]
+"76
+[; ;ECUAL/LED/ecual_led.c: 76:                 }
 }
-[e :U 313 ]
-"43
-[; ;ECUAL/LED/ecual_led.c: 43:     return Retval;
+[e $U 331  ]
+"77
+[; ;ECUAL/LED/ecual_led.c: 77:                 else if(status == gpio_low){
+[e :U 330 ]
+[e $ ! == -> _status `ui -> . `E3693 0 `ui 332  ]
+{
+"78
+[; ;ECUAL/LED/ecual_led.c: 78:                     *logic = led_on;
+[e = *U _logic . `E3736 1 ]
+"79
+[; ;ECUAL/LED/ecual_led.c: 79:                 }
+}
+[e $U 333  ]
+"80
+[; ;ECUAL/LED/ecual_led.c: 80:                 else{
+[e :U 332 ]
+{
+"81
+[; ;ECUAL/LED/ecual_led.c: 81:                     Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"82
+[; ;ECUAL/LED/ecual_led.c: 82:                 }
+}
+[e :U 333 ]
+[e :U 331 ]
+"83
+[; ;ECUAL/LED/ecual_led.c: 83:                 break;
+[e $U 327  ]
+"84
+[; ;ECUAL/LED/ecual_led.c: 84:             case led_source:
+[e :U 334 ]
+"85
+[; ;ECUAL/LED/ecual_led.c: 85:                 if(status == gpio_high){
+[e $ ! == -> _status `ui -> . `E3693 1 `ui 335  ]
+{
+"86
+[; ;ECUAL/LED/ecual_led.c: 86:                     *logic = led_on;
+[e = *U _logic . `E3736 1 ]
+"87
+[; ;ECUAL/LED/ecual_led.c: 87:                 }
+}
+[e $U 336  ]
+"88
+[; ;ECUAL/LED/ecual_led.c: 88:                 else if(status == gpio_low){
+[e :U 335 ]
+[e $ ! == -> _status `ui -> . `E3693 0 `ui 337  ]
+{
+"89
+[; ;ECUAL/LED/ecual_led.c: 89:                     *logic = led_off;
+[e = *U _logic . `E3736 0 ]
+"90
+[; ;ECUAL/LED/ecual_led.c: 90:                 }
+}
+[e $U 338  ]
+"91
+[; ;ECUAL/LED/ecual_led.c: 91:                 else{
+[e :U 337 ]
+{
+"92
+[; ;ECUAL/LED/ecual_led.c: 92:                     Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"93
+[; ;ECUAL/LED/ecual_led.c: 93:                 }
+}
+[e :U 338 ]
+[e :U 336 ]
+"94
+[; ;ECUAL/LED/ecual_led.c: 94:                 break;
+[e $U 327  ]
+"95
+[; ;ECUAL/LED/ecual_led.c: 95:             default :
+[e :U 339 ]
+"96
+[; ;ECUAL/LED/ecual_led.c: 96:                 Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"97
+[; ;ECUAL/LED/ecual_led.c: 97:                 break;
+[e $U 327  ]
+"98
+[; ;ECUAL/LED/ecual_led.c: 98:         }
+}
+[e $U 327  ]
+[e :U 328 ]
+[e [\ -> . *U _led 2 `ui , $ -> . `E3740 0 `ui 329
+ , $ -> . `E3740 1 `ui 334
+ 339 ]
+[e :U 327 ]
+"99
+[; ;ECUAL/LED/ecual_led.c: 99:     }
+}
+[e :U 326 ]
+"100
+[; ;ECUAL/LED/ecual_led.c: 100:     return Retval;
 [e ) _Retval ]
-[e $UE 311  ]
-"44
-[; ;ECUAL/LED/ecual_led.c: 44: }
-[e :UE 311 ]
+[e $UE 324  ]
+"101
+[; ;ECUAL/LED/ecual_led.c: 101: }
+[e :UE 324 ]
 }
-"46
-[; ;ECUAL/LED/ecual_led.c: 46: Std_ReturnType gpio_led_turn_off(const gpio_led *led){
+"103
+[; ;ECUAL/LED/ecual_led.c: 103: Std_ReturnType gpio_led_turn_off(const gpio_led *led){
 [v _gpio_led_turn_off `(E3659 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _gpio_led_turn_off ]
 [v _led `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"47
-[; ;ECUAL/LED/ecual_led.c: 47:     Std_ReturnType Retval = E_OK;
+"104
+[; ;ECUAL/LED/ecual_led.c: 104:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"48
-[; ;ECUAL/LED/ecual_led.c: 48:     if(((void*)0) == led){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 315  ]
+"105
+[; ;ECUAL/LED/ecual_led.c: 105:     if(((void*)0) == led){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 341  ]
 {
-"49
-[; ;ECUAL/LED/ecual_led.c: 49:         Retval = E_NOT_OK;
+"106
+[; ;ECUAL/LED/ecual_led.c: 106:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"50
-[; ;ECUAL/LED/ecual_led.c: 50:     }
+"107
+[; ;ECUAL/LED/ecual_led.c: 107:     }
 }
-[e $U 316  ]
-"51
-[; ;ECUAL/LED/ecual_led.c: 51:     else{
-[e :U 315 ]
+[e $U 342  ]
+"108
+[; ;ECUAL/LED/ecual_led.c: 108:     else{
+[e :U 341 ]
 {
-"52
-[; ;ECUAL/LED/ecual_led.c: 52:         led_logic logic;
-[v _logic `E3736 ~T0 @X0 1 a ]
-"53
-[; ;ECUAL/LED/ecual_led.c: 53:         switch(led->con){
-[e $U 318  ]
+"109
+[; ;ECUAL/LED/ecual_led.c: 109:         gpio_logic logic;
+[v _logic `E3693 ~T0 @X0 1 a ]
+"110
+[; ;ECUAL/LED/ecual_led.c: 110:         switch(led->con){
+[e $U 344  ]
 {
-"54
-[; ;ECUAL/LED/ecual_led.c: 54:             case led_sink:
-[e :U 319 ]
-"55
-[; ;ECUAL/LED/ecual_led.c: 55:                 logic = led_on;
-[e = _logic . `E3736 1 ]
-"56
-[; ;ECUAL/LED/ecual_led.c: 56:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
-[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 -> _logic `E3693 ]
-"57
-[; ;ECUAL/LED/ecual_led.c: 57:                 break;
-[e $U 317  ]
-"58
-[; ;ECUAL/LED/ecual_led.c: 58:             case led_source:
-[e :U 320 ]
-"59
-[; ;ECUAL/LED/ecual_led.c: 59:                 logic = led_off;
-[e = _logic . `E3736 0 ]
-"60
-[; ;ECUAL/LED/ecual_led.c: 60:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
-[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 -> _logic `E3693 ]
-"61
-[; ;ECUAL/LED/ecual_led.c: 61:                 break;
-[e $U 317  ]
-"62
-[; ;ECUAL/LED/ecual_led.c: 62:             default :
-[e :U 321 ]
-"63
-[; ;ECUAL/LED/ecual_led.c: 63:                 Retval = E_NOT_OK;
+"111
+[; ;ECUAL/LED/ecual_led.c: 111:             case led_sink:
+[e :U 345 ]
+"112
+[; ;ECUAL/LED/ecual_led.c: 112:                 logic = gpio_high;
+[e = _logic . `E3693 1 ]
+"113
+[; ;ECUAL/LED/ecual_led.c: 113:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
+[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 _logic ]
+"114
+[; ;ECUAL/LED/ecual_led.c: 114:                 break;
+[e $U 343  ]
+"115
+[; ;ECUAL/LED/ecual_led.c: 115:             case led_source:
+[e :U 346 ]
+"116
+[; ;ECUAL/LED/ecual_led.c: 116:                 logic = gpio_low;
+[e = _logic . `E3693 0 ]
+"117
+[; ;ECUAL/LED/ecual_led.c: 117:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
+[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 _logic ]
+"118
+[; ;ECUAL/LED/ecual_led.c: 118:                 break;
+[e $U 343  ]
+"119
+[; ;ECUAL/LED/ecual_led.c: 119:             default :
+[e :U 347 ]
+"120
+[; ;ECUAL/LED/ecual_led.c: 120:                 Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"64
-[; ;ECUAL/LED/ecual_led.c: 64:                 break;
-[e $U 317  ]
-"65
-[; ;ECUAL/LED/ecual_led.c: 65:         }
+"121
+[; ;ECUAL/LED/ecual_led.c: 121:                 break;
+[e $U 343  ]
+"122
+[; ;ECUAL/LED/ecual_led.c: 122:         }
 }
-[e $U 317  ]
-[e :U 318 ]
-[e [\ -> . *U _led 1 `ui , $ -> . `E3740 0 `ui 319
- , $ -> . `E3740 1 `ui 320
- 321 ]
-[e :U 317 ]
-"66
-[; ;ECUAL/LED/ecual_led.c: 66:     }
+[e $U 343  ]
+[e :U 344 ]
+[e [\ -> . *U _led 2 `ui , $ -> . `E3740 0 `ui 345
+ , $ -> . `E3740 1 `ui 346
+ 347 ]
+[e :U 343 ]
+"123
+[; ;ECUAL/LED/ecual_led.c: 123:     }
 }
-[e :U 316 ]
-"67
-[; ;ECUAL/LED/ecual_led.c: 67:     return Retval;
+[e :U 342 ]
+"124
+[; ;ECUAL/LED/ecual_led.c: 124:     return Retval;
 [e ) _Retval ]
-[e $UE 314  ]
-"68
-[; ;ECUAL/LED/ecual_led.c: 68: }
-[e :UE 314 ]
+[e $UE 340  ]
+"125
+[; ;ECUAL/LED/ecual_led.c: 125: }
+[e :UE 340 ]
 }
-"70
-[; ;ECUAL/LED/ecual_led.c: 70: Std_ReturnType gpio_led_turn_on(const gpio_led *led){
+"127
+[; ;ECUAL/LED/ecual_led.c: 127: Std_ReturnType gpio_led_turn_on(const gpio_led *led){
 [v _gpio_led_turn_on `(E3659 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _gpio_led_turn_on ]
 [v _led `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"71
-[; ;ECUAL/LED/ecual_led.c: 71:     Std_ReturnType Retval = E_OK;
+"128
+[; ;ECUAL/LED/ecual_led.c: 128:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"72
-[; ;ECUAL/LED/ecual_led.c: 72:     if(((void*)0) == led){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 323  ]
+"129
+[; ;ECUAL/LED/ecual_led.c: 129:     if(((void*)0) == led){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 349  ]
 {
-"73
-[; ;ECUAL/LED/ecual_led.c: 73:         Retval = E_NOT_OK;
+"130
+[; ;ECUAL/LED/ecual_led.c: 130:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"74
-[; ;ECUAL/LED/ecual_led.c: 74:     }
+"131
+[; ;ECUAL/LED/ecual_led.c: 131:     }
 }
-[e $U 324  ]
-"75
-[; ;ECUAL/LED/ecual_led.c: 75:     else{
-[e :U 323 ]
+[e $U 350  ]
+"132
+[; ;ECUAL/LED/ecual_led.c: 132:     else{
+[e :U 349 ]
 {
-"76
-[; ;ECUAL/LED/ecual_led.c: 76:         led_logic logic;
-[v _logic `E3736 ~T0 @X0 1 a ]
-"77
-[; ;ECUAL/LED/ecual_led.c: 77:         switch(led->con){
-[e $U 326  ]
+"133
+[; ;ECUAL/LED/ecual_led.c: 133:         gpio_logic logic;
+[v _logic `E3693 ~T0 @X0 1 a ]
+"134
+[; ;ECUAL/LED/ecual_led.c: 134:         switch(led->con){
+[e $U 352  ]
 {
-"78
-[; ;ECUAL/LED/ecual_led.c: 78:             case led_sink:
-[e :U 327 ]
-"79
-[; ;ECUAL/LED/ecual_led.c: 79:                 logic = led_off;
-[e = _logic . `E3736 0 ]
-"80
-[; ;ECUAL/LED/ecual_led.c: 80:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
-[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 -> _logic `E3693 ]
-"81
-[; ;ECUAL/LED/ecual_led.c: 81:                 break;
-[e $U 325  ]
-"82
-[; ;ECUAL/LED/ecual_led.c: 82:             case led_source:
-[e :U 328 ]
-"83
-[; ;ECUAL/LED/ecual_led.c: 83:                 logic = led_on;
-[e = _logic . `E3736 1 ]
-"84
-[; ;ECUAL/LED/ecual_led.c: 84:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
-[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 -> _logic `E3693 ]
-"85
-[; ;ECUAL/LED/ecual_led.c: 85:                 break;
-[e $U 325  ]
-"86
-[; ;ECUAL/LED/ecual_led.c: 86:             default :
-[e :U 329 ]
-"87
-[; ;ECUAL/LED/ecual_led.c: 87:                 Retval = E_NOT_OK;
+"135
+[; ;ECUAL/LED/ecual_led.c: 135:             case led_sink:
+[e :U 353 ]
+"136
+[; ;ECUAL/LED/ecual_led.c: 136:                 logic = gpio_low;
+[e = _logic . `E3693 0 ]
+"137
+[; ;ECUAL/LED/ecual_led.c: 137:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
+[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 _logic ]
+"138
+[; ;ECUAL/LED/ecual_led.c: 138:                 break;
+[e $U 351  ]
+"139
+[; ;ECUAL/LED/ecual_led.c: 139:             case led_source:
+[e :U 354 ]
+"140
+[; ;ECUAL/LED/ecual_led.c: 140:                 logic = gpio_high;
+[e = _logic . `E3693 1 ]
+"141
+[; ;ECUAL/LED/ecual_led.c: 141:                 Retval = gpio_pin_write_logic(&(led->pin), logic);
+[e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _led 0 _logic ]
+"142
+[; ;ECUAL/LED/ecual_led.c: 142:                 break;
+[e $U 351  ]
+"143
+[; ;ECUAL/LED/ecual_led.c: 143:             default :
+[e :U 355 ]
+"144
+[; ;ECUAL/LED/ecual_led.c: 144:                 Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"88
-[; ;ECUAL/LED/ecual_led.c: 88:                 break;
-[e $U 325  ]
-"89
-[; ;ECUAL/LED/ecual_led.c: 89:         }
+"145
+[; ;ECUAL/LED/ecual_led.c: 145:                 break;
+[e $U 351  ]
+"146
+[; ;ECUAL/LED/ecual_led.c: 146:         }
 }
-[e $U 325  ]
-[e :U 326 ]
-[e [\ -> . *U _led 1 `ui , $ -> . `E3740 0 `ui 327
- , $ -> . `E3740 1 `ui 328
- 329 ]
-[e :U 325 ]
-"90
-[; ;ECUAL/LED/ecual_led.c: 90:     }
+[e $U 351  ]
+[e :U 352 ]
+[e [\ -> . *U _led 2 `ui , $ -> . `E3740 0 `ui 353
+ , $ -> . `E3740 1 `ui 354
+ 355 ]
+[e :U 351 ]
+"147
+[; ;ECUAL/LED/ecual_led.c: 147:     }
 }
-[e :U 324 ]
-"91
-[; ;ECUAL/LED/ecual_led.c: 91:     return Retval;
+[e :U 350 ]
+"148
+[; ;ECUAL/LED/ecual_led.c: 148:     return Retval;
 [e ) _Retval ]
-[e $UE 322  ]
-"92
-[; ;ECUAL/LED/ecual_led.c: 92: }
-[e :UE 322 ]
+[e $UE 348  ]
+"149
+[; ;ECUAL/LED/ecual_led.c: 149: }
+[e :UE 348 ]
 }
-"94
-[; ;ECUAL/LED/ecual_led.c: 94: Std_ReturnType gpio_led_turn_toggle(const gpio_led *led){
+"151
+[; ;ECUAL/LED/ecual_led.c: 151: Std_ReturnType gpio_led_turn_toggle(const gpio_led *led){
 [v _gpio_led_turn_toggle `(E3659 ~T0 @X0 1 ef1`*CS307 ]
 {
 [e :U _gpio_led_turn_toggle ]
 [v _led `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"95
-[; ;ECUAL/LED/ecual_led.c: 95:     Std_ReturnType Retval = E_OK;
+"152
+[; ;ECUAL/LED/ecual_led.c: 152:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"96
-[; ;ECUAL/LED/ecual_led.c: 96:     if(((void*)0) == led){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 331  ]
+"153
+[; ;ECUAL/LED/ecual_led.c: 153:     if(((void*)0) == led){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 357  ]
 {
-"97
-[; ;ECUAL/LED/ecual_led.c: 97:         Retval = E_NOT_OK;
+"154
+[; ;ECUAL/LED/ecual_led.c: 154:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"98
-[; ;ECUAL/LED/ecual_led.c: 98:     }
+"155
+[; ;ECUAL/LED/ecual_led.c: 155:     }
 }
-[e $U 332  ]
-"99
-[; ;ECUAL/LED/ecual_led.c: 99:     else{
-[e :U 331 ]
+[e $U 358  ]
+"156
+[; ;ECUAL/LED/ecual_led.c: 156:     else{
+[e :U 357 ]
 {
-"100
-[; ;ECUAL/LED/ecual_led.c: 100:         Retval = gpio_pin_toggle_logic(&(led->pin));
+"157
+[; ;ECUAL/LED/ecual_led.c: 157:         Retval = gpio_pin_toggle_logic(&(led->pin));
 [e = _Retval ( _gpio_pin_toggle_logic (1 &U . *U _led 0 ]
-"101
-[; ;ECUAL/LED/ecual_led.c: 101:     }
+"158
+[; ;ECUAL/LED/ecual_led.c: 158:     }
 }
-[e :U 332 ]
-"102
-[; ;ECUAL/LED/ecual_led.c: 102:     return Retval;
+[e :U 358 ]
+"159
+[; ;ECUAL/LED/ecual_led.c: 159:     return Retval;
 [e ) _Retval ]
-[e $UE 330  ]
-"103
-[; ;ECUAL/LED/ecual_led.c: 103: }
-[e :UE 330 ]
+[e $UE 356  ]
+"160
+[; ;ECUAL/LED/ecual_led.c: 160: }
+[e :UE 356 ]
 }

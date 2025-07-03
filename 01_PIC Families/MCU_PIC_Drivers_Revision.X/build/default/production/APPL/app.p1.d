@@ -9,4 +9,7 @@ APPL/../ECUAL/LED/../../MCAL/GPIO/../std_libraries.h  \
 APPL/../ECUAL/LED/../../MCAL/GPIO/../compiler.h  \
 APPL/../ECUAL/LED/../../MCAL/GPIO/../device_cfg.h  \
 APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio_cfg.h  \
-APPL/../ECUAL/LED/ecual_led_cfg.h 
+APPL/../ECUAL/LED/ecual_led_cfg.h  \
+APPL/../ECUAL/BTN/ecual_btn.h  \
+APPL/../ECUAL/BTN/../../MCAL/GPIO/hal_gpio.h  \
+APPL/../ECUAL/BTN/ecual_btn_cfg.h 

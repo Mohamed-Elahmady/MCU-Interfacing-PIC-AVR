@@ -12,7 +12,10 @@
 
 /******************* Section 1 : Includes *******************/
 
+#define GPIO_Led_CFG_Disable                     0x00
+#define GPIO_Led_CFG_Enable                      0x01
 
+#define GPIO_Led_CFG                             (Led_CFG_Enable)
 
 /******************* Section 2 : Macros Declarations *******************/
 

@@ -13,6 +13,7 @@
 /******************* Section 1 : Includes *******************/
 
 #include "../ECUAL/LED/ecual_led.h"
+#include "../ECUAL/BTN/ecual_btn.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

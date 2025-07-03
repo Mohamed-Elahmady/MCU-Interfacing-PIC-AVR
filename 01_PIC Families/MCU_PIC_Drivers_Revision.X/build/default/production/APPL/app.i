@@ -5654,6 +5654,7 @@ typedef enum{
 
 typedef struct{
     gpio_pin_cfg pin ;
+    led_logic state;
     led_con con ;
 }gpio_led;
 
@@ -5665,6 +5666,38 @@ Std_ReturnType gpio_led_turn_off(const gpio_led *led);
 Std_ReturnType gpio_led_turn_on(const gpio_led *led);
 Std_ReturnType gpio_led_turn_toggle(const gpio_led *led);
 # 16 "APPL/app.h" 2
+# 1 "APPL/../ECUAL/BTN/ecual_btn.h" 1
+# 16 "APPL/../ECUAL/BTN/ecual_btn.h"
+# 1 "APPL/../ECUAL/BTN/ecual_btn_cfg.h" 1
+# 17 "APPL/../ECUAL/BTN/ecual_btn.h" 2
+
+
+
+
+
+
+
+typedef enum{
+    btn_released = (uint8)0x00,
+    btn_pressed = (uint8)0x01
+}btn_state;
+
+typedef enum{
+    btn_active_low = (uint8)0x00,
+    btn_active_high = (uint8)0x01
+}btn_con;
+
+typedef struct{
+    gpio_pin_cfg pin;
+    btn_con connection;
+    btn_state state;
+}gpio_btn;
+
+
+
+Std_ReturnType gpio_btn_init(const gpio_btn *btn);
+Std_ReturnType gpio_btn_read_status(const gpio_btn *btn, btn_state *state);
+# 17 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
 
@@ -5673,39 +5706,54 @@ gpio_led led1 = {
     .pin.port = gpio_portC,
     .pin.pin = gpio_pin0,
     .pin.direction = gpio_output,
-    .pin.logic = gpio_low,
-    .con = led_sink
+    .con = led_source,
+    .state = led_off
 };
 
-led_logic current_state = led_off;
+gpio_led led2 = {
+    .pin.port = gpio_portC,
+    .pin.pin = gpio_pin1,
+    .pin.direction = gpio_output,
+    .con = led_source,
+    .state = led_off
+};
 
+gpio_btn btn1 = {
+    .pin.port = gpio_portC,
+    .pin.pin = gpio_pin2,
+    .pin.direction = gpio_input,
+    .pin.logic = gpio_low,
+    .connection = btn_active_high,
+    .state = btn_released
+};
+
+gpio_btn btn2 = {
+    .pin.port = gpio_portD,
+    .pin.pin = gpio_pin0,
+    .pin.direction = gpio_input,
+    .pin.logic = gpio_high,
+    .connection = btn_active_low,
+    .state = btn_released
+};
+
+btn_state st1 = btn_released,st2 = btn_released;
 int main() {
     Std_ReturnType ret = E_NOT_OK;
 
-
     ret = gpio_led_init(&led1);
+    ret = gpio_led_init(&led2);
+    ret = gpio_btn_init(&btn1);
+    ret = gpio_btn_init(&btn2);
 
     while (1) {
-
-        gpio_led_turn_on(&led1);
-
-
-        gpio_led_read_logic(&led1, &current_state);
-
-        _delay((unsigned long)((500)*(16000000/4000.0)));
-
-
-
-        gpio_led_turn_toggle(&led1);
-
-
-        gpio_led_read_logic(&led1, &current_state);
-
-        _delay((unsigned long)((500)*(16000000/4000.0)));
-
-
-        gpio_led_turn_off(&led1);
-        _delay((unsigned long)((500)*(16000000/4000.0)));
+# 64 "APPL/app.c"
+        ret = gpio_btn_read_status(&btn2, &st2);
+        if(st2 == btn_pressed){
+            ret = gpio_led_turn_on(&led2);
+        }
+        else{
+            ret = gpio_led_turn_off(&led2);
+        }
     }
 
     return (0);

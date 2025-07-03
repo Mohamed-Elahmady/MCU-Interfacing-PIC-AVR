@@ -5,12 +5,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S306 . port pin direction logic ]
 "12 APPL/app.c
 [; ;APPL/app.c: 12: gpio_led led1 = {
+[c E3736 0 1 .. ]
+[n E3736 . led_off led_on  ]
 [c E3740 0 1 .. ]
 [n E3740 . led_sink led_source  ]
 "38 APPL/../ECUAL/LED/ecual_led.h
 [; ;APPL/../ECUAL/LED/ecual_led.h: 38: typedef struct{
-[s S307 `S306 1 `E3740 1 ]
-[n S307 . pin con ]
+[s S307 `S306 1 `E3736 1 `E3740 1 ]
+[n S307 . pin state con ]
 "12 APPL/app.c
 [; ;APPL/app.c: 12: gpio_led led1 = {
 [c E3672 0 1 2 3 4 .. ]
@@ -19,35 +21,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E3679 . gpio_pin0 gpio_pin1 gpio_pin2 gpio_pin3 gpio_pin4 gpio_pin5 gpio_pin6 gpio_pin7  ]
 [c E3689 0 1 .. ]
 [n E3689 . gpio_output gpio_input  ]
+"28
+[; ;APPL/app.c: 28: gpio_btn btn1 = {
+[c E3764 0 1 .. ]
+[n E3764 . btn_active_low btn_active_high  ]
+[c E3760 0 1 .. ]
+[n E3760 . btn_released btn_pressed  ]
+"34 APPL/../ECUAL/BTN/ecual_btn.h
+[; ;APPL/../ECUAL/BTN/ecual_btn.h: 34: typedef struct{
+[s S308 `S306 1 `E3764 1 `E3760 1 ]
+[n S308 . pin connection state ]
+"28 APPL/app.c
+[; ;APPL/app.c: 28: gpio_btn btn1 = {
 [c E3693 0 1 .. ]
 [n E3693 . gpio_low gpio_high  ]
-"20
-[; ;APPL/app.c: 20: led_logic current_state = led_off;
-[c E3736 0 1 .. ]
-[n E3736 . led_off led_on  ]
 [p mainexit ]
-"23
-[; ;APPL/app.c: 23:     Std_ReturnType ret = E_NOT_OK;
+"48
+[; ;APPL/app.c: 48:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"45 APPL/../ECUAL/LED/ecual_led.h
-[; ;APPL/../ECUAL/LED/ecual_led.h: 45: Std_ReturnType gpio_led_init(const gpio_led *led);
+"46 APPL/../ECUAL/LED/ecual_led.h
+[; ;APPL/../ECUAL/LED/ecual_led.h: 46: Std_ReturnType gpio_led_init(const gpio_led *led);
 [v _gpio_led_init `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"48
-[; ;APPL/../ECUAL/LED/ecual_led.h: 48: Std_ReturnType gpio_led_turn_on(const gpio_led *led);
-[v _gpio_led_turn_on `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"46
-[; ;APPL/../ECUAL/LED/ecual_led.h: 46: Std_ReturnType gpio_led_read_logic(const gpio_led *led, led_logic *logic);
-[v _gpio_led_read_logic `(E3659 ~T0 @X0 0 ef2`*CS307`*E3736 ]
-[v F3624 `(v ~T0 @X0 1 tf1`ul ]
-"20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
-[v __delay `JF3624 ~T0 @X0 0 e ]
-[p i __delay ]
+"42 APPL/../ECUAL/BTN/ecual_btn.h
+[; ;APPL/../ECUAL/BTN/ecual_btn.h: 42: Std_ReturnType gpio_btn_init(const gpio_btn *btn);
+[v _gpio_btn_init `(E3659 ~T0 @X0 0 ef1`*CS308 ]
+"43
+[; ;APPL/../ECUAL/BTN/ecual_btn.h: 43: Std_ReturnType gpio_btn_read_status(const gpio_btn *btn, btn_state *state);
+[v _gpio_btn_read_status `(E3659 ~T0 @X0 0 ef2`*CS308`*E3760 ]
 "49 APPL/../ECUAL/LED/ecual_led.h
-[; ;APPL/../ECUAL/LED/ecual_led.h: 49: Std_ReturnType gpio_led_turn_toggle(const gpio_led *led);
-[v _gpio_led_turn_toggle `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"47
-[; ;APPL/../ECUAL/LED/ecual_led.h: 47: Std_ReturnType gpio_led_turn_off(const gpio_led *led);
+[; ;APPL/../ECUAL/LED/ecual_led.h: 49: Std_ReturnType gpio_led_turn_on(const gpio_led *led);
+[v _gpio_led_turn_on `(E3659 ~T0 @X0 0 ef1`*CS307 ]
+"48
+[; ;APPL/../ECUAL/LED/ecual_led.h: 48: Std_ReturnType gpio_led_turn_off(const gpio_led *led);
 [v _gpio_led_turn_off `(E3659 ~T0 @X0 0 ef1`*CS307 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
@@ -501,72 +507,142 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3672 2 `uc
 -> . `E3679 0 `uc
 -> . `E3689 0 `uc
--> . `E3693 0 `uc
 ..
 ..
-. `E3740 0
+. `E3736 0
+. `E3740 1
 ..
 ..
 ]
 "20
-[; ;APPL/app.c: 20: led_logic current_state = led_off;
-[v _current_state `E3736 ~T0 @X0 1 e ]
-[i _current_state
+[; ;APPL/app.c: 20: gpio_led led2 = {
+[v _led2 `S307 ~T0 @X0 1 e ]
+[i _led2
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3672 2 `uc
+-> . `E3679 1 `uc
+-> . `E3689 0 `uc
+..
+..
 . `E3736 0
+. `E3740 1
+..
+..
+]
+"28
+[; ;APPL/app.c: 28: gpio_btn btn1 = {
+[v _btn1 `S308 ~T0 @X0 1 e ]
+[i _btn1
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3672 2 `uc
+-> . `E3679 2 `uc
+-> . `E3689 1 `uc
+-> . `E3693 0 `uc
+..
+..
+. `E3764 1
+. `E3760 0
+..
+..
+]
+"37
+[; ;APPL/app.c: 37: gpio_btn btn2 = {
+[v _btn2 `S308 ~T0 @X0 1 e ]
+[i _btn2
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3672 3 `uc
+-> . `E3679 0 `uc
+-> . `E3689 1 `uc
+-> . `E3693 1 `uc
+..
+..
+. `E3764 0
+. `E3760 0
+..
+..
+]
+"46
+[; ;APPL/app.c: 46: btn_state st1 = btn_released,st2 = btn_released;
+[v _st1 `E3760 ~T0 @X0 1 e ]
+[i _st1
+. `E3760 0
+]
+[v _st2 `E3760 ~T0 @X0 1 e ]
+[i _st2
+. `E3760 0
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"22
-[; ;APPL/app.c: 22: int main() {
+"47
+[; ;APPL/app.c: 47: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"23
-[; ;APPL/app.c: 23:     Std_ReturnType ret = E_NOT_OK;
+"48
+[; ;APPL/app.c: 48:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"26
-[; ;APPL/app.c: 26:     ret = gpio_led_init(&led1);
+"50
+[; ;APPL/app.c: 50:     ret = gpio_led_init(&led1);
 [e = _ret ( _gpio_led_init (1 -> &U _led1 `*CS307 ]
-"28
-[; ;APPL/app.c: 28:     while (1) {
-[e :U 310 ]
-{
-"30
-[; ;APPL/app.c: 30:         gpio_led_turn_on(&led1);
-[e ( _gpio_led_turn_on (1 -> &U _led1 `*CS307 ]
-"33
-[; ;APPL/app.c: 33:         gpio_led_read_logic(&led1, &current_state);
-[e ( _gpio_led_read_logic (2 , -> &U _led1 `*CS307 &U _current_state ]
-"35
-[; ;APPL/app.c: 35:         _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"39
-[; ;APPL/app.c: 39:         gpio_led_turn_toggle(&led1);
-[e ( _gpio_led_turn_toggle (1 -> &U _led1 `*CS307 ]
-"42
-[; ;APPL/app.c: 42:         gpio_led_read_logic(&led1, &current_state);
-[e ( _gpio_led_read_logic (2 , -> &U _led1 `*CS307 &U _current_state ]
-"44
-[; ;APPL/app.c: 44:         _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"47
-[; ;APPL/app.c: 47:         gpio_led_turn_off(&led1);
-[e ( _gpio_led_turn_off (1 -> &U _led1 `*CS307 ]
-"48
-[; ;APPL/app.c: 48:         _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"49
-[; ;APPL/app.c: 49:     }
-}
-[e :U 309 ]
-[e $U 310  ]
-[e :U 311 ]
 "51
-[; ;APPL/app.c: 51:     return (0);
-[e ) -> 0 `i ]
-[e $UE 308  ]
+[; ;APPL/app.c: 51:     ret = gpio_led_init(&led2);
+[e = _ret ( _gpio_led_init (1 -> &U _led2 `*CS307 ]
 "52
-[; ;APPL/app.c: 52: }
-[e :UE 308 ]
+[; ;APPL/app.c: 52:     ret = gpio_btn_init(&btn1);
+[e = _ret ( _gpio_btn_init (1 -> &U _btn1 `*CS308 ]
+"53
+[; ;APPL/app.c: 53:     ret = gpio_btn_init(&btn2);
+[e = _ret ( _gpio_btn_init (1 -> &U _btn2 `*CS308 ]
+"55
+[; ;APPL/app.c: 55:     while (1) {
+[e :U 311 ]
+{
+"64
+[; ;APPL/app.c: 64:         ret = gpio_btn_read_status(&btn2, &st2);
+[e = _ret ( _gpio_btn_read_status (2 , -> &U _btn2 `*CS308 &U _st2 ]
+"65
+[; ;APPL/app.c: 65:         if(st2 == btn_pressed){
+[e $ ! == -> _st2 `ui -> . `E3760 1 `ui 313  ]
+{
+"66
+[; ;APPL/app.c: 66:             ret = gpio_led_turn_on(&led2);
+[e = _ret ( _gpio_led_turn_on (1 -> &U _led2 `*CS307 ]
+"67
+[; ;APPL/app.c: 67:         }
+}
+[e $U 314  ]
+"68
+[; ;APPL/app.c: 68:         else{
+[e :U 313 ]
+{
+"69
+[; ;APPL/app.c: 69:             ret = gpio_led_turn_off(&led2);
+[e = _ret ( _gpio_led_turn_off (1 -> &U _led2 `*CS307 ]
+"70
+[; ;APPL/app.c: 70:         }
+}
+[e :U 314 ]
+"71
+[; ;APPL/app.c: 71:     }
+}
+[e :U 310 ]
+[e $U 311  ]
+[e :U 312 ]
+"73
+[; ;APPL/app.c: 73:     return (0);
+[e ) -> 0 `i ]
+[e $UE 309  ]
+"74
+[; ;APPL/app.c: 74: }
+[e :UE 309 ]
 }

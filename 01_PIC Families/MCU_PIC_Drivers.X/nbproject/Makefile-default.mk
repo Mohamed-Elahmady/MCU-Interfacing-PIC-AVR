@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Codes/GPIO/app1.c Codes/GPIO/app2.c Codes/GPIO/app3.c APP_Layer/Main.c ECUAL_Layer/LED/ECUAL_LED.c MCAL_Layer/GPIO/HAL_GPIO.c MCAL_Layer/device_cfg.c
+SOURCEFILES_QUOTED_IF_SPACED=APP_Layer/Main.c ECUAL_Layer/LED/ECUAL_LED.c MCAL_Layer/GPIO/HAL_GPIO.c MCAL_Layer/device_cfg.c Codes/MCAL/GPIO/app2.c Codes/MCAL/GPIO/app1.c Codes/MCAL/GPIO/app3.c Codes/ECUAL/LED/app1.c ECUAL_Layer/BTN/ECUAL_BTN.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/GPIO/app1.p1 ${OBJECTDIR}/Codes/GPIO/app2.p1 ${OBJECTDIR}/Codes/GPIO/app3.p1 ${OBJECTDIR}/APP_Layer/Main.p1 ${OBJECTDIR}/ECUAL_Layer/LED/ECUAL_LED.p1 ${OBJECTDIR}/MCAL_Layer/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL_Layer/device_cfg.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/GPIO/app1.p1.d ${OBJECTDIR}/Codes/GPIO/app2.p1.d ${OBJECTDIR}/Codes/GPIO/app3.p1.d ${OBJECTDIR}/APP_Layer/Main.p1.d ${OBJECTDIR}/ECUAL_Layer/LED/ECUAL_LED.p1.d ${OBJECTDIR}/MCAL_Layer/GPIO/HAL_GPIO.p1.d ${OBJECTDIR}/MCAL_Layer/device_cfg.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/APP_Layer/Main.p1 ${OBJECTDIR}/ECUAL_Layer/LED/ECUAL_LED.p1 ${OBJECTDIR}/MCAL_Layer/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL_Layer/device_cfg.p1 ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1 ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1 ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1 ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1 ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/APP_Layer/Main.p1.d ${OBJECTDIR}/ECUAL_Layer/LED/ECUAL_LED.p1.d ${OBJECTDIR}/MCAL_Layer/GPIO/HAL_GPIO.p1.d ${OBJECTDIR}/MCAL_Layer/device_cfg.p1.d ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Codes/GPIO/app1.p1 ${OBJECTDIR}/Codes/GPIO/app2.p1 ${OBJECTDIR}/Codes/GPIO/app3.p1 ${OBJECTDIR}/APP_Layer/Main.p1 ${OBJECTDIR}/ECUAL_Layer/LED/ECUAL_LED.p1 ${OBJECTDIR}/MCAL_Layer/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL_Layer/device_cfg.p1
+OBJECTFILES=${OBJECTDIR}/APP_Layer/Main.p1 ${OBJECTDIR}/ECUAL_Layer/LED/ECUAL_LED.p1 ${OBJECTDIR}/MCAL_Layer/GPIO/HAL_GPIO.p1 ${OBJECTDIR}/MCAL_Layer/device_cfg.p1 ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1 ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1 ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1 ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1 ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1
 
 # Source Files
-SOURCEFILES=Codes/GPIO/app1.c Codes/GPIO/app2.c Codes/GPIO/app3.c APP_Layer/Main.c ECUAL_Layer/LED/ECUAL_LED.c MCAL_Layer/GPIO/HAL_GPIO.c MCAL_Layer/device_cfg.c
+SOURCEFILES=APP_Layer/Main.c ECUAL_Layer/LED/ECUAL_LED.c MCAL_Layer/GPIO/HAL_GPIO.c MCAL_Layer/device_cfg.c Codes/MCAL/GPIO/app2.c Codes/MCAL/GPIO/app1.c Codes/MCAL/GPIO/app3.c Codes/ECUAL/LED/app1.c ECUAL_Layer/BTN/ECUAL_BTN.c
 
 
 
@@ -88,30 +88,6 @@ MP_PROCESSOR_OPTION=18F46K20
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/Codes/GPIO/app1.p1: Codes/GPIO/app1.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/Codes/GPIO" 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app1.p1.d 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app1.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/GPIO/app1.p1 Codes/GPIO/app1.c 
-	@-${MV} ${OBJECTDIR}/Codes/GPIO/app1.d ${OBJECTDIR}/Codes/GPIO/app1.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Codes/GPIO/app1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Codes/GPIO/app2.p1: Codes/GPIO/app2.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/Codes/GPIO" 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app2.p1.d 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app2.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/GPIO/app2.p1 Codes/GPIO/app2.c 
-	@-${MV} ${OBJECTDIR}/Codes/GPIO/app2.d ${OBJECTDIR}/Codes/GPIO/app2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Codes/GPIO/app2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Codes/GPIO/app3.p1: Codes/GPIO/app3.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/Codes/GPIO" 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app3.p1.d 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app3.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/GPIO/app3.p1 Codes/GPIO/app3.c 
-	@-${MV} ${OBJECTDIR}/Codes/GPIO/app3.d ${OBJECTDIR}/Codes/GPIO/app3.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Codes/GPIO/app3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/APP_Layer/Main.p1: APP_Layer/Main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
 	@${RM} ${OBJECTDIR}/APP_Layer/Main.p1.d 
@@ -144,31 +120,47 @@ ${OBJECTDIR}/MCAL_Layer/device_cfg.p1: MCAL_Layer/device_cfg.c  nbproject/Makefi
 	@-${MV} ${OBJECTDIR}/MCAL_Layer/device_cfg.d ${OBJECTDIR}/MCAL_Layer/device_cfg.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL_Layer/device_cfg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1: Codes/MCAL/GPIO/app2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/GPIO" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1 Codes/MCAL/GPIO/app2.c 
+	@-${MV} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.d ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1: Codes/MCAL/GPIO/app1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/GPIO" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1 Codes/MCAL/GPIO/app1.c 
+	@-${MV} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1: Codes/MCAL/GPIO/app3.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/GPIO" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1 Codes/MCAL/GPIO/app3.c 
+	@-${MV} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.d ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/ECUAL/LED/app1.p1: Codes/ECUAL/LED/app1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/ECUAL/LED" 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1 Codes/ECUAL/LED/app1.c 
+	@-${MV} ${OBJECTDIR}/Codes/ECUAL/LED/app1.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1: ECUAL_Layer/BTN/ECUAL_BTN.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/BTN" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1 ECUAL_Layer/BTN/ECUAL_BTN.c 
+	@-${MV} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.d ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
-${OBJECTDIR}/Codes/GPIO/app1.p1: Codes/GPIO/app1.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/Codes/GPIO" 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app1.p1.d 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app1.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/GPIO/app1.p1 Codes/GPIO/app1.c 
-	@-${MV} ${OBJECTDIR}/Codes/GPIO/app1.d ${OBJECTDIR}/Codes/GPIO/app1.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Codes/GPIO/app1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Codes/GPIO/app2.p1: Codes/GPIO/app2.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/Codes/GPIO" 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app2.p1.d 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app2.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/GPIO/app2.p1 Codes/GPIO/app2.c 
-	@-${MV} ${OBJECTDIR}/Codes/GPIO/app2.d ${OBJECTDIR}/Codes/GPIO/app2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Codes/GPIO/app2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Codes/GPIO/app3.p1: Codes/GPIO/app3.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/Codes/GPIO" 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app3.p1.d 
-	@${RM} ${OBJECTDIR}/Codes/GPIO/app3.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/GPIO/app3.p1 Codes/GPIO/app3.c 
-	@-${MV} ${OBJECTDIR}/Codes/GPIO/app3.d ${OBJECTDIR}/Codes/GPIO/app3.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Codes/GPIO/app3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/APP_Layer/Main.p1: APP_Layer/Main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
 	@${RM} ${OBJECTDIR}/APP_Layer/Main.p1.d 
@@ -200,6 +192,46 @@ ${OBJECTDIR}/MCAL_Layer/device_cfg.p1: MCAL_Layer/device_cfg.c  nbproject/Makefi
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL_Layer/device_cfg.p1 MCAL_Layer/device_cfg.c 
 	@-${MV} ${OBJECTDIR}/MCAL_Layer/device_cfg.d ${OBJECTDIR}/MCAL_Layer/device_cfg.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL_Layer/device_cfg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1: Codes/MCAL/GPIO/app2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/GPIO" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1 Codes/MCAL/GPIO/app2.c 
+	@-${MV} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.d ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/MCAL/GPIO/app2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1: Codes/MCAL/GPIO/app1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/GPIO" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1 Codes/MCAL/GPIO/app1.c 
+	@-${MV} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1: Codes/MCAL/GPIO/app3.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/GPIO" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1 Codes/MCAL/GPIO/app3.c 
+	@-${MV} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.d ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/MCAL/GPIO/app3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Codes/ECUAL/LED/app1.p1: Codes/ECUAL/LED/app1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Codes/ECUAL/LED" 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1 Codes/ECUAL/LED/app1.c 
+	@-${MV} ${OBJECTDIR}/Codes/ECUAL/LED/app1.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Codes/ECUAL/LED/app1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1: ECUAL_Layer/BTN/ECUAL_BTN.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/BTN" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1 ECUAL_Layer/BTN/ECUAL_BTN.c 
+	@-${MV} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.d ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECUAL_Layer/BTN/ECUAL_BTN.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

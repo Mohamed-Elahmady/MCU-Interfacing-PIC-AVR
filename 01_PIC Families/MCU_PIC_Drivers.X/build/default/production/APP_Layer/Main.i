@@ -5649,7 +5649,33 @@ Std_ReturnType GPIO_LED_TURN_OFF(const GPIO_LED *led);
 Std_ReturnType GPIO_LED_TURN_ON(const GPIO_LED *led);
 Std_ReturnType GPIO_LED_TURN_TOGGLE(const GPIO_LED *led);
 # 16 "APP_Layer/Main.h" 2
-# 31 "APP_Layer/Main.h"
+# 1 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN.h"
+# 1 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN.h" 2
+# 28 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN.h"
+typedef enum{
+    BTN_RELEASED = (uint8)0x00,
+    BTN_PRESSED = (uint8)0x01
+}BTN_STATE;
+
+typedef enum{
+    BTN_ACTIVE_LOW = (uint8)0x00,
+    BTN_ACTIVE_HIGH = (uint8)0x01
+}BTN_CON;
+
+typedef struct{
+    GPIO_PIN_CFG pin;
+    BTN_STATE state;
+    BTN_CON connection;
+}GPIO_BTN;
+
+
+
+Std_ReturnType GPIO_BTN_INIT(const GPIO_BTN *btn);
+Std_ReturnType GPIO_BTN_READ_STATE(const GPIO_BTN *btn, BTN_STATE *state);
+# 17 "APP_Layer/Main.h" 2
+# 32 "APP_Layer/Main.h"
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
@@ -5659,56 +5685,80 @@ GPIO_LED led1 = {
     .pin.PORT = GPIO_PORTC,
     .pin.PIN = GPIO_PIN0,
     .pin.DIRECTION = GPIO_OUTPUT,
-    .pin.LOGIC = GPIO_LOW,
+    .pin.LOGIC = GPIO_LOW
 };
 
 GPIO_LED led2 = {
     .pin.PORT = GPIO_PORTC,
     .pin.PIN = GPIO_PIN1,
     .pin.DIRECTION = GPIO_OUTPUT,
-    .pin.LOGIC = GPIO_HIGH,
+    .pin.LOGIC = GPIO_LOW
 };
 
-GPIO_LED led3 = {
+GPIO_BTN btn1 = {
     .pin.PORT = GPIO_PORTC,
     .pin.PIN = GPIO_PIN2,
-    .pin.DIRECTION = GPIO_OUTPUT,
+    .pin.DIRECTION = GPIO_INPUT,
     .pin.LOGIC = GPIO_LOW,
+    .connection = BTN_ACTIVE_HIGH,
+    .state = BTN_RELEASED
 };
 
-GPIO_LED led4 = {
-    .pin.PORT = GPIO_PORTC,
-    .pin.PIN = GPIO_PIN3,
-    .pin.DIRECTION = GPIO_OUTPUT,
+GPIO_BTN btn2 = {
+    .pin.PORT = GPIO_PORTD,
+    .pin.PIN = GPIO_PIN0,
+    .pin.DIRECTION = GPIO_INPUT,
     .pin.LOGIC = GPIO_HIGH,
+    .connection = BTN_ACTIVE_LOW,
+    .state = BTN_RELEASED
 };
 
-Std_ReturnType ret = E_OK;
+BTN_STATE state1 = BTN_RELEASED;
+BTN_STATE state2 = BTN_RELEASED;
 
-LED_LOGIC logi;
+GPIO_LOGIC lg = GPIO_LOW;
+
+Std_ReturnType Ret = E_OK;
+
+uint32 counter = 0;
+BTN_STATE press_state = BTN_RELEASED;
+BTN_STATE last_press_state = BTN_RELEASED;
+
+LED_LOGIC lelog;
+
+uint8 incremental;
 
 int main() {
     application_init();
-    while(1){
-       ret = GPIO_LED_READ_LOGIC(&led4, &logi);
-       _delay((unsigned long)((200)*(16000000/4000.0)));
-       if(LED_ON == logi){
-           ret = GPIO_LED_TURN_TOGGLE(&led1);
-       }
-       _delay((unsigned long)((500)*(16000000/4000.0)));
-       ret = GPIO_LED_TURN_OFF(&led2);
-       ret = GPIO_LED_TURN_ON(&led3);
-       _delay((unsigned long)((2000)*(16000000/4000.0)));
-       ret = GPIO_LED_TURN_TOGGLE(&led4);
+    while (1) {
+        Ret = GPIO_BTN_READ_STATE(&btn1, &state1);
+        Ret = GPIO_BTN_READ_STATE(&btn2, &state2);
+# 116 "APP_Layer/Main.c"
+        if (BTN_PRESSED == state1) {
+            counter++;
+            if(counter >= 500){
+                press_state = BTN_PRESSED;
+            }
+        }
+        else{
+            counter = 0;
+            press_state = BTN_RELEASED;
+        }
+        if(press_state != last_press_state){
+            last_press_state == press_state;
+            if(press_state == BTN_PRESSED){
+                incremental++;
+            }
+        }
+
     }
 
     return (0);
 }
 
-void application_init(void){
-    ret = GPIO_LED_INIT(&led1);
-    ret = GPIO_LED_INIT(&led2);
-    ret = GPIO_LED_INIT(&led3);
-    ret = GPIO_LED_INIT(&led4);
-
+void application_init(void) {
+    Ret = GPIO_LED_INIT(&led1);
+    Ret = GPIO_LED_INIT(&led2);
+    Ret = GPIO_BTN_INIT(&btn1);
+    Ret = GPIO_BTN_INIT(&btn2);
 }

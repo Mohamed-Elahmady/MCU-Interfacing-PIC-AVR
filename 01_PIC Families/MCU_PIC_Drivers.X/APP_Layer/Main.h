@@ -13,6 +13,7 @@
 /******************* Section 1 : Includes *******************/
 
 #include "../ECUAL_Layer/LED/ECUAL_LED.h"
+#include "../ECUAL_Layer/BTN/ECUAL_BTN.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 
