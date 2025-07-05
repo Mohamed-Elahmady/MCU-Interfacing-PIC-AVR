@@ -30,7 +30,10 @@ build/default/production/APP_Layer/main.o.d \
  /Applications/microchip/xc8/v3.00/avr/avr/include/util/delay.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/util/delay_basic.h \
  APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../device_cfg.h \
- APP_Layer/../ECUAL_Layer/LED/ecual_led_cfg.h
+ APP_Layer/../ECUAL_Layer/LED/ecual_led_cfg.h \
+ APP_Layer/../ECUAL_Layer/BTN/ecual_btn.h \
+ APP_Layer/../ECUAL_Layer/BTN/../../MCAL_Layer/GPIO/hal_gpio.h \
+ APP_Layer/../ECUAL_Layer/BTN/ecual_btn_cfg.h
 
 APP_Layer/main.h:
 
@@ -95,3 +98,9 @@ APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h:
 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../device_cfg.h:
 
 APP_Layer/../ECUAL_Layer/LED/ecual_led_cfg.h:
+
+APP_Layer/../ECUAL_Layer/BTN/ecual_btn.h:
+
+APP_Layer/../ECUAL_Layer/BTN/../../MCAL_Layer/GPIO/hal_gpio.h:
+
+APP_Layer/../ECUAL_Layer/BTN/ecual_btn_cfg.h:

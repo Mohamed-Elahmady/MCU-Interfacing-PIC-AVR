@@ -14,6 +14,7 @@
 
 #include "../ECUAL_Layer/LED/ECUAL_LED.h"
 #include "../ECUAL_Layer/BTN/ECUAL_BTN.h"
+#include "../ECUAL_Layer/Relay/ECUAL_RELAY.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

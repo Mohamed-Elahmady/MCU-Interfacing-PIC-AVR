@@ -7,67 +7,43 @@
 
 #include "app.h"
 
-#define _XTAL_FREQ 16000000
+#define _XTAL_FREQ 8000000UL
 
-gpio_led led1 = {
+gpio_relay relay1 = {
     .pin.port = gpio_portC,
     .pin.pin = gpio_pin0,
     .pin.direction = gpio_output,
-    .con = led_source,
-    .state = led_off
+    .pin.logic = gpio_low
 };
 
-gpio_led led2 = {
+gpio_relay relay2 = {
     .pin.port = gpio_portC,
     .pin.pin = gpio_pin1,
     .pin.direction = gpio_output,
-    .con = led_source,
-    .state = led_off
+    .pin.logic = gpio_high
 };
 
-gpio_btn btn1 = {
-    .pin.port = gpio_portC,
-    .pin.pin = gpio_pin2,
-    .pin.direction = gpio_input,
-    .pin.logic = gpio_low,
-    .connection = btn_active_high,
-    .state = btn_released
-};
+relay_state st1,st2;
 
-gpio_btn btn2 = {
-    .pin.port = gpio_portD,
-    .pin.pin = gpio_pin0,
-    .pin.direction = gpio_input,
-    .pin.logic = gpio_high,
-    .connection = btn_active_low,
-    .state = btn_released
-};
-
-btn_state st1 = btn_released,st2 = btn_released;
 int main() {
     Std_ReturnType ret = E_NOT_OK;
 
-    ret = gpio_led_init(&led1);
-    ret = gpio_led_init(&led2);
-    ret = gpio_btn_init(&btn1);
-    ret = gpio_btn_init(&btn2);
-    
+    ret = gpio_relay_init(&relay1);
+    ret = gpio_relay_init(&relay2);
+
     while (1) {
-//        ret = gpio_btn_read_status(&btn1, &st1);
-//        if(st1 == btn_pressed){
-//            ret = gpio_led_turn_on(&led1);
-//        }
-//        else{
-//            ret = gpio_led_turn_off(&led1);
-//        }
-        
-        ret = gpio_btn_read_status(&btn2, &st2);
-        if(st2 == btn_pressed){
-            ret = gpio_led_turn_on(&led2);
-        }
-        else{
-            ret = gpio_led_turn_off(&led2);
-        }
+        ret = gpio_relay_read_logic(&relay1, &st1);
+        ret = gpio_relay_read_logic(&relay2, &st2);
+        __delay_ms(3000);
+        ret = gpio_relay_turn_on(&relay1);
+        ret = gpio_relay_turn_toggle(&relay2);
+        ret = gpio_relay_read_logic(&relay1, &st1);
+        ret = gpio_relay_read_logic(&relay2, &st2);
+        __delay_ms(3000);
+        ret = gpio_relay_turn_off(&relay1);
+        ret = gpio_relay_turn_toggle(&relay2);
+        ret = gpio_relay_read_logic(&relay1, &st1);
+        ret = gpio_relay_read_logic(&relay2, &st2);
     }
 
     return (EXIT_SUCCESS);

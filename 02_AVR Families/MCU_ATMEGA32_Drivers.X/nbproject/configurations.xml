@@ -5,6 +5,9 @@
       <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
         <itemPath>Codes/GPIO/app1.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="LED" displayName="LED" projectFiles="true">
+        <itemPath>Codes/LED/app1.c</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -13,6 +16,10 @@
         <itemPath>APP_Layer/main.h</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
+        <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
+          <itemPath>ECUAL_Layer/BTN/ecual_btn.h</itemPath>
+          <itemPath>ECUAL_Layer/BTN/ecual_btn_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL_Layer/LED/ecual_led.h</itemPath>
           <itemPath>ECUAL_Layer/LED/ecual_led_cfg.h</itemPath>
@@ -45,6 +52,9 @@
         <itemPath>APP_Layer/main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
+        <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
+          <itemPath>ECUAL_Layer/BTN/ecual_btn.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL_Layer/LED/ecual_led.c</itemPath>
         </logicalFolder>

@@ -5675,90 +5675,71 @@ typedef struct{
 Std_ReturnType GPIO_BTN_INIT(const GPIO_BTN *btn);
 Std_ReturnType GPIO_BTN_READ_STATE(const GPIO_BTN *btn, BTN_STATE *state);
 # 17 "APP_Layer/Main.h" 2
-# 32 "APP_Layer/Main.h"
+# 1 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h"
+# 1 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h" 2
+# 28 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h"
+typedef enum{
+    RELAY_OFF = (uint8)0x00,
+    RELAY_ON = (uint8)0x01
+}RELAY_STATE;
+
+typedef struct{
+    GPIO_PIN_CFG pin;
+}GPIO_RELAY;
+
+
+
+Std_ReturnType GPIO_RELAY_INIT(const GPIO_RELAY *relay);
+Std_ReturnType GPIO_RELAY_READ_LOGIC(const GPIO_RELAY *relay, RELAY_STATE *state);
+Std_ReturnType GPIO_RELAY_TURN_OFF(const GPIO_RELAY *relay);
+Std_ReturnType GPIO_RELAY_TURN_ON(const GPIO_RELAY *relay);
+Std_ReturnType GPIO_RELAY_TURN_TOGGLE(const GPIO_RELAY *relay);
+# 18 "APP_Layer/Main.h" 2
+# 33 "APP_Layer/Main.h"
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
 
 
-GPIO_LED led1 = {
+GPIO_RELAY relay1 = {
     .pin.PORT = GPIO_PORTC,
     .pin.PIN = GPIO_PIN0,
     .pin.DIRECTION = GPIO_OUTPUT,
     .pin.LOGIC = GPIO_LOW
 };
 
-GPIO_LED led2 = {
+GPIO_RELAY relay2 = {
     .pin.PORT = GPIO_PORTC,
     .pin.PIN = GPIO_PIN1,
     .pin.DIRECTION = GPIO_OUTPUT,
-    .pin.LOGIC = GPIO_LOW
+    .pin.LOGIC = GPIO_HIGH
 };
-
-GPIO_BTN btn1 = {
-    .pin.PORT = GPIO_PORTC,
-    .pin.PIN = GPIO_PIN2,
-    .pin.DIRECTION = GPIO_INPUT,
-    .pin.LOGIC = GPIO_LOW,
-    .connection = BTN_ACTIVE_HIGH,
-    .state = BTN_RELEASED
-};
-
-GPIO_BTN btn2 = {
-    .pin.PORT = GPIO_PORTD,
-    .pin.PIN = GPIO_PIN0,
-    .pin.DIRECTION = GPIO_INPUT,
-    .pin.LOGIC = GPIO_HIGH,
-    .connection = BTN_ACTIVE_LOW,
-    .state = BTN_RELEASED
-};
-
-BTN_STATE state1 = BTN_RELEASED;
-BTN_STATE state2 = BTN_RELEASED;
-
-GPIO_LOGIC lg = GPIO_LOW;
 
 Std_ReturnType Ret = E_OK;
 
-uint32 counter = 0;
-BTN_STATE press_state = BTN_RELEASED;
-BTN_STATE last_press_state = BTN_RELEASED;
-
-LED_LOGIC lelog;
-
-uint8 incremental;
+RELAY_STATE state;
 
 int main() {
     application_init();
     while (1) {
-        Ret = GPIO_BTN_READ_STATE(&btn1, &state1);
-        Ret = GPIO_BTN_READ_STATE(&btn2, &state2);
-# 116 "APP_Layer/Main.c"
-        if (BTN_PRESSED == state1) {
-            counter++;
-            if(counter >= 500){
-                press_state = BTN_PRESSED;
-            }
-        }
-        else{
-            counter = 0;
-            press_state = BTN_RELEASED;
-        }
-        if(press_state != last_press_state){
-            last_press_state == press_state;
-            if(press_state == BTN_PRESSED){
-                incremental++;
-            }
-        }
 
+
+
+
+
+          Ret = GPIO_RELAY_TURN_TOGGLE(&relay1);
+          Ret = GPIO_RELAY_TURN_TOGGLE(&relay2);
+          Ret = GPIO_RELAY_READ_LOGIC(&relay1, &state);
+          _delay((unsigned long)((1000)*(16000000/4000.0)));
     }
 
     return (0);
 }
 
 void application_init(void) {
-    Ret = GPIO_LED_INIT(&led1);
-    Ret = GPIO_LED_INIT(&led2);
-    Ret = GPIO_BTN_INIT(&btn1);
-    Ret = GPIO_BTN_INIT(&btn2);
+    Ret = GPIO_RELAY_INIT(&relay1);
+    Ret = GPIO_RELAY_INIT(&relay2);
+
 }

@@ -12,4 +12,7 @@ APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio_cfg.h  \
 APPL/../ECUAL/LED/ecual_led_cfg.h  \
 APPL/../ECUAL/BTN/ecual_btn.h  \
 APPL/../ECUAL/BTN/../../MCAL/GPIO/hal_gpio.h  \
-APPL/../ECUAL/BTN/ecual_btn_cfg.h 
+APPL/../ECUAL/BTN/ecual_btn_cfg.h  \
+APPL/../ECUAL/Relay/ecual_relay.h  \
+APPL/../ECUAL/Relay/../../MCAL/GPIO/hal_gpio.h  \
+APPL/../ECUAL/Relay/ecual_relay_cfg.h 

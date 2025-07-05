@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- /tmp/xcIkCC4Xw/driver_tmp_3.o
+ /tmp/xckKyA02V/driver_tmp_3.o
  -Odist/default/production/MCU_PIC_Drivers.X.production.hex
  -logfile=dist/default/production/MCU_PIC_Drivers.X.production.hxl
  -addressing=1
@@ -9,21 +9,21 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(/tmp/xcIkCC4Xw/driver_tmp_3.o)
-  1000h - 1512h		(/tmp/xcIkCC4Xw/driver_tmp_3.o)
-  1514h - 155Bh		(/tmp/xcIkCC4Xw/driver_tmp_3.o)
-  FFFCh - FFFFh		(/tmp/xcIkCC4Xw/driver_tmp_3.o)
-  300000h - 30000Dh		(/tmp/xcIkCC4Xw/driver_tmp_3.o)
+  0h - 3h		(/tmp/xckKyA02V/driver_tmp_3.o)
+  1000h - 14F4h		(/tmp/xckKyA02V/driver_tmp_3.o)
+  14F6h - 150Bh		(/tmp/xckKyA02V/driver_tmp_3.o)
+  FFFCh - FFFFh		(/tmp/xckKyA02V/driver_tmp_3.o)
+  300000h - 30000Dh		(/tmp/xckKyA02V/driver_tmp_3.o)
  Unused ranges:
   4h - FFFh
-  1513h - 1513h
-  155Ch - FFFBh
+  14F5h - 14F5h
+  150Ch - FFFBh
   10000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (/tmp/xcIkCC4Xw/driver_tmp_3.o)
+  H1 = Input file             (/tmp/xckKyA02V/driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -108,13 +108,8 @@
 000014C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000014D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000014E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001500 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001510 | H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001520 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001530 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001540 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001550 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
+000014F0 | H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001500 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
 ----------------------------------------------------------
 0000FFF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
 ----------------------------------------------------------
