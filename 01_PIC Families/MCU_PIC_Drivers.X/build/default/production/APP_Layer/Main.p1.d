@@ -14,4 +14,7 @@ APP_Layer/../ECUAL_Layer/BTN/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
 APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN_CFG.h  \
 APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h  \
 APP_Layer/../ECUAL_Layer/Relay/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
-APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY_CFG.h 
+APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY_CFG.h  \
+APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h  \
+APP_Layer/../ECUAL_Layer/DC_Motor/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
+APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR_CFG.h 

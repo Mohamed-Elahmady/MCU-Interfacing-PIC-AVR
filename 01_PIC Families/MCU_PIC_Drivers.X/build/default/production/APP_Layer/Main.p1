@@ -3,12 +3,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 73: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . PORT PIN DIRECTION LOGIC ]
-"33 APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h
-[; ;APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h: 33: typedef struct{
-[s S309 `S306 1 ]
-[n S309 . pin ]
+"30 APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 30: typedef struct{
+[s S310 `S306 -> 2 `i ]
+[n S310 . INs ]
 "12 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 12: GPIO_RELAY relay1 = {
+[; ;APP_Layer/Main.c: 12: DC_MOTOR motor1 = {
 [c E3666 0 1 2 3 4 .. ]
 [n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
 [c E3673 0 1 2 3 4 5 6 7 .. ]
@@ -17,31 +17,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
 [c E3687 0 1 .. ]
 [n E3687 . GPIO_LOW GPIO_HIGH  ]
-"26
-[; ;APP_Layer/Main.c: 26: Std_ReturnType Ret = E_OK;
+"34
+[; ;APP_Layer/Main.c: 34: Std_ReturnType Ret = E_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"28
-[; ;APP_Layer/Main.c: 28: RELAY_STATE state;
-[c E3766 0 1 .. ]
-[n E3766 . RELAY_OFF RELAY_ON  ]
+"36
+[; ;APP_Layer/Main.c: 36: MOTOR_STATE st1,st2;
+[c E3784 0 1 2 .. ]
+[n E3784 . MOTOR_BRAKE MOTOR_CLOCKWISE MOTOR_COUNTER_CLOCKWISE  ]
 [p mainexit ]
-"33 APP_Layer/Main.h
-[; ;APP_Layer/Main.h: 33: void application_init(void);
+"34 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 34: void application_init(void);
 [v _application_init `(v ~T0 @X0 0 ef ]
-"43 APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h
-[; ;APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h: 43: Std_ReturnType GPIO_RELAY_TURN_TOGGLE(const GPIO_RELAY *relay);
-[v _GPIO_RELAY_TURN_TOGGLE `(E3659 ~T0 @X0 0 ef1`*CS309 ]
+"39 APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 39: Std_ReturnType GPIO_DC_MOTOR_ROTATE_CLOCKWISE(const DC_MOTOR *motor);
+[v _GPIO_DC_MOTOR_ROTATE_CLOCKWISE `(E3659 ~T0 @X0 0 ef1`*CS310 ]
 "40
-[; ;APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h: 40: Std_ReturnType GPIO_RELAY_READ_LOGIC(const GPIO_RELAY *relay, RELAY_STATE *state);
-[v _GPIO_RELAY_READ_LOGIC `(E3659 ~T0 @X0 0 ef2`*CS309`*E3766 ]
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 40: Std_ReturnType GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE(const DC_MOTOR *motor);
+[v _GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE `(E3659 ~T0 @X0 0 ef1`*CS310 ]
+"37
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 37: Std_ReturnType GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(const DC_MOTOR *motor, MOTOR_STATE *state);
+[v _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION `(E3659 ~T0 @X0 0 ef2`*CS310`*E3784 ]
 [v F3624 `(v ~T0 @X0 1 tf1`ul ]
 "20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
 [v __delay `JF3624 ~T0 @X0 0 e ]
 [p i __delay ]
-"39 APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h
-[; ;APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h: 39: Std_ReturnType GPIO_RELAY_INIT(const GPIO_RELAY *relay);
-[v _GPIO_RELAY_INIT `(E3659 ~T0 @X0 0 ef1`*CS309 ]
+"41 APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 41: Std_ReturnType GPIO_DC_MOTOR_ROTATE_TOGGLE(const DC_MOTOR *motor);
+[v _GPIO_DC_MOTOR_ROTATE_TOGGLE `(E3659 ~T0 @X0 0 ef1`*CS310 ]
+"38
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 38: Std_ReturnType GPIO_DC_MOTOR_BRAKE(const DC_MOTOR *motor);
+[v _GPIO_DC_MOTOR_BRAKE `(E3659 ~T0 @X0 0 ef1`*CS310 ]
+"36
+[; ;APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 36: Std_ReturnType GPIO_DC_MOTOR_INIT(const DC_MOTOR *motor);
+[v _GPIO_DC_MOTOR_INIT `(E3659 ~T0 @X0 0 ef1`*CS310 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -484,9 +493,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "12 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 12: GPIO_RELAY relay1 = {
-[v _relay1 `S309 ~T0 @X0 1 e ]
-[i _relay1
+[; ;APP_Layer/Main.c: 12: DC_MOTOR motor1 = {
+[v _motor1 `S310 ~T0 @X0 1 e ]
+[i _motor1
 :U ..
 :U ..
 :U ..
@@ -496,89 +505,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3683 0 `uc
 -> . `E3687 0 `uc
 ..
+:U ..
+-> . `E3666 2 `uc
+-> . `E3673 1 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
 ..
 ..
 ..
 ]
-"19
-[; ;APP_Layer/Main.c: 19: GPIO_RELAY relay2 = {
-[v _relay2 `S309 ~T0 @X0 1 e ]
-[i _relay2
+"23
+[; ;APP_Layer/Main.c: 23: DC_MOTOR motor2 = {
+[v _motor2 `S310 ~T0 @X0 1 e ]
+[i _motor2
 :U ..
 :U ..
 :U ..
 :U ..
 -> . `E3666 2 `uc
--> . `E3673 1 `uc
+-> . `E3673 2 `uc
 -> . `E3683 0 `uc
--> . `E3687 1 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 2 `uc
+-> . `E3673 3 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
 ..
 ..
 ..
 ..
 ]
-"26
-[; ;APP_Layer/Main.c: 26: Std_ReturnType Ret = E_OK;
+"34
+[; ;APP_Layer/Main.c: 34: Std_ReturnType Ret = E_OK;
 [v _Ret `E3659 ~T0 @X0 1 e ]
 [i _Ret
 . `E3659 1
 ]
-"28
-[; ;APP_Layer/Main.c: 28: RELAY_STATE state;
-[v _state `E3766 ~T0 @X0 1 e ]
+"36
+[; ;APP_Layer/Main.c: 36: MOTOR_STATE st1,st2;
+[v _st1 `E3784 ~T0 @X0 1 e ]
+[v _st2 `E3784 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"30
-[; ;APP_Layer/Main.c: 30: int main() {
+"38
+[; ;APP_Layer/Main.c: 38: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"31
-[; ;APP_Layer/Main.c: 31:     application_init();
-[e ( _application_init ..  ]
-"32
-[; ;APP_Layer/Main.c: 32:     while (1) {
-[e :U 312 ]
-{
-"38
-[; ;APP_Layer/Main.c: 38:           Ret = GPIO_RELAY_TURN_TOGGLE(&relay1);
-[e = _Ret ( _GPIO_RELAY_TURN_TOGGLE (1 -> &U _relay1 `*CS309 ]
 "39
-[; ;APP_Layer/Main.c: 39:           Ret = GPIO_RELAY_TURN_TOGGLE(&relay2);
-[e = _Ret ( _GPIO_RELAY_TURN_TOGGLE (1 -> &U _relay2 `*CS309 ]
+[; ;APP_Layer/Main.c: 39:     application_init();
+[e ( _application_init ..  ]
 "40
-[; ;APP_Layer/Main.c: 40:           Ret = GPIO_RELAY_READ_LOGIC(&relay1, &state);
-[e = _Ret ( _GPIO_RELAY_READ_LOGIC (2 , -> &U _relay1 `*CS309 &U _state ]
-"41
-[; ;APP_Layer/Main.c: 41:           _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"42
-[; ;APP_Layer/Main.c: 42:     }
-}
-[e :U 311 ]
-[e $U 312  ]
+[; ;APP_Layer/Main.c: 40:     while (1) {
 [e :U 313 ]
+{
+"41
+[; ;APP_Layer/Main.c: 41:         Ret = GPIO_DC_MOTOR_ROTATE_CLOCKWISE(&motor1);
+[e = _Ret ( _GPIO_DC_MOTOR_ROTATE_CLOCKWISE (1 -> &U _motor1 `*CS310 ]
+"42
+[; ;APP_Layer/Main.c: 42:         Ret = GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE(&motor2);
+[e = _Ret ( _GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE (1 -> &U _motor2 `*CS310 ]
+"43
+[; ;APP_Layer/Main.c: 43:         Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor1, &st1);
+[e = _Ret ( _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION (2 , -> &U _motor1 `*CS310 &U _st1 ]
 "44
-[; ;APP_Layer/Main.c: 44:     return (0);
-[e ) -> 0 `i ]
-[e $UE 310  ]
+[; ;APP_Layer/Main.c: 44:         Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor2, &st2);
+[e = _Ret ( _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION (2 , -> &U _motor2 `*CS310 &U _st2 ]
 "45
-[; ;APP_Layer/Main.c: 45: }
-[e :UE 310 ]
-}
+[; ;APP_Layer/Main.c: 45:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "47
-[; ;APP_Layer/Main.c: 47: void application_init(void) {
+[; ;APP_Layer/Main.c: 47:         Ret = GPIO_DC_MOTOR_ROTATE_TOGGLE(&motor1);
+[e = _Ret ( _GPIO_DC_MOTOR_ROTATE_TOGGLE (1 -> &U _motor1 `*CS310 ]
+"48
+[; ;APP_Layer/Main.c: 48:         Ret = GPIO_DC_MOTOR_ROTATE_TOGGLE(&motor2);
+[e = _Ret ( _GPIO_DC_MOTOR_ROTATE_TOGGLE (1 -> &U _motor2 `*CS310 ]
+"49
+[; ;APP_Layer/Main.c: 49:         Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor1, &st1);
+[e = _Ret ( _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION (2 , -> &U _motor1 `*CS310 &U _st1 ]
+"50
+[; ;APP_Layer/Main.c: 50:         Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor2, &st2);
+[e = _Ret ( _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION (2 , -> &U _motor2 `*CS310 &U _st2 ]
+"51
+[; ;APP_Layer/Main.c: 51:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"53
+[; ;APP_Layer/Main.c: 53:         Ret = GPIO_DC_MOTOR_BRAKE(&motor1);
+[e = _Ret ( _GPIO_DC_MOTOR_BRAKE (1 -> &U _motor1 `*CS310 ]
+"54
+[; ;APP_Layer/Main.c: 54:         Ret = GPIO_DC_MOTOR_BRAKE(&motor2);
+[e = _Ret ( _GPIO_DC_MOTOR_BRAKE (1 -> &U _motor2 `*CS310 ]
+"55
+[; ;APP_Layer/Main.c: 55:         Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor1, &st1);
+[e = _Ret ( _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION (2 , -> &U _motor1 `*CS310 &U _st1 ]
+"56
+[; ;APP_Layer/Main.c: 56:         Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor2, &st2);
+[e = _Ret ( _GPIO_DC_MOTOR_READ_ROTATE_DIRECTION (2 , -> &U _motor2 `*CS310 &U _st2 ]
+"57
+[; ;APP_Layer/Main.c: 57:         _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"58
+[; ;APP_Layer/Main.c: 58:     }
+}
+[e :U 312 ]
+[e $U 313  ]
+[e :U 314 ]
+"60
+[; ;APP_Layer/Main.c: 60:     return (0);
+[e ) -> 0 `i ]
+[e $UE 311  ]
+"61
+[; ;APP_Layer/Main.c: 61: }
+[e :UE 311 ]
+}
+"63
+[; ;APP_Layer/Main.c: 63: void application_init(void) {
 [v _application_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_init ]
 [f ]
-"48
-[; ;APP_Layer/Main.c: 48:     Ret = GPIO_RELAY_INIT(&relay1);
-[e = _Ret ( _GPIO_RELAY_INIT (1 -> &U _relay1 `*CS309 ]
-"49
-[; ;APP_Layer/Main.c: 49:     Ret = GPIO_RELAY_INIT(&relay2);
-[e = _Ret ( _GPIO_RELAY_INIT (1 -> &U _relay2 `*CS309 ]
-"51
-[; ;APP_Layer/Main.c: 51: }
-[e :UE 314 ]
+"64
+[; ;APP_Layer/Main.c: 64:     Ret = GPIO_DC_MOTOR_INIT(&motor1);
+[e = _Ret ( _GPIO_DC_MOTOR_INIT (1 -> &U _motor1 `*CS310 ]
+"65
+[; ;APP_Layer/Main.c: 65:     Ret = GPIO_DC_MOTOR_INIT(&motor2);
+[e = _Ret ( _GPIO_DC_MOTOR_INIT (1 -> &U _motor2 `*CS310 ]
+"66
+[; ;APP_Layer/Main.c: 66: }
+[e :UE 315 ]
 }

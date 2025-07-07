@@ -12,6 +12,10 @@
           <itemPath>ECUAL/BTN/ecual_btn.h</itemPath>
           <itemPath>ECUAL/BTN/ecual_btn_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>ECUAL/DC_Motor/ecual_dc_motor.h</itemPath>
+          <itemPath>ECUAL/DC_Motor/ecual_dc_motor_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL/LED/ecual_led.h</itemPath>
           <itemPath>ECUAL/LED/ecual_led_cfg.h</itemPath>
@@ -51,6 +55,9 @@
       <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL/BTN/ecual_btn.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>ECUAL/DC_Motor/ecual_dc_motor.c</itemPath>
         </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL/LED/ecual_led.c</itemPath>

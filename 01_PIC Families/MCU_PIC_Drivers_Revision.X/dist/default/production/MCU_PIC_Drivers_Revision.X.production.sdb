@@ -29,12 +29,13 @@ gpio_input 1
 gpio_low 0
 gpio_high 1
 ]
-"26
-[e E3778 . `uc
-relay_off 0
-relay_on 1
+"36
+[e E3796 . `uc
+motor_brake 0
+motor_clock_wise 1
+motor_counter_clock_wise 2
 ]
-"29
+"39
 [e E3659 . `uc
 E_NOT_OK 0
 E_OK 1
@@ -75,6 +76,21 @@ E_OK 1
 gpio_low 0
 gpio_high 1
 ]
+"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Relay/ecual_relay.c
+[e E3659 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"35
+[e E3736 . `uc
+relay_off 0
+relay_on 1
+]
+"41
+[e E3693 . `uc
+gpio_low 0
+gpio_high 1
+]
 "28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [e E3659 . `uc
 E_NOT_OK 0
@@ -98,17 +114,18 @@ gpio_portC 2
 gpio_portD 3
 gpio_portE 4
 ]
-"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Relay/ecual_relay.c
+"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
 [e E3659 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
-"35
+"37
 [e E3736 . `uc
-relay_off 0
-relay_on 1
+motor_brake 0
+motor_clock_wise 1
+motor_counter_clock_wise 2
 ]
-"41
+"43
 [e E3693 . `uc
 gpio_low 0
 gpio_high 1
@@ -137,18 +154,20 @@ gpio_high 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+"38 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
 [v _main main `(i  1 e 2 0 ]
-"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Relay/ecual_relay.c
-[v _gpio_relay_init gpio_relay_init `(E3659  1 e 1 0 ]
-"35
-[v _gpio_relay_read_logic gpio_relay_read_logic `(E3659  1 e 1 0 ]
-"56
-[v _gpio_relay_turn_off gpio_relay_turn_off `(E3659  1 e 1 0 ]
-"68
-[v _gpio_relay_turn_on gpio_relay_turn_on `(E3659  1 e 1 0 ]
-"80
-[v _gpio_relay_turn_toggle gpio_relay_turn_toggle `(E3659  1 e 1 0 ]
+"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
+[v _gpio_dc_motor_init gpio_dc_motor_init `(E3659  1 e 1 0 ]
+"37
+[v _gpio_dc_motor_read_state gpio_dc_motor_read_state `(E3659  1 e 1 0 ]
+"61
+[v _gpio_dc_motor_brake gpio_dc_motor_brake `(E3659  1 e 1 0 ]
+"75
+[v _gpio_dc_motor_rotate_clock_wise gpio_dc_motor_rotate_clock_wise `(E3659  1 e 1 0 ]
+"89
+[v _gpio_dc_motor_rotate_counter_clock_wise gpio_dc_motor_rotate_counter_clock_wise `(E3659  1 e 1 0 ]
+"103
+[v _gpio_dc_motor_toggle_rotation_direction gpio_dc_motor_toggle_rotation_direction `(E3659  1 e 1 0 ]
 "28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
 "60
@@ -199,102 +218,104 @@ gpio_high 1
 `uc 1 logic 1 0 :1:7 
 ]
 "12 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
-[s S29 . 1 `S24 1 pin 1 0 ]
-[v _relay1 relay1 `S29  1 e 1 0 ]
-"19
-[v _relay2 relay2 `S29  1 e 1 0 ]
-"26
-[v _st1 st1 `E3778  1 e 1 0 ]
-[v _st2 st2 `E3778  1 e 1 0 ]
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v _motor1 motor1 `S29  1 e 2 0 ]
+"24
+[v _motor2 motor2 `S29  1 e 2 0 ]
+"36
+[v _st1 st1 `E3796  1 e 1 0 ]
+[v _st2 st2 `E3796  1 e 1 0 ]
 "14 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _tris_regs tris_regs `C[5]*.39VEuc  1 e 10 0 ]
 "15
 [v _port_regs port_regs `C[5]*.39VEuc  1 e 10 0 ]
 "16
 [v _lat_regs lat_regs `C[5]*.39VEuc  1 e 10 0 ]
-"28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+"38 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
 [v _main main `(i  1 e 2 0 ]
 {
-"29
-[v main@ret ret `E3659  1 a 1 16 ]
-"50
-} 0
-"80 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Relay/ecual_relay.c
-[v _gpio_relay_turn_toggle gpio_relay_turn_toggle `(E3659  1 e 1 0 ]
-{
-"81
-[v gpio_relay_turn_toggle@Retval Retval `E3659  1 a 1 8 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"80
-[s S29 . 1 `S24 1 pin 1 0 ]
-[v gpio_relay_turn_toggle@relay relay `*.30CS29  1 p 1 7 ]
+"39
+[v main@ret ret `E3659  1 a 1 19 ]
 "89
 } 0
-"92 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
-[v _gpio_pin_toggle_logic gpio_pin_toggle_logic `(E3659  1 e 1 0 ]
+"103 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
+[v _gpio_dc_motor_toggle_rotation_direction gpio_dc_motor_toggle_rotation_direction `(E3659  1 e 1 0 ]
 {
-"93
-[v gpio_pin_toggle_logic@Retval Retval `E3659  1 a 1 6 ]
+"109
+[v gpio_dc_motor_toggle_rotation_direction@state state `E3736  1 a 1 16 ]
+"104
+[v gpio_dc_motor_toggle_rotation_direction@Retval Retval `E3659  1 a 1 15 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"92
-[v gpio_pin_toggle_logic@pin pin `*.30CS24  1 p 1 0 ]
+"103
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v gpio_dc_motor_toggle_rotation_direction@motor motor `*.30CS29  1 p 1 14 ]
+"119
+} 0
+"89
+[v _gpio_dc_motor_rotate_counter_clock_wise gpio_dc_motor_rotate_counter_clock_wise `(E3659  1 e 1 0 ]
+{
+"96
+[v gpio_dc_motor_rotate_counter_clock_wise@i i `uc  1 a 1 13 ]
+"95
+[v gpio_dc_motor_rotate_counter_clock_wise@logic logic `[2]E3693  1 a 2 10 ]
+"90
+[v gpio_dc_motor_rotate_counter_clock_wise@Retval Retval `E3659  1 a 1 12 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"89
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v gpio_dc_motor_rotate_counter_clock_wise@motor motor `*.30CS29  1 p 1 9 ]
+"94
+[v gpio_dc_motor_rotate_counter_clock_wise@F3782 F3782 `[2]E3693  1 s 2 F3782 ]
 "101
 } 0
-"68 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Relay/ecual_relay.c
-[v _gpio_relay_turn_on gpio_relay_turn_on `(E3659  1 e 1 0 ]
+"75
+[v _gpio_dc_motor_rotate_clock_wise gpio_dc_motor_rotate_clock_wise `(E3659  1 e 1 0 ]
 {
-"69
-[v gpio_relay_turn_on@Retval Retval `E3659  1 a 1 10 ]
+"82
+[v gpio_dc_motor_rotate_clock_wise@i i `uc  1 a 1 13 ]
+"81
+[v gpio_dc_motor_rotate_clock_wise@logic logic `[2]E3693  1 a 2 10 ]
+"76
+[v gpio_dc_motor_rotate_clock_wise@Retval Retval `E3659  1 a 1 12 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"68
-[s S29 . 1 `S24 1 pin 1 0 ]
-[v gpio_relay_turn_on@relay relay `*.30CS29  1 p 1 9 ]
-"78
+"75
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v gpio_dc_motor_rotate_clock_wise@motor motor `*.30CS29  1 p 1 9 ]
+"80
+[v gpio_dc_motor_rotate_clock_wise@F3776 F3776 `[2]E3693  1 s 2 F3776 ]
+"87
 } 0
-"56
-[v _gpio_relay_turn_off gpio_relay_turn_off `(E3659  1 e 1 0 ]
+"37
+[v _gpio_dc_motor_read_state gpio_dc_motor_read_state `(E3659  1 e 1 0 ]
 {
-"57
-[v gpio_relay_turn_off@Retval Retval `E3659  1 a 1 10 ]
+"44
+[v gpio_dc_motor_read_state@i i `uc  1 a 1 13 ]
+"43
+[v gpio_dc_motor_read_state@logic logic `[2]E3693  1 a 2 11 ]
+"38
+[v gpio_dc_motor_read_state@Retval Retval `E3659  1 a 1 10 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"56
-[s S29 . 1 `S24 1 pin 1 0 ]
-[v gpio_relay_turn_off@relay relay `*.30CS29  1 p 1 9 ]
-"66
-} 0
-"35
-[v _gpio_relay_read_logic gpio_relay_read_logic `(E3659  1 e 1 0 ]
-{
-"41
-[v gpio_relay_read_logic@logic logic `E3693  1 a 1 11 ]
-"36
-[v gpio_relay_read_logic@Retval Retval `E3659  1 a 1 10 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"35
-[s S29 . 1 `S24 1 pin 1 0 ]
-[v gpio_relay_read_logic@relay relay `*.30CS29  1 p 1 8 ]
-[v gpio_relay_read_logic@state state `*.30E3736  1 p 1 9 ]
-"54
+"37
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v gpio_dc_motor_read_state@motor motor `*.30CS29  1 p 1 8 ]
+[v gpio_dc_motor_read_state@state state `*.30E3736  1 p 1 9 ]
+"59
 } 0
 "81 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_read_logic gpio_pin_read_logic `(E3659  1 e 1 0 ]
@@ -311,20 +332,22 @@ gpio_high 1
 [v gpio_pin_read_logic@logic logic `*.30E3693  1 p 1 1 ]
 "90
 } 0
-"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Relay/ecual_relay.c
-[v _gpio_relay_init gpio_relay_init `(E3659  1 e 1 0 ]
+"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
+[v _gpio_dc_motor_init gpio_dc_motor_init `(E3659  1 e 1 0 ]
 {
+"30
+[v gpio_dc_motor_init@i i `uc  1 a 1 14 ]
 "25
-[v gpio_relay_init@Retval Retval `E3659  1 a 1 13 ]
+[v gpio_dc_motor_init@Retval Retval `E3659  1 a 1 13 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "24
-[s S29 . 1 `S24 1 pin 1 0 ]
-[v gpio_relay_init@relay relay `*.30CS29  1 p 1 12 ]
-"33
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v gpio_dc_motor_init@motor motor `*.30CS29  1 p 1 12 ]
+"35
 } 0
 "103 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_init gpio_pin_init `(E3659  1 e 1 0 ]
@@ -340,21 +363,6 @@ gpio_high 1
 [v gpio_pin_init@pin pin `*.30CS24  1 p 1 9 ]
 "113
 } 0
-"60
-[v _gpio_pin_write_logic gpio_pin_write_logic `(E3659  1 e 1 0 ]
-{
-"61
-[v gpio_pin_write_logic@Retval Retval `E3659  1 a 1 8 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"60
-[v gpio_pin_write_logic@pin pin `*.30CS24  1 p 1 0 ]
-[v gpio_pin_write_logic@logic logic `E3693  1 p 1 1 ]
-"79
-} 0
 "28
 [v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
 {
@@ -368,4 +376,38 @@ gpio_high 1
 "28
 [v gpio_pin_direction_init@pin pin `*.30CS24  1 p 1 0 ]
 "47
+} 0
+"61 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
+[v _gpio_dc_motor_brake gpio_dc_motor_brake `(E3659  1 e 1 0 ]
+{
+"68
+[v gpio_dc_motor_brake@i i `uc  1 a 1 13 ]
+"67
+[v gpio_dc_motor_brake@logic logic `[2]E3693  1 a 2 10 ]
+"62
+[v gpio_dc_motor_brake@Retval Retval `E3659  1 a 1 12 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"61
+[s S29 . 2 `[2]S24 1 ins 2 0 ]
+[v gpio_dc_motor_brake@motor motor `*.30CS29  1 p 1 9 ]
+"73
+} 0
+"60 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
+[v _gpio_pin_write_logic gpio_pin_write_logic `(E3659  1 e 1 0 ]
+{
+"61
+[v gpio_pin_write_logic@Retval Retval `E3659  1 a 1 8 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"60
+[v gpio_pin_write_logic@pin pin `*.30CS24  1 p 1 0 ]
+[v gpio_pin_write_logic@logic logic `E3693  1 p 1 1 ]
+"79
 } 0
