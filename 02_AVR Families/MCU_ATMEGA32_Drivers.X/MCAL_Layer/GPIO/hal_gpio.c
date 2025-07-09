@@ -21,7 +21,7 @@ volatile uint8 *PORT_REGs[REG_NO] = {&PORTA, &PORTB, &PORTC, &PORTD};
 
 /******************* Section 3 : Software Interfaces Definitions (APIs) *******************/
 
-#if ((GPIO_Pin_CFG_Enable) == (GPIO_Pin_CFG_STATE))
+#if ((GPIO_Pin_CFG_Enable) == (GPIO_Pin_CFG_State))
 
 /**
  * @brief           : This function to assign a direction for the pin "INPUT/OUTPUT"  
@@ -168,7 +168,7 @@ Std_ReturnType GPIO_Pin_INIT(const GPIO_Pin_CFG *pin){
 
 #endif
 
-#if ((GPIO_Port_CFG_Enable) == (GPIO_Port_CFG_STATE))
+#if ((GPIO_Port_CFG_Enable) == (GPIO_Port_CFG_State))
 
 /**
  * @brief           : This function sets the direction for all pins in a port  

@@ -21,8 +21,8 @@
 #define GPIO_Port_CFG_Disable                        0x00
 #define GPIO_Port_CFG_Enable                         0x01
 
-#define GPIO_Pin_CFG_STATE                           (GPIO_Pin_CFG_Enable)
-#define GPIO_Port_CFG_STATE                          (GPIO_Port_CFG_Enable)
+#define GPIO_Pin_CFG_State                           (GPIO_Pin_CFG_Enable)
+#define GPIO_Port_CFG_State                          (GPIO_Port_CFG_Enable)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

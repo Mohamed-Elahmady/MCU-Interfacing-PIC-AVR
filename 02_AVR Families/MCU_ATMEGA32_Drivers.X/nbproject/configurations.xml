@@ -2,17 +2,24 @@
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="Codes" displayName="Codes" projectFiles="true">
-      <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
-        <itemPath>Codes/BTN/app1.c</itemPath>
+      <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
+        <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
+          <itemPath>Codes/ECUAL/BTN/app1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>Codes/ECUAL/DC_Motor/app1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="LED" displayName="LED" projectFiles="true">
+          <itemPath>Codes/ECUAL/LED/app1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Relay" displayName="Relay" projectFiles="true">
+          <itemPath>Codes/ECUAL/Relay/app1.c</itemPath>
+        </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
-        <itemPath>Codes/GPIO/app1.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="LED" displayName="LED" projectFiles="true">
-        <itemPath>Codes/LED/app1.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="Relay" displayName="Relay" projectFiles="true">
-        <itemPath>Codes/Relay/app1.c</itemPath>
+      <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
+          <itemPath>Codes/MCAL/GPIO/app1.c</itemPath>
+        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
@@ -25,6 +32,10 @@
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ecual_btn.h</itemPath>
           <itemPath>ECUAL_Layer/BTN/ecual_btn_cfg.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>ECUAL_Layer/DC_Motor/ecual_dc_motor.h</itemPath>
+          <itemPath>ECUAL_Layer/DC_Motor/ecual_dc_motor_cfg.h</itemPath>
         </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL_Layer/LED/ecual_led.h</itemPath>
@@ -64,6 +75,9 @@
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ecual_btn.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
+          <itemPath>ECUAL_Layer/DC_Motor/ecual_dc_motor.c</itemPath>
         </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL_Layer/LED/ecual_led.c</itemPath>

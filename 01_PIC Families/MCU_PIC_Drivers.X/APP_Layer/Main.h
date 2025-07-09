@@ -16,6 +16,7 @@
 #include "../ECUAL_Layer/BTN/ECUAL_BTN.h"
 #include "../ECUAL_Layer/Relay/ECUAL_RELAY.h"
 #include "../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h"
+#include "../ECUAL_Layer/7SEG/ECUAL_7SEG.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

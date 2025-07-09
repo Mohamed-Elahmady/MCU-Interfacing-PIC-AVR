@@ -3,6 +3,12 @@
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="Codes" displayName="Codes" projectFiles="true">
       <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>Codes/ECUAL/7SEG/app1.c</itemPath>
+          <itemPath>Codes/ECUAL/7SEG/app2.c</itemPath>
+          <itemPath>Codes/ECUAL/7SEG/app3.c</itemPath>
+          <itemPath>Codes/ECUAL/7SEG/app4.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>APP_Layer/app1.c</itemPath>
         </logicalFolder>
@@ -28,6 +34,10 @@
         <itemPath>APP_Layer/Main.h</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>ECUAL_Layer/7SEG/ECUAL_7SEG.h</itemPath>
+          <itemPath>ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ECUAL_BTN.h</itemPath>
           <itemPath>ECUAL_Layer/BTN/ECUAL_BTN_CFG.h</itemPath>
@@ -72,6 +82,9 @@
         <itemPath>APP_Layer/Main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>ECUAL_Layer/7SEG/ECUAL_7SEG.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ECUAL_BTN.c</itemPath>
         </logicalFolder>

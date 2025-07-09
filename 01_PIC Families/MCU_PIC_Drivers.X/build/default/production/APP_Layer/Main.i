@@ -5727,64 +5727,106 @@ Std_ReturnType GPIO_DC_MOTOR_ROTATE_CLOCKWISE(const DC_MOTOR *motor);
 Std_ReturnType GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE(const DC_MOTOR *motor);
 Std_ReturnType GPIO_DC_MOTOR_ROTATE_TOGGLE(const DC_MOTOR *motor);
 # 19 "APP_Layer/Main.h" 2
-# 34 "APP_Layer/Main.h"
+# 1 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h"
+# 1 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h" 2
+# 35 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h"
+typedef enum{
+    SEGMENT_COMMON_CATHODE = (uint8)0x00,
+    SEGMENT_COMMON_ANODE = (uint8)0x01
+}SEGMENT_CON;
+
+typedef struct{
+    GPIO_PIN_CFG pins[(uint8)0x04];
+    SEGMENT_CON connection;
+}GPIO_SEGMENT;
+
+
+
+Std_ReturnType GPIO_SEGMENT_INIT(const GPIO_SEGMENT *seg);
+Std_ReturnType GPIO_SEGMENT_READ_NUMBER(const GPIO_SEGMENT *seg, uint8 *number);
+Std_ReturnType GPIO_SEGMENT_WRITE_NUMBER(const GPIO_SEGMENT *seg, uint8 number);
+# 20 "APP_Layer/Main.h" 2
+# 35 "APP_Layer/Main.h"
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
 
 
-DC_MOTOR motor1 = {
-    .INs[0].PORT = GPIO_PORTC,
-    .INs[0].PIN = GPIO_PIN0,
-    .INs[0].DIRECTION = GPIO_OUTPUT,
-    .INs[0].LOGIC = GPIO_LOW,
-    .INs[1].PORT = GPIO_PORTC,
-    .INs[1].PIN = GPIO_PIN1,
-    .INs[1].DIRECTION = GPIO_OUTPUT,
-    .INs[1].LOGIC = GPIO_LOW,
-};
-
-DC_MOTOR motor2 = {
-    .INs[0].PORT = GPIO_PORTC,
-    .INs[0].PIN = GPIO_PIN2,
-    .INs[0].DIRECTION = GPIO_OUTPUT,
-    .INs[0].LOGIC = GPIO_LOW,
-    .INs[1].PORT = GPIO_PORTC,
-    .INs[1].PIN = GPIO_PIN3,
-    .INs[1].DIRECTION = GPIO_OUTPUT,
-    .INs[1].LOGIC = GPIO_LOW,
-};
 
 Std_ReturnType Ret = E_OK;
 
-MOTOR_STATE st1,st2;
+GPIO_SEGMENT seg1 = {
+    .pins[0].PORT = GPIO_PORTC,
+    .pins[0].PIN = GPIO_PIN0,
+    .pins[0].DIRECTION = GPIO_OUTPUT,
+    .pins[0].LOGIC = GPIO_LOW,
+
+    .pins[1].PORT = GPIO_PORTC,
+    .pins[1].PIN = GPIO_PIN1,
+    .pins[1].DIRECTION = GPIO_OUTPUT,
+    .pins[1].LOGIC = GPIO_LOW,
+
+    .pins[2].PORT = GPIO_PORTC,
+    .pins[2].PIN = GPIO_PIN2,
+    .pins[2].DIRECTION = GPIO_OUTPUT,
+    .pins[2].LOGIC = GPIO_LOW,
+
+    .pins[3].PORT = GPIO_PORTC,
+    .pins[3].PIN = GPIO_PIN3,
+    .pins[3].DIRECTION = GPIO_OUTPUT,
+    .pins[3].LOGIC = GPIO_LOW,
+
+    .connection = SEGMENT_COMMON_ANODE
+};
+# 63 "APP_Layer/Main.c"
+GPIO_PIN_CFG pin1 ={
+    .PORT = GPIO_PORTD,
+    .PIN = GPIO_PIN0,
+    .DIRECTION = GPIO_OUTPUT,
+    .LOGIC = GPIO_LOW
+};
+
+GPIO_PIN_CFG pin2 ={
+    .PORT = GPIO_PORTD,
+    .PIN = GPIO_PIN1,
+    .DIRECTION = GPIO_OUTPUT,
+    .LOGIC = GPIO_LOW
+};
+
+uint8 number = 32;
+
+uint8 data1,data2;
 
 int main() {
     application_init();
     while (1) {
-        Ret = GPIO_DC_MOTOR_ROTATE_CLOCKWISE(&motor1);
-        Ret = GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE(&motor2);
-        Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor1, &st1);
-        Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor2, &st2);
-        _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+        for(uint8 i = 0; i < 50; i++){
 
-        Ret = GPIO_DC_MOTOR_ROTATE_TOGGLE(&motor1);
-        Ret = GPIO_DC_MOTOR_ROTATE_TOGGLE(&motor2);
-        Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor1, &st1);
-        Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor2, &st2);
-        _delay((unsigned long)((2000)*(8000000UL/4000.0)));
-
-        Ret = GPIO_DC_MOTOR_BRAKE(&motor1);
-        Ret = GPIO_DC_MOTOR_BRAKE(&motor2);
-        Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor1, &st1);
-        Ret = GPIO_DC_MOTOR_READ_ROTATE_DIRECTION(&motor2, &st2);
-        _delay((unsigned long)((2000)*(8000000UL/4000.0)));
+            Ret = GPIO_PIN_WRITE_LOGIC(&pin2, GPIO_HIGH);
+            Ret = GPIO_SEGMENT_WRITE_NUMBER(&seg1, number%10);
+            Ret = GPIO_SEGMENT_READ_NUMBER(&seg1, &data1);
+            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            Ret = GPIO_PIN_WRITE_LOGIC(&pin2, GPIO_LOW);
+            Ret = GPIO_PIN_WRITE_LOGIC(&pin1, GPIO_HIGH);
+            Ret = GPIO_SEGMENT_WRITE_NUMBER(&seg1, number/10);
+            Ret = GPIO_SEGMENT_READ_NUMBER(&seg1, &data2);
+            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            Ret = GPIO_PIN_WRITE_LOGIC(&pin1, GPIO_LOW);
+        }
+        number++;
+        if(number >= 100){
+            number = 0;
+        }
     }
 
     return (0);
 }
 
 void application_init(void) {
-    Ret = GPIO_DC_MOTOR_INIT(&motor1);
-    Ret = GPIO_DC_MOTOR_INIT(&motor2);
+    Ret = GPIO_SEGMENT_INIT(&seg1);
+
+    Ret = GPIO_PIN_INIT(&pin1);
+    Ret = GPIO_PIN_INIT(&pin2);
 }

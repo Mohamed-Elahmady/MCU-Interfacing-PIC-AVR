@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- /tmp/xcjny2jyJ/driver_tmp_3.o
+ /tmp/xclxXMigm/driver_tmp_3.o
  -Odist/default/production/MCU_PIC_Drivers.X.production.hex
  -logfile=dist/default/production/MCU_PIC_Drivers.X.production.hxl
  -addressing=1
@@ -9,21 +9,21 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(/tmp/xcjny2jyJ/driver_tmp_3.o)
-  1000h - 1688h		(/tmp/xcjny2jyJ/driver_tmp_3.o)
-  168Ah - 169Fh		(/tmp/xcjny2jyJ/driver_tmp_3.o)
-  FFFCh - FFFFh		(/tmp/xcjny2jyJ/driver_tmp_3.o)
-  300000h - 30000Dh		(/tmp/xcjny2jyJ/driver_tmp_3.o)
+  0h - 3h		(/tmp/xclxXMigm/driver_tmp_3.o)
+  1000h - 170Ah		(/tmp/xclxXMigm/driver_tmp_3.o)
+  170Ch - 172Bh		(/tmp/xclxXMigm/driver_tmp_3.o)
+  FFFCh - FFFFh		(/tmp/xclxXMigm/driver_tmp_3.o)
+  300000h - 30000Dh		(/tmp/xclxXMigm/driver_tmp_3.o)
  Unused ranges:
   4h - FFFh
-  1689h - 1689h
-  16A0h - FFFBh
+  170Bh - 170Bh
+  172Ch - FFFBh
   10000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (/tmp/xcjny2jyJ/driver_tmp_3.o)
+  H1 = Input file             (/tmp/xclxXMigm/driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -133,8 +133,17 @@
 00001650 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001660 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001670 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001680 | H1 H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1
+00001680 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001690 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000016A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000016B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000016C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000016D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000016E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000016F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001700 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1
+00001710 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001720 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
 ----------------------------------------------------------
 0000FFF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
 ----------------------------------------------------------
