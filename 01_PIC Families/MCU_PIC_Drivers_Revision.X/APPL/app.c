@@ -9,80 +9,67 @@
 
 #define _XTAL_FREQ 8000000UL
 
-dc_motor motor1 = {
-    .ins[0].port = gpio_portC,
-    .ins[0].pin = gpio_pin0,
-    .ins[0].direction = gpio_output,
-    .ins[0].logic = gpio_low,
+gpio_segment seg1 = {
+    .pins[0].port = gpio_portC, 
+    .pins[0].pin = gpio_pin0,
+    .pins[0].direction = gpio_output, 
+    .pins[0].logic = gpio_low,
     
-    .ins[1].port = gpio_portC,
-    .ins[1].pin = gpio_pin1,
-    .ins[1].direction = gpio_output,
-    .ins[1].logic = gpio_low
+    .pins[1].port = gpio_portC, 
+    .pins[1].pin = gpio_pin1,
+    .pins[1].direction = gpio_output, 
+    .pins[1].logic = gpio_low,
+    
+    .pins[2].port = gpio_portC, 
+    .pins[2].pin = gpio_pin2,
+    .pins[2].direction = gpio_output, 
+    .pins[2].logic = gpio_low,
+    
+    .pins[3].port = gpio_portC, 
+    .pins[3].pin = gpio_pin3,
+    .pins[3].direction = gpio_output, 
+    .pins[3].logic = gpio_low,
+    
+    .connection = segment_common_anode
 };
 
-dc_motor motor2 = {
-    .ins[0].port = gpio_portC,
-    .ins[0].pin = gpio_pin2,
-    .ins[0].direction = gpio_output,
-    .ins[0].logic = gpio_low,
-    
-    .ins[1].port = gpio_portC,
-    .ins[1].pin = gpio_pin3,
-    .ins[1].direction = gpio_output,
-    .ins[1].logic = gpio_low
+gpio_pin_cfg pin1 = {
+    .port = gpio_portD,
+    .pin = gpio_pin0,
+    .direction = gpio_output,
+    .logic = gpio_low
 };
 
-motor_state st1,st2;
+gpio_pin_cfg pin2 = {
+    .port = gpio_portD,
+    .pin = gpio_pin1,
+    .direction = gpio_output,
+    .logic = gpio_low
+};
+
+uint8 number = 0;
+uint8 var;
 
 int main() {
     Std_ReturnType ret = E_NOT_OK;
-    
-    ret = gpio_dc_motor_init(&motor1);
-    ret = gpio_dc_motor_init(&motor2);
-    
+    ret = gpio_segment_init(&seg1);
+    ret = gpio_pin_init(&pin1);
+    ret = gpio_pin_init(&pin2);
     while (1) {
-//        ret = gpio_dc_motor_brake(&motor1);
-//        ret = gpio_dc_motor_brake(&motor2);
-//        ret = gpio_dc_motor_read_state(&motor1, &st1);
-//        ret = gpio_dc_motor_read_state(&motor2, &st2);
-//        __delay_ms(3000);
-        
-        ret = gpio_dc_motor_rotate_clock_wise(&motor1);
-        ret = gpio_dc_motor_rotate_clock_wise(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        __delay_ms(3000);
-        
-        ret = gpio_dc_motor_brake(&motor1);
-        ret = gpio_dc_motor_brake(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        __delay_ms(3000);
-        
-        ret = gpio_dc_motor_rotate_counter_clock_wise(&motor1);
-        ret = gpio_dc_motor_rotate_counter_clock_wise(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        __delay_ms(3000);
-        
-        ret = gpio_dc_motor_brake(&motor1);
-        ret = gpio_dc_motor_brake(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        __delay_ms(3000);
-        
-        ret = gpio_dc_motor_rotate_clock_wise(&motor1);
-        ret = gpio_dc_motor_rotate_counter_clock_wise(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        __delay_ms(3000);
-        
-        ret = gpio_dc_motor_toggle_rotation_direction(&motor1);
-        ret = gpio_dc_motor_toggle_rotation_direction(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        __delay_ms(3000);
+        for(uint8 i = 0; i < 50; i++){
+            ret = gpio_pin_write_logic(&pin2, gpio_high);
+            ret = gpio_segment_write_number(&seg1, number%10);
+            __delay_ms(10);
+            ret = gpio_pin_write_logic(&pin2, gpio_low);
+            ret = gpio_pin_write_logic(&pin1, gpio_high);
+            ret = gpio_segment_write_number(&seg1, number/10);
+            __delay_ms(10);
+            ret = gpio_pin_write_logic(&pin1, gpio_low);
+        }
+        number++;
+        if(number >= 100){
+            number = 0;
+        }
     }
 
     return (EXIT_SUCCESS);

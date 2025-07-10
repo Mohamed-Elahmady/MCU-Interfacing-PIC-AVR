@@ -16,10 +16,11 @@
 #include "../ECUAL_Layer/BTN/ecual_btn.h"
 #include "../ECUAL_Layer/Relay/ecual_relay.h"
 #include "../ECUAL_Layer/DC_Motor/ecual_dc_motor.h"
+#include "../ECUAL_Layer/7SEG/ecual_7seg.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 
-#define F_CPU 8000000UL
+#define F_CPU 4000000UL
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

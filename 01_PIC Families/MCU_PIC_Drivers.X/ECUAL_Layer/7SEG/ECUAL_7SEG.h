@@ -24,7 +24,7 @@
 
 #define SEGMENT_PINS        (uint8)0x04
 
-#define MAX_NUMBER          (uint8)0x0A
+#define SEG_MAX_NUMBER      (uint8)0x0A
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

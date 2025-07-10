@@ -3,12 +3,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 72: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . port pin direction logic ]
-"34 APPL/../ECUAL/DC_Motor/ecual_dc_motor.h
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 34: typedef struct{
-[s S310 `S306 -> 2 `i ]
-[n S310 . ins ]
 "12 APPL/app.c
-[; ;APPL/app.c: 12: dc_motor motor1 = {
+[; ;APPL/app.c: 12: gpio_segment seg1 = {
+[c E3817 0 1 .. ]
+[n E3817 . segment_common_cathode segment_common_anode  ]
+"40 APPL/../ECUAL/7SEG/ecual_7seg.h
+[; ;APPL/../ECUAL/7SEG/ecual_7seg.h: 40: typedef struct{
+[s S311 `S306 -> 4 `i `E3817 1 ]
+[n S311 . pins connection ]
+"12 APPL/app.c
+[; ;APPL/app.c: 12: gpio_segment seg1 = {
 [c E3672 0 1 2 3 4 .. ]
 [n E3672 . gpio_portA gpio_portB gpio_portC gpio_portD gpio_portE  ]
 [c E3679 0 1 2 3 4 5 6 7 .. ]
@@ -17,37 +21,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E3689 . gpio_output gpio_input  ]
 [c E3693 0 1 .. ]
 [n E3693 . gpio_low gpio_high  ]
-"36
-[; ;APPL/app.c: 36: motor_state st1,st2;
-[c E3796 0 1 2 .. ]
-[n E3796 . motor_brake motor_clock_wise motor_counter_clock_wise  ]
 [p mainexit ]
-"39
-[; ;APPL/app.c: 39:     Std_ReturnType ret = E_NOT_OK;
+"54
+[; ;APPL/app.c: 54:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"40 APPL/../ECUAL/DC_Motor/ecual_dc_motor.h
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 40: Std_ReturnType gpio_dc_motor_init(const dc_motor *motor);
-[v _gpio_dc_motor_init `(E3659 ~T0 @X0 0 ef1`*CS310 ]
-"43
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 43: Std_ReturnType gpio_dc_motor_rotate_clock_wise(const dc_motor *motor);
-[v _gpio_dc_motor_rotate_clock_wise `(E3659 ~T0 @X0 0 ef1`*CS310 ]
-"41
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 41: Std_ReturnType gpio_dc_motor_read_state(const dc_motor *motor, motor_state *state);
-[v _gpio_dc_motor_read_state `(E3659 ~T0 @X0 0 ef2`*CS310`*E3796 ]
+"47 APPL/../ECUAL/7SEG/ecual_7seg.h
+[; ;APPL/../ECUAL/7SEG/ecual_7seg.h: 47: Std_ReturnType gpio_segment_init(const gpio_segment *seg);
+[v _gpio_segment_init `(E3659 ~T0 @X0 0 ef1`*CS311 ]
+"86 APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h
+[; ;APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 86: Std_ReturnType gpio_pin_init(const gpio_pin_cfg *pin);
+[v _gpio_pin_init `(E3659 ~T0 @X0 0 ef1`*CS306 ]
+"83
+[; ;APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 83: Std_ReturnType gpio_pin_write_logic(const gpio_pin_cfg *pin, gpio_logic logic);
+[v _gpio_pin_write_logic `(E3659 ~T0 @X0 0 ef2`*CS306`E3693 ]
+"49 APPL/../ECUAL/7SEG/ecual_7seg.h
+[; ;APPL/../ECUAL/7SEG/ecual_7seg.h: 49: Std_ReturnType gpio_segment_write_number(const gpio_segment *seg, uint8 number);
+[v _gpio_segment_write_number `(E3659 ~T0 @X0 0 ef2`*CS311`uc ]
 [v F3624 `(v ~T0 @X0 1 tf1`ul ]
 "20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
 [v __delay `JF3624 ~T0 @X0 0 e ]
 [p i __delay ]
-"42 APPL/../ECUAL/DC_Motor/ecual_dc_motor.h
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 42: Std_ReturnType gpio_dc_motor_brake(const dc_motor *motor);
-[v _gpio_dc_motor_brake `(E3659 ~T0 @X0 0 ef1`*CS310 ]
-"44
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 44: Std_ReturnType gpio_dc_motor_rotate_counter_clock_wise(const dc_motor *motor);
-[v _gpio_dc_motor_rotate_counter_clock_wise `(E3659 ~T0 @X0 0 ef1`*CS310 ]
-"45
-[; ;APPL/../ECUAL/DC_Motor/ecual_dc_motor.h: 45: Std_ReturnType gpio_dc_motor_toggle_rotation_direction(const dc_motor *motor);
-[v _gpio_dc_motor_toggle_rotation_direction `(E3659 ~T0 @X0 0 ef1`*CS310 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -490,9 +484,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "12 APPL/app.c
-[; ;APPL/app.c: 12: dc_motor motor1 = {
-[v _motor1 `S310 ~T0 @X0 1 e ]
-[i _motor1
+[; ;APPL/app.c: 12: gpio_segment seg1 = {
+[v _seg1 `S311 ~T0 @X0 1 e ]
+[i _seg1
 :U ..
 :U ..
 :U ..
@@ -508,17 +502,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3689 0 `uc
 -> . `E3693 0 `uc
 ..
-..
-..
-..
-]
-"24
-[; ;APPL/app.c: 24: dc_motor motor2 = {
-[v _motor2 `S310 ~T0 @X0 1 e ]
-[i _motor2
-:U ..
-:U ..
-:U ..
 :U ..
 -> . `E3672 2 `uc
 -> . `E3679 2 `uc
@@ -532,135 +515,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3693 0 `uc
 ..
 ..
+. `E3817 1
 ..
 ..
 ]
 "36
-[; ;APPL/app.c: 36: motor_state st1,st2;
-[v _st1 `E3796 ~T0 @X0 1 e ]
-[v _st2 `E3796 ~T0 @X0 1 e ]
+[; ;APPL/app.c: 36: gpio_pin_cfg pin1 = {
+[v _pin1 `S306 ~T0 @X0 1 e ]
+[i _pin1
+:U ..
+:U ..
+-> . `E3672 3 `uc
+-> . `E3679 0 `uc
+-> . `E3689 0 `uc
+-> . `E3693 0 `uc
+..
+..
+]
+"43
+[; ;APPL/app.c: 43: gpio_pin_cfg pin2 = {
+[v _pin2 `S306 ~T0 @X0 1 e ]
+[i _pin2
+:U ..
+:U ..
+-> . `E3672 3 `uc
+-> . `E3679 1 `uc
+-> . `E3689 0 `uc
+-> . `E3693 0 `uc
+..
+..
+]
+"50
+[; ;APPL/app.c: 50: uint8 number = 0;
+[v _number `uc ~T0 @X0 1 e ]
+[i _number
+-> -> 0 `i `uc
+]
+"51
+[; ;APPL/app.c: 51: uint8 var;
+[v _var `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"38
-[; ;APPL/app.c: 38: int main() {
+"53
+[; ;APPL/app.c: 53: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"39
-[; ;APPL/app.c: 39:     Std_ReturnType ret = E_NOT_OK;
+"54
+[; ;APPL/app.c: 54:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"41
-[; ;APPL/app.c: 41:     ret = gpio_dc_motor_init(&motor1);
-[e = _ret ( _gpio_dc_motor_init (1 -> &U _motor1 `*CS310 ]
-"42
-[; ;APPL/app.c: 42:     ret = gpio_dc_motor_init(&motor2);
-[e = _ret ( _gpio_dc_motor_init (1 -> &U _motor2 `*CS310 ]
-"44
-[; ;APPL/app.c: 44:     while (1) {
-[e :U 313 ]
-{
-"51
-[; ;APPL/app.c: 51:         ret = gpio_dc_motor_rotate_clock_wise(&motor1);
-[e = _ret ( _gpio_dc_motor_rotate_clock_wise (1 -> &U _motor1 `*CS310 ]
-"52
-[; ;APPL/app.c: 52:         ret = gpio_dc_motor_rotate_clock_wise(&motor2);
-[e = _ret ( _gpio_dc_motor_rotate_clock_wise (1 -> &U _motor2 `*CS310 ]
-"53
-[; ;APPL/app.c: 53:         ret = gpio_dc_motor_read_state(&motor1, &st1);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor1 `*CS310 &U _st1 ]
-"54
-[; ;APPL/app.c: 54:         ret = gpio_dc_motor_read_state(&motor2, &st2);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor2 `*CS310 &U _st2 ]
 "55
-[; ;APPL/app.c: 55:         _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;APPL/app.c: 55:     ret = gpio_segment_init(&seg1);
+[e = _ret ( _gpio_segment_init (1 -> &U _seg1 `*CS311 ]
+"56
+[; ;APPL/app.c: 56:     ret = gpio_pin_init(&pin1);
+[e = _ret ( _gpio_pin_init (1 -> &U _pin1 `*CS306 ]
 "57
-[; ;APPL/app.c: 57:         ret = gpio_dc_motor_brake(&motor1);
-[e = _ret ( _gpio_dc_motor_brake (1 -> &U _motor1 `*CS310 ]
+[; ;APPL/app.c: 57:     ret = gpio_pin_init(&pin2);
+[e = _ret ( _gpio_pin_init (1 -> &U _pin2 `*CS306 ]
 "58
-[; ;APPL/app.c: 58:         ret = gpio_dc_motor_brake(&motor2);
-[e = _ret ( _gpio_dc_motor_brake (1 -> &U _motor2 `*CS310 ]
-"59
-[; ;APPL/app.c: 59:         ret = gpio_dc_motor_read_state(&motor1, &st1);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor1 `*CS310 &U _st1 ]
-"60
-[; ;APPL/app.c: 60:         ret = gpio_dc_motor_read_state(&motor2, &st2);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor2 `*CS310 &U _st2 ]
-"61
-[; ;APPL/app.c: 61:         _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"63
-[; ;APPL/app.c: 63:         ret = gpio_dc_motor_rotate_counter_clock_wise(&motor1);
-[e = _ret ( _gpio_dc_motor_rotate_counter_clock_wise (1 -> &U _motor1 `*CS310 ]
-"64
-[; ;APPL/app.c: 64:         ret = gpio_dc_motor_rotate_counter_clock_wise(&motor2);
-[e = _ret ( _gpio_dc_motor_rotate_counter_clock_wise (1 -> &U _motor2 `*CS310 ]
-"65
-[; ;APPL/app.c: 65:         ret = gpio_dc_motor_read_state(&motor1, &st1);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor1 `*CS310 &U _st1 ]
-"66
-[; ;APPL/app.c: 66:         ret = gpio_dc_motor_read_state(&motor2, &st2);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor2 `*CS310 &U _st2 ]
-"67
-[; ;APPL/app.c: 67:         _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"69
-[; ;APPL/app.c: 69:         ret = gpio_dc_motor_brake(&motor1);
-[e = _ret ( _gpio_dc_motor_brake (1 -> &U _motor1 `*CS310 ]
-"70
-[; ;APPL/app.c: 70:         ret = gpio_dc_motor_brake(&motor2);
-[e = _ret ( _gpio_dc_motor_brake (1 -> &U _motor2 `*CS310 ]
-"71
-[; ;APPL/app.c: 71:         ret = gpio_dc_motor_read_state(&motor1, &st1);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor1 `*CS310 &U _st1 ]
-"72
-[; ;APPL/app.c: 72:         ret = gpio_dc_motor_read_state(&motor2, &st2);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor2 `*CS310 &U _st2 ]
-"73
-[; ;APPL/app.c: 73:         _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"75
-[; ;APPL/app.c: 75:         ret = gpio_dc_motor_rotate_clock_wise(&motor1);
-[e = _ret ( _gpio_dc_motor_rotate_clock_wise (1 -> &U _motor1 `*CS310 ]
-"76
-[; ;APPL/app.c: 76:         ret = gpio_dc_motor_rotate_counter_clock_wise(&motor2);
-[e = _ret ( _gpio_dc_motor_rotate_counter_clock_wise (1 -> &U _motor2 `*CS310 ]
-"77
-[; ;APPL/app.c: 77:         ret = gpio_dc_motor_read_state(&motor1, &st1);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor1 `*CS310 &U _st1 ]
-"78
-[; ;APPL/app.c: 78:         ret = gpio_dc_motor_read_state(&motor2, &st2);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor2 `*CS310 &U _st2 ]
-"79
-[; ;APPL/app.c: 79:         _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"81
-[; ;APPL/app.c: 81:         ret = gpio_dc_motor_toggle_rotation_direction(&motor1);
-[e = _ret ( _gpio_dc_motor_toggle_rotation_direction (1 -> &U _motor1 `*CS310 ]
-"82
-[; ;APPL/app.c: 82:         ret = gpio_dc_motor_toggle_rotation_direction(&motor2);
-[e = _ret ( _gpio_dc_motor_toggle_rotation_direction (1 -> &U _motor2 `*CS310 ]
-"83
-[; ;APPL/app.c: 83:         ret = gpio_dc_motor_read_state(&motor1, &st1);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor1 `*CS310 &U _st1 ]
-"84
-[; ;APPL/app.c: 84:         ret = gpio_dc_motor_read_state(&motor2, &st2);
-[e = _ret ( _gpio_dc_motor_read_state (2 , -> &U _motor2 `*CS310 &U _st2 ]
-"85
-[; ;APPL/app.c: 85:         _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"86
-[; ;APPL/app.c: 86:     }
-}
-[e :U 312 ]
-[e $U 313  ]
+[; ;APPL/app.c: 58:     while (1) {
 [e :U 314 ]
-"88
-[; ;APPL/app.c: 88:     return (0);
+{
+"59
+[; ;APPL/app.c: 59:         for(uint8 i = 0; i < 50; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 50 `i 316  ]
+[e $U 317  ]
+[e :U 316 ]
+{
+"60
+[; ;APPL/app.c: 60:             ret = gpio_pin_write_logic(&pin2, gpio_high);
+[e = _ret ( _gpio_pin_write_logic (2 , -> &U _pin2 `*CS306 . `E3693 1 ]
+"61
+[; ;APPL/app.c: 61:             ret = gpio_segment_write_number(&seg1, number%10);
+[e = _ret ( _gpio_segment_write_number (2 , -> &U _seg1 `*CS311 -> % -> _number `i -> 10 `i `uc ]
+"62
+[; ;APPL/app.c: 62:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"63
+[; ;APPL/app.c: 63:             ret = gpio_pin_write_logic(&pin2, gpio_low);
+[e = _ret ( _gpio_pin_write_logic (2 , -> &U _pin2 `*CS306 . `E3693 0 ]
+"64
+[; ;APPL/app.c: 64:             ret = gpio_pin_write_logic(&pin1, gpio_high);
+[e = _ret ( _gpio_pin_write_logic (2 , -> &U _pin1 `*CS306 . `E3693 1 ]
+"65
+[; ;APPL/app.c: 65:             ret = gpio_segment_write_number(&seg1, number/10);
+[e = _ret ( _gpio_segment_write_number (2 , -> &U _seg1 `*CS311 -> / -> _number `i -> 10 `i `uc ]
+"66
+[; ;APPL/app.c: 66:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"67
+[; ;APPL/app.c: 67:             ret = gpio_pin_write_logic(&pin1, gpio_low);
+[e = _ret ( _gpio_pin_write_logic (2 , -> &U _pin1 `*CS306 . `E3693 0 ]
+"68
+[; ;APPL/app.c: 68:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 50 `i 316  ]
+[e :U 317 ]
+}
+"69
+[; ;APPL/app.c: 69:         number++;
+[e ++ _number -> -> 1 `i `uc ]
+"70
+[; ;APPL/app.c: 70:         if(number >= 100){
+[e $ ! >= -> _number `i -> 100 `i 319  ]
+{
+"71
+[; ;APPL/app.c: 71:             number = 0;
+[e = _number -> -> 0 `i `uc ]
+"72
+[; ;APPL/app.c: 72:         }
+}
+[e :U 319 ]
+"73
+[; ;APPL/app.c: 73:     }
+}
+[e :U 313 ]
+[e $U 314  ]
+[e :U 315 ]
+"75
+[; ;APPL/app.c: 75:     return (0);
 [e ) -> 0 `i ]
-[e $UE 311  ]
-"89
-[; ;APPL/app.c: 89: }
-[e :UE 311 ]
+[e $UE 312  ]
+"76
+[; ;APPL/app.c: 76: }
+[e :UE 312 ]
 }

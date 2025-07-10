@@ -5744,84 +5744,92 @@ Std_ReturnType gpio_dc_motor_rotate_clock_wise(const dc_motor *motor);
 Std_ReturnType gpio_dc_motor_rotate_counter_clock_wise(const dc_motor *motor);
 Std_ReturnType gpio_dc_motor_toggle_rotation_direction(const dc_motor *motor);
 # 19 "APPL/app.h" 2
+# 1 "APPL/../ECUAL/7SEG/ecual_7seg.h" 1
+# 16 "APPL/../ECUAL/7SEG/ecual_7seg.h"
+# 1 "APPL/../ECUAL/7SEG/ecual_7seg_cfg.h" 1
+# 17 "APPL/../ECUAL/7SEG/ecual_7seg.h" 2
+# 35 "APPL/../ECUAL/7SEG/ecual_7seg.h"
+typedef enum{
+    segment_common_cathode = (uint8)0x00,
+    segment_common_anode = (uint8)0x01
+}segment_con;
+
+typedef struct{
+    gpio_pin_cfg pins[(uint8)0x04];
+    segment_con connection;
+}gpio_segment;
+
+
+
+Std_ReturnType gpio_segment_init(const gpio_segment *seg);
+Std_ReturnType gpio_segment_read_number(const gpio_segment *seg, uint8 *number);
+Std_ReturnType gpio_segment_write_number(const gpio_segment *seg, uint8 number);
+# 20 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
 
 
-dc_motor motor1 = {
-    .ins[0].port = gpio_portC,
-    .ins[0].pin = gpio_pin0,
-    .ins[0].direction = gpio_output,
-    .ins[0].logic = gpio_low,
+gpio_segment seg1 = {
+    .pins[0].port = gpio_portC,
+    .pins[0].pin = gpio_pin0,
+    .pins[0].direction = gpio_output,
+    .pins[0].logic = gpio_low,
 
-    .ins[1].port = gpio_portC,
-    .ins[1].pin = gpio_pin1,
-    .ins[1].direction = gpio_output,
-    .ins[1].logic = gpio_low
+    .pins[1].port = gpio_portC,
+    .pins[1].pin = gpio_pin1,
+    .pins[1].direction = gpio_output,
+    .pins[1].logic = gpio_low,
+
+    .pins[2].port = gpio_portC,
+    .pins[2].pin = gpio_pin2,
+    .pins[2].direction = gpio_output,
+    .pins[2].logic = gpio_low,
+
+    .pins[3].port = gpio_portC,
+    .pins[3].pin = gpio_pin3,
+    .pins[3].direction = gpio_output,
+    .pins[3].logic = gpio_low,
+
+    .connection = segment_common_anode
 };
 
-dc_motor motor2 = {
-    .ins[0].port = gpio_portC,
-    .ins[0].pin = gpio_pin2,
-    .ins[0].direction = gpio_output,
-    .ins[0].logic = gpio_low,
-
-    .ins[1].port = gpio_portC,
-    .ins[1].pin = gpio_pin3,
-    .ins[1].direction = gpio_output,
-    .ins[1].logic = gpio_low
+gpio_pin_cfg pin1 = {
+    .port = gpio_portD,
+    .pin = gpio_pin0,
+    .direction = gpio_output,
+    .logic = gpio_low
 };
 
-motor_state st1,st2;
+gpio_pin_cfg pin2 = {
+    .port = gpio_portD,
+    .pin = gpio_pin1,
+    .direction = gpio_output,
+    .logic = gpio_low
+};
+
+uint8 number = 0;
+uint8 var;
 
 int main() {
     Std_ReturnType ret = E_NOT_OK;
-
-    ret = gpio_dc_motor_init(&motor1);
-    ret = gpio_dc_motor_init(&motor2);
-
+    ret = gpio_segment_init(&seg1);
+    ret = gpio_pin_init(&pin1);
+    ret = gpio_pin_init(&pin2);
     while (1) {
-
-
-
-
-
-
-        ret = gpio_dc_motor_rotate_clock_wise(&motor1);
-        ret = gpio_dc_motor_rotate_clock_wise(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-
-        ret = gpio_dc_motor_brake(&motor1);
-        ret = gpio_dc_motor_brake(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-
-        ret = gpio_dc_motor_rotate_counter_clock_wise(&motor1);
-        ret = gpio_dc_motor_rotate_counter_clock_wise(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-
-        ret = gpio_dc_motor_brake(&motor1);
-        ret = gpio_dc_motor_brake(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-
-        ret = gpio_dc_motor_rotate_clock_wise(&motor1);
-        ret = gpio_dc_motor_rotate_counter_clock_wise(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        _delay((unsigned long)((3000)*(8000000UL/4000.0)));
-
-        ret = gpio_dc_motor_toggle_rotation_direction(&motor1);
-        ret = gpio_dc_motor_toggle_rotation_direction(&motor2);
-        ret = gpio_dc_motor_read_state(&motor1, &st1);
-        ret = gpio_dc_motor_read_state(&motor2, &st2);
-        _delay((unsigned long)((3000)*(8000000UL/4000.0)));
+        for(uint8 i = 0; i < 50; i++){
+            ret = gpio_pin_write_logic(&pin2, gpio_high);
+            ret = gpio_segment_write_number(&seg1, number%10);
+            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            ret = gpio_pin_write_logic(&pin2, gpio_low);
+            ret = gpio_pin_write_logic(&pin1, gpio_high);
+            ret = gpio_segment_write_number(&seg1, number/10);
+            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            ret = gpio_pin_write_logic(&pin1, gpio_low);
+        }
+        number++;
+        if(number >= 100){
+            number = 0;
+        }
     }
 
     return (0);

@@ -39,7 +39,10 @@ build/default/production/APP_Layer/main.o.d \
  APP_Layer/../ECUAL_Layer/Relay/ecual_relay_cfg.h \
  APP_Layer/../ECUAL_Layer/DC_Motor/ecual_dc_motor.h \
  APP_Layer/../ECUAL_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h \
- APP_Layer/../ECUAL_Layer/DC_Motor/ecual_dc_motor_cfg.h
+ APP_Layer/../ECUAL_Layer/DC_Motor/ecual_dc_motor_cfg.h \
+ APP_Layer/../ECUAL_Layer/7SEG/ecual_7seg.h \
+ APP_Layer/../ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio.h \
+ APP_Layer/../ECUAL_Layer/7SEG/ecual_7seg_cfg.h
 
 APP_Layer/main.h:
 
@@ -122,3 +125,9 @@ APP_Layer/../ECUAL_Layer/DC_Motor/ecual_dc_motor.h:
 APP_Layer/../ECUAL_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h:
 
 APP_Layer/../ECUAL_Layer/DC_Motor/ecual_dc_motor_cfg.h:
+
+APP_Layer/../ECUAL_Layer/7SEG/ecual_7seg.h:
+
+APP_Layer/../ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio.h:
+
+APP_Layer/../ECUAL_Layer/7SEG/ecual_7seg_cfg.h:

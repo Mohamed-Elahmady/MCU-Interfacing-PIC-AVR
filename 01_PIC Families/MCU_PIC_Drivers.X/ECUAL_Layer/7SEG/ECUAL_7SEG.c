@@ -50,7 +50,7 @@ Std_ReturnType GPIO_SEGMENT_READ_NUMBER(const GPIO_SEGMENT *seg, uint8 *number){
             Retval = GPIO_PIN_READ_LOGIC(&(seg->pins[i]), &logic);
             *number |= (uint8)(logic << i);
         }
-        if(*number >= MAX_NUMBER){
+        if(*number >= SEG_MAX_NUMBER){
                 Retval = E_NOT_OK;
         }
     }
@@ -63,7 +63,7 @@ Std_ReturnType GPIO_SEGMENT_READ_NUMBER(const GPIO_SEGMENT *seg, uint8 *number){
 
 Std_ReturnType GPIO_SEGMENT_WRITE_NUMBER(const GPIO_SEGMENT *seg, uint8 number){
     Std_ReturnType Retval = E_OK;
-    if(NULL == seg || number >= MAX_NUMBER){
+    if(NULL == seg || number >= SEG_MAX_NUMBER){
         Retval = E_NOT_OK;
     }
     else{

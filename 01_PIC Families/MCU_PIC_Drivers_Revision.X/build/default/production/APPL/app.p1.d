@@ -18,4 +18,7 @@ APPL/../ECUAL/Relay/../../MCAL/GPIO/hal_gpio.h  \
 APPL/../ECUAL/Relay/ecual_relay_cfg.h  \
 APPL/../ECUAL/DC_Motor/ecual_dc_motor.h  \
 APPL/../ECUAL/DC_Motor/../../MCAL/GPIO/hal_gpio.h  \
-APPL/../ECUAL/DC_Motor/ecual_dc_motor_cfg.h 
+APPL/../ECUAL/DC_Motor/ecual_dc_motor_cfg.h  \
+APPL/../ECUAL/7SEG/ecual_7seg.h  \
+APPL/../ECUAL/7SEG/../../MCAL/GPIO/hal_gpio.h  \
+APPL/../ECUAL/7SEG/ecual_7seg_cfg.h 

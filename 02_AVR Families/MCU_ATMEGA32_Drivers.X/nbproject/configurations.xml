@@ -29,6 +29,10 @@
         <itemPath>APP_Layer/main.h</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>ECUAL_Layer/7SEG/ecual_7seg.h</itemPath>
+          <itemPath>ECUAL_Layer/7SEG/ecual_7seg_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ecual_btn.h</itemPath>
           <itemPath>ECUAL_Layer/BTN/ecual_btn_cfg.h</itemPath>
@@ -73,6 +77,9 @@
         <itemPath>APP_Layer/main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>ECUAL_Layer/7SEG/ecual_7seg.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ecual_btn.c</itemPath>
         </logicalFolder>

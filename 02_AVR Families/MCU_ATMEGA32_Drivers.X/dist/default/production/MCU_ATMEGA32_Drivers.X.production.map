@@ -13,6 +13,36 @@ Discarded input sections
 
  .data          0x0000000000000000        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  .bss           0x0000000000000000        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/BTN/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/LED/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/Relay/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/GPIO/app1.o
  .text          0x0000000000000000        0x0 build/default/production/APP_Layer/main.o
  .data          0x0000000000000000        0x0 build/default/production/APP_Layer/main.o
  .bss           0x0000000000000000        0x0 build/default/production/APP_Layer/main.o
@@ -33,6 +63,31 @@ Discarded input sections
  .debug_str     0x0000000000000000       0x2c build/default/production/ECUAL_Layer/BTN/ecual_btn.o
  .comment       0x0000000000000000       0x30 build/default/production/ECUAL_Layer/BTN/ecual_btn.o
  .debug_frame   0x0000000000000000       0x58 build/default/production/ECUAL_Layer/BTN/ecual_btn.o
+ .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .text.GPIO_DC_Motor_INIT
+                0x0000000000000000       0x20 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .text.GPIO_DC_Motor_Read_Rotation_State
+                0x0000000000000000       0x7c build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .text.GPIO_DC_Motor_Brake
+                0x0000000000000000       0x24 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .text.GPIO_DC_Motor_Rotate_ClockWise
+                0x0000000000000000       0x24 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .text.GPIO_DC_Motor_Rotate_Counter_ClockWise
+                0x0000000000000000       0x24 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .text.GPIO_DC_Motor_Toggle_Rotation_Direction
+                0x0000000000000000       0x42 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_info    0x0000000000000000      0x8f2 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_abbrev  0x0000000000000000      0x15b build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_loc     0x0000000000000000      0x433 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_aranges
+                0x0000000000000000       0x48 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_ranges  0x0000000000000000       0x38 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_line    0x0000000000000000      0x21e build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_str     0x0000000000000000       0x4a build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .comment       0x0000000000000000       0x30 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_frame   0x0000000000000000       0xe4 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/LED/ecual_led.o
@@ -104,39 +159,9 @@ Discarded input sections
  .debug_line    0x0000000000000000        0x0 build/default/production/MCAL_Layer/device_cfg.o
  .debug_str     0x0000000000000000        0x0 build/default/production/MCAL_Layer/device_cfg.o
  .comment       0x0000000000000000       0x30 build/default/production/MCAL_Layer/device_cfg.o
- .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
- .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
- .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
- .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
- .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/LED/app1.o
- .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/LED/app1.o
- .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
- .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
- .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
- .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
- .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/BTN/app1.o
- .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/BTN/app1.o
- .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
- .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
- .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
- .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
- .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
- .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/Relay/app1.o
- .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
- .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
- .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
- .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
- .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/GPIO/app1.o
- .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/GPIO/app1.o
- .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
- .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
- .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
- .text          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
- .data          0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
- .bss           0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
- .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
- .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/DC_Motor/app1.o
- .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/DC_Motor/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
+ .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
+ .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
@@ -199,18 +224,19 @@ Linker script and memory map
 
 LOAD /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
+LOAD build/default/production/Codes/ECUAL/BTN/app1.o
+LOAD build/default/production/Codes/ECUAL/DC_Motor/app1.o
+LOAD build/default/production/Codes/ECUAL/LED/app1.o
+LOAD build/default/production/Codes/ECUAL/Relay/app1.o
+LOAD build/default/production/Codes/MCAL/GPIO/app1.o
 LOAD build/default/production/APP_Layer/main.o
 LOAD build/default/production/ECUAL_Layer/BTN/ecual_btn.o
+LOAD build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
 LOAD build/default/production/ECUAL_Layer/LED/ecual_led.o
 LOAD build/default/production/ECUAL_Layer/Relay/ecual_relay.o
 LOAD build/default/production/MCAL_Layer/GPIO/hal_gpio.o
 LOAD build/default/production/MCAL_Layer/device_cfg.o
-LOAD build/default/production/Codes/ECUAL/LED/app1.o
-LOAD build/default/production/Codes/ECUAL/BTN/app1.o
-LOAD build/default/production/Codes/ECUAL/Relay/app1.o
-LOAD build/default/production/Codes/MCAL/GPIO/app1.o
-LOAD build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-LOAD build/default/production/Codes/ECUAL/DC_Motor/app1.o
+LOAD build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 START GROUP
 LOAD /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a
 END GROUP
@@ -321,7 +347,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000       0xb4
+.text           0x0000000000000000       0xbc
  *(.vectors)
  .vectors       0x0000000000000000       0x54 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
                 0x0000000000000000                __vectors
@@ -329,43 +355,44 @@ END GROUP
  *(.vectors)
  *(.progmem.gcc*)
  *(.dinit)
- .dinit         0x0000000000000054        0xc data_init
-                0x0000000000000060                . = ALIGN (0x2)
-                0x0000000000000060                __trampolines_start = .
+ .dinit         0x0000000000000054       0x13 data_init
+                0x0000000000000068                . = ALIGN (0x2)
+ *fill*         0x0000000000000067        0x1 
+                0x0000000000000068                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000000000000060        0x0 linker stubs
+ .trampolines   0x0000000000000068        0x0 linker stubs
  *(.trampolines*)
-                0x0000000000000060                __trampolines_end = .
+                0x0000000000000068                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
-                0x0000000000000060                . = ALIGN (0x2)
+                0x0000000000000068                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000060                __ctors_start = .
+                0x0000000000000068                __ctors_start = .
  *(.ctors)
-                0x0000000000000060                __ctors_end = .
-                0x0000000000000060                __dtors_start = .
+                0x0000000000000068                __ctors_end = .
+                0x0000000000000068                __dtors_start = .
  *(.dtors)
-                0x0000000000000060                __dtors_end = .
+                0x0000000000000068                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000060        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
-                0x0000000000000060                __init
+ .init0         0x0000000000000068        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+                0x0000000000000068                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000060        0xc /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .init2         0x0000000000000068        0xc /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000000000006c       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x000000000000006c                __do_copy_data
-                0x000000000000009a                __do_clear_bss
+ .init4         0x0000000000000074       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000074                __do_copy_data
+                0x00000000000000a2                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -376,12 +403,12 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000000000000a8        0x8 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .init9         0x00000000000000b0        0x8 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  *(.init9)
-                0x00000000000000b0                . = ALIGN (0x2)
+                0x00000000000000b8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000000b0        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x00000000000000b0                _exit
+ .fini9         0x00000000000000b8        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x00000000000000b8                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -400,15 +427,16 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000000b0        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x00000000000000b8        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000000b4                _etext = .
+                0x00000000000000bc                _etext = .
 
-.data           0x0000000000800060        0x0 load address 0x00000000000000b4
+.data           0x0000000000800060        0x0 load address 0x00000000000000bc
                 [!provide]                        PROVIDE (__data_start, .)
  *(.gnu.linkonce.d*)
  *(.gnu.linkonce.r*)
                 0x0000000000800060                . = ALIGN (0x2)
+ *fill*         0x0000000000800060        0x0 
                 0x0000000000800060                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
@@ -416,8 +444,8 @@ END GROUP
                 [!provide]                        PROVIDE (__bss_start, .)
  *(COMMON)
                 [!provide]                        PROVIDE (__bss_end, .)
-                0x00000000000000b4                __data_load_start = LOADADDR (.data)
-                0x00000000000000b4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000000bc                __data_load_start = LOADADDR (.data)
+                0x00000000000000bc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000800060        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
@@ -470,7 +498,7 @@ END GROUP
  .comment       0x0000000000000000       0x2f build/default/production/APP_Layer/main.o
                                          0x30 (size before relaxing)
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .comment       0x000000000000002f       0x30 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .comment       0x000000000000002f       0x30 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
  .comment       0x000000000000002f       0x2c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
                                          0x2d (size before relaxing)
  .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
@@ -506,57 +534,57 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xe0
+.debug_aranges  0x0000000000000000       0xc8
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x20 build/default/production/APP_Layer/main.o
  .debug_aranges
                 0x0000000000000020       0x78 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
  .debug_aranges
-                0x0000000000000098       0x48 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+                0x0000000000000098       0x30 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1fc3
+.debug_info     0x0000000000000000     0x1c68
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_info    0x00000000000004e6      0x85e build/default/production/APP_Layer/main.o
- .debug_info    0x0000000000000d44      0x98d build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_info    0x00000000000016d1      0x8f2 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_info    0x00000000000004e6      0x7c0 build/default/production/APP_Layer/main.o
+ .debug_info    0x0000000000000ca6      0x98d build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_info    0x0000000000001633      0x635 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
-.debug_abbrev   0x0000000000000000      0x93f
+.debug_abbrev   0x0000000000000000      0x922
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_abbrev  0x00000000000004a3      0x173 build/default/production/APP_Layer/main.o
- .debug_abbrev  0x0000000000000616      0x1ce build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_abbrev  0x00000000000007e4      0x15b build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_abbrev  0x00000000000004a3      0x18e build/default/production/APP_Layer/main.o
+ .debug_abbrev  0x0000000000000631      0x1ce build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_abbrev  0x00000000000007ff      0x123 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
-.debug_line     0x0000000000000000      0x90b
+.debug_line     0x0000000000000000      0x85e
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x116 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_line    0x0000000000000116      0x208 build/default/production/APP_Layer/main.o
- .debug_line    0x000000000000031e      0x3cf build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_line    0x00000000000006ed      0x21e build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_line    0x0000000000000116      0x1df build/default/production/APP_Layer/main.o
+ .debug_line    0x00000000000002f5      0x3cf build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_line    0x00000000000006c4      0x19a build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
-.debug_frame    0x0000000000000000      0x1f4
+.debug_frame    0x0000000000000000      0x1b8
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x24 build/default/production/APP_Layer/main.o
  .debug_frame   0x0000000000000024       0xec build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_frame   0x0000000000000110       0xe4 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_frame   0x0000000000000110       0xa8 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
-.debug_str      0x0000000000000000      0x2b3
+.debug_str      0x0000000000000000      0x258
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_str     0x0000000000000196       0xb7 build/default/production/APP_Layer/main.o
- .debug_str     0x000000000000024d       0x1c build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_str     0x0000000000000269       0x4a build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_str     0x0000000000000196       0x68 build/default/production/APP_Layer/main.o
+ .debug_str     0x00000000000001fe       0x1c build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_str     0x000000000000021a       0x3e build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
-.debug_loc      0x0000000000000000      0xc0d
+.debug_loc      0x0000000000000000      0x984
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x17c build/default/production/APP_Layer/main.o
- .debug_loc     0x000000000000017c      0x65e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_loc     0x00000000000007da      0x433 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_loc     0x0000000000000000       0x5c build/default/production/APP_Layer/main.o
+ .debug_loc     0x000000000000005c      0x65e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_loc     0x00000000000006ba      0x2ca build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -576,11 +604,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0xb0
+.debug_ranges   0x0000000000000000       0x98
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x10 build/default/production/APP_Layer/main.o
  .debug_ranges  0x0000000000000010       0x68 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_ranges  0x0000000000000078       0x38 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
+ .debug_ranges  0x0000000000000078       0x20 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 
 .debug_macro
  *(.debug_macro)
@@ -593,144 +621,134 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
 
-.bss.st         0x000000000080007c        0x1
- .bss.st        0x000000000080007c        0x1 build/default/production/APP_Layer/main.o
-                0x000000000080007c                st
+.bss.var        0x000000000080007d        0x1
+ .bss.var       0x000000000080007d        0x1 build/default/production/APP_Layer/main.o
+                0x000000000080007d                var
 
-.text.main      0x00000000000000b4       0xba
- .text.main     0x00000000000000b4       0xba build/default/production/APP_Layer/main.o
-                0x00000000000000b4                main
+.text.main      0x00000000000000bc       0xac
+ .text.main     0x00000000000000bc       0xac build/default/production/APP_Layer/main.o
+                0x00000000000000bc                main
 
 .text.GPIO_Pin_Direction_INIT
-                0x000000000000016e       0x8e
+                0x0000000000000168       0x8e
  .text.GPIO_Pin_Direction_INIT
-                0x000000000000016e       0x8e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x000000000000016e                GPIO_Pin_Direction_INIT
+                0x0000000000000168       0x8e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x0000000000000168                GPIO_Pin_Direction_INIT
 
 .text.GPIO_Pin_Write_Logic
-                0x00000000000001fc       0x84
+                0x00000000000001f6       0x84
  .text.GPIO_Pin_Write_Logic
-                0x00000000000001fc       0x84 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x00000000000001fc                GPIO_Pin_Write_Logic
+                0x00000000000001f6       0x84 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x00000000000001f6                GPIO_Pin_Write_Logic
 
-.text.GPIO_DC_Motor_Read_Rotation_State
-                0x0000000000000280       0x7c
- .text.GPIO_DC_Motor_Read_Rotation_State
-                0x0000000000000280       0x7c build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-                0x0000000000000280                GPIO_DC_Motor_Read_Rotation_State
+.text.GPIO_Segment_Read_Number
+                0x000000000000027a       0x80
+ .text.GPIO_Segment_Read_Number
+                0x000000000000027a       0x80 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
+                0x000000000000027a                GPIO_Segment_Read_Number
+
+.text.GPIO_Segment_Write_Number
+                0x00000000000002fa       0x56
+ .text.GPIO_Segment_Write_Number
+                0x00000000000002fa       0x56 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
+                0x00000000000002fa                GPIO_Segment_Write_Number
 
 .text.GPIO_Pin_Read_Logic
-                0x00000000000002fc       0x4a
+                0x0000000000000350       0x4a
  .text.GPIO_Pin_Read_Logic
-                0x00000000000002fc       0x4a build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x00000000000002fc                GPIO_Pin_Read_Logic
+                0x0000000000000350       0x4a build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x0000000000000350                GPIO_Pin_Read_Logic
 
-.text.GPIO_DC_Motor_Toggle_Rotation_Direction
-                0x0000000000000346       0x42
- .text.GPIO_DC_Motor_Toggle_Rotation_Direction
-                0x0000000000000346       0x42 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-                0x0000000000000346                GPIO_DC_Motor_Toggle_Rotation_Direction
+.text.GPIO_Segment_INIT
+                0x000000000000039a       0x30
+ .text.GPIO_Segment_INIT
+                0x000000000000039a       0x30 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
+                0x000000000000039a                GPIO_Segment_INIT
 
 .text.GPIO_Pin_INIT
-                0x0000000000000388       0x26
+                0x00000000000003ca       0x26
  .text.GPIO_Pin_INIT
-                0x0000000000000388       0x26 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000000388                GPIO_Pin_INIT
+                0x00000000000003ca       0x26 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x00000000000003ca                GPIO_Pin_INIT
 
-.text.GPIO_DC_Motor_Brake
-                0x00000000000003ae       0x24
- .text.GPIO_DC_Motor_Brake
-                0x00000000000003ae       0x24 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-                0x00000000000003ae                GPIO_DC_Motor_Brake
+.text.exit      0x00000000000003f0       0x16
+ .text.exit     0x00000000000003f0       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x00000000000003f0                exit
 
-.text.GPIO_DC_Motor_Rotate_ClockWise
-                0x00000000000003d2       0x24
- .text.GPIO_DC_Motor_Rotate_ClockWise
-                0x00000000000003d2       0x24 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-                0x00000000000003d2                GPIO_DC_Motor_Rotate_ClockWise
+.text           0x0000000000000406        0x4
+ .text          0x0000000000000406        0x4 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+                0x0000000000000406                __vector_20
+                0x0000000000000406                __vector_12
+                0x0000000000000406                __bad_interrupt
+                0x0000000000000406                __vector_6
+                0x0000000000000406                __vector_3
+                0x0000000000000406                __vector_11
+                0x0000000000000406                __vector_13
+                0x0000000000000406                __vector_17
+                0x0000000000000406                __vector_19
+                0x0000000000000406                __vector_7
+                0x0000000000000406                __vector_5
+                0x0000000000000406                __vector_4
+                0x0000000000000406                __vector_9
+                0x0000000000000406                __vector_2
+                0x0000000000000406                __vector_15
+                0x0000000000000406                __vector_8
+                0x0000000000000406                __vector_14
+                0x0000000000000406                __vector_10
+                0x0000000000000406                __vector_16
+                0x0000000000000406                __vector_18
+                0x0000000000000406                __vector_1
 
-.text.GPIO_DC_Motor_Rotate_Counter_ClockWise
-                0x00000000000003f6       0x24
- .text.GPIO_DC_Motor_Rotate_Counter_ClockWise
-                0x00000000000003f6       0x24 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-                0x00000000000003f6                GPIO_DC_Motor_Rotate_Counter_ClockWise
-
-.text.GPIO_DC_Motor_INIT
-                0x000000000000041a       0x20
- .text.GPIO_DC_Motor_INIT
-                0x000000000000041a       0x20 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
-                0x000000000000041a                GPIO_DC_Motor_INIT
-
-.text.exit      0x000000000000043a       0x16
- .text.exit     0x000000000000043a       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x000000000000043a                exit
-
-.text           0x0000000000000450        0x4
- .text          0x0000000000000450        0x4 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
-                0x0000000000000450                __vector_20
-                0x0000000000000450                __vector_12
-                0x0000000000000450                __bad_interrupt
-                0x0000000000000450                __vector_6
-                0x0000000000000450                __vector_3
-                0x0000000000000450                __vector_11
-                0x0000000000000450                __vector_13
-                0x0000000000000450                __vector_17
-                0x0000000000000450                __vector_19
-                0x0000000000000450                __vector_7
-                0x0000000000000450                __vector_5
-                0x0000000000000450                __vector_4
-                0x0000000000000450                __vector_9
-                0x0000000000000450                __vector_2
-                0x0000000000000450                __vector_15
-                0x0000000000000450                __vector_8
-                0x0000000000000450                __vector_14
-                0x0000000000000450                __vector_10
-                0x0000000000000450                __vector_16
-                0x0000000000000450                __vector_18
-                0x0000000000000450                __vector_1
-
-.text._Exit     0x0000000000000454        0x4
- .text._Exit    0x0000000000000454        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
-                0x0000000000000454                _Exit
+.text._Exit     0x000000000000040a        0x4
+ .text._Exit    0x000000000000040a        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
+                0x000000000000040a                _Exit
 
 .text.__dummy_fini
-                0x0000000000000458        0x2
+                0x000000000000040e        0x2
  .text.__dummy_fini
-                0x0000000000000458        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x0000000000000458                _fini
+                0x000000000000040e        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x000000000000040e                _fini
 
 .text.__dummy_funcs_on_exit
-                0x000000000000045a        0x2
+                0x0000000000000410        0x2
  .text.__dummy_funcs_on_exit
-                0x000000000000045a        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x000000000000045a                __funcs_on_exit
+                0x0000000000000410        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x0000000000000410                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x000000000000045c        0x2
+                0x0000000000000412        0x2
  .text.__dummy_simulator_exit
-                0x000000000000045c        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x000000000000045c                __simulator_exit
+                0x0000000000000412        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x0000000000000412                __simulator_exit
 
 .data.PORT_REGs
-                0x0000000000800060        0x8 load address 0x000000000000045e
+                0x0000000000800060        0x8 load address 0x0000000000000414
  .data.PORT_REGs
                 0x0000000000800060        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
                 0x0000000000800060                PORT_REGs
 
-.data.PIN_REGs  0x0000000000800068        0x8 load address 0x0000000000000466
+.data.PIN_REGs  0x0000000000800068        0x8 load address 0x000000000000041c
  .data.PIN_REGs
                 0x0000000000800068        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
                 0x0000000000800068                PIN_REGs
 
-.data.DDR_REGs  0x0000000000800070        0x8 load address 0x000000000000046e
+.data.DDR_REGs  0x0000000000800070        0x8 load address 0x0000000000000424
  .data.DDR_REGs
                 0x0000000000800070        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
                 0x0000000000800070                DDR_REGs
 
-.data.motor2    0x0000000000800078        0x2 load address 0x0000000000000476
- .data.motor2   0x0000000000800078        0x2 build/default/production/APP_Layer/main.o
-                0x0000000000800078                motor2
+.data.seg1      0x0000000000800078        0x5 load address 0x000000000000042c
+ .data.seg1     0x0000000000800078        0x5 build/default/production/APP_Layer/main.o
+                0x0000000000800078                seg1
 
-.data.motor1    0x000000000080007a        0x2 load address 0x0000000000000478
- .data.motor1   0x000000000080007a        0x2 build/default/production/APP_Layer/main.o
-                0x000000000080007a                motor1
+.data.number    0x000000000080007e        0x1 load address 0x0000000000000431
+ .data.number   0x000000000080007e        0x1 build/default/production/APP_Layer/main.o
+                0x000000000080007e                number
+
+.data.pin2      0x000000000080007f        0x1 load address 0x0000000000000432
+ .data.pin2     0x000000000080007f        0x1 build/default/production/APP_Layer/main.o
+                0x000000000080007f                pin2
+
+.data.pin1      0x0000000000800080        0x1 load address 0x0000000000000433
+ .data.pin1     0x0000000000800080        0x1 build/default/production/APP_Layer/main.o
+                0x0000000000800080                pin1

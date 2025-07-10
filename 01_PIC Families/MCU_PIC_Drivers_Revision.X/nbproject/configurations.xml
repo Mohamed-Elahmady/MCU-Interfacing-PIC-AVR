@@ -8,6 +8,10 @@
         <itemPath>APPL/app.h</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>ECUAL/7SEG/ecual_7seg.h</itemPath>
+          <itemPath>ECUAL/7SEG/ecual_7seg_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL/BTN/ecual_btn.h</itemPath>
           <itemPath>ECUAL/BTN/ecual_btn_cfg.h</itemPath>
@@ -53,6 +57,9 @@
         <itemPath>APPL/app.c</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL" displayName="ECUAL" projectFiles="true">
+        <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
+          <itemPath>ECUAL/7SEG/ecual_7seg.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL/BTN/ecual_btn.c</itemPath>
         </logicalFolder>
