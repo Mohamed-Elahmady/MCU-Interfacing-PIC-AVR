@@ -12,11 +12,7 @@
 
 /******************* Section 1 : Includes *******************/
 
-#include "../ECUAL_Layer/LED/ECUAL_LED.h"
-#include "../ECUAL_Layer/BTN/ECUAL_BTN.h"
-#include "../ECUAL_Layer/Relay/ECUAL_RELAY.h"
-#include "../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h"
-#include "../ECUAL_Layer/7SEG/ECUAL_7SEG.h"
+#include "../ECUAL_Layer/ECUAL_INIT.h" 
 
 /******************* Section 2 : Macros Declarations *******************/
 
@@ -28,7 +24,8 @@
 
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
-
+extern GPIO_KEYPAD keypad1;
+extern GPIO_LED       led1;
 
 /******************* Section 5 : Software Interfaces Declarations (APIs) *******************/
 

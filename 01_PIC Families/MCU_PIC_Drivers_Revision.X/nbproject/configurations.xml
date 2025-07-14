@@ -20,6 +20,10 @@
           <itemPath>ECUAL/DC_Motor/ecual_dc_motor.h</itemPath>
           <itemPath>ECUAL/DC_Motor/ecual_dc_motor_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Keypad" displayName="Keypad" projectFiles="true">
+          <itemPath>ECUAL/Keypad/ecual_keypad.h</itemPath>
+          <itemPath>ECUAL/Keypad/ecual_keypad_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL/LED/ecual_led.h</itemPath>
           <itemPath>ECUAL/LED/ecual_led_cfg.h</itemPath>
@@ -65,6 +69,9 @@
         </logicalFolder>
         <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
           <itemPath>ECUAL/DC_Motor/ecual_dc_motor.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Keypad" displayName="Keypad" projectFiles="true">
+          <itemPath>ECUAL/Keypad/ecual_keypad.c</itemPath>
         </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECUAL/LED/ecual_led.c</itemPath>

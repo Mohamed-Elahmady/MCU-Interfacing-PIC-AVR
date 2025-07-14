@@ -3,10 +3,14 @@
 [d edition pro ]
 [d chip 18F46K20 ]
 [d frameptr 4065 ]
-"12 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
-[e E3817 . `uc
-segment_common_cathode 0
-segment_common_anode 1
+"10 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+[e E3736 . `uc
+led_off 0
+led_on 1
+]
+[e E3740 . `uc
+led_sink 0
+led_source 1
 ]
 [e E3672 . `uc
 gpio_portA 0
@@ -33,10 +37,24 @@ gpio_input 1
 gpio_low 0
 gpio_high 1
 ]
-"54
+"60
 [e E3659 . `uc
 E_NOT_OK 0
 E_OK 1
+]
+"25 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/7SEG/ecual_7seg.c
+[e E3736 . `uc
+segment_common_cathode 0
+segment_common_anode 1
+]
+[e E3659 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"45
+[e E3693 . `uc
+gpio_low 0
+gpio_high 1
 ]
 "24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/BTN/ecual_btn.c
 [e E3740 . `uc
@@ -128,24 +146,16 @@ gpio_portC 2
 gpio_portD 3
 gpio_portE 4
 ]
-"25 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/7SEG/ecual_7seg.c
-[e E3736 . `uc
-segment_common_cathode 0
-segment_common_anode 1
-]
+"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
 [e E3659 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
-"45
+"68
 [e E3693 . `uc
 gpio_low 0
 gpio_high 1
 ]
-"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/float.c
@@ -170,18 +180,24 @@ gpio_high 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"53 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+"59 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
 [v _main main `(i  1 e 2 0 ]
-"25 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/7SEG/ecual_7seg.c
-[v _gpio_segment_init gpio_segment_init `(E3659  1 e 1 0 ]
-"57
-[v _gpio_segment_write_number gpio_segment_write_number `(E3659  1 e 1 0 ]
 "37 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
 [v _gpio_dc_motor_read_state gpio_dc_motor_read_state `(E3659  1 e 1 0 ]
 "75
 [v _gpio_dc_motor_rotate_clock_wise gpio_dc_motor_rotate_clock_wise `(E3659  1 e 1 0 ]
 "89
 [v _gpio_dc_motor_rotate_counter_clock_wise gpio_dc_motor_rotate_counter_clock_wise `(E3659  1 e 1 0 ]
+"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
+[v _gpio_keypad_init gpio_keypad_init `(E3659  1 e 1 0 ]
+"62
+[v _gpio_keypad_read_data gpio_keypad_read_data `(E3659  1 e 1 0 ]
+"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/LED/ecual_led.c
+[v _gpio_led_init gpio_led_init `(E3659  1 e 1 0 ]
+"103
+[v _gpio_led_turn_off gpio_led_turn_off `(E3659  1 e 1 0 ]
+"127
+[v _gpio_led_turn_on gpio_led_turn_on `(E3659  1 e 1 0 ]
 "28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
 "60
@@ -231,64 +247,137 @@ gpio_high 1
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"12 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
-[s S32 . 5 `[4]S24 1 pins 4 0 `E3817 1 connection 1 4 ]
-[v _seg1 seg1 `S32  1 e 5 0 ]
-"36
-[v _pin1 pin1 `S24  1 e 1 0 ]
-"43
-[v _pin2 pin2 `S24  1 e 1 0 ]
-"50
-[v _number number `uc  1 e 1 0 ]
+"10 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
+[v _led1 led1 `S35  1 e 3 0 ]
+"19
+[s S60 . 8 `[4]S24 1 row_pins 4 0 `[4]S24 1 col_pins 4 4 ]
+[v _keypad1 keypad1 `S60  1 e 8 0 ]
+"57
+[v _data13 data13 `uc  1 e 1 0 ]
+"16 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
+[v _keypad_btns keypad_btns `C[4][4]uc  1 e 16 0 ]
 "14 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _tris_regs tris_regs `C[5]*.39VEuc  1 e 10 0 ]
 "15
 [v _port_regs port_regs `C[5]*.39VEuc  1 e 10 0 ]
 "16
 [v _lat_regs lat_regs `C[5]*.39VEuc  1 e 10 0 ]
-"53 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+"59 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
 [v _main main `(i  1 e 2 0 ]
 {
-"59
-[v main@i i `uc  1 a 1 17 ]
-"54
-[v main@ret ret `E3659  1 a 1 16 ]
-"76
+"60
+[v main@ret ret `E3659  1 a 1 19 ]
+"75
 } 0
-"57 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/7SEG/ecual_7seg.c
-[v _gpio_segment_write_number gpio_segment_write_number `(E3659  1 e 1 0 ]
+"127 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/LED/ecual_led.c
+[v _gpio_led_turn_on gpio_led_turn_on `(E3659  1 e 1 0 ]
 {
-"63
-[v gpio_segment_write_number@i i `uc  1 a 1 14 ]
-"58
-[v gpio_segment_write_number@Retval Retval `E3659  1 a 1 13 ]
+"128
+[v gpio_led_turn_on@Retval Retval `E3659  1 a 1 12 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"57
-[s S32 . 5 `[4]S24 1 pins 4 0 `E3817 1 connection 1 4 ]
-[v gpio_segment_write_number@seg seg `*.30CS32  1 p 1 9 ]
-[v gpio_segment_write_number@number number `uc  1 p 1 10 ]
-"68
+"127
+[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
+[v gpio_led_turn_on@led led `*.30CS35  1 p 1 9 ]
+"149
 } 0
-"25
-[v _gpio_segment_init gpio_segment_init `(E3659  1 e 1 0 ]
+"103
+[v _gpio_led_turn_off gpio_led_turn_off `(E3659  1 e 1 0 ]
+{
+"104
+[v gpio_led_turn_off@Retval Retval `E3659  1 a 1 12 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"103
+[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
+[v gpio_led_turn_off@led led `*.30CS35  1 p 1 9 ]
+"125
+} 0
+"24
+[v _gpio_led_init gpio_led_init `(E3659  1 e 1 0 ]
 {
 "31
-[v gpio_segment_init@i i `uc  1 a 1 14 ]
-"26
-[v gpio_segment_init@Retval Retval `E3659  1 a 1 13 ]
+[v gpio_led_init@logic logic `E3693  1 a 1 12 ]
+"25
+[v gpio_led_init@Retval Retval `E3659  1 a 1 13 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"25
-[s S32 . 5 `[4]S24 1 pins 4 0 `E3817 1 connection 1 4 ]
-[v gpio_segment_init@seg seg `*.30CS32  1 p 1 12 ]
-"36
+"24
+[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
+[v gpio_led_init@led led `*.30CS35  1 p 1 9 ]
+"62
+} 0
+"62 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
+[v _gpio_keypad_read_data gpio_keypad_read_data `(E3659  1 e 1 0 ]
+{
+"78
+[v gpio_keypad_read_data@k k `uc  1 a 1 18 ]
+"72
+[v gpio_keypad_read_data@j j `uc  1 a 1 16 ]
+"71
+[v gpio_keypad_read_data@i i `uc  1 a 1 17 ]
+"70
+[v gpio_keypad_read_data@read read `E3693  1 a 1 15 ]
+"69
+[v gpio_keypad_read_data@active active `E3693  1 a 1 13 ]
+"68
+[v gpio_keypad_read_data@deactive deactive `E3693  1 a 1 12 ]
+"63
+[v gpio_keypad_read_data@Retval Retval `E3659  1 a 1 14 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"62
+[s S60 . 8 `[4]S24 1 row_pins 4 0 `[4]S24 1 col_pins 4 4 ]
+[v gpio_keypad_read_data@keypad keypad `*.30CS60  1 p 1 9 ]
+[v gpio_keypad_read_data@data data `*.30uc  1 p 1 10 ]
+"89
+} 0
+"81 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
+[v _gpio_pin_read_logic gpio_pin_read_logic `(E3659  1 e 1 0 ]
+{
+"82
+[v gpio_pin_read_logic@Retval Retval `E3659  1 a 1 7 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"81
+[v gpio_pin_read_logic@pin pin `*.30CS24  1 p 1 0 ]
+[v gpio_pin_read_logic@logic logic `*.30E3693  1 p 1 1 ]
+"90
+} 0
+"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
+[v _gpio_keypad_init gpio_keypad_init `(E3659  1 e 1 0 ]
+{
+"55
+[v gpio_keypad_init@j j `uc  1 a 1 15 ]
+"51
+[v gpio_keypad_init@i i `uc  1 a 1 14 ]
+"46
+[v gpio_keypad_init@Retval Retval `E3659  1 a 1 13 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"45
+[s S60 . 8 `[4]S24 1 row_pins 4 0 `[4]S24 1 col_pins 4 4 ]
+[v gpio_keypad_init@keypad keypad `*.30CS60  1 p 1 12 ]
+"60
 } 0
 "103 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_init gpio_pin_init `(E3659  1 e 1 0 ]
@@ -332,28 +421,4 @@ gpio_high 1
 "28
 [v gpio_pin_direction_init@pin pin `*.30CS24  1 p 1 0 ]
 "47
-} 0
-"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
 } 0

@@ -7,68 +7,67 @@
 
 #include "app.h"
 
-#define _XTAL_FREQ 8000000UL
-
-gpio_segment seg1 = {
-    .pins[0].port = gpio_portC, 
-    .pins[0].pin = gpio_pin0,
-    .pins[0].direction = gpio_output, 
-    .pins[0].logic = gpio_low,
-    
-    .pins[1].port = gpio_portC, 
-    .pins[1].pin = gpio_pin1,
-    .pins[1].direction = gpio_output, 
-    .pins[1].logic = gpio_low,
-    
-    .pins[2].port = gpio_portC, 
-    .pins[2].pin = gpio_pin2,
-    .pins[2].direction = gpio_output, 
-    .pins[2].logic = gpio_low,
-    
-    .pins[3].port = gpio_portC, 
-    .pins[3].pin = gpio_pin3,
-    .pins[3].direction = gpio_output, 
-    .pins[3].logic = gpio_low,
-    
-    .connection = segment_common_anode
+gpio_led led1 = {
+    .pin.port = gpio_portD,
+    .pin.pin = gpio_pin0,
+    .pin.direction = gpio_output,
+    .pin.logic = gpio_low,
+    .con = led_source,
+    .state = led_off
 };
 
-gpio_pin_cfg pin1 = {
-    .port = gpio_portD,
-    .pin = gpio_pin0,
-    .direction = gpio_output,
-    .logic = gpio_low
+gpio_keypad keypad1 = {
+    .row_pins[0].port = gpio_portC,
+    .row_pins[0].pin = gpio_pin0,
+    .row_pins[0].direction = gpio_output,
+    .row_pins[0].logic = gpio_low,
+
+    .row_pins[1].port = gpio_portC,
+    .row_pins[1].pin = gpio_pin1,
+    .row_pins[1].direction = gpio_output,
+    .row_pins[1].logic = gpio_low,
+
+    .row_pins[2].port = gpio_portC,
+    .row_pins[2].pin = gpio_pin2,
+    .row_pins[2].direction = gpio_output,
+    .row_pins[2].logic = gpio_low,
+
+    .row_pins[3].port = gpio_portC,
+    .row_pins[3].pin = gpio_pin3,
+    .row_pins[3].direction = gpio_output,
+    .row_pins[3].logic = gpio_low,
+
+    .col_pins[0].port = gpio_portC,
+    .col_pins[0].pin = gpio_pin4,
+    .col_pins[0].direction = gpio_input,
+
+    .col_pins[1].port = gpio_portC,
+    .col_pins[1].pin = gpio_pin5,
+    .col_pins[1].direction = gpio_input,
+
+    .col_pins[2].port = gpio_portC,
+    .col_pins[2].pin = gpio_pin6,
+    .col_pins[2].direction = gpio_input,
+
+    .col_pins[3].port = gpio_portC,
+    .col_pins[3].pin = gpio_pin7,
+    .col_pins[3].direction = gpio_input
 };
 
-gpio_pin_cfg pin2 = {
-    .port = gpio_portD,
-    .pin = gpio_pin1,
-    .direction = gpio_output,
-    .logic = gpio_low
-};
-
-uint8 number = 0;
-uint8 var;
+uint8 data13 = 0;
 
 int main() {
     Std_ReturnType ret = E_NOT_OK;
-    ret = gpio_segment_init(&seg1);
-    ret = gpio_pin_init(&pin1);
-    ret = gpio_pin_init(&pin2);
+    ret = gpio_keypad_init(&keypad1);
+    ret = gpio_led_init(&led1);
+    
     while (1) {
-        for(uint8 i = 0; i < 50; i++){
-            ret = gpio_pin_write_logic(&pin2, gpio_high);
-            ret = gpio_segment_write_number(&seg1, number%10);
-            __delay_ms(10);
-            ret = gpio_pin_write_logic(&pin2, gpio_low);
-            ret = gpio_pin_write_logic(&pin1, gpio_high);
-            ret = gpio_segment_write_number(&seg1, number/10);
-            __delay_ms(10);
-            ret = gpio_pin_write_logic(&pin1, gpio_low);
+        ret = gpio_keypad_read_data(&keypad1, &data13);
+        if(data13 == '4'){
+            ret = gpio_led_turn_on(&led1);
         }
-        number++;
-        if(number >= 100){
-            number = 0;
+        else if(data13 == 'C'){
+            ret = gpio_led_turn_off(&led1);
         }
     }
 

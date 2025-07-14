@@ -1,53 +1,42 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"13 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 13: Std_ReturnType Ret = E_OK;
+"11 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 11: Std_ReturnType Ret = E_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
+[p mainexit ]
+"32 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 32: void application_init(void);
+[v _application_init `(v ~T0 @X0 0 ef ]
 "73 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
 [; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 73: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . PORT PIN DIRECTION LOGIC ]
-"15 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 15: GPIO_SEGMENT seg1 = {
-[c E3805 0 1 .. ]
-[n E3805 . SEGMENT_COMMON_CATHODE SEGMENT_COMMON_ANODE  ]
-"40 APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h
-[; ;APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h: 40: typedef struct{
-[s S311 `S306 -> 4 `i `E3805 1 ]
-[n S311 . pins connection ]
-"15 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 15: GPIO_SEGMENT seg1 = {
-[c E3666 0 1 2 3 4 .. ]
-[n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
-[c E3673 0 1 2 3 4 5 6 7 .. ]
-[n E3673 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3683 0 1 .. ]
-[n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
-[c E3687 0 1 .. ]
-[n E3687 . GPIO_LOW GPIO_HIGH  ]
-[p mainexit ]
-"35 APP_Layer/Main.h
-[; ;APP_Layer/Main.h: 35: void application_init(void);
-[v _application_init `(v ~T0 @X0 0 ef ]
-"84 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
-[; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 84: Std_ReturnType GPIO_PIN_WRITE_LOGIC(const GPIO_PIN_CFG *pin, GPIO_LOGIC logic);
-[v _GPIO_PIN_WRITE_LOGIC `(E3659 ~T0 @X0 0 ef2`*CS306`E3687 ]
-"49 APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h
-[; ;APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h: 49: Std_ReturnType GPIO_SEGMENT_WRITE_NUMBER(const GPIO_SEGMENT *seg, uint8 number);
-[v _GPIO_SEGMENT_WRITE_NUMBER `(E3659 ~T0 @X0 0 ef2`*CS311`uc ]
-"48
-[; ;APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h: 48: Std_ReturnType GPIO_SEGMENT_READ_NUMBER(const GPIO_SEGMENT *seg, uint8 *number);
-[v _GPIO_SEGMENT_READ_NUMBER `(E3659 ~T0 @X0 0 ef2`*CS311`*uc ]
-[v F3624 `(v ~T0 @X0 1 tf1`ul ]
-"20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
-[v __delay `JF3624 ~T0 @X0 0 e ]
-[p i __delay ]
-"47 APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h
-[; ;APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h: 47: Std_ReturnType GPIO_SEGMENT_INIT(const GPIO_SEGMENT *seg);
-[v _GPIO_SEGMENT_INIT `(E3659 ~T0 @X0 0 ef1`*CS311 ]
-"87 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
-[; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 87: Std_ReturnType GPIO_PIN_INIT(const GPIO_PIN_CFG *pin);
-[v _GPIO_PIN_INIT `(E3659 ~T0 @X0 0 ef1`*CS306 ]
+"51 APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h
+[; ;APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h: 51: typedef struct{
+[s S312 `S306 -> 4 `i `S306 -> 4 `i ]
+[n S312 . row_pins col_pins ]
+"59
+[; ;APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h: 59: Std_ReturnType GPIO_KEYPAD_READ_DATA(const GPIO_KEYPAD *keypad, uint8 *data);
+[v _GPIO_KEYPAD_READ_DATA `(E3659 ~T0 @X0 0 ef2`*CS312`*uc ]
+"27 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 27: extern GPIO_KEYPAD keypad1;
+[v _keypad1 `S312 ~T0 @X0 0 e ]
+"33 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
+[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 33: typedef struct{
+[s S307 `S306 1 ]
+[n S307 . pin ]
+"42
+[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 42: Std_ReturnType GPIO_LED_TURN_ON(const GPIO_LED *led);
+[v _GPIO_LED_TURN_ON `(E3659 ~T0 @X0 0 ef1`*CS307 ]
+"28 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 28: extern GPIO_LED led1;
+[v _led1 `S307 ~T0 @X0 0 e ]
+"41 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
+[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 41: Std_ReturnType GPIO_LED_TURN_OFF(const GPIO_LED *led);
+[v _GPIO_LED_TURN_OFF `(E3659 ~T0 @X0 0 ef1`*CS307 ]
+"35 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
+[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 35: void ECUAL_LAYER_INIT(void);
+[v _ECUAL_LAYER_INIT `(v ~T0 @X0 0 ef ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -489,188 +478,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 13: Std_ReturnType Ret = E_OK;
+"11 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 11: Std_ReturnType Ret = E_OK;
 [v _Ret `E3659 ~T0 @X0 1 e ]
 [i _Ret
 . `E3659 1
 ]
-"15
-[; ;APP_Layer/Main.c: 15: GPIO_SEGMENT seg1 = {
-[v _seg1 `S311 ~T0 @X0 1 e ]
-[i _seg1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 0 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 1 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 2 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 3 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-. `E3805 1
-..
-..
-]
-"63
-[; ;APP_Layer/Main.c: 63: GPIO_PIN_CFG pin1 ={
-[v _pin1 `S306 ~T0 @X0 1 e ]
-[i _pin1
-:U ..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 0 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-]
-"70
-[; ;APP_Layer/Main.c: 70: GPIO_PIN_CFG pin2 ={
-[v _pin2 `S306 ~T0 @X0 1 e ]
-[i _pin2
-:U ..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 1 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-]
-"77
-[; ;APP_Layer/Main.c: 77: uint8 number = 32;
-[v _number `uc ~T0 @X0 1 e ]
-[i _number
--> -> 32 `i `uc
-]
-"79
-[; ;APP_Layer/Main.c: 79: uint8 data1,data2;
-[v _data1 `uc ~T0 @X0 1 e ]
-[v _data2 `uc ~T0 @X0 1 e ]
+"13
+[; ;APP_Layer/Main.c: 13: uint8 data22;
+[v _data22 `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"81
-[; ;APP_Layer/Main.c: 81: int main() {
+"15
+[; ;APP_Layer/Main.c: 15: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"82
-[; ;APP_Layer/Main.c: 82:     application_init();
+"16
+[; ;APP_Layer/Main.c: 16:     application_init();
 [e ( _application_init ..  ]
-"83
-[; ;APP_Layer/Main.c: 83:     while (1) {
-[e :U 314 ]
-{
-"84
-[; ;APP_Layer/Main.c: 84:         for(uint8 i = 0; i < 50; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 50 `i 316  ]
-[e $U 317  ]
-[e :U 316 ]
-{
-"86
-[; ;APP_Layer/Main.c: 86:             Ret = GPIO_PIN_WRITE_LOGIC(&pin2, GPIO_HIGH);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _pin2 `*CS306 . `E3687 1 ]
-"87
-[; ;APP_Layer/Main.c: 87:             Ret = GPIO_SEGMENT_WRITE_NUMBER(&seg1, number%10);
-[e = _Ret ( _GPIO_SEGMENT_WRITE_NUMBER (2 , -> &U _seg1 `*CS311 -> % -> _number `i -> 10 `i `uc ]
-"88
-[; ;APP_Layer/Main.c: 88:             Ret = GPIO_SEGMENT_READ_NUMBER(&seg1, &data1);
-[e = _Ret ( _GPIO_SEGMENT_READ_NUMBER (2 , -> &U _seg1 `*CS311 &U _data1 ]
-"89
-[; ;APP_Layer/Main.c: 89:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"90
-[; ;APP_Layer/Main.c: 90:             Ret = GPIO_PIN_WRITE_LOGIC(&pin2, GPIO_LOW);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _pin2 `*CS306 . `E3687 0 ]
-"91
-[; ;APP_Layer/Main.c: 91:             Ret = GPIO_PIN_WRITE_LOGIC(&pin1, GPIO_HIGH);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _pin1 `*CS306 . `E3687 1 ]
-"92
-[; ;APP_Layer/Main.c: 92:             Ret = GPIO_SEGMENT_WRITE_NUMBER(&seg1, number/10);
-[e = _Ret ( _GPIO_SEGMENT_WRITE_NUMBER (2 , -> &U _seg1 `*CS311 -> / -> _number `i -> 10 `i `uc ]
-"93
-[; ;APP_Layer/Main.c: 93:             Ret = GPIO_SEGMENT_READ_NUMBER(&seg1, &data2);
-[e = _Ret ( _GPIO_SEGMENT_READ_NUMBER (2 , -> &U _seg1 `*CS311 &U _data2 ]
-"94
-[; ;APP_Layer/Main.c: 94:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"95
-[; ;APP_Layer/Main.c: 95:             Ret = GPIO_PIN_WRITE_LOGIC(&pin1, GPIO_LOW);
-[e = _Ret ( _GPIO_PIN_WRITE_LOGIC (2 , -> &U _pin1 `*CS306 . `E3687 0 ]
-"96
-[; ;APP_Layer/Main.c: 96:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 50 `i 316  ]
-[e :U 317 ]
-}
-"97
-[; ;APP_Layer/Main.c: 97:         number++;
-[e ++ _number -> -> 1 `i `uc ]
-"98
-[; ;APP_Layer/Main.c: 98:         if(number >= 100){
-[e $ ! >= -> _number `i -> 100 `i 319  ]
-{
-"99
-[; ;APP_Layer/Main.c: 99:             number = 0;
-[e = _number -> -> 0 `i `uc ]
-"100
-[; ;APP_Layer/Main.c: 100:         }
-}
-[e :U 319 ]
-"101
-[; ;APP_Layer/Main.c: 101:     }
-}
-[e :U 313 ]
-[e $U 314  ]
+"17
+[; ;APP_Layer/Main.c: 17:     while (1) {
 [e :U 315 ]
-"103
-[; ;APP_Layer/Main.c: 103:     return (0);
-[e ) -> 0 `i ]
-[e $UE 312  ]
-"104
-[; ;APP_Layer/Main.c: 104: }
-[e :UE 312 ]
+{
+"18
+[; ;APP_Layer/Main.c: 18:         Ret = GPIO_KEYPAD_READ_DATA(&keypad1, &data22);
+[e = _Ret ( _GPIO_KEYPAD_READ_DATA (2 , -> &U _keypad1 `*CS312 &U _data22 ]
+"19
+[; ;APP_Layer/Main.c: 19:         if(data22 == '7'){
+[e $ ! == -> _data22 `ui -> 55 `ui 317  ]
+{
+"20
+[; ;APP_Layer/Main.c: 20:             Ret = GPIO_LED_TURN_ON(&led1);
+[e = _Ret ( _GPIO_LED_TURN_ON (1 -> &U _led1 `*CS307 ]
+"21
+[; ;APP_Layer/Main.c: 21:         }
 }
-"106
-[; ;APP_Layer/Main.c: 106: void application_init(void) {
+[e $U 318  ]
+"22
+[; ;APP_Layer/Main.c: 22:         else{
+[e :U 317 ]
+{
+"23
+[; ;APP_Layer/Main.c: 23:             Ret = GPIO_LED_TURN_OFF(&led1);
+[e = _Ret ( _GPIO_LED_TURN_OFF (1 -> &U _led1 `*CS307 ]
+"24
+[; ;APP_Layer/Main.c: 24:         }
+}
+[e :U 318 ]
+"25
+[; ;APP_Layer/Main.c: 25:     }
+}
+[e :U 314 ]
+[e $U 315  ]
+[e :U 316 ]
+"27
+[; ;APP_Layer/Main.c: 27:     return (0);
+[e ) -> 0 `i ]
+[e $UE 313  ]
+"28
+[; ;APP_Layer/Main.c: 28: }
+[e :UE 313 ]
+}
+"30
+[; ;APP_Layer/Main.c: 30: void application_init(void) {
 [v _application_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_init ]
 [f ]
-"107
-[; ;APP_Layer/Main.c: 107:     Ret = GPIO_SEGMENT_INIT(&seg1);
-[e = _Ret ( _GPIO_SEGMENT_INIT (1 -> &U _seg1 `*CS311 ]
-"109
-[; ;APP_Layer/Main.c: 109:     Ret = GPIO_PIN_INIT(&pin1);
-[e = _Ret ( _GPIO_PIN_INIT (1 -> &U _pin1 `*CS306 ]
-"110
-[; ;APP_Layer/Main.c: 110:     Ret = GPIO_PIN_INIT(&pin2);
-[e = _Ret ( _GPIO_PIN_INIT (1 -> &U _pin2 `*CS306 ]
-"111
-[; ;APP_Layer/Main.c: 111: }
-[e :UE 320 ]
+"31
+[; ;APP_Layer/Main.c: 31:     ECUAL_LAYER_INIT();
+[e ( _ECUAL_LAYER_INIT ..  ]
+"32
+[; ;APP_Layer/Main.c: 32: }
+[e :UE 319 ]
 }

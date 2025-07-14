@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Codes/ECUAL/BTN/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c APP_Layer/main.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/device_cfg.c ECUAL_Layer/7SEG/ecual_7seg.c
+SOURCEFILES_QUOTED_IF_SPACED=Codes/ECUAL/BTN/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c APP_Layer/main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/device_cfg.c Codes/ECUAL/7SEG/app1.c ECUAL_Layer/ECUAL_INIT.c ECUAL_Layer/Keypad/ecual_keypad.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/ECUAL/BTN/app1.o.d ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d ${OBJECTDIR}/APP_Layer/main.o.d ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o.d ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o.d ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o.d ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/ECUAL/BTN/app1.o.d ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d ${OBJECTDIR}/APP_Layer/main.o.d ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o.d ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o.d ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o.d ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o
+OBJECTFILES=${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o
 
 # Source Files
-SOURCEFILES=Codes/ECUAL/BTN/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c APP_Layer/main.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/device_cfg.c ECUAL_Layer/7SEG/ecual_7seg.c
+SOURCEFILES=Codes/ECUAL/BTN/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c APP_Layer/main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/device_cfg.c Codes/ECUAL/7SEG/app1.c ECUAL_Layer/ECUAL_INIT.c ECUAL_Layer/Keypad/ecual_keypad.c
 
 
 
@@ -124,6 +124,12 @@ ${OBJECTDIR}/APP_Layer/main.o: APP_Layer/main.c  .generated_files/flags/default/
 	@${RM} ${OBJECTDIR}/APP_Layer/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/APP_Layer/main.o.d" -MT "${OBJECTDIR}/APP_Layer/main.o.d" -MT ${OBJECTDIR}/APP_Layer/main.o -o ${OBJECTDIR}/APP_Layer/main.o APP_Layer/main.c 
 	
+${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o: ECUAL_Layer/7SEG/ecual_7seg.c  .generated_files/flags/default/41b3113b6e6b0e8aa54e18a53639440dd787d862 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/7SEG" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o -o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ECUAL_Layer/7SEG/ecual_7seg.c 
+	
 ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o: ECUAL_Layer/BTN/ecual_btn.c  .generated_files/flags/default/dd0f2595c17a8a7fbd2ab177793ed94bf588151f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/BTN" 
 	@${RM} ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d 
@@ -160,11 +166,23 @@ ${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/
 	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
 	
-${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o: ECUAL_Layer/7SEG/ecual_7seg.c  .generated_files/flags/default/41b3113b6e6b0e8aa54e18a53639440dd787d862 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/7SEG" 
-	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d 
-	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o -o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ECUAL_Layer/7SEG/ecual_7seg.c 
+${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o: Codes/ECUAL/7SEG/app1.c  .generated_files/flags/default/f50cae18214472964ccfca90478e9de3ae5acc40 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/ECUAL/7SEG" 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d" -MT "${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d" -MT ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o -o ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o Codes/ECUAL/7SEG/app1.c 
+	
+${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o: ECUAL_Layer/ECUAL_INIT.c  .generated_files/flags/default/ee7598e8d4457be17fafd35c72f4e2ea0237fa8c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o -o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ECUAL_Layer/ECUAL_INIT.c 
+	
+${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o: ECUAL_Layer/Keypad/ecual_keypad.c  .generated_files/flags/default/f91e1fd915e4c4123ad75bfd4b18b7e0d6c2a425 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/Keypad" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o -o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ECUAL_Layer/Keypad/ecual_keypad.c 
 	
 else
 ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o: Codes/ECUAL/BTN/app1.c  .generated_files/flags/default/38115782fc6f4c3e46c5c28b9b5e7e0630b77fda .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -203,6 +221,12 @@ ${OBJECTDIR}/APP_Layer/main.o: APP_Layer/main.c  .generated_files/flags/default/
 	@${RM} ${OBJECTDIR}/APP_Layer/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/APP_Layer/main.o.d" -MT "${OBJECTDIR}/APP_Layer/main.o.d" -MT ${OBJECTDIR}/APP_Layer/main.o -o ${OBJECTDIR}/APP_Layer/main.o APP_Layer/main.c 
 	
+${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o: ECUAL_Layer/7SEG/ecual_7seg.c  .generated_files/flags/default/cdd2cb4075df161a93e90a5ba157c253562c6623 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/7SEG" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o -o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ECUAL_Layer/7SEG/ecual_7seg.c 
+	
 ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o: ECUAL_Layer/BTN/ecual_btn.c  .generated_files/flags/default/64d37a42ff94946b89938ab3d63c9896cd057fb .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/BTN" 
 	@${RM} ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d 
@@ -239,11 +263,23 @@ ${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/
 	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
 	
-${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o: ECUAL_Layer/7SEG/ecual_7seg.c  .generated_files/flags/default/cdd2cb4075df161a93e90a5ba157c253562c6623 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/7SEG" 
-	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d 
-	@${RM} ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o -o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ECUAL_Layer/7SEG/ecual_7seg.c 
+${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o: Codes/ECUAL/7SEG/app1.c  .generated_files/flags/default/8240656e7ccbda6c2e75e7e13d0d59f75c906a1e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/ECUAL/7SEG" 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d" -MT "${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d" -MT ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o -o ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o Codes/ECUAL/7SEG/app1.c 
+	
+${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o: ECUAL_Layer/ECUAL_INIT.c  .generated_files/flags/default/d12ff944f59fc7223a9360b80945d4a0e2f021b5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o -o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ECUAL_Layer/ECUAL_INIT.c 
+	
+${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o: ECUAL_Layer/Keypad/ecual_keypad.c  .generated_files/flags/default/ecfbf92844c21283045f63ad26efb8e39a78ff98 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/Keypad" 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d 
+	@${RM} ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d" -MT "${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d" -MT ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o -o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ECUAL_Layer/Keypad/ecual_keypad.c 
 	
 endif
 

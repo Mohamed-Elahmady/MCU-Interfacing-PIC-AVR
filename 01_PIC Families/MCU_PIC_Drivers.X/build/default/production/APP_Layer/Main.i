@@ -16,6 +16,8 @@
 
 # 1 "APP_Layer/Main.h" 1
 # 15 "APP_Layer/Main.h"
+# 1 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 1
+# 15 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 # 1 "APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h" 1
 # 15 "APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h"
 # 1 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h" 1
@@ -5648,7 +5650,7 @@ Std_ReturnType GPIO_LED_READ_LOGIC(const GPIO_LED *led, LED_LOGIC *logic);
 Std_ReturnType GPIO_LED_TURN_OFF(const GPIO_LED *led);
 Std_ReturnType GPIO_LED_TURN_ON(const GPIO_LED *led);
 Std_ReturnType GPIO_LED_TURN_TOGGLE(const GPIO_LED *led);
-# 16 "APP_Layer/Main.h" 2
+# 16 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
 # 1 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN.h" 1
 # 16 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN.h"
 # 1 "APP_Layer/../ECUAL_Layer/BTN/ECUAL_BTN_CFG.h" 1
@@ -5674,7 +5676,7 @@ typedef struct{
 
 Std_ReturnType GPIO_BTN_INIT(const GPIO_BTN *btn);
 Std_ReturnType GPIO_BTN_READ_STATE(const GPIO_BTN *btn, BTN_STATE *state);
-# 17 "APP_Layer/Main.h" 2
+# 17 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
 # 1 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h" 1
 # 16 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY.h"
 # 1 "APP_Layer/../ECUAL_Layer/Relay/ECUAL_RELAY_CFG.h" 1
@@ -5696,7 +5698,7 @@ Std_ReturnType GPIO_RELAY_READ_LOGIC(const GPIO_RELAY *relay, RELAY_STATE *state
 Std_ReturnType GPIO_RELAY_TURN_OFF(const GPIO_RELAY *relay);
 Std_ReturnType GPIO_RELAY_TURN_ON(const GPIO_RELAY *relay);
 Std_ReturnType GPIO_RELAY_TURN_TOGGLE(const GPIO_RELAY *relay);
-# 18 "APP_Layer/Main.h" 2
+# 18 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
 # 1 "APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h" 1
 # 16 "APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h"
 # 1 "APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR_CFG.h" 1
@@ -5726,7 +5728,7 @@ Std_ReturnType GPIO_DC_MOTOR_BRAKE(const DC_MOTOR *motor);
 Std_ReturnType GPIO_DC_MOTOR_ROTATE_CLOCKWISE(const DC_MOTOR *motor);
 Std_ReturnType GPIO_DC_MOTOR_ROTATE_COUNTER_CLOCKWISE(const DC_MOTOR *motor);
 Std_ReturnType GPIO_DC_MOTOR_ROTATE_TOGGLE(const DC_MOTOR *motor);
-# 19 "APP_Layer/Main.h" 2
+# 19 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
 # 1 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h" 1
 # 16 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h"
 # 1 "APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h" 1
@@ -5747,77 +5749,50 @@ typedef struct{
 Std_ReturnType GPIO_SEGMENT_INIT(const GPIO_SEGMENT *seg);
 Std_ReturnType GPIO_SEGMENT_READ_NUMBER(const GPIO_SEGMENT *seg, uint8 *number);
 Std_ReturnType GPIO_SEGMENT_WRITE_NUMBER(const GPIO_SEGMENT *seg, uint8 number);
-# 20 "APP_Layer/Main.h" 2
-# 35 "APP_Layer/Main.h"
+# 20 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 1 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
+# 1 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h" 2
+# 27 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
+extern const uint8 KEYPAD_BTNS[(uint8)0x04][(uint8)0x04];
+# 51 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
+typedef struct{
+    GPIO_PIN_CFG row_pins[(uint8)0x04];
+    GPIO_PIN_CFG col_pins[(uint8)0x04];
+}GPIO_KEYPAD;
+
+
+
+Std_ReturnType GPIO_KEYPAD_INIT(const GPIO_KEYPAD *keypad);
+Std_ReturnType GPIO_KEYPAD_READ_DATA(const GPIO_KEYPAD *keypad, uint8 *data);
+# 21 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 35 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+void ECUAL_LAYER_INIT(void);
+# 16 "APP_Layer/Main.h" 2
+# 27 "APP_Layer/Main.h"
+extern GPIO_KEYPAD keypad1;
+extern GPIO_LED led1;
+
+
+
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
 
-
-
 Std_ReturnType Ret = E_OK;
 
-GPIO_SEGMENT seg1 = {
-    .pins[0].PORT = GPIO_PORTC,
-    .pins[0].PIN = GPIO_PIN0,
-    .pins[0].DIRECTION = GPIO_OUTPUT,
-    .pins[0].LOGIC = GPIO_LOW,
-
-    .pins[1].PORT = GPIO_PORTC,
-    .pins[1].PIN = GPIO_PIN1,
-    .pins[1].DIRECTION = GPIO_OUTPUT,
-    .pins[1].LOGIC = GPIO_LOW,
-
-    .pins[2].PORT = GPIO_PORTC,
-    .pins[2].PIN = GPIO_PIN2,
-    .pins[2].DIRECTION = GPIO_OUTPUT,
-    .pins[2].LOGIC = GPIO_LOW,
-
-    .pins[3].PORT = GPIO_PORTC,
-    .pins[3].PIN = GPIO_PIN3,
-    .pins[3].DIRECTION = GPIO_OUTPUT,
-    .pins[3].LOGIC = GPIO_LOW,
-
-    .connection = SEGMENT_COMMON_ANODE
-};
-# 63 "APP_Layer/Main.c"
-GPIO_PIN_CFG pin1 ={
-    .PORT = GPIO_PORTD,
-    .PIN = GPIO_PIN0,
-    .DIRECTION = GPIO_OUTPUT,
-    .LOGIC = GPIO_LOW
-};
-
-GPIO_PIN_CFG pin2 ={
-    .PORT = GPIO_PORTD,
-    .PIN = GPIO_PIN1,
-    .DIRECTION = GPIO_OUTPUT,
-    .LOGIC = GPIO_LOW
-};
-
-uint8 number = 32;
-
-uint8 data1,data2;
+uint8 data22;
 
 int main() {
     application_init();
     while (1) {
-        for(uint8 i = 0; i < 50; i++){
-
-            Ret = GPIO_PIN_WRITE_LOGIC(&pin2, GPIO_HIGH);
-            Ret = GPIO_SEGMENT_WRITE_NUMBER(&seg1, number%10);
-            Ret = GPIO_SEGMENT_READ_NUMBER(&seg1, &data1);
-            _delay((unsigned long)((10)*(8000000UL/4000.0)));
-            Ret = GPIO_PIN_WRITE_LOGIC(&pin2, GPIO_LOW);
-            Ret = GPIO_PIN_WRITE_LOGIC(&pin1, GPIO_HIGH);
-            Ret = GPIO_SEGMENT_WRITE_NUMBER(&seg1, number/10);
-            Ret = GPIO_SEGMENT_READ_NUMBER(&seg1, &data2);
-            _delay((unsigned long)((10)*(8000000UL/4000.0)));
-            Ret = GPIO_PIN_WRITE_LOGIC(&pin1, GPIO_LOW);
+        Ret = GPIO_KEYPAD_READ_DATA(&keypad1, &data22);
+        if(data22 == '7'){
+            Ret = GPIO_LED_TURN_ON(&led1);
         }
-        number++;
-        if(number >= 100){
-            number = 0;
+        else{
+            Ret = GPIO_LED_TURN_OFF(&led1);
         }
     }
 
@@ -5825,8 +5800,5 @@ int main() {
 }
 
 void application_init(void) {
-    Ret = GPIO_SEGMENT_INIT(&seg1);
-
-    Ret = GPIO_PIN_INIT(&pin1);
-    Ret = GPIO_PIN_INIT(&pin2);
+    ECUAL_LAYER_INIT();
 }

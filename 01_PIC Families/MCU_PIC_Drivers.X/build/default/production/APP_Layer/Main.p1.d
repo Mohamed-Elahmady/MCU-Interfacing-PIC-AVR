@@ -1,6 +1,7 @@
 build/default/production/APP_Layer/Main.p1:  \
 APP_Layer/Main.c  \
 APP_Layer/Main.h  \
+APP_Layer/../ECUAL_Layer/ECUAL_INIT.h  \
 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h  \
 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO_CFG.h  \
@@ -20,4 +21,7 @@ APP_Layer/../ECUAL_Layer/DC_Motor/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
 APP_Layer/../ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR_CFG.h  \
 APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG.h  \
 APP_Layer/../ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
-APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h 
+APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h  \
+APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h  \
+APP_Layer/../ECUAL_Layer/Keypad/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
+APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h 

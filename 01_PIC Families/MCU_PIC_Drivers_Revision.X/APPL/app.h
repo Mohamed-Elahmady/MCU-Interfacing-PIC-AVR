@@ -17,6 +17,7 @@
 #include "../ECUAL/Relay/ecual_relay.h"
 #include "../ECUAL/DC_Motor/ecual_dc_motor.h"
 #include "../ECUAL/7SEG/ecual_7seg.h"
+#include "../ECUAL/Keypad/ecual_keypad.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 
