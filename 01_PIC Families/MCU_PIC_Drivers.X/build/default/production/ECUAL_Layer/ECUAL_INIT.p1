@@ -3,12 +3,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 73: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . PORT PIN DIRECTION LOGIC ]
-"51 ECUAL_Layer/Keypad/ECUAL_KEYPAD.h
-[; ;ECUAL_Layer/Keypad/ECUAL_KEYPAD.h: 51: typedef struct{
-[s S312 `S306 -> 4 `i `S306 -> 4 `i ]
-[n S312 . row_pins col_pins ]
+"82 ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 82: typedef struct {
+[s S313 `S306 1 `S306 1 `S306 1 `S306 -> 4 `i ]
+[n S313 . rs_pin rw_pin en_pin data_pins ]
 "14 ECUAL_Layer/ECUAL_INIT.c
-[; ;ECUAL_Layer/ECUAL_INIT.c: 14: GPIO_KEYPAD keypad1 = {
+[; ;ECUAL_Layer/ECUAL_INIT.c: 14: CHR_LCD_4BIT lcd1 = {
 [c E3666 0 1 2 3 4 .. ]
 [n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
 [c E3673 0 1 2 3 4 5 6 7 .. ]
@@ -17,20 +17,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
 [c E3687 0 1 .. ]
 [n E3687 . GPIO_LOW GPIO_HIGH  ]
-"33 ECUAL_Layer/LED/ECUAL_LED.h
-[; ;ECUAL_Layer/LED/ECUAL_LED.h: 33: typedef struct{
-[s S307 `S306 1 ]
-[n S307 . pin ]
-"66 ECUAL_Layer/ECUAL_INIT.c
-[; ;ECUAL_Layer/ECUAL_INIT.c: 66:     Std_ReturnType Ret = E_OK;
+"89 ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 89: typedef struct {
+[s S314 `S306 1 `S306 1 `S306 1 `S306 -> 8 `i ]
+[n S314 . rs_pin rw_pin en_pin data_pins ]
+"115 ECUAL_Layer/ECUAL_INIT.c
+[; ;ECUAL_Layer/ECUAL_INIT.c: 115:     Std_ReturnType Ret = E_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"58 ECUAL_Layer/Keypad/ECUAL_KEYPAD.h
-[; ;ECUAL_Layer/Keypad/ECUAL_KEYPAD.h: 58: Std_ReturnType GPIO_KEYPAD_INIT(const GPIO_KEYPAD *keypad);
-[v _GPIO_KEYPAD_INIT `(E3659 ~T0 @X0 0 ef1`*CS312 ]
-"39 ECUAL_Layer/LED/ECUAL_LED.h
-[; ;ECUAL_Layer/LED/ECUAL_LED.h: 39: Std_ReturnType GPIO_LED_INIT(const GPIO_LED *led);
-[v _GPIO_LED_INIT `(E3659 ~T0 @X0 0 ef1`*CS307 ]
+"98 ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 98: Std_ReturnType GPIO_LCD_4BIT_INIT(const CHR_LCD_4BIT *lcd);
+[v _GPIO_LCD_4BIT_INIT `(E3659 ~T0 @X0 0 ef1`*CS313 ]
+"106
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 106: Std_ReturnType GPIO_LCD_8BIT_INIT(const CHR_LCD_8BIT *lcd);
+[v _GPIO_LCD_8BIT_INIT `(E3659 ~T0 @X0 0 ef1`*CS314 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -473,11 +473,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "14 ECUAL_Layer/ECUAL_INIT.c
-[; ;ECUAL_Layer/ECUAL_INIT.c: 14: GPIO_KEYPAD keypad1 = {
-[v _keypad1 `S312 ~T0 @X0 1 e ]
-[i _keypad1
+[; ;ECUAL_Layer/ECUAL_INIT.c: 14: CHR_LCD_4BIT lcd1 = {
+[v _lcd1 `S313 ~T0 @X0 1 e ]
+[i _lcd1
 :U ..
 :U ..
+:U ..
+:U ..
+-> . `E3666 1 `uc
+-> . `E3673 0 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
+:U ..
+:U ..
+-> . `E3666 1 `uc
+-> . `E3673 1 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
+:U ..
+:U ..
+-> . `E3666 1 `uc
+-> . `E3673 2 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
 :U ..
 :U ..
 -> . `E3666 2 `uc
@@ -504,37 +528,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3687 0 `uc
 ..
 ..
-:U ..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 4 `uc
--> . `E3683 1 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 5 `uc
--> . `E3683 1 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 6 `uc
--> . `E3683 1 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 7 `uc
--> . `E3683 1 `uc
-..
-..
 ..
 ..
 ]
-"52
-[; ;ECUAL_Layer/ECUAL_INIT.c: 52: GPIO_LED led1 = {
-[v _led1 `S307 ~T0 @X0 1 e ]
-[i _led1
+"51
+[; ;ECUAL_Layer/ECUAL_INIT.c: 51: CHR_LCD_8BIT lcd2 = {
+[v _lcd2 `S314 ~T0 @X0 1 e ]
+[i _lcd2
 :U ..
 :U ..
+:U ..
+:U ..
+-> . `E3666 1 `uc
+-> . `E3673 3 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
+:U ..
+:U ..
+-> . `E3666 1 `uc
+-> . `E3673 4 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
+:U ..
+:U ..
+-> . `E3666 1 `uc
+-> . `E3673 5 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
 :U ..
 :U ..
 -> . `E3666 3 `uc
@@ -542,27 +568,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> . `E3683 0 `uc
 -> . `E3687 0 `uc
 ..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 1 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 2 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 3 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 4 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 5 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 6 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 7 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
 ..
 ..
 ..
 ]
-"65
-[; ;ECUAL_Layer/ECUAL_INIT.c: 65: void ECUAL_LAYER_INIT(void) {
+"114
+[; ;ECUAL_Layer/ECUAL_INIT.c: 114: void ECUAL_LAYER_INIT(void) {
 [v _ECUAL_LAYER_INIT `(v ~T0 @X0 1 ef ]
 {
 [e :U _ECUAL_LAYER_INIT ]
 [f ]
-"66
-[; ;ECUAL_Layer/ECUAL_INIT.c: 66:     Std_ReturnType Ret = E_OK;
+"115
+[; ;ECUAL_Layer/ECUAL_INIT.c: 115:     Std_ReturnType Ret = E_OK;
 [v _Ret `E3659 ~T0 @X0 1 a ]
 [e = _Ret . `E3659 1 ]
-"67
-[; ;ECUAL_Layer/ECUAL_INIT.c: 67:     Ret = GPIO_KEYPAD_INIT(&keypad1);
-[e = _Ret ( _GPIO_KEYPAD_INIT (1 -> &U _keypad1 `*CS312 ]
-"68
-[; ;ECUAL_Layer/ECUAL_INIT.c: 68:     Ret = GPIO_LED_INIT(&led1);
-[e = _Ret ( _GPIO_LED_INIT (1 -> &U _led1 `*CS307 ]
-"69
-[; ;ECUAL_Layer/ECUAL_INIT.c: 69: }
-[e :UE 313 ]
+"116
+[; ;ECUAL_Layer/ECUAL_INIT.c: 116:     Ret = GPIO_LCD_4BIT_INIT(&lcd1);
+[e = _Ret ( _GPIO_LCD_4BIT_INIT (1 -> &U _lcd1 `*CS313 ]
+"117
+[; ;ECUAL_Layer/ECUAL_INIT.c: 117:     Ret = GPIO_LCD_8BIT_INIT(&lcd2);
+[e = _Ret ( _GPIO_LCD_8BIT_INIT (1 -> &U _lcd2 `*CS314 ]
+"118
+[; ;ECUAL_Layer/ECUAL_INIT.c: 118: }
+[e :UE 315 ]
 }

@@ -24,4 +24,7 @@ APP_Layer/../ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
 APP_Layer/../ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h  \
 APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h  \
 APP_Layer/../ECUAL_Layer/Keypad/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
-APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h 
+APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h  \
+APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h  \
+APP_Layer/../ECUAL_Layer/CHR_Lcd/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
+APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD_CFG.h 

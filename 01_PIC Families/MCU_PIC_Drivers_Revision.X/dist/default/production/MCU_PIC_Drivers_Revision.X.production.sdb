@@ -4,14 +4,6 @@
 [d chip 18F46K20 ]
 [d frameptr 4065 ]
 "10 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
-[e E3736 . `uc
-led_off 0
-led_on 1
-]
-[e E3740 . `uc
-led_sink 0
-led_source 1
-]
 [e E3672 . `uc
 gpio_portA 0
 gpio_portB 1
@@ -37,7 +29,7 @@ gpio_input 1
 gpio_low 0
 gpio_high 1
 ]
-"60
+"107
 [e E3659 . `uc
 E_NOT_OK 0
 E_OK 1
@@ -86,6 +78,16 @@ motor_clock_wise 1
 motor_counter_clock_wise 2
 ]
 "43
+[e E3693 . `uc
+gpio_low 0
+gpio_high 1
+]
+"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
+[e E3659 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"68
 [e E3693 . `uc
 gpio_low 0
 gpio_high 1
@@ -146,16 +148,26 @@ gpio_portC 2
 gpio_portD 3
 gpio_portE 4
 ]
-"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
+"30 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Chr_lcd/ecual_chr_lcd.c
 [e E3659 . `uc
 E_NOT_OK 0
 E_OK 1
 ]
-"68
+"70
 [e E3693 . `uc
 gpio_low 0
 gpio_high 1
 ]
+"1 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"1177 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/doprnt.c
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1817
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/float.c
@@ -168,6 +180,16 @@ gpio_high 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"3 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/memset.c
+[v _memset memset `(*.30v  1 e 2 0 ]
+"8 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -180,24 +202,58 @@ gpio_high 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"59 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+"106 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
 [v _main main `(i  1 e 2 0 ]
+"30 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Chr_lcd/ecual_chr_lcd.c
+[v _gpio_chr_lcd_4bit_init gpio_chr_lcd_4bit_init `(E3659  1 e 1 0 ]
+"64
+[v _gpio_chr_lcd_4bit_send_command gpio_chr_lcd_4bit_send_command `(E3659  1 e 1 0 ]
+"81
+[v _gpio_chr_lcd_4bit_send_character gpio_chr_lcd_4bit_send_character `(E3659  1 e 1 0 ]
+"98
+[v _gpio_chr_lcd_4bit_send_character_pos gpio_chr_lcd_4bit_send_character_pos `(E3659  1 e 1 0 ]
+"110
+[v _gpio_chr_lcd_4bit_send_string gpio_chr_lcd_4bit_send_string `(E3659  1 e 1 0 ]
+"124
+[v _gpio_chr_lcd_4bit_send_string_pos gpio_chr_lcd_4bit_send_string_pos `(E3659  1 e 1 0 ]
+"136
+[v _gpio_chr_lcd_4bit_send_custom_character gpio_chr_lcd_4bit_send_custom_character `(E3659  1 e 1 0 ]
+"158
+[v _gpio_chr_lcd_8bit_init gpio_chr_lcd_8bit_init `(E3659  1 e 1 0 ]
+"192
+[v _gpio_chr_lcd_8bit_send_command gpio_chr_lcd_8bit_send_command `(E3659  1 e 1 0 ]
+"210
+[v _gpio_chr_lcd_8bit_send_character gpio_chr_lcd_8bit_send_character `(E3659  1 e 1 0 ]
+"228
+[v _gpio_chr_lcd_8bit_send_character_pos gpio_chr_lcd_8bit_send_character_pos `(E3659  1 e 1 0 ]
+"240
+[v _gpio_chr_lcd_8bit_send_string gpio_chr_lcd_8bit_send_string `(E3659  1 e 1 0 ]
+"254
+[v _gpio_chr_lcd_8bit_send_string_pos gpio_chr_lcd_8bit_send_string_pos `(E3659  1 e 1 0 ]
+"266
+[v _gpio_chr_lcd_8bit_send_custom_character gpio_chr_lcd_8bit_send_custom_character `(E3659  1 e 1 0 ]
+"286
+[v _convert_byte_to_string convert_byte_to_string `(E3659  1 e 1 0 ]
+"297
+[v _convert_short_to_string convert_short_to_string `(E3659  1 e 1 0 ]
+"308
+[v _convert_integer_to_string convert_integer_to_string `(E3659  1 e 1 0 ]
+"322
+[v _lcd_4bit_send_4bit lcd_4bit_send_4bit `(E3659  1 s 1 lcd_4bit_send_4bit ]
+"334
+[v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(E3659  1 s 1 lcd_4bit_set_cursor ]
+"361
+[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(E3659  1 s 1 lcd_4bit_send_enable_signal ]
+"374
+[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(E3659  1 s 1 lcd_8bit_set_cursor ]
+"401
+[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(E3659  1 s 1 lcd_8bit_send_enable_signal ]
 "37 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/DC_Motor/ecual_dc_motor.c
 [v _gpio_dc_motor_read_state gpio_dc_motor_read_state `(E3659  1 e 1 0 ]
 "75
 [v _gpio_dc_motor_rotate_clock_wise gpio_dc_motor_rotate_clock_wise `(E3659  1 e 1 0 ]
 "89
 [v _gpio_dc_motor_rotate_counter_clock_wise gpio_dc_motor_rotate_counter_clock_wise `(E3659  1 e 1 0 ]
-"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
-[v _gpio_keypad_init gpio_keypad_init `(E3659  1 e 1 0 ]
-"62
-[v _gpio_keypad_read_data gpio_keypad_read_data `(E3659  1 e 1 0 ]
-"24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/LED/ecual_led.c
-[v _gpio_led_init gpio_led_init `(E3659  1 e 1 0 ]
-"103
-[v _gpio_led_turn_off gpio_led_turn_off `(E3659  1 e 1 0 ]
-"127
-[v _gpio_led_turn_on gpio_led_turn_on `(E3659  1 e 1 0 ]
 "28 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
 "60
@@ -242,19 +298,24 @@ gpio_high 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"153 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"154
+[v _flags flags `uc  1 s 1 flags ]
+"185
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "10 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
-[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
-[v _led1 led1 `S35  1 e 3 0 ]
-"19
-[s S60 . 8 `[4]S24 1 row_pins 4 0 `[4]S24 1 col_pins 4 4 ]
-[v _keypad1 keypad1 `S60  1 e 8 0 ]
-"57
-[v _data13 data13 `uc  1 e 1 0 ]
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v _lcd1 lcd1 `S29  1 e 7 0 ]
+"47
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v _lcd2 lcd2 `S55  1 e 11 0 ]
 "16 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
 [v _keypad_btns keypad_btns `C[4][4]uc  1 e 16 0 ]
 "14 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
@@ -263,121 +324,303 @@ gpio_high 1
 [v _port_regs port_regs `C[5]*.39VEuc  1 e 10 0 ]
 "16
 [v _lat_regs lat_regs `C[5]*.39VEuc  1 e 10 0 ]
-"59 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
+"106 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/APPL/app.c
 [v _main main `(i  1 e 2 0 ]
 {
-"60
-[v main@ret ret `E3659  1 a 1 19 ]
-"75
+"161
+[v main@str3 str3 `[12]uc  1 a 12 51 ]
+"144
+[v main@smile_face smile_face `[8]uc  1 a 8 63 ]
+"160
+[v main@str2 str2 `[6]uc  1 a 6 71 ]
+"159
+[v main@str1 str1 `[5]uc  1 a 5 77 ]
+"107
+[v main@ret ret `E3659  1 a 1 82 ]
+"141
+[v main@F3923 F3923 `[8]uc  1 s 8 F3923 ]
+"181
 } 0
-"127 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/LED/ecual_led.c
-[v _gpio_led_turn_on gpio_led_turn_on `(E3659  1 e 1 0 ]
+"254 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Chr_lcd/ecual_chr_lcd.c
+[v _gpio_chr_lcd_8bit_send_string_pos gpio_chr_lcd_8bit_send_string_pos `(E3659  1 e 1 0 ]
 {
-"128
-[v gpio_led_turn_on@Retval Retval `E3659  1 a 1 12 ]
+"255
+[v gpio_chr_lcd_8bit_send_string_pos@Retval Retval `E3659  1 a 1 26 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"127
-[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
-[v gpio_led_turn_on@led led `*.30CS35  1 p 1 9 ]
-"149
+"254
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_send_string_pos@lcd lcd `*.30CS55  1 p 1 21 ]
+[v gpio_chr_lcd_8bit_send_string_pos@str str `*.35uc  1 p 2 22 ]
+[v gpio_chr_lcd_8bit_send_string_pos@row row `uc  1 p 1 24 ]
+[v gpio_chr_lcd_8bit_send_string_pos@col col `uc  1 p 1 25 ]
+"264
 } 0
-"103
-[v _gpio_led_turn_off gpio_led_turn_off `(E3659  1 e 1 0 ]
+"240
+[v _gpio_chr_lcd_8bit_send_string gpio_chr_lcd_8bit_send_string `(E3659  1 e 1 0 ]
 {
-"104
-[v gpio_led_turn_off@Retval Retval `E3659  1 a 1 12 ]
+"241
+[v gpio_chr_lcd_8bit_send_string@Retval Retval `E3659  1 a 1 20 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"103
-[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
-[v gpio_led_turn_off@led led `*.30CS35  1 p 1 9 ]
+"240
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_send_string@lcd lcd `*.30CS55  1 p 1 17 ]
+[v gpio_chr_lcd_8bit_send_string@str str `*.35uc  1 p 2 18 ]
+"252
+} 0
+"266
+[v _gpio_chr_lcd_8bit_send_custom_character gpio_chr_lcd_8bit_send_custom_character `(E3659  1 e 1 0 ]
+{
+"274
+[v gpio_chr_lcd_8bit_send_custom_character@i i `uc  1 a 1 32 ]
+"267
+[v gpio_chr_lcd_8bit_send_custom_character@Retval Retval `E3659  1 a 1 31 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"266
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_send_custom_character@lcd lcd `*.30CS55  1 p 1 26 ]
+[v gpio_chr_lcd_8bit_send_custom_character@c_character c_character `*.30uc  1 p 1 27 ]
+[v gpio_chr_lcd_8bit_send_custom_character@row row `uc  1 p 1 28 ]
+[v gpio_chr_lcd_8bit_send_custom_character@col col `uc  1 p 1 29 ]
+[v gpio_chr_lcd_8bit_send_custom_character@ram_pos ram_pos `uc  1 p 1 30 ]
+"281
+} 0
+"228
+[v _gpio_chr_lcd_8bit_send_character_pos gpio_chr_lcd_8bit_send_character_pos `(E3659  1 e 1 0 ]
+{
+"229
+[v gpio_chr_lcd_8bit_send_character_pos@Retval Retval `E3659  1 a 1 25 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"228
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_send_character_pos@lcd lcd `*.30CS55  1 p 1 21 ]
+[v gpio_chr_lcd_8bit_send_character_pos@character character `uc  1 p 1 22 ]
+[v gpio_chr_lcd_8bit_send_character_pos@row row `uc  1 p 1 23 ]
+[v gpio_chr_lcd_8bit_send_character_pos@col col `uc  1 p 1 24 ]
+"238
+} 0
+"374
+[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(E3659  1 s 1 lcd_8bit_set_cursor ]
+{
+"375
+[v lcd_8bit_set_cursor@Retval Retval `E3659  1 a 1 20 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"374
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v lcd_8bit_set_cursor@lcd lcd `*.30CS55  1 p 1 17 ]
+[v lcd_8bit_set_cursor@row row `uc  1 p 1 18 ]
+[v lcd_8bit_set_cursor@col col `uc  1 p 1 19 ]
+"400
+} 0
+"210
+[v _gpio_chr_lcd_8bit_send_character gpio_chr_lcd_8bit_send_character `(E3659  1 e 1 0 ]
+{
+"219
+[v gpio_chr_lcd_8bit_send_character@i i `uc  1 a 1 16 ]
+"211
+[v gpio_chr_lcd_8bit_send_character@Retval Retval `E3659  1 a 1 15 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"210
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_send_character@lcd lcd `*.30CS55  1 p 1 11 ]
+[v gpio_chr_lcd_8bit_send_character@character character `uc  1 p 1 12 ]
+"226
+} 0
+"158
+[v _gpio_chr_lcd_8bit_init gpio_chr_lcd_8bit_init `(E3659  1 e 1 0 ]
+{
+"170
+[v gpio_chr_lcd_8bit_init@i i `uc  1 a 1 19 ]
+"159
+[v gpio_chr_lcd_8bit_init@Retval Retval `E3659  1 a 1 20 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"158
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_init@lcd lcd `*.30CS55  1 p 1 17 ]
+"190
+} 0
+"192
+[v _gpio_chr_lcd_8bit_send_command gpio_chr_lcd_8bit_send_command `(E3659  1 e 1 0 ]
+{
+"201
+[v gpio_chr_lcd_8bit_send_command@i i `uc  1 a 1 16 ]
+"193
+[v gpio_chr_lcd_8bit_send_command@Retval Retval `E3659  1 a 1 15 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"192
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v gpio_chr_lcd_8bit_send_command@lcd lcd `*.30CS55  1 p 1 11 ]
+[v gpio_chr_lcd_8bit_send_command@command command `uc  1 p 1 12 ]
+"208
+} 0
+"401
+[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(E3659  1 s 1 lcd_8bit_send_enable_signal ]
+{
+"402
+[v lcd_8bit_send_enable_signal@Retval Retval `E3659  1 a 1 10 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"401
+[s S55 . 11 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[8]S24 1 data_pins 8 3 ]
+[v lcd_8bit_send_enable_signal@lcd lcd `*.30CS55  1 p 1 9 ]
+"412
+} 0
+"124
+[v _gpio_chr_lcd_4bit_send_string_pos gpio_chr_lcd_4bit_send_string_pos `(E3659  1 e 1 0 ]
+{
 "125
-} 0
-"24
-[v _gpio_led_init gpio_led_init `(E3659  1 e 1 0 ]
-{
-"31
-[v gpio_led_init@logic logic `E3693  1 a 1 12 ]
-"25
-[v gpio_led_init@Retval Retval `E3659  1 a 1 13 ]
+[v gpio_chr_lcd_4bit_send_string_pos@Retval Retval `E3659  1 a 1 27 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"24
-[s S35 . 3 `S24 1 pin 1 0 `E3736 1 state 1 1 `E3740 1 con 1 2 ]
-[v gpio_led_init@led led `*.30CS35  1 p 1 9 ]
-"62
+"124
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_send_string_pos@lcd lcd `*.30CS29  1 p 1 22 ]
+[v gpio_chr_lcd_4bit_send_string_pos@str str `*.35uc  1 p 2 23 ]
+[v gpio_chr_lcd_4bit_send_string_pos@row row `uc  1 p 1 25 ]
+[v gpio_chr_lcd_4bit_send_string_pos@col col `uc  1 p 1 26 ]
+"134
 } 0
-"62 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
-[v _gpio_keypad_read_data gpio_keypad_read_data `(E3659  1 e 1 0 ]
+"110
+[v _gpio_chr_lcd_4bit_send_string gpio_chr_lcd_4bit_send_string `(E3659  1 e 1 0 ]
 {
-"78
-[v gpio_keypad_read_data@k k `uc  1 a 1 18 ]
-"72
-[v gpio_keypad_read_data@j j `uc  1 a 1 16 ]
-"71
-[v gpio_keypad_read_data@i i `uc  1 a 1 17 ]
-"70
-[v gpio_keypad_read_data@read read `E3693  1 a 1 15 ]
-"69
-[v gpio_keypad_read_data@active active `E3693  1 a 1 13 ]
-"68
-[v gpio_keypad_read_data@deactive deactive `E3693  1 a 1 12 ]
-"63
-[v gpio_keypad_read_data@Retval Retval `E3659  1 a 1 14 ]
+"111
+[v gpio_chr_lcd_4bit_send_string@Retval Retval `E3659  1 a 1 21 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"62
-[s S60 . 8 `[4]S24 1 row_pins 4 0 `[4]S24 1 col_pins 4 4 ]
-[v gpio_keypad_read_data@keypad keypad `*.30CS60  1 p 1 9 ]
-[v gpio_keypad_read_data@data data `*.30uc  1 p 1 10 ]
-"89
+"110
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_send_string@lcd lcd `*.30CS29  1 p 1 18 ]
+[v gpio_chr_lcd_4bit_send_string@str str `*.35uc  1 p 2 19 ]
+"122
 } 0
-"81 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
-[v _gpio_pin_read_logic gpio_pin_read_logic `(E3659  1 e 1 0 ]
+"136
+[v _gpio_chr_lcd_4bit_send_custom_character gpio_chr_lcd_4bit_send_custom_character `(E3659  1 e 1 0 ]
+{
+"144
+[v gpio_chr_lcd_4bit_send_custom_character@i i `uc  1 a 1 33 ]
+"137
+[v gpio_chr_lcd_4bit_send_custom_character@Retval Retval `E3659  1 a 1 32 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"136
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_send_custom_character@lcd lcd `*.30CS29  1 p 1 27 ]
+[v gpio_chr_lcd_4bit_send_custom_character@c_character c_character `*.30uc  1 p 1 28 ]
+[v gpio_chr_lcd_4bit_send_custom_character@row row `uc  1 p 1 29 ]
+[v gpio_chr_lcd_4bit_send_custom_character@col col `uc  1 p 1 30 ]
+[v gpio_chr_lcd_4bit_send_custom_character@ram_pos ram_pos `uc  1 p 1 31 ]
+"151
+} 0
+"98
+[v _gpio_chr_lcd_4bit_send_character_pos gpio_chr_lcd_4bit_send_character_pos `(E3659  1 e 1 0 ]
+{
+"99
+[v gpio_chr_lcd_4bit_send_character_pos@Retval Retval `E3659  1 a 1 26 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"98
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_send_character_pos@lcd lcd `*.30CS29  1 p 1 22 ]
+[v gpio_chr_lcd_4bit_send_character_pos@character character `uc  1 p 1 23 ]
+[v gpio_chr_lcd_4bit_send_character_pos@row row `uc  1 p 1 24 ]
+[v gpio_chr_lcd_4bit_send_character_pos@col col `uc  1 p 1 25 ]
+"108
+} 0
+"334
+[v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(E3659  1 s 1 lcd_4bit_set_cursor ]
+{
+"335
+[v lcd_4bit_set_cursor@Retval Retval `E3659  1 a 1 21 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"334
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v lcd_4bit_set_cursor@lcd lcd `*.30CS29  1 p 1 18 ]
+[v lcd_4bit_set_cursor@row row `uc  1 p 1 19 ]
+[v lcd_4bit_set_cursor@col col `uc  1 p 1 20 ]
+"360
+} 0
+"81
+[v _gpio_chr_lcd_4bit_send_character gpio_chr_lcd_4bit_send_character `(E3659  1 e 1 0 ]
 {
 "82
-[v gpio_pin_read_logic@Retval Retval `E3659  1 a 1 7 ]
+[v gpio_chr_lcd_4bit_send_character@Retval Retval `E3659  1 a 1 17 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "81
-[v gpio_pin_read_logic@pin pin `*.30CS24  1 p 1 0 ]
-[v gpio_pin_read_logic@logic logic `*.30E3693  1 p 1 1 ]
-"90
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_send_character@lcd lcd `*.30CS29  1 p 1 15 ]
+[v gpio_chr_lcd_4bit_send_character@character character `uc  1 p 1 16 ]
+"96
 } 0
-"45 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Keypad/ecual_keypad.c
-[v _gpio_keypad_init gpio_keypad_init `(E3659  1 e 1 0 ]
+"30
+[v _gpio_chr_lcd_4bit_init gpio_chr_lcd_4bit_init `(E3659  1 e 1 0 ]
 {
-"55
-[v gpio_keypad_init@j j `uc  1 a 1 15 ]
-"51
-[v gpio_keypad_init@i i `uc  1 a 1 14 ]
-"46
-[v gpio_keypad_init@Retval Retval `E3659  1 a 1 13 ]
+"42
+[v gpio_chr_lcd_4bit_init@i i `uc  1 a 1 20 ]
+"31
+[v gpio_chr_lcd_4bit_init@Retval Retval `E3659  1 a 1 21 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"45
-[s S60 . 8 `[4]S24 1 row_pins 4 0 `[4]S24 1 col_pins 4 4 ]
-[v gpio_keypad_init@keypad keypad `*.30CS60  1 p 1 12 ]
-"60
+"30
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_init@lcd lcd `*.30CS29  1 p 1 18 ]
+"62
 } 0
 "103 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_init gpio_pin_init `(E3659  1 e 1 0 ]
@@ -393,7 +636,70 @@ gpio_high 1
 [v gpio_pin_init@pin pin `*.30CS24  1 p 1 9 ]
 "113
 } 0
-"60
+"28
+[v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
+{
+"29
+[v gpio_pin_direction_init@Retval Retval `E3659  1 a 1 7 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"28
+[v gpio_pin_direction_init@pin pin `*.30CS24  1 p 1 0 ]
+"47
+} 0
+"64 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Chr_lcd/ecual_chr_lcd.c
+[v _gpio_chr_lcd_4bit_send_command gpio_chr_lcd_4bit_send_command `(E3659  1 e 1 0 ]
+{
+"65
+[v gpio_chr_lcd_4bit_send_command@Retval Retval `E3659  1 a 1 17 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"64
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v gpio_chr_lcd_4bit_send_command@lcd lcd `*.30CS29  1 p 1 15 ]
+[v gpio_chr_lcd_4bit_send_command@command command `uc  1 p 1 16 ]
+"79
+} 0
+"361
+[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(E3659  1 s 1 lcd_4bit_send_enable_signal ]
+{
+"362
+[v lcd_4bit_send_enable_signal@Retval Retval `E3659  1 a 1 10 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"361
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v lcd_4bit_send_enable_signal@lcd lcd `*.30CS29  1 p 1 9 ]
+"372
+} 0
+"322
+[v _lcd_4bit_send_4bit lcd_4bit_send_4bit `(E3659  1 s 1 lcd_4bit_send_4bit ]
+{
+"328
+[v lcd_4bit_send_4bit@i i `uc  1 a 1 14 ]
+"323
+[v lcd_4bit_send_4bit@Retval Retval `E3659  1 a 1 13 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"322
+[s S29 . 7 `S24 1 rs_pin 1 0 `S24 1 rw_pin 1 1 `S24 1 en_pin 1 2 `[4]S24 1 data_pins 4 3 ]
+[v lcd_4bit_send_4bit@lcd lcd `*.30CS29  1 p 1 9 ]
+[v lcd_4bit_send_4bit@data data `uc  1 p 1 10 ]
+"333
+} 0
+"60 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/MCAL/GPIO/hal_gpio.c
 [v _gpio_pin_write_logic gpio_pin_write_logic `(E3659  1 e 1 0 ]
 {
 "61
@@ -408,17 +714,134 @@ gpio_high 1
 [v gpio_pin_write_logic@logic logic `E3693  1 p 1 1 ]
 "79
 } 0
-"28
-[v _gpio_pin_direction_init gpio_pin_direction_init `(E3659  1 e 1 0 ]
+"297 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers_Revision.X/ECUAL/Chr_lcd/ecual_chr_lcd.c
+[v _convert_short_to_string convert_short_to_string `(E3659  1 e 1 0 ]
 {
-"29
-[v gpio_pin_direction_init@Retval Retval `E3659  1 a 1 7 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"28
-[v gpio_pin_direction_init@pin pin `*.30CS24  1 p 1 0 ]
-"47
+"298
+[v convert_short_to_string@Retval Retval `E3659  1 a 1 46 ]
+"297
+[v convert_short_to_string@data data `us  1 p 2 43 ]
+[v convert_short_to_string@str str `*.30uc  1 p 1 45 ]
+"307
+} 0
+"308
+[v _convert_integer_to_string convert_integer_to_string `(E3659  1 e 1 0 ]
+{
+"309
+[v convert_integer_to_string@Retval Retval `E3659  1 a 1 48 ]
+"308
+[v convert_integer_to_string@data data `ul  1 p 4 43 ]
+[v convert_integer_to_string@str str `*.30uc  1 p 1 47 ]
+"318
+} 0
+"286
+[v _convert_byte_to_string convert_byte_to_string `(E3659  1 e 1 0 ]
+{
+[v convert_byte_to_string@data data `uc  1 p 1 wreg ]
+"287
+[v convert_byte_to_string@Retval Retval `E3659  1 a 1 45 ]
+"286
+[v convert_byte_to_string@data data `uc  1 p 1 wreg ]
+[v convert_byte_to_string@str str `*.30uc  1 p 1 43 ]
+[v convert_byte_to_string@data data `uc  1 p 1 44 ]
+"296
+} 0
+"9 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[u S1462 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+"13
+[s S1465 _IO_FILE 11 `S1462 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S1465  1 a 11 32 ]
+"12
+[v sprintf@ap ap `[1]*.30v  1 a 1 31 ]
+"9
+[v sprintf@s s `*.30uc  1 p 1 25 ]
+[v sprintf@fmt fmt `*.31Cuc  1 p 1 26 ]
+"23
+} 0
+"1817 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1820
+[v vfprintf@cfmt cfmt `*.31uc  1 a 1 24 ]
+[s S1497 _IO_FILE 0 ]
+"1817
+[v vfprintf@fp fp `*.30S1497  1 p 1 21 ]
+[v vfprintf@fmt fmt `*.31Cuc  1 p 1 22 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 23 ]
+"1840
+} 0
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+[u S1510 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+"1188
+[v vfpfcnvrt@convarg convarg `S1510  1 a 4 16 ]
+"1179
+[v vfpfcnvrt@c c `uc  1 a 1 20 ]
+[v vfpfcnvrt@cp cp `*.31uc  1 a 1 15 ]
+"1180
+[v vfpfcnvrt@done done `a  1 a 1 14 ]
+[s S1497 _IO_FILE 0 ]
+"1177
+[v vfpfcnvrt@fp fp `*.30S1497  1 p 1 10 ]
+[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 11 ]
+[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 12 ]
+"1814
+} 0
+"8 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[u S1462 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[s S1465 _IO_FILE 11 `S1462 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.30S1465  1 p 1 2 ]
+"24
+} 0
+"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 6 ]
+"4
+} 0
+"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"3 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/memset.c
+[v _memset memset `(*.30v  1 e 2 0 ]
+{
+"5
+[v memset@p p `*.30uc  1 a 1 5 ]
+"3
+[v memset@dest dest `*.30v  1 p 1 0 ]
+[v memset@c c `i  1 p 2 1 ]
+[v memset@n n `ui  1 p 2 3 ]
+"10
 } 0

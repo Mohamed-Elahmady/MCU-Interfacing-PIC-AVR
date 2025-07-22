@@ -9,8 +9,14 @@
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>Codes/ECUAL/BTN/app1.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="Chr Lcd" displayName="Chr Lcd" projectFiles="true">
+          <itemPath>Codes/ECUAL/Chr Lcd/app1.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
           <itemPath>Codes/ECUAL/DC_Motor/app1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Keypad" displayName="Keypad" projectFiles="true">
+          <itemPath>Codes/ECUAL/Keypad/app1.c</itemPath>
         </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>Codes/ECUAL/LED/app1.c</itemPath>
@@ -39,6 +45,10 @@
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ecual_btn.h</itemPath>
           <itemPath>ECUAL_Layer/BTN/ecual_btn_cfg.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Chr_Lcd" displayName="Chr_Lcd" projectFiles="true">
+          <itemPath>ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.h</itemPath>
+          <itemPath>ECUAL_Layer/Chr_Lcd/ecual_chr_lcd_cfg.h</itemPath>
         </logicalFolder>
         <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
           <itemPath>ECUAL_Layer/DC_Motor/ecual_dc_motor.h</itemPath>
@@ -90,6 +100,9 @@
         </logicalFolder>
         <logicalFolder name="BTN" displayName="BTN" projectFiles="true">
           <itemPath>ECUAL_Layer/BTN/ecual_btn.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Chr_Lcd" displayName="Chr_Lcd" projectFiles="true">
+          <itemPath>ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c</itemPath>
         </logicalFolder>
         <logicalFolder name="DC_Motor" displayName="DC_Motor" projectFiles="true">
           <itemPath>ECUAL_Layer/DC_Motor/ecual_dc_motor.c</itemPath>

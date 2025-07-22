@@ -1,41 +1,42 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"11 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 11: Std_ReturnType Ret = E_OK;
+"10 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 10: Std_ReturnType Ret = E_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
 [p mainexit ]
-"32 APP_Layer/Main.h
-[; ;APP_Layer/Main.h: 32: void application_init(void);
+"38 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 38: void application_init(void);
 [v _application_init `(v ~T0 @X0 0 ef ]
 "73 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
 [; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 73: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . PORT PIN DIRECTION LOGIC ]
-"51 APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h
-[; ;APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h: 51: typedef struct{
-[s S312 `S306 -> 4 `i `S306 -> 4 `i ]
-[n S312 . row_pins col_pins ]
-"59
-[; ;APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h: 59: Std_ReturnType GPIO_KEYPAD_READ_DATA(const GPIO_KEYPAD *keypad, uint8 *data);
-[v _GPIO_KEYPAD_READ_DATA `(E3659 ~T0 @X0 0 ef2`*CS312`*uc ]
-"27 APP_Layer/Main.h
-[; ;APP_Layer/Main.h: 27: extern GPIO_KEYPAD keypad1;
-[v _keypad1 `S312 ~T0 @X0 0 e ]
-"33 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 33: typedef struct{
-[s S307 `S306 1 ]
-[n S307 . pin ]
-"42
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 42: Std_ReturnType GPIO_LED_TURN_ON(const GPIO_LED *led);
-[v _GPIO_LED_TURN_ON `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"28 APP_Layer/Main.h
-[; ;APP_Layer/Main.h: 28: extern GPIO_LED led1;
-[v _led1 `S307 ~T0 @X0 0 e ]
-"41 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 41: Std_ReturnType GPIO_LED_TURN_OFF(const GPIO_LED *led);
-[v _GPIO_LED_TURN_OFF `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"35 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
-[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 35: void ECUAL_LAYER_INIT(void);
+"89 APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
+[; ;APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 89: typedef struct {
+[s S314 `S306 1 `S306 1 `S306 1 `S306 -> 8 `i ]
+[n S314 . rs_pin rw_pin en_pin data_pins ]
+"112
+[; ;APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 112: Std_ReturnType GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_8BIT *lcd, const uint8 c_character[], uint8 row, uint8 col, uint8 ram_pos);
+[v _GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER `(E3659 ~T0 @X0 0 ef5`*CS314`*Cuc`uc`uc`uc ]
+"34 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 34: extern CHR_LCD_8BIT lcd2;
+[v _lcd2 `S314 ~T0 @X0 0 e ]
+"82 APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
+[; ;APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 82: typedef struct {
+[s S313 `S306 1 `S306 1 `S306 1 `S306 -> 4 `i ]
+[n S313 . rs_pin rw_pin en_pin data_pins ]
+"104
+[; ;APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 104: Std_ReturnType GPIO_LCD_4BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_4BIT *lcd, const uint8 c_character[], uint8 row, uint8 col, uint8 ram_pos);
+[v _GPIO_LCD_4BIT_SEND_CUSTOM_CHARACTER `(E3659 ~T0 @X0 0 ef5`*CS313`*Cuc`uc`uc`uc ]
+"33 APP_Layer/Main.h
+[; ;APP_Layer/Main.h: 33: extern CHR_LCD_4BIT lcd1;
+[v _lcd1 `S313 ~T0 @X0 0 e ]
+[v F3624 `(v ~T0 @X0 1 tf1`ul ]
+"20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
+[v __delay `JF3624 ~T0 @X0 0 e ]
+[p i __delay ]
+"36 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
+[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 36: void ECUAL_LAYER_INIT(void);
 [v _ECUAL_LAYER_INIT `(v ~T0 @X0 0 ef ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
@@ -478,78 +479,191 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 11: Std_ReturnType Ret = E_OK;
+"10 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 10: Std_ReturnType Ret = E_OK;
 [v _Ret `E3659 ~T0 @X0 1 e ]
 [i _Ret
 . `E3659 1
 ]
-"13
-[; ;APP_Layer/Main.c: 13: uint8 data22;
-[v _data22 `uc ~T0 @X0 1 e ]
+[v F3919 `Cuc ~T0 @X0 -> 8 `i t ]
+"12
+[; ;APP_Layer/Main.c: 12: const uint8 Battery[5][8] = {{0x0E, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x1F, 0x00},
+[v _Battery `F3919 ~T0 @X0 -> 5 `i e ]
+[i _Battery
+:U ..
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v F3921 `Cuc ~T0 @X0 -> 8 `i t ]
+"18
+[; ;APP_Layer/Main.c: 18: const uint8 Heart[5][8] = {{0x00, 0x0A, 0x15, 0x11, 0x11, 0x0A, 0x04, 0x00},
+[v _Heart `F3921 ~T0 @X0 -> 5 `i e ]
+[i _Heart
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 21 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 10 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 21 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 14 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 21 `i `uc
+-> -> 17 `i `uc
+-> -> 31 `i `uc
+-> -> 14 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 21 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 14 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 0 `i `uc
+-> -> 10 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 14 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"15
-[; ;APP_Layer/Main.c: 15: int main() {
+"24
+[; ;APP_Layer/Main.c: 24: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"16
-[; ;APP_Layer/Main.c: 16:     application_init();
+"25
+[; ;APP_Layer/Main.c: 25:     application_init();
 [e ( _application_init ..  ]
-"17
-[; ;APP_Layer/Main.c: 17:     while (1) {
-[e :U 315 ]
-{
-"18
-[; ;APP_Layer/Main.c: 18:         Ret = GPIO_KEYPAD_READ_DATA(&keypad1, &data22);
-[e = _Ret ( _GPIO_KEYPAD_READ_DATA (2 , -> &U _keypad1 `*CS312 &U _data22 ]
-"19
-[; ;APP_Layer/Main.c: 19:         if(data22 == '7'){
-[e $ ! == -> _data22 `ui -> 55 `ui 317  ]
-{
-"20
-[; ;APP_Layer/Main.c: 20:             Ret = GPIO_LED_TURN_ON(&led1);
-[e = _Ret ( _GPIO_LED_TURN_ON (1 -> &U _led1 `*CS307 ]
-"21
-[; ;APP_Layer/Main.c: 21:         }
-}
-[e $U 318  ]
-"22
-[; ;APP_Layer/Main.c: 22:         else{
+"27
+[; ;APP_Layer/Main.c: 27:     while (1) {
 [e :U 317 ]
 {
-"23
-[; ;APP_Layer/Main.c: 23:             Ret = GPIO_LED_TURN_OFF(&led1);
-[e = _Ret ( _GPIO_LED_TURN_OFF (1 -> &U _led1 `*CS307 ]
-"24
-[; ;APP_Layer/Main.c: 24:         }
-}
-[e :U 318 ]
-"25
-[; ;APP_Layer/Main.c: 25:     }
-}
-[e :U 314 ]
-[e $U 315  ]
-[e :U 316 ]
-"27
-[; ;APP_Layer/Main.c: 27:     return (0);
-[e ) -> 0 `i ]
-[e $UE 313  ]
 "28
-[; ;APP_Layer/Main.c: 28: }
-[e :UE 313 ]
-}
+[; ;APP_Layer/Main.c: 28:         for(uint8 i = 0; i < 5 ;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 319  ]
+[e $U 320  ]
+[e :U 319 ]
+{
+"29
+[; ;APP_Layer/Main.c: 29:             GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2, Battery[i], 1, 20, 0);
+[e ( _GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd2 `*CS314 &U *U + &U _Battery * -> _i `ux -> * -> # *U &U *U &U _Battery `ui -> -> 8 `i `ui `ux -> -> 1 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
 "30
-[; ;APP_Layer/Main.c: 30: void application_init(void) {
+[; ;APP_Layer/Main.c: 30:             GPIO_LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1, Heart[i], 1, 20, 0);
+[e ( _GPIO_LCD_4BIT_SEND_CUSTOM_CHARACTER (4 , , , , -> &U _lcd1 `*CS313 &U *U + &U _Heart * -> _i `ux -> * -> # *U &U *U &U _Heart `ui -> -> 8 `i `ui `ux -> -> 1 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
+"31
+[; ;APP_Layer/Main.c: 31:             _delay((unsigned long)((250)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"32
+[; ;APP_Layer/Main.c: 32:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 319  ]
+[e :U 320 ]
+}
+"33
+[; ;APP_Layer/Main.c: 33:     }
+}
+[e :U 316 ]
+[e $U 317  ]
+[e :U 318 ]
+"35
+[; ;APP_Layer/Main.c: 35:     return (0);
+[e ) -> 0 `i ]
+[e $UE 315  ]
+"36
+[; ;APP_Layer/Main.c: 36: }
+[e :UE 315 ]
+}
+"38
+[; ;APP_Layer/Main.c: 38: void application_init(void) {
 [v _application_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_init ]
 [f ]
-"31
-[; ;APP_Layer/Main.c: 31:     ECUAL_LAYER_INIT();
+"39
+[; ;APP_Layer/Main.c: 39:     ECUAL_LAYER_INIT();
 [e ( _ECUAL_LAYER_INIT ..  ]
-"32
-[; ;APP_Layer/Main.c: 32: }
-[e :UE 319 ]
+"40
+[; ;APP_Layer/Main.c: 40: }
+[e :UE 322 ]
 }

@@ -17,6 +17,8 @@
 
 /******************* Section 2 : Macros Declarations *******************/
 
+#define ZERO_INIT           (uint8)0x00
+
 #define STD_LOW                 0x00
 #define STD_HIGH                0x01
 

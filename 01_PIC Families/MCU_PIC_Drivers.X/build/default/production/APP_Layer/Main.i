@@ -5551,7 +5551,7 @@ unsigned char __t3rd16on(void);
 # 34 "/Applications/microchip/xc8/v3.00/pic/include/xc.h" 2 3
 # 16 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 2
 # 17 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
-# 101 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h"
+# 103 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h"
 typedef _Bool boolean;
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -5566,7 +5566,7 @@ typedef signed long long sint64;
 typedef float float32;
 typedef double float64;
 typedef long double float128;
-# 124 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h"
+# 126 "APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h"
 typedef enum{
     E_NOT_OK = (uint8)0x00,
     E_OK = (uint8)0x01
@@ -5754,9 +5754,16 @@ Std_ReturnType GPIO_SEGMENT_WRITE_NUMBER(const GPIO_SEGMENT *seg, uint8 number);
 # 16 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
 # 1 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h" 1
 # 17 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h" 2
-# 27 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
+
+
+
+
+
+
+
+
 extern const uint8 KEYPAD_BTNS[(uint8)0x04][(uint8)0x04];
-# 51 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
+# 49 "APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD.h"
 typedef struct{
     GPIO_PIN_CFG row_pins[(uint8)0x04];
     GPIO_PIN_CFG col_pins[(uint8)0x04];
@@ -5767,32 +5774,87 @@ typedef struct{
 Std_ReturnType GPIO_KEYPAD_INIT(const GPIO_KEYPAD *keypad);
 Std_ReturnType GPIO_KEYPAD_READ_DATA(const GPIO_KEYPAD *keypad, uint8 *data);
 # 21 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 35 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+# 1 "APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h"
+# 1 "APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h" 2
+# 82 "APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h"
+typedef struct {
+    GPIO_PIN_CFG rs_pin;
+    GPIO_PIN_CFG rw_pin;
+    GPIO_PIN_CFG en_pin;
+    GPIO_PIN_CFG data_pins[(uint8)0x04];
+}CHR_LCD_4BIT;
+
+typedef struct {
+    GPIO_PIN_CFG rs_pin;
+    GPIO_PIN_CFG rw_pin;
+    GPIO_PIN_CFG en_pin;
+    GPIO_PIN_CFG data_pins[(uint8)0x08];
+}CHR_LCD_8BIT;
+
+
+
+Std_ReturnType GPIO_LCD_4BIT_INIT(const CHR_LCD_4BIT *lcd);
+Std_ReturnType GPIO_LCD_4BIT_SEND_COMMAND(const CHR_LCD_4BIT *lcd,uint8 command);
+Std_ReturnType GPIO_LCD_4BIT_SEND_CHARACTER(const CHR_LCD_4BIT *lcd, uint8 character);
+Std_ReturnType GPIO_LCD_4BIT_SEND_CHARACTER_POS(const CHR_LCD_4BIT *lcd, uint8 character, uint8 row, uint8 col);
+Std_ReturnType GPIO_LCD_4BIT_SEND_STRING(const CHR_LCD_4BIT *lcd, uint8 *str);
+Std_ReturnType GPIO_LCD_4BIT_SEND_STRING_POS(const CHR_LCD_4BIT *lcd, uint8 *str, uint8 row, uint8 col);
+Std_ReturnType GPIO_LCD_4BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_4BIT *lcd, const uint8 c_character[], uint8 row, uint8 col, uint8 ram_pos);
+
+Std_ReturnType GPIO_LCD_8BIT_INIT(const CHR_LCD_8BIT *lcd);
+Std_ReturnType GPIO_LCD_8BIT_SEND_COMMAND(const CHR_LCD_8BIT *lcd,uint8 command);
+Std_ReturnType GPIO_LCD_8BIT_SEND_CHARACTER(const CHR_LCD_8BIT *lcd, uint8 character);
+Std_ReturnType GPIO_LCD_8BIT_SEND_CHARACTER_POS(const CHR_LCD_8BIT *lcd, uint8 character, uint8 row, uint8 col);
+Std_ReturnType GPIO_LCD_8BIT_SEND_STRING(const CHR_LCD_8BIT *lcd, uint8 *str);
+Std_ReturnType GPIO_LCD_8BIT_SEND_STRING_POS(const CHR_LCD_8BIT *lcd, uint8 *str, uint8 row, uint8 col);
+Std_ReturnType GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_8BIT *lcd, const uint8 c_character[], uint8 row, uint8 col, uint8 ram_pos);
+
+Std_ReturnType convert_byte_to_string(uint8 data, uint8 *str);
+Std_ReturnType convert_short_to_string(uint16 data, uint8 *str);
+Std_ReturnType convert_integer_to_string(uint32 data, uint8 *str);
+# 22 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 36 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 27 "APP_Layer/Main.h"
-extern GPIO_KEYPAD keypad1;
 extern GPIO_LED led1;
+extern GPIO_BTN btn1;
+extern GPIO_RELAY relay1;
+extern GPIO_SEGMENT seg1;
+extern DC_MOTOR motor1;
+extern GPIO_KEYPAD keypad1;
+extern CHR_LCD_4BIT lcd1;
+extern CHR_LCD_8BIT lcd2;
 
 
 
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
-
 Std_ReturnType Ret = E_OK;
 
-uint8 data22;
+const uint8 Battery[5][8] = {{0x0E, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x1F, 0x00},
+                             {0x0E, 0x1F, 0x11, 0x11, 0x11, 0x1F, 0x1F, 0x00},
+                             {0x0E, 0x1F, 0x11, 0x11, 0x1F, 0x1F, 0x1F, 0x00},
+                             {0x0E, 0x1F, 0x11, 0x1F, 0x1F, 0x1F, 0x1F, 0x00},
+                             {0x0E, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x00}};
+
+const uint8 Heart[5][8] = {{0x00, 0x0A, 0x15, 0x11, 0x11, 0x0A, 0x04, 0x00},
+                           {0x00, 0x0A, 0x15, 0x11, 0x11, 0x0E, 0x04, 0x00},
+                           {0x00, 0x0A, 0x15, 0x11, 0x1F, 0x0E, 0x04, 0x00},
+                           {0x00, 0x0A, 0x15, 0x1F, 0x1F, 0x0E, 0x04, 0x00},
+                           {0x00, 0x0A, 0x1F, 0x1F, 0x1F, 0x0E, 0x04, 0x00}};
 
 int main() {
     application_init();
+
     while (1) {
-        Ret = GPIO_KEYPAD_READ_DATA(&keypad1, &data22);
-        if(data22 == '7'){
-            Ret = GPIO_LED_TURN_ON(&led1);
-        }
-        else{
-            Ret = GPIO_LED_TURN_OFF(&led1);
+        for(uint8 i = 0; i < 5 ;i++){
+            GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(&lcd2, Battery[i], 1, 20, 0);
+            GPIO_LCD_4BIT_SEND_CUSTOM_CHARACTER(&lcd1, Heart[i], 1, 20, 0);
+            _delay((unsigned long)((250)*(8000000UL/4000.0)));
         }
     }
 

@@ -42,7 +42,10 @@ build/default/production/ECUAL_Layer/ECUAL_INIT.o.d \
  ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio.h \
  ECUAL_Layer/7SEG/ecual_7seg_cfg.h ECUAL_Layer/Keypad/ecual_keypad.h \
  ECUAL_Layer/Keypad/../../MCAL_Layer/GPIO/hal_gpio.h \
- ECUAL_Layer/Keypad/ecual_keypad_cfg.h
+ ECUAL_Layer/Keypad/ecual_keypad_cfg.h \
+ ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.h \
+ ECUAL_Layer/Chr_Lcd/../../MCAL_Layer/GPIO/hal_gpio.h \
+ ECUAL_Layer/Chr_Lcd/ecual_chr_lcd_cfg.h
 
 ECUAL_Layer/ECUAL_INIT.h:
 
@@ -137,3 +140,9 @@ ECUAL_Layer/Keypad/ecual_keypad.h:
 ECUAL_Layer/Keypad/../../MCAL_Layer/GPIO/hal_gpio.h:
 
 ECUAL_Layer/Keypad/ecual_keypad_cfg.h:
+
+ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.h:
+
+ECUAL_Layer/Chr_Lcd/../../MCAL_Layer/GPIO/hal_gpio.h:
+
+ECUAL_Layer/Chr_Lcd/ecual_chr_lcd_cfg.h:

@@ -26,6 +26,8 @@
 
 extern GPIO_Led led1;
 extern GPIO_Keypad keypad1;
+extern Chr_Lcd_4Bit lcd1;
+extern Chr_Lcd_8Bit lcd2;
 
 /******************* Section 5 : Software Interfaces Declarations (APIs) *******************/
 

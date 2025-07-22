@@ -1,5 +1,5 @@
 /* 
- * File:   ecual_led.h
+ * File:   ecual_led.c
  * Author: mohammedel-ahmady
  *
  * Created on June 26, 2025, 5:32 AM

@@ -23,4 +23,7 @@ ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
 ECUAL_Layer/7SEG/ECUAL_7SEG_CFG.h  \
 ECUAL_Layer/Keypad/ECUAL_KEYPAD.h  \
 ECUAL_Layer/Keypad/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
-ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h 
+ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h  \
+ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h  \
+ECUAL_Layer/CHR_Lcd/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
+ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD_CFG.h 

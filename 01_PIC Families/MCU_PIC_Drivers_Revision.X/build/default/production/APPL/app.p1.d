@@ -24,4 +24,7 @@ APPL/../ECUAL/7SEG/../../MCAL/GPIO/hal_gpio.h  \
 APPL/../ECUAL/7SEG/ecual_7seg_cfg.h  \
 APPL/../ECUAL/Keypad/ecual_keypad.h  \
 APPL/../ECUAL/Keypad/../../MCAL/GPIO/hal_gpio.h  \
-APPL/../ECUAL/Keypad/ecual_keypad_cfg.h 
+APPL/../ECUAL/Keypad/ecual_keypad_cfg.h  \
+APPL/../ECUAL/Chr_lcd/ecual_chr_lcd.h  \
+APPL/../ECUAL/Chr_lcd/../../MCAL/GPIO/hal_gpio.h  \
+APPL/../ECUAL/Chr_lcd/ecual_chr_lcd_cfg.h 

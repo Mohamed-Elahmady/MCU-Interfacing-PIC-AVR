@@ -17,8 +17,6 @@
 
 /******************* Section 2 : Macros Declarations *******************/
 
-#define ZERO_INIT           (uint8)0x00
-
 #if ((KEYPAD_SMALL_CALC) == (KEYPAD_TYPE))
 
 #define KEYPAD_ROW          (uint8)0x04
