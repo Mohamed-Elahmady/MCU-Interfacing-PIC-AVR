@@ -5823,177 +5823,181 @@ Std_ReturnType convert_byte_to_string(uint8 data, uint8 *str);
 Std_ReturnType convert_short_to_string(uint16 data, uint8 *str);
 Std_ReturnType convert_integer_to_string(uint32 data, uint8 *str);
 # 22 "APPL/app.h" 2
+
+# 1 "APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h" 1
+# 15 "APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h"
+# 1 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h" 1
+# 17 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h"
+# 1 "APPL/../MCAL/INTERRUPT/hal_interrupt_gen_cfg.h" 1
+# 18 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h" 2
+# 67 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h"
+typedef enum{
+    interrupt_low_priority = (uint8)0x00,
+    interrupt_high_priority = (uint8)0x01
+}interrupt_priority;
+# 16 "APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h" 2
+# 96 "APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h"
+typedef void (* interrupt_handler)(void);
+
+typedef enum{
+    interrupt_int0 = (uint8)0x00,
+    interrupt_int1,
+    interrupt_int2
+}intx_source;
+
+typedef enum{
+    interrupt_rb4 = (uint8)0x00,
+    interrupt_rb5,
+    interrupt_rb6,
+    interrupt_rb7
+}rbx_source;
+
+typedef enum{
+    interrupt_falling_edge = (uint8)0x00,
+    interrupt_rising_edge
+}intx_edge;
+
+typedef enum{
+    interrupt_on_change = (uint8)0x00
+}rbx_edge;
+
+typedef struct{
+    interrupt_handler intx_isr;
+    gpio_pin_cfg pin;
+    intx_source src;
+    intx_edge edg;
+    interrupt_priority priority;
+}interrupt_intx;
+
+typedef struct{
+    interrupt_handler rbx_isr_high;
+    interrupt_handler rbx_isr_low;
+    gpio_pin_cfg pin;
+    intx_source src;
+    intx_edge edg;
+    interrupt_priority priority;
+}interrupt_rbx;
+
+
+
+Std_ReturnType external_interrupt_intx_init(const interrupt_intx *inter);
+Std_ReturnType external_interrupt_intx_deinit(const interrupt_intx *inter);
+
+Std_ReturnType external_interrupt_rbx_init(const interrupt_rbx *inter);
+Std_ReturnType external_interrupt_rbx_deinit(const interrupt_rbx *inter);
+# 24 "APPL/app.h" 2
+# 1 "APPL/../MCAL/INTERRUPT/hal_int_interrupt.h" 1
+# 25 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
-chr_lcd_4bit lcd1 = {
-    .rs_pin.port = gpio_portB,
-    .rs_pin.pin = gpio_pin0,
-    .rs_pin.direction = gpio_output,
-    .rs_pin.logic = gpio_low,
+void int0_app_isr(void);
+void int1_app_isr(void);
+void int2_app_isr(void);
+void rb4_app_isr_high(void);
+void rb4_app_isr_low(void);
+void rb5_app_isr_high(void);
+void rb5_app_isr_low(void);
+void rb6_app_isr_high(void);
+void rb6_app_isr_low(void);
+void rb7_app_isr_high(void);
+void rb7_app_isr_low(void);
 
-    .rw_pin.port = gpio_portB,
-    .rw_pin.pin = gpio_pin1,
-    .rw_pin.direction = gpio_output,
-    .rw_pin.logic = gpio_low,
+gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led2 = {.pin.port = gpio_portC, .pin.pin = gpio_pin1, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led3 = {.pin.port = gpio_portC, .pin.pin = gpio_pin2, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led4 = {.pin.port = gpio_portC, .pin.pin = gpio_pin3, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led5 = {.pin.port = gpio_portC, .pin.pin = gpio_pin4, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led6 = {.pin.port = gpio_portC, .pin.pin = gpio_pin5, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led7 = {.pin.port = gpio_portC, .pin.pin = gpio_pin6, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
+gpio_led led8 = {.pin.port = gpio_portC, .pin.pin = gpio_pin7, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
 
-    .en_pin.port = gpio_portB,
-    .en_pin.pin = gpio_pin2,
-    .en_pin.direction = gpio_output,
-    .en_pin.logic = gpio_low,
+interrupt_intx int0_ob = {.intx_isr = int0_app_isr,.pin.port = gpio_portB, .pin.pin = gpio_pin0, .pin.direction = gpio_input,
+                          .src = interrupt_int0, .edg = interrupt_rising_edge, .priority = interrupt_high_priority};
 
-    .data_pins[0].port = gpio_portC,
-    .data_pins[0].pin = gpio_pin0,
-    .data_pins[0].direction = gpio_output,
-    .data_pins[0].logic = gpio_low,
+interrupt_intx int1_ob = {.intx_isr = int1_app_isr, .pin.port = gpio_portB, .pin.pin = gpio_pin1, .pin.direction = gpio_input,
+                          .src = interrupt_int1, .edg = interrupt_falling_edge, .priority = interrupt_low_priority};
 
-    .data_pins[1].port = gpio_portC,
-    .data_pins[1].pin = gpio_pin1,
-    .data_pins[1].direction = gpio_output,
-    .data_pins[1].logic = gpio_low,
+interrupt_intx int2_ob = {.intx_isr = int2_app_isr, .pin.port = gpio_portB, .pin.pin = gpio_pin2, .pin.direction = gpio_input,
+                          .src = interrupt_int2, .edg = interrupt_rising_edge, .priority = interrupt_high_priority};
 
-    .data_pins[2].port = gpio_portC,
-    .data_pins[2].pin = gpio_pin2,
-    .data_pins[2].direction = gpio_output,
-    .data_pins[2].logic = gpio_low,
+interrupt_rbx rb4_ob = {.rbx_isr_high = rb4_app_isr_high, .rbx_isr_low = rb4_app_isr_low, .pin.port = gpio_portB, .pin.pin = gpio_pin4,
+                        .pin.direction = gpio_input, .src = interrupt_rb4, .edg = interrupt_on_change, .priority = interrupt_low_priority};
 
-    .data_pins[3].port = gpio_portC,
-    .data_pins[3].pin = gpio_pin3,
-    .data_pins[3].direction = gpio_output,
-    .data_pins[3].logic = gpio_low
-};
+interrupt_rbx rb5_ob = {.rbx_isr_high = rb5_app_isr_high, .rbx_isr_low = rb5_app_isr_low, .pin.port = gpio_portB, .pin.pin = gpio_pin5,
+                        .pin.direction = gpio_input, .src = interrupt_rb5, .edg = interrupt_on_change, .priority = interrupt_low_priority};
 
-chr_lcd_8bit lcd2 = {
-    .rs_pin.port = gpio_portB,
-    .rs_pin.pin = gpio_pin3,
-    .rs_pin.direction = gpio_output,
-    .rs_pin.logic = gpio_low,
+interrupt_rbx rb6_ob = {.rbx_isr_high = rb6_app_isr_high, .rbx_isr_low = rb6_app_isr_low, .pin.port = gpio_portB, .pin.pin = gpio_pin6,
+                        .pin.direction = gpio_input, .src = interrupt_rb6, .edg = interrupt_on_change, .priority = interrupt_low_priority};
 
-    .rw_pin.port = gpio_portB,
-    .rw_pin.pin = gpio_pin4,
-    .rw_pin.direction = gpio_output,
-    .rw_pin.logic = gpio_low,
-
-    .en_pin.port = gpio_portB,
-    .en_pin.pin = gpio_pin5,
-    .en_pin.direction = gpio_output,
-    .en_pin.logic = gpio_low,
-
-    .data_pins[0].port = gpio_portD,
-    .data_pins[0].pin = gpio_pin0,
-    .data_pins[0].direction = gpio_output,
-    .data_pins[0].logic = gpio_low,
-
-    .data_pins[1].port = gpio_portD,
-    .data_pins[1].pin = gpio_pin1,
-    .data_pins[1].direction = gpio_output,
-    .data_pins[1].logic = gpio_low,
-
-    .data_pins[2].port = gpio_portD,
-    .data_pins[2].pin = gpio_pin2,
-    .data_pins[2].direction = gpio_output,
-    .data_pins[2].logic = gpio_low,
-
-    .data_pins[3].port = gpio_portD,
-    .data_pins[3].pin = gpio_pin3,
-    .data_pins[3].direction = gpio_output,
-    .data_pins[3].logic = gpio_low,
-
-    .data_pins[4].port = gpio_portD,
-    .data_pins[4].pin = gpio_pin4,
-    .data_pins[4].direction = gpio_output,
-    .data_pins[4].logic = gpio_low,
-
-    .data_pins[5].port = gpio_portD,
-    .data_pins[5].pin = gpio_pin5,
-    .data_pins[5].direction = gpio_output,
-    .data_pins[5].logic = gpio_low,
-
-    .data_pins[6].port = gpio_portD,
-    .data_pins[6].pin = gpio_pin6,
-    .data_pins[6].direction = gpio_output,
-    .data_pins[6].logic = gpio_low,
-
-    .data_pins[7].port = gpio_portD,
-    .data_pins[7].pin = gpio_pin7,
-    .data_pins[7].direction = gpio_output,
-    .data_pins[7].logic = gpio_low
-};
-
-
+interrupt_rbx rb7_ob = {.rbx_isr_high = rb7_app_isr_high, .rbx_isr_low = rb7_app_isr_low, .pin.port = gpio_portB, .pin.pin = gpio_pin7,
+                        .pin.direction = gpio_input, .src = interrupt_rb7, .edg = interrupt_on_change, .priority = interrupt_low_priority};
 
 int main() {
     Std_ReturnType ret = E_NOT_OK;
+    ret = external_interrupt_intx_init(&int0_ob);
+    ret = external_interrupt_intx_init(&int1_ob);
+    ret = external_interrupt_intx_init(&int2_ob);
+    ret = external_interrupt_rbx_init(&rb4_ob);
+    ret = external_interrupt_rbx_init(&rb5_ob);
+    ret = external_interrupt_rbx_init(&rb6_ob);
+    ret = external_interrupt_rbx_init(&rb7_ob);
 
-
-    ret = gpio_chr_lcd_4bit_init(&lcd1);
-    ret = gpio_chr_lcd_8bit_init(&lcd2);
-
-
-    ret = gpio_chr_lcd_4bit_send_command(&lcd1, (uint8)0x01);
-    ret = gpio_chr_lcd_8bit_send_command(&lcd2, (uint8)0x01);
-
-    _delay((unsigned long)((10)*(8000000UL/4000.0)));
-
-
-    ret = gpio_chr_lcd_4bit_send_character(&lcd1, 'A');
-    ret = gpio_chr_lcd_8bit_send_character(&lcd2, 'B');
-
-    _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-
-
-    ret = gpio_chr_lcd_4bit_send_character_pos(&lcd1, 'X', (uint8)0x01, 5);
-    ret = gpio_chr_lcd_8bit_send_character_pos(&lcd2, 'Y', (uint8)0x02, 7);
-
-    _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-
-
-    ret = gpio_chr_lcd_4bit_send_string(&lcd1, (uint8*)"4-bit LCD");
-    ret = gpio_chr_lcd_8bit_send_string(&lcd2, (uint8*)"8-bit LCD");
-
-    _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-
-
-    ret = gpio_chr_lcd_4bit_send_string_pos(&lcd1, (uint8*)"Hello", (uint8)0x02, 1);
-    ret = gpio_chr_lcd_8bit_send_string_pos(&lcd2, (uint8*)"World", (uint8)0x01, 3);
-
-    _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-
-
-    uint8 smile_face[8] = {
-        0x00,
-        0x0A,
-        0x00,
-        0x00,
-        0x11,
-        0x0E,
-        0x00,
-    };
-    ret = gpio_chr_lcd_4bit_send_custom_character(&lcd1, smile_face, (uint8)0x01, 1, 0);
-    ret = gpio_chr_lcd_8bit_send_custom_character(&lcd2, smile_face, (uint8)0x02, 1, 0);
-
-    _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-
-
-    uint8 str1[5];
-    uint8 str2[6];
-    uint8 str3[12];
-
-    ret = convert_byte_to_string(123, str1);
-    ret = gpio_chr_lcd_4bit_send_string_pos(&lcd1, str1, (uint8)0x02, 6);
-
-    ret = convert_short_to_string(4567, str2);
-    ret = gpio_chr_lcd_8bit_send_string_pos(&lcd2, str2, (uint8)0x01, 10);
-
-    ret = convert_integer_to_string(900, str3);
-    ret = gpio_chr_lcd_8bit_send_string_pos(&lcd2, str3, (uint8)0x02, 5);
-    _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-
-    ret = gpio_chr_lcd_4bit_send_command(&lcd1, (uint8)0x01);
-    ret = gpio_chr_lcd_8bit_send_command(&lcd2, (uint8)0x01);
+    ret = gpio_led_init(&led1);
+    ret = gpio_led_init(&led2);
+    ret = gpio_led_init(&led3);
+    ret = gpio_led_init(&led4);
+    ret = gpio_led_init(&led5);
+    ret = gpio_led_init(&led6);
+    ret = gpio_led_init(&led7);
+    ret = gpio_led_init(&led8);
 
     while (1) {
 
     }
 
     return (0);
+}
+
+
+void int0_app_isr(void){
+    gpio_led_turn_toggle(&led1);
+}
+
+void int1_app_isr(void){
+    gpio_led_turn_toggle(&led2);
+}
+
+void int2_app_isr(void){
+    gpio_led_turn_toggle(&led3);
+}
+
+void rb4_app_isr_high(void){
+    gpio_led_turn_on(&led5);
+}
+
+void rb4_app_isr_low(void){
+    gpio_led_turn_on(&led6);
+}
+
+void rb5_app_isr_high(void){
+    gpio_led_turn_off(&led5);
+}
+
+void rb5_app_isr_low(void){
+    gpio_led_turn_off(&led6);
+}
+void rb6_app_isr_high(void){
+    gpio_led_turn_on(&led7);
+}
+
+void rb6_app_isr_low(void){
+    gpio_led_turn_on(&led8);
+}
+
+void rb7_app_isr_high(void){
+    gpio_led_turn_off(&led7);
+}
+
+void rb7_app_isr_low(void){
+    gpio_led_turn_off(&led8);
 }

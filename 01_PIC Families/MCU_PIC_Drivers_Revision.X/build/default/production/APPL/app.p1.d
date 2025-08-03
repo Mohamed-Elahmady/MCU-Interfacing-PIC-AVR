@@ -27,4 +27,10 @@ APPL/../ECUAL/Keypad/../../MCAL/GPIO/hal_gpio.h  \
 APPL/../ECUAL/Keypad/ecual_keypad_cfg.h  \
 APPL/../ECUAL/Chr_lcd/ecual_chr_lcd.h  \
 APPL/../ECUAL/Chr_lcd/../../MCAL/GPIO/hal_gpio.h  \
-APPL/../ECUAL/Chr_lcd/ecual_chr_lcd_cfg.h 
+APPL/../ECUAL/Chr_lcd/ecual_chr_lcd_cfg.h  \
+APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h  \
+APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h  \
+APPL/../MCAL/INTERRUPT/../mcu_cfg.h  \
+APPL/../MCAL/INTERRUPT/../GPIO/hal_gpio.h  \
+APPL/../MCAL/INTERRUPT/hal_interrupt_gen_cfg.h  \
+APPL/../MCAL/INTERRUPT/hal_int_interrupt.h 

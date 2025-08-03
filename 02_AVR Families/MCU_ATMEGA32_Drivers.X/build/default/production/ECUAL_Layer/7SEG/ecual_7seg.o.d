@@ -2,6 +2,7 @@ build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o.d \
  build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o: \
  ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/7SEG/ecual_7seg.h \
  ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio.h \
+ ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../mcal_std_types.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/io.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/sfr_defs.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/inttypes.h \
@@ -15,8 +16,6 @@ build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o.d \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/common.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/fuse.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/lock.h \
- ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio_cfg.h \
- ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../mcal_std_types.h \
  ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../mcal_std_libraries.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/stdio.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/stdlib.h \
@@ -29,12 +28,15 @@ build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o.d \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/builtins.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/util/delay.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/util/delay_basic.h \
+ ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio_cfg.h \
  ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../device_cfg.h \
  ECUAL_Layer/7SEG/ecual_7seg_cfg.h
 
 ECUAL_Layer/7SEG/ecual_7seg.h:
 
 ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio.h:
+
+ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../mcal_std_types.h:
 
 /Applications/microchip/xc8/v3.00/avr/avr/include/avr/io.h:
 
@@ -62,10 +64,6 @@ ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio.h:
 
 /Applications/microchip/xc8/v3.00/avr/avr/include/avr/lock.h:
 
-ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio_cfg.h:
-
-ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../mcal_std_types.h:
-
 ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../mcal_std_libraries.h:
 
 /Applications/microchip/xc8/v3.00/avr/avr/include/stdio.h:
@@ -89,6 +87,8 @@ ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../compiler.h:
 /Applications/microchip/xc8/v3.00/avr/avr/include/util/delay.h:
 
 /Applications/microchip/xc8/v3.00/avr/avr/include/util/delay_basic.h:
+
+ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/hal_gpio_cfg.h:
 
 ECUAL_Layer/7SEG/../../MCAL_Layer/GPIO/../device_cfg.h:
 

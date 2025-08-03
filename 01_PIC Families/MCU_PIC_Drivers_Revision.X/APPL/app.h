@@ -20,6 +20,9 @@
 #include "../ECUAL/Keypad/ecual_keypad.h"
 #include "../ECUAL/Chr_lcd/ecual_chr_lcd.h"
 
+#include "../MCAL/INTERRUPT/hal_ext_interrupt.h"
+#include "../MCAL/INTERRUPT/hal_int_interrupt.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

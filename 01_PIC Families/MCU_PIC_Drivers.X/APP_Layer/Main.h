@@ -13,6 +13,8 @@
 /******************* Section 1 : Includes *******************/
 
 #include "../ECUAL_Layer/ECUAL_INIT.h" 
+#include "../MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.h"
+#include "../MCAL_Layer/Interrupt/HAL_INT_INTERRUPT.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 
@@ -24,14 +26,14 @@
 
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
-extern GPIO_LED       led1;
-extern GPIO_BTN       btn1;
-extern GPIO_RELAY   relay1;
-extern GPIO_SEGMENT   seg1;
-extern DC_MOTOR     motor1;
-extern GPIO_KEYPAD keypad1;
-extern CHR_LCD_4BIT lcd1;
-extern CHR_LCD_8BIT lcd2;
+//extern GPIO_LED       led1;
+//extern GPIO_BTN       btn1;
+//extern GPIO_RELAY   relay1;
+//extern GPIO_SEGMENT   seg1;
+//extern DC_MOTOR     motor1;
+//extern GPIO_KEYPAD keypad1;
+//extern CHR_LCD_4BIT lcd1;
+//extern CHR_LCD_8BIT lcd2;
 
 /******************* Section 5 : Software Interfaces Declarations (APIs) *******************/
 

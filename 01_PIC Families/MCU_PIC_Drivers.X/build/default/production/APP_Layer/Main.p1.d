@@ -27,4 +27,11 @@ APP_Layer/../ECUAL_Layer/Keypad/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
 APP_Layer/../ECUAL_Layer/Keypad/ECUAL_KEYPAD_CFG.h  \
 APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h  \
 APP_Layer/../ECUAL_Layer/CHR_Lcd/../../MCAL_Layer/GPIO/HAL_GPIO.h  \
-APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD_CFG.h 
+APP_Layer/../ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD_CFG.h  \
+APP_Layer/../MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.h  \
+APP_Layer/../MCAL_Layer/Interrupt/HAL_INTERRUPT_CFG.h  \
+APP_Layer/../MCAL_Layer/Interrupt/HAL_INTERRUPT_GEN_CFG.h  \
+APP_Layer/../MCAL_Layer/Interrupt/../GPIO/HAL_GPIO.h  \
+APP_Layer/../MCAL_Layer/Interrupt/../mcal_std_types.h  \
+APP_Layer/../MCAL_Layer/Interrupt/../device_cfg.h  \
+APP_Layer/../MCAL_Layer/Interrupt/HAL_INT_INTERRUPT.h 

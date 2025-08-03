@@ -5788,7 +5788,7 @@ Std_ReturnType gpio_chr_lcd_4bit_send_string_pos(const chr_lcd_4bit *lcd, uint8 
         Retval = E_NOT_OK;
     }
     else{
-        Retval = gpio_chr_lcd_4bit_send_character_pos(lcd, row, col);
+        Retval = lcd_4bit_set_cursor(lcd, row, col);
         Retval = gpio_chr_lcd_4bit_send_string(lcd, str);
     }
     return Retval;
@@ -5862,6 +5862,8 @@ Std_ReturnType gpio_chr_lcd_8bit_send_command(const chr_lcd_8bit *lcd, uint8 com
         for(uint8 i = 0; i < (uint8)0x08; i++){
             Retval = gpio_pin_write_logic(&(lcd->data_pins[i]), ((gpio_logic)((command >> i) & 0x01)));
         }
+
+        Retval =lcd_8bit_send_enable_signal(lcd);
     }
     return Retval;
 }
@@ -5878,6 +5880,8 @@ Std_ReturnType gpio_chr_lcd_8bit_send_character(const chr_lcd_8bit *lcd, uint8 c
         for(uint8 i = 0; i < (uint8)0x08; i++){
             Retval = gpio_pin_write_logic(&(lcd->data_pins[i]), ((gpio_logic)((character >> i) & 0x01)));
         }
+
+        Retval =lcd_8bit_send_enable_signal(lcd);
     }
     return Retval;
 }
@@ -5914,7 +5918,7 @@ Std_ReturnType gpio_chr_lcd_8bit_send_string_pos(const chr_lcd_8bit *lcd, uint8 
         Retval = E_NOT_OK;
     }
     else{
-        Retval = gpio_chr_lcd_8bit_send_character_pos(lcd, row, col);
+        Retval = lcd_8bit_set_cursor(lcd, row, col);
         gpio_chr_lcd_8bit_send_string(lcd, str);
     }
     return Retval;
@@ -5927,9 +5931,11 @@ Std_ReturnType gpio_chr_lcd_8bit_send_custom_character(const chr_lcd_8bit *lcd, 
     }
     else{
         Retval = gpio_chr_lcd_8bit_send_command(lcd, ((uint8)0x40 + (ram_pos * 8)));
+
         for(uint8 i = 0; i < (uint8)0x08; i++){
             Retval = gpio_chr_lcd_8bit_send_character(lcd, c_character[i]);
         }
+
         Retval = gpio_chr_lcd_8bit_send_character_pos(lcd, ram_pos, row, col);
     }
     return Retval;

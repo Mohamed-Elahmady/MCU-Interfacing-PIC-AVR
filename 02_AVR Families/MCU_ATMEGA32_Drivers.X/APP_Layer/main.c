@@ -7,56 +7,52 @@
 
 #include "main.h"
 
-const uint8 Battery[5][8] = {{0x0E, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x1F, 0x00},
-                             {0x0E, 0x1F, 0x11, 0x11, 0x11, 0x1F, 0x1F, 0x00},
-                             {0x0E, 0x1F, 0x11, 0x11, 0x1F, 0x1F, 0x1F, 0x00},
-                             {0x0E, 0x1F, 0x11, 0x1F, 0x1F, 0x1F, 0x1F, 0x00},
-                             {0x0E, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x00}};
+void int0_isr_app(void);
+void int1_isr_app(void);
+void int2_isr_app(void);
 
-uint8 str1[],str2[];
+GPIO_Led led1 = {.pin.Port = GPIO_PortC, .pin.Pin = GPIO_Pin0, .pin.Direction = GPIO_Output, .connection = Led_Source, .state = Led_Off};
+
+GPIO_Led led2 = {.pin.Port = GPIO_PortC, .pin.Pin = GPIO_Pin1, .pin.Direction = GPIO_Output, .connection = Led_Source, .state = Led_Off};
+
+GPIO_Led led3 = {.pin.Port = GPIO_PortC, .pin.Pin = GPIO_Pin2, .pin.Direction = GPIO_Output, .connection = Led_Source, .state = Led_Off};
+
+External_Interrupt_Intx int00 = {.pin.Port = GPIO_PortD, .pin.Pin = GPIO_Pin2, .pin.Direction = GPIO_Input,
+                                 .Intx_ISR = int0_isr_app, .source = Interrupt_Int0, .edge = Interrupt_On_Change};
+
+External_Interrupt_Intx int01 = {.pin.Port = GPIO_PortD, .pin.Pin = GPIO_Pin3, .pin.Direction = GPIO_Input,
+                                 .Intx_ISR = int1_isr_app, .source = Interrupt_Int1, .edge = Interrupt_Low_Level};
+
+External_Interrupt_Intx int02 = {.pin.Port = GPIO_PortB, .pin.Pin = GPIO_Pin2, .pin.Direction = GPIO_Input,
+                                 .Intx_ISR = int2_isr_app, .source = Interrupt_Int2, .edge = Interrupt_Rising_Edge};
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
     Application_Init();
-//    ret = GPIO_Chr_Lcd_4Bit_Send_Character(&lcd1, 'C');
-//    ret = GPIO_Chr_Lcd_8Bit_Send_Character(&lcd2, 'C');
-//    
-//    ret = GPIO_Chr_Lcd_4Bit_Send_Character_Pos(&lcd1, 'M', 2, 8);
-//    ret = GPIO_Chr_Lcd_8Bit_Send_Character_Pos(&lcd2, 'M', 2, 8);
-//    
-//    _delay_ms(1000);
-//    ret = GPIO_Chr_Lcd_4Bit_Send_String_Pos(&lcd1, "Mohamed", 1, 1);
-//    ret = GPIO_Chr_Lcd_8Bit_Send_String_Pos(&lcd2, "Mohamed", 1, 1);
-//    
-//    ret = GPIO_Chr_Lcd_4Bit_Send_String_Pos(&lcd1, "Ghareeb ", 2, 8);
-//    ret = GPIO_Chr_Lcd_8Bit_Send_String_Pos(&lcd2, "Ghareeb ", 2, 8);
-//
-//    ret = GPIO_Chr_Lcd_4Bit_Send_String(&lcd1, "Mohamed");
-//    ret = GPIO_Chr_Lcd_8Bit_Send_String(&lcd2, "Mohamed");
-//
-//    _delay_ms(1000);
-//    ret = GPIO_Chr_Lcd_4Bit_Send_Command(&lcd1, 0x01);
-//    ret = GPIO_Chr_Lcd_8Bit_Send_Command(&lcd2, 0x01);
+    ret = GPIO_Led_INIT(&led1);
+    ret = GPIO_Led_INIT(&led2);
+    ret = GPIO_Led_INIT(&led3);
+    ret = External_Interrupt_INTx_INIT(&int00);
+    ret = External_Interrupt_INTx_INIT(&int01);
+    ret = External_Interrupt_INTx_INIT(&int02);
     while (1) {
-        
-        for(uint8 i = 0; i < 5 ;i++){
-            GPIO_Chr_Lcd_4Bit_Send_Custom_Character(&lcd1, Battery[i], 1, 20, 0);
-            GPIO_Chr_Lcd_8Bit_Send_Custom_Character(&lcd2, Battery[i], 1, 20, 0);
-            _delay_ms(250);
-        }
-        ret = GPIO_Chr_Lcd_4Bit_Send_Command(&lcd1, 0x01);
-        ret = GPIO_Chr_Lcd_8Bit_Send_Command(&lcd2, 0x01);
-        _delay_ms(1000);
-        Convert_Byte_To_String(33,str1);
-        ret = GPIO_Chr_Lcd_4Bit_Send_String_Pos(&lcd1, str1, 2, 8);
-        Convert_Short_To_String(550,str2);
-        ret = GPIO_Chr_Lcd_8Bit_Send_String_Pos(&lcd2, str2, 2, 8);
-        _delay_ms(1000);
+      
     }
-
     return EXIT_SUCCESS;
 }
 
 void Application_Init(void){
     Ecual_Init();
+}
+
+void int0_isr_app(void){
+    GPIO_Led_Turn_Toggle(&led1);
+}
+
+void int1_isr_app(void){
+    GPIO_Led_Turn_Toggle(&led2);
+}
+
+void int2_isr_app(void){
+    GPIO_Led_Turn_Toggle(&led3);
 }

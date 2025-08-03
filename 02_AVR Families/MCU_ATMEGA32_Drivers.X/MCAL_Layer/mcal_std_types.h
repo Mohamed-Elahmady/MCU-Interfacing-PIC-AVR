@@ -12,6 +12,7 @@
 
 /******************* Section 1 : Includes *******************/
 
+#include "avr/io.h"
 #include "mcal_std_libraries.h"
 #include "compiler.h"
 

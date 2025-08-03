@@ -1,0 +1,183 @@
+/* 
+ * File:   HAL_INTERRUPT_MNG.c
+ * Author: mohammedel-ahmady
+ *
+ * Created on July 29, 2025, 5:03 PM
+ */
+
+/******************* Section 0 : Includes *******************/
+
+#include "HAL_INTERRUPT_MNG.h"
+
+/******************* Section 1 :  Variables Definitions *******************/
+
+static volatile uint8 RB4_ISR_FLAG = 0x01;
+static volatile uint8 RB5_ISR_FLAG = 0x01;
+static volatile uint8 RB6_ISR_FLAG = 0x01;
+static volatile uint8 RB7_ISR_FLAG = 0x01;
+
+/******************* Section 2 :  Helper Functions Declarations *******************/
+
+
+
+/******************* Section 3 : Software Interfaces Definitions (APIs) *******************/
+
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+void __interrupt() INTERRUPT_MANAGER_HIGH_PRIORITY(void){
+    if((INTCONbits.INT0IF == INTERRUPT_OCCUR) && (INTCONbits.INT0IE == INTERRUPT_ENABLE)){
+        INT0_ISR();
+    }
+    else{/* Nothing */}
+    
+    if((INTCON3bits.INT2F == INTERRUPT_OCCUR) && (INTCON3bits.INT2IE == INTERRUPT_ENABLE)){
+        INT2_ISR();
+    }
+    else{/* Nothing */}
+}
+
+void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
+    if((INTCON3bits.INT1F == INTERRUPT_OCCUR) && (INTCON3bits.INT1IE == INTERRUPT_ENABLE)){
+        INT1_ISR();
+    }
+    else{/* Nothing */}
+    
+    /* ================== PORTB Interrupt on Change each interrupt must have 2 ISR from high to low & from low to high ========================*/
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG = 0x01)){
+        RB4_ISR(CHANGE_HIGH);
+        RB4_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_LOW) && (RB4_ISR_FLAG == 0x00)){
+        RB4_ISR(CHANGE_LOW);
+        RB4_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB5 == INTERRUPT_ENABLE) && (PORTBbits.RB5 == GPIO_HIGH) && (RB5_ISR_FLAG == 0x01)){
+        RB5_ISR(CHANGE_HIGH);
+        RB5_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB5 == INTERRUPT_ENABLE) && (PORTBbits.RB5 == GPIO_LOW) && (RB5_ISR_FLAG == 0x00)){
+        RB5_ISR(CHANGE_LOW);
+        RB5_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE)
+       && (IOCBbits.IOCB6 == INTERRUPT_ENABLE) && (PORTBbits.RB6 == GPIO_HIGH) && (RB6_ISR_FLAG == 0x01)){
+        RB6_ISR(CHANGE_HIGH);
+        RB6_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB6 == INTERRUPT_ENABLE) && (PORTBbits.RB6 == GPIO_LOW) && (RB6_ISR_FLAG == 0x00)){
+        RB6_ISR(CHANGE_LOW);
+        RB6_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB7 == INTERRUPT_ENABLE) && (PORTBbits.RB7 == GPIO_HIGH) && (RB7_ISR_FLAG == 0x01)){
+        RB7_ISR(CHANGE_HIGH);
+        RB7_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB7 == INTERRUPT_ENABLE) && (PORTBbits.RB7 == GPIO_LOW) && (RB7_ISR_FLAG == 0x00)){
+        RB7_ISR(CHANGE_LOW);
+        RB7_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+}
+
+#elif ((INTERRUPT_FEATURE_DISABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+void __interrupt() INTERRUPT_MANAGER(void){
+    if((INTCONbits.INT0IF == INTERRUPT_OCCUR) && (INTCONbits.INT0IE == INTERRUPT_ENABLE)){
+        INT0_ISR();
+    }
+    else{/* Nothing */}
+    
+    if((INTCON3bits.INT1F == INTERRUPT_OCCUR) && (INTCON3bits.INT1IE == INTERRUPT_ENABLE)){
+        INT1_ISR();
+    }
+    else{/* Nothing */}
+    
+    if((INTCON3bits.INT2F == INTERRUPT_OCCUR) && (INTCON3bits.INT2IE == INTERRUPT_ENABLE)){
+        INT2_ISR();
+    }
+    else{/* Nothing */}
+    
+    /* ================== PORTB Interrupt on Change each interrupt must have 2 ISR from high to low & from low to high ========================*/
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG = 0x01)){
+        RB4_ISR(CHANGE_HIGH);
+        RB4_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_LOW) && (RB4_ISR_FLAG == 0x00)){
+        RB4_ISR(CHANGE_LOW);
+        RB4_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB5 == INTERRUPT_ENABLE) && (PORTBbits.RB5 == GPIO_HIGH) && (RB5_ISR_FLAG == 0x01)){
+        RB5_ISR(CHANGE_HIGH);
+        RB5_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB5 == INTERRUPT_ENABLE) && (PORTBbits.RB5 == GPIO_LOW) && (RB5_ISR_FLAG == 0x00)){
+        RB5_ISR(CHANGE_LOW);
+        RB5_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE)
+       && (IOCBbits.IOCB6 == INTERRUPT_ENABLE) && (PORTBbits.RB6 == GPIO_HIGH) && (RB6_ISR_FLAG == 0x01)){
+        RB6_ISR(CHANGE_HIGH);
+        RB6_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB6 == INTERRUPT_ENABLE) && (PORTBbits.RB6 == GPIO_LOW) && (RB6_ISR_FLAG == 0x00)){
+        RB6_ISR(CHANGE_LOW);
+        RB6_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB7 == INTERRUPT_ENABLE) && (PORTBbits.RB7 == GPIO_HIGH) && (RB7_ISR_FLAG == 0x01)){
+        RB7_ISR(CHANGE_HIGH);
+        RB7_ISR_FLAG = 0x00;
+    }
+    else{/* Nothing */}
+    
+    if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
+       && (IOCBbits.IOCB7 == INTERRUPT_ENABLE) && (PORTBbits.RB7 == GPIO_LOW) && (RB7_ISR_FLAG == 0x00)){
+        RB7_ISR(CHANGE_LOW);
+        RB7_ISR_FLAG = 0x01;
+    }
+    else{/* Nothing */}
+}
+
+#endif
+
+/******************* Section 4:  Helper Functions Definitions *******************/

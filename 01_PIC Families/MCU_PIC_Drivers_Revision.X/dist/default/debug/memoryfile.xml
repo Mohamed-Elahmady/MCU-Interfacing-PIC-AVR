@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/debug/MCU_PIC_Drivers_Revision.X.debug.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>65536</length>
+      <used>3267</used>
+      <free>62269</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3936</length>
+      <used>94</used>
+      <free>3842</free>
+    </memory>
+  </executable>
+</project>

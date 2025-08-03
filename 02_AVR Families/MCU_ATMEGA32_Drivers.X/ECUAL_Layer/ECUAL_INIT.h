@@ -13,13 +13,15 @@
 /******************* Section 1 : Includes *******************/
 
 #include "LED/ecual_led.h"
-#include "LED/ecual_led.h"
 #include "BTN/ecual_btn.h"
 #include "Relay/ecual_relay.h"
 #include "DC_Motor/ecual_dc_motor.h"
 #include "7SEG/ecual_7seg.h"
 #include "Keypad/ecual_keypad.h"
 #include "Chr_Lcd/ecual_chr_lcd.h"
+
+#include "../MCAL_Layer/Interrupt/hal_int_interrupt.h"
+#include "../MCAL_Layer/Interrupt/hal_ext_interrupt.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 
