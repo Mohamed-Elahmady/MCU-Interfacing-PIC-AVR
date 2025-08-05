@@ -52,7 +52,12 @@ build/default/production/ECUAL_Layer/ECUAL_INIT.o.d \
  ECUAL_Layer/../MCAL_Layer/Interrupt/../GPIO/hal_gpio.h \
  ECUAL_Layer/../MCAL_Layer/Interrupt/../mcal_std_types.h \
  ECUAL_Layer/../MCAL_Layer/Interrupt/../device_cfg.h \
- ECUAL_Layer/../MCAL_Layer/Interrupt/hal_ext_interrupt.h
+ ECUAL_Layer/../MCAL_Layer/Interrupt/hal_ext_interrupt.h \
+ ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom.h \
+ ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/EEPROM/../Interrupt/hal_int_interrupt.h \
+ ECUAL_Layer/../MCAL_Layer/EEPROM/../mcal_std_types.h \
+ ECUAL_Layer/../MCAL_Layer/EEPROM/../device_cfg.h
 
 ECUAL_Layer/ECUAL_INIT.h:
 
@@ -167,3 +172,13 @@ ECUAL_Layer/../MCAL_Layer/Interrupt/../mcal_std_types.h:
 ECUAL_Layer/../MCAL_Layer/Interrupt/../device_cfg.h:
 
 ECUAL_Layer/../MCAL_Layer/Interrupt/hal_ext_interrupt.h:
+
+ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom.h:
+
+ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/EEPROM/../Interrupt/hal_int_interrupt.h:
+
+ECUAL_Layer/../MCAL_Layer/EEPROM/../mcal_std_types.h:
+
+ECUAL_Layer/../MCAL_Layer/EEPROM/../device_cfg.h:

@@ -60,7 +60,7 @@ Std_ReturnType GPIO_Segment_Write_Number(const GPIO_Segment *seg, uint8 number){
     }
     else{
         for(uint8 i = 0; i < Segment_Pins; i++){
-            Retval = GPIO_Pin_Write_Logic(&(seg->pins[i]), (GPIO_Logic)((number >> i) & 0x01));
+            Retval = GPIO_Pin_Write_Logic(&(seg->pins[i]), (GPIO_Logic)Read_Bit(number, i));
         }
     }
     return Retval;

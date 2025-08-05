@@ -193,7 +193,7 @@ Std_ReturnType GPIO_Chr_Lcd_8Bit_Send_Command(const Chr_Lcd_8Bit *lcd, uint8 com
         Retval = GPIO_Pin_Write_Logic(&(lcd->Rw_Pin), GPIO_Low);
         
         for(uint8 i = 0; i < Lcd_8Bit_Mode; i++){
-            Retval = GPIO_Pin_Write_Logic(&(lcd->Data_Pins[i]), ((GPIO_Logic)((command >> i) & 0x01)));
+            Retval = GPIO_Pin_Write_Logic(&(lcd->Data_Pins[i]), (GPIO_Logic)Read_Bit(command, i));
         }
         
         Retval = Chr_Lcd_8Bit_Send_Enable_Signal(lcd);
@@ -211,7 +211,7 @@ Std_ReturnType GPIO_Chr_Lcd_8Bit_Send_Character(const Chr_Lcd_8Bit *lcd, uint8 c
         Retval = GPIO_Pin_Write_Logic(&(lcd->Rw_Pin), GPIO_Low);
         
         for(uint8 i = 0; i < Lcd_8Bit_Mode; i++){
-            Retval = GPIO_Pin_Write_Logic(&(lcd->Data_Pins[i]), ((GPIO_Logic)((character >> i) & 0x01)));
+            Retval = GPIO_Pin_Write_Logic(&(lcd->Data_Pins[i]), (GPIO_Logic)Read_Bit(character, i));
         }
         
         Retval = Chr_Lcd_8Bit_Send_Enable_Signal(lcd);
@@ -317,7 +317,7 @@ static Std_ReturnType Chr_Lcd_4Bit_Send_4Bit(const Chr_Lcd_4Bit *lcd, uint8 data
     }
     else{
         for(uint8 i = 0; i < Lcd_4Bit_Mode; i++){
-            Retval = GPIO_Pin_Write_Logic(&(lcd->Data_Pins[i]), ((GPIO_Logic)((data >> i) & 0x01)));
+            Retval = GPIO_Pin_Write_Logic(&(lcd->Data_Pins[i]), (GPIO_Logic)Read_Bit(data, i));
         }
     }
     return Retval;

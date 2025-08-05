@@ -39,8 +39,8 @@
 /******************* Section 3 : Macros Functions Declarations *******************/
 
 // Global Interrupt_Enable_Bit
-#define GLobal_Interrupt_Disable_SERG()          (SREG &= ~(1 << Sreg_Interrupt_Enable_Bit_Pos))
-#define GLobal_Interrupt_Enable_SERG()           (SREG |= (1 << Sreg_Interrupt_Enable_Bit_Pos))
+#define GLobal_Interrupt_Disable_SREG()          Clear_Bit(SREG, Sreg_Interrupt_Enable_Bit_Pos)
+#define GLobal_Interrupt_Enable_SREG()           Set_Bit(SREG, Sreg_Interrupt_Enable_Bit_Pos)
 
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 

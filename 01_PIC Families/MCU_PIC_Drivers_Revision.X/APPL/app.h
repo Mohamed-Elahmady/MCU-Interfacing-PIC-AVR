@@ -23,6 +23,8 @@
 #include "../MCAL/INTERRUPT/hal_ext_interrupt.h"
 #include "../MCAL/INTERRUPT/hal_int_interrupt.h"
 
+#include "../MCAL/EEPROM/hal_eeprom.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

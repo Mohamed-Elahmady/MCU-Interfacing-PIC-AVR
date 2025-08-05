@@ -163,15 +163,15 @@ static Std_ReturnType External_Interrupt_INTX_Enable(const External_Interrupt_In
     else{
         switch(intx->source){
             case Interrupt_Int0:
-                GLobal_Interrupt_Enable_SERG();
+                GLobal_Interrupt_Enable_SREG();
                 External_Interrupt_Int0_Enable();
                 break;
             case Interrupt_Int1:
-                GLobal_Interrupt_Enable_SERG();
+                GLobal_Interrupt_Enable_SREG();
                 External_Interrupt_Int1_Enable();
                 break;
             case Interrupt_Int2:
-                GLobal_Interrupt_Enable_SERG();
+                GLobal_Interrupt_Enable_SREG();
                 External_Interrupt_Int2_Enable();
                 break;
             default :

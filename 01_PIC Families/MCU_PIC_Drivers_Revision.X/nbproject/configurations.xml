@@ -38,6 +38,10 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="eeprom" displayName="EEPROM" projectFiles="true">
+          <itemPath>MCAL/EEPROM/hal_eeprom.h</itemPath>
+          <itemPath>MCAL/EEPROM/hal_eeprom_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL/GPIO/hal_gpio.h</itemPath>
           <itemPath>MCAL/GPIO/hal_gpio_cfg.h</itemPath>
@@ -95,6 +99,9 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
+          <itemPath>MCAL/EEPROM/hal_eeprom.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL/GPIO/hal_gpio.c</itemPath>
         </logicalFolder>

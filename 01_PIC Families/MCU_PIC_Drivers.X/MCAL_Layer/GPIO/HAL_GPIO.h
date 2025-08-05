@@ -20,20 +20,14 @@
 
 /******************* Section 2 : Macros Declarations *******************/
 
-#define BIT_MASK                            (uint8)0x01
 #define PORT_LOW                            (uint8)0x00
-#define PORT_MASK                           (uint8)0xFF
-
 #define PIN_NO                              (uint8)0x08
 #define PORT_NO                             (uint8)0x05
 #define REGs_NO                             (uint8)0x05
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 
-#define SET_BIT(REG, BIT_POS)               (REG |= (uint8)(BIT_MASK << BIT_POS))
-#define CLEAR_BIT(REG, BIT_POS)             (REG &= ~(uint8)(BIT_MASK << BIT_POS))
-#define TOGGLE_BIT(REG, BIT_POS)            (REG ^= (uint8)(BIT_MASK << BIT_POS))
-#define READ_BIT(REG, BIT_POS)              ((REG >> BIT_POS) & (uint8)BIT_MASK)  
+
 
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 

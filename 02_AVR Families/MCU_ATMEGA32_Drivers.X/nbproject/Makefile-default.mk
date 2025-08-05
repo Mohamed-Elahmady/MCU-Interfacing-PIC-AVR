@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c APP_Layer/main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/device_cfg.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c Codes/MCAL/Interrupt/app1.c
+SOURCEFILES_QUOTED_IF_SPACED=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c Codes/MCAL/Interrupt/app1.c APP_Layer/main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c MCAL_Layer/device_cfg.c MCAL_Layer/EEPROM/hal_eeprom.c Codes/EEPROM/app1.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o.d ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d ${OBJECTDIR}/APP_Layer/main.o.d ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o.d ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o.d ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o.d ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o.d ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o ${OBJECTDIR}/Codes/EEPROM/app1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o.d ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d ${OBJECTDIR}/APP_Layer/main.o.d ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o.d ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o.d ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o.d ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o.d ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d ${OBJECTDIR}/Codes/EEPROM/app1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o
+OBJECTFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o ${OBJECTDIR}/APP_Layer/main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o ${OBJECTDIR}/Codes/EEPROM/app1.o
 
 # Source Files
-SOURCEFILES=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c APP_Layer/main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/device_cfg.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c Codes/MCAL/Interrupt/app1.c
+SOURCEFILES=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/GPIO/app1.c Codes/MCAL/Interrupt/app1.c APP_Layer/main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c MCAL_Layer/device_cfg.c MCAL_Layer/EEPROM/hal_eeprom.c Codes/EEPROM/app1.c
 
 
 
@@ -136,6 +136,12 @@ ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o: Codes/MCAL/GPIO/app1.c  .generated_files/fl
 	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o -o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o Codes/MCAL/GPIO/app1.c 
 	
+${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o: Codes/MCAL/Interrupt/app1.c  .generated_files/flags/default/9fec37fd3d8e1e058320ad6f67efca5d7ecde258 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Interrupt" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o -o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o Codes/MCAL/Interrupt/app1.c 
+	
 ${OBJECTDIR}/APP_Layer/main.o: APP_Layer/main.c  .generated_files/flags/default/9eb59cde2bcc36a2bd52a7d93a7cde9769e5f772 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
 	@${RM} ${OBJECTDIR}/APP_Layer/main.o.d 
@@ -196,12 +202,6 @@ ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o: MCAL_Layer/GPIO/hal_gpio.c  .generated_
 	@${RM} ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d" -MT "${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d" -MT ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o -o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o MCAL_Layer/GPIO/hal_gpio.c 
 	
-${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/bd9599922df068aa19a7903dd5b9d51efa554b4e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
-	
 ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o: MCAL_Layer/Interrupt/hal_ext_interrupt.c  .generated_files/flags/default/2aaaf1a961eb2d69e54a3e12eb9c36afa88314dc .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/Interrupt" 
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o.d 
@@ -220,11 +220,23 @@ ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o: MCAL_Layer/Interrupt/hal_
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o -o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o MCAL_Layer/Interrupt/hal_interrupt_mng.c 
 	
-${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o: Codes/MCAL/Interrupt/app1.c  .generated_files/flags/default/9fec37fd3d8e1e058320ad6f67efca5d7ecde258 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Interrupt" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o -o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o Codes/MCAL/Interrupt/app1.c 
+${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/bd9599922df068aa19a7903dd5b9d51efa554b4e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
+	
+${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o: MCAL_Layer/EEPROM/hal_eeprom.c  .generated_files/flags/default/1e9bd35d94c589eba0cac6a6a1c2cfe6201876a8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/EEPROM" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d" -MT "${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d" -MT ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o -o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o MCAL_Layer/EEPROM/hal_eeprom.c 
+	
+${OBJECTDIR}/Codes/EEPROM/app1.o: Codes/EEPROM/app1.c  .generated_files/flags/default/4f646a742314b57ecc052bd71507459c839143fb .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/EEPROM" 
+	@${RM} ${OBJECTDIR}/Codes/EEPROM/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/EEPROM/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/EEPROM/app1.o.d" -MT "${OBJECTDIR}/Codes/EEPROM/app1.o.d" -MT ${OBJECTDIR}/Codes/EEPROM/app1.o -o ${OBJECTDIR}/Codes/EEPROM/app1.o Codes/EEPROM/app1.c 
 	
 else
 ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o: Codes/ECUAL/7SEG/app1.c  .generated_files/flags/default/8240656e7ccbda6c2e75e7e13d0d59f75c906a1e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -274,6 +286,12 @@ ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o: Codes/MCAL/GPIO/app1.c  .generated_files/fl
 	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d 
 	@${RM} ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o -o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o Codes/MCAL/GPIO/app1.c 
+	
+${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o: Codes/MCAL/Interrupt/app1.c  .generated_files/flags/default/c1a5469aa45818ecfc0eeba84f761b3f1ff828d5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Interrupt" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o -o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o Codes/MCAL/Interrupt/app1.c 
 	
 ${OBJECTDIR}/APP_Layer/main.o: APP_Layer/main.c  .generated_files/flags/default/16278fab76bb8b7f4c9e9f03b290bcb71cf51ae4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
@@ -335,12 +353,6 @@ ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o: MCAL_Layer/GPIO/hal_gpio.c  .generated_
 	@${RM} ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d" -MT "${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d" -MT ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o -o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o MCAL_Layer/GPIO/hal_gpio.c 
 	
-${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/8d87f5f5545f140c360b944cd88d22a6160e7c75 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
-	
 ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o: MCAL_Layer/Interrupt/hal_ext_interrupt.c  .generated_files/flags/default/83f18ca4895e66ba215d44e6df7ffc6ea2b0f2aa .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/Interrupt" 
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o.d 
@@ -359,11 +371,23 @@ ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o: MCAL_Layer/Interrupt/hal_
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o -o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o MCAL_Layer/Interrupt/hal_interrupt_mng.c 
 	
-${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o: Codes/MCAL/Interrupt/app1.c  .generated_files/flags/default/c1a5469aa45818ecfc0eeba84f761b3f1ff828d5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Interrupt" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o -o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o Codes/MCAL/Interrupt/app1.c 
+${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/8d87f5f5545f140c360b944cd88d22a6160e7c75 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
+	
+${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o: MCAL_Layer/EEPROM/hal_eeprom.c  .generated_files/flags/default/2fabf766e02d582edb0b44079548c08b7966a405 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/EEPROM" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d" -MT "${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d" -MT ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o -o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o MCAL_Layer/EEPROM/hal_eeprom.c 
+	
+${OBJECTDIR}/Codes/EEPROM/app1.o: Codes/EEPROM/app1.c  .generated_files/flags/default/c3b9459c2e6a41b1fd2e623b4f154e0a1881b157 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/EEPROM" 
+	@${RM} ${OBJECTDIR}/Codes/EEPROM/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/EEPROM/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/EEPROM/app1.o.d" -MT "${OBJECTDIR}/Codes/EEPROM/app1.o.d" -MT ${OBJECTDIR}/Codes/EEPROM/app1.o -o ${OBJECTDIR}/Codes/EEPROM/app1.o Codes/EEPROM/app1.c 
 	
 endif
 

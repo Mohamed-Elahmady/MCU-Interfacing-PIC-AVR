@@ -22,51 +22,51 @@
 
 // FOR INT0 EXTERNAL INTERRUPT
 
-#define External_Interrupt_Int0_Clear_Flag()                     (GIFR |= (uint8)(1 << INTF0))
+#define External_Interrupt_Int0_Clear_Flag()                     Set_Bit(GIFR, INTF0)
 
-#define External_Interrupt_Int0_Disable()                        (GICR &= ~(uint8)(1 << INT0))
-#define External_Interrupt_Int0_Enable()                         (GICR |= (uint8)(1 << INT0))
+#define External_Interrupt_Int0_Disable()                        Clear_Bit(GICR, INT0)
+#define External_Interrupt_Int0_Enable()                         Set_Bit(GICR, INT0)
 
-#define External_Interrupt_Int0_Low_Level_ISC00()                (MCUCR &= ~(uint8)(1 << ISC00))
-#define External_Interrupt_Int0_Low_Level_ISC01()                (MCUCR &= ~(uint8)(1 << ISC01))
+#define External_Interrupt_Int0_Low_Level_ISC00()                Clear_Bit(MCUCR, ISC00)
+#define External_Interrupt_Int0_Low_Level_ISC01()                Clear_Bit(MCUCR, ISC01)
 
-#define External_Interrupt_Int0_On_Change_ISC00()                (MCUCR |= (uint8)(1 << ISC00))
-#define External_Interrupt_Int0_On_Change_ISC01()                (MCUCR &= ~(uint8)(1 << ISC01))
+#define External_Interrupt_Int0_On_Change_ISC00()                Set_Bit(MCUCR, ISC00)
+#define External_Interrupt_Int0_On_Change_ISC01()                Clear_Bit(MCUCR, ISC01)
 
-#define External_Interrupt_Int0_Falling_Edge_ISC00()             (MCUCR &= ~(uint8)(1 << ISC00))
-#define External_Interrupt_Int0_Falling_Edge_ISC01()             (MCUCR |= (uint8)(1 << ISC01))
+#define External_Interrupt_Int0_Falling_Edge_ISC00()             Clear_Bit(MCUCR, ISC00)
+#define External_Interrupt_Int0_Falling_Edge_ISC01()             Set_Bit(MCUCR, ISC01)
 
-#define External_Interrupt_Int0_Rising_Edge_ISC00()              (MCUCR |= (uint8)(1 << ISC00))
-#define External_Interrupt_Int0_Rising_Edge_ISC01()              (MCUCR |= (uint8)(1 << ISC01))
+#define External_Interrupt_Int0_Rising_Edge_ISC00()              Set_Bit(MCUCR, ISC00)
+#define External_Interrupt_Int0_Rising_Edge_ISC01()              Set_Bit(MCUCR, ISC01)
 
 // FOR INT1 EXTERNAL INTERRUPT
 
-#define External_Interrupt_Int1_Clear_Flag()                     (GIFR |= (uint8)(1 << INTF1))
+#define External_Interrupt_Int1_Clear_Flag()                     Set_Bit(GIFR, INTF1)
 
-#define External_Interrupt_Int1_Disable()                        (GICR &= ~(uint8)(1 << INT1))
-#define External_Interrupt_Int1_Enable()                         (GICR |= (uint8)(1 << INT1))
+#define External_Interrupt_Int1_Disable()                        Clear_Bit(GICR, INT1)
+#define External_Interrupt_Int1_Enable()                         Set_Bit(GICR, INT1)
 
-#define External_Interrupt_Int1_Low_Level_ISC10()                (MCUCR &= ~(uint8)(1 << ISC10))
-#define External_Interrupt_Int1_Low_Level_ISC11()                (MCUCR &= ~(uint8)(1 << ISC11))
+#define External_Interrupt_Int1_Low_Level_ISC10()                Clear_Bit(MCUCR, ISC10)
+#define External_Interrupt_Int1_Low_Level_ISC11()                Clear_Bit(MCUCR, ISC11)
 
-#define External_Interrupt_Int1_On_Change_ISC10()                (MCUCR |= (uint8)(1 << ISC10))
-#define External_Interrupt_Int1_On_Change_ISC11()                (MCUCR &= ~(uint8)(1 << ISC11))
+#define External_Interrupt_Int1_On_Change_ISC10()                Set_Bit(MCUCR, ISC10)
+#define External_Interrupt_Int1_On_Change_ISC11()                Clear_Bit(MCUCR, ISC11)
 
-#define External_Interrupt_Int1_Falling_Edge_ISC10()             (MCUCR &= ~(uint8)(1 << ISC10))
-#define External_Interrupt_Int1_Falling_Edge_ISC11()             (MCUCR |= (uint8)(1 << ISC11))
+#define External_Interrupt_Int1_Falling_Edge_ISC10()             Clear_Bit(MCUCR, ISC10)
+#define External_Interrupt_Int1_Falling_Edge_ISC11()             Set_Bit(MCUCR, ISC11)
 
-#define External_Interrupt_Int1_Rising_Edge_ISC10()              (MCUCR |= (uint8)(1 << ISC10))
-#define External_Interrupt_Int1_Rising_Edge_ISC11()              (MCUCR |= (uint8)(1 << ISC11))
+#define External_Interrupt_Int1_Rising_Edge_ISC10()              Set_Bit(MCUCR, ISC10)
+#define External_Interrupt_Int1_Rising_Edge_ISC11()              Set_Bit(MCUCR, ISC11)
 
 // FOR INT2 EXTERNAL INTERRUPT
 
-#define External_Interrupt_Int2_Clear_Flag()                     (GIFR |= (uint8)(1 << INTF2))
+#define External_Interrupt_Int2_Clear_Flag()                     Set_Bit(GIFR, INTF2)
 
-#define External_Interrupt_Int2_Disable()                        (GICR &= ~(uint8)(1 << INT2))
-#define External_Interrupt_Int2_Enable()                         (GICR |= (uint8)(1 << INT2))
+#define External_Interrupt_Int2_Disable()                        Clear_Bit(GICR, INT2)
+#define External_Interrupt_Int2_Enable()                         Set_Bit(GICR, INT2)
 
-#define External_Interrupt_Int2_Falling_Edge_ISC2()              (MCUCSR &= ~(uint8)(1 << ISC2))
-#define External_Interrupt_Int2_Rising_Edge_ISC2()               (MCUCSR |= (uint8)(1 << ISC2))
+#define External_Interrupt_Int2_Falling_Edge_ISC2()              Clear_Bit(MCUCSR, ISC2)
+#define External_Interrupt_Int2_Rising_Edge_ISC2()               Set_Bit(MCUCSR, ISC2)
 
 
 

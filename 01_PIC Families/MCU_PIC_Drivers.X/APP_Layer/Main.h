@@ -13,8 +13,6 @@
 /******************* Section 1 : Includes *******************/
 
 #include "../ECUAL_Layer/ECUAL_INIT.h" 
-#include "../MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.h"
-#include "../MCAL_Layer/Interrupt/HAL_INT_INTERRUPT.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

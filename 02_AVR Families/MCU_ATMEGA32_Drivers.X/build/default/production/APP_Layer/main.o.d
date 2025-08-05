@@ -56,7 +56,12 @@ build/default/production/APP_Layer/main.o.d \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/../GPIO/hal_gpio.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/../mcal_std_types.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/../device_cfg.h \
- APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/hal_ext_interrupt.h
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/hal_ext_interrupt.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom_cfg.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../Interrupt/hal_int_interrupt.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../mcal_std_types.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../device_cfg.h
 
 APP_Layer/main.h:
 
@@ -173,3 +178,13 @@ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/../mcal_std_types.h:
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/../device_cfg.h:
 
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/hal_ext_interrupt.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/hal_eeprom_cfg.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../Interrupt/hal_int_interrupt.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../mcal_std_types.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../device_cfg.h:

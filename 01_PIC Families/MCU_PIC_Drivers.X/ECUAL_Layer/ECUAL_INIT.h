@@ -20,6 +20,11 @@
 #include "Keypad/ECUAL_KEYPAD.h"
 #include "CHR_Lcd/GPIO_CHR_LCD.h"
 
+#include "../MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.h"
+#include "../MCAL_Layer/Interrupt/HAL_INT_INTERRUPT.h"
+
+#include "../MCAL_Layer/EEPROM/HAL_EEPROM.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

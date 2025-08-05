@@ -61,6 +61,16 @@ static Std_ReturnType RB7_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, 
 
 /******************* Section 3 : Software Interfaces Definitions (APIs) *******************/
 
+#if ((INTERRUPT_FEATURE_ENABLE) == (EXTERNAL_INTERRUPT_INTX_ENABLE))
+
+/**
+ * @brief           : This function initializes the external interrupt for INTx pins
+ * @param int_pin   : Pointer to the INTx pin configuration structure
+ * @return          : Status of the function
+ *      (E_OK)      : The function done successfully
+ *      (E_NOT_OK)  : The function failed due to null pointer or invalid config
+ */
+
 Std_ReturnType EXTERNAL_INTERRUPT_INTX_INIT(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -87,6 +97,14 @@ Std_ReturnType EXTERNAL_INTERRUPT_INTX_INIT(const INTERRUPT_INTX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : This function de-initializes the external interrupt for INTx pins
+ * @param int_pin   : Pointer to the INTx pin configuration structure
+ * @return          : Status of the function
+ *      (E_OK)      : The function done successfully
+ *      (E_NOT_OK)  : The function failed due to null pointer
+ */
+
 Std_ReturnType EXTERNAL_INTERRUPT_INTX_DEINIT(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -97,6 +115,12 @@ Std_ReturnType EXTERNAL_INTERRUPT_INTX_DEINIT(const INTERRUPT_INTX *int_pin){
     }
     return Retval;
 }
+
+/**
+ * @brief           : This is the ISR for external interrupt INT0
+ * @param           : void
+ * @return          : void
+ */
 
 void INT0_ISR(void){
     // You must Clear Flag First
@@ -109,6 +133,12 @@ void INT0_ISR(void){
     }
 }
 
+/**
+ * @brief           : This is the ISR for external interrupt INT1
+ * @param           : void
+ * @return          : void
+ */
+
 void INT1_ISR(void){
     // You must Clear Flag First
     EXT_INTERRUPT_INT1_CLEAR_FLAG();
@@ -120,6 +150,12 @@ void INT1_ISR(void){
     }
 }
 
+/**
+ * @brief           : This is the ISR for external interrupt INT2
+ * @param           : void
+ * @return          : void
+ */
+
 void INT2_ISR(void){
     // You must Clear Flag First
     EXT_INTERRUPT_INT2_CLEAR_FLAG();
@@ -130,6 +166,18 @@ void INT2_ISR(void){
         INT2_INTERRUPT_HANDLER();
     }
 }
+
+#endif
+
+#if ((INTERRUPT_FEATURE_ENABLE) == (EXTERNAL_INTERRUPT_IOC_ENABLE))
+
+/**
+ * @brief           : This function initializes the external interrupt for RBx (on-change) pins
+ * @param int_pin   : Pointer to the RBx pin configuration structure
+ * @return          : Status of the function
+ *      (E_OK)      : The function done successfully
+ *      (E_NOT_OK)  : The function failed due to null pointer or invalid config
+ */
 
 Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -155,6 +203,14 @@ Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const INTERRUPT_RBX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : This function de-initializes the external interrupt for RBx (on-change) pins
+ * @param int_pin   : Pointer to the RBx pin configuration structure
+ * @return          : Status of the function
+ *      (E_OK)      : The function done successfully
+ *      (E_NOT_OK)  : The function failed due to null pointer
+ */
+
 Std_ReturnType EXTERNAL_INTERRUPT_RBX_DEINIT(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -165,6 +221,12 @@ Std_ReturnType EXTERNAL_INTERRUPT_RBX_DEINIT(const INTERRUPT_RBX *int_pin){
     }
     return Retval;
 }
+
+/**
+ * @brief           : This is the ISR for external interrupt on RB4 pin
+ * @param change    : Indicates the change direction (HIGH or LOW)
+ * @return          : void
+ */
 
 void RB4_ISR(uint8 change){
     // You must Clear Flag First
@@ -184,6 +246,12 @@ void RB4_ISR(uint8 change){
     }
 }
 
+/**
+ * @brief           : This is the ISR for external interrupt on RB5 pin
+ * @param change    : Indicates the change direction (HIGH or LOW)
+ * @return          : void
+ */
+
 void RB5_ISR(uint8 change){
     // You must Clear Flag First
     EXT_INTERRUPT_RBX_CLEAR_FLAG();
@@ -201,6 +269,12 @@ void RB5_ISR(uint8 change){
         }
     }
 }
+
+/**
+ * @brief           : This is the ISR for external interrupt on RB6 pin
+ * @param change    : Indicates the change direction (HIGH or LOW)
+ * @return          : void
+ */
 
 void RB6_ISR(uint8 change){
     // You must Clear Flag First
@@ -220,6 +294,12 @@ void RB6_ISR(uint8 change){
     }
 }
 
+/**
+ * @brief           : This is the ISR for external interrupt on RB7 pin
+ * @param change    : Indicates the change direction (HIGH or LOW)
+ * @return          : void
+ */
+
 void RB7_ISR(uint8 change){
     // You must Clear Flag First
     EXT_INTERRUPT_RBX_CLEAR_FLAG();
@@ -238,9 +318,17 @@ void RB7_ISR(uint8 change){
     }
 }
 
+#endif
+
 /******************* Section 4:  Helper Functions Definitions *******************/
 
 // helper Functions for INTX pins
+
+/**
+ * @brief           : Initializes the GPIO direction for the specified INTx pin
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType INTERRUPT_INTX_PIN_INIT(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -252,6 +340,12 @@ static Std_ReturnType INTERRUPT_INTX_PIN_INIT(const INTERRUPT_INTX *int_pin){
     }
     return Retval;
 }
+
+/**
+ * @brief           : Clears the interrupt flag for the specified INTx source
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType INTERRUPT_INTX_CLEAR_FLAG(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -277,6 +371,12 @@ static Std_ReturnType INTERRUPT_INTX_CLEAR_FLAG(const INTERRUPT_INTX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : Disables the external interrupt for the specified INTx pin
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType INTERRUPT_INTX_DISABLE(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -300,6 +400,12 @@ static Std_ReturnType INTERRUPT_INTX_DISABLE(const INTERRUPT_INTX *int_pin){
     }
     return Retval;
 }
+
+/**
+ * @brief           : Enables the external interrupt for the specified INTx pin
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType INTERRUPT_INTX_ENABLE(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -354,6 +460,12 @@ static Std_ReturnType INTERRUPT_INTX_ENABLE(const INTERRUPT_INTX *int_pin){
 
 #if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
 
+/**
+ * @brief           : Initializes interrupt priority for INTx pins (if priority feature is enabled)
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if priority set correctly, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType INTERRUPT_INTX_PRIORTIY_INIT(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -397,6 +509,12 @@ static Std_ReturnType INTERRUPT_INTX_PRIORTIY_INIT(const INTERRUPT_INTX *int_pin
 }
 
 #endif
+
+/**
+ * @brief           : Configures interrupt edge (rising/falling) for INTx pins
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType INTERRUPT_INTX_EDGE_INIT(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -446,6 +564,12 @@ static Std_ReturnType INTERRUPT_INTX_EDGE_INIT(const INTERRUPT_INTX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : Sets the ISR handler function pointer for the selected INTx source
+ * @param int_pin   : Pointer to INTx pin configuration
+ * @return          : E_OK if handler set successfully, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType INTX_SET_HANDLER(const INTERRUPT_INTX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -470,6 +594,12 @@ static Std_ReturnType INTX_SET_HANDLER(const INTERRUPT_INTX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : Sets the ISR function pointer for INT0
+ * @param INTERRUPT_HANDLER : Pointer to function to be called inside INT0 ISR
+ * @return          : E_OK if successful, E_NOT_OK if handler is NULL
+ */
+
 static Std_ReturnType INT0_SET_HANDLER(void (* INTERRUPT_HANDLER)(void)){
     Std_ReturnType Retval = E_OK;
     if(NULL == INTERRUPT_HANDLER){
@@ -481,6 +611,12 @@ static Std_ReturnType INT0_SET_HANDLER(void (* INTERRUPT_HANDLER)(void)){
     return Retval;
 }
 
+/**
+ * @brief           : Sets the ISR function pointer for INT1
+ * @param INTERRUPT_HANDLER : Pointer to function to be called inside INT1 ISR
+ * @return          : E_OK if successful, E_NOT_OK if handler is NULL
+ */
+
 static Std_ReturnType INT1_SET_HANDLER(void (* INTERRUPT_HANDLER)(void)){
     Std_ReturnType Retval = E_OK;
     if(NULL == INTERRUPT_HANDLER){
@@ -491,6 +627,12 @@ static Std_ReturnType INT1_SET_HANDLER(void (* INTERRUPT_HANDLER)(void)){
     }
     return Retval;
 }
+
+/**
+ * @brief           : Sets the ISR function pointer for INT2
+ * @param INTERRUPT_HANDLER : Pointer to function to be called inside INT2 ISR
+ * @return          : E_OK if successful, E_NOT_OK if handler is NULL
+ */
 
 static Std_ReturnType INT2_SET_HANDLER(void (* INTERRUPT_HANDLER)(void)){
     Std_ReturnType Retval = E_OK;
@@ -505,6 +647,12 @@ static Std_ReturnType INT2_SET_HANDLER(void (* INTERRUPT_HANDLER)(void)){
 
 // helper Functions for RBX pins
 
+/**
+ * @brief           : Initializes the GPIO direction for the specified RBx pin
+ * @param int_pin   : Pointer to RBx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType INTERRUPT_RBX_PIN_INIT(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -516,6 +664,12 @@ static Std_ReturnType INTERRUPT_RBX_PIN_INIT(const INTERRUPT_RBX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : Clears the interrupt flag for RBx on-change interrupts
+ * @param int_pin   : Pointer to RBx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType INTERRUPT_RBX_CLEAR_FLAG(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -526,6 +680,12 @@ static Std_ReturnType INTERRUPT_RBX_CLEAR_FLAG(const INTERRUPT_RBX *int_pin){
     }
     return Retval;
 }
+
+/**
+ * @brief           : Disables the interrupt for the specified RBx pin
+ * @param int_pin   : Pointer to RBx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType INTERRUPT_RBX_DISABLE(const INTERRUPT_RBX *int_pin) {
     Std_ReturnType Retval = E_OK;
@@ -559,6 +719,12 @@ static Std_ReturnType INTERRUPT_RBX_DISABLE(const INTERRUPT_RBX *int_pin) {
     }
     return Retval;
 }
+
+/**
+ * @brief           : Enables the interrupt for the specified RBx pin
+ * @param int_pin   : Pointer to RBx pin configuration
+ * @return          : E_OK if successful, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType INTERRUPT_RBX_ENABLE(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -629,6 +795,12 @@ static Std_ReturnType INTERRUPT_RBX_ENABLE(const INTERRUPT_RBX *int_pin){
 
 #if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
 
+/**
+ * @brief           : Initializes interrupt priority for RBx pins (if priority feature is enabled)
+ * @param int_pin   : Pointer to RBx pin configuration
+ * @return          : E_OK if priority set correctly, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType INTERRUPT_RBX_PRIORTIY_INIT(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
     if(NULL == int_pin){
@@ -651,6 +823,12 @@ static Std_ReturnType INTERRUPT_RBX_PRIORTIY_INIT(const INTERRUPT_RBX *int_pin){
 }
 
 #endif
+
+/**
+ * @brief           : Sets the ISR handlers for RBx on-change (HIGH and LOW change)
+ * @param int_pin   : Pointer to RBx pin configuration
+ * @return          : E_OK if handler set successfully, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType RBX_SET_HANDLER(const INTERRUPT_RBX *int_pin){
     Std_ReturnType Retval = E_OK;
@@ -679,6 +857,13 @@ static Std_ReturnType RBX_SET_HANDLER(const INTERRUPT_RBX *int_pin){
     return Retval;
 }
 
+/**
+ * @brief           : Sets the ISR handlers for RB4 pin (HIGH and LOW changes)
+ * @param INTERRUPT_HANDLER_HIGH : Handler for HIGH-level change
+ * @param INTERRUPT_HANDLER_LOW  : Handler for LOW-level change
+ * @return          : E_OK if both handlers are valid, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType RB4_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, INTERRUPT_HANDLER INTERRUPT_HANDLER_LOW){
     Std_ReturnType Retval = E_OK;
     if(NULL == INTERRUPT_HANDLER_HIGH || NULL == INTERRUPT_HANDLER_LOW){
@@ -690,6 +875,13 @@ static Std_ReturnType RB4_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, 
     }
     return Retval;
 }
+
+/**
+ * @brief           : Sets the ISR handlers for RB5 pin (HIGH and LOW changes)
+ * @param INTERRUPT_HANDLER_HIGH : Handler for HIGH-level change
+ * @param INTERRUPT_HANDLER_LOW  : Handler for LOW-level change
+ * @return          : E_OK if both handlers are valid, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType RB5_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, INTERRUPT_HANDLER INTERRUPT_HANDLER_LOW){
     Std_ReturnType Retval = E_OK;
@@ -703,6 +895,13 @@ static Std_ReturnType RB5_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, 
     return Retval;
 }
 
+/**
+ * @brief           : Sets the ISR handlers for RB6 pin (HIGH and LOW changes)
+ * @param INTERRUPT_HANDLER_HIGH : Handler for HIGH-level change
+ * @param INTERRUPT_HANDLER_LOW  : Handler for LOW-level change
+ * @return          : E_OK if both handlers are valid, E_NOT_OK otherwise
+ */
+
 static Std_ReturnType RB6_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, INTERRUPT_HANDLER INTERRUPT_HANDLER_LOW){
     Std_ReturnType Retval = E_OK;
     if(NULL == INTERRUPT_HANDLER_HIGH || NULL == INTERRUPT_HANDLER_LOW){
@@ -714,6 +913,13 @@ static Std_ReturnType RB6_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, 
     }
     return Retval;
 }
+
+/**
+ * @brief           : Sets the ISR handlers for RB7 pin (HIGH and LOW changes)
+ * @param INTERRUPT_HANDLER_HIGH : Handler for HIGH-level change
+ * @param INTERRUPT_HANDLER_LOW  : Handler for LOW-level change
+ * @return          : E_OK if both handlers are valid, E_NOT_OK otherwise
+ */
 
 static Std_ReturnType RB7_SET_HANDLER(INTERRUPT_HANDLER INTERRUPT_HANDLER_HIGH, INTERRUPT_HANDLER INTERRUPT_HANDLER_LOW){
     Std_ReturnType Retval = E_OK;

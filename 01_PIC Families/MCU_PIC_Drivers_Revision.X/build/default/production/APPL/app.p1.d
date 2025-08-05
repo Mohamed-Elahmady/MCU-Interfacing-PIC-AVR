@@ -33,4 +33,7 @@ APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h  \
 APPL/../MCAL/INTERRUPT/../mcu_cfg.h  \
 APPL/../MCAL/INTERRUPT/../GPIO/hal_gpio.h  \
 APPL/../MCAL/INTERRUPT/hal_interrupt_gen_cfg.h  \
-APPL/../MCAL/INTERRUPT/hal_int_interrupt.h 
+APPL/../MCAL/INTERRUPT/hal_int_interrupt.h  \
+APPL/../MCAL/EEPROM/hal_eeprom.h  \
+APPL/../MCAL/EEPROM/../mcu_cfg.h  \
+APPL/../MCAL/EEPROM/hal_eeprom_cfg.h 
