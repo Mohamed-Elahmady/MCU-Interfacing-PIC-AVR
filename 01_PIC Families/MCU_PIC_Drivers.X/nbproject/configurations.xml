@@ -29,6 +29,12 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>Codes/MCAL/ADC/app2.c</itemPath>
+          <itemPath>Codes/MCAL/ADC/app1.c</itemPath>
+          <itemPath>Codes/MCAL/ADC/app3.c</itemPath>
+          <itemPath>Codes/MCAL/ADC/app4.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/app1.c</itemPath>
         </logicalFolder>
@@ -82,6 +88,10 @@
         <itemPath>ECUAL_Layer/ECUAL_INIT.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCAL_Layer" displayName="MCAL_Layer" projectFiles="true">
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>MCAL_Layer/ADC/HAL_ADC.h</itemPath>
+          <itemPath>MCAL_Layer/ADC/HAL_ADC_CFG.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM.h</itemPath>
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM_CFG.h</itemPath>
@@ -143,6 +153,9 @@
         <itemPath>ECUAL_Layer/ECUAL_INIT.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCAL_Layer" displayName="MCAL_Layer" projectFiles="true">
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>MCAL_Layer/ADC/HAL_ADC.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM.c</itemPath>
         </logicalFolder>

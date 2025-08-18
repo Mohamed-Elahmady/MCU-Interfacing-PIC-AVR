@@ -31,5 +31,12 @@ ISR(INT2_vect){
     INT2_ISR();
 }
 
+#if ((Interrupt_Feature_Enable) == (ADC_Interrupt_Feature))        
+
+ISR(ADC_vect){
+    ADC_ISR();
+}
+
+#endif
 /******************* Section 4:  Helper Functions Definitions *******************/
 

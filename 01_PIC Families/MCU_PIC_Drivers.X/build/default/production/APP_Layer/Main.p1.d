@@ -39,4 +39,10 @@ APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/HAL_EEPROM.h  \
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/HAL_EEPROM_CFG.h  \
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../Interrupt/HAL_INT_INTERRUPT.h  \
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../mcal_std_types.h  \
-APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../device_cfg.h 
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/EEPROM/../device_cfg.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC_CFG.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../Interrupt/HAL_INT_INTERRUPT.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../GPIO/HAL_GPIO.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../device_cfg.h 

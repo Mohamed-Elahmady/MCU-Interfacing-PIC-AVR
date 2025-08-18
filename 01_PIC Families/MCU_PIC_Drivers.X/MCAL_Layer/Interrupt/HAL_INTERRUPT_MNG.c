@@ -29,7 +29,12 @@ void __interrupt() INTERRUPT_MANAGER_HIGH_PRIORITY(void){
         INT0_ISR();
     }
     else{/* Nothing */}
-    
+#if ((INTERRUPT_FEATURE_ENABLE) == (ADC_INTERRUPT_FEATURE))
+    if((PIR1bits.ADIF == INTERRUPT_OCCUR) && (PIE1bits.ADIE == INTERRUPT_ENABLE)){
+        ADC_ISR();
+    }
+    else{/* Nothing */}
+#endif    
     if((INTCON3bits.INT2F == INTERRUPT_OCCUR) && (INTCON3bits.INT2IE == INTERRUPT_ENABLE)){
         INT2_ISR();
     }
@@ -104,23 +109,31 @@ void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
 #elif ((INTERRUPT_FEATURE_DISABLE) == (INTERRUPT_PRIORITY_LEVELS))
 
 void __interrupt() INTERRUPT_MANAGER(void){
+    /* ================== INT0_Interrupt Service Routine ================== */
     if((INTCONbits.INT0IF == INTERRUPT_OCCUR) && (INTCONbits.INT0IE == INTERRUPT_ENABLE)){
         INT0_ISR();
     }
     else{/* Nothing */}
-    
+#if ((INTERRUPT_FEATURE_ENABLE) == (ADC_INTERRUPT_FEATURE))
+    /* ================== ADC_Interrupt Service Routine ================== */
+    if((PIR1bits.ADIF == INTERRUPT_OCCUR) && (PIE1bits.ADIE == INTERRUPT_ENABLE)){
+        ADC_ISR();
+    }
+    else{/* Nothing */}
+#endif
+    /* ================== INT1_Interrupt Service Routine ================== */
     if((INTCON3bits.INT1F == INTERRUPT_OCCUR) && (INTCON3bits.INT1IE == INTERRUPT_ENABLE)){
         INT1_ISR();
     }
     else{/* Nothing */}
-    
+    /* ================== INT2_Interrupt Service Routine ================== */
     if((INTCON3bits.INT2F == INTERRUPT_OCCUR) && (INTCON3bits.INT2IE == INTERRUPT_ENABLE)){
         INT2_ISR();
     }
     else{/* Nothing */}
     
     /* ================== PORTB Interrupt on Change each interrupt must have 2 ISR from high to low & from low to high ========================*/
-    
+    /* ================== RBX _Interrupt Service Routine ================== */
     if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
        &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG = 0x01)){
         RB4_ISR(CHANGE_HIGH);

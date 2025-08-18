@@ -28,6 +28,7 @@
 
 /******************* Section 5 : Software Interfaces Declarations (APIs) *******************/
 
+// for external interrupts
 void int0_isr(void);
 void int1_isr(void);
 void int2_isr(void);
@@ -36,6 +37,8 @@ void rb5_isr(uint8 change);
 void rb6_isr(uint8 change);
 void rb7_isr(uint8 change);
 
+// for internal interrupts
+void adc_isr(void);
 
 
 #endif	/* HAL_INTERRUPT_MNG_H */

@@ -5541,7 +5541,7 @@ unsigned char __t3rd16on(void);
 # 34 "/Applications/microchip/xc8/v3.00/pic/include/xc.h" 2 3
 # 16 "MCAL/INTERRUPT/../compiler.h" 2
 # 17 "MCAL/INTERRUPT/../mcal_std_types.h" 2
-# 105 "MCAL/INTERRUPT/../mcal_std_types.h"
+# 110 "MCAL/INTERRUPT/../mcal_std_types.h"
 typedef _Bool boolean;
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -5575,7 +5575,7 @@ typedef enum{
 # 16 "MCAL/INTERRUPT/../GPIO/hal_gpio.h"
 # 1 "MCAL/INTERRUPT/../GPIO/hal_gpio_cfg.h" 1
 # 17 "MCAL/INTERRUPT/../GPIO/hal_gpio.h" 2
-# 38 "MCAL/INTERRUPT/../GPIO/hal_gpio.h"
+# 35 "MCAL/INTERRUPT/../GPIO/hal_gpio.h"
 extern volatile uint8 * const tris_regs[(uint8)0x05];
 extern volatile uint8 * const port_regs[(uint8)0x05];
 extern volatile uint8 * const lat_regs[(uint8)0x05];
@@ -5635,7 +5635,7 @@ Std_ReturnType gpio_port_init(const gpio_port port, uint8 direction, uint8 logic
 # 17 "MCAL/INTERRUPT/hal_interrupt_cfg.h" 2
 # 1 "MCAL/INTERRUPT/hal_interrupt_gen_cfg.h" 1
 # 18 "MCAL/INTERRUPT/hal_interrupt_cfg.h" 2
-# 62 "MCAL/INTERRUPT/hal_interrupt_cfg.h"
+# 67 "MCAL/INTERRUPT/hal_interrupt_cfg.h"
 typedef enum{
     interrupt_low_priority = (uint8)0x00,
     interrupt_high_priority = (uint8)0x01
@@ -5691,14 +5691,7 @@ Std_ReturnType external_interrupt_intx_deinit(const interrupt_intx *inter);
 Std_ReturnType external_interrupt_rbx_init(const interrupt_rbx *inter);
 Std_ReturnType external_interrupt_rbx_deinit(const interrupt_rbx *inter);
 # 11 "MCAL/INTERRUPT/hal_ext_interrupt.c" 2
-
-
-
-
-
-
-
-
+# 20 "MCAL/INTERRUPT/hal_ext_interrupt.c"
 static interrupt_handler int0_interrupt_isr = ((void*)0);
 static interrupt_handler int1_interrupt_isr = ((void*)0);
 static interrupt_handler int2_interrupt_isr = ((void*)0);
@@ -5717,13 +5710,26 @@ static Std_ReturnType external_interrupt_int2_set_interrupt_handler(const interr
 
 
 
+static interrupt_handler rb4_interrupt_isr_high = ((void*)0);
+static interrupt_handler rb4_interrupt_isr_low = ((void*)0);
+static interrupt_handler rb5_interrupt_isr_high = ((void*)0);
+static interrupt_handler rb5_interrupt_isr_low = ((void*)0);
+static interrupt_handler rb6_interrupt_isr_high = ((void*)0);
+static interrupt_handler rb6_interrupt_isr_low = ((void*)0);
+static interrupt_handler rb7_interrupt_isr_high = ((void*)0);
+static interrupt_handler rb7_interrupt_isr_low = ((void*)0);
+
 static Std_ReturnType external_interrupt_OC_rbx_pin_init(const interrupt_rbx *inter);
 static Std_ReturnType external_interrupt_OC_rbx_set_priority(const interrupt_rbx *inter);
 static Std_ReturnType external_interrupt_OC_rbx_clear_flag(const interrupt_rbx *inter);
 static Std_ReturnType external_interrupt_OC_rbx_set_disable(const interrupt_rbx *inter);
 static Std_ReturnType external_interrupt_OC_rbx_set_enable(const interrupt_rbx *inter);
 
-
+static Std_ReturnType external_interrupt_rbx_set_interrupt_handler(const interrupt_rbx *inter);
+static Std_ReturnType external_interrupt_rb4_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low);
+static Std_ReturnType external_interrupt_rb5_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low);
+static Std_ReturnType external_interrupt_rb6_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low);
+static Std_ReturnType external_interrupt_rb7_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low);
 
 
 
@@ -5807,12 +5813,19 @@ Std_ReturnType external_interrupt_rbx_init(const interrupt_rbx *inter){
     }
     else{
 
+        Retval = external_interrupt_OC_rbx_set_disable(inter);
+
+        Retval = external_interrupt_OC_rbx_clear_flag(inter);
 
 
+        Retval = external_interrupt_OC_rbx_set_priority(inter);
 
 
+        Retval = external_interrupt_OC_rbx_pin_init(inter);
 
+        Retval = external_interrupt_rbx_set_interrupt_handler(inter);
 
+        Retval = external_interrupt_OC_rbx_set_enable(inter);
     }
     return Retval;
 }
@@ -5824,9 +5837,98 @@ Std_ReturnType external_interrupt_rbx_deinit(const interrupt_rbx *inter){
     }
     else{
 
+        Retval = external_interrupt_OC_rbx_clear_flag(inter);
+
+        Retval = external_interrupt_OC_rbx_set_disable(inter);
     }
     return Retval;
 }
+
+void rb4_isr(uint8 change){
+
+    (INTCONbits.RBIF = (uint8)0x00);
+
+
+
+    if(change == (uint8)0x01){
+        if(rb4_interrupt_isr_high){
+            rb4_interrupt_isr_high();
+        }
+        else{ }
+    }
+    else if(change == (uint8)0x00){
+        if(rb4_interrupt_isr_low){
+            rb4_interrupt_isr_low();
+        }
+        else{ }
+    }
+    else{ }
+}
+
+void rb5_isr(uint8 change){
+
+    (INTCONbits.RBIF = (uint8)0x00);
+
+
+
+    if(change == (uint8)0x01){
+        if(rb5_interrupt_isr_high){
+            rb5_interrupt_isr_high();
+        }
+        else{ }
+    }
+    else if(change == (uint8)0x00){
+        if(rb5_interrupt_isr_low){
+            rb5_interrupt_isr_low();
+        }
+        else{ }
+    }
+    else{ }
+}
+
+void rb6_isr(uint8 change){
+
+    (INTCONbits.RBIF = (uint8)0x00);
+
+
+
+    if(change == (uint8)0x01){
+        if(rb6_interrupt_isr_high){
+            rb6_interrupt_isr_high();
+        }
+        else{ }
+    }
+    else if(change == (uint8)0x00){
+        if(rb6_interrupt_isr_low){
+            rb6_interrupt_isr_low();
+        }
+        else{ }
+    }
+    else{ }
+}
+
+void rb7_isr(uint8 change){
+
+    (INTCONbits.RBIF = (uint8)0x00);
+
+
+
+    if(change == (uint8)0x01){
+        if(rb7_interrupt_isr_high){
+            rb7_interrupt_isr_high();
+        }
+        else{ }
+    }
+    else if(change == (uint8)0x00){
+        if(rb7_interrupt_isr_low){
+            rb7_interrupt_isr_low();
+        }
+        else{ }
+    }
+    else{ }
+}
+
+
 
 
 
@@ -6129,6 +6231,186 @@ static Std_ReturnType external_interrupt_OC_rbx_set_priority(const interrupt_rbx
 
 
 
-static Std_ReturnType external_interrupt_OC_rbx_clear_flag(const interrupt_rbx *inter);
-static Std_ReturnType external_interrupt_OC_rbx_set_disable(const interrupt_rbx *inter);
-static Std_ReturnType external_interrupt_OC_rbx_set_enable(const interrupt_rbx *inter);
+static Std_ReturnType external_interrupt_OC_rbx_clear_flag(const interrupt_rbx *inter){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == inter){
+        Retval = E_NOT_OK;
+    }
+    else{
+        (INTCONbits.RBIF = (uint8)0x00);
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_OC_rbx_set_disable(const interrupt_rbx *inter){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == inter){
+        Retval = E_NOT_OK;
+    }
+    else{
+        switch(inter->src){
+            case interrupt_rb4:
+                (IOCBbits.IOCB4 = (uint8)0x00);
+                break;
+            case interrupt_rb5:
+                (IOCBbits.IOCB5 = (uint8)0x00);
+                break;
+            case interrupt_rb6:
+                (IOCBbits.IOCB6 = (uint8)0x00);
+                break;
+            case interrupt_rb7:
+                (IOCBbits.IOCB7 = (uint8)0x00);
+                break;
+            default :
+                Retval = E_NOT_OK;
+                break;
+        }
+
+        if(IOCBbits.IOCB4 == 0x00 && IOCBbits.IOCB5 == 0x00 && IOCBbits.IOCB6 == 0x00 && IOCBbits.IOCB7 == 0x00){
+            (INTCONbits.RBIE = (uint8)0x00);
+        }
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_OC_rbx_set_enable(const interrupt_rbx *inter){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == inter){
+        Retval = E_NOT_OK;
+    }
+    else{
+        switch(inter->src){
+            case interrupt_rb4:
+
+                (RCONbits.IPEN = (uint8)0x01);
+                (INTCONbits.GIEH = (uint8)0x01);
+                (INTCONbits.GIEL = (uint8)0x01);
+
+
+
+
+
+                (INTCONbits.RBIE = (uint8)0x01);
+                (IOCBbits.IOCB4 = (uint8)0x01);
+                break;
+            case interrupt_rb5:
+
+                (RCONbits.IPEN = (uint8)0x01);
+                (INTCONbits.GIEH = (uint8)0x01);
+                (INTCONbits.GIEL = (uint8)0x01);
+
+
+
+
+
+                (INTCONbits.RBIE = (uint8)0x01);
+                (IOCBbits.IOCB5 = (uint8)0x01);
+                break;
+            case interrupt_rb6:
+
+                (RCONbits.IPEN = (uint8)0x01);
+                (INTCONbits.GIEH = (uint8)0x01);
+                (INTCONbits.GIEL = (uint8)0x01);
+
+
+
+
+
+                (INTCONbits.RBIE = (uint8)0x01);
+                (IOCBbits.IOCB6 = (uint8)0x01);
+                break;
+            case interrupt_rb7:
+
+                (RCONbits.IPEN = (uint8)0x01);
+                (INTCONbits.GIEH = (uint8)0x01);
+                (INTCONbits.GIEL = (uint8)0x01);
+
+
+
+
+
+                (INTCONbits.RBIE = (uint8)0x01);
+                (IOCBbits.IOCB7 = (uint8)0x01);
+                break;
+            default :
+                Retval = E_NOT_OK;
+                break;
+        }
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_rbx_set_interrupt_handler(const interrupt_rbx *inter){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == inter){
+        Retval = E_NOT_OK;
+    }
+    else{
+        switch(inter->src){
+            case interrupt_rb4:
+                Retval = external_interrupt_rb4_set_interrupt_handler(inter->rbx_isr_high, inter->rbx_isr_low);
+                break;
+            case interrupt_rb5:
+                Retval = external_interrupt_rb5_set_interrupt_handler(inter->rbx_isr_high, inter->rbx_isr_low);
+                break;
+            case interrupt_rb6:
+                Retval = external_interrupt_rb6_set_interrupt_handler(inter->rbx_isr_high, inter->rbx_isr_low);
+                break;
+            case interrupt_rb7:
+                Retval = external_interrupt_rb7_set_interrupt_handler(inter->rbx_isr_high, inter->rbx_isr_low);
+                break;
+            default :
+                Retval = E_NOT_OK;
+                break;
+        }
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_rb4_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == interrupt_isr_high || ((void*)0) == interrupt_isr_low){
+        Retval = E_NOT_OK;
+    }
+    else{
+        rb4_interrupt_isr_high = interrupt_isr_high;
+        rb4_interrupt_isr_low = interrupt_isr_low;
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_rb5_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == interrupt_isr_high || ((void*)0) == interrupt_isr_low){
+        Retval = E_NOT_OK;
+    }
+    else{
+        rb5_interrupt_isr_high = interrupt_isr_high;
+        rb5_interrupt_isr_low = interrupt_isr_low;
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_rb6_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == interrupt_isr_high || ((void*)0) == interrupt_isr_low){
+        Retval = E_NOT_OK;
+    }
+    else{
+        rb6_interrupt_isr_high = interrupt_isr_high;
+        rb6_interrupt_isr_low = interrupt_isr_low;
+    }
+    return Retval;
+}
+
+static Std_ReturnType external_interrupt_rb7_set_interrupt_handler(const interrupt_handler interrupt_isr_high, const interrupt_handler interrupt_isr_low){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == interrupt_isr_high || ((void*)0) == interrupt_isr_low){
+        Retval = E_NOT_OK;
+    }
+    else{
+        rb7_interrupt_isr_high = interrupt_isr_high;
+        rb7_interrupt_isr_low = interrupt_isr_low;
+    }
+    return Retval;
+}

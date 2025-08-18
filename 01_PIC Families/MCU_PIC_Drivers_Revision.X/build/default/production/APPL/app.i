@@ -7,13 +7,6 @@
 # 1 "/Applications/microchip/xc8/v3.00/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "APPL/app.c" 2
-
-
-
-
-
-
-
 # 1 "APPL/app.h" 1
 # 15 "APPL/app.h"
 # 1 "APPL/../ECUAL/LED/ecual_led.h" 1
@@ -5549,7 +5542,7 @@ unsigned char __t3rd16on(void);
 # 34 "/Applications/microchip/xc8/v3.00/pic/include/xc.h" 2 3
 # 16 "APPL/../ECUAL/LED/../../MCAL/GPIO/../compiler.h" 2
 # 17 "APPL/../ECUAL/LED/../../MCAL/GPIO/../mcal_std_types.h" 2
-# 105 "APPL/../ECUAL/LED/../../MCAL/GPIO/../mcal_std_types.h"
+# 110 "APPL/../ECUAL/LED/../../MCAL/GPIO/../mcal_std_types.h"
 typedef _Bool boolean;
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -5581,7 +5574,7 @@ typedef enum{
 # 16 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h" 2
 # 1 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio_cfg.h" 1
 # 17 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h" 2
-# 38 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h"
+# 35 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h"
 extern volatile uint8 * const tris_regs[(uint8)0x05];
 extern volatile uint8 * const port_regs[(uint8)0x05];
 extern volatile uint8 * const lat_regs[(uint8)0x05];
@@ -5897,19 +5890,137 @@ Std_ReturnType external_interrupt_rbx_deinit(const interrupt_rbx *inter);
 Std_ReturnType eeprom_write_one_byte(uint16 ee_add, uint8 ee_data);
 Std_ReturnType eeprom_read_one_byte(uint16 ee_add, uint8 *ee_data);
 # 27 "APPL/app.h" 2
-# 9 "APPL/app.c" 2
 
-uint8 counter = 0;
-uint8 rest_counter = 0;
+# 1 "APPL/../MCAL/ADC/hal_adc.h" 1
+# 16 "APPL/../MCAL/ADC/hal_adc.h"
+# 1 "APPL/../MCAL/ADC/hal_adc_cfg.h" 1
+# 17 "APPL/../MCAL/ADC/hal_adc.h" 2
+# 71 "APPL/../MCAL/ADC/hal_adc.h"
+typedef void (* adc_handler)(void);
 
-int main() {
+typedef enum{
+    adc_channel_an0 = (uint8)0x00,
+    adc_channel_an1,
+
+    adc_channel_an2,
+    adc_channel_an3,
+
+    adc_channel_an4,
+    adc_channel_an5,
+    adc_channel_an6,
+    adc_channel_an7,
+    adc_channel_an8,
+    adc_channel_an9,
+    adc_channel_an10,
+    adc_channel_an11,
+    adc_channel_an12,
+}adc_channel;
+
+typedef enum{
+    adc_internal_voltage_reference = (uint8)0x00,
+    adc_external_voltage_reference
+}adc_voltage_reference;
+
+typedef enum{
+    adc_conversion_clock_fosc_div_2 = (uint8)0x00,
+    adc_conversion_clock_fosc_div_8,
+    adc_conversion_clock_fosc_div_32,
+    adc_conversion_clock_fosc_div_frc,
+    adc_conversion_clock_fosc_div_4,
+    adc_conversion_clock_fosc_div_16,
+    adc_conversion_clock_fosc_div_64
+}adc_conversion_clock;
+
+typedef enum{
+    adc_acq_0tad = (uint8)0x00,
+    adc_acq_2tad,
+    adc_acq_4tad,
+    adc_acq_6tad,
+    adc_acq_8tad,
+    adc_acq_12tad,
+    adc_acq_16tad,
+    adc_acq_20tad
+}adc_acquisition_time;
+
+typedef enum{
+    adc_format_left = (uint8)0x00,
+    adc_format_right
+}adc_result_format;
+
+typedef enum{
+    adc_conversion_completed = (uint8)0x00,
+    adc_conversion_in_progress
+}adc_conversion_status;
+
+typedef struct{
+
+    adc_handler adc_interrupt;
+    interrupt_priority priority;
+
+    adc_channel channel;
+    adc_conversion_clock clk;
+    adc_acquisition_time acq;
+    adc_voltage_reference ref;
+    adc_result_format format;
+}adc_cfg;
+
+
+
+Std_ReturnType adc_init(const adc_cfg *adc);
+Std_ReturnType adc_deinit(const adc_cfg *adc);
+Std_ReturnType adc_set_channel(const adc_cfg *adc, adc_channel channel);
+Std_ReturnType adc_start_conversion(const adc_cfg *adc);
+Std_ReturnType adc_is_conversion_done(const adc_cfg *adc, adc_conversion_status *state);
+Std_ReturnType adc_get_conversion_result(const adc_cfg *adc, uint16 *result);
+Std_ReturnType adc_get_conversion_blocking(const adc_cfg *adc, adc_channel channel, uint16 *result);
+Std_ReturnType adc_start_conversion_interrupt(const adc_cfg *adc, adc_channel channel);
+# 29 "APPL/app.h" 2
+# 2 "APPL/app.c" 2
+
+void adc_app_interrupt(void);
+
+adc_cfg adc1 = {
+    .adc_interrupt = adc_app_interrupt,
+    .priority = interrupt_high_priority,
+    .channel = adc_channel_an0,
+    .clk = adc_conversion_clock_fosc_div_4,
+    .acq = adc_acq_12tad,
+    .ref = adc_internal_voltage_reference,
+    .format = adc_format_right
+};
+
+volatile uint16 res[4] = {0, 0, 0, 0};
+
+volatile uint8 ir_req = 0;
+
+int main(void) {
     Std_ReturnType ret = E_NOT_OK;
 
-    while (1) {
-        eeprom_write_one_byte(0x3FF, counter++);
-        eeprom_read_one_byte(0x3FF, &rest_counter);
-        _delay((unsigned long)((1000)*(8000000UL/4000.0)));
+    ret = adc_init(&adc1);
+    if(ret != E_OK){
+    }
+
+    ret = adc_start_conversion_interrupt(&adc1, adc_channel_an0);
+    if(ret != E_OK){
+    }
+
+    while(1){
     }
 
     return (0);
+}
+
+void adc_app_interrupt(void){
+    Std_ReturnType ret = E_NOT_OK;
+
+    ret = adc_get_conversion_result(&adc1, &res[ir_req]);
+
+    ir_req++;
+    if(ir_req > 3) ir_req = 0;
+
+    ret = adc_set_channel(&adc1, (adc_channel)ir_req);
+
+    ret = adc_start_conversion(&adc1);
+
+    (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
 }

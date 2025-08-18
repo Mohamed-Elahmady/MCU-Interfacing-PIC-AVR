@@ -16,7 +16,7 @@
 
 /******************* Section 2 : Macros Declarations *******************/
 
-#define F_CPU 4000000UL
+//#define F_CPU 4000000UL
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

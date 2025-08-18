@@ -28,9 +28,13 @@
 
 /******************* Section 5 : Software Interfaces Declarations (APIs) *******************/
 
+// For external interrupt
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
+
+// For internal interrupt
+void ADC_ISR(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

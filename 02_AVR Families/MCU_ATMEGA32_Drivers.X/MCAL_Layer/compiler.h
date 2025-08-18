@@ -13,6 +13,7 @@
 /******************* Section 1 : Includes *******************/
 
 #include <xc.h>
+#include "avr/io.h"
 #include <util/delay.h>
 
 /******************* Section 2 : Macros Declarations *******************/

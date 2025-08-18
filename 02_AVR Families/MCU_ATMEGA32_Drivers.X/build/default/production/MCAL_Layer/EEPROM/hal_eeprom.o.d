@@ -18,6 +18,7 @@ build/default/production/MCAL_Layer/EEPROM/hal_eeprom.o.d \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/common.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/fuse.h \
  /Applications/microchip/xc8/v3.00/avr/avr/include/avr/lock.h \
+ MCAL_Layer/EEPROM/../Interrupt/hal_interrupt_gen_cfg.h \
  MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h \
  MCAL_Layer/EEPROM/../Interrupt/../GPIO/../mcal_std_types.h \
  MCAL_Layer/EEPROM/../Interrupt/../GPIO/../mcal_std_libraries.h \
@@ -73,6 +74,8 @@ MCAL_Layer/EEPROM/../Interrupt/hal_interrupt_cfg.h:
 /Applications/microchip/xc8/v3.00/avr/avr/include/avr/fuse.h:
 
 /Applications/microchip/xc8/v3.00/avr/avr/include/avr/lock.h:
+
+MCAL_Layer/EEPROM/../Interrupt/hal_interrupt_gen_cfg.h:
 
 MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h:
 

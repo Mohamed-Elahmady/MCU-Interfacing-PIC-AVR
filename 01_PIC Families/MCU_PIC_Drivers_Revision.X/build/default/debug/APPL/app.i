@@ -5549,7 +5549,7 @@ unsigned char __t3rd16on(void);
 # 34 "/Applications/microchip/xc8/v3.00/pic/include/xc.h" 2 3
 # 16 "APPL/../ECUAL/LED/../../MCAL/GPIO/../compiler.h" 2
 # 17 "APPL/../ECUAL/LED/../../MCAL/GPIO/../mcal_std_types.h" 2
-# 105 "APPL/../ECUAL/LED/../../MCAL/GPIO/../mcal_std_types.h"
+# 110 "APPL/../ECUAL/LED/../../MCAL/GPIO/../mcal_std_types.h"
 typedef _Bool boolean;
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -5581,7 +5581,7 @@ typedef enum{
 # 16 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h" 2
 # 1 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio_cfg.h" 1
 # 17 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h" 2
-# 38 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h"
+# 35 "APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h"
 extern volatile uint8 * const tris_regs[(uint8)0x05];
 extern volatile uint8 * const port_regs[(uint8)0x05];
 extern volatile uint8 * const lat_regs[(uint8)0x05];
@@ -5830,7 +5830,7 @@ Std_ReturnType convert_integer_to_string(uint32 data, uint8 *str);
 # 17 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h"
 # 1 "APPL/../MCAL/INTERRUPT/hal_interrupt_gen_cfg.h" 1
 # 18 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h" 2
-# 62 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h"
+# 67 "APPL/../MCAL/INTERRUPT/hal_interrupt_cfg.h"
 typedef enum{
     interrupt_low_priority = (uint8)0x00,
     interrupt_high_priority = (uint8)0x01
@@ -5888,49 +5888,26 @@ Std_ReturnType external_interrupt_rbx_deinit(const interrupt_rbx *inter);
 # 24 "APPL/app.h" 2
 # 1 "APPL/../MCAL/INTERRUPT/hal_int_interrupt.h" 1
 # 25 "APPL/app.h" 2
+
+# 1 "APPL/../MCAL/EEPROM/hal_eeprom.h" 1
+# 16 "APPL/../MCAL/EEPROM/hal_eeprom.h"
+# 1 "APPL/../MCAL/EEPROM/hal_eeprom_cfg.h" 1
+# 17 "APPL/../MCAL/EEPROM/hal_eeprom.h" 2
+# 44 "APPL/../MCAL/EEPROM/hal_eeprom.h"
+Std_ReturnType eeprom_write_one_byte(uint16 ee_add, uint8 ee_data);
+Std_ReturnType eeprom_read_one_byte(uint16 ee_add, uint8 *ee_data);
+# 27 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
-void int0_app_isr(void);
-void int1_app_isr(void);
-void int2_app_isr(void);
-
-gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-gpio_led led2 = {.pin.port = gpio_portC, .pin.pin = gpio_pin1, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-gpio_led led3 = {.pin.port = gpio_portC, .pin.pin = gpio_pin2, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-
-interrupt_intx int0_ob = {.intx_isr = int0_app_isr,.pin.port = gpio_portB, .pin.pin = gpio_pin0, .pin.direction = gpio_input,
-                          .src = interrupt_int0, .edg = interrupt_rising_edge, .priority = interrupt_high_priority};
-
-interrupt_intx int1_ob = {.intx_isr = int1_app_isr, .pin.port = gpio_portB, .pin.pin = gpio_pin1, .pin.direction = gpio_input,
-                          .src = interrupt_int1, .edg = interrupt_falling_edge, .priority = interrupt_low_priority};
-
-interrupt_intx int2_ob = {.intx_isr = int2_app_isr, .pin.port = gpio_portB, .pin.pin = gpio_pin2, .pin.direction = gpio_input,
-                          .src = interrupt_int2, .edg = interrupt_rising_edge, .priority = interrupt_high_priority};
+uint8 counter = 0;
+uint8 rest_counter = 0;
 
 int main() {
     Std_ReturnType ret = E_NOT_OK;
-    ret = external_interrupt_intx_init(&int0_ob);
-    ret = external_interrupt_intx_init(&int1_ob);
-    ret = external_interrupt_intx_init(&int2_ob);
-    ret = gpio_led_init(&led1);
-    ret = gpio_led_init(&led2);
-    ret = gpio_led_init(&led3);
+
     while (1) {
 
     }
 
     return (0);
-}
-
-
-void int0_app_isr(void){
-    gpio_led_turn_toggle(&led1);
-}
-
-void int1_app_isr(void){
-    gpio_led_turn_toggle(&led2);
-}
-
-void int2_app_isr(void){
-    gpio_led_turn_toggle(&led3);
 }

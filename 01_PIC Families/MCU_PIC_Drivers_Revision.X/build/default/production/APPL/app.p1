@@ -1,19 +1,49 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F4025 `(v ~T0 @X0 0 tf ]
+"5 APPL/app.c
+[; ;APPL/app.c: 5: adc_cfg adc1 = {
+[c E3919 0 1 .. ]
+[n E3919 . interrupt_low_priority interrupt_high_priority  ]
+[c E3977 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3977 . adc_channel_an0 adc_channel_an1 adc_channel_an2 adc_channel_an3 adc_channel_an4 adc_channel_an5 adc_channel_an6 adc_channel_an7 adc_channel_an8 adc_channel_an9 adc_channel_an10 adc_channel_an11 adc_channel_an12  ]
+[c E3996 0 1 2 3 4 5 6 .. ]
+[n E3996 . adc_conversion_clock_fosc_div_2 adc_conversion_clock_fosc_div_8 adc_conversion_clock_fosc_div_32 adc_conversion_clock_fosc_div_frc adc_conversion_clock_fosc_div_4 adc_conversion_clock_fosc_div_16 adc_conversion_clock_fosc_div_64  ]
+[c E4005 0 1 2 3 4 5 6 7 .. ]
+[n E4005 . adc_acq_0tad adc_acq_2tad adc_acq_4tad adc_acq_6tad adc_acq_8tad adc_acq_12tad adc_acq_16tad adc_acq_20tad  ]
+[c E3992 0 1 .. ]
+[n E3992 . adc_internal_voltage_reference adc_external_voltage_reference  ]
+[c E4015 0 1 .. ]
+[n E4015 . adc_format_left adc_format_right  ]
+"127 APPL/../MCAL/ADC/hal_adc.h
+[; ;APPL/../MCAL/ADC/hal_adc.h: 127: typedef struct{
+[s S317 `*F4025 1 `E3919 1 `E3977 1 `E3996 1 `E4005 1 `E3992 1 `E4015 1 ]
+[n S317 . adc_interrupt priority channel clk acq ref format ]
+"3 APPL/app.c
+[; ;APPL/app.c: 3: void adc_app_interrupt(void);
+[v _adc_app_interrupt `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"14 APPL/app.c
-[; ;APPL/app.c: 14:     Std_ReturnType ret = E_NOT_OK;
+"20
+[; ;APPL/app.c: 20:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"44 APPL/../MCAL/EEPROM/hal_eeprom.h
-[; ;APPL/../MCAL/EEPROM/hal_eeprom.h: 44: Std_ReturnType eeprom_write_one_byte(uint16 ee_add, uint8 ee_data);
-[v _eeprom_write_one_byte `(E3659 ~T0 @X0 0 ef2`us`uc ]
-"45
-[; ;APPL/../MCAL/EEPROM/hal_eeprom.h: 45: Std_ReturnType eeprom_read_one_byte(uint16 ee_add, uint8 *ee_data);
-[v _eeprom_read_one_byte `(E3659 ~T0 @X0 0 ef2`us`*uc ]
-[v F3624 `(v ~T0 @X0 1 tf1`ul ]
-"20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
-[v __delay `JF3624 ~T0 @X0 0 e ]
-[p i __delay ]
+"141 APPL/../MCAL/ADC/hal_adc.h
+[; ;APPL/../MCAL/ADC/hal_adc.h: 141: Std_ReturnType adc_init(const adc_cfg *adc);
+[v _adc_init `(E3659 ~T0 @X0 0 ef1`*CS317 ]
+"148
+[; ;APPL/../MCAL/ADC/hal_adc.h: 148: Std_ReturnType adc_start_conversion_interrupt(const adc_cfg *adc, adc_channel channel);
+[v _adc_start_conversion_interrupt `(E3659 ~T0 @X0 0 ef2`*CS317`E3977 ]
+"146
+[; ;APPL/../MCAL/ADC/hal_adc.h: 146: Std_ReturnType adc_get_conversion_result(const adc_cfg *adc, uint16 *result);
+[v _adc_get_conversion_result `(E3659 ~T0 @X0 0 ef2`*CS317`*us ]
+"143
+[; ;APPL/../MCAL/ADC/hal_adc.h: 143: Std_ReturnType adc_set_channel(const adc_cfg *adc, adc_channel channel);
+[v _adc_set_channel `(E3659 ~T0 @X0 0 ef2`*CS317`E3977 ]
+"144
+[; ;APPL/../MCAL/ADC/hal_adc.h: 144: Std_ReturnType adc_start_conversion(const adc_cfg *adc);
+[v _adc_start_conversion `(E3659 ~T0 @X0 0 ef1`*CS317 ]
+"3219 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
+[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 3219: extern volatile unsigned char PIR1 __attribute__((address(0xF9E)));
+[v _PIR1 `Vuc ~T0 @X0 0 e@3998 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -455,53 +485,121 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 APPL/app.c
-[; ;APPL/app.c: 10: uint8 counter = 0;
-[v _counter `uc ~T0 @X0 1 e ]
-[i _counter
--> -> 0 `i `uc
+"5 APPL/app.c
+[; ;APPL/app.c: 5: adc_cfg adc1 = {
+[v _adc1 `S317 ~T0 @X0 1 e ]
+[i _adc1
+:U ..
+:U ..
+&U _adc_app_interrupt
+. `E3919 1
+. `E3977 0
+. `E3996 4
+. `E4005 5
+. `E3992 0
+. `E4015 1
+..
+..
 ]
-"11
-[; ;APPL/app.c: 11: uint8 rest_counter = 0;
-[v _rest_counter `uc ~T0 @X0 1 e ]
-[i _rest_counter
+"15
+[; ;APPL/app.c: 15: volatile uint16 res[4] = {0, 0, 0, 0};
+[v _res `Vus ~T0 @X0 -> 4 `i e ]
+[i _res
+:U ..
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+..
+]
+"17
+[; ;APPL/app.c: 17: volatile uint8 ir_req = 0;
+[v _ir_req `Vuc ~T0 @X0 1 e ]
+[i _ir_req
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"13
-[; ;APPL/app.c: 13: int main() {
+"19
+[; ;APPL/app.c: 19: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"14
-[; ;APPL/app.c: 14:     Std_ReturnType ret = E_NOT_OK;
+"20
+[; ;APPL/app.c: 20:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"16
-[; ;APPL/app.c: 16:     while (1) {
-[e :U 319 ]
-{
-"17
-[; ;APPL/app.c: 17:         eeprom_write_one_byte(0x3FF, counter++);
-[e ( _eeprom_write_one_byte (2 , -> -> 1023 `i `us ++ _counter -> -> 1 `i `uc ]
-"18
-[; ;APPL/app.c: 18:         eeprom_read_one_byte(0x3FF, &rest_counter);
-[e ( _eeprom_read_one_byte (2 , -> -> 1023 `i `us &U _rest_counter ]
-"19
-[; ;APPL/app.c: 19:         _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"20
-[; ;APPL/app.c: 20:     }
-}
-[e :U 318 ]
-[e $U 319  ]
-[e :U 320 ]
 "22
-[; ;APPL/app.c: 22:     return (0);
-[e ) -> 0 `i ]
-[e $UE 317  ]
+[; ;APPL/app.c: 22:     ret = adc_init(&adc1);
+[e = _ret ( _adc_init (1 -> &U _adc1 `*CS317 ]
 "23
-[; ;APPL/app.c: 23: }
-[e :UE 317 ]
+[; ;APPL/app.c: 23:     if(ret != E_OK){
+[e $ ! != -> _ret `ui -> . `E3659 1 `ui 319  ]
+{
+"24
+[; ;APPL/app.c: 24:     }
+}
+[e :U 319 ]
+"26
+[; ;APPL/app.c: 26:     ret = adc_start_conversion_interrupt(&adc1, adc_channel_an0);
+[e = _ret ( _adc_start_conversion_interrupt (2 , -> &U _adc1 `*CS317 . `E3977 0 ]
+"27
+[; ;APPL/app.c: 27:     if(ret != E_OK){
+[e $ ! != -> _ret `ui -> . `E3659 1 `ui 320  ]
+{
+"28
+[; ;APPL/app.c: 28:     }
+}
+[e :U 320 ]
+"30
+[; ;APPL/app.c: 30:     while(1){
+[e :U 322 ]
+{
+"31
+[; ;APPL/app.c: 31:     }
+}
+[e :U 321 ]
+[e $U 322  ]
+[e :U 323 ]
+"33
+[; ;APPL/app.c: 33:     return (0);
+[e ) -> 0 `i ]
+[e $UE 318  ]
+"34
+[; ;APPL/app.c: 34: }
+[e :UE 318 ]
+}
+"36
+[; ;APPL/app.c: 36: void adc_app_interrupt(void){
+[v _adc_app_interrupt `(v ~T0 @X0 1 ef ]
+{
+[e :U _adc_app_interrupt ]
+[f ]
+"37
+[; ;APPL/app.c: 37:     Std_ReturnType ret = E_NOT_OK;
+[v _ret `E3659 ~T0 @X0 1 a ]
+[e = _ret . `E3659 0 ]
+"39
+[; ;APPL/app.c: 39:     ret = adc_get_conversion_result(&adc1, &res[ir_req]);
+[e = _ret ( _adc_get_conversion_result (2 , -> &U _adc1 `*CS317 -> &U *U + &U _res * -> _ir_req `ux -> -> # *U &U _res `ui `ux `*us ]
+"41
+[; ;APPL/app.c: 41:     ir_req++;
+[e ++ _ir_req -> -> 1 `i `Vuc ]
+"42
+[; ;APPL/app.c: 42:     if(ir_req > 3) ir_req = 0;
+[e $ ! > -> _ir_req `i -> 3 `i 325  ]
+[e = _ir_req -> -> 0 `i `uc ]
+[e :U 325 ]
+"44
+[; ;APPL/app.c: 44:     ret = adc_set_channel(&adc1, (adc_channel)ir_req);
+[e = _ret ( _adc_set_channel (2 , -> &U _adc1 `*CS317 -> _ir_req `E3977 ]
+"46
+[; ;APPL/app.c: 46:     ret = adc_start_conversion(&adc1);
+[e = _ret ( _adc_start_conversion (1 -> &U _adc1 `*CS317 ]
+"48
+[; ;APPL/app.c: 48:     (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
+[e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `i `Vuc ]
+"49
+[; ;APPL/app.c: 49: }
+[e :UE 324 ]
 }

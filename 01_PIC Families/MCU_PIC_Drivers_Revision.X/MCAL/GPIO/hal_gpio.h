@@ -28,10 +28,7 @@
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 
-#define set_bit(reg, bit_pos)                    (reg |= (uint8)(bit_mask << bit_pos))
-#define clear_bit(reg, bit_pos)                  (reg &= ~(uint8)(bit_mask << bit_pos))
-#define toggle_bit(reg, bit_pos)                 (reg ^= (uint8)(bit_mask << bit_pos))
-#define read_bit(reg, bit_pos)                   ((reg >> bit_pos) & (uint8)bit_mask)
+
 
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 

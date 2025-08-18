@@ -38,6 +38,10 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>MCAL/ADC/hal_adc.h</itemPath>
+          <itemPath>MCAL/ADC/hal_adc_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="eeprom" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL/EEPROM/hal_eeprom.h</itemPath>
           <itemPath>MCAL/EEPROM/hal_eeprom_cfg.h</itemPath>
@@ -99,6 +103,9 @@
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
+        <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
+          <itemPath>MCAL/ADC/hal_adc.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL/EEPROM/hal_eeprom.c</itemPath>
         </logicalFolder>

@@ -1,64 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"72 APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h
-[; ;APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 72: typedef struct{
-[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S306 . port pin direction logic ]
-"14 APPL/app.c
-[; ;APPL/app.c: 14: gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-[c E3736 0 1 .. ]
-[n E3736 . led_off led_on  ]
-[c E3740 0 1 .. ]
-[n E3740 . led_sink led_source  ]
-"38 APPL/../ECUAL/LED/ecual_led.h
-[; ;APPL/../ECUAL/LED/ecual_led.h: 38: typedef struct{
-[s S307 `S306 1 `E3736 1 `E3740 1 ]
-[n S307 . pin state con ]
-"14 APPL/app.c
-[; ;APPL/app.c: 14: gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-[c E3672 0 1 2 3 4 .. ]
-[n E3672 . gpio_portA gpio_portB gpio_portC gpio_portD gpio_portE  ]
-[c E3679 0 1 2 3 4 5 6 7 .. ]
-[n E3679 . gpio_pin0 gpio_pin1 gpio_pin2 gpio_pin3 gpio_pin4 gpio_pin5 gpio_pin6 gpio_pin7  ]
-[c E3689 0 1 .. ]
-[n E3689 . gpio_output gpio_input  ]
-[c E3693 0 1 .. ]
-[n E3693 . gpio_low gpio_high  ]
-[v F3945 `(v ~T0 @X0 0 tf ]
-"18
-[; ;APPL/app.c: 18: interrupt_intx int0_ob = {.intx_isr = int0_app_isr,.pin.port = gpio_portB, .pin.pin = gpio_pin0, .pin.direction = gpio_input,
-[c E3925 0 1 2 .. ]
-[n E3925 . interrupt_int0 interrupt_int1 interrupt_int2  ]
-[c E3936 0 1 .. ]
-[n E3936 . interrupt_falling_edge interrupt_rising_edge  ]
-[c E3919 0 1 .. ]
-[n E3919 . interrupt_low_priority interrupt_high_priority  ]
-"120 APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h
-[; ;APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h: 120: typedef struct{
-[s S315 `*F3945 1 `S306 1 `E3925 1 `E3936 1 `E3919 1 ]
-[n S315 . intx_isr pin src edg priority ]
-"10 APPL/app.c
-[; ;APPL/app.c: 10: void int0_app_isr(void);
-[v _int0_app_isr `(v ~T0 @X0 0 ef ]
-"11
-[; ;APPL/app.c: 11: void int1_app_isr(void);
-[v _int1_app_isr `(v ~T0 @X0 0 ef ]
-"12
-[; ;APPL/app.c: 12: void int2_app_isr(void);
-[v _int2_app_isr `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"28
-[; ;APPL/app.c: 28:     Std_ReturnType ret = E_NOT_OK;
+"14 APPL/app.c
+[; ;APPL/app.c: 14:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"139 APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h
-[; ;APPL/../MCAL/INTERRUPT/hal_ext_interrupt.h: 139: Std_ReturnType external_interrupt_intx_init(const interrupt_intx *inter);
-[v _external_interrupt_intx_init `(E3659 ~T0 @X0 0 ef1`*CS315 ]
-"46 APPL/../ECUAL/LED/ecual_led.h
-[; ;APPL/../ECUAL/LED/ecual_led.h: 46: Std_ReturnType gpio_led_init(const gpio_led *led);
-[v _gpio_led_init `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"50
-[; ;APPL/../ECUAL/LED/ecual_led.h: 50: Std_ReturnType gpio_led_turn_toggle(const gpio_led *led);
-[v _gpio_led_turn_toggle `(E3659 ~T0 @X0 0 ef1`*CS307 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -500,206 +445,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"14 APPL/app.c
-[; ;APPL/app.c: 14: gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-[v _led1 `S307 ~T0 @X0 1 e ]
-[i _led1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3672 2 `uc
--> . `E3679 0 `uc
--> . `E3689 0 `uc
--> . `E3693 0 `uc
-..
-..
-. `E3736 0
-. `E3740 1
-..
-..
+"10 APPL/app.c
+[; ;APPL/app.c: 10: uint8 counter = 0;
+[v _counter `uc ~T0 @X0 1 e ]
+[i _counter
+-> -> 0 `i `uc
 ]
-"15
-[; ;APPL/app.c: 15: gpio_led led2 = {.pin.port = gpio_portC, .pin.pin = gpio_pin1, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-[v _led2 `S307 ~T0 @X0 1 e ]
-[i _led2
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3672 2 `uc
--> . `E3679 1 `uc
--> . `E3689 0 `uc
--> . `E3693 0 `uc
-..
-..
-. `E3736 0
-. `E3740 1
-..
-..
-]
-"16
-[; ;APPL/app.c: 16: gpio_led led3 = {.pin.port = gpio_portC, .pin.pin = gpio_pin2, .pin.direction = gpio_output, .pin.logic = gpio_low, .con =led_source, .state = led_off};
-[v _led3 `S307 ~T0 @X0 1 e ]
-[i _led3
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3672 2 `uc
--> . `E3679 2 `uc
--> . `E3689 0 `uc
--> . `E3693 0 `uc
-..
-..
-. `E3736 0
-. `E3740 1
-..
-..
-]
-"18
-[; ;APPL/app.c: 18: interrupt_intx int0_ob = {.intx_isr = int0_app_isr,.pin.port = gpio_portB, .pin.pin = gpio_pin0, .pin.direction = gpio_input,
-[v _int0_ob `S315 ~T0 @X0 1 e ]
-[i _int0_ob
-:U ..
-:U ..
-&U _int0_app_isr
-:U ..
-:U ..
--> . `E3672 1 `uc
--> . `E3679 0 `uc
--> . `E3689 1 `uc
-..
-..
-. `E3925 0
-. `E3936 1
-. `E3919 1
-..
-..
-]
-"21
-[; ;APPL/app.c: 21: interrupt_intx int1_ob = {.intx_isr = int1_app_isr, .pin.port = gpio_portB, .pin.pin = gpio_pin1, .pin.direction = gpio_input,
-[v _int1_ob `S315 ~T0 @X0 1 e ]
-[i _int1_ob
-:U ..
-:U ..
-&U _int1_app_isr
-:U ..
-:U ..
--> . `E3672 1 `uc
--> . `E3679 1 `uc
--> . `E3689 1 `uc
-..
-..
-. `E3925 1
-. `E3936 0
-. `E3919 0
-..
-..
-]
-"24
-[; ;APPL/app.c: 24: interrupt_intx int2_ob = {.intx_isr = int2_app_isr, .pin.port = gpio_portB, .pin.pin = gpio_pin2, .pin.direction = gpio_input,
-[v _int2_ob `S315 ~T0 @X0 1 e ]
-[i _int2_ob
-:U ..
-:U ..
-&U _int2_app_isr
-:U ..
-:U ..
--> . `E3672 1 `uc
--> . `E3679 2 `uc
--> . `E3689 1 `uc
-..
-..
-. `E3925 2
-. `E3936 1
-. `E3919 1
-..
-..
+"11
+[; ;APPL/app.c: 11: uint8 rest_counter = 0;
+[v _rest_counter `uc ~T0 @X0 1 e ]
+[i _rest_counter
+-> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"27
-[; ;APPL/app.c: 27: int main() {
+"13
+[; ;APPL/app.c: 13: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"28
-[; ;APPL/app.c: 28:     Std_ReturnType ret = E_NOT_OK;
+"14
+[; ;APPL/app.c: 14:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"29
-[; ;APPL/app.c: 29:     ret = external_interrupt_intx_init(&int0_ob);
-[e = _ret ( _external_interrupt_intx_init (1 -> &U _int0_ob `*CS315 ]
-"30
-[; ;APPL/app.c: 30:     ret = external_interrupt_intx_init(&int1_ob);
-[e = _ret ( _external_interrupt_intx_init (1 -> &U _int1_ob `*CS315 ]
-"31
-[; ;APPL/app.c: 31:     ret = external_interrupt_intx_init(&int2_ob);
-[e = _ret ( _external_interrupt_intx_init (1 -> &U _int2_ob `*CS315 ]
-"32
-[; ;APPL/app.c: 32:     ret = gpio_led_init(&led1);
-[e = _ret ( _gpio_led_init (1 -> &U _led1 `*CS307 ]
-"33
-[; ;APPL/app.c: 33:     ret = gpio_led_init(&led2);
-[e = _ret ( _gpio_led_init (1 -> &U _led2 `*CS307 ]
-"34
-[; ;APPL/app.c: 34:     ret = gpio_led_init(&led3);
-[e = _ret ( _gpio_led_init (1 -> &U _led3 `*CS307 ]
-"35
-[; ;APPL/app.c: 35:     while (1) {
+"16
+[; ;APPL/app.c: 16:     while (1) {
 [e :U 319 ]
 {
-"37
-[; ;APPL/app.c: 37:     }
+"18
+[; ;APPL/app.c: 18:     }
 }
 [e :U 318 ]
 [e $U 319  ]
 [e :U 320 ]
-"39
-[; ;APPL/app.c: 39:     return (0);
+"20
+[; ;APPL/app.c: 20:     return (0);
 [e ) -> 0 `i ]
 [e $UE 317  ]
-"40
-[; ;APPL/app.c: 40: }
+"21
+[; ;APPL/app.c: 21: }
 [e :UE 317 ]
-}
-"43
-[; ;APPL/app.c: 43: void int0_app_isr(void){
-[v _int0_app_isr `(v ~T0 @X0 1 ef ]
-{
-[e :U _int0_app_isr ]
-[f ]
-"44
-[; ;APPL/app.c: 44:     gpio_led_turn_toggle(&led1);
-[e ( _gpio_led_turn_toggle (1 -> &U _led1 `*CS307 ]
-"45
-[; ;APPL/app.c: 45: }
-[e :UE 321 ]
-}
-"47
-[; ;APPL/app.c: 47: void int1_app_isr(void){
-[v _int1_app_isr `(v ~T0 @X0 1 ef ]
-{
-[e :U _int1_app_isr ]
-[f ]
-"48
-[; ;APPL/app.c: 48:     gpio_led_turn_toggle(&led2);
-[e ( _gpio_led_turn_toggle (1 -> &U _led2 `*CS307 ]
-"49
-[; ;APPL/app.c: 49: }
-[e :UE 322 ]
-}
-"51
-[; ;APPL/app.c: 51: void int2_app_isr(void){
-[v _int2_app_isr `(v ~T0 @X0 1 ef ]
-{
-[e :U _int2_app_isr ]
-[f ]
-"52
-[; ;APPL/app.c: 52:     gpio_led_turn_toggle(&led3);
-[e ( _gpio_led_turn_toggle (1 -> &U _led3 `*CS307 ]
-"53
-[; ;APPL/app.c: 53: }
-[e :UE 323 ]
 }

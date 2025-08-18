@@ -31,6 +31,12 @@ void __interrupt() interrupt_manager_high(void) {
         int0_isr();
     }
     else { /* Nothing*/ }
+    
+    // for ADC internal interrupt
+    if ((PIR1bits.ADIF == interrupt_occur) && (PIE1bits.ADIE == interrupt_enable)) {
+        adc_isr();
+    }
+    else { /* Nothing*/ }
 
     if ((INTCON3bits.INT2IF == interrupt_occur) && (INTCON3bits.INT2IE == interrupt_enable)) {
         int2_isr();
@@ -110,10 +116,15 @@ void __interrupt(low_priority) interrupt_manager_low(void) {
 #elif ((interrupt_feature_disable) == (interrupt_priority_levels))
 
 void __interrupt() interrupt_manager(void) {
-    // FOR EXT INTX
     
     if ((INTCONbits.INT0IF == interrupt_occur) && (INTCONbits.INT0IE == interrupt_enable)) {
         int0_isr();
+    }
+    else { /* Nothing*/ }
+    
+    // for ADC internal interrupt
+    if ((PIR1bits.ADIF == interrupt_occur) && (PIE1bits.ADIE == interrupt_enable)) {
+        adc_isr();
     }
     else { /* Nothing*/ }
 

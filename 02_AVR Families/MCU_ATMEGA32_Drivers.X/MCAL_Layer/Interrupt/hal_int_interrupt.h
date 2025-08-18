@@ -16,7 +16,13 @@
 
 /******************* Section 2 : Macros Declarations *******************/
 
+// Internal Interrupts
 
+// 1. For ADC Interrupt
+#define Internal_Interrupt_ADC_Clear_Flag()                 Clear_Bit(ADCSRA, ADIF)
+
+#define Internal_Interrupt_ADC_Disable()                    Clear_Bit(ADCSRA, ADIE)
+#define Internal_Interrupt_ADC_Enable()                     Set_Bit(ADCSRA, ADIE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

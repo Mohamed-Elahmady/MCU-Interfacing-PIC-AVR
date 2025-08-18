@@ -111,9 +111,9 @@ Std_ReturnType GPIO_LCD_8BIT_SEND_STRING(const CHR_LCD_8BIT *lcd, uint8 *str);
 Std_ReturnType GPIO_LCD_8BIT_SEND_STRING_POS(const CHR_LCD_8BIT *lcd, uint8 *str, uint8 row, uint8 col);
 Std_ReturnType GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_8BIT *lcd, const uint8 c_character[], uint8 row, uint8 col, uint8 ram_pos);
 
-Std_ReturnType convert_byte_to_string(uint8 data, uint8 *str);
-Std_ReturnType convert_short_to_string(uint16 data, uint8 *str);
-Std_ReturnType convert_integer_to_string(uint32 data, uint8 *str);
+Std_ReturnType convert_uint8_to_string(uint8 data, uint8 *str);
+Std_ReturnType convert_uint16_to_string(uint16 data, uint8 *str);
+Std_ReturnType convert_uint32_to_string(uint32 data, uint8 *str);
 
 #endif	/* GPIO_CHR_LCD_H */
 

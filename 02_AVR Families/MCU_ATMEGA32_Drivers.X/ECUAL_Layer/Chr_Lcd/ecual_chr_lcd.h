@@ -109,9 +109,9 @@ Std_ReturnType GPIO_Chr_Lcd_8Bit_Send_String(const Chr_Lcd_8Bit *lcd, uint8 *str
 Std_ReturnType GPIO_Chr_Lcd_8Bit_Send_String_Pos(const Chr_Lcd_8Bit *lcd, uint8 *str, uint8 row, uint8 col);
 Std_ReturnType GPIO_Chr_Lcd_8Bit_Send_Custom_Character(const Chr_Lcd_8Bit *lcd, uint8 symbol[], uint8 row, uint8 col, uint8 ram_pos);
 
-Std_ReturnType Convert_Byte_To_String(uint8 data, uint8 *str);
-Std_ReturnType Convert_Short_To_String(uint16 data, uint8 *str);
-Std_ReturnType Convert_Integer_To_String(uint32 data, uint8 *str);
+Std_ReturnType Convert_uint8_To_String(uint8 data, uint8 *str);
+Std_ReturnType Convert_uint16_To_String(uint16 data, uint8 *str);
+Std_ReturnType Convert_uint32_To_String(uint32 data, uint8 *str);
 
 #endif	/* ECUAL_CHR_LCD_H */
 

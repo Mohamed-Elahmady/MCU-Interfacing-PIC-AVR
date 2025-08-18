@@ -13,6 +13,7 @@
 /******************* Section 1 : Includes *******************/
 
 #include <avr/interrupt.h>
+#include "hal_interrupt_gen_cfg.h"
 #include "../GPIO/hal_gpio.h"
 #include "../mcal_std_types.h"
 #include "../device_cfg.h"
@@ -20,12 +21,6 @@
 /******************* Section 2 : Macros Declarations *******************/
 
 #define Sreg_Interrupt_Enable_Bit_Pos            (uint8)0x07
-
-// Interrupt Features
-#define Interrupt_Feature_Disable                0x00
-#define Interrupt_Feature_Enable                 0x01
-
-#define External_Interrupt_INTX                  (Interrupt_Feature_Enable)
 
 // Flag Bit
 #define Interrupt_Not_Occur                      (uint8)0x00

@@ -17,7 +17,7 @@
 //    GPIO_LCD_8BIT_SEND_STRING_POS(&lcd2, "Counter : ", 1, 1);
 //    while (1) {
 //
-//        convert_byte_to_string(counter, counter_str);
+//        convert_uint8_to_string(counter, counter_str);
 //        GPIO_LCD_8BIT_SEND_STRING_POS(&lcd2, counter_str, 1, 11);
 //        counter++;
 //        __delay_ms(200);

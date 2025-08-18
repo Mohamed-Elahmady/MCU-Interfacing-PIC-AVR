@@ -25,6 +25,8 @@
 
 #include "../MCAL_Layer/EEPROM/hal_eeprom.h"
 
+#include "../MCAL_Layer/ADC/hal_adc.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

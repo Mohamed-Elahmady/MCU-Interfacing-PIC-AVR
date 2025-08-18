@@ -5631,7 +5631,7 @@ typedef enum {
     INTERRUPT_HIGH_PRIORITY = (uint8)0x01
 }INTERRUPT_PRIORITY;
 # 16 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.h" 2
-# 31 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.h"
+# 32 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.h"
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
@@ -5639,6 +5639,8 @@ void RB4_ISR(uint8 change);
 void RB5_ISR(uint8 change);
 void RB6_ISR(uint8 change);
 void RB7_ISR(uint8 change);
+
+void ADC_ISR(void);
 # 11 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c" 2
 
 
@@ -5647,10 +5649,16 @@ static volatile uint8 RB4_ISR_FLAG = 0x01;
 static volatile uint8 RB5_ISR_FLAG = 0x01;
 static volatile uint8 RB6_ISR_FLAG = 0x01;
 static volatile uint8 RB7_ISR_FLAG = 0x01;
-# 106 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+# 111 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
+
     if((INTCONbits.INT0IF == 0x01) && (INTCONbits.INT0IE == 0x01)){
         INT0_ISR();
+    }
+    else{ }
+
+    if((PIR1bits.ADIF == 0x01) && (PIE1bits.ADIE == 0x01)){
+        ADC_ISR();
     }
     else{ }
 

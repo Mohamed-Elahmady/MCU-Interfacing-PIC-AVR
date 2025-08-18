@@ -324,38 +324,65 @@ Std_ReturnType GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_8BIT *lcd, cons
 
 #endif
 
-Std_ReturnType convert_byte_to_string(uint8 data, uint8 *str){
+Std_ReturnType convert_uint8_to_string(uint8 data, uint8 *str){
     Std_ReturnType Retval = E_OK;
     if(NULL == str){
         Retval = E_NOT_OK;
     }
     else{
-        memset(str, '\0', 4);
-        sprintf(str, "%i", data);
+        uint8 Null_data[4] = {0};
+        uint8 Data_Counter = 0;
+        
+        memset(str, ' ', 3);
+        str[3] = '\0';
+        sprintf(Null_data, "%i", data);
+        
+        while(Null_data[Data_Counter] != '\0'){
+            str[Data_Counter] = Null_data[Data_Counter];
+            Data_Counter++;
+        }
     }
     return Retval;
 }
 
-Std_ReturnType convert_short_to_string(uint16 data, uint8 *str){
+Std_ReturnType convert_uint16_to_string(uint16 data, uint8 *str){
     Std_ReturnType Retval = E_OK;
     if(NULL == str){
         Retval = E_NOT_OK;
     }
     else{
-        memset(str, '\0', 6);
-        sprintf(str, "%i", data);
+        uint8 Null_data[6] = {0};
+        uint8 Data_Counter = 0;
+        
+        memset(str, ' ', 5);
+        str[5] = '\0';
+        sprintf(Null_data, "%i", data);
+        
+        while(Null_data[Data_Counter] != '\0'){
+            str[Data_Counter] = Null_data[Data_Counter];
+            Data_Counter++;
+        }
     }
     return Retval;
 }
 
-Std_ReturnType convert_integer_to_string(uint32 data, uint8 *str){
+Std_ReturnType convert_uint32_to_string(uint32 data, uint8 *str){
     Std_ReturnType Retval = E_OK;
     if(NULL == str){
         Retval = E_NOT_OK;
     }
     else{
-        memset(str, '\0', 11);
-        sprintf(str, "%i", data);
+        uint8 Null_data[11] = {0};
+        uint8 Data_Counter = 0;
+        
+        memset(str, ' ', 10);
+        str[10] = '\0';
+        sprintf(Null_data, "%i", data);
+        
+        while(Null_data[Data_Counter] != '\0'){
+            str[Data_Counter] = Null_data[Data_Counter];
+            Data_Counter++;
+        }
     }
     return Retval;
 }

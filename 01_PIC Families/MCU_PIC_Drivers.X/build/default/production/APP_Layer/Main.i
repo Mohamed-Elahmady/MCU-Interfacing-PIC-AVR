@@ -5811,9 +5811,9 @@ Std_ReturnType GPIO_LCD_8BIT_SEND_STRING(const CHR_LCD_8BIT *lcd, uint8 *str);
 Std_ReturnType GPIO_LCD_8BIT_SEND_STRING_POS(const CHR_LCD_8BIT *lcd, uint8 *str, uint8 row, uint8 col);
 Std_ReturnType GPIO_LCD_8BIT_SEND_CUSTOM_CHARACTER(const CHR_LCD_8BIT *lcd, const uint8 c_character[], uint8 row, uint8 col, uint8 ram_pos);
 
-Std_ReturnType convert_byte_to_string(uint8 data, uint8 *str);
-Std_ReturnType convert_short_to_string(uint16 data, uint8 *str);
-Std_ReturnType convert_integer_to_string(uint32 data, uint8 *str);
+Std_ReturnType convert_uint8_to_string(uint8 data, uint8 *str);
+Std_ReturnType convert_uint16_to_string(uint16 data, uint8 *str);
+Std_ReturnType convert_uint32_to_string(uint32 data, uint8 *str);
 # 22 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
 
 # 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.h" 1
@@ -5889,132 +5889,132 @@ Std_ReturnType EXTERNAL_INTERRUPT_RBX_DEINIT(const INTERRUPT_RBX *int_pin);
 Std_ReturnType EEPROM_WRITE_1BYTE(uint16 EE_add, uint8 EE_data);
 Std_ReturnType EEPROM_READ_1BYTE(uint16 EE_add, uint8 *EE_data);
 # 27 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 41 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC.h" 2
+# 79 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC.h"
+typedef void ( *ADC_HANDLER)(void);
+
+
+typedef enum{
+    ADC_CHANNEL_AN0 = (uint8)0x00,
+    ADC_CHANNEL_AN1,
+
+    ADC_CHANNEL_AN2,
+    ADC_CHANNEL_AN3,
+
+    ADC_CHANNEL_AN4,
+    ADC_CHANNEL_AN5,
+    ADC_CHANNEL_AN6,
+    ADC_CHANNEL_AN7,
+    ADC_CHANNEL_AN8,
+    ADC_CHANNEL_AN9,
+    ADC_CHANNEL_AN10,
+    ADC_CHANNEL_AN11,
+    ADC_CHANNEL_AN12
+}ADC_CHANNEL_SELECT;
+
+typedef enum{
+    ADC_INTERNAL_VOLTAGE_REFERENCE = (uint8)0x00,
+    ADC_EXTERNAL_VOLTAGE_REFERENCE
+}ADC_VOLTAGE_REFERENCE;
+
+typedef enum{
+    ADC_ACQ_0TAD = (uint8)0x00,
+    ADC_ACQ_2TAD,
+    ADC_ACQ_4TAD,
+    ADC_ACQ_6TAD,
+    ADC_ACQ_8TAD,
+    ADC_ACQ_12TAD,
+    ADC_ACQ_16TAD,
+    ADC_ACQ_20TAD
+}ADC_ACQUISITION_TIME;
+
+typedef enum{
+    ADC_CONVERSION_CLOCK_FOSC_DIV_2 = (uint8)0x00,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_8,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_32,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_FRC,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_4,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_16,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_64
+}ADC_CONVERSION_CLOCK;
+
+typedef enum{
+    ADC_RESULT_FORMAT_LEFT = (uint8)0x00,
+    ADC_RESULT_FORMAT_RIGHT
+}ADC_RESULT_FORMAT;
+
+typedef enum{
+    ADC_CONVERSION_IN_PROGRESS = (uint8)0x00,
+    ADC_CONVERSION_SUCCESS
+}ADC_CONVERSION_STATES;
+
+typedef struct{
+
+    ADC_HANDLER ADC_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    ADC_CHANNEL_SELECT channel ;
+    ADC_ACQUISITION_TIME tad ;
+    ADC_CONVERSION_CLOCK clk ;
+    ADC_VOLTAGE_REFERENCE vref ;
+    ADC_RESULT_FORMAT format ;
+
+    uint8 ADC_RESERVED ;
+}ADC_CFG;
+
+
+
+Std_ReturnType ADC_INIT(const ADC_CFG *adc);
+Std_ReturnType ADC_DEINIT(const ADC_CFG *adc);
+Std_ReturnType ADC_SELECT_CHANNEL(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel);
+Std_ReturnType ADC_START_CONVERSION(const ADC_CFG *adc);
+Std_ReturnType ADC_IS_CONVERSION_DONE(const ADC_CFG *adc, ADC_CONVERSION_STATES *state);
+Std_ReturnType ADC_GET_CONVERSION_RESULT(const ADC_CFG *adc, uint16 *result);
+Std_ReturnType ADC_GET_CONVERSION_BLOCKING(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel, uint16 *result);
+Std_ReturnType ADC_START_CONVERSION_INTERRUPT(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel);
+# 29 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 43 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
-# 38 "APP_Layer/Main.h"
+# 27 "APP_Layer/Main.h"
+extern GPIO_LED led1;
+extern GPIO_BTN btn1;
+extern GPIO_RELAY relay1;
+extern GPIO_SEGMENT seg1;
+extern DC_MOTOR motor1;
+extern DC_MOTOR motor2;
+extern GPIO_KEYPAD keypad1;
+extern CHR_LCD_4BIT lcd1;
+extern CHR_LCD_8BIT lcd2;
+
+
+
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
-void INT0_APP_ISR(void);
-void INT1_APP_ISR(void);
-void INT2_APP_ISR(void);
-void RB4_APP_ISR_HIGH(void);
-void RB4_APP_ISR_LOW(void);
-void RB5_APP_ISR_HIGH(void);
-void RB5_APP_ISR_LOW(void);
-void RB6_APP_ISR_HIGH(void);
-void RB6_APP_ISR_LOW(void);
-void RB7_APP_ISR_HIGH(void);
-void RB7_APP_ISR_LOW(void);
-
 Std_ReturnType Ret = E_OK;
-
-GPIO_LED led1 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led2 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN1, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led3 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN2, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led4 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN3, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led5 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN4, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led6 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN5, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led7 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN6, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-GPIO_LED led8 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN7, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-INTERRUPT_INTX int0_ob = {.INTERRUPT_ISR = INT0_APP_ISR, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_INPUT,
-                          .source = INTERRUPT_INT0, .priority = INTERRUPT_HIGH_PRIORITY,.edge = INTERRUPT_RISING_EDGE};
-
-INTERRUPT_INTX int1_ob = {.INTERRUPT_ISR = INT1_APP_ISR, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN1, .pin.DIRECTION = GPIO_INPUT,
-                          .source = INTERRUPT_INT1, .priority = INTERRUPT_LOW_PRIORITY, .edge = INTERRUPT_FALLING_EDGE};
-
-INTERRUPT_INTX int2_ob = {.INTERRUPT_ISR = INT2_APP_ISR, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN2, .pin.DIRECTION = GPIO_INPUT,
-                          .source = INTERRUPT_INT2, .priority = INTERRUPT_HIGH_PRIORITY, .edge = INTERRUPT_RISING_EDGE};
-
-INTERRUPT_RBX rb4_ob = {.INTERRUPT_ISR_CHANGE_HIGH = RB4_APP_ISR_HIGH, .INTERRUPT_ISR_CHANGE_LOW = RB4_APP_ISR_LOW, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN4, .pin.DIRECTION = GPIO_INPUT,
-                        .source = INTERRUPT_RB4, .priority = INTERRUPT_LOW_PRIORITY, .edge = INTERRUPT_ON_CHANGE};
-
-
-INTERRUPT_RBX rb5_ob = {.INTERRUPT_ISR_CHANGE_HIGH = RB5_APP_ISR_HIGH, .INTERRUPT_ISR_CHANGE_LOW = RB5_APP_ISR_LOW, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN5, .pin.DIRECTION = GPIO_INPUT,
-                        .source = INTERRUPT_RB5, .priority = INTERRUPT_LOW_PRIORITY, .edge = INTERRUPT_ON_CHANGE};
-
-INTERRUPT_RBX rb6_ob = {.INTERRUPT_ISR_CHANGE_HIGH = RB6_APP_ISR_HIGH, .INTERRUPT_ISR_CHANGE_LOW = RB6_APP_ISR_LOW, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN6, .pin.DIRECTION = GPIO_INPUT,
-                        .source = INTERRUPT_RB6, .priority = INTERRUPT_LOW_PRIORITY, .edge = INTERRUPT_ON_CHANGE};
-
-INTERRUPT_RBX rb7_ob = {.INTERRUPT_ISR_CHANGE_HIGH = RB7_APP_ISR_HIGH, .INTERRUPT_ISR_CHANGE_LOW = RB7_APP_ISR_LOW, .pin.PORT = GPIO_PORTB, .pin.PIN = GPIO_PIN7, .pin.DIRECTION = GPIO_INPUT,
-                        .source = INTERRUPT_RB7, .priority = INTERRUPT_LOW_PRIORITY, .edge = INTERRUPT_ON_CHANGE};
-
+# 28 "APP_Layer/Main.c"
+volatile uint8 adc_req = 0;
 
 int main() {
     application_init();
 
+
+
+
+
+
     while (1) {
-
+# 74 "APP_Layer/Main.c"
     }
-
     return (0);
 }
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
 
-    GPIO_LED_INIT(&led1);
-    GPIO_LED_INIT(&led2);
-    GPIO_LED_INIT(&led3);
-    GPIO_LED_INIT(&led4);
-    GPIO_LED_INIT(&led5);
-    GPIO_LED_INIT(&led6);
-    GPIO_LED_INIT(&led7);
-    GPIO_LED_INIT(&led8);
-
-    Ret = EXTERNAL_INTERRUPT_INTX_INIT(&int0_ob);
-    Ret = EXTERNAL_INTERRUPT_INTX_INIT(&int1_ob);
-    Ret = EXTERNAL_INTERRUPT_INTX_INIT(&int2_ob);
-    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&rb4_ob);
-    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&rb5_ob);
-    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&rb6_ob);
-    Ret = EXTERNAL_INTERRUPT_RBX_INIT(&rb7_ob);
-}
-
-void INT0_APP_ISR(void){
-    GPIO_LED_TURN_TOGGLE (&led1);
-}
-
-void INT1_APP_ISR(void){
-    GPIO_LED_TURN_TOGGLE (&led2);
-}
-
-void INT2_APP_ISR(void){
-    GPIO_LED_TURN_TOGGLE (&led3);
-}
-
-void RB4_APP_ISR_HIGH(void){
-    GPIO_LED_TURN_ON(&led5);
-}
-void RB4_APP_ISR_LOW(void){
-    GPIO_LED_TURN_ON(&led6);
-}
-
-void RB5_APP_ISR_HIGH(void){
-    GPIO_LED_TURN_OFF(&led5);
-}
-void RB5_APP_ISR_LOW(void){
-    GPIO_LED_TURN_OFF(&led6);
-}
-
-void RB6_APP_ISR_HIGH(void){
-    GPIO_LED_TURN_ON(&led7);
-}
-void RB6_APP_ISR_LOW(void){
-    GPIO_LED_TURN_ON(&led8);
-}
-void RB7_APP_ISR_HIGH(void){
-    GPIO_LED_TURN_OFF(&led7);
-}
-void RB7_APP_ISR_LOW(void){
-    GPIO_LED_TURN_OFF(&led8);
 }
