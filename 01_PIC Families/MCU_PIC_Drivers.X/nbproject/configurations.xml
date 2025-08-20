@@ -34,6 +34,7 @@
           <itemPath>Codes/MCAL/ADC/app1.c</itemPath>
           <itemPath>Codes/MCAL/ADC/app3.c</itemPath>
           <itemPath>Codes/MCAL/ADC/app4.c</itemPath>
+          <itemPath>Codes/MCAL/ADC/app5.c</itemPath>
         </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/app1.c</itemPath>
@@ -47,6 +48,14 @@
           <itemPath>Codes/MCAL/INTERRUPT/app1.c</itemPath>
           <itemPath>Codes/MCAL/INTERRUPT/app2.c</itemPath>
           <itemPath>Codes/MCAL/INTERRUPT/app3.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>Codes/MCAL/Timers/Timer0/app1.c</itemPath>
+            <itemPath>Codes/MCAL/Timers/Timer0/app3.c</itemPath>
+            <itemPath>Codes/MCAL/Timers/Timer0/app4.c</itemPath>
+            <itemPath>Codes/MCAL/Timers/Timer0/app2.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -107,6 +116,12 @@
           <itemPath>MCAL_Layer/Interrupt/HAL_INTERRUPT_CFG.h</itemPath>
           <itemPath>MCAL_Layer/Interrupt/HAL_INTERRUPT_GEN_CFG.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>MCAL_Layer/Timers/Timer0/HAL_TIMER0.h</itemPath>
+            <itemPath>MCAL_Layer/Timers/Timer0/HAL_TIMER0_CFG.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <itemPath>MCAL_Layer/std_libraries.h</itemPath>
         <itemPath>MCAL_Layer/compiler.h</itemPath>
         <itemPath>MCAL_Layer/device_cfg.h</itemPath>
@@ -166,6 +181,11 @@
           <itemPath>MCAL_Layer/Interrupt/HAL_INT_INTERRUPT.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>MCAL_Layer/Timers/Timer0/HAL_TIMER0.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
         <itemPath>MCAL_Layer/device_cfg.c</itemPath>
       </logicalFolder>

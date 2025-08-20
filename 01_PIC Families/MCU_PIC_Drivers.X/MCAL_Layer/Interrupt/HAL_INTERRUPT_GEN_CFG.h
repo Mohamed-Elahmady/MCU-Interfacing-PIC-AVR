@@ -19,14 +19,16 @@
 #define INTERRUPT_FEATURE_DISABLE                 0x00
 #define INTERRUPT_FEATURE_ENABLE                  0x01
 
-//#define INTERRUPT_PRIORITY_LEVELS                 (INTERRUPT_FEATURE_ENABLE)
+#define INTERRUPT_PRIORITY_LEVELS                 (INTERRUPT_FEATURE_ENABLE)
 
 // For EXT Interrupts
 #define EXTERNAL_INTERRUPT_INTX_ENABLE            (INTERRUPT_FEATURE_ENABLE)
 #define EXTERNAL_INTERRUPT_IOC_ENABLE             (INTERRUPT_FEATURE_ENABLE)
 
-// For Internal Interrupts
+// For ADC Internal Interrupts
 #define ADC_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
+// For Timer0 Internal Interrupts
+#define TIMER0_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

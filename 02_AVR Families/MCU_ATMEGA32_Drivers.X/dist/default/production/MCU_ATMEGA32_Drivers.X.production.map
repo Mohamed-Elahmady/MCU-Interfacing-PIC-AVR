@@ -3,7 +3,7 @@ Archive member included to satisfy reference by file (symbol)
 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
                               build/default/production/MCAL_Layer/ADC/hal_adc.o (__tablejump2__)
 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                              build/default/production/APP_Layer/main.o (__do_copy_data)
+                              build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o (__do_copy_data)
 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
                               /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o (exit)
 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
@@ -102,6 +102,12 @@ Discarded input sections
  .debug_line    0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
  .debug_str     0x0000000000000000        0x0 build/default/production/Codes/ECUAL/Relay/app1.o
  .comment       0x0000000000000000       0x30 build/default/production/Codes/ECUAL/Relay/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/ADC/app1.o
  .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/EEPROM/app1.o
  .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/EEPROM/app1.o
  .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/EEPROM/app1.o
@@ -120,9 +126,6 @@ Discarded input sections
  .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/Interrupt/app1.o
  .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/Interrupt/app1.o
  .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/Interrupt/app1.o
- .text          0x0000000000000000        0x0 build/default/production/APP_Layer/main.o
- .data          0x0000000000000000        0x0 build/default/production/APP_Layer/main.o
- .bss           0x0000000000000000        0x0 build/default/production/APP_Layer/main.o
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
@@ -162,10 +165,26 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.Chr_Lcd_4Bit_Send_4Bit
+                0x0000000000000000       0x50 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.Chr_Lcd_4Bit_Send_Enable_Signal
+                0x0000000000000000       0x32 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.Chr_Lcd_8Bit_Send_Enable_Signal
                 0x0000000000000000       0x32 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.GPIO_Chr_Lcd_4Bit_Send_Command
+                0x0000000000000000       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.GPIO_Chr_Lcd_4Bit_INIT
+                0x0000000000000000       0xbc build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.Chr_Lcd_4Bit_Set_Cursor
+                0x0000000000000000       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.GPIO_Chr_Lcd_4Bit_Send_Character
+                0x0000000000000000       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_4Bit_Send_Character_Pos
                 0x0000000000000000       0x2c build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.GPIO_Chr_Lcd_4Bit_Send_String
+                0x0000000000000000       0x3e build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.GPIO_Chr_Lcd_4Bit_Send_String_Pos
+                0x0000000000000000       0x3a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_4Bit_Send_Custom_Character
                 0x0000000000000000       0x78 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_8Bit_Send_Command
@@ -184,10 +203,23 @@ Discarded input sections
                 0x0000000000000000       0x3a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_8Bit_Send_Custom_Character
                 0x0000000000000000       0x78 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .rodata        0x0000000000000000        0x3 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.Convert_uint8_To_String
                 0x0000000000000000       0x90 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .text.Convert_uint16_To_String
+                0x0000000000000000       0xb0 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.Convert_uint32_To_String
                 0x0000000000000000       0xc6 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_info    0x0000000000000000     0x1b6c build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_abbrev  0x0000000000000000      0x28e build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_loc     0x0000000000000000     0x1b48 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_aranges
+                0x0000000000000000       0xc8 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_ranges  0x0000000000000000       0xb8 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_line    0x0000000000000000      0x891 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_str     0x0000000000000000       0x7b build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .comment       0x0000000000000000       0x30 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_frame   0x0000000000000000      0x38c build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/DC_Motor/ecual_dc_motor.o
@@ -235,8 +267,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .text.GPIO_Led_INIT
-                0x0000000000000000       0x56 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .text.GPIO_Led_Read_Logic
                 0x0000000000000000       0x88 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .text.GPIO_Led_Turn_Off
@@ -245,16 +275,6 @@ Discarded input sections
                 0x0000000000000000       0x2a build/default/production/ECUAL_Layer/LED/ecual_led.o
  .text.GPIO_Led_Turn_Toggle
                 0x0000000000000000        0xe build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_info    0x0000000000000000      0x718 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_abbrev  0x0000000000000000      0x116 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_loc     0x0000000000000000      0x3e9 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_aranges
-                0x0000000000000000       0x40 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_ranges  0x0000000000000000       0x60 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_line    0x0000000000000000      0x251 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_str     0x0000000000000000       0x64 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .comment       0x0000000000000000       0x30 build/default/production/ECUAL_Layer/LED/ecual_led.o
- .debug_frame   0x0000000000000000       0x98 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/Relay/ecual_relay.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/Relay/ecual_relay.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/Relay/ecual_relay.o
@@ -281,6 +301,29 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/ECUAL_INIT.o
  .data          0x0000000000000000        0x0 build/default/production/ECUAL_Layer/ECUAL_INIT.o
  .bss           0x0000000000000000        0x0 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Set_Channel_Configuration
+                0x0000000000000000       0xda build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .progmem.gcc_sw_table.ADC_Set_Channel_Configuration
+                0x0000000000000000       0x10 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_INIT
+                0x0000000000000000       0x7a build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_DEINIT
+                0x0000000000000000       0x12 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Set_Channel
+                0x0000000000000000       0x10 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Start_Conversion
+                0x0000000000000000        0xe build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Is_Conversion_Done
+                0x0000000000000000       0x1c build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Get_Conversion_Result
+                0x0000000000000000       0x5a build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Get_Conversion_Blocking
+                0x0000000000000000       0x34 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .text.ADC_Start_Conversion_Interrupt
+                0x0000000000000000       0x1e build/default/production/MCAL_Layer/ADC/hal_adc.o
  .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/EEPROM/hal_eeprom.o
  .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/EEPROM/hal_eeprom.o
  .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/EEPROM/hal_eeprom.o
@@ -351,21 +394,50 @@ Discarded input sections
  .debug_line    0x0000000000000000        0x0 build/default/production/MCAL_Layer/device_cfg.o
  .debug_str     0x0000000000000000        0x0 build/default/production/MCAL_Layer/device_cfg.o
  .comment       0x0000000000000000       0x30 build/default/production/MCAL_Layer/device_cfg.o
- .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/ADC/hal_adc.o
- .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/ADC/hal_adc.o
- .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/ADC/hal_adc.o
- .text.ADC_DEINIT
-                0x0000000000000000       0x12 build/default/production/MCAL_Layer/ADC/hal_adc.o
- .text.ADC_Is_Conversion_Done
-                0x0000000000000000       0x1c build/default/production/MCAL_Layer/ADC/hal_adc.o
- .text.ADC_Get_Conversion_Blocking
-                0x0000000000000000       0x34 build/default/production/MCAL_Layer/ADC/hal_adc.o
- .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
- .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
- .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
- .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
- .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app1.o
- .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/ADC/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app2.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app2.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app2.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app2.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/ADC/app2.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/ADC/app2.o
+ .text          0x0000000000000000        0x0 build/default/production/APP_Layer/Main.o
+ .data          0x0000000000000000        0x0 build/default/production/APP_Layer/Main.o
+ .bss           0x0000000000000000        0x0 build/default/production/APP_Layer/Main.o
+ .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .text.Timer0_DEINIT
+                0x0000000000000000       0x40 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .text.Timer0_Write_Data
+                0x0000000000000000        0xe build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .text.Timer0_Write_CTC_Max
+                0x0000000000000000        0xe build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .text.Timer0_Read_CTC_Max
+                0x0000000000000000       0x1c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app4.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app4.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app4.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app4.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/Timers/Timer0/app4.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/Timers/Timer0/app4.o
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
@@ -373,8 +445,11 @@ Discarded input sections
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.div
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc   0x0000000000000000        0xc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.prologue
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .stack.descriptors
                 0x0000000000000000       0x1c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.builtins
@@ -409,75 +484,177 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
  .stack.descriptors
                 0x0000000000000000       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
+ .text.__wrap_sprintf
+                0x0000000000000000       0x24 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
  .text.__sio_sprintf_doux
                 0x0000000000000000       0x1a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
  .stack.descriptors
                 0x0000000000000000       0x15 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
+ .text.__fmt_d  0x0000000000000000       0xe4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
  .stack.descriptors
                 0x0000000000000000       0x15 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
+ .text.__fmt_o  0x0000000000000000       0xb2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
  .stack.descriptors
                 0x0000000000000000       0x15 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
+ .text.__fmt_s  0x0000000000000000       0x54 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
+ .rodata.nuls.2781
+                0x0000000000000000        0x7 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
  .stack.descriptors
                 0x0000000000000000       0x2a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
+ .text.__cvt_u  0x0000000000000000       0xca /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
+ .text.__fmt_u  0x0000000000000000       0x8e /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
  .stack.descriptors
                 0x0000000000000000       0x15 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
+ .text.__fmt_x  0x0000000000000000      0x1dc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
  .stack.descriptors
                 0x0000000000000000       0x17 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
+ .text.__pop_int
+                0x0000000000000000       0xd0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
  .stack.descriptors
                 0x0000000000000000       0x91 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .text.read_prec_or_width
+                0x0000000000000000       0x5c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .text.__out    0x0000000000000000       0x3a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .text.__pad    0x0000000000000000       0x72 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .text.__fmt_state
+                0x0000000000000000       0x40 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .text.vfpfcnvrt
+                0x0000000000000000      0x3fc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .text.__printf_core
+                0x0000000000000000       0x78 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .rodata.nilstr.2962
+                0x0000000000000000        0x6 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .rodata.state_table
+                0x0000000000000000       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
  .stack.descriptors
                 0x0000000000000000       0x13 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
+ .text.fputc    0x0000000000000000       0x98 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
  .stack.descriptors
                 0x0000000000000000       0x14 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
+ .text.memset   0x0000000000000000       0x12 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
  .stack.descriptors
                 0x0000000000000000       0x14 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
+ .text.strlen   0x0000000000000000       0x1c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
  .stack.descriptors
                 0x0000000000000000       0x2e /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
+ .text.tolower  0x0000000000000000       0x10 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
  .text.__tolower_l
                 0x0000000000000000        0x6 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
  .stack.descriptors
                 0x0000000000000000       0x2e /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
+ .text.toupper  0x0000000000000000       0x12 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
  .text.__toupper_l
                 0x0000000000000000        0x6 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
+ COMMON         0x0000000000000000        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
@@ -488,21 +665,46 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
  .stack.descriptors
                 0x0000000000000000       0x18 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
+ .text.__vsprintf
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
  .stack.descriptors
                 0x0000000000000000       0x19 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
+ .text.__vsnprintf
+                0x0000000000000000       0x74 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
  .stack.descriptors
                 0x0000000000000000       0x18 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
+ .text.__vfprintf
+                0x0000000000000000       0x30 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
+ .comment       0x0000000000000000       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.mul
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.div
+                0x0000000000000000       0x44 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .stack.descriptors
                 0x0000000000000000       0x1a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc   0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
@@ -540,6 +742,8 @@ Discarded input sections
  .text.libgcc.div
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc   0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc.prologue
+                0x0000000000000000       0x38 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.builtins
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.fmul
@@ -554,6 +758,8 @@ Discarded input sections
  .text.libgcc.div
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc   0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc.prologue
+                0x0000000000000000       0x36 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc.builtins
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc.fmul
@@ -585,10 +791,10 @@ LOAD build/default/production/Codes/ECUAL/DC_Motor/app1.o
 LOAD build/default/production/Codes/ECUAL/Keypad/app1.o
 LOAD build/default/production/Codes/ECUAL/LED/app1.o
 LOAD build/default/production/Codes/ECUAL/Relay/app1.o
+LOAD build/default/production/Codes/MCAL/ADC/app1.o
 LOAD build/default/production/Codes/MCAL/EEPROM/app1.o
 LOAD build/default/production/Codes/MCAL/GPIO/app1.o
 LOAD build/default/production/Codes/MCAL/Interrupt/app1.o
-LOAD build/default/production/APP_Layer/main.o
 LOAD build/default/production/ECUAL_Layer/7SEG/ecual_7seg.o
 LOAD build/default/production/ECUAL_Layer/BTN/ecual_btn.o
 LOAD build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
@@ -597,14 +803,20 @@ LOAD build/default/production/ECUAL_Layer/Keypad/ecual_keypad.o
 LOAD build/default/production/ECUAL_Layer/LED/ecual_led.o
 LOAD build/default/production/ECUAL_Layer/Relay/ecual_relay.o
 LOAD build/default/production/ECUAL_Layer/ECUAL_INIT.o
+LOAD build/default/production/MCAL_Layer/ADC/hal_adc.o
 LOAD build/default/production/MCAL_Layer/EEPROM/hal_eeprom.o
 LOAD build/default/production/MCAL_Layer/GPIO/hal_gpio.o
 LOAD build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 LOAD build/default/production/MCAL_Layer/Interrupt/hal_int_interrupt.o
 LOAD build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
 LOAD build/default/production/MCAL_Layer/device_cfg.o
-LOAD build/default/production/MCAL_Layer/ADC/hal_adc.o
-LOAD build/default/production/Codes/MCAL/ADC/app1.o
+LOAD build/default/production/Codes/MCAL/ADC/app2.o
+LOAD build/default/production/APP_Layer/Main.o
+LOAD build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+LOAD build/default/production/Codes/MCAL/Timers/Timer0/app1.o
+LOAD build/default/production/Codes/MCAL/Timers/Timer0/app2.o
+LOAD build/default/production/Codes/MCAL/Timers/Timer0/app3.o
+LOAD build/default/production/Codes/MCAL/Timers/Timer0/app4.o
 START GROUP
 LOAD /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a
 END GROUP
@@ -715,54 +927,51 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000       0xd6
+.text           0x0000000000000000       0xc0
  *(.vectors)
  .vectors       0x0000000000000000       0x54 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
                 0x0000000000000000                __vectors
                 0x0000000000000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
- .progmem.gcc_sw_table.ADC_Set_Channel_Configuration
-                0x0000000000000054       0x10 build/default/production/MCAL_Layer/ADC/hal_adc.o
  *(.dinit)
- .dinit         0x0000000000000064       0x1d data_init
-                0x0000000000000082                . = ALIGN (0x2)
- *fill*         0x0000000000000081        0x1 
-                0x0000000000000082                __trampolines_start = .
+ .dinit         0x0000000000000054       0x18 data_init
+                0x000000000000006c                . = ALIGN (0x2)
+                0x000000000000006c                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000000000000082        0x0 linker stubs
+ .trampolines   0x000000000000006c        0x0 linker stubs
  *(.trampolines*)
-                0x0000000000000082                __trampolines_end = .
+                0x000000000000006c                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
-                0x0000000000000082                . = ALIGN (0x2)
+                0x000000000000006c                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000082                __ctors_start = .
+                0x000000000000006c                __ctors_start = .
  *(.ctors)
-                0x0000000000000082                __ctors_end = .
-                0x0000000000000082                __dtors_start = .
+                0x000000000000006c                __ctors_end = .
+                0x000000000000006c                __dtors_start = .
  *(.dtors)
-                0x0000000000000082                __dtors_end = .
+                0x000000000000006c                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000082        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
-                0x0000000000000082                __init
+ .init0         0x000000000000006c        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+                0x000000000000006c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000082        0xc /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .init2         0x000000000000006c        0xc /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000000000008e       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x000000000000008e                __do_copy_data
-                0x00000000000000bc                __do_clear_bss
+ .init4         0x0000000000000078       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000078                __do_copy_data
+                0x00000000000000a6                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -773,12 +982,12 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000000000000ca        0x8 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .init9         0x00000000000000b4        0x8 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  *(.init9)
-                0x00000000000000d2                . = ALIGN (0x2)
+                0x00000000000000bc                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000000d2        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x00000000000000d2                _exit
+ .fini9         0x00000000000000bc        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x00000000000000bc                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -797,32 +1006,31 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000000d2        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x00000000000000bc        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000000d6                _etext = .
+                0x00000000000000c0                _etext = .
 
-.data           0x0000000000800060        0x0 load address 0x00000000000000d6
+.data           0x0000000000800060        0x0 load address 0x00000000000000c0
                 [!provide]                        PROVIDE (__data_start, .)
  *(.gnu.linkonce.d*)
  *(.gnu.linkonce.r*)
                 0x0000000000800060                . = ALIGN (0x2)
+ *fill*         0x0000000000800060        0x0 
                 0x0000000000800060                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
-.bss            0x0000000000800060        0x2
+.bss            0x0000000000800060        0x0
                 [!provide]                        PROVIDE (__bss_start, .)
  *(COMMON)
- COMMON         0x0000000000800060        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
-                0x0000000000800060                __errno_val
                 [!provide]                        PROVIDE (__bss_end, .)
-                0x00000000000000d6                __data_load_start = LOADADDR (.data)
-                0x00000000000000d6                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000000c0                __data_load_start = LOADADDR (.data)
+                0x00000000000000c0                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800062        0x0
+.noinit         0x0000000000800060        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000800062                _end = .
+                0x0000000000800060                _end = .
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
@@ -866,122 +1074,34 @@ END GROUP
 
 .comment        0x0000000000000000       0x5b
  *(.comment)
- .comment       0x0000000000000000       0x2f build/default/production/APP_Layer/main.o
+ .comment       0x0000000000000000       0x2f build/default/production/ECUAL_Layer/LED/ecual_led.o
                                          0x30 (size before relaxing)
- .comment       0x000000000000002f       0x30 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .comment       0x000000000000002f       0x30 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/ADC/hal_adc.o
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .comment       0x000000000000002f       0x30 build/default/production/APP_Layer/Main.o
+ .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
  .comment       0x000000000000002f       0x2c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
                                          0x2d (size before relaxing)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
  .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
- .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
 
 .stack.descriptors.hdr
-                0x0000000000000000      0x134
+                0x0000000000000000       0x2a
  .stack.descriptors.hdr
-                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
  .stack.descriptors.hdr
-                0x000000000000000e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x000000000000000e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
  .stack.descriptors.hdr
-                0x000000000000001c        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
- .stack.descriptors.hdr
-                0x000000000000002a        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
- .stack.descriptors.hdr
-                0x0000000000000038        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
- .stack.descriptors.hdr
-                0x0000000000000046        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
- .stack.descriptors.hdr
-                0x0000000000000054        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
- .stack.descriptors.hdr
-                0x0000000000000062        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
- .stack.descriptors.hdr
-                0x0000000000000070        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
- .stack.descriptors.hdr
-                0x000000000000007e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
- .stack.descriptors.hdr
-                0x000000000000008c        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
- .stack.descriptors.hdr
-                0x000000000000009a        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
- .stack.descriptors.hdr
-                0x00000000000000a8        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
- .stack.descriptors.hdr
-                0x00000000000000b6        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
- .stack.descriptors.hdr
-                0x00000000000000c4        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
- .stack.descriptors.hdr
-                0x00000000000000d2        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
- .stack.descriptors.hdr
-                0x00000000000000e0        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
- .stack.descriptors.hdr
-                0x00000000000000ee        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
- .stack.descriptors.hdr
-                0x00000000000000fc        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
- .stack.descriptors.hdr
-                0x000000000000010a        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
- .stack.descriptors.hdr
-                0x0000000000000118        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .stack.descriptors.hdr
-                0x0000000000000126        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000001c        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
 
 .note.GNU-stack
                 0x0000000000000000        0x0
  .note.GNU-stack
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
  .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(errno.o)
- .note.GNU-stack
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
- .note.GNU-stack
-                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -998,88 +1118,94 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x280
+.debug_aranges  0x0000000000000000      0x260
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x30 build/default/production/APP_Layer/main.o
+                0x0000000000000000       0x40 build/default/production/ECUAL_Layer/LED/ecual_led.o
  .debug_aranges
-                0x0000000000000030       0xc8 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+                0x0000000000000040       0x20 build/default/production/ECUAL_Layer/ECUAL_INIT.o
  .debug_aranges
-                0x00000000000000f8       0x20 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+                0x0000000000000060       0x68 build/default/production/MCAL_Layer/ADC/hal_adc.o
  .debug_aranges
-                0x0000000000000118       0x78 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x00000000000000c8       0x78 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
  .debug_aranges
-                0x0000000000000190       0x50 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x0000000000000140       0x50 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
  .debug_aranges
-                0x00000000000001e0       0x38 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000190       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
  .debug_aranges
-                0x0000000000000218       0x68 build/default/production/MCAL_Layer/ADC/hal_adc.o
+                0x00000000000001d8       0x30 build/default/production/APP_Layer/Main.o
+ .debug_aranges
+                0x0000000000000208       0x58 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x5ade
+.debug_info     0x0000000000000000     0x4e57
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_info    0x00000000000004e6      0xc99 build/default/production/APP_Layer/main.o
- .debug_info    0x000000000000117f     0x1b6c build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_info    0x0000000000002ceb      0x535 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_info    0x0000000000003220      0x98d build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_info    0x0000000000003bad      0xabd build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_info    0x000000000000466a      0x3b5 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_info    0x0000000000004a1f     0x10bf build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_info    0x00000000000004e6      0x718 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_info    0x0000000000000bfe      0x321 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_info    0x0000000000000f1f     0x10bf build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_info    0x0000000000001fde      0x98d build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_info    0x000000000000296b      0xabd build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_info    0x0000000000003428      0x42b build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_info    0x0000000000003853      0x936 build/default/production/APP_Layer/Main.o
+ .debug_info    0x0000000000004189      0xcce build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.debug_abbrev   0x0000000000000000     0x104c
+.debug_abbrev   0x0000000000000000      0xffa
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_abbrev  0x00000000000004a3      0x1c0 build/default/production/APP_Layer/main.o
- .debug_abbrev  0x0000000000000663      0x28e build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_abbrev  0x00000000000008f1       0xec build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_abbrev  0x00000000000009dd      0x1ce build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_abbrev  0x0000000000000bab      0x20a build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_abbrev  0x0000000000000db5       0x6a build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_abbrev  0x0000000000000e1f      0x22d build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_abbrev  0x00000000000004a3      0x116 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_abbrev  0x00000000000005b9       0x6d build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_abbrev  0x0000000000000626      0x22d build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_abbrev  0x0000000000000853      0x1ce build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_abbrev  0x0000000000000a21      0x20a build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_abbrev  0x0000000000000c2b       0x6a build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_abbrev  0x0000000000000c95      0x139 build/default/production/APP_Layer/Main.o
+ .debug_abbrev  0x0000000000000dce      0x22c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.debug_line     0x0000000000000000     0x19e4
+.debug_line     0x0000000000000000     0x1615
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x116 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_line    0x0000000000000116      0x300 build/default/production/APP_Layer/main.o
- .debug_line    0x0000000000000416      0x891 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_line    0x0000000000000ca7       0xe4 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_line    0x0000000000000d8b      0x3cb build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_line    0x0000000000001156      0x3c7 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_line    0x000000000000151d       0xcd build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_line    0x00000000000015ea      0x3fa build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_line    0x0000000000000116      0x251 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_line    0x0000000000000367       0x83 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_line    0x00000000000003ea      0x3fa build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_line    0x00000000000007e4      0x3cb build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_line    0x0000000000000baf      0x3c7 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_line    0x0000000000000f76      0x105 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_line    0x000000000000107b      0x1a5 build/default/production/APP_Layer/Main.o
+ .debug_line    0x0000000000001220      0x3f5 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.debug_frame    0x0000000000000000      0x7e0
+.debug_frame    0x0000000000000000      0x64c
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x44 build/default/production/APP_Layer/main.o
- .debug_frame   0x0000000000000044      0x38c build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_frame   0x00000000000003d0       0x24 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_frame   0x00000000000003f4       0xec build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_frame   0x00000000000004e0       0x9c build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_frame   0x000000000000057c      0x174 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_frame   0x00000000000006f0       0xf0 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_frame   0x0000000000000000       0x98 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_frame   0x0000000000000098       0x24 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_frame   0x00000000000000bc       0xf0 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_frame   0x00000000000001ac       0xec build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_frame   0x0000000000000298       0x9c build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_frame   0x0000000000000334      0x224 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_frame   0x0000000000000558       0x44 build/default/production/APP_Layer/Main.o
+ .debug_frame   0x000000000000059c       0xb0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.debug_str      0x0000000000000000      0x347
+.debug_str      0x0000000000000000      0x2ed
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_str     0x0000000000000196       0xa7 build/default/production/APP_Layer/main.o
- .debug_str     0x000000000000023d       0x7b build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_str     0x00000000000002b8       0x17 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_str     0x00000000000002cf       0x1c build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_str     0x00000000000002eb       0x24 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_str     0x000000000000030f       0x1b build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_str     0x000000000000032a       0x1d build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_str     0x0000000000000196       0x64 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_str     0x00000000000001fa        0x0 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_str     0x00000000000001fa       0x1d build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_str     0x0000000000000217       0x1c build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_str     0x0000000000000233       0x24 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_str     0x0000000000000257       0x24 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_str     0x000000000000027b       0x36 build/default/production/APP_Layer/Main.o
+ .debug_str     0x00000000000002b1       0x3c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.debug_loc      0x0000000000000000     0x2dd2
+.debug_loc      0x0000000000000000     0x19cd
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x48 build/default/production/APP_Layer/main.o
- .debug_loc     0x0000000000000048     0x1b48 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_loc     0x0000000000001b90       0x14 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_loc     0x0000000000001ba4      0x65e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_loc     0x0000000000002202      0x345 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_loc     0x0000000000002547      0x88b build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_loc     0x0000000000000000      0x3e9 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_loc     0x00000000000003e9      0x88b build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_loc     0x0000000000000c74      0x65e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_loc     0x00000000000012d2      0x345 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_loc     0x0000000000001617      0x3b6 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1099,15 +1225,16 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x250
+.debug_ranges   0x0000000000000000      0x280
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x20 build/default/production/APP_Layer/main.o
- .debug_ranges  0x0000000000000020       0xb8 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_ranges  0x00000000000000d8       0x10 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_ranges  0x00000000000000e8       0x68 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_ranges  0x0000000000000150       0x58 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_ranges  0x00000000000001a8       0x28 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_ranges  0x00000000000001d0       0x80 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_ranges  0x0000000000000000       0x60 build/default/production/ECUAL_Layer/LED/ecual_led.o
+ .debug_ranges  0x0000000000000060       0x10 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_ranges  0x0000000000000070       0x80 build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_ranges  0x00000000000000f0       0x68 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_ranges  0x0000000000000158       0x58 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_ranges  0x00000000000001b0       0x38 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_ranges  0x00000000000001e8       0x20 build/default/production/APP_Layer/Main.o
+ .debug_ranges  0x0000000000000208       0x78 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
 .debug_macro
  *(.debug_macro)
@@ -1120,447 +1247,226 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
 
-.bss.ir_req     0x00000000008000f6        0x1
- .bss.ir_req    0x00000000008000f6        0x1 build/default/production/APP_Layer/main.o
-                0x00000000008000f6                ir_req
-
-.bss.txt4       0x00000000008000bf        0x6
- .bss.txt4      0x00000000008000bf        0x6 build/default/production/APP_Layer/main.o
-                0x00000000008000bf                txt4
-
-.bss.txt3       0x00000000008000c5        0x6
- .bss.txt3      0x00000000008000c5        0x6 build/default/production/APP_Layer/main.o
-                0x00000000008000c5                txt3
-
-.bss.txt2       0x00000000008000cb        0x6
- .bss.txt2      0x00000000008000cb        0x6 build/default/production/APP_Layer/main.o
-                0x00000000008000cb                txt2
-
-.bss.txt1       0x00000000008000d1        0x6
- .bss.txt1      0x00000000008000d1        0x6 build/default/production/APP_Layer/main.o
-                0x00000000008000d1                txt1
-
-.bss.res4       0x00000000008000e6        0x2
- .bss.res4      0x00000000008000e6        0x2 build/default/production/APP_Layer/main.o
-                0x00000000008000e6                res4
-
-.bss.res3       0x00000000008000e8        0x2
- .bss.res3      0x00000000008000e8        0x2 build/default/production/APP_Layer/main.o
-                0x00000000008000e8                res3
-
-.bss.res2       0x00000000008000ea        0x2
- .bss.res2      0x00000000008000ea        0x2 build/default/production/APP_Layer/main.o
-                0x00000000008000ea                res2
-
-.bss.res1       0x00000000008000ec        0x2
- .bss.res1      0x00000000008000ec        0x2 build/default/production/APP_Layer/main.o
-                0x00000000008000ec                res1
+.bss.ADC_Interrupt_Handler
+                0x000000000080007b        0x2
+ .bss.ADC_Interrupt_Handler
+                0x000000000080007b        0x2 build/default/production/MCAL_Layer/ADC/hal_adc.o
 
 .bss.INT2_Handler
-                0x00000000008000ee        0x2
+                0x000000000080007d        0x2
  .bss.INT2_Handler
-                0x00000000008000ee        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x000000000080007d        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 
 .bss.INT1_Handler
-                0x00000000008000f0        0x2
+                0x000000000080007f        0x2
  .bss.INT1_Handler
-                0x00000000008000f0        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x000000000080007f        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 
 .bss.INT0_Handler
-                0x00000000008000f2        0x2
+                0x0000000000800081        0x2
  .bss.INT0_Handler
-                0x00000000008000f2        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x0000000000800081        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 
-.bss.ADC_Interrupt_Handler
-                0x00000000008000f4        0x2
- .bss.ADC_Interrupt_Handler
-                0x00000000008000f4        0x2 build/default/production/MCAL_Layer/ADC/hal_adc.o
+.bss.cout       0x0000000000800085        0x1
+ .bss.cout      0x0000000000800085        0x1 build/default/production/APP_Layer/Main.o
+                0x0000000000800085                cout
 
-.text.vfpfcnvrt
-                0x00000000000000d6      0x3fc
- .text.vfpfcnvrt
-                0x00000000000000d6      0x3fc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-                0x00000000000000d6                vfpfcnvrt
+.bss.Timer0_Handler_Function
+                0x0000000000800083        0x2
+ .bss.Timer0_Handler_Function
+                0x0000000000800083        0x2 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.text.__fmt_x   0x00000000000004d2      0x1dc
- .text.__fmt_x  0x00000000000004d2      0x1dc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_x.o)
-                0x00000000000004d2                __fmt_x
-                0x00000000000004d2                __fmt_x_needed
+.bss.preloaded_value
+                0x0000000000800087        0x1
+ .bss.preloaded_value
+                0x0000000000800087        0x1 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
-.text.main      0x00000000000006ae      0x140
- .text.main     0x00000000000006ae      0x140 build/default/production/APP_Layer/main.o
-                0x00000000000006ae                main
-
-.text.__fmt_d   0x00000000000007ee       0xe4
- .text.__fmt_d  0x00000000000007ee       0xe4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_d.o)
-                0x00000000000007ee                __fmt_d_needed
-                0x00000000000007ee                __fmt_d
-
-.text.ADC_Set_Channel_Configuration
-                0x00000000000008d2       0xda
- .text.ADC_Set_Channel_Configuration
-                0x00000000000008d2       0xda build/default/production/MCAL_Layer/ADC/hal_adc.o
-
-.text.__pop_int
-                0x00000000000009ac       0xd0
- .text.__pop_int
-                0x00000000000009ac       0xd0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__pop_int.o)
-                0x00000000000009ac                __pop_int
-                0x00000000000009ac                __pop_int_needed
-
-.text.__cvt_u   0x0000000000000a7c       0xca
- .text.__cvt_u  0x0000000000000a7c       0xca /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
-                0x0000000000000a7c                __cvt_u
-
-.text.GPIO_Chr_Lcd_4Bit_INIT
-                0x0000000000000b46       0xbc
- .text.GPIO_Chr_Lcd_4Bit_INIT
-                0x0000000000000b46       0xbc build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-                0x0000000000000b46                GPIO_Chr_Lcd_4Bit_INIT
-
-.text.__fmt_o   0x0000000000000c02       0xb2
- .text.__fmt_o  0x0000000000000c02       0xb2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_o.o)
-                0x0000000000000c02                __fmt_o_needed
-                0x0000000000000c02                __fmt_o
-
-.text.Convert_uint16_To_String
-                0x0000000000000cb4       0xb0
- .text.Convert_uint16_To_String
-                0x0000000000000cb4       0xb0 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-                0x0000000000000cb4                Convert_uint16_To_String
-
-.text.fputc     0x0000000000000d64       0x98
- .text.fputc    0x0000000000000d64       0x98 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(fputc.o)
-                0x0000000000000d64                putc
-                0x0000000000000d64                fputc
+.text.Timer0_INIT
+                0x00000000000000c0      0x192
+ .text.Timer0_INIT
+                0x00000000000000c0      0x192 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x00000000000000c0                Timer0_INIT
 
 .text.GPIO_Pin_Direction_INIT
-                0x0000000000000dfc       0x8e
+                0x0000000000000252       0x8e
  .text.GPIO_Pin_Direction_INIT
-                0x0000000000000dfc       0x8e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000000dfc                GPIO_Pin_Direction_INIT
-
-.text.__fmt_u   0x0000000000000e8a       0x8e
- .text.__fmt_u  0x0000000000000e8a       0x8e /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_u.o)
-                0x0000000000000e8a                __fmt_u
-                0x0000000000000e8a                __fmt_u_needed
+                0x0000000000000252       0x8e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x0000000000000252                GPIO_Pin_Direction_INIT
 
 .text.GPIO_Pin_Write_Logic
-                0x0000000000000f18       0x84
+                0x00000000000002e0       0x84
  .text.GPIO_Pin_Write_Logic
-                0x0000000000000f18       0x84 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000000f18                GPIO_Pin_Write_Logic
+                0x00000000000002e0       0x84 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x00000000000002e0                GPIO_Pin_Write_Logic
 
-.text.ADC_INIT  0x0000000000000f9c       0x7a
- .text.ADC_INIT
-                0x0000000000000f9c       0x7a build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x0000000000000f9c                ADC_INIT
-
-.text.__printf_core
-                0x0000000000001016       0x78
- .text.__printf_core
-                0x0000000000001016       0x78 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-                0x0000000000001016                __printf_core
-
-.text.__vsnprintf
-                0x000000000000108e       0x74
- .text.__vsnprintf
-                0x000000000000108e       0x74 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsnprintf.o)
-                0x000000000000108e                __vsnprintf
-
-.text.__pad     0x0000000000001102       0x72
- .text.__pad    0x0000000000001102       0x72 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-                0x0000000000001102                __pad
-
-.text.adc_app_isr
-                0x0000000000001174       0x6e
- .text.adc_app_isr
-                0x0000000000001174       0x6e build/default/production/APP_Layer/main.o
-                0x0000000000001174                adc_app_isr
-
-.text.read_prec_or_width
-                0x00000000000011e2       0x5c
- .text.read_prec_or_width
-                0x00000000000011e2       0x5c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-
-.text.ADC_Get_Conversion_Result
-                0x000000000000123e       0x5a
- .text.ADC_Get_Conversion_Result
-                0x000000000000123e       0x5a build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x000000000000123e                ADC_Get_Conversion_Result
-
-.text.__fmt_s   0x0000000000001298       0x54
- .text.__fmt_s  0x0000000000001298       0x54 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
-                0x0000000000001298                __fmt_s_needed
-                0x0000000000001298                __fmt_s
-                0x0000000000001298                __fmt_0_needed
-
-.text.Chr_Lcd_4Bit_Send_4Bit
-                0x00000000000012ec       0x50
- .text.Chr_Lcd_4Bit_Send_4Bit
-                0x00000000000012ec       0x50 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-
-.text.GPIO_Chr_Lcd_4Bit_Send_Command
-                0x000000000000133c       0x4a
- .text.GPIO_Chr_Lcd_4Bit_Send_Command
-                0x000000000000133c       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-                0x000000000000133c                GPIO_Chr_Lcd_4Bit_Send_Command
-
-.text.Chr_Lcd_4Bit_Set_Cursor
-                0x0000000000001386       0x4a
- .text.Chr_Lcd_4Bit_Set_Cursor
-                0x0000000000001386       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-
-.text.GPIO_Chr_Lcd_4Bit_Send_Character
-                0x00000000000013d0       0x4a
- .text.GPIO_Chr_Lcd_4Bit_Send_Character
-                0x00000000000013d0       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-                0x00000000000013d0                GPIO_Chr_Lcd_4Bit_Send_Character
+.text.GPIO_Led_INIT
+                0x0000000000000364       0x56
+ .text.GPIO_Led_INIT
+                0x0000000000000364       0x56 build/default/production/ECUAL_Layer/LED/ecual_led.o
+                0x0000000000000364                GPIO_Led_INIT
 
 .text.__vector_1
-                0x000000000000141a       0x48
+                0x00000000000003ba       0x48
  .text.__vector_1
-                0x000000000000141a       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x000000000000141a                __vector_1
+                0x00000000000003ba       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x00000000000003ba                __vector_1
 
 .text.__vector_2
-                0x0000000000001462       0x48
+                0x0000000000000402       0x48
  .text.__vector_2
-                0x0000000000001462       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x0000000000001462                __vector_2
+                0x0000000000000402       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000402                __vector_2
 
 .text.__vector_3
-                0x00000000000014aa       0x48
+                0x000000000000044a       0x48
  .text.__vector_3
-                0x00000000000014aa       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000014aa                __vector_3
+                0x000000000000044a       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x000000000000044a                __vector_3
 
 .text.__vector_16
-                0x00000000000014f2       0x48
+                0x0000000000000492       0x48
  .text.__vector_16
-                0x00000000000014f2       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000014f2                __vector_16
+                0x0000000000000492       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000492                __vector_16
 
-.text.libgcc.div
-                0x000000000000153a       0x44
- .text.libgcc.div
-                0x000000000000153a       0x44 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
-                0x000000000000153a                __udivmodsi4
+.text.__vector_11
+                0x00000000000004da       0x48
+ .text.__vector_11
+                0x00000000000004da       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x00000000000004da                __vector_11
 
-.text.__fmt_state
-                0x000000000000157e       0x40
- .text.__fmt_state
-                0x000000000000157e       0x40 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-                0x000000000000157e                __fmt_state
-
-.text.GPIO_Chr_Lcd_4Bit_Send_String
-                0x00000000000015be       0x3e
- .text.GPIO_Chr_Lcd_4Bit_Send_String
-                0x00000000000015be       0x3e build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-                0x00000000000015be                GPIO_Chr_Lcd_4Bit_Send_String
-
-.text.GPIO_Chr_Lcd_4Bit_Send_String_Pos
-                0x00000000000015fc       0x3a
- .text.GPIO_Chr_Lcd_4Bit_Send_String_Pos
-                0x00000000000015fc       0x3a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-                0x00000000000015fc                GPIO_Chr_Lcd_4Bit_Send_String_Pos
-
-.text.__out     0x0000000000001636       0x3a
- .text.__out    0x0000000000001636       0x3a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-                0x0000000000001636                __out
-
-.text.libgcc.prologue
-                0x0000000000001670       0x38
- .text.libgcc.prologue
-                0x0000000000001670       0x38 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
-                0x0000000000001670                __prologue_saves__
-
-.text.libgcc.prologue
-                0x00000000000016a8       0x36
- .text.libgcc.prologue
-                0x00000000000016a8       0x36 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                0x00000000000016a8                __epilogue_restores__
-
-.text.Chr_Lcd_4Bit_Send_Enable_Signal
-                0x00000000000016de       0x32
- .text.Chr_Lcd_4Bit_Send_Enable_Signal
-                0x00000000000016de       0x32 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
-
-.text.__vfprintf
-                0x0000000000001710       0x30
- .text.__vfprintf
-                0x0000000000001710       0x30 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vfprintf.o)
-                0x0000000000001710                __vfprintf
+.text.__vector_10
+                0x0000000000000522       0x48
+ .text.__vector_10
+                0x0000000000000522       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000522                __vector_10
 
 .text.GPIO_Pin_INIT
-                0x0000000000001740       0x26
+                0x000000000000056a       0x26
  .text.GPIO_Pin_INIT
-                0x0000000000001740       0x26 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000001740                GPIO_Pin_INIT
+                0x000000000000056a       0x26 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x000000000000056a                GPIO_Pin_INIT
 
-.text.__wrap_sprintf
-                0x0000000000001766       0x24
- .text.__wrap_sprintf
-                0x0000000000001766       0x24 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__sio_sprintf_doux.o)
-                0x0000000000001766                _sprintf_cdopuxX
+.text.Timer0_Read_Data
+                0x0000000000000590       0x1c
+ .text.Timer0_Read_Data
+                0x0000000000000590       0x1c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x0000000000000590                Timer0_Read_Data
 
-.text.ADC_Start_Conversion_Interrupt
-                0x000000000000178a       0x1e
- .text.ADC_Start_Conversion_Interrupt
-                0x000000000000178a       0x1e build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x000000000000178a                ADC_Start_Conversion_Interrupt
+.text.TMR0_ISR  0x00000000000005ac       0x1c
+ .text.TMR0_ISR
+                0x00000000000005ac       0x1c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x00000000000005ac                TMR0_ISR
 
-.text.strlen    0x00000000000017a8       0x1c
- .text.strlen   0x00000000000017a8       0x1c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(strlen.o)
-                0x00000000000017a8                strlen
-
-.text.INT0_ISR  0x00000000000017c4       0x16
+.text.INT0_ISR  0x00000000000005c8       0x16
  .text.INT0_ISR
-                0x00000000000017c4       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
-                0x00000000000017c4                INT0_ISR
+                0x00000000000005c8       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x00000000000005c8                INT0_ISR
 
-.text.INT1_ISR  0x00000000000017da       0x16
+.text.INT1_ISR  0x00000000000005de       0x16
  .text.INT1_ISR
-                0x00000000000017da       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
-                0x00000000000017da                INT1_ISR
+                0x00000000000005de       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x00000000000005de                INT1_ISR
 
-.text.INT2_ISR  0x00000000000017f0       0x16
+.text.INT2_ISR  0x00000000000005f4       0x16
  .text.INT2_ISR
-                0x00000000000017f0       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
-                0x00000000000017f0                INT2_ISR
-
-.text.exit      0x0000000000001806       0x16
- .text.exit     0x0000000000001806       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x0000000000001806                exit
-
-.text.ADC_ISR   0x000000000000181c       0x12
- .text.ADC_ISR  0x000000000000181c       0x12 build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x000000000000181c                ADC_ISR
-
-.text.memset    0x000000000000182e       0x12
- .text.memset   0x000000000000182e       0x12 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(memset.o)
-                0x000000000000182e                memset
-
-.text.toupper   0x0000000000001840       0x12
- .text.toupper  0x0000000000001840       0x12 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(toupper.o)
-                0x0000000000001840                toupper
-
-.text.ADC_Set_Channel
-                0x0000000000001852       0x10
- .text.ADC_Set_Channel
-                0x0000000000001852       0x10 build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x0000000000001852                ADC_Set_Channel
-
-.text.tolower   0x0000000000001862       0x10
- .text.tolower  0x0000000000001862       0x10 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(tolower.o)
-                0x0000000000001862                tolower
+                0x00000000000005f4       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x00000000000005f4                INT2_ISR
 
 .text.Application_Init
-                0x0000000000001872        0xe
+                0x000000000000060a       0x16
  .text.Application_Init
-                0x0000000000001872        0xe build/default/production/APP_Layer/main.o
-                0x0000000000001872                Application_Init
+                0x000000000000060a       0x16 build/default/production/APP_Layer/Main.o
+                0x000000000000060a                Application_Init
 
-.text.ADC_Start_Conversion
-                0x0000000000001880        0xe
- .text.ADC_Start_Conversion
-                0x0000000000001880        0xe build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x0000000000001880                ADC_Start_Conversion
+.text.CTC_ISR   0x0000000000000620       0x16
+ .text.CTC_ISR  0x0000000000000620       0x16 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x0000000000000620                CTC_ISR
 
-.text.__vsprintf
-                0x000000000000188e        0xe
- .text.__vsprintf
-                0x000000000000188e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__int_vsprintf.o)
-                0x000000000000188e                __vsprintf
+.text.exit      0x0000000000000636       0x16
+ .text.exit     0x0000000000000636       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x0000000000000636                exit
 
-.text.libgcc    0x000000000000189c        0xc
- .text.libgcc   0x000000000000189c        0xc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
-                0x000000000000189c                __tablejump2__
+.text.ADC_ISR   0x000000000000064c       0x12
+ .text.ADC_ISR  0x000000000000064c       0x12 build/default/production/MCAL_Layer/ADC/hal_adc.o
+                0x000000000000064c                ADC_ISR
+
+.text.main      0x000000000000065e       0x12
+ .text.main     0x000000000000065e       0x12 build/default/production/APP_Layer/Main.o
+                0x000000000000065e                main
+
+.text           0x0000000000000670        0x4
+ .text          0x0000000000000670        0x4 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+                0x0000000000000670                __vector_20
+                0x0000000000000670                __bad_interrupt
+                0x0000000000000670                __vector_6
+                0x0000000000000670                __vector_13
+                0x0000000000000670                __vector_17
+                0x0000000000000670                __vector_19
+                0x0000000000000670                __vector_7
+                0x0000000000000670                __vector_5
+                0x0000000000000670                __vector_4
+                0x0000000000000670                __vector_9
+                0x0000000000000670                __vector_15
+                0x0000000000000670                __vector_8
+                0x0000000000000670                __vector_14
+                0x0000000000000670                __vector_18
+                0x0000000000000670                __vector_12
+
+.text._Exit     0x0000000000000674        0x4
+ .text._Exit    0x0000000000000674        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
+                0x0000000000000674                _Exit
 
 .text.Ecual_Init
-                0x00000000000018a8        0xa
+                0x0000000000000678        0x2
  .text.Ecual_Init
-                0x00000000000018a8        0xa build/default/production/ECUAL_Layer/ECUAL_INIT.o
-                0x00000000000018a8                Ecual_Init
+                0x0000000000000678        0x2 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+                0x0000000000000678                Ecual_Init
 
-.text           0x00000000000018b2        0x4
- .text          0x00000000000018b2        0x4 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
-                0x00000000000018b2                __vector_20
-                0x00000000000018b2                __bad_interrupt
-                0x00000000000018b2                __vector_6
-                0x00000000000018b2                __vector_11
-                0x00000000000018b2                __vector_13
-                0x00000000000018b2                __vector_17
-                0x00000000000018b2                __vector_19
-                0x00000000000018b2                __vector_7
-                0x00000000000018b2                __vector_5
-                0x00000000000018b2                __vector_4
-                0x00000000000018b2                __vector_9
-                0x00000000000018b2                __vector_15
-                0x00000000000018b2                __vector_8
-                0x00000000000018b2                __vector_14
-                0x00000000000018b2                __vector_10
-                0x00000000000018b2                __vector_18
-                0x00000000000018b2                __vector_12
-
-.text._Exit     0x00000000000018b6        0x4
- .text._Exit    0x00000000000018b6        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
-                0x00000000000018b6                _Exit
+.text.tmr0_app_isr
+                0x000000000000067a        0x2
+ .text.tmr0_app_isr
+                0x000000000000067a        0x2 build/default/production/APP_Layer/Main.o
+                0x000000000000067a                tmr0_app_isr
 
 .text.__dummy_fini
-                0x00000000000018ba        0x2
+                0x000000000000067c        0x2
  .text.__dummy_fini
-                0x00000000000018ba        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x00000000000018ba                _fini
+                0x000000000000067c        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x000000000000067c                _fini
 
 .text.__dummy_funcs_on_exit
-                0x00000000000018bc        0x2
+                0x000000000000067e        0x2
  .text.__dummy_funcs_on_exit
-                0x00000000000018bc        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x00000000000018bc                __funcs_on_exit
+                0x000000000000067e        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x000000000000067e                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x00000000000018be        0x2
+                0x0000000000000680        0x2
  .text.__dummy_simulator_exit
-                0x00000000000018be        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x00000000000018be                __simulator_exit
-
-.rodata         0x0000000000800062       0x29 load address 0x00000000000018c0
- .rodata        0x0000000000800062       0x29 build/default/production/APP_Layer/main.o
-
-.rodata.state_table
-                0x000000000080008b       0x16 load address 0x00000000000018e9
- .rodata.state_table
-                0x000000000080008b       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
+                0x0000000000000680        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x0000000000000680                __simulator_exit
 
 .data.PORT_REGs
-                0x00000000008000a1        0x8 load address 0x00000000000018ff
+                0x0000000000800060        0x8 load address 0x0000000000000682
  .data.PORT_REGs
-                0x00000000008000a1        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x00000000008000a1                PORT_REGs
+                0x0000000000800060        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x0000000000800060                PORT_REGs
 
-.data.DDR_REGs  0x00000000008000a9        0x8 load address 0x0000000000001907
+.data.DDR_REGs  0x0000000000800068        0x8 load address 0x000000000000068a
  .data.DDR_REGs
-                0x00000000008000a9        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x00000000008000a9                DDR_REGs
+                0x0000000000800068        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x0000000000800068                DDR_REGs
 
-.data.lcd1      0x00000000008000b1        0x7 load address 0x000000000000190f
- .data.lcd1     0x00000000008000b1        0x7 build/default/production/ECUAL_Layer/ECUAL_INIT.o
-                0x00000000008000b1                lcd1
+.data.t0_counter
+                0x0000000000800070        0x8 load address 0x0000000000000692
+ .data.t0_counter
+                0x0000000000800070        0x8 build/default/production/APP_Layer/Main.o
+                0x0000000000800070                t0_counter
 
-.rodata.nuls.2781
-                0x00000000008000b8        0x7 load address 0x0000000000001916
- .rodata.nuls.2781
-                0x00000000008000b8        0x7 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__fmt_s.o)
+.data.led1      0x0000000000800078        0x3 load address 0x000000000000069a
+ .data.led1     0x0000000000800078        0x3 build/default/production/APP_Layer/Main.o
+                0x0000000000800078                led1
 
-.data.adc1      0x00000000008000d7        0x6 load address 0x000000000000191d
- .data.adc1     0x00000000008000d7        0x6 build/default/production/APP_Layer/main.o
-                0x00000000008000d7                adc1
-
-.rodata.nilstr.2962
-                0x00000000008000dd        0x6 load address 0x0000000000001923
- .rodata.nilstr.2962
-                0x00000000008000dd        0x6 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(__printf_core.o)
-
-.rodata         0x00000000008000e3        0x3 load address 0x0000000000001929
- .rodata        0x00000000008000e3        0x3 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+.rodata         0x0000000000800086        0x1 load address 0x000000000000069d
+ .rodata        0x0000000000800086        0x1 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o

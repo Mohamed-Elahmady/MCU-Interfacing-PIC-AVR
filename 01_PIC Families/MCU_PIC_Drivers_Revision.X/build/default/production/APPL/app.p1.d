@@ -41,4 +41,9 @@ APPL/../MCAL/ADC/hal_adc.h  \
 APPL/../MCAL/ADC/../mcu_cfg.h  \
 APPL/../MCAL/ADC/hal_adc_cfg.h  \
 APPL/../MCAL/ADC/../INTERRUPT/hal_int_interrupt.h  \
-APPL/../MCAL/ADC/../GPIO/hal_gpio.h 
+APPL/../MCAL/ADC/../GPIO/hal_gpio.h  \
+APPL/../MCAL/Timers/Timer0/hal_timer0.h  \
+APPL/../MCAL/Timers/Timer0/../../mcu_cfg.h  \
+APPL/../MCAL/Timers/Timer0/hal_timer0_cfg.h  \
+APPL/../MCAL/Timers/Timer0/../../GPIO/hal_gpio.h  \
+APPL/../MCAL/Timers/Timer0/../../INTERRUPT/hal_int_interrupt.h 

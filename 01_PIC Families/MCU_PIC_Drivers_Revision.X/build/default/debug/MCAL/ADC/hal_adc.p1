@@ -102,9 +102,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7075
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7075: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS291 ~T0 @X0 0 e@4082 ]
-"3296
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 3296: extern volatile unsigned char IPR1 __attribute__((address(0xF9F)));
-[v _IPR1 `Vuc ~T0 @X0 0 e@3999 ]
 "30 MCAL/ADC/hal_adc.c
 [; ;MCAL/ADC/hal_adc.c: 30: static Std_ReturnType adc_set_enable(const adc_cfg *adc);
 [v _adc_set_enable `(E3659 ~T0 @X0 0 sf1`*CS307 ]
@@ -121,6 +118,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5327
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 5327: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
+[v F3871 `(v ~T0 @X0 0 tf ]
 "5085
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 5085:     struct {
 [s S200 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -182,8 +180,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL/ADC/../INTERRUPT/../GPIO/hal_gpio.h: 69: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . port pin direction logic ]
-"252 MCAL/ADC/hal_adc.c
-[; ;MCAL/ADC/hal_adc.c: 252:                 gpio_pin_cfg pinA0 = {.port = gpio_portA, .pin = gpio_pin0, .direction = gpio_input};
+"262 MCAL/ADC/hal_adc.c
+[; ;MCAL/ADC/hal_adc.c: 262:                 gpio_pin_cfg pinA0 = {.port = gpio_portA, .pin = gpio_pin0, .direction = gpio_input};
 [c E3672 0 1 2 3 4 .. ]
 [n E3672 . gpio_portA gpio_portB gpio_portC gpio_portD gpio_portE  ]
 [c E3679 0 1 2 3 4 5 6 7 .. ]
@@ -699,50 +697,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;MCAL/ADC/hal_adc.c: 55:         (PIE1 |= (uint8)((uint8)0x01 << 0x6));
 [e =| _PIE1 -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
-"57
-[; ;MCAL/ADC/hal_adc.c: 57:         (RCONbits.IPEN = (uint8)0x01);
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-"58
-[; ;MCAL/ADC/hal_adc.c: 58:         (INTCONbits.GIEH = (uint8)0x01);
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-"59
-[; ;MCAL/ADC/hal_adc.c: 59:         (INTCONbits.GIEL = (uint8)0x01);
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-"60
-[; ;MCAL/ADC/hal_adc.c: 60:         if(interrupt_high_priority == adc->priority){
-[e $ ! == -> . `E3736 1 `ui -> . *U _adc 1 `ui 311  ]
-{
-"61
-[; ;MCAL/ADC/hal_adc.c: 61:             (IPR1 |= (uint8)((uint8)0x01 << 0x6));
-[e =| _IPR1 -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
-"62
-[; ;MCAL/ADC/hal_adc.c: 62:         }
-}
-[e $U 312  ]
-"63
-[; ;MCAL/ADC/hal_adc.c: 63:         else if(interrupt_low_priority == adc->priority){
-[e :U 311 ]
-[e $ ! == -> . `E3736 0 `ui -> . *U _adc 1 `ui 313  ]
-{
-"64
-[; ;MCAL/ADC/hal_adc.c: 64:             (IPR1 &= ~(uint8)((uint8)0x01 << 0x6));
-[e =& _IPR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `i `Vuc ]
-"65
-[; ;MCAL/ADC/hal_adc.c: 65:         }
-}
-[e $U 314  ]
-"66
-[; ;MCAL/ADC/hal_adc.c: 66:         else{
-[e :U 313 ]
-{
-"67
-[; ;MCAL/ADC/hal_adc.c: 67:             Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"68
-[; ;MCAL/ADC/hal_adc.c: 68:         }
-}
-[e :U 314 ]
-[e :U 312 ]
+"70
+[; ;MCAL/ADC/hal_adc.c: 70:         (RCONbits.IPEN = (uint8)0x00);
+[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
+"71
+[; ;MCAL/ADC/hal_adc.c: 71:         (INTCONbits.GIE = (uint8)0x01);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"72
+[; ;MCAL/ADC/hal_adc.c: 72:         (INTCONbits.PEIE = (uint8)0x01);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "74
 [; ;MCAL/ADC/hal_adc.c: 74:         adc_interrupt_handler = adc->adc_interrupt;
 [e = _adc_interrupt_handler . *U _adc 0 ]
@@ -774,7 +737,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "84
 [; ;MCAL/ADC/hal_adc.c: 84:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 316  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 312  ]
 {
 "85
 [; ;MCAL/ADC/hal_adc.c: 85:         Retval = E_NOT_OK;
@@ -782,10 +745,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86
 [; ;MCAL/ADC/hal_adc.c: 86:     }
 }
-[e $U 317  ]
+[e $U 313  ]
 "87
 [; ;MCAL/ADC/hal_adc.c: 87:     else{
-[e :U 316 ]
+[e :U 312 ]
 {
 "89
 [; ;MCAL/ADC/hal_adc.c: 89:         Retval = adc_set_disable(adc);
@@ -799,14 +762,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;MCAL/ADC/hal_adc.c: 96:     }
 }
-[e :U 317 ]
+[e :U 313 ]
 "97
 [; ;MCAL/ADC/hal_adc.c: 97:     return Retval;
 [e ) _Retval ]
-[e $UE 315  ]
+[e $UE 311  ]
 "98
 [; ;MCAL/ADC/hal_adc.c: 98: }
-[e :UE 315 ]
+[e :UE 311 ]
 }
 "100
 [; ;MCAL/ADC/hal_adc.c: 100: Std_ReturnType adc_set_channel(const adc_cfg *adc, adc_channel channel){
@@ -822,7 +785,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "102
 [; ;MCAL/ADC/hal_adc.c: 102:     if(((void*)0) == adc || channel > adc_channel_an12){
-[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc > -> _channel `ui -> . `E3742 12 `ui 319  ]
+[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc > -> _channel `ui -> . `E3742 12 `ui 315  ]
 {
 "103
 [; ;MCAL/ADC/hal_adc.c: 103:         Retval = E_NOT_OK;
@@ -830,10 +793,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "104
 [; ;MCAL/ADC/hal_adc.c: 104:     }
 }
-[e $U 320  ]
+[e $U 316  ]
 "105
 [; ;MCAL/ADC/hal_adc.c: 105:     else{
-[e :U 319 ]
+[e :U 315 ]
 {
 "106
 [; ;MCAL/ADC/hal_adc.c: 106:         Retval = adc_set_channel_configuration(channel);
@@ -841,14 +804,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "107
 [; ;MCAL/ADC/hal_adc.c: 107:     }
 }
-[e :U 320 ]
+[e :U 316 ]
 "108
 [; ;MCAL/ADC/hal_adc.c: 108:     return Retval;
 [e ) _Retval ]
-[e $UE 318  ]
+[e $UE 314  ]
 "109
 [; ;MCAL/ADC/hal_adc.c: 109: }
-[e :UE 318 ]
+[e :UE 314 ]
 }
 "111
 [; ;MCAL/ADC/hal_adc.c: 111: Std_ReturnType adc_start_conversion(const adc_cfg *adc){
@@ -863,7 +826,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "113
 [; ;MCAL/ADC/hal_adc.c: 113:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 322  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 318  ]
 {
 "114
 [; ;MCAL/ADC/hal_adc.c: 114:         Retval = E_NOT_OK;
@@ -871,10 +834,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "115
 [; ;MCAL/ADC/hal_adc.c: 115:     }
 }
-[e $U 323  ]
+[e $U 319  ]
 "116
 [; ;MCAL/ADC/hal_adc.c: 116:     else{
-[e :U 322 ]
+[e :U 318 ]
 {
 "117
 [; ;MCAL/ADC/hal_adc.c: 117:         (ADCON0 |= (uint8)((uint8)0x01 << 0x1));
@@ -882,14 +845,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "118
 [; ;MCAL/ADC/hal_adc.c: 118:     }
 }
-[e :U 323 ]
+[e :U 319 ]
 "119
 [; ;MCAL/ADC/hal_adc.c: 119:     return Retval;
 [e ) _Retval ]
-[e $UE 321  ]
+[e $UE 317  ]
 "120
 [; ;MCAL/ADC/hal_adc.c: 120: }
-[e :UE 321 ]
+[e :UE 317 ]
 }
 "122
 [; ;MCAL/ADC/hal_adc.c: 122: Std_ReturnType adc_is_conversion_done(const adc_cfg *adc, adc_conversion_status *state){
@@ -905,7 +868,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "124
 [; ;MCAL/ADC/hal_adc.c: 124:     if(((void*)0) == adc || ((void*)0) == state){
-[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc == -> -> -> 0 `i `*v `*E3784 _state 325  ]
+[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc == -> -> -> 0 `i `*v `*E3784 _state 321  ]
 {
 "125
 [; ;MCAL/ADC/hal_adc.c: 125:         Retval = E_NOT_OK;
@@ -913,14 +876,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "126
 [; ;MCAL/ADC/hal_adc.c: 126:     }
 }
-[e $U 326  ]
+[e $U 322  ]
 "127
 [; ;MCAL/ADC/hal_adc.c: 127:     else{
-[e :U 325 ]
+[e :U 321 ]
 {
 "128
 [; ;MCAL/ADC/hal_adc.c: 128:         if(!((ADCON0 >> 0x1) & (uint8)(uint8)0x01)){
-[e $ ! ! != & >> -> _ADCON0 `i -> 1 `i -> -> -> 1 `i `uc `i -> 0 `i 327  ]
+[e $ ! ! != & >> -> _ADCON0 `i -> 1 `i -> -> -> 1 `i `uc `i -> 0 `i 323  ]
 {
 "129
 [; ;MCAL/ADC/hal_adc.c: 129:             *state = adc_conversion_completed;
@@ -928,10 +891,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "130
 [; ;MCAL/ADC/hal_adc.c: 130:         }
 }
-[e $U 328  ]
+[e $U 324  ]
 "131
 [; ;MCAL/ADC/hal_adc.c: 131:         else{
-[e :U 327 ]
+[e :U 323 ]
 {
 "132
 [; ;MCAL/ADC/hal_adc.c: 132:             *state = adc_conversion_in_progress;
@@ -939,18 +902,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "133
 [; ;MCAL/ADC/hal_adc.c: 133:         }
 }
-[e :U 328 ]
+[e :U 324 ]
 "134
 [; ;MCAL/ADC/hal_adc.c: 134:     }
 }
-[e :U 326 ]
+[e :U 322 ]
 "135
 [; ;MCAL/ADC/hal_adc.c: 135:     return Retval;
 [e ) _Retval ]
-[e $UE 324  ]
+[e $UE 320  ]
 "136
 [; ;MCAL/ADC/hal_adc.c: 136: }
-[e :UE 324 ]
+[e :UE 320 ]
 }
 "138
 [; ;MCAL/ADC/hal_adc.c: 138: Std_ReturnType adc_get_conversion_result(const adc_cfg *adc, uint16 *result){
@@ -966,7 +929,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "140
 [; ;MCAL/ADC/hal_adc.c: 140:     if(((void*)0) == adc || ((void*)0) == result){
-[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc == -> -> -> 0 `i `*v `*us _result 330  ]
+[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc == -> -> -> 0 `i `*v `*us _result 326  ]
 {
 "141
 [; ;MCAL/ADC/hal_adc.c: 141:         Retval = E_NOT_OK;
@@ -974,62 +937,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 "142
 [; ;MCAL/ADC/hal_adc.c: 142:     }
 }
-[e $U 331  ]
+[e $U 327  ]
 "143
 [; ;MCAL/ADC/hal_adc.c: 143:     else{
-[e :U 330 ]
+[e :U 326 ]
 {
 "144
 [; ;MCAL/ADC/hal_adc.c: 144:         switch(adc->format){
-[e $U 333  ]
+[e $U 329  ]
 {
 "145
 [; ;MCAL/ADC/hal_adc.c: 145:             case adc_format_left:
-[e :U 334 ]
+[e :U 330 ]
 "146
 [; ;MCAL/ADC/hal_adc.c: 146:                 *result = (uint16)((ADRESH << 2) | (ADRESL >> 6));
 [e = *U _result -> | << -> _ADRESH `i -> 2 `i >> -> _ADRESL `i -> 6 `i `us ]
 "147
 [; ;MCAL/ADC/hal_adc.c: 147:                 break;
-[e $U 332  ]
+[e $U 328  ]
 "148
 [; ;MCAL/ADC/hal_adc.c: 148:             case adc_format_right:
-[e :U 335 ]
+[e :U 331 ]
 "149
-[; ;MCAL/ADC/hal_adc.c: 149:                 *result = (uint16)((ADRESH >> 8) | ADRESL);
-[e = *U _result -> | >> -> _ADRESH `i -> 8 `i -> _ADRESL `i `us ]
+[; ;MCAL/ADC/hal_adc.c: 149:                 *result = (uint16)(((uint16)ADRESH << 8) | ADRESL);
+[e = *U _result -> | << -> -> _ADRESH `us `ui -> 8 `i -> _ADRESL `ui `us ]
 "150
 [; ;MCAL/ADC/hal_adc.c: 150:                 break;
-[e $U 332  ]
+[e $U 328  ]
 "151
 [; ;MCAL/ADC/hal_adc.c: 151:             default :
-[e :U 336 ]
+[e :U 332 ]
 "152
 [; ;MCAL/ADC/hal_adc.c: 152:                 Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
 "153
 [; ;MCAL/ADC/hal_adc.c: 153:                 break;
-[e $U 332  ]
+[e $U 328  ]
 "154
 [; ;MCAL/ADC/hal_adc.c: 154:         }
 }
-[e $U 332  ]
-[e :U 333 ]
-[e [\ -> . *U _adc 6 `ui , $ -> . `E3780 0 `ui 334
- , $ -> . `E3780 1 `ui 335
- 336 ]
-[e :U 332 ]
+[e $U 328  ]
+[e :U 329 ]
+[e [\ -> . *U _adc 6 `ui , $ -> . `E3780 0 `ui 330
+ , $ -> . `E3780 1 `ui 331
+ 332 ]
+[e :U 328 ]
 "155
 [; ;MCAL/ADC/hal_adc.c: 155:     }
 }
-[e :U 331 ]
+[e :U 327 ]
 "156
 [; ;MCAL/ADC/hal_adc.c: 156:     return Retval;
 [e ) _Retval ]
-[e $UE 329  ]
+[e $UE 325  ]
 "157
 [; ;MCAL/ADC/hal_adc.c: 157: }
-[e :UE 329 ]
+[e :UE 325 ]
 }
 "159
 [; ;MCAL/ADC/hal_adc.c: 159: Std_ReturnType adc_get_conversion_blocking(const adc_cfg *adc, adc_channel channel, uint16 *result){
@@ -1046,7 +1009,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "161
 [; ;MCAL/ADC/hal_adc.c: 161:     if(((void*)0) == adc || ((void*)0) == result || channel > adc_channel_an12){
-[e $ ! || || == -> -> -> 0 `i `*v `*CS307 _adc == -> -> -> 0 `i `*v `*us _result > -> _channel `ui -> . `E3742 12 `ui 338  ]
+[e $ ! || || == -> -> -> 0 `i `*v `*CS307 _adc == -> -> -> 0 `i `*v `*us _result > -> _channel `ui -> . `E3742 12 `ui 334  ]
 {
 "162
 [; ;MCAL/ADC/hal_adc.c: 162:         Retval = E_NOT_OK;
@@ -1054,10 +1017,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "163
 [; ;MCAL/ADC/hal_adc.c: 163:     }
 }
-[e $U 339  ]
+[e $U 335  ]
 "164
 [; ;MCAL/ADC/hal_adc.c: 164:     else{
-[e :U 338 ]
+[e :U 334 ]
 {
 "166
 [; ;MCAL/ADC/hal_adc.c: 166:         Retval = adc_set_channel(adc, channel);
@@ -1067,25 +1030,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval ( _adc_start_conversion (1 _adc ]
 "170
 [; ;MCAL/ADC/hal_adc.c: 170:         while(((ADCON0 >> 0x1) & (uint8)(uint8)0x01));
-[e $U 340  ]
-[e :U 341 ]
-[e :U 340 ]
-[e $ != & >> -> _ADCON0 `i -> 1 `i -> -> -> 1 `i `uc `i -> 0 `i 341  ]
-[e :U 342 ]
+[e $U 336  ]
+[e :U 337 ]
+[e :U 336 ]
+[e $ != & >> -> _ADCON0 `i -> 1 `i -> -> -> 1 `i `uc `i -> 0 `i 337  ]
+[e :U 338 ]
 "172
 [; ;MCAL/ADC/hal_adc.c: 172:         Retval = adc_get_conversion_result(adc, result);
 [e = _Retval ( _adc_get_conversion_result (2 , _adc _result ]
 "173
 [; ;MCAL/ADC/hal_adc.c: 173:     }
 }
-[e :U 339 ]
+[e :U 335 ]
 "174
 [; ;MCAL/ADC/hal_adc.c: 174:     return Retval;
 [e ) _Retval ]
-[e $UE 337  ]
+[e $UE 333  ]
 "175
 [; ;MCAL/ADC/hal_adc.c: 175: }
-[e :UE 337 ]
+[e :UE 333 ]
 }
 "177
 [; ;MCAL/ADC/hal_adc.c: 177: Std_ReturnType adc_start_conversion_interrupt(const adc_cfg *adc, adc_channel channel){
@@ -1101,7 +1064,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "179
 [; ;MCAL/ADC/hal_adc.c: 179:     if(((void*)0) == adc || channel > adc_channel_an12){
-[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc > -> _channel `ui -> . `E3742 12 `ui 344  ]
+[e $ ! || == -> -> -> 0 `i `*v `*CS307 _adc > -> _channel `ui -> . `E3742 12 `ui 340  ]
 {
 "180
 [; ;MCAL/ADC/hal_adc.c: 180:         Retval = E_NOT_OK;
@@ -1109,10 +1072,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "181
 [; ;MCAL/ADC/hal_adc.c: 181:     }
 }
-[e $U 345  ]
+[e $U 341  ]
 "182
 [; ;MCAL/ADC/hal_adc.c: 182:     else{
-[e :U 344 ]
+[e :U 340 ]
 {
 "184
 [; ;MCAL/ADC/hal_adc.c: 184:         Retval = adc_set_channel(adc, channel);
@@ -1123,224 +1086,248 @@ Version 4.0 HI-TECH Software Intermediate Code
 "189
 [; ;MCAL/ADC/hal_adc.c: 189:     }
 }
-[e :U 345 ]
+[e :U 341 ]
 "190
 [; ;MCAL/ADC/hal_adc.c: 190:     return Retval;
 [e ) _Retval ]
-[e $UE 343  ]
+[e $UE 339  ]
 "191
 [; ;MCAL/ADC/hal_adc.c: 191: }
-[e :UE 343 ]
+[e :UE 339 ]
 }
-"196
-[; ;MCAL/ADC/hal_adc.c: 196: static Std_ReturnType adc_set_disable(const adc_cfg *adc){
+"193
+[; ;MCAL/ADC/hal_adc.c: 193: void adc_isr(void){
+[v _adc_isr `(v ~T0 @X0 1 ef ]
+{
+[e :U _adc_isr ]
+[f ]
+"195
+[; ;MCAL/ADC/hal_adc.c: 195:     (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
+[e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `i `Vuc ]
+"199
+[; ;MCAL/ADC/hal_adc.c: 199:     if(adc_interrupt_handler){
+[e $ ! != _adc_interrupt_handler -> -> 0 `i `*F3871 343  ]
+{
+"200
+[; ;MCAL/ADC/hal_adc.c: 200:         adc_interrupt_handler();
+[e ( *U _adc_interrupt_handler ..  ]
+"201
+[; ;MCAL/ADC/hal_adc.c: 201:     }
+}
+[e :U 343 ]
+"202
+[; ;MCAL/ADC/hal_adc.c: 202: }
+[e :UE 342 ]
+}
+"206
+[; ;MCAL/ADC/hal_adc.c: 206: static Std_ReturnType adc_set_disable(const adc_cfg *adc){
 [v _adc_set_disable `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _adc_set_disable ]
 [v _adc `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"197
-[; ;MCAL/ADC/hal_adc.c: 197:     Std_ReturnType Retval = E_OK;
+"207
+[; ;MCAL/ADC/hal_adc.c: 207:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"198
-[; ;MCAL/ADC/hal_adc.c: 198:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 347  ]
+"208
+[; ;MCAL/ADC/hal_adc.c: 208:     if(((void*)0) == adc){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 345  ]
 {
-"199
-[; ;MCAL/ADC/hal_adc.c: 199:         Retval = E_NOT_OK;
+"209
+[; ;MCAL/ADC/hal_adc.c: 209:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"200
-[; ;MCAL/ADC/hal_adc.c: 200:     }
+"210
+[; ;MCAL/ADC/hal_adc.c: 210:     }
 }
-[e $U 348  ]
-"201
-[; ;MCAL/ADC/hal_adc.c: 201:     else{
-[e :U 347 ]
+[e $U 346  ]
+"211
+[; ;MCAL/ADC/hal_adc.c: 211:     else{
+[e :U 345 ]
 {
-"202
-[; ;MCAL/ADC/hal_adc.c: 202:         (ADCON0 &= ~(uint8)((uint8)0x01 << 0x0));
+"212
+[; ;MCAL/ADC/hal_adc.c: 212:         (ADCON0 &= ~(uint8)((uint8)0x01 << 0x0));
 [e =& _ADCON0 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
-"203
-[; ;MCAL/ADC/hal_adc.c: 203:     }
+"213
+[; ;MCAL/ADC/hal_adc.c: 213:     }
 }
-[e :U 348 ]
-"204
-[; ;MCAL/ADC/hal_adc.c: 204:     return Retval;
+[e :U 346 ]
+"214
+[; ;MCAL/ADC/hal_adc.c: 214:     return Retval;
 [e ) _Retval ]
-[e $UE 346  ]
-"205
-[; ;MCAL/ADC/hal_adc.c: 205: }
-[e :UE 346 ]
+[e $UE 344  ]
+"215
+[; ;MCAL/ADC/hal_adc.c: 215: }
+[e :UE 344 ]
 }
-"207
-[; ;MCAL/ADC/hal_adc.c: 207: static Std_ReturnType adc_set_conversion_clock(const adc_cfg *adc){
+"217
+[; ;MCAL/ADC/hal_adc.c: 217: static Std_ReturnType adc_set_conversion_clock(const adc_cfg *adc){
 [v _adc_set_conversion_clock `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _adc_set_conversion_clock ]
 [v _adc `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"208
-[; ;MCAL/ADC/hal_adc.c: 208:     Std_ReturnType Retval = E_OK;
+"218
+[; ;MCAL/ADC/hal_adc.c: 218:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"209
-[; ;MCAL/ADC/hal_adc.c: 209:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 350  ]
+"219
+[; ;MCAL/ADC/hal_adc.c: 219:     if(((void*)0) == adc){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 348  ]
 {
-"210
-[; ;MCAL/ADC/hal_adc.c: 210:         Retval = E_NOT_OK;
+"220
+[; ;MCAL/ADC/hal_adc.c: 220:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"211
-[; ;MCAL/ADC/hal_adc.c: 211:     }
+"221
+[; ;MCAL/ADC/hal_adc.c: 221:     }
 }
-[e $U 351  ]
-"212
-[; ;MCAL/ADC/hal_adc.c: 212:     else{
-[e :U 350 ]
+[e $U 349  ]
+"222
+[; ;MCAL/ADC/hal_adc.c: 222:     else{
+[e :U 348 ]
 {
-"213
-[; ;MCAL/ADC/hal_adc.c: 213:         ADCON2bits.ADCS = adc->clk;
+"223
+[; ;MCAL/ADC/hal_adc.c: 223:         ADCON2bits.ADCS = adc->clk;
 [e = . . _ADCON2bits 0 0 -> . *U _adc 3 `uc ]
-"214
-[; ;MCAL/ADC/hal_adc.c: 214:     }
+"224
+[; ;MCAL/ADC/hal_adc.c: 224:     }
 }
-[e :U 351 ]
-"215
-[; ;MCAL/ADC/hal_adc.c: 215:     return Retval;
+[e :U 349 ]
+"225
+[; ;MCAL/ADC/hal_adc.c: 225:     return Retval;
 [e ) _Retval ]
-[e $UE 349  ]
-"216
-[; ;MCAL/ADC/hal_adc.c: 216: }
-[e :UE 349 ]
+[e $UE 347  ]
+"226
+[; ;MCAL/ADC/hal_adc.c: 226: }
+[e :UE 347 ]
 }
-"218
-[; ;MCAL/ADC/hal_adc.c: 218: static Std_ReturnType adc_set_voltage_reference(const adc_cfg *adc){
+"228
+[; ;MCAL/ADC/hal_adc.c: 228: static Std_ReturnType adc_set_voltage_reference(const adc_cfg *adc){
 [v _adc_set_voltage_reference `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _adc_set_voltage_reference ]
 [v _adc `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"219
-[; ;MCAL/ADC/hal_adc.c: 219:     Std_ReturnType Retval = E_OK;
+"229
+[; ;MCAL/ADC/hal_adc.c: 229:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"220
-[; ;MCAL/ADC/hal_adc.c: 220:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 353  ]
-{
-"221
-[; ;MCAL/ADC/hal_adc.c: 221:         Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"222
-[; ;MCAL/ADC/hal_adc.c: 222:     }
-}
-[e $U 354  ]
-"223
-[; ;MCAL/ADC/hal_adc.c: 223:     else{
-[e :U 353 ]
-{
-"224
-[; ;MCAL/ADC/hal_adc.c: 224:         switch(adc->ref){
-[e $U 356  ]
-{
-"225
-[; ;MCAL/ADC/hal_adc.c: 225:             case adc_internal_voltage_reference:
-[e :U 357 ]
-"226
-[; ;MCAL/ADC/hal_adc.c: 226:                 (ADCON1 &= ~(uint8)((uint8)0x01 << 0x4));
-[e =& _ADCON1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 4 `i `uc `i `Vuc ]
-"227
-[; ;MCAL/ADC/hal_adc.c: 227:                 (ADCON1 &= ~(uint8)((uint8)0x01 << 0x5));
-[e =& _ADCON1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 5 `i `uc `i `Vuc ]
-"228
-[; ;MCAL/ADC/hal_adc.c: 228:                 break;
-[e $U 355  ]
-"229
-[; ;MCAL/ADC/hal_adc.c: 229:             case adc_external_voltage_reference:
-[e :U 358 ]
 "230
-[; ;MCAL/ADC/hal_adc.c: 230:                 (ADCON1 |= (uint8)((uint8)0x01 << 0x4));
-[e =| _ADCON1 -> -> << -> -> -> 1 `i `uc `i -> 4 `i `uc `Vuc ]
+[; ;MCAL/ADC/hal_adc.c: 230:     if(((void*)0) == adc){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 351  ]
+{
 "231
-[; ;MCAL/ADC/hal_adc.c: 231:                 (ADCON1 |= (uint8)((uint8)0x01 << 0x5));
-[e =| _ADCON1 -> -> << -> -> -> 1 `i `uc `i -> 5 `i `uc `Vuc ]
-"232
-[; ;MCAL/ADC/hal_adc.c: 232:                 break;
-[e $U 355  ]
-"233
-[; ;MCAL/ADC/hal_adc.c: 233:             default :
-[e :U 359 ]
-"234
-[; ;MCAL/ADC/hal_adc.c: 234:                 Retval = E_NOT_OK;
+[; ;MCAL/ADC/hal_adc.c: 231:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
+"232
+[; ;MCAL/ADC/hal_adc.c: 232:     }
+}
+[e $U 352  ]
+"233
+[; ;MCAL/ADC/hal_adc.c: 233:     else{
+[e :U 351 ]
+{
+"234
+[; ;MCAL/ADC/hal_adc.c: 234:         switch(adc->ref){
+[e $U 354  ]
+{
 "235
-[; ;MCAL/ADC/hal_adc.c: 235:                 break;
-[e $U 355  ]
-"236
-[; ;MCAL/ADC/hal_adc.c: 236:         }
-}
-[e $U 355  ]
-[e :U 356 ]
-[e [\ -> . *U _adc 5 `ui , $ -> . `E3757 0 `ui 357
- , $ -> . `E3757 1 `ui 358
- 359 ]
+[; ;MCAL/ADC/hal_adc.c: 235:             case adc_internal_voltage_reference:
 [e :U 355 ]
+"236
+[; ;MCAL/ADC/hal_adc.c: 236:                 (ADCON1 &= ~(uint8)((uint8)0x01 << 0x4));
+[e =& _ADCON1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 4 `i `uc `i `Vuc ]
 "237
-[; ;MCAL/ADC/hal_adc.c: 237:     }
-}
-[e :U 354 ]
+[; ;MCAL/ADC/hal_adc.c: 237:                 (ADCON1 &= ~(uint8)((uint8)0x01 << 0x5));
+[e =& _ADCON1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 5 `i `uc `i `Vuc ]
 "238
-[; ;MCAL/ADC/hal_adc.c: 238:     return Retval;
-[e ) _Retval ]
-[e $UE 352  ]
+[; ;MCAL/ADC/hal_adc.c: 238:                 break;
+[e $U 353  ]
 "239
-[; ;MCAL/ADC/hal_adc.c: 239: }
-[e :UE 352 ]
-}
+[; ;MCAL/ADC/hal_adc.c: 239:             case adc_external_voltage_reference:
+[e :U 356 ]
+"240
+[; ;MCAL/ADC/hal_adc.c: 240:                 (ADCON1 |= (uint8)((uint8)0x01 << 0x4));
+[e =| _ADCON1 -> -> << -> -> -> 1 `i `uc `i -> 4 `i `uc `Vuc ]
 "241
-[; ;MCAL/ADC/hal_adc.c: 241: static Std_ReturnType adc_set_channel_configuration(const adc_channel channel){
+[; ;MCAL/ADC/hal_adc.c: 241:                 (ADCON1 |= (uint8)((uint8)0x01 << 0x5));
+[e =| _ADCON1 -> -> << -> -> -> 1 `i `uc `i -> 5 `i `uc `Vuc ]
+"242
+[; ;MCAL/ADC/hal_adc.c: 242:                 break;
+[e $U 353  ]
+"243
+[; ;MCAL/ADC/hal_adc.c: 243:             default :
+[e :U 357 ]
+"244
+[; ;MCAL/ADC/hal_adc.c: 244:                 Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"245
+[; ;MCAL/ADC/hal_adc.c: 245:                 break;
+[e $U 353  ]
+"246
+[; ;MCAL/ADC/hal_adc.c: 246:         }
+}
+[e $U 353  ]
+[e :U 354 ]
+[e [\ -> . *U _adc 5 `ui , $ -> . `E3757 0 `ui 355
+ , $ -> . `E3757 1 `ui 356
+ 357 ]
+[e :U 353 ]
+"247
+[; ;MCAL/ADC/hal_adc.c: 247:     }
+}
+[e :U 352 ]
+"248
+[; ;MCAL/ADC/hal_adc.c: 248:     return Retval;
+[e ) _Retval ]
+[e $UE 350  ]
+"249
+[; ;MCAL/ADC/hal_adc.c: 249: }
+[e :UE 350 ]
+}
+"251
+[; ;MCAL/ADC/hal_adc.c: 251: static Std_ReturnType adc_set_channel_configuration(const adc_channel channel){
 [v _adc_set_channel_configuration `(E3659 ~T0 @X0 1 sf1`CE3742 ]
 {
 [e :U _adc_set_channel_configuration ]
 [v _channel `CE3742 ~T0 @X0 1 r1 ]
 [f ]
-"242
-[; ;MCAL/ADC/hal_adc.c: 242:     Std_ReturnType Retval = E_OK;
+"252
+[; ;MCAL/ADC/hal_adc.c: 252:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"243
-[; ;MCAL/ADC/hal_adc.c: 243:     if(channel > adc_channel_an12){
-[e $ ! > -> _channel `ui -> . `E3742 12 `ui 361  ]
+"253
+[; ;MCAL/ADC/hal_adc.c: 253:     if(channel > adc_channel_an12){
+[e $ ! > -> _channel `ui -> . `E3742 12 `ui 359  ]
 {
-"244
-[; ;MCAL/ADC/hal_adc.c: 244:         Retval = E_NOT_OK;
+"254
+[; ;MCAL/ADC/hal_adc.c: 254:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"245
-[; ;MCAL/ADC/hal_adc.c: 245:     }
+"255
+[; ;MCAL/ADC/hal_adc.c: 255:     }
 }
-[e $U 362  ]
-"246
-[; ;MCAL/ADC/hal_adc.c: 246:     else{
-[e :U 361 ]
+[e $U 360  ]
+"256
+[; ;MCAL/ADC/hal_adc.c: 256:     else{
+[e :U 359 ]
 {
-"248
-[; ;MCAL/ADC/hal_adc.c: 248:         ADCON0bits.CHS = channel;
+"258
+[; ;MCAL/ADC/hal_adc.c: 258:         ADCON0bits.CHS = channel;
 [e = . . _ADCON0bits 1 2 -> _channel `uc ]
-"250
-[; ;MCAL/ADC/hal_adc.c: 250:         switch (channel){
-[e $U 364  ]
+"260
+[; ;MCAL/ADC/hal_adc.c: 260:         switch (channel){
+[e $U 362  ]
 {
-"251
-[; ;MCAL/ADC/hal_adc.c: 251:             case adc_channel_an0 :{
-[e :U 365 ]
+"261
+[; ;MCAL/ADC/hal_adc.c: 261:             case adc_channel_an0 :{
+[e :U 363 ]
 {
-[v F3882 `S306 ~T0 @X0 1 s ]
-[i F3882
+[v F3884 `S306 ~T0 @X0 1 s ]
+[i F3884
 :U ..
 :U ..
-"252
-[; ;MCAL/ADC/hal_adc.c: 252:                 gpio_pin_cfg pinA0 = {.port = gpio_portA, .pin = gpio_pin0, .direction = gpio_input};
+"262
+[; ;MCAL/ADC/hal_adc.c: 262:                 gpio_pin_cfg pinA0 = {.port = gpio_portA, .pin = gpio_pin0, .direction = gpio_input};
 -> . `E3672 0 `uc
 -> . `E3679 0 `uc
 -> . `E3689 1 `uc
@@ -1348,29 +1335,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA0 `S306 ~T0 @X0 1 a ]
-[e = _pinA0 F3882 ]
-"253
-[; ;MCAL/ADC/hal_adc.c: 253:                 Retval = gpio_pin_direction_init(&pinA0);
+[e = _pinA0 F3884 ]
+"263
+[; ;MCAL/ADC/hal_adc.c: 263:                 Retval = gpio_pin_direction_init(&pinA0);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA0 `*CS306 ]
-"254
-[; ;MCAL/ADC/hal_adc.c: 254:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x00));
+"264
+[; ;MCAL/ADC/hal_adc.c: 264:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x00));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i `uc `Vuc ]
-"255
-[; ;MCAL/ADC/hal_adc.c: 255:                 break;
-[e $U 363  ]
-"256
-[; ;MCAL/ADC/hal_adc.c: 256:             }
+"265
+[; ;MCAL/ADC/hal_adc.c: 265:                 break;
+[e $U 361  ]
+"266
+[; ;MCAL/ADC/hal_adc.c: 266:             }
 }
-"257
-[; ;MCAL/ADC/hal_adc.c: 257:             case adc_channel_an1 :{
-[e :U 366 ]
+"267
+[; ;MCAL/ADC/hal_adc.c: 267:             case adc_channel_an1 :{
+[e :U 364 ]
 {
-[v F3884 `S306 ~T0 @X0 1 s ]
-[i F3884
+[v F3886 `S306 ~T0 @X0 1 s ]
+[i F3886
 :U ..
 :U ..
-"258
-[; ;MCAL/ADC/hal_adc.c: 258:                 gpio_pin_cfg pinA1 = {.port = gpio_portA, .pin = gpio_pin1, .direction = gpio_input};
+"268
+[; ;MCAL/ADC/hal_adc.c: 268:                 gpio_pin_cfg pinA1 = {.port = gpio_portA, .pin = gpio_pin1, .direction = gpio_input};
 -> . `E3672 0 `uc
 -> . `E3679 1 `uc
 -> . `E3689 1 `uc
@@ -1378,29 +1365,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA1 `S306 ~T0 @X0 1 a ]
-[e = _pinA1 F3884 ]
-"259
-[; ;MCAL/ADC/hal_adc.c: 259:                 Retval = gpio_pin_direction_init(&pinA1);
+[e = _pinA1 F3886 ]
+"269
+[; ;MCAL/ADC/hal_adc.c: 269:                 Retval = gpio_pin_direction_init(&pinA1);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA1 `*CS306 ]
-"260
-[; ;MCAL/ADC/hal_adc.c: 260:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x01));
+"270
+[; ;MCAL/ADC/hal_adc.c: 270:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x01));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 1 `i `uc `i `uc `Vuc ]
-"261
-[; ;MCAL/ADC/hal_adc.c: 261:                 break;
-[e $U 363  ]
-"262
-[; ;MCAL/ADC/hal_adc.c: 262:             }
+"271
+[; ;MCAL/ADC/hal_adc.c: 271:                 break;
+[e $U 361  ]
+"272
+[; ;MCAL/ADC/hal_adc.c: 272:             }
 }
-"264
-[; ;MCAL/ADC/hal_adc.c: 264:             case adc_channel_an2 :{
-[e :U 367 ]
+"274
+[; ;MCAL/ADC/hal_adc.c: 274:             case adc_channel_an2 :{
+[e :U 365 ]
 {
-[v F3886 `S306 ~T0 @X0 1 s ]
-[i F3886
+[v F3888 `S306 ~T0 @X0 1 s ]
+[i F3888
 :U ..
 :U ..
-"265
-[; ;MCAL/ADC/hal_adc.c: 265:                 gpio_pin_cfg pinA2 = {.port = gpio_portA, .pin = gpio_pin2, .direction = gpio_input};
+"275
+[; ;MCAL/ADC/hal_adc.c: 275:                 gpio_pin_cfg pinA2 = {.port = gpio_portA, .pin = gpio_pin2, .direction = gpio_input};
 -> . `E3672 0 `uc
 -> . `E3679 2 `uc
 -> . `E3689 1 `uc
@@ -1408,29 +1395,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA2 `S306 ~T0 @X0 1 a ]
-[e = _pinA2 F3886 ]
-"266
-[; ;MCAL/ADC/hal_adc.c: 266:                 Retval = gpio_pin_direction_init(&pinA2);
+[e = _pinA2 F3888 ]
+"276
+[; ;MCAL/ADC/hal_adc.c: 276:                 Retval = gpio_pin_direction_init(&pinA2);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA2 `*CS306 ]
-"267
-[; ;MCAL/ADC/hal_adc.c: 267:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x02));
+"277
+[; ;MCAL/ADC/hal_adc.c: 277:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x02));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 2 `i `uc `i `uc `Vuc ]
-"268
-[; ;MCAL/ADC/hal_adc.c: 268:                 break;
-[e $U 363  ]
-"269
-[; ;MCAL/ADC/hal_adc.c: 269:             }
+"278
+[; ;MCAL/ADC/hal_adc.c: 278:                 break;
+[e $U 361  ]
+"279
+[; ;MCAL/ADC/hal_adc.c: 279:             }
 }
-"270
-[; ;MCAL/ADC/hal_adc.c: 270:             case adc_channel_an3 :{
-[e :U 368 ]
+"280
+[; ;MCAL/ADC/hal_adc.c: 280:             case adc_channel_an3 :{
+[e :U 366 ]
 {
-[v F3888 `S306 ~T0 @X0 1 s ]
-[i F3888
+[v F3890 `S306 ~T0 @X0 1 s ]
+[i F3890
 :U ..
 :U ..
-"271
-[; ;MCAL/ADC/hal_adc.c: 271:                 gpio_pin_cfg pinA3 = {.port = gpio_portA, .pin = gpio_pin3, .direction = gpio_input};
+"281
+[; ;MCAL/ADC/hal_adc.c: 281:                 gpio_pin_cfg pinA3 = {.port = gpio_portA, .pin = gpio_pin3, .direction = gpio_input};
 -> . `E3672 0 `uc
 -> . `E3679 3 `uc
 -> . `E3689 1 `uc
@@ -1438,29 +1425,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA3 `S306 ~T0 @X0 1 a ]
-[e = _pinA3 F3888 ]
-"272
-[; ;MCAL/ADC/hal_adc.c: 272:                 Retval = gpio_pin_direction_init(&pinA3);
+[e = _pinA3 F3890 ]
+"282
+[; ;MCAL/ADC/hal_adc.c: 282:                 Retval = gpio_pin_direction_init(&pinA3);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA3 `*CS306 ]
-"273
-[; ;MCAL/ADC/hal_adc.c: 273:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x03));
+"283
+[; ;MCAL/ADC/hal_adc.c: 283:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x03));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 3 `i `uc `i `uc `Vuc ]
-"275
-[; ;MCAL/ADC/hal_adc.c: 275:                 break;
-[e $U 363  ]
-"276
-[; ;MCAL/ADC/hal_adc.c: 276:             }
+"285
+[; ;MCAL/ADC/hal_adc.c: 285:                 break;
+[e $U 361  ]
+"286
+[; ;MCAL/ADC/hal_adc.c: 286:             }
 }
-"278
-[; ;MCAL/ADC/hal_adc.c: 278:             case adc_channel_an4 :{
-[e :U 369 ]
+"288
+[; ;MCAL/ADC/hal_adc.c: 288:             case adc_channel_an4 :{
+[e :U 367 ]
 {
-[v F3890 `S306 ~T0 @X0 1 s ]
-[i F3890
+[v F3892 `S306 ~T0 @X0 1 s ]
+[i F3892
 :U ..
 :U ..
-"279
-[; ;MCAL/ADC/hal_adc.c: 279:                 gpio_pin_cfg pinA4 = {.port = gpio_portA, .pin = gpio_pin5, .direction = gpio_input};
+"289
+[; ;MCAL/ADC/hal_adc.c: 289:                 gpio_pin_cfg pinA4 = {.port = gpio_portA, .pin = gpio_pin5, .direction = gpio_input};
 -> . `E3672 0 `uc
 -> . `E3679 5 `uc
 -> . `E3689 1 `uc
@@ -1468,29 +1455,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA4 `S306 ~T0 @X0 1 a ]
-[e = _pinA4 F3890 ]
-"280
-[; ;MCAL/ADC/hal_adc.c: 280:                 Retval = gpio_pin_direction_init(&pinA4);
+[e = _pinA4 F3892 ]
+"290
+[; ;MCAL/ADC/hal_adc.c: 290:                 Retval = gpio_pin_direction_init(&pinA4);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA4 `*CS306 ]
-"281
-[; ;MCAL/ADC/hal_adc.c: 281:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x04));
+"291
+[; ;MCAL/ADC/hal_adc.c: 291:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x04));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 4 `i `uc `i `uc `Vuc ]
-"282
-[; ;MCAL/ADC/hal_adc.c: 282:                 break;
-[e $U 363  ]
-"283
-[; ;MCAL/ADC/hal_adc.c: 283:             }
+"292
+[; ;MCAL/ADC/hal_adc.c: 292:                 break;
+[e $U 361  ]
+"293
+[; ;MCAL/ADC/hal_adc.c: 293:             }
 }
-"284
-[; ;MCAL/ADC/hal_adc.c: 284:             case adc_channel_an5 :{
-[e :U 370 ]
+"294
+[; ;MCAL/ADC/hal_adc.c: 294:             case adc_channel_an5 :{
+[e :U 368 ]
 {
-[v F3892 `S306 ~T0 @X0 1 s ]
-[i F3892
+[v F3894 `S306 ~T0 @X0 1 s ]
+[i F3894
 :U ..
 :U ..
-"285
-[; ;MCAL/ADC/hal_adc.c: 285:                 gpio_pin_cfg pinA5 = {.port = gpio_portE, .pin = gpio_pin0, .direction = gpio_input};
+"295
+[; ;MCAL/ADC/hal_adc.c: 295:                 gpio_pin_cfg pinA5 = {.port = gpio_portE, .pin = gpio_pin0, .direction = gpio_input};
 -> . `E3672 4 `uc
 -> . `E3679 0 `uc
 -> . `E3689 1 `uc
@@ -1498,29 +1485,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA5 `S306 ~T0 @X0 1 a ]
-[e = _pinA5 F3892 ]
-"286
-[; ;MCAL/ADC/hal_adc.c: 286:                 Retval = gpio_pin_direction_init(&pinA5);
+[e = _pinA5 F3894 ]
+"296
+[; ;MCAL/ADC/hal_adc.c: 296:                 Retval = gpio_pin_direction_init(&pinA5);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA5 `*CS306 ]
-"287
-[; ;MCAL/ADC/hal_adc.c: 287:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x05));
+"297
+[; ;MCAL/ADC/hal_adc.c: 297:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x05));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 5 `i `uc `i `uc `Vuc ]
-"288
-[; ;MCAL/ADC/hal_adc.c: 288:                 break;
-[e $U 363  ]
-"289
-[; ;MCAL/ADC/hal_adc.c: 289:             }
+"298
+[; ;MCAL/ADC/hal_adc.c: 298:                 break;
+[e $U 361  ]
+"299
+[; ;MCAL/ADC/hal_adc.c: 299:             }
 }
-"290
-[; ;MCAL/ADC/hal_adc.c: 290:             case adc_channel_an6 :{
-[e :U 371 ]
+"300
+[; ;MCAL/ADC/hal_adc.c: 300:             case adc_channel_an6 :{
+[e :U 369 ]
 {
-[v F3894 `S306 ~T0 @X0 1 s ]
-[i F3894
+[v F3896 `S306 ~T0 @X0 1 s ]
+[i F3896
 :U ..
 :U ..
-"291
-[; ;MCAL/ADC/hal_adc.c: 291:                 gpio_pin_cfg pinA6 = {.port = gpio_portE, .pin = gpio_pin1, .direction = gpio_input};
+"301
+[; ;MCAL/ADC/hal_adc.c: 301:                 gpio_pin_cfg pinA6 = {.port = gpio_portE, .pin = gpio_pin1, .direction = gpio_input};
 -> . `E3672 4 `uc
 -> . `E3679 1 `uc
 -> . `E3689 1 `uc
@@ -1528,29 +1515,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA6 `S306 ~T0 @X0 1 a ]
-[e = _pinA6 F3894 ]
-"292
-[; ;MCAL/ADC/hal_adc.c: 292:                 Retval = gpio_pin_direction_init(&pinA6);
+[e = _pinA6 F3896 ]
+"302
+[; ;MCAL/ADC/hal_adc.c: 302:                 Retval = gpio_pin_direction_init(&pinA6);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA6 `*CS306 ]
-"293
-[; ;MCAL/ADC/hal_adc.c: 293:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x06));
+"303
+[; ;MCAL/ADC/hal_adc.c: 303:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x06));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 6 `i `uc `i `uc `Vuc ]
-"294
-[; ;MCAL/ADC/hal_adc.c: 294:                 break;
-[e $U 363  ]
-"295
-[; ;MCAL/ADC/hal_adc.c: 295:             }
+"304
+[; ;MCAL/ADC/hal_adc.c: 304:                 break;
+[e $U 361  ]
+"305
+[; ;MCAL/ADC/hal_adc.c: 305:             }
 }
-"296
-[; ;MCAL/ADC/hal_adc.c: 296:             case adc_channel_an7 :{
-[e :U 372 ]
+"306
+[; ;MCAL/ADC/hal_adc.c: 306:             case adc_channel_an7 :{
+[e :U 370 ]
 {
-[v F3896 `S306 ~T0 @X0 1 s ]
-[i F3896
+[v F3898 `S306 ~T0 @X0 1 s ]
+[i F3898
 :U ..
 :U ..
-"297
-[; ;MCAL/ADC/hal_adc.c: 297:                 gpio_pin_cfg pinA7 = {.port = gpio_portE, .pin = gpio_pin2, .direction = gpio_input};
+"307
+[; ;MCAL/ADC/hal_adc.c: 307:                 gpio_pin_cfg pinA7 = {.port = gpio_portE, .pin = gpio_pin2, .direction = gpio_input};
 -> . `E3672 4 `uc
 -> . `E3679 2 `uc
 -> . `E3689 1 `uc
@@ -1558,29 +1545,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA7 `S306 ~T0 @X0 1 a ]
-[e = _pinA7 F3896 ]
-"298
-[; ;MCAL/ADC/hal_adc.c: 298:                 Retval = gpio_pin_direction_init(&pinA7);
+[e = _pinA7 F3898 ]
+"308
+[; ;MCAL/ADC/hal_adc.c: 308:                 Retval = gpio_pin_direction_init(&pinA7);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA7 `*CS306 ]
-"299
-[; ;MCAL/ADC/hal_adc.c: 299:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x07));
+"309
+[; ;MCAL/ADC/hal_adc.c: 309:                 (ANSEL |= (uint8)((uint8)0x01 << (uint8)0x07));
 [e =| _ANSEL -> -> << -> -> -> 1 `i `uc `i -> -> -> 7 `i `uc `i `uc `Vuc ]
-"300
-[; ;MCAL/ADC/hal_adc.c: 300:                 break;
-[e $U 363  ]
-"301
-[; ;MCAL/ADC/hal_adc.c: 301:             }
+"310
+[; ;MCAL/ADC/hal_adc.c: 310:                 break;
+[e $U 361  ]
+"311
+[; ;MCAL/ADC/hal_adc.c: 311:             }
 }
-"302
-[; ;MCAL/ADC/hal_adc.c: 302:             case adc_channel_an8 :{
-[e :U 373 ]
+"312
+[; ;MCAL/ADC/hal_adc.c: 312:             case adc_channel_an8 :{
+[e :U 371 ]
 {
-[v F3898 `S306 ~T0 @X0 1 s ]
-[i F3898
+[v F3900 `S306 ~T0 @X0 1 s ]
+[i F3900
 :U ..
 :U ..
-"303
-[; ;MCAL/ADC/hal_adc.c: 303:                 gpio_pin_cfg pinA8 = {.port = gpio_portB, .pin = gpio_pin2, .direction = gpio_input};
+"313
+[; ;MCAL/ADC/hal_adc.c: 313:                 gpio_pin_cfg pinA8 = {.port = gpio_portB, .pin = gpio_pin2, .direction = gpio_input};
 -> . `E3672 1 `uc
 -> . `E3679 2 `uc
 -> . `E3689 1 `uc
@@ -1588,29 +1575,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA8 `S306 ~T0 @X0 1 a ]
-[e = _pinA8 F3898 ]
-"304
-[; ;MCAL/ADC/hal_adc.c: 304:                 Retval = gpio_pin_direction_init(&pinA8);
+[e = _pinA8 F3900 ]
+"314
+[; ;MCAL/ADC/hal_adc.c: 314:                 Retval = gpio_pin_direction_init(&pinA8);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA8 `*CS306 ]
-"305
-[; ;MCAL/ADC/hal_adc.c: 305:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x00));
+"315
+[; ;MCAL/ADC/hal_adc.c: 315:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x00));
 [e =| _ANSELH -> -> << -> -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i `uc `Vuc ]
-"306
-[; ;MCAL/ADC/hal_adc.c: 306:                 break;
-[e $U 363  ]
-"307
-[; ;MCAL/ADC/hal_adc.c: 307:             }
+"316
+[; ;MCAL/ADC/hal_adc.c: 316:                 break;
+[e $U 361  ]
+"317
+[; ;MCAL/ADC/hal_adc.c: 317:             }
 }
-"308
-[; ;MCAL/ADC/hal_adc.c: 308:             case adc_channel_an9 :{
-[e :U 374 ]
+"318
+[; ;MCAL/ADC/hal_adc.c: 318:             case adc_channel_an9 :{
+[e :U 372 ]
 {
-[v F3900 `S306 ~T0 @X0 1 s ]
-[i F3900
+[v F3902 `S306 ~T0 @X0 1 s ]
+[i F3902
 :U ..
 :U ..
-"309
-[; ;MCAL/ADC/hal_adc.c: 309:                 gpio_pin_cfg pinA9 = {.port = gpio_portB, .pin = gpio_pin3, .direction = gpio_input};
+"319
+[; ;MCAL/ADC/hal_adc.c: 319:                 gpio_pin_cfg pinA9 = {.port = gpio_portB, .pin = gpio_pin3, .direction = gpio_input};
 -> . `E3672 1 `uc
 -> . `E3679 3 `uc
 -> . `E3689 1 `uc
@@ -1618,29 +1605,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA9 `S306 ~T0 @X0 1 a ]
-[e = _pinA9 F3900 ]
-"310
-[; ;MCAL/ADC/hal_adc.c: 310:                 Retval = gpio_pin_direction_init(&pinA9);
+[e = _pinA9 F3902 ]
+"320
+[; ;MCAL/ADC/hal_adc.c: 320:                 Retval = gpio_pin_direction_init(&pinA9);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA9 `*CS306 ]
-"311
-[; ;MCAL/ADC/hal_adc.c: 311:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x01));
+"321
+[; ;MCAL/ADC/hal_adc.c: 321:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x01));
 [e =| _ANSELH -> -> << -> -> -> 1 `i `uc `i -> -> -> 1 `i `uc `i `uc `Vuc ]
-"312
-[; ;MCAL/ADC/hal_adc.c: 312:                 break;
-[e $U 363  ]
-"313
-[; ;MCAL/ADC/hal_adc.c: 313:             }
+"322
+[; ;MCAL/ADC/hal_adc.c: 322:                 break;
+[e $U 361  ]
+"323
+[; ;MCAL/ADC/hal_adc.c: 323:             }
 }
-"314
-[; ;MCAL/ADC/hal_adc.c: 314:             case adc_channel_an10 :{
-[e :U 375 ]
+"324
+[; ;MCAL/ADC/hal_adc.c: 324:             case adc_channel_an10 :{
+[e :U 373 ]
 {
-[v F3902 `S306 ~T0 @X0 1 s ]
-[i F3902
+[v F3904 `S306 ~T0 @X0 1 s ]
+[i F3904
 :U ..
 :U ..
-"315
-[; ;MCAL/ADC/hal_adc.c: 315:                 gpio_pin_cfg pinA10 = {.port = gpio_portB, .pin = gpio_pin1, .direction = gpio_input};
+"325
+[; ;MCAL/ADC/hal_adc.c: 325:                 gpio_pin_cfg pinA10 = {.port = gpio_portB, .pin = gpio_pin1, .direction = gpio_input};
 -> . `E3672 1 `uc
 -> . `E3679 1 `uc
 -> . `E3689 1 `uc
@@ -1648,29 +1635,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA10 `S306 ~T0 @X0 1 a ]
-[e = _pinA10 F3902 ]
-"316
-[; ;MCAL/ADC/hal_adc.c: 316:                 Retval = gpio_pin_direction_init(&pinA10);
+[e = _pinA10 F3904 ]
+"326
+[; ;MCAL/ADC/hal_adc.c: 326:                 Retval = gpio_pin_direction_init(&pinA10);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA10 `*CS306 ]
-"317
-[; ;MCAL/ADC/hal_adc.c: 317:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x02));
+"327
+[; ;MCAL/ADC/hal_adc.c: 327:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x02));
 [e =| _ANSELH -> -> << -> -> -> 1 `i `uc `i -> -> -> 2 `i `uc `i `uc `Vuc ]
-"318
-[; ;MCAL/ADC/hal_adc.c: 318:                 break;
-[e $U 363  ]
-"319
-[; ;MCAL/ADC/hal_adc.c: 319:             }
+"328
+[; ;MCAL/ADC/hal_adc.c: 328:                 break;
+[e $U 361  ]
+"329
+[; ;MCAL/ADC/hal_adc.c: 329:             }
 }
-"320
-[; ;MCAL/ADC/hal_adc.c: 320:             case adc_channel_an11 :{
-[e :U 376 ]
+"330
+[; ;MCAL/ADC/hal_adc.c: 330:             case adc_channel_an11 :{
+[e :U 374 ]
 {
-[v F3904 `S306 ~T0 @X0 1 s ]
-[i F3904
+[v F3906 `S306 ~T0 @X0 1 s ]
+[i F3906
 :U ..
 :U ..
-"321
-[; ;MCAL/ADC/hal_adc.c: 321:                 gpio_pin_cfg pinA11 = {.port = gpio_portB, .pin = gpio_pin4, .direction = gpio_input};
+"331
+[; ;MCAL/ADC/hal_adc.c: 331:                 gpio_pin_cfg pinA11 = {.port = gpio_portB, .pin = gpio_pin4, .direction = gpio_input};
 -> . `E3672 1 `uc
 -> . `E3679 4 `uc
 -> . `E3689 1 `uc
@@ -1678,29 +1665,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA11 `S306 ~T0 @X0 1 a ]
-[e = _pinA11 F3904 ]
-"322
-[; ;MCAL/ADC/hal_adc.c: 322:                 Retval = gpio_pin_direction_init(&pinA11);
+[e = _pinA11 F3906 ]
+"332
+[; ;MCAL/ADC/hal_adc.c: 332:                 Retval = gpio_pin_direction_init(&pinA11);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA11 `*CS306 ]
-"323
-[; ;MCAL/ADC/hal_adc.c: 323:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x03));
+"333
+[; ;MCAL/ADC/hal_adc.c: 333:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x03));
 [e =| _ANSELH -> -> << -> -> -> 1 `i `uc `i -> -> -> 3 `i `uc `i `uc `Vuc ]
-"324
-[; ;MCAL/ADC/hal_adc.c: 324:                 break;
-[e $U 363  ]
-"325
-[; ;MCAL/ADC/hal_adc.c: 325:             }
+"334
+[; ;MCAL/ADC/hal_adc.c: 334:                 break;
+[e $U 361  ]
+"335
+[; ;MCAL/ADC/hal_adc.c: 335:             }
 }
-"326
-[; ;MCAL/ADC/hal_adc.c: 326:             case adc_channel_an12 :{
-[e :U 377 ]
+"336
+[; ;MCAL/ADC/hal_adc.c: 336:             case adc_channel_an12 :{
+[e :U 375 ]
 {
-[v F3906 `S306 ~T0 @X0 1 s ]
-[i F3906
+[v F3908 `S306 ~T0 @X0 1 s ]
+[i F3908
 :U ..
 :U ..
-"327
-[; ;MCAL/ADC/hal_adc.c: 327:                 gpio_pin_cfg pinA12 = {.port = gpio_portB, .pin = gpio_pin0, .direction = gpio_input};
+"337
+[; ;MCAL/ADC/hal_adc.c: 337:                 gpio_pin_cfg pinA12 = {.port = gpio_portB, .pin = gpio_pin0, .direction = gpio_input};
 -> . `E3672 1 `uc
 -> . `E3679 0 `uc
 -> . `E3689 1 `uc
@@ -1708,217 +1695,217 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _pinA12 `S306 ~T0 @X0 1 a ]
-[e = _pinA12 F3906 ]
-"328
-[; ;MCAL/ADC/hal_adc.c: 328:                 Retval = gpio_pin_direction_init(&pinA12);
-[e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA12 `*CS306 ]
-"329
-[; ;MCAL/ADC/hal_adc.c: 329:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x04));
-[e =| _ANSELH -> -> << -> -> -> 1 `i `uc `i -> -> -> 4 `i `uc `i `uc `Vuc ]
-"330
-[; ;MCAL/ADC/hal_adc.c: 330:                 break;
-[e $U 363  ]
-"331
-[; ;MCAL/ADC/hal_adc.c: 331:             }
-}
-"332
-[; ;MCAL/ADC/hal_adc.c: 332:                 default :
-[e :U 378 ]
-"333
-[; ;MCAL/ADC/hal_adc.c: 333:                     Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"334
-[; ;MCAL/ADC/hal_adc.c: 334:                 break;
-[e $U 363  ]
-"335
-[; ;MCAL/ADC/hal_adc.c: 335:         }
-}
-[e $U 363  ]
-[e :U 364 ]
-[e [\ -> _channel `ui , $ -> . `E3742 0 `ui 365
- , $ -> . `E3742 1 `ui 366
- , $ -> . `E3742 2 `ui 367
- , $ -> . `E3742 3 `ui 368
- , $ -> . `E3742 4 `ui 369
- , $ -> . `E3742 5 `ui 370
- , $ -> . `E3742 6 `ui 371
- , $ -> . `E3742 7 `ui 372
- , $ -> . `E3742 8 `ui 373
- , $ -> . `E3742 9 `ui 374
- , $ -> . `E3742 10 `ui 375
- , $ -> . `E3742 11 `ui 376
- , $ -> . `E3742 12 `ui 377
- 378 ]
-[e :U 363 ]
-"336
-[; ;MCAL/ADC/hal_adc.c: 336:     }
-}
-[e :U 362 ]
-"337
-[; ;MCAL/ADC/hal_adc.c: 337:     return Retval;
-[e ) _Retval ]
-[e $UE 360  ]
+[e = _pinA12 F3908 ]
 "338
-[; ;MCAL/ADC/hal_adc.c: 338: }
-[e :UE 360 ]
-}
+[; ;MCAL/ADC/hal_adc.c: 338:                 Retval = gpio_pin_direction_init(&pinA12);
+[e = _Retval ( _gpio_pin_direction_init (1 -> &U _pinA12 `*CS306 ]
+"339
+[; ;MCAL/ADC/hal_adc.c: 339:                 (ANSELH |= (uint8)((uint8)0x01 << (uint8)0x04));
+[e =| _ANSELH -> -> << -> -> -> 1 `i `uc `i -> -> -> 4 `i `uc `i `uc `Vuc ]
 "340
-[; ;MCAL/ADC/hal_adc.c: 340: static Std_ReturnType adc_set_result_format(const adc_cfg *adc){
+[; ;MCAL/ADC/hal_adc.c: 340:                 break;
+[e $U 361  ]
+"341
+[; ;MCAL/ADC/hal_adc.c: 341:             }
+}
+"342
+[; ;MCAL/ADC/hal_adc.c: 342:                 default :
+[e :U 376 ]
+"343
+[; ;MCAL/ADC/hal_adc.c: 343:                     Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"344
+[; ;MCAL/ADC/hal_adc.c: 344:                 break;
+[e $U 361  ]
+"345
+[; ;MCAL/ADC/hal_adc.c: 345:         }
+}
+[e $U 361  ]
+[e :U 362 ]
+[e [\ -> _channel `ui , $ -> . `E3742 0 `ui 363
+ , $ -> . `E3742 1 `ui 364
+ , $ -> . `E3742 2 `ui 365
+ , $ -> . `E3742 3 `ui 366
+ , $ -> . `E3742 4 `ui 367
+ , $ -> . `E3742 5 `ui 368
+ , $ -> . `E3742 6 `ui 369
+ , $ -> . `E3742 7 `ui 370
+ , $ -> . `E3742 8 `ui 371
+ , $ -> . `E3742 9 `ui 372
+ , $ -> . `E3742 10 `ui 373
+ , $ -> . `E3742 11 `ui 374
+ , $ -> . `E3742 12 `ui 375
+ 376 ]
+[e :U 361 ]
+"346
+[; ;MCAL/ADC/hal_adc.c: 346:     }
+}
+[e :U 360 ]
+"347
+[; ;MCAL/ADC/hal_adc.c: 347:     return Retval;
+[e ) _Retval ]
+[e $UE 358  ]
+"348
+[; ;MCAL/ADC/hal_adc.c: 348: }
+[e :UE 358 ]
+}
+"350
+[; ;MCAL/ADC/hal_adc.c: 350: static Std_ReturnType adc_set_result_format(const adc_cfg *adc){
 [v _adc_set_result_format `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _adc_set_result_format ]
 [v _adc `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"341
-[; ;MCAL/ADC/hal_adc.c: 341:     Std_ReturnType Retval = E_OK;
+"351
+[; ;MCAL/ADC/hal_adc.c: 351:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"342
-[; ;MCAL/ADC/hal_adc.c: 342:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 380  ]
-{
-"343
-[; ;MCAL/ADC/hal_adc.c: 343:         Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"344
-[; ;MCAL/ADC/hal_adc.c: 344:     }
-}
-[e $U 381  ]
-"345
-[; ;MCAL/ADC/hal_adc.c: 345:     else{
-[e :U 380 ]
-{
-"346
-[; ;MCAL/ADC/hal_adc.c: 346:         switch(adc->format){
-[e $U 383  ]
-{
-"347
-[; ;MCAL/ADC/hal_adc.c: 347:             case adc_format_left:
-[e :U 384 ]
-"348
-[; ;MCAL/ADC/hal_adc.c: 348:                 (ADCON2 &= ~(uint8)((uint8)0x01 << 0x7));
-[e =& _ADCON2 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
-"349
-[; ;MCAL/ADC/hal_adc.c: 349:                 break;
-[e $U 382  ]
-"350
-[; ;MCAL/ADC/hal_adc.c: 350:             case adc_format_right:
-[e :U 385 ]
-"351
-[; ;MCAL/ADC/hal_adc.c: 351:                 (ADCON2 |= (uint8)((uint8)0x01 << 0x7));
-[e =| _ADCON2 -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
 "352
-[; ;MCAL/ADC/hal_adc.c: 352:                 break;
-[e $U 382  ]
+[; ;MCAL/ADC/hal_adc.c: 352:     if(((void*)0) == adc){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 378  ]
+{
 "353
-[; ;MCAL/ADC/hal_adc.c: 353:             default :
-[e :U 386 ]
-"354
-[; ;MCAL/ADC/hal_adc.c: 354:                 Retval = E_NOT_OK;
+[; ;MCAL/ADC/hal_adc.c: 353:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
+"354
+[; ;MCAL/ADC/hal_adc.c: 354:     }
+}
+[e $U 379  ]
 "355
-[; ;MCAL/ADC/hal_adc.c: 355:                 break;
-[e $U 382  ]
+[; ;MCAL/ADC/hal_adc.c: 355:     else{
+[e :U 378 ]
+{
 "356
-[; ;MCAL/ADC/hal_adc.c: 356:         }
-}
-[e $U 382  ]
-[e :U 383 ]
-[e [\ -> . *U _adc 6 `ui , $ -> . `E3780 0 `ui 384
- , $ -> . `E3780 1 `ui 385
- 386 ]
-[e :U 382 ]
+[; ;MCAL/ADC/hal_adc.c: 356:         switch(adc->format){
+[e $U 381  ]
+{
 "357
-[; ;MCAL/ADC/hal_adc.c: 357:     }
-}
-[e :U 381 ]
+[; ;MCAL/ADC/hal_adc.c: 357:             case adc_format_left:
+[e :U 382 ]
 "358
-[; ;MCAL/ADC/hal_adc.c: 358:     return Retval;
-[e ) _Retval ]
-[e $UE 379  ]
+[; ;MCAL/ADC/hal_adc.c: 358:                 (ADCON2 &= ~(uint8)((uint8)0x01 << 0x7));
+[e =& _ADCON2 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
 "359
-[; ;MCAL/ADC/hal_adc.c: 359: }
-[e :UE 379 ]
-}
+[; ;MCAL/ADC/hal_adc.c: 359:                 break;
+[e $U 380  ]
+"360
+[; ;MCAL/ADC/hal_adc.c: 360:             case adc_format_right:
+[e :U 383 ]
 "361
-[; ;MCAL/ADC/hal_adc.c: 361: static Std_ReturnType adc_set_acquisition_time(const adc_cfg *adc){
+[; ;MCAL/ADC/hal_adc.c: 361:                 (ADCON2 |= (uint8)((uint8)0x01 << 0x7));
+[e =| _ADCON2 -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
+"362
+[; ;MCAL/ADC/hal_adc.c: 362:                 break;
+[e $U 380  ]
+"363
+[; ;MCAL/ADC/hal_adc.c: 363:             default :
+[e :U 384 ]
+"364
+[; ;MCAL/ADC/hal_adc.c: 364:                 Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"365
+[; ;MCAL/ADC/hal_adc.c: 365:                 break;
+[e $U 380  ]
+"366
+[; ;MCAL/ADC/hal_adc.c: 366:         }
+}
+[e $U 380  ]
+[e :U 381 ]
+[e [\ -> . *U _adc 6 `ui , $ -> . `E3780 0 `ui 382
+ , $ -> . `E3780 1 `ui 383
+ 384 ]
+[e :U 380 ]
+"367
+[; ;MCAL/ADC/hal_adc.c: 367:     }
+}
+[e :U 379 ]
+"368
+[; ;MCAL/ADC/hal_adc.c: 368:     return Retval;
+[e ) _Retval ]
+[e $UE 377  ]
+"369
+[; ;MCAL/ADC/hal_adc.c: 369: }
+[e :UE 377 ]
+}
+"371
+[; ;MCAL/ADC/hal_adc.c: 371: static Std_ReturnType adc_set_acquisition_time(const adc_cfg *adc){
 [v _adc_set_acquisition_time `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _adc_set_acquisition_time ]
 [v _adc `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"362
-[; ;MCAL/ADC/hal_adc.c: 362:     Std_ReturnType Retval = E_OK;
+"372
+[; ;MCAL/ADC/hal_adc.c: 372:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"363
-[; ;MCAL/ADC/hal_adc.c: 363:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 388  ]
+"373
+[; ;MCAL/ADC/hal_adc.c: 373:     if(((void*)0) == adc){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 386  ]
 {
-"364
-[; ;MCAL/ADC/hal_adc.c: 364:         Retval = E_NOT_OK;
+"374
+[; ;MCAL/ADC/hal_adc.c: 374:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"365
-[; ;MCAL/ADC/hal_adc.c: 365:     }
+"375
+[; ;MCAL/ADC/hal_adc.c: 375:     }
 }
-[e $U 389  ]
-"366
-[; ;MCAL/ADC/hal_adc.c: 366:     else{
-[e :U 388 ]
+[e $U 387  ]
+"376
+[; ;MCAL/ADC/hal_adc.c: 376:     else{
+[e :U 386 ]
 {
-"367
-[; ;MCAL/ADC/hal_adc.c: 367:         ADCON2bits.ACQT = adc->acq;
+"377
+[; ;MCAL/ADC/hal_adc.c: 377:         ADCON2bits.ACQT = adc->acq;
 [e = . . _ADCON2bits 0 1 -> . *U _adc 4 `uc ]
-"368
-[; ;MCAL/ADC/hal_adc.c: 368:     }
+"378
+[; ;MCAL/ADC/hal_adc.c: 378:     }
 }
-[e :U 389 ]
-"369
-[; ;MCAL/ADC/hal_adc.c: 369:     return Retval;
+[e :U 387 ]
+"379
+[; ;MCAL/ADC/hal_adc.c: 379:     return Retval;
 [e ) _Retval ]
-[e $UE 387  ]
-"370
-[; ;MCAL/ADC/hal_adc.c: 370: }
-[e :UE 387 ]
+[e $UE 385  ]
+"380
+[; ;MCAL/ADC/hal_adc.c: 380: }
+[e :UE 385 ]
 }
-"372
-[; ;MCAL/ADC/hal_adc.c: 372: static Std_ReturnType adc_set_enable(const adc_cfg *adc){
+"382
+[; ;MCAL/ADC/hal_adc.c: 382: static Std_ReturnType adc_set_enable(const adc_cfg *adc){
 [v _adc_set_enable `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _adc_set_enable ]
 [v _adc `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"373
-[; ;MCAL/ADC/hal_adc.c: 373:     Std_ReturnType Retval = E_OK;
+"383
+[; ;MCAL/ADC/hal_adc.c: 383:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"374
-[; ;MCAL/ADC/hal_adc.c: 374:     if(((void*)0) == adc){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 391  ]
+"384
+[; ;MCAL/ADC/hal_adc.c: 384:     if(((void*)0) == adc){
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _adc 389  ]
 {
-"375
-[; ;MCAL/ADC/hal_adc.c: 375:         Retval = E_NOT_OK;
+"385
+[; ;MCAL/ADC/hal_adc.c: 385:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"376
-[; ;MCAL/ADC/hal_adc.c: 376:     }
+"386
+[; ;MCAL/ADC/hal_adc.c: 386:     }
 }
-[e $U 392  ]
-"377
-[; ;MCAL/ADC/hal_adc.c: 377:     else{
-[e :U 391 ]
+[e $U 390  ]
+"387
+[; ;MCAL/ADC/hal_adc.c: 387:     else{
+[e :U 389 ]
 {
-"378
-[; ;MCAL/ADC/hal_adc.c: 378:         (ADCON0 |= (uint8)((uint8)0x01 << 0x0));
+"388
+[; ;MCAL/ADC/hal_adc.c: 388:         (ADCON0 |= (uint8)((uint8)0x01 << 0x0));
 [e =| _ADCON0 -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `Vuc ]
-"379
-[; ;MCAL/ADC/hal_adc.c: 379:     }
+"389
+[; ;MCAL/ADC/hal_adc.c: 389:     }
 }
-[e :U 392 ]
-"380
-[; ;MCAL/ADC/hal_adc.c: 380:     return Retval;
+[e :U 390 ]
+"390
+[; ;MCAL/ADC/hal_adc.c: 390:     return Retval;
 [e ) _Retval ]
-[e $UE 390  ]
-"381
-[; ;MCAL/ADC/hal_adc.c: 381: }
-[e :UE 390 ]
+[e $UE 388  ]
+"391
+[; ;MCAL/ADC/hal_adc.c: 391: }
+[e :UE 388 ]
 }

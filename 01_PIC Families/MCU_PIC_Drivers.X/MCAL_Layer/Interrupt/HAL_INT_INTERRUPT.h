@@ -40,6 +40,26 @@
 
 #endif
 
+// Timer0 Interrupt Configuration
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER0_INTERRUPT_FEATURE))
+
+// Timer0 Flag bit
+#define INT_INTERRUPT_TIMER0_CLEAR_FLAG()                     CLEAR_BIT(INTCON, _INTCON_TMR0IF_POSITION)
+
+// Timer0 Enable Bit
+#define INT_INTERRUPT_TIMER0_DISABLE()                        CLEAR_BIT(INTCON, _INTCON_TMR0IE_POSITION)
+#define INT_INTERRUPT_TIMER0_ENABLE()                         SET_BIT(INTCON, _INTCON_TMR0IE_POSITION)
+
+// Timer0 Priority Bit
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+#define INT_INTERRUPT_TIMER0_LOW_PRIORITY()                   CLEAR_BIT(INTCON2, _INTCON2_TMR0IP_POSITION)
+#define INT_INTERRUPT_TIMER0_HIGH_PRIORITY()                  SET_BIT(INTCON2, _INTCON2_TMR0IP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

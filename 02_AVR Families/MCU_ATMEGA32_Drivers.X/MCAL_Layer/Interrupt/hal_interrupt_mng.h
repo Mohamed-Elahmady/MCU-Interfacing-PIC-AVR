@@ -35,6 +35,8 @@ void INT2_ISR(void);
 
 // For internal interrupt
 void ADC_ISR(void);
+void TMR0_ISR(void);
+void CTC_ISR(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

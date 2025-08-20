@@ -1,6 +1,6 @@
-build/default/production/APP_Layer/main.o.d \
- build/default/production/APP_Layer/main.o: APP_Layer/main.c \
- APP_Layer/main.h APP_Layer/../ECUAL_Layer/ECUAL_INIT.h \
+build/default/production/APP_Layer/Main.o.d \
+ build/default/production/APP_Layer/Main.o: APP_Layer/Main.c \
+ APP_Layer/Main.h APP_Layer/../ECUAL_Layer/ECUAL_INIT.h \
  APP_Layer/../ECUAL_Layer/LED/ecual_led.h \
  APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h \
  APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h \
@@ -67,9 +67,15 @@ build/default/production/APP_Layer/main.o.d \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/hal_adc_cfg.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../Interrupt/hal_int_interrupt.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../GPIO/hal_gpio.h \
- APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../mcal_std_types.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../Interrupt/hal_int_interrupt.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/hal_gpio.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h
 
-APP_Layer/main.h:
+APP_Layer/Main.h:
 
 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h:
 
@@ -206,3 +212,15 @@ APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../Interrupt/hal_int_interrupt.h:
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../GPIO/hal_gpio.h:
 
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../mcal_std_types.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../Interrupt/hal_int_interrupt.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/hal_gpio.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h:

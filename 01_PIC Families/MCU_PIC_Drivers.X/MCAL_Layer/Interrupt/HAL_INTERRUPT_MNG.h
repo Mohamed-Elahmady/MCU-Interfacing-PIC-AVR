@@ -38,6 +38,7 @@ void RB6_ISR(uint8 change);
 void RB7_ISR(uint8 change);
 // For Internal Interrupts
 void ADC_ISR(void);
+void TMR0_ISR(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

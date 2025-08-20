@@ -5897,17 +5897,158 @@ Std_ReturnType external_interrupt_rbx_deinit(const interrupt_rbx *inter);
 Std_ReturnType eeprom_write_one_byte(uint16 ee_add, uint8 ee_data);
 Std_ReturnType eeprom_read_one_byte(uint16 ee_add, uint8 *ee_data);
 # 27 "APPL/app.h" 2
+
+# 1 "APPL/../MCAL/ADC/hal_adc.h" 1
+# 16 "APPL/../MCAL/ADC/hal_adc.h"
+# 1 "APPL/../MCAL/ADC/hal_adc_cfg.h" 1
+# 17 "APPL/../MCAL/ADC/hal_adc.h" 2
+# 71 "APPL/../MCAL/ADC/hal_adc.h"
+typedef void (* adc_handler)(void);
+
+typedef enum{
+    adc_channel_an0 = (uint8)0x00,
+    adc_channel_an1,
+
+    adc_channel_an2,
+    adc_channel_an3,
+
+    adc_channel_an4,
+    adc_channel_an5,
+    adc_channel_an6,
+    adc_channel_an7,
+    adc_channel_an8,
+    adc_channel_an9,
+    adc_channel_an10,
+    adc_channel_an11,
+    adc_channel_an12,
+}adc_channel;
+
+typedef enum{
+    adc_internal_voltage_reference = (uint8)0x00,
+    adc_external_voltage_reference
+}adc_voltage_reference;
+
+typedef enum{
+    adc_conversion_clock_fosc_div_2 = (uint8)0x00,
+    adc_conversion_clock_fosc_div_8,
+    adc_conversion_clock_fosc_div_32,
+    adc_conversion_clock_fosc_div_frc,
+    adc_conversion_clock_fosc_div_4,
+    adc_conversion_clock_fosc_div_16,
+    adc_conversion_clock_fosc_div_64
+}adc_conversion_clock;
+
+typedef enum{
+    adc_acq_0tad = (uint8)0x00,
+    adc_acq_2tad,
+    adc_acq_4tad,
+    adc_acq_6tad,
+    adc_acq_8tad,
+    adc_acq_12tad,
+    adc_acq_16tad,
+    adc_acq_20tad
+}adc_acquisition_time;
+
+typedef enum{
+    adc_format_left = (uint8)0x00,
+    adc_format_right
+}adc_result_format;
+
+typedef enum{
+    adc_conversion_completed = (uint8)0x00,
+    adc_conversion_in_progress
+}adc_conversion_status;
+
+typedef struct{
+
+    adc_handler adc_interrupt;
+    interrupt_priority priority;
+
+    adc_channel channel;
+    adc_conversion_clock clk;
+    adc_acquisition_time acq;
+    adc_voltage_reference ref;
+    adc_result_format format;
+}adc_cfg;
+
+
+
+Std_ReturnType adc_init(const adc_cfg *adc);
+Std_ReturnType adc_deinit(const adc_cfg *adc);
+Std_ReturnType adc_set_channel(const adc_cfg *adc, adc_channel channel);
+Std_ReturnType adc_start_conversion(const adc_cfg *adc);
+Std_ReturnType adc_is_conversion_done(const adc_cfg *adc, adc_conversion_status *state);
+Std_ReturnType adc_get_conversion_result(const adc_cfg *adc, uint16 *result);
+Std_ReturnType adc_get_conversion_blocking(const adc_cfg *adc, adc_channel channel, uint16 *result);
+Std_ReturnType adc_start_conversion_interrupt(const adc_cfg *adc, adc_channel channel);
+# 29 "APPL/app.h" 2
+
+# 1 "APPL/../MCAL/Timers/Timer0/hal_timer0.h" 1
+# 16 "APPL/../MCAL/Timers/Timer0/hal_timer0.h"
+# 1 "APPL/../MCAL/Timers/Timer0/hal_timer0_cfg.h" 1
+# 17 "APPL/../MCAL/Timers/Timer0/hal_timer0.h" 2
+# 43 "APPL/../MCAL/Timers/Timer0/hal_timer0.h"
+typedef void (* timer0_handler)(void);
+
+typedef enum{
+    timer0_prescaler_div_2 = (uint8)0x00,
+    timer0_prescaler_div_4,
+    timer0_prescaler_div_8,
+    timer0_prescaler_div_16,
+    timer0_prescaler_div_32,
+    timer0_prescaler_div_64,
+    timer0_prescaler_div_128,
+    timer0_prescaler_div_256
+}timer0_prescaler_select;
+
+typedef enum{
+    timer0_prescaler_cfg_disable = (uint8)0x00,
+    timer0_prescaler_cfg_enable
+}timer0_prescaler_cfg;
+
+typedef enum{
+    timer0_timer_mode = (uint8)0x00,
+    timer0_counter_mode
+}timer0_mode;
+
+typedef enum{
+    timer0_counter_falling_edge = (uint8)0x00,
+    timer0_counter_rising_edge
+}timer0_counter_edge;
+
+typedef enum{
+    timer0_8bit_register_size = (uint8)0x00,
+    timer0_16bit_register_size
+}timer0_resolution;
+
+typedef struct{
+
+    timer0_handler timer0_interrupt;
+    interrupt_priority priority;
+
+    uint16 timer0_preloaded_value;
+    timer0_prescaler_select value;
+    timer0_prescaler_cfg prescalar;
+    timer0_mode mode;
+    timer0_counter_edge edge;
+    timer0_resolution resolution;
+}timer0_cfg;
+
+
+
+Std_ReturnType timer0_init(const timer0_cfg *timer0);
+Std_ReturnType timer0_deinit(const timer0_cfg *timer0);
+Std_ReturnType timer0_write_data(const timer0_cfg *timer0, uint16 data);
+Std_ReturnType timer0_read_data(const timer0_cfg *timer0, uint16 *data);
+# 31 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
-uint8 counter = 0;
-uint8 rest_counter = 0;
 
-int main() {
+
+int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-
-    while (1) {
+    while(1){
 
     }
-
     return (0);
 }

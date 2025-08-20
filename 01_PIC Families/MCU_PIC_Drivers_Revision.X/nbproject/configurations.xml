@@ -57,6 +57,12 @@
           <itemPath>MCAL/INTERRUPT/hal_interrupt_cfg.h</itemPath>
           <itemPath>MCAL/INTERRUPT/hal_interrupt_gen_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>MCAL/Timers/Timer0/hal_timer0.h</itemPath>
+            <itemPath>MCAL/Timers/Timer0/hal_timer0_cfg.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <itemPath>MCAL/mcal_std_types.h</itemPath>
         <itemPath>MCAL/compiler.h</itemPath>
         <itemPath>MCAL/device_cfg.h</itemPath>
@@ -116,6 +122,11 @@
           <itemPath>MCAL/INTERRUPT/hal_ext_interrupt.c</itemPath>
           <itemPath>MCAL/INTERRUPT/hal_int_interrupt.c</itemPath>
           <itemPath>MCAL/INTERRUPT/hal_interrupt_mng.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>MCAL/Timers/Timer0/hal_timer0.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
         <itemPath>MCAL/device_cfg.c</itemPath>
       </logicalFolder>

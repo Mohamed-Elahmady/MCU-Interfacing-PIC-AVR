@@ -1,49 +1,49 @@
+/* 
+ * File:   app.c
+ * Author: mohammedel-ahmady
+ *
+ * Created on June 26, 2025, 5:26 AM
+ */
+
 #include "app.h"
 
-void adc_app_interrupt(void);
+void t0_app_isr(void);
 
-adc_cfg adc1 = {
-    .adc_interrupt = adc_app_interrupt,
+gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output, 
+                 .pin.logic = gpio_low, .con = led_source, .state = led_off};
+
+//timer0_cfg t0_timer = {
+//    .timer0_interrupt = t0_app_isr,
+//    .priority = interrupt_high_priority,
+//    .mode = timer0_timer_mode,
+//    .resolution = timer0_16bit_register_size,
+//    .prescalar = timer0_prescaler_cfg_enable,
+//    .value = timer0_prescaler_div_8,
+//    .timer0_preloaded_value = 0x3CB0
+//};
+
+timer0_cfg t0_counter = {
+    .timer0_interrupt = t0_app_isr,
     .priority = interrupt_high_priority,
-    .channel = adc_channel_an0,
-    .clk = adc_conversion_clock_fosc_div_4,
-    .acq = adc_acq_12tad,
-    .ref = adc_internal_voltage_reference,
-    .format = adc_format_right
+    .mode = timer0_counter_mode,
+    .edge = timer0_counter_falling_edge,
+    .resolution = timer0_16bit_register_size,
+    .prescalar = timer0_prescaler_cfg_disable,
+    .timer0_preloaded_value = 0x0009
 };
 
-volatile uint16 res[4] = {0, 0, 0, 0};
-
-volatile uint8 ir_req = 0;
+uint16 indicator = 0;
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-
-    ret = adc_init(&adc1);
-    if(ret != E_OK){
-    }
-
-    ret = adc_start_conversion_interrupt(&adc1, adc_channel_an0);
-    if(ret != E_OK){
-    }
-
+    timer0_init(&t0_counter);
+    gpio_led_init(&led1);
     while(1){
+        timer0_read_data(&t0_counter, &indicator);
     }
-
     return (EXIT_SUCCESS);
 }
 
-void adc_app_interrupt(void){
-    Std_ReturnType ret = E_NOT_OK;
-
-    ret = adc_get_conversion_result(&adc1, &res[ir_req]);
-
-    ir_req++;
-    if(ir_req > 3) ir_req = 0;
-
-    ret = adc_set_channel(&adc1, (adc_channel)ir_req);
-
-    ret = adc_start_conversion(&adc1);
-
-    intenral_interrupt_adc_clear_flag();
+void t0_app_isr(void){
+//    gpio_led_turn_toggle(&led1);
 }

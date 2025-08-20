@@ -12,7 +12,7 @@
 
 /******************* Section 1 : Includes *******************/
 
-#define F_CPU 8000000UL
+#define F_CPU 4000000UL
 
 /******************* Section 2 : Macros Declarations *******************/
 

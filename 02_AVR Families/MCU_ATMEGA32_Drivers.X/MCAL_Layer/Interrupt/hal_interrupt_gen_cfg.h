@@ -24,6 +24,7 @@
 #define External_Interrupt_INTX                  (Interrupt_Feature_Enable)
 // for internal interrupts
 #define ADC_Interrupt_Feature                    (Interrupt_Feature_Enable)
+#define Timer0_Interrupt_Feature                 (Interrupt_Feature_Enable)
 
 
 /******************* Section 3 : Macros Functions Declarations *******************/

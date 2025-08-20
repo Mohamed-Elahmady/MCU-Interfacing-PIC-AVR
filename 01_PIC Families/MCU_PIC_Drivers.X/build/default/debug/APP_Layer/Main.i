@@ -5977,7 +5977,66 @@ Std_ReturnType ADC_GET_CONVERSION_RESULT(const ADC_CFG *adc, uint16 *result);
 Std_ReturnType ADC_GET_CONVERSION_BLOCKING(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel, uint16 *result);
 Std_ReturnType ADC_START_CONVERSION_INTERRUPT(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel);
 # 29 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 43 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h" 2
+# 45 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+typedef void (* TIMER0_HANDLER)(void);
+
+typedef enum{
+    TIMER0_PRESCALER_DIV_2 = (uint8) 0x00,
+    TIMER0_PRESCALER_DIV_4,
+    TIMER0_PRESCALER_DIV_8,
+    TIMER0_PRESCALER_DIV_16,
+    TIMER0_PRESCALER_DIV_32,
+    TIMER0_PRESCALER_DIV_64,
+    TIMER0_PRESCALER_DIV_128,
+    TIMER0_PRESCALAER_DIV_256
+}TIMER0_PRESCALER_SELECT;
+
+typedef enum{
+    TIMER0_PRESCALER_CFG_DISABLE = (uint8)0x00,
+    TIMER0_PRESCALER_CFG_ENABLE
+}TIMER0_PRESCALER_CFG;
+
+typedef enum{
+    TIMER0_FALLING_EDGE = (uint8) 0x00,
+    TIMER0_RISING_EDGE
+}TIMER0_COUNTER_EDGE;
+
+typedef enum{
+    TIMER0_TIMER_MODE = (uint8)0x00,
+    TIMER0_COUNTER_MODE
+}TIMER0_MODE;
+
+typedef enum{
+    TIMER0_16BIT_RESOLUTION = (uint8) 0x00,
+    TIMER0_8BIT_RESOLUTION
+}TIMER0_RESOLUTION;
+
+typedef struct{
+
+    TIMER0_HANDLER TIMER0_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint16 TIMER0_PRELOAD_VALUE;
+    TIMER0_PRESCALER_SELECT pre_value;
+    TIMER0_PRESCALER_CFG prescalar;
+    TIMER0_RESOLUTION resolution;
+    TIMER0_MODE mode;
+    TIMER0_COUNTER_EDGE edge;
+}TIMER0_CFG;
+
+
+
+Std_ReturnType TIMER0_INIT(const TIMER0_CFG *timer0);
+Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0);
+Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data);
+Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data);
+# 31 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 45 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 27 "APP_Layer/Main.h"
@@ -5998,73 +6057,36 @@ void application_init(void);
 
 Std_ReturnType Ret = E_OK;
 
-void ADC_APP_ISR(void);
+void tmr0_app_handler(void);
 
-ADC_CFG adc1 = {
-    .ADC_INTERRUPT = ((void*)0),
+TIMER0_CFG timer0_counter = {
+    .TIMER0_INTERRUPT = tmr0_app_handler,
     .priority = INTERRUPT_HIGH_PRIORITY,
-    .channel = ADC_CHANNEL_AN0,
-    .tad = ADC_ACQ_12TAD,
-    .clk = ADC_CONVERSION_CLOCK_FOSC_DIV_16,
-    .vref = ADC_INTERNAL_VOLTAGE_REFERENCE,
-    .format = ADC_RESULT_FORMAT_RIGHT
+    .prescalar = TIMER0_PRESCALER_CFG_DISABLE,
+    .mode = TIMER0_COUNTER_MODE,
+    .edge = TIMER0_RISING_EDGE,
+    .resolution = TIMER0_16BIT_RESOLUTION,
+    .TIMER0_PRELOAD_VALUE = 0x0000
 };
 
-uint16 result1, result2;
-uint16 temp1, temp2;
-uint8 data1[6], data2[6];
-
-volatile uint8 adc_req = 0;
+volatile uint16 freq = 0;
 
 int main() {
     application_init();
-    Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "LM35 Test", (uint8)0x01, 7);
-    _delay((unsigned long)((2000)*(8000000UL/4000.0)));
-
-    Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "Temp1 : ", (uint8)0x02, 1);
-    Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "Temp2 : ", (uint8)0x03, 1);
 
     while (1) {
-
-        Ret = ADC_GET_CONVERSION_BLOCKING(&adc1, ADC_CHANNEL_AN0, &result1);
-        Ret = ADC_GET_CONVERSION_BLOCKING(&adc1, ADC_CHANNEL_AN1, &result2);
-
-        temp1 = result1 * 4.88f;
-        temp1 /= 10;
-
-        temp2 = result2 * 4.88f;
-        temp2 /= 10;
-
-        Ret = convert_uint16_to_string(temp1, data1);
-        Ret = convert_uint16_to_string(temp2, data2);
-
-
-        Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, data1, (uint8)0x02, 9);
-        Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, data2, (uint8)0x03, 9 );
-
-        if(temp1 > 50 && temp2 < 30){
-            Ret = GPIO_DC_MOTOR_ROTATE_CLOCKWISE(&motor1);
-            Ret = GPIO_DC_MOTOR_ROTATE_CLOCKWISE(&motor2);
-            Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "M1-ON ", (uint8)0x02, 13);
-            Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "M2-ON ", (uint8)0x03, 13);
-        }
-        else if(temp1 < 80 && temp2 > 50){
-            Ret = GPIO_DC_MOTOR_ROTATE_CLOCKWISE(&motor1);
-            Ret = GPIO_DC_MOTOR_BRAKE(&motor2);
-            Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "M1-ON ", (uint8)0x02, 13);
-            Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "M2-OFF", (uint8)0x03, 13);
-        }
-        else{
-            Ret = GPIO_DC_MOTOR_BRAKE(&motor1);
-            Ret = GPIO_DC_MOTOR_BRAKE(&motor2);
-            Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "M1-OFF", (uint8)0x02, 13);
-            Ret = GPIO_LCD_4BIT_SEND_STRING_POS(&lcd1, "M2-OFF", (uint8)0x03, 13);
-        }
+        Ret = TIMER0_READ_DATA(&timer0_counter, &freq);
+        Ret = TIMER0_WRITE_DATA(&timer0_counter, 0x0000);
+        _delay((unsigned long)((1000)*(4000000UL/4000.0)));
     }
     return (0);
 }
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
-    Ret = ADC_INIT(&adc1);
+    TIMER0_INIT(&timer0_counter);
+}
+
+void tmr0_app_handler(void){
+
 }

@@ -650,8 +650,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL_Layer/Keypad/ECUAL_KEYPAD.c: 98:             Retval = GPIO_PIN_WRITE_LOGIC(&(keypad->row_pins[i]), activation_pin);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U *U + &U . *U _keypad 0 * -> _i `ux -> -> # *U &U . *U _keypad 0 `ui `ux _activation_pin ]
 "99
-[; ;ECUAL_Layer/Keypad/ECUAL_KEYPAD.c: 99:             _delay((unsigned long)((10)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL_Layer/Keypad/ECUAL_KEYPAD.c: 99:             _delay((unsigned long)((10)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "101
 [; ;ECUAL_Layer/Keypad/ECUAL_KEYPAD.c: 101:             for(uint8 k = (uint8)0x00; k < (uint8)0x04; k++){
 {

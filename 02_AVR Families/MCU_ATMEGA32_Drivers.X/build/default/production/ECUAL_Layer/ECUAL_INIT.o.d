@@ -63,7 +63,13 @@ build/default/production/ECUAL_Layer/ECUAL_INIT.o.d \
  ECUAL_Layer/../MCAL_Layer/ADC/hal_adc_cfg.h \
  ECUAL_Layer/../MCAL_Layer/ADC/../Interrupt/hal_int_interrupt.h \
  ECUAL_Layer/../MCAL_Layer/ADC/../GPIO/hal_gpio.h \
- ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h
+ ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h \
+ ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0.h \
+ ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../mcal_std_types.h \
+ ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../Interrupt/hal_int_interrupt.h \
+ ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/hal_gpio.h \
+ ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h
 
 ECUAL_Layer/ECUAL_INIT.h:
 
@@ -200,3 +206,15 @@ ECUAL_Layer/../MCAL_Layer/ADC/../Interrupt/hal_int_interrupt.h:
 ECUAL_Layer/../MCAL_Layer/ADC/../GPIO/hal_gpio.h:
 
 ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h:
+
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0.h:
+
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../mcal_std_types.h:
+
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../Interrupt/hal_int_interrupt.h:
+
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/hal_gpio.h:
+
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h:

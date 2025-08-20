@@ -34,6 +34,20 @@
 
 #endif
 
+// Timer0 internal interrupt Configurations
+
+#define intenral_interrupt_timer0_clear_flag()                    clear_bit(INTCON, _INTCON_TMR0IF_POSITION)
+
+#define intenral_interrupt_timer0_disable()                       clear_bit(INTCON, _INTCON_TMR0IE_POSITION)
+#define intenral_interrupt_timer0_enable()                        set_bit(INTCON, _INTCON_TMR0IE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_timer0_low_priority()                  clear_bit(INTCON2, _INTCON2_TMR0IP_POSITION)
+#define intenral_interrupt_timer0_high_priority()                 set_bit(INTCON2, _INTCON2_TMR0IP_POSITION)
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

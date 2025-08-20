@@ -5977,7 +5977,66 @@ Std_ReturnType ADC_GET_CONVERSION_RESULT(const ADC_CFG *adc, uint16 *result);
 Std_ReturnType ADC_GET_CONVERSION_BLOCKING(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel, uint16 *result);
 Std_ReturnType ADC_START_CONVERSION_INTERRUPT(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel);
 # 29 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 43 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h" 2
+# 45 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+typedef void (* TIMER0_HANDLER)(void);
+
+typedef enum{
+    TIMER0_PRESCALER_DIV_2 = (uint8) 0x00,
+    TIMER0_PRESCALER_DIV_4,
+    TIMER0_PRESCALER_DIV_8,
+    TIMER0_PRESCALER_DIV_16,
+    TIMER0_PRESCALER_DIV_32,
+    TIMER0_PRESCALER_DIV_64,
+    TIMER0_PRESCALER_DIV_128,
+    TIMER0_PRESCALAER_DIV_256
+}TIMER0_PRESCALER_SELECT;
+
+typedef enum{
+    TIMER0_PRESCALER_CFG_DISABLE = (uint8)0x00,
+    TIMER0_PRESCALER_CFG_ENABLE
+}TIMER0_PRESCALER_CFG;
+
+typedef enum{
+    TIMER0_FALLING_EDGE = (uint8) 0x00,
+    TIMER0_RISING_EDGE
+}TIMER0_COUNTER_EDGE;
+
+typedef enum{
+    TIMER0_TIMER_MODE = (uint8)0x00,
+    TIMER0_COUNTER_MODE
+}TIMER0_MODE;
+
+typedef enum{
+    TIMER0_16BIT_RESOLUTION = (uint8) 0x00,
+    TIMER0_8BIT_RESOLUTION
+}TIMER0_RESOLUTION;
+
+typedef struct{
+
+    TIMER0_HANDLER TIMER0_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint16 TIMER0_PRELOAD_VALUE;
+    TIMER0_PRESCALER_SELECT pre_value;
+    TIMER0_PRESCALER_CFG prescalar;
+    TIMER0_RESOLUTION resolution;
+    TIMER0_MODE mode;
+    TIMER0_COUNTER_EDGE edge;
+}TIMER0_CFG;
+
+
+
+Std_ReturnType TIMER0_INIT(const TIMER0_CFG *timer0);
+Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0);
+Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data);
+Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data);
+# 31 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 45 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 27 "APP_Layer/Main.h"
@@ -5997,24 +6056,15 @@ void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
 Std_ReturnType Ret = E_OK;
-# 28 "APP_Layer/Main.c"
-volatile uint8 adc_req = 0;
 
 int main() {
     application_init();
-
-
-
-
-
-
     while (1) {
-# 74 "APP_Layer/Main.c"
+
     }
     return (0);
 }
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
-
 }

@@ -7,6 +7,13 @@
 # 1 "/Applications/microchip/xc8/v3.00/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "APPL/app.c" 2
+
+
+
+
+
+
+
 # 1 "APPL/app.h" 1
 # 15 "APPL/app.h"
 # 1 "APPL/../ECUAL/LED/ecual_led.h" 1
@@ -5975,52 +5982,94 @@ Std_ReturnType adc_get_conversion_result(const adc_cfg *adc, uint16 *result);
 Std_ReturnType adc_get_conversion_blocking(const adc_cfg *adc, adc_channel channel, uint16 *result);
 Std_ReturnType adc_start_conversion_interrupt(const adc_cfg *adc, adc_channel channel);
 # 29 "APPL/app.h" 2
-# 2 "APPL/app.c" 2
 
-void adc_app_interrupt(void);
+# 1 "APPL/../MCAL/Timers/Timer0/hal_timer0.h" 1
+# 16 "APPL/../MCAL/Timers/Timer0/hal_timer0.h"
+# 1 "APPL/../MCAL/Timers/Timer0/hal_timer0_cfg.h" 1
+# 17 "APPL/../MCAL/Timers/Timer0/hal_timer0.h" 2
+# 43 "APPL/../MCAL/Timers/Timer0/hal_timer0.h"
+typedef void (* timer0_handler)(void);
 
-adc_cfg adc1 = {
-    .adc_interrupt = adc_app_interrupt,
+typedef enum{
+    timer0_prescaler_div_2 = (uint8)0x00,
+    timer0_prescaler_div_4,
+    timer0_prescaler_div_8,
+    timer0_prescaler_div_16,
+    timer0_prescaler_div_32,
+    timer0_prescaler_div_64,
+    timer0_prescaler_div_128,
+    timer0_prescaler_div_256
+}timer0_prescaler_select;
+
+typedef enum{
+    timer0_prescaler_cfg_disable = (uint8)0x00,
+    timer0_prescaler_cfg_enable
+}timer0_prescaler_cfg;
+
+typedef enum{
+    timer0_timer_mode = (uint8)0x00,
+    timer0_counter_mode
+}timer0_mode;
+
+typedef enum{
+    timer0_counter_falling_edge = (uint8)0x00,
+    timer0_counter_rising_edge
+}timer0_counter_edge;
+
+typedef enum{
+    timer0_8bit_register_size = (uint8)0x00,
+    timer0_16bit_register_size
+}timer0_resolution;
+
+typedef struct{
+
+    timer0_handler timer0_interrupt;
+    interrupt_priority priority;
+
+    uint16 timer0_preloaded_value;
+    timer0_prescaler_select value;
+    timer0_prescaler_cfg prescalar;
+    timer0_mode mode;
+    timer0_counter_edge edge;
+    timer0_resolution resolution;
+}timer0_cfg;
+
+
+
+Std_ReturnType timer0_init(const timer0_cfg *timer0);
+Std_ReturnType timer0_deinit(const timer0_cfg *timer0);
+Std_ReturnType timer0_write_data(const timer0_cfg *timer0, uint16 data);
+Std_ReturnType timer0_read_data(const timer0_cfg *timer0, uint16 *data);
+# 31 "APPL/app.h" 2
+# 9 "APPL/app.c" 2
+
+void t0_app_isr(void);
+
+gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+                 .pin.logic = gpio_low, .con = led_source, .state = led_off};
+# 25 "APPL/app.c"
+timer0_cfg t0_counter = {
+    .timer0_interrupt = t0_app_isr,
     .priority = interrupt_high_priority,
-    .channel = adc_channel_an0,
-    .clk = adc_conversion_clock_fosc_div_4,
-    .acq = adc_acq_12tad,
-    .ref = adc_internal_voltage_reference,
-    .format = adc_format_right
+    .mode = timer0_counter_mode,
+    .edge = timer0_counter_falling_edge,
+    .resolution = timer0_16bit_register_size,
+    .prescalar = timer0_prescaler_cfg_disable,
+    .timer0_preloaded_value = 0x0009
 };
 
-volatile uint16 res[4] = {0, 0, 0, 0};
-
-volatile uint8 ir_req = 0;
+uint16 indicator = 0;
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-
-    ret = adc_init(&adc1);
-    if(ret != E_OK){
-    }
-
-    ret = adc_start_conversion_interrupt(&adc1, adc_channel_an0);
-    if(ret != E_OK){
-    }
-
+    timer0_init(&t0_counter);
+    gpio_led_init(&led1);
     while(1){
+        timer0_read_data(&t0_counter, &indicator);
     }
-
     return (0);
 }
 
-void adc_app_interrupt(void){
-    Std_ReturnType ret = E_NOT_OK;
+void t0_app_isr(void){
 
-    ret = adc_get_conversion_result(&adc1, &res[ir_req]);
-
-    ir_req++;
-    if(ir_req > 3) ir_req = 0;
-
-    ret = adc_set_channel(&adc1, (adc_channel)ir_req);
-
-    ret = adc_start_conversion(&adc1);
-
-    (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
 }

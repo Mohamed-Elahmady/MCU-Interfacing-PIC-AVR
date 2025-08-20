@@ -35,6 +35,13 @@ void __interrupt() INTERRUPT_MANAGER_HIGH_PRIORITY(void){
     }
     else{/* Nothing */}
 #endif    
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER0_INTERRUPT_FEATURE))
+    /* ================== Timer0_Interrupt Service Routine ================== */
+    if((INTCONbits.TMR0IF == INTERRUPT_OCCUR) && (INTCONbits.TMR0IE == INTERRUPT_ENABLE)){
+        TMR0_ISR();
+    }
+    else{/* Nothing */}
+#endif
     if((INTCON3bits.INT2F == INTERRUPT_OCCUR) && (INTCON3bits.INT2IE == INTERRUPT_ENABLE)){
         INT2_ISR();
     }
@@ -118,6 +125,13 @@ void __interrupt() INTERRUPT_MANAGER(void){
     /* ================== ADC_Interrupt Service Routine ================== */
     if((PIR1bits.ADIF == INTERRUPT_OCCUR) && (PIE1bits.ADIE == INTERRUPT_ENABLE)){
         ADC_ISR();
+    }
+    else{/* Nothing */}
+#endif
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER0_INTERRUPT_FEATURE))
+    /* ================== Timer0_Interrupt Service Routine ================== */
+    if((INTCONbits.TMR0IF == INTERRUPT_OCCUR) && (INTCONbits.TMR0IE == INTERRUPT_ENABLE)){
+        TMR0_ISR();
     }
     else{/* Nothing */}
 #endif

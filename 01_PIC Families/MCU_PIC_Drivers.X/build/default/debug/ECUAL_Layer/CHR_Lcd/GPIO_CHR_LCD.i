@@ -5695,11 +5695,11 @@ Std_ReturnType GPIO_LCD_4BIT_INIT(const CHR_LCD_4BIT *lcd){
         }
 
 
-        _delay((unsigned long)((20)*(8000000UL/4000.0)));
+        _delay((unsigned long)((20)*(4000000UL/4000.0)));
         Retval = GPIO_LCD_4BIT_SEND_COMMAND(lcd, (uint8)0x38);
-        _delay((unsigned long)((5)*(8000000UL/4000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000.0)));
         Retval = GPIO_LCD_4BIT_SEND_COMMAND(lcd, (uint8)0x38);
-        _delay((unsigned long)((150)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((150)*(4000000UL/4000000.0)));
         Retval = GPIO_LCD_4BIT_SEND_COMMAND(lcd, (uint8)0x38);
 
 
@@ -5845,11 +5845,11 @@ Std_ReturnType GPIO_LCD_8BIT_INIT(const CHR_LCD_8BIT *lcd){
         }
 
 
-        _delay((unsigned long)((20)*(8000000UL/4000.0)));
+        _delay((unsigned long)((20)*(4000000UL/4000.0)));
         Retval = GPIO_LCD_8BIT_SEND_COMMAND(lcd, (uint8)0x38);
-        _delay((unsigned long)((5)*(8000000UL/4000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000.0)));
         Retval = GPIO_LCD_8BIT_SEND_COMMAND(lcd, (uint8)0x38);
-        _delay((unsigned long)((150)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((150)*(4000000UL/4000000.0)));
         Retval = GPIO_LCD_8BIT_SEND_COMMAND(lcd, (uint8)0x38);
 
 
@@ -6089,7 +6089,7 @@ static Std_ReturnType chr_lcd_4bit_send_enable_signal(const CHR_LCD_4BIT *lcd){
     }
     else{
         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_HIGH);
-        _delay((unsigned long)((5)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000000.0)));
         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_LOW);
     }
     return Retval;
@@ -6131,7 +6131,7 @@ static Std_ReturnType chr_lcd_8bit_send_enable_signal(const CHR_LCD_8BIT *lcd){
     }
     else{
         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_HIGH);
-        _delay((unsigned long)((5)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000000.0)));
         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_LOW);
     }
     return Retval;

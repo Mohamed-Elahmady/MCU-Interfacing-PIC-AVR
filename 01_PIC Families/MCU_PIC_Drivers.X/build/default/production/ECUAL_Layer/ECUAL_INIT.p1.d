@@ -44,4 +44,10 @@ ECUAL_Layer/../MCAL_Layer/ADC/HAL_ADC_CFG.h  \
 ECUAL_Layer/../MCAL_Layer/ADC/../Interrupt/HAL_INT_INTERRUPT.h  \
 ECUAL_Layer/../MCAL_Layer/ADC/../GPIO/HAL_GPIO.h  \
 ECUAL_Layer/../MCAL_Layer/ADC/../mcal_std_types.h  \
-ECUAL_Layer/../MCAL_Layer/ADC/../device_cfg.h 
+ECUAL_Layer/../MCAL_Layer/ADC/../device_cfg.h  \
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h  \
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0_CFG.h  \
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/HAL_GPIO.h  \
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../Interrupt/HAL_INT_INTERRUPT.h  \
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../mcal_std_types.h  \
+ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h 

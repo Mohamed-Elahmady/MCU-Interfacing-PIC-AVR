@@ -5686,7 +5686,7 @@ Std_ReturnType GPIO_KEYPAD_READ_DATA(const GPIO_KEYPAD *keypad, uint8 *data){
             }
 
             Retval = GPIO_PIN_WRITE_LOGIC(&(keypad->row_pins[i]), activation_pin);
-            _delay((unsigned long)((10)*(8000000UL/4000.0)));
+            _delay((unsigned long)((10)*(4000000UL/4000.0)));
 
             for(uint8 k = (uint8)0x00; k < (uint8)0x04; k++){
                 Retval = GPIO_PIN_READ_LOGIC(&(keypad->col_pins[k]), &read_pin);

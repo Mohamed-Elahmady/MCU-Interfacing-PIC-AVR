@@ -5763,23 +5763,10 @@ Std_ReturnType adc_init(const adc_cfg *adc){
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
         (PIE1 |= (uint8)((uint8)0x01 << 0x6));
-
-        (RCONbits.IPEN = (uint8)0x01);
-        (INTCONbits.GIEH = (uint8)0x01);
-        (INTCONbits.GIEL = (uint8)0x01);
-        if(interrupt_high_priority == adc->priority){
-            (IPR1 |= (uint8)((uint8)0x01 << 0x6));
-        }
-        else if(interrupt_low_priority == adc->priority){
-            (IPR1 &= ~(uint8)((uint8)0x01 << 0x6));
-        }
-        else{
-            Retval = E_NOT_OK;
-        }
-
-
-
-
+# 70 "MCAL/ADC/hal_adc.c"
+        (RCONbits.IPEN = (uint8)0x00);
+        (INTCONbits.GIE = (uint8)0x01);
+        (INTCONbits.PEIE = (uint8)0x01);
 
         adc_interrupt_handler = adc->adc_interrupt;
 
@@ -5856,7 +5843,7 @@ Std_ReturnType adc_get_conversion_result(const adc_cfg *adc, uint16 *result){
                 *result = (uint16)((ADRESH << 2) | (ADRESL >> 6));
                 break;
             case adc_format_right:
-                *result = (uint16)((ADRESH >> 8) | ADRESL);
+                *result = (uint16)(((uint16)ADRESH << 8) | ADRESL);
                 break;
             default :
                 Retval = E_NOT_OK;
@@ -5900,6 +5887,16 @@ Std_ReturnType adc_start_conversion_interrupt(const adc_cfg *adc, adc_channel ch
     return Retval;
 }
 
+void adc_isr(void){
+
+    (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
+
+
+
+    if(adc_interrupt_handler){
+        adc_interrupt_handler();
+    }
+}
 
 
 

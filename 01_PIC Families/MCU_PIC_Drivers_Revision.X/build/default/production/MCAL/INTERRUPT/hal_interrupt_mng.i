@@ -5652,6 +5652,7 @@ void rb7_isr(uint8 change);
 
 
 void adc_isr(void);
+void tmr0_isr(void);
 # 11 "MCAL/INTERRUPT/hal_interrupt_mng.c" 2
 
 
@@ -5660,8 +5661,9 @@ static uint8 rb4_flag = 0x01;
 static uint8 rb5_flag = 0x01;
 static uint8 rb6_flag = 0x01;
 static uint8 rb7_flag = 0x01;
-# 118 "MCAL/INTERRUPT/hal_interrupt_mng.c"
-void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
+# 27 "MCAL/INTERRUPT/hal_interrupt_mng.c"
+void __attribute__((picinterrupt(("")))) interrupt_manager_high(void) {
+
 
     if ((INTCONbits.INT0IF == (uint8)0x01) && (INTCONbits.INT0IE == (uint8)0x01)) {
         int0_isr();
@@ -5674,13 +5676,24 @@ void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
     }
     else { }
 
-    if ((INTCON3bits.INT1IF == (uint8)0x01) && (INTCON3bits.INT1IE == (uint8)0x01)) {
-        int1_isr();
+
+    if ((INTCONbits.T0IF == (uint8)0x01) && (INTCONbits.TMR0IE == (uint8)0x01)) {
+        tmr0_isr();
     }
     else { }
 
     if ((INTCON3bits.INT2IF == (uint8)0x01) && (INTCON3bits.INT2IE == (uint8)0x01)) {
         int2_isr();
+    }
+    else { }
+
+}
+
+void __attribute__((picinterrupt(("low_priority")))) interrupt_manager_low(void) {
+
+
+    if ((INTCON3bits.INT1IF == (uint8)0x01) && (INTCON3bits.INT1IE == (uint8)0x01)) {
+        int1_isr();
     }
     else { }
 
@@ -5741,4 +5754,5 @@ void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
         rb7_isr((uint8)0x00);
     }
     else { }
+
 }

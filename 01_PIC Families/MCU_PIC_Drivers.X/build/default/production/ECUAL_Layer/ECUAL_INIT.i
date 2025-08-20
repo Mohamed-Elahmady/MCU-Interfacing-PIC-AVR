@@ -5969,82 +5969,70 @@ Std_ReturnType ADC_GET_CONVERSION_RESULT(const ADC_CFG *adc, uint16 *result);
 Std_ReturnType ADC_GET_CONVERSION_BLOCKING(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel, uint16 *result);
 Std_ReturnType ADC_START_CONVERSION_INTERRUPT(const ADC_CFG *adc, ADC_CHANNEL_SELECT channel);
 # 29 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 43 "ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h" 1
+# 16 "ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0_CFG.h" 1
+# 17 "ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h" 2
+# 45 "ECUAL_Layer/../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+typedef void (* TIMER0_HANDLER)(void);
+
+typedef enum{
+    TIMER0_PRESCALER_DIV_2 = (uint8) 0x00,
+    TIMER0_PRESCALER_DIV_4,
+    TIMER0_PRESCALER_DIV_8,
+    TIMER0_PRESCALER_DIV_16,
+    TIMER0_PRESCALER_DIV_32,
+    TIMER0_PRESCALER_DIV_64,
+    TIMER0_PRESCALER_DIV_128,
+    TIMER0_PRESCALAER_DIV_256
+}TIMER0_PRESCALER_SELECT;
+
+typedef enum{
+    TIMER0_PRESCALER_CFG_DISABLE = (uint8)0x00,
+    TIMER0_PRESCALER_CFG_ENABLE
+}TIMER0_PRESCALER_CFG;
+
+typedef enum{
+    TIMER0_FALLING_EDGE = (uint8) 0x00,
+    TIMER0_RISING_EDGE
+}TIMER0_COUNTER_EDGE;
+
+typedef enum{
+    TIMER0_TIMER_MODE = (uint8)0x00,
+    TIMER0_COUNTER_MODE
+}TIMER0_MODE;
+
+typedef enum{
+    TIMER0_16BIT_RESOLUTION = (uint8) 0x00,
+    TIMER0_8BIT_RESOLUTION
+}TIMER0_RESOLUTION;
+
+typedef struct{
+
+    TIMER0_HANDLER TIMER0_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint16 TIMER0_PRELOAD_VALUE;
+    TIMER0_PRESCALER_SELECT pre_value;
+    TIMER0_PRESCALER_CFG prescalar;
+    TIMER0_RESOLUTION resolution;
+    TIMER0_MODE mode;
+    TIMER0_COUNTER_EDGE edge;
+}TIMER0_CFG;
+
+
+
+Std_ReturnType TIMER0_INIT(const TIMER0_CFG *timer0);
+Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0);
+Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data);
+Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data);
+# 31 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 45 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
-
-
-
-CHR_LCD_4BIT lcd1 = {
-    .rs_pin.PORT = GPIO_PORTB,
-    .rs_pin.PIN = GPIO_PIN0,
-    .rs_pin.DIRECTION = GPIO_OUTPUT,
-    .rs_pin.LOGIC = GPIO_LOW,
-
-    .rw_pin.PORT = GPIO_PORTB,
-    .rw_pin.PIN = GPIO_PIN1,
-    .rw_pin.DIRECTION = GPIO_OUTPUT,
-    .rw_pin.LOGIC = GPIO_LOW,
-
-    .en_pin.PORT = GPIO_PORTB,
-    .en_pin.PIN = GPIO_PIN2,
-    .en_pin.DIRECTION = GPIO_OUTPUT,
-    .en_pin.LOGIC = GPIO_LOW,
-
-    .data_pins[0].PORT = GPIO_PORTC,
-    .data_pins[0].PIN = GPIO_PIN0,
-    .data_pins[0].DIRECTION = GPIO_OUTPUT,
-    .data_pins[0].LOGIC = GPIO_LOW,
-
-    .data_pins[1].PORT = GPIO_PORTC,
-    .data_pins[1].PIN = GPIO_PIN1,
-    .data_pins[1].DIRECTION = GPIO_OUTPUT,
-    .data_pins[1].LOGIC = GPIO_LOW,
-
-    .data_pins[2].PORT = GPIO_PORTC,
-    .data_pins[2].PIN = GPIO_PIN2,
-    .data_pins[2].DIRECTION = GPIO_OUTPUT,
-    .data_pins[2].LOGIC = GPIO_LOW,
-
-    .data_pins[3].PORT = GPIO_PORTC,
-    .data_pins[3].PIN = GPIO_PIN3,
-    .data_pins[3].DIRECTION = GPIO_OUTPUT,
-    .data_pins[3].LOGIC = GPIO_LOW
-};
-
-DC_MOTOR motor1 = {
-    .INs[0].PORT = GPIO_PORTD,
-    .INs[0].PIN = GPIO_PIN0,
-    .INs[0].DIRECTION = GPIO_OUTPUT,
-    .INs[0].LOGIC = GPIO_LOW,
-
-    .INs[1].PORT = GPIO_PORTD,
-    .INs[1].PIN = GPIO_PIN1,
-    .INs[1].DIRECTION = GPIO_OUTPUT,
-    .INs[1].LOGIC = GPIO_LOW,
-};
-
-DC_MOTOR motor2 = {
-    .INs[0].PORT = GPIO_PORTD,
-    .INs[0].PIN = GPIO_PIN2,
-    .INs[0].DIRECTION = GPIO_OUTPUT,
-    .INs[0].LOGIC = GPIO_LOW,
-
-    .INs[1].PORT = GPIO_PORTD,
-    .INs[1].PIN = GPIO_PIN3,
-    .INs[1].DIRECTION = GPIO_OUTPUT,
-    .INs[1].LOGIC = GPIO_LOW,
-};
-
-
-
-
-
-
-
+# 81 "ECUAL_Layer/ECUAL_INIT.c"
 void ECUAL_LAYER_INIT(void) {
     Std_ReturnType Ret = E_OK;
-    Ret = GPIO_LCD_4BIT_INIT(&lcd1);
-    Ret = GPIO_DC_MOTOR_INIT(&motor1);
-    Ret = GPIO_DC_MOTOR_INIT(&motor2);
+
 }

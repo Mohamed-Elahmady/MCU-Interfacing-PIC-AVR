@@ -37,6 +37,12 @@ void __interrupt() interrupt_manager_high(void) {
         adc_isr();
     }
     else { /* Nothing*/ }
+    
+    // for timer 0 internal interrupt
+    if ((INTCONbits.T0IF == interrupt_occur) && (INTCONbits.TMR0IE == interrupt_enable)) {
+        tmr0_isr();
+    }
+    else { /* Nothing*/ }
 
     if ((INTCON3bits.INT2IF == interrupt_occur) && (INTCON3bits.INT2IE == interrupt_enable)) {
         int2_isr();
@@ -125,6 +131,12 @@ void __interrupt() interrupt_manager(void) {
     // for ADC internal interrupt
     if ((PIR1bits.ADIF == interrupt_occur) && (PIE1bits.ADIE == interrupt_enable)) {
         adc_isr();
+    }
+    else { /* Nothing*/ }
+    
+    // for timer 0 internal interrupt
+    if ((INTCONbits.T0IF == interrupt_occur) && (INTCONbits.TMR0IE == interrupt_enable)) {
+        tmr0_isr();
     }
     else { /* Nothing*/ }
 

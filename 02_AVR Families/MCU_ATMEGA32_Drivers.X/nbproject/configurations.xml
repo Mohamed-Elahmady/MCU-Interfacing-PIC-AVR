@@ -28,6 +28,7 @@
       <logicalFolder name="MCAL" displayName="MCAL" projectFiles="true">
         <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
           <itemPath>Codes/MCAL/ADC/app1.c</itemPath>
+          <itemPath>Codes/MCAL/ADC/app2.c</itemPath>
         </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>Codes/MCAL/EEPROM/app1.c</itemPath>
@@ -38,13 +39,21 @@
         <logicalFolder name="Interrupt" displayName="Interrupt" projectFiles="true">
           <itemPath>Codes/MCAL/Interrupt/app1.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>Codes/MCAL/Timers/Timer0/app1.c</itemPath>
+            <itemPath>Codes/MCAL/Timers/Timer0/app2.c</itemPath>
+            <itemPath>Codes/MCAL/Timers/Timer0/app3.c</itemPath>
+            <itemPath>Codes/MCAL/Timers/Timer0/app4.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="APP_Layer" displayName="APP_Layer" projectFiles="true">
-        <itemPath>APP_Layer/main.h</itemPath>
+        <itemPath>APP_Layer/Main.h</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
         <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
@@ -97,6 +106,12 @@
           <itemPath>MCAL_Layer/Interrupt/hal_interrupt_cfg.h</itemPath>
           <itemPath>MCAL_Layer/Interrupt/hal_interrupt_gen_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>MCAL_Layer/Timers/Timer0/hal_timer0.h</itemPath>
+            <itemPath>MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <itemPath>MCAL_Layer/device_cfg.h</itemPath>
         <itemPath>MCAL_Layer/mcal_std_types.h</itemPath>
         <itemPath>MCAL_Layer/mcal_std_libraries.h</itemPath>
@@ -116,7 +131,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="APP_Layer" displayName="APP_Layer" projectFiles="true">
-        <itemPath>APP_Layer/main.c</itemPath>
+        <itemPath>APP_Layer/Main.c</itemPath>
       </logicalFolder>
       <logicalFolder name="ECUAL_Layer" displayName="ECUAL_Layer" projectFiles="true">
         <logicalFolder name="7SEG" displayName="7SEG" projectFiles="true">
@@ -156,6 +171,11 @@
           <itemPath>MCAL_Layer/Interrupt/hal_ext_interrupt.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/hal_int_interrupt.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/hal_interrupt_mng.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
+          <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
+            <itemPath>MCAL_Layer/Timers/Timer0/hal_timer0.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
         <itemPath>MCAL_Layer/device_cfg.c</itemPath>
       </logicalFolder>

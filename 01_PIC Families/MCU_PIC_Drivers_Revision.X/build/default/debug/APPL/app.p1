@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"14 APPL/app.c
-[; ;APPL/app.c: 14:     Std_ReturnType ret = E_NOT_OK;
+"13 APPL/app.c
+[; ;APPL/app.c: 13:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
@@ -445,44 +445,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 APPL/app.c
-[; ;APPL/app.c: 10: uint8 counter = 0;
-[v _counter `uc ~T0 @X0 1 e ]
-[i _counter
--> -> 0 `i `uc
-]
-"11
-[; ;APPL/app.c: 11: uint8 rest_counter = 0;
-[v _rest_counter `uc ~T0 @X0 1 e ]
-[i _rest_counter
--> -> 0 `i `uc
-]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"13
-[; ;APPL/app.c: 13: int main() {
+"12 APPL/app.c
+[; ;APPL/app.c: 12: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"14
-[; ;APPL/app.c: 14:     Std_ReturnType ret = E_NOT_OK;
+"13
+[; ;APPL/app.c: 13:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"16
-[; ;APPL/app.c: 16:     while (1) {
-[e :U 319 ]
+"14
+[; ;APPL/app.c: 14:     while(1){
+[e :U 321 ]
 {
-"18
-[; ;APPL/app.c: 18:     }
+"16
+[; ;APPL/app.c: 16:     }
 }
-[e :U 318 ]
-[e $U 319  ]
 [e :U 320 ]
-"20
-[; ;APPL/app.c: 20:     return (0);
+[e $U 321  ]
+[e :U 322 ]
+"17
+[; ;APPL/app.c: 17:     return (0);
 [e ) -> 0 `i ]
-[e $UE 317  ]
-"21
-[; ;APPL/app.c: 21: }
-[e :UE 317 ]
+[e $UE 319  ]
+"18
+[; ;APPL/app.c: 18: }
+[e :UE 319 ]
 }

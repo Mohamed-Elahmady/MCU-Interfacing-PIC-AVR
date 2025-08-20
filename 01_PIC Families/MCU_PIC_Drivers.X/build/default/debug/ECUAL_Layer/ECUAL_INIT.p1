@@ -1,36 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"67 ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
-[; ;ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 67: typedef struct{
-[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S306 . PORT PIN DIRECTION LOGIC ]
-"82 ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 82: typedef struct {
-[s S313 `S306 1 `S306 1 `S306 1 `S306 -> 4 `i ]
-[n S313 . rs_pin rw_pin en_pin data_pins ]
-"14 ECUAL_Layer/ECUAL_INIT.c
-[; ;ECUAL_Layer/ECUAL_INIT.c: 14: CHR_LCD_4BIT lcd1 = {
-[c E3666 0 1 2 3 4 .. ]
-[n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
-[c E3673 0 1 2 3 4 5 6 7 .. ]
-[n E3673 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3683 0 1 .. ]
-[n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
-[c E3687 0 1 .. ]
-[n E3687 . GPIO_LOW GPIO_HIGH  ]
-"30 ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h
-[; ;ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 30: typedef struct{
-[s S310 `S306 -> 2 `i ]
-[n S310 . INs ]
 "82 ECUAL_Layer/ECUAL_INIT.c
 [; ;ECUAL_Layer/ECUAL_INIT.c: 82:     Std_ReturnType Ret = E_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"98 ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.h: 98: Std_ReturnType GPIO_LCD_4BIT_INIT(const CHR_LCD_4BIT *lcd);
-[v _GPIO_LCD_4BIT_INIT `(E3659 ~T0 @X0 0 ef1`*CS313 ]
-"36 ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h
-[; ;ECUAL_Layer/DC_Motor/ECUAL_DC_MOTOR.h: 36: Std_ReturnType GPIO_DC_MOTOR_INIT(const DC_MOTOR *motor);
-[v _GPIO_DC_MOTOR_INIT `(E3659 ~T0 @X0 0 ef1`*CS310 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -472,112 +444,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"14 ECUAL_Layer/ECUAL_INIT.c
-[; ;ECUAL_Layer/ECUAL_INIT.c: 14: CHR_LCD_4BIT lcd1 = {
-[v _lcd1 `S313 ~T0 @X0 1 e ]
-[i _lcd1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3666 1 `uc
--> . `E3673 0 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-:U ..
-:U ..
--> . `E3666 1 `uc
--> . `E3673 1 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-:U ..
-:U ..
--> . `E3666 1 `uc
--> . `E3673 2 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-:U ..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 0 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 1 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 2 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 2 `uc
--> . `E3673 3 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-..
-..
-]
-"51
-[; ;ECUAL_Layer/ECUAL_INIT.c: 51: DC_MOTOR motor1 = {
-[v _motor1 `S310 ~T0 @X0 1 e ]
-[i _motor1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 0 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 1 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-..
-..
-]
-"63
-[; ;ECUAL_Layer/ECUAL_INIT.c: 63: DC_MOTOR motor2 = {
-[v _motor2 `S310 ~T0 @X0 1 e ]
-[i _motor2
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 2 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 3 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
-..
-..
-]
-"81
+"81 ECUAL_Layer/ECUAL_INIT.c
 [; ;ECUAL_Layer/ECUAL_INIT.c: 81: void ECUAL_LAYER_INIT(void) {
 [v _ECUAL_LAYER_INIT `(v ~T0 @X0 1 ef ]
 {
@@ -587,16 +454,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL_Layer/ECUAL_INIT.c: 82:     Std_ReturnType Ret = E_OK;
 [v _Ret `E3659 ~T0 @X0 1 a ]
 [e = _Ret . `E3659 1 ]
-"83
-[; ;ECUAL_Layer/ECUAL_INIT.c: 83:     Ret = GPIO_LCD_4BIT_INIT(&lcd1);
-[e = _Ret ( _GPIO_LCD_4BIT_INIT (1 -> &U _lcd1 `*CS313 ]
 "84
-[; ;ECUAL_Layer/ECUAL_INIT.c: 84:     Ret = GPIO_DC_MOTOR_INIT(&motor1);
-[e = _Ret ( _GPIO_DC_MOTOR_INIT (1 -> &U _motor1 `*CS310 ]
-"85
-[; ;ECUAL_Layer/ECUAL_INIT.c: 85:     Ret = GPIO_DC_MOTOR_INIT(&motor2);
-[e = _Ret ( _GPIO_DC_MOTOR_INIT (1 -> &U _motor2 `*CS310 ]
-"86
-[; ;ECUAL_Layer/ECUAL_INIT.c: 86: }
-[e :UE 318 ]
+[; ;ECUAL_Layer/ECUAL_INIT.c: 84: }
+[e :UE 319 ]
 }
