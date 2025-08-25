@@ -5642,6 +5642,7 @@ void RB7_ISR(uint8 change);
 
 void ADC_ISR(void);
 void TMR0_ISR(void);
+void TMR1_ISR(void);
 # 11 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c" 2
 
 
@@ -5650,12 +5651,14 @@ static volatile uint8 RB4_ISR_FLAG = 0x01;
 static volatile uint8 RB5_ISR_FLAG = 0x01;
 static volatile uint8 RB6_ISR_FLAG = 0x01;
 static volatile uint8 RB7_ISR_FLAG = 0x01;
-# 27 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
-void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER_HIGH_PRIORITY(void){
+# 126 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
+
     if((INTCONbits.INT0IF == 0x01) && (INTCONbits.INT0IE == 0x01)){
         INT0_ISR();
     }
     else{ }
+
 
     if((PIR1bits.ADIF == 0x01) && (PIE1bits.ADIE == 0x01)){
         ADC_ISR();
@@ -5669,15 +5672,21 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER_HIGH_PRIORITY(void){
     }
     else{ }
 
-    if((INTCON3bits.INT2F == 0x01) && (INTCON3bits.INT2IE == 0x01)){
-        INT2_ISR();
+
+
+    if((PIR1bits.TMR1IF == 0x01) && (PIE1bits.TMR1IE == 0x01)){
+        TMR1_ISR();
     }
     else{ }
-}
 
-void __attribute__((picinterrupt(("low_priority")))) INTERRUPT_MANAGER_LOW_PRIORITY(void){
+
     if((INTCON3bits.INT1F == 0x01) && (INTCON3bits.INT1IE == 0x01)){
         INT1_ISR();
+    }
+    else{ }
+
+    if((INTCON3bits.INT2F == 0x01) && (INTCON3bits.INT2IE == 0x01)){
+        INT2_ISR();
     }
     else{ }
 

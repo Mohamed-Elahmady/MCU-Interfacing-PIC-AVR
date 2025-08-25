@@ -57,16 +57,14 @@ Std_ReturnType TIMER0_INIT(const TIMER0_CFG *timer0){
         Retval = TIMER0_SET_COUNTER_EDGE(timer0);
         // 5. Set Prescaler if needed
         Retval = TIMER0_SET_PRESCALAR(timer0);
-        
-        // 6. configure interrupt
-#if((INTERRUPT_FEATURE_ENABLE) == (TIMER0_INTERRUPT_FEATURE))
-        Retval = TIMER0_CONFIGURE_INTERRUPT(timer0);
-#endif
-        
-        // 7. initialize Timer Registers values " TMR0L = 0, TMR0H = 0"
+        // 6. initialize Timer Registers values " TMR0L = 0, TMR0H = 0"
         TMR0H = (uint8)((timer0->TIMER0_PRELOAD_VALUE) >> 8);
         TMR0L = (uint8)(timer0->TIMER0_PRELOAD_VALUE);
         TIMER0_PRELOADED = timer0->TIMER0_PRELOAD_VALUE;
+        // 7. configure interrupt
+#if((INTERRUPT_FEATURE_ENABLE) == (TIMER0_INTERRUPT_FEATURE))
+        Retval = TIMER0_CONFIGURE_INTERRUPT(timer0);
+#endif
         // 8. Enable Timer 0
         Retval = TIMER0_SET_ENABLE(timer0);
     }
@@ -134,10 +132,10 @@ Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data){
         Retval= E_NOT_OK;
     }
     else{
-        uint8 tmr_high = 0, tmr_low = 0;;
-        tmr_high = TMR0H;
-        tmr_low = TMR0L;
-        *data = (uint16)((tmr_high << 8) | tmr_low);
+        uint8 tmr0_high = 0, tmr0_low = 0;;
+        tmr0_high = TMR0H;
+        tmr0_low = TMR0L;
+        *data = (uint16)((tmr0_high << 8) | tmr0_low);
     }
     return Retval;
 }

@@ -5738,7 +5738,7 @@ Std_ReturnType EXTERNAL_INTERRUPT_INTX_INIT(const INTERRUPT_INTX *int_pin){
         Retval = INTERRUPT_INTX_EDGE_INIT(int_pin);
 
 
-        Retval = INTERRUPT_INTX_PRIORTIY_INIT(int_pin);
+
 
 
         Retval = INTERRUPT_INTX_PIN_INIT(int_pin);
@@ -5824,7 +5824,7 @@ Std_ReturnType EXTERNAL_INTERRUPT_RBX_INIT(const INTERRUPT_RBX *int_pin){
         Retval = INTERRUPT_RBX_CLEAR_FLAG(int_pin);
 
 
-        Retval = INTERRUPT_RBX_PRIORTIY_INIT(int_pin);
+
 
 
         Retval = INTERRUPT_RBX_PIN_INIT(int_pin);
@@ -6029,81 +6029,39 @@ static Std_ReturnType INTERRUPT_INTX_ENABLE(const INTERRUPT_INTX *int_pin){
         switch (int_pin->source){
             case INTERRUPT_INT0:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
-
-
-
-
 
                 (INTCON |= (uint8)((uint8)0x01 << 0x4));
                 break;
             case INTERRUPT_INT1:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
-
-
-
-
 
                 (INTCON3 |= (uint8)((uint8)0x01 << 0x3));
                 break;
             case INTERRUPT_INT2:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
 
-
-
-
-
                 (INTCON3 |= (uint8)((uint8)0x01 << 0x4));
-                break;
-            default :
-                Retval = E_NOT_OK;
-                break;
-        }
-    }
-    return Retval;
-}
-# 469 "MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.c"
-static Std_ReturnType INTERRUPT_INTX_PRIORTIY_INIT(const INTERRUPT_INTX *int_pin){
-    Std_ReturnType Retval = E_OK;
-    if(((void*)0) == int_pin){
-        Retval = E_NOT_OK;
-    }
-    else{
-        switch (int_pin->source){
-            case INTERRUPT_INT0:
-                if(INTERRUPT_HIGH_PRIORITY != int_pin->priority){
-                    Retval = E_NOT_OK;
-                }
-                break;
-            case INTERRUPT_INT1:
-                if(INTERRUPT_HIGH_PRIORITY == int_pin->priority){
-                    (INTCON3 |= (uint8)((uint8)0x01 << 0x6));
-                }
-                else if(INTERRUPT_LOW_PRIORITY == int_pin->priority){
-                    (INTCON3 &= ~(uint8)((uint8)0x01 << 0x6));
-                }
-                else{
-                    Retval = E_NOT_OK;
-                }
-                break;
-            case INTERRUPT_INT2:
-                if(INTERRUPT_HIGH_PRIORITY == int_pin->priority){
-                    (INTCON3 |= (uint8)((uint8)0x01 << 0x7));
-                }
-                else if(INTERRUPT_LOW_PRIORITY == int_pin->priority){
-                    (INTCON3 &= ~(uint8)((uint8)0x01 << 0x7));
-                }
-                else{
-                    Retval = E_NOT_OK;
-                }
                 break;
             default :
                 Retval = E_NOT_OK;
@@ -6324,76 +6282,55 @@ static Std_ReturnType INTERRUPT_RBX_ENABLE(const INTERRUPT_RBX *int_pin){
         switch(int_pin->source){
             case INTERRUPT_RB4:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
-
-
-
-
 
                 (IOCB |= (uint8)((uint8)0x01 << 0x4));
                 (INTCON |= (uint8)((uint8)0x01 << 0x3));
                 break;
             case INTERRUPT_RB5:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
-
-
-
-
 
                 (IOCB |= (uint8)((uint8)0x01 << 0x5));
                 (INTCON |= (uint8)((uint8)0x01 << 0x3));
                 break;
             case INTERRUPT_RB6:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
-
-
-
-
 
                 (IOCB |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x3));
                 break;
             case INTERRUPT_RB7:
 
-                (RCON |= (uint8)((uint8)0x01 << 0x7));
+
+
+
+
+                (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
 
-
-
-
-
                 (IOCB |= (uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x3));
-                break;
-            default :
-                Retval = E_NOT_OK;
-                break;
-        }
-    }
-    return Retval;
-}
-# 804 "MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.c"
-static Std_ReturnType INTERRUPT_RBX_PRIORTIY_INIT(const INTERRUPT_RBX *int_pin){
-    Std_ReturnType Retval = E_OK;
-    if(((void*)0) == int_pin){
-        Retval = E_NOT_OK;
-    }
-    else{
-        switch(int_pin->priority){
-            case INTERRUPT_HIGH_PRIORITY:
-                (INTCON2 |= (uint8)((uint8)0x01 << 0x0));
-                break;
-            case INTERRUPT_LOW_PRIORITY:
-                (INTCON2 &= ~(uint8)((uint8)0x01 << 0x0));
                 break;
             default :
                 Retval = E_NOT_OK;

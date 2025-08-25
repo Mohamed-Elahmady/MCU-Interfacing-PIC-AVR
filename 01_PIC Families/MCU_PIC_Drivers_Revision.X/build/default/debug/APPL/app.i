@@ -6043,12 +6043,33 @@ Std_ReturnType timer0_read_data(const timer0_cfg *timer0, uint16 *data);
 # 31 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
+void t0_app_isr(void);
 
+gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+                 .pin.logic = gpio_low, .con = led_source, .state = led_off};
+# 25 "APPL/app.c"
+timer0_cfg t0_counter = {
+    .timer0_interrupt = t0_app_isr,
+    .priority = interrupt_high_priority,
+    .mode = timer0_counter_mode,
+    .edge = timer0_counter_falling_edge,
+    .resolution = timer0_16bit_register_size,
+    .prescalar = timer0_prescaler_cfg_disable,
+    .timer0_preloaded_value = 0x0009
+};
+
+uint16 indicator = 0;
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
+    timer0_init(&t0_counter);
+    gpio_led_init(&led1);
     while(1){
-
+        timer0_read_data(&t0_counter, &indicator);
     }
     return (0);
+}
+
+void t0_app_isr(void){
+
 }

@@ -1,7 +1,7 @@
 
 18F46K20 Memory Summary:
-    Program space        used   9C7h (  2503) of 10000h bytes   (  3.8%)
-    Data space           used    8Ch (   140) of   F60h bytes   (  3.6%)
+    Program space        used   4ECh (  1260) of 10000h bytes   (  1.9%)
+    Data space           used    85h (   133) of   F60h bytes   (  3.4%)
     Configuration bits   used     7h (     7) of     7h words   (100.0%)
     EEPROM space         used     0h (     0) of   400h bytes   (  0.0%)
     ID Location space    used     0h (     0) of     8h bytes   (  0.0%)

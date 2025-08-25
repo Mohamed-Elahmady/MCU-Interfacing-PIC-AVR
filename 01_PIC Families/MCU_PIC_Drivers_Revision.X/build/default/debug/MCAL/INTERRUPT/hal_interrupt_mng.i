@@ -5653,6 +5653,7 @@ void rb7_isr(uint8 change);
 
 void adc_isr(void);
 void tmr0_isr(void);
+void tmr1_isr(void);
 # 11 "MCAL/INTERRUPT/hal_interrupt_mng.c" 2
 
 

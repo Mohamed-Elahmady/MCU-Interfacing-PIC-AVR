@@ -5712,9 +5712,7 @@ static Std_ReturnType TIMER0_CONFIGURE_INTERRUPT(const TIMER0_CFG *timer0);
 
 
 static Std_ReturnType TIMER0_SET_ENABLE(const TIMER0_CFG *timer0);
-
-
-
+# 44 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 Std_ReturnType TIMER0_INIT(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5732,21 +5730,19 @@ Std_ReturnType TIMER0_INIT(const TIMER0_CFG *timer0){
 
         Retval = TIMER0_SET_PRESCALAR(timer0);
 
+        TMR0H = (uint8)((timer0->TIMER0_PRELOAD_VALUE) >> 8);
+        TMR0L = (uint8)(timer0->TIMER0_PRELOAD_VALUE);
+        TIMER0_PRELOADED = timer0->TIMER0_PRELOAD_VALUE;
 
 
         Retval = TIMER0_CONFIGURE_INTERRUPT(timer0);
 
 
-
-        TMR0H = (uint8)((timer0->TIMER0_PRELOAD_VALUE) >> 8);
-        TMR0L = (uint8)(timer0->TIMER0_PRELOAD_VALUE);
-        TIMER0_PRELOADED = timer0->TIMER0_PRELOAD_VALUE;
-
         Retval = TIMER0_SET_ENABLE(timer0);
     }
     return Retval;
 }
-
+# 81 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5764,7 +5760,7 @@ Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0){
     }
     return Retval;
 }
-
+# 108 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5776,23 +5772,21 @@ Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data){
     }
     return Retval;
 }
-
+# 129 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0 || ((void*)0) == data){
         Retval= E_NOT_OK;
     }
     else{
-        uint8 tmr_high = 0, tmr_low = 0;;
-        tmr_high = TMR0H;
-        tmr_low = TMR0L;
-        *data = (uint16)((tmr_high << 8) | tmr_low);
+        uint8 tmr0_high = 0, tmr0_low = 0;;
+        tmr0_high = TMR0H;
+        tmr0_low = TMR0L;
+        *data = (uint16)((tmr0_high << 8) | tmr0_low);
     }
     return Retval;
 }
-
-
-
+# 153 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 void TMR0_ISR(void){
 
     (INTCON &= ~(uint8)((uint8)0x01 << 0x2));
@@ -5804,11 +5798,7 @@ void TMR0_ISR(void){
         TIMER0_HANDLER_FUNCTION();
     }
 }
-
-
-
-
-
+# 177 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_SET_DISABLE(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5819,7 +5809,7 @@ static Std_ReturnType TIMER0_SET_DISABLE(const TIMER0_CFG *timer0){
     }
     return Retval;
 }
-
+# 196 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_SET_RESOLUTION(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5840,7 +5830,7 @@ static Std_ReturnType TIMER0_SET_RESOLUTION(const TIMER0_CFG *timer0){
     }
     return Retval;
 }
-
+# 225 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_SET_MODE(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5865,7 +5855,7 @@ static Std_ReturnType TIMER0_SET_MODE(const TIMER0_CFG *timer0){
     }
     return Retval;
 }
-
+# 258 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_SET_COUNTER_EDGE(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5894,7 +5884,7 @@ static Std_ReturnType TIMER0_SET_COUNTER_EDGE(const TIMER0_CFG *timer0){
     }
     return Retval;
 }
-
+# 295 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_SET_PRESCALAR(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5914,9 +5904,7 @@ static Std_ReturnType TIMER0_SET_PRESCALAR(const TIMER0_CFG *timer0){
     }
     return Retval;
 }
-
-
-
+# 325 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_CONFIGURE_INTERRUPT(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){
@@ -5925,33 +5913,16 @@ static Std_ReturnType TIMER0_CONFIGURE_INTERRUPT(const TIMER0_CFG *timer0){
     else{
         (INTCON |= (uint8)((uint8)0x01 << 0x5));
         (INTCON &= ~(uint8)((uint8)0x01 << 0x2));
-
-        (RCON |= (uint8)((uint8)0x01 << 0x7));
+# 349 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
+        (RCON &= ~(uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x6));
-        if(timer0->priority == INTERRUPT_HIGH_PRIORITY)
-        {
-            (INTCON2 |= (uint8)((uint8)0x01 << 0x2));
-        }
-        else if(timer0->priority == INTERRUPT_LOW_PRIORITY)
-        {
-            (INTCON2 &= ~(uint8)((uint8)0x01 << 0x2));
-        }
-        else {
-            Retval= E_NOT_OK;
-        }
-
-
-
-
 
         TIMER0_HANDLER_FUNCTION = timer0->TIMER0_INTERRUPT;
     }
     return Retval;
 }
-
-
-
+# 369 "MCAL_Layer/Timers/Timer0/HAL_TIMER0.c"
 static Std_ReturnType TIMER0_SET_ENABLE(const TIMER0_CFG *timer0){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer0){

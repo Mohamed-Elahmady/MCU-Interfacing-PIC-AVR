@@ -155,9 +155,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7043
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7043: extern volatile unsigned char INTCON __attribute__((address(0xFF2)));
 [v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
-"3296
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 3296: extern volatile unsigned char IPR1 __attribute__((address(0xF9F)));
-[v _IPR1 `Vuc ~T0 @X0 0 e@3999 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -1885,50 +1882,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "538
 [; ;MCAL_Layer/ADC/HAL_ADC.c: 538:         (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
 [e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `i `Vuc ]
-"540
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 540:         (RCON |= (uint8)((uint8)0x01 << 0x7));
-[e =| _RCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
-"541
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 541:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
+"553
+[; ;MCAL_Layer/ADC/HAL_ADC.c: 553:         (RCON &= ~(uint8)((uint8)0x01 << 0x7));
+[e =& _RCON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
+"554
+[; ;MCAL_Layer/ADC/HAL_ADC.c: 554:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
-"542
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 542:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
+"555
+[; ;MCAL_Layer/ADC/HAL_ADC.c: 555:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
-"543
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 543:         if (INTERRUPT_HIGH_PRIORITY == adc->priority) {
-[e $ ! == -> . `E3730 1 `ui -> . *U _adc 1 `ui 394  ]
-{
-"544
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 544:             (IPR1 |= (uint8)((uint8)0x01 << 0x6));
-[e =| _IPR1 -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
-"545
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 545:         }
-}
-[e $U 395  ]
-"546
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 546:         else if (INTERRUPT_LOW_PRIORITY == adc->priority) {
-[e :U 394 ]
-[e $ ! == -> . `E3730 0 `ui -> . *U _adc 1 `ui 396  ]
-{
-"547
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 547:             (IPR1 &= ~(uint8)((uint8)0x01 << 0x6));
-[e =& _IPR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `i `Vuc ]
-"548
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 548:         }
-}
-[e $U 397  ]
-"549
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 549:         else {
-[e :U 396 ]
-{
-"550
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 550:             Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"551
-[; ;MCAL_Layer/ADC/HAL_ADC.c: 551:         }
-}
-[e :U 397 ]
-[e :U 395 ]
 "557
 [; ;MCAL_Layer/ADC/HAL_ADC.c: 557:         ADC_HANDLER_FUNCTION = adc->ADC_INTERRUPT;
 [e = _ADC_HANDLER_FUNCTION . *U _adc 0 ]

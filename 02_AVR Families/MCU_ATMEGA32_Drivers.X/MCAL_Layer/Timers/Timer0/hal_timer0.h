@@ -45,7 +45,6 @@
 #define Timer0_COM01_OC0_Set()                                         Set_Bit(TCCR0, COM01)
 
 // Timer0 Force Output Compare
-#define Timer0_Force_Output_Compare_Disable()                          Clear_Bit(TCCR0, FOC0)
 #define Timer0_Force_Output_Compare_Enable()                           Set_Bit(TCCR0, FOC0)
 
 // ?Reset timer Prescaller Before use

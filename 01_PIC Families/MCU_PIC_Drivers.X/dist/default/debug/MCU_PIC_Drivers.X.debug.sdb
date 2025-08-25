@@ -8,36 +8,32 @@
 E_NOT_OK 0
 E_OK 1
 ]
-"14
+"29
 [e E3907 . `uc
 INTERRUPT_LOW_PRIORITY 0
 INTERRUPT_HIGH_PRIORITY 1
 ]
-[e E4046 . `uc
-TIMER0_PRESCALER_DIV_2 0
-TIMER0_PRESCALER_DIV_4 1
-TIMER0_PRESCALER_DIV_8 2
-TIMER0_PRESCALER_DIV_16 3
-TIMER0_PRESCALER_DIV_32 4
-TIMER0_PRESCALER_DIV_64 5
-TIMER0_PRESCALER_DIV_128 6
-TIMER0_PRESCALAER_DIV_256 7
+[e E4101 . `uc
+TIMER1_TIMER_MODE 0
+TIMER1_COUNTER_MODE 1
 ]
-[e E4056 . `uc
-TIMER0_PRESCALER_CFG_DISABLE 0
-TIMER0_PRESCALER_CFG_ENABLE 1
+[e E4105 . `uc
+TIMER1_SYNCHRONCE_COUNTER 0
+TIMER1_ASYNCHRONCE_COUNTER 1
 ]
-[e E4068 . `uc
-TIMER0_16BIT_RESOLUTION 0
-TIMER0_8BIT_RESOLUTION 1
+[e E4109 . `uc
+TIMER1_OSCILLATOR_DISABLE 0
+TIMER1_OSCILLATOR_ENABLE 1
 ]
-[e E4064 . `uc
-TIMER0_TIMER_MODE 0
-TIMER0_COUNTER_MODE 1
+[e E4095 . `uc
+TIMER1_PRESCALER_DIV_1 0
+TIMER1_PRESCALER_DIV_2 1
+TIMER1_PRESCALER_DIV_4 2
+TIMER1_PRESCALER_DIV_8 3
 ]
-[e E4060 . `uc
-TIMER0_FALLING_EDGE 0
-TIMER0_RISING_EDGE 1
+[e E4113 . `uc
+TIMER1_8BIT_RW_MODE 0
+TIMER1_16BIT_RW_MODE 1
 ]
 "24 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/ECUAL_Layer/7SEG/ECUAL_7SEG.c
 [e E3730 . `uc
@@ -276,12 +272,12 @@ INTERRUPT_RB7 3
 [e E3751 . `uc
 INTERRUPT_ON_CHANGE 0
 ]
-"59 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
+"166 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
 [e E3687 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
-"36 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
+"44 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
 [e E3730 . `uc
 INTERRUPT_LOW_PRIORITY 0
 INTERRUPT_HIGH_PRIORITY 1
@@ -316,7 +312,60 @@ TIMER0_RISING_EDGE 1
 E_NOT_OK 0
 E_OK 1
 ]
-"175
+"238
+[e E3666 . `uc
+GPIO_PORTA 0
+GPIO_PORTB 1
+GPIO_PORTC 2
+GPIO_PORTD 3
+GPIO_PORTE 4
+]
+[e E3673 . `uc
+GPIO_PIN0 0
+GPIO_PIN1 1
+GPIO_PIN2 2
+GPIO_PIN3 3
+GPIO_PIN4 4
+GPIO_PIN5 5
+GPIO_PIN6 6
+GPIO_PIN7 7
+]
+[e E3683 . `uc
+GPIO_OUTPUT 0
+GPIO_INPUT 1
+]
+"38 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer1/HAL_TIMER1.c
+[e E3730 . `uc
+INTERRUPT_LOW_PRIORITY 0
+INTERRUPT_HIGH_PRIORITY 1
+]
+[e E3742 . `uc
+TIMER1_TIMER_MODE 0
+TIMER1_COUNTER_MODE 1
+]
+[e E3746 . `uc
+TIMER1_SYNCHRONCE_COUNTER 0
+TIMER1_ASYNCHRONCE_COUNTER 1
+]
+[e E3750 . `uc
+TIMER1_OSCILLATOR_DISABLE 0
+TIMER1_OSCILLATOR_ENABLE 1
+]
+[e E3736 . `uc
+TIMER1_PRESCALER_DIV_1 0
+TIMER1_PRESCALER_DIV_2 1
+TIMER1_PRESCALER_DIV_4 2
+TIMER1_PRESCALER_DIV_8 3
+]
+[e E3754 . `uc
+TIMER1_8BIT_RW_MODE 0
+TIMER1_16BIT_RW_MODE 1
+]
+[e E3659 . `uc
+E_NOT_OK 0
+E_OK 1
+]
+"174
 [e E3666 . `uc
 GPIO_PORTA 0
 GPIO_PORTB 1
@@ -366,12 +415,12 @@ GPIO_INPUT 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v3.00/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"26 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
+"16 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
 [v _main main `(i  1 e 2 0 ]
-"37
+"24
 [v _application_init application_init `(v  1 e 1 0 ]
-"42
-[v _tmr0_app_handler tmr0_app_handler `(v  1 e 1 0 ]
+"53
+[v _timer1_app_isr timer1_app_isr `(v  1 e 1 0 ]
 "68 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c
 [v _GPIO_LCD_4BIT_SEND_COMMAND GPIO_LCD_4BIT_SEND_COMMAND `(E3659  1 e 1 0 ]
 "89
@@ -466,8 +515,6 @@ GPIO_INPUT 1
 [v _INTERRUPT_INTX_DISABLE INTERRUPT_INTX_DISABLE `(E3659  1 s 1 INTERRUPT_INTX_DISABLE ]
 "410
 [v _INTERRUPT_INTX_ENABLE INTERRUPT_INTX_ENABLE `(E3659  1 s 1 INTERRUPT_INTX_ENABLE ]
-"469
-[v _INTERRUPT_INTX_PRIORTIY_INIT INTERRUPT_INTX_PRIORTIY_INIT `(E3659  1 s 1 INTERRUPT_INTX_PRIORTIY_INIT ]
 "519
 [v _INTERRUPT_INTX_EDGE_INIT INTERRUPT_INTX_EDGE_INIT `(E3659  1 s 1 INTERRUPT_INTX_EDGE_INIT ]
 "573
@@ -486,8 +533,6 @@ GPIO_INPUT 1
 [v _INTERRUPT_RBX_DISABLE INTERRUPT_RBX_DISABLE `(E3659  1 s 1 INTERRUPT_RBX_DISABLE ]
 "729
 [v _INTERRUPT_RBX_ENABLE INTERRUPT_RBX_ENABLE `(E3659  1 s 1 INTERRUPT_RBX_ENABLE ]
-"804
-[v _INTERRUPT_RBX_PRIORTIY_INIT INTERRUPT_RBX_PRIORTIY_INIT `(E3659  1 s 1 INTERRUPT_RBX_PRIORTIY_INIT ]
 "833
 [v _RBX_SET_HANDLER RBX_SET_HANDLER `(E3659  1 s 1 RBX_SET_HANDLER ]
 "867
@@ -498,43 +543,51 @@ GPIO_INPUT 1
 [v _RB6_SET_HANDLER RB6_SET_HANDLER `(E3659  1 s 1 RB6_SET_HANDLER ]
 "924
 [v _RB7_SET_HANDLER RB7_SET_HANDLER `(E3659  1 s 1 RB7_SET_HANDLER ]
-"27 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
-[v _INTERRUPT_MANAGER_HIGH_PRIORITY INTERRUPT_MANAGER_HIGH_PRIORITY `IIH(v  1 e 1 0 ]
-"51
-[v _INTERRUPT_MANAGER_LOW_PRIORITY INTERRUPT_MANAGER_LOW_PRIORITY `IIL(v  1 e 1 0 ]
-"36 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
-[v _TIMER0_INIT TIMER0_INIT `(E3659  1 e 1 0 ]
-"86
-[v _TIMER0_WRITE_DATA TIMER0_WRITE_DATA `(E3659  1 e 1 0 ]
-"98
-[v _TIMER0_READ_DATA TIMER0_READ_DATA `(E3659  1 e 1 0 ]
-"114
+"126 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
+[v _INTERRUPT_MANAGER INTERRUPT_MANAGER `IIH(v  1 e 1 0 ]
+"153 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-"130
+"177
 [v _TIMER0_SET_DISABLE TIMER0_SET_DISABLE `(E3659  1 s 1 TIMER0_SET_DISABLE ]
-"141
+"196
 [v _TIMER0_SET_RESOLUTION TIMER0_SET_RESOLUTION `(E3659  1 s 1 TIMER0_SET_RESOLUTION ]
-"162
+"225
 [v _TIMER0_SET_MODE TIMER0_SET_MODE `(E3659  1 s 1 TIMER0_SET_MODE ]
-"187
+"258
 [v _TIMER0_SET_COUNTER_EDGE TIMER0_SET_COUNTER_EDGE `(E3659  1 s 1 TIMER0_SET_COUNTER_EDGE ]
-"216
+"295
 [v _TIMER0_SET_PRESCALAR TIMER0_SET_PRESCALAR `(E3659  1 s 1 TIMER0_SET_PRESCALAR ]
-"238
+"325
 [v _TIMER0_CONFIGURE_INTERRUPT TIMER0_CONFIGURE_INTERRUPT `(E3659  1 s 1 TIMER0_CONFIGURE_INTERRUPT ]
-"273
+"369
 [v _TIMER0_SET_ENABLE TIMER0_SET_ENABLE `(E3659  1 s 1 TIMER0_SET_ENABLE ]
+"38 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer1/HAL_TIMER1.c
+[v _TIMER1_INIT TIMER1_INIT `(E3659  1 e 1 0 ]
+"114
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"130
+[v _TIMER1_SET_DISABLE TIMER1_SET_DISABLE `(E3659  1 s 1 TIMER1_SET_DISABLE ]
+"141
+[v _TIMER1_SET_ENABLE TIMER1_SET_ENABLE `(E3659  1 s 1 TIMER1_SET_ENABLE ]
+"152
+[v _TIMER1_SET_MODE TIMER1_SET_MODE `(E3659  1 s 1 TIMER1_SET_MODE ]
+"192
+[v _TIMER1_SET_PRESCALER TIMER1_SET_PRESCALER `(E3659  1 s 1 TIMER1_SET_PRESCALER ]
+"203
+[v _TIMER1_SET_RW_MODE TIMER1_SET_RW_MODE `(E3659  1 s 1 TIMER1_SET_RW_MODE ]
+"226
+[v _TIMER1_CONFIGURE_INTERRUPT TIMER1_CONFIGURE_INTERRUPT `(E3659  1 s 1 TIMER1_CONFIGURE_INTERRUPT ]
 "407 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [v _IOCB IOCB `VEuc  1 e 1 @3965 ]
-[s S1688 . 1 `uc 1 . 1 0 :4:0 
+[s S1687 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IOCB4 1 0 :1:4 
 `uc 1 IOCB5 1 0 :1:5 
 `uc 1 IOCB6 1 0 :1:6 
 `uc 1 IOCB7 1 0 :1:7 
 ]
 "421
-[u S1694 . 1 `S1688 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES1694  1 e 1 @3965 ]
+[u S1693 . 1 `S1687 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES1693  1 e 1 @3965 ]
 "446
 [v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
 "508
@@ -543,7 +596,7 @@ GPIO_INPUT 1
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "788
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S2130 . 1 `uc 1 RB0 1 0 :1:0 
+[s S2108 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -553,7 +606,7 @@ GPIO_INPUT 1
 `uc 1 RB7 1 0 :1:7 
 ]
 "841
-[s S2139 . 1 `uc 1 INT0 1 0 :1:0 
+[s S2117 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -562,7 +615,7 @@ GPIO_INPUT 1
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S2148 . 1 `uc 1 AN12 1 0 :1:0 
+[s S2126 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -571,21 +624,21 @@ GPIO_INPUT 1
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S2157 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S2135 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 C12IN3M 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 C12IN2M 1 0 :1:3 
 ]
-[s S2162 . 1 `uc 1 . 1 0 :1:0 
+[s S2140 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 C12IN3N 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 C12IN2N 1 0 :1:3 
 ]
-[s S2167 . 1 `uc 1 . 1 0 :3:0 
+[s S2145 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S2170 . 1 `S2130 1 . 1 0 `S2139 1 . 1 0 `S2148 1 . 1 0 `S2157 1 . 1 0 `S2162 1 . 1 0 `S2167 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES2170  1 e 1 @3969 ]
+[u S2148 . 1 `S2108 1 . 1 0 `S2117 1 . 1 0 `S2126 1 . 1 0 `S2135 1 . 1 0 `S2140 1 . 1 0 `S2145 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES2148  1 e 1 @3969 ]
 "996
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "1184
@@ -614,7 +667,7 @@ GPIO_INPUT 1
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "3142
 [v _PIE1 PIE1 `VEuc  1 e 1 @3997 ]
-[s S2044 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S2018 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -624,15 +677,15 @@ GPIO_INPUT 1
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "3164
-[s S2053 . 1 `uc 1 . 1 0 :4:0 
+[s S2027 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S2057 . 1 `S2044 1 . 1 0 `S2053 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES2057  1 e 1 @3997 ]
+[u S2031 . 1 `S2018 1 . 1 0 `S2027 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES2031  1 e 1 @3997 ]
 "3219
 [v _PIR1 PIR1 `VEuc  1 e 1 @3998 ]
-[s S2014 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1988 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -642,17 +695,15 @@ GPIO_INPUT 1
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "3241
-[s S2023 . 1 `uc 1 . 1 0 :4:0 
+[s S1997 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S2027 . 1 `S2014 1 . 1 0 `S2023 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES2027  1 e 1 @3998 ]
-"3296
-[v _IPR1 IPR1 `VEuc  1 e 1 @3999 ]
+[u S2001 . 1 `S1988 1 . 1 0 `S1997 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2001  1 e 1 @3998 ]
 "3613
 [v _EECON1 EECON1 `VEuc  1 e 1 @4006 ]
-[s S1350 . 1 `uc 1 RD 1 0 :1:0 
+[s S1359 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -662,11 +713,11 @@ GPIO_INPUT 1
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3634
-[s S1359 . 1 `uc 1 . 1 0 :6:0 
+[s S1368 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S1362 . 1 `S1350 1 . 1 0 `S1359 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1362  1 e 1 @4006 ]
+[u S1371 . 1 `S1359 1 . 1 0 `S1368 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1371  1 e 1 @4006 ]
 "3679
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "3686
@@ -677,66 +728,97 @@ GPIO_INPUT 1
 [v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
 "5079
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
-[s S909 . 1 `uc 1 ADCS 1 0 :3:0 
+[s S919 . 1 `uc 1 ADCS 1 0 :3:0 
 `uc 1 ACQT 1 0 :3:3 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "5100
-[s S914 . 1 `uc 1 ADCS0 1 0 :1:0 
+[s S924 . 1 `uc 1 ADCS0 1 0 :1:0 
 `uc 1 ADCS1 1 0 :1:1 
 `uc 1 ADCS2 1 0 :1:2 
 `uc 1 ACQT0 1 0 :1:3 
 `uc 1 ACQT1 1 0 :1:4 
 `uc 1 ACQT2 1 0 :1:5 
 ]
-[u S921 . 1 `S909 1 . 1 0 `S914 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES921  1 e 1 @4032 ]
+[u S931 . 1 `S919 1 . 1 0 `S924 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES931  1 e 1 @4032 ]
 "5150
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "5201
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S937 . 1 `uc 1 . 1 0 :1:0 
+[s S947 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "5245
-[s S940 . 1 `uc 1 ADON 1 0 :1:0 
+[s S950 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S944 . 1 `uc 1 . 1 0 :1:0 
+[s S954 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S951 . 1 `uc 1 . 1 0 :1:0 
+[s S961 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S954 . 1 `uc 1 . 1 0 :1:0 
+[s S964 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S957 . 1 `uc 1 . 1 0 :1:0 
+[s S967 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S960 . 1 `uc 1 . 1 0 :1:0 
+[s S970 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S963 . 1 `uc 1 . 1 0 :1:0 
+[s S973 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S966 . 1 `S937 1 . 1 0 `S940 1 . 1 0 `S944 1 . 1 0 `S951 1 . 1 0 `S954 1 . 1 0 `S957 1 . 1 0 `S960 1 . 1 0 `S963 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES966  1 e 1 @4034 ]
+[u S976 . 1 `S947 1 . 1 0 `S950 1 . 1 0 `S954 1 . 1 0 `S961 1 . 1 0 `S964 1 . 1 0 `S967 1 . 1 0 `S970 1 . 1 0 `S973 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES976  1 e 1 @4034 ]
 "5327
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "5334
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"5900
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S2598 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"5933
+[s S2601 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S2609 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S2615 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S2620 . 1 `S2598 1 . 1 0 `S2601 1 . 1 0 `S2609 1 . 1 0 `S2615 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES2620  1 e 1 @4045 ]
+"6010
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"6017
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
 "6024
 [v _RCON RCON `VEuc  1 e 1 @4048 ]
 "6532
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S2398 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S2371 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -744,19 +826,19 @@ GPIO_INPUT 1
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6552
-[s S2405 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S2378 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S2409 . 1 `S2398 1 . 1 0 `S2405 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES2409  1 e 1 @4053 ]
+[u S2382 . 1 `S2371 1 . 1 0 `S2378 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES2382  1 e 1 @4053 ]
 "6609
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6616
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
 "6881
 [v _INTCON3 INTCON3 `VEuc  1 e 1 @4080 ]
-[s S2079 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S2057 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -766,7 +848,7 @@ GPIO_INPUT 1
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "6908
-[s S2088 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S2066 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -775,13 +857,13 @@ GPIO_INPUT 1
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S2097 . 1 `S2079 1 . 1 0 `S2088 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES2097  1 e 1 @4080 ]
+[u S2075 . 1 `S2057 1 . 1 0 `S2066 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES2075  1 e 1 @4080 ]
 "6973
 [v _INTCON2 INTCON2 `VEuc  1 e 1 @4081 ]
 "7043
 [v _INTCON INTCON `VEuc  1 e 1 @4082 ]
-[s S1296 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1305 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -791,7 +873,7 @@ GPIO_INPUT 1
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "7075
-[s S1305 . 1 `uc 1 . 1 0 :1:0 
+[s S1314 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -800,19 +882,12 @@ GPIO_INPUT 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S1314 . 1 `uc 1 . 1 0 :6:0 
+[s S1323 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S1318 . 1 `S1296 1 . 1 0 `S1305 1 . 1 0 `S1314 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1318  1 e 1 @4082 ]
-"10 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
-[v _Ret Ret `E3659  1 e 1 0 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"14
-[v _timer0_counter timer0_counter `S52  1 e 10 0 ]
-"24
-[v _freq freq `VEus  1 e 2 0 ]
+[u S1327 . 1 `S1305 1 . 1 0 `S1314 1 . 1 0 `S1323 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1327  1 e 1 @4082 ]
 "16 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/ECUAL_Layer/Keypad/ECUAL_KEYPAD.c
 [v _KEYPAD_BTNS KEYPAD_BTNS `C[4][4]uc  1 e 16 0 ]
 "21 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/ADC/HAL_ADC.c
@@ -857,150 +932,44 @@ GPIO_INPUT 1
 [v _TIMER0_PRELOADED TIMER0_PRELOADED `us  1 s 2 TIMER0_PRELOADED ]
 "19
 [v _TIMER0_HANDLER_FUNCTION TIMER0_HANDLER_FUNCTION `*.37(v  1 s 2 TIMER0_HANDLER_FUNCTION ]
-"26 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
+"14 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer1/HAL_TIMER1.c
+[v _timer1_preloaded_value timer1_preloaded_value `us  1 s 2 timer1_preloaded_value ]
+"20
+[v _TIMER1_HANDLER_FUNCTION TIMER1_HANDLER_FUNCTION `*.37(v  1 e 2 0 ]
+"16 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"35
+"22
 } 0
-"37
+"24
 [v _application_init application_init `(v  1 e 1 0 ]
 {
-"40
-} 0
-"36 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
-[v _TIMER0_INIT TIMER0_INIT `(E3659  1 e 1 0 ]
-{
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-[v TIMER0_INIT@timer0 timer0 `*.30CS52  1 p 1 18 ]
-"66
-} 0
-"141
-[v _TIMER0_SET_RESOLUTION TIMER0_SET_RESOLUTION `(E3659  1 s 1 TIMER0_SET_RESOLUTION ]
-{
-"142
-[v TIMER0_SET_RESOLUTION@Retval Retval `E3659  1 a 1 9 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"141
-[v TIMER0_SET_RESOLUTION@timer0 timer0 `*.30CS52  1 p 1 6 ]
-"160
-} 0
-"216
-[v _TIMER0_SET_PRESCALAR TIMER0_SET_PRESCALAR `(E3659  1 s 1 TIMER0_SET_PRESCALAR ]
-{
-"217
-[v TIMER0_SET_PRESCALAR@Retval Retval `E3659  1 a 1 8 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"216
-[v TIMER0_SET_PRESCALAR@timer0 timer0 `*.30CS52  1 p 1 6 ]
-"234
-} 0
-"162
-[v _TIMER0_SET_MODE TIMER0_SET_MODE `(E3659  1 s 1 TIMER0_SET_MODE ]
-{
-[s S114 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"175
-[v TIMER0_SET_MODE@T0CKI_pin T0CKI_pin `S114  1 a 1 17 ]
-"163
-[v TIMER0_SET_MODE@Retval Retval `E3659  1 a 1 16 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"162
-[v TIMER0_SET_MODE@timer0 timer0 `*.30CS52  1 p 1 13 ]
-"174
-[v TIMER0_SET_MODE@F3828 F3828 `S114  1 s 1 F3828 ]
-"185
-} 0
-"34 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/GPIO/HAL_GPIO.c
-[v _GPIO_PIN_DIRECTION_INIT GPIO_PIN_DIRECTION_INIT `(E3659  1 e 1 0 ]
-{
-"35
-[v GPIO_PIN_DIRECTION_INIT@Retval Retval `E3659  1 a 1 12 ]
-[s S114 . 1 `uc 1 PORT 1 0 :3:0 
-`uc 1 PIN 1 0 :3:3 
-`uc 1 DIRECTION 1 0 :1:6 
-`uc 1 LOGIC 1 0 :1:7 
-]
-"34
-[v GPIO_PIN_DIRECTION_INIT@pin pin `*.30CS114  1 p 1 6 ]
-"51
-} 0
-"273 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
-[v _TIMER0_SET_ENABLE TIMER0_SET_ENABLE `(E3659  1 s 1 TIMER0_SET_ENABLE ]
-{
-"274
-[v TIMER0_SET_ENABLE@Retval Retval `E3659  1 a 1 7 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"273
-[v TIMER0_SET_ENABLE@timer0 timer0 `*.30CS52  1 p 1 6 ]
-"282
-} 0
-"130
-[v _TIMER0_SET_DISABLE TIMER0_SET_DISABLE `(E3659  1 s 1 TIMER0_SET_DISABLE ]
-{
-"131
-[v TIMER0_SET_DISABLE@Retval Retval `E3659  1 a 1 7 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"130
-[v TIMER0_SET_DISABLE@timer0 timer0 `*.30CS52  1 p 1 6 ]
-"139
-} 0
-"187
-[v _TIMER0_SET_COUNTER_EDGE TIMER0_SET_COUNTER_EDGE `(E3659  1 s 1 TIMER0_SET_COUNTER_EDGE ]
-{
-"188
-[v TIMER0_SET_COUNTER_EDGE@Retval Retval `E3659  1 a 1 9 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"187
-[v TIMER0_SET_COUNTER_EDGE@timer0 timer0 `*.30CS52  1 p 1 6 ]
-"214
-} 0
-"238
-[v _TIMER0_CONFIGURE_INTERRUPT TIMER0_CONFIGURE_INTERRUPT `(E3659  1 s 1 TIMER0_CONFIGURE_INTERRUPT ]
-{
-"239
-[v TIMER0_CONFIGURE_INTERRUPT@Retval Retval `E3659  1 a 1 8 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"238
-[v TIMER0_CONFIGURE_INTERRUPT@timer0 timer0 `*.30CS52  1 p 1 6 ]
-"269
+"26
 } 0
 "81 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/ECUAL_Layer/ECUAL_INIT.c
 [v _ECUAL_LAYER_INIT ECUAL_LAYER_INIT `(v  1 e 1 0 ]
 {
 "84
 } 0
-"86 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
-[v _TIMER0_WRITE_DATA TIMER0_WRITE_DATA `(E3659  1 e 1 0 ]
+"126 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
+[v _INTERRUPT_MANAGER INTERRUPT_MANAGER `IIH(v  1 e 1 0 ]
 {
-"87
-[v TIMER0_WRITE_DATA@Retval Retval `E3659  1 a 1 9 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"86
-[v TIMER0_WRITE_DATA@timer0 timer0 `*.30CS52  1 p 1 6 ]
-[v TIMER0_WRITE_DATA@data data `us  1 p 2 7 ]
-"96
+"221
 } 0
-"98
-[v _TIMER0_READ_DATA TIMER0_READ_DATA `(E3659  1 e 1 0 ]
+"114 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer1/HAL_TIMER1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
-"104
-[v TIMER0_READ_DATA@tmr_low tmr_low `uc  1 a 1 12 ]
-[v TIMER0_READ_DATA@tmr_high tmr_high `uc  1 a 1 11 ]
-"99
-[v TIMER0_READ_DATA@Retval Retval `E3659  1 a 1 10 ]
-[s S52 . 10 `*.37(v 1 TIMER0_INTERRUPT 2 0 `E3907 1 priority 1 2 `us 1 TIMER0_PRELOAD_VALUE 2 3 `E4046 1 pre_value 1 5 `E4056 1 prescalar 1 6 `E4068 1 resolution 1 7 `E4064 1 mode 1 8 `E4060 1 edge 1 9 ]
-"98
-[v TIMER0_READ_DATA@timer0 timer0 `*.30CS52  1 p 1 6 ]
-[v TIMER0_READ_DATA@data data `*.30us  1 p 1 7 ]
-"110
+"124
 } 0
-"51 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
-[v _INTERRUPT_MANAGER_LOW_PRIORITY INTERRUPT_MANAGER_LOW_PRIORITY `IIL(v  1 e 1 0 ]
+"53 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
+[v _timer1_app_isr timer1_app_isr `(v  1 e 1 0 ]
 {
-"114
+"55
+} 0
+"153 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"163
 } 0
 "303 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.c
 [v _RB7_ISR RB7_ISR `(v  1 e 1 0 ]
@@ -1008,7 +977,7 @@ GPIO_INPUT 1
 [v RB7_ISR@change change `uc  1 p 1 wreg ]
 [v RB7_ISR@change change `uc  1 p 1 wreg ]
 "305
-[v RB7_ISR@change change `uc  1 p 1 2 ]
+[v RB7_ISR@change change `uc  1 p 1 0 ]
 "319
 } 0
 "279
@@ -1017,7 +986,7 @@ GPIO_INPUT 1
 [v RB6_ISR@change change `uc  1 p 1 wreg ]
 [v RB6_ISR@change change `uc  1 p 1 wreg ]
 "281
-[v RB6_ISR@change change `uc  1 p 1 2 ]
+[v RB6_ISR@change change `uc  1 p 1 0 ]
 "295
 } 0
 "255
@@ -1026,7 +995,7 @@ GPIO_INPUT 1
 [v RB5_ISR@change change `uc  1 p 1 wreg ]
 [v RB5_ISR@change change `uc  1 p 1 wreg ]
 "257
-[v RB5_ISR@change change `uc  1 p 1 2 ]
+[v RB5_ISR@change change `uc  1 p 1 0 ]
 "271
 } 0
 "231
@@ -1035,33 +1004,18 @@ GPIO_INPUT 1
 [v RB4_ISR@change change `uc  1 p 1 wreg ]
 [v RB4_ISR@change change `uc  1 p 1 wreg ]
 "233
-[v RB4_ISR@change change `uc  1 p 1 2 ]
+[v RB4_ISR@change change `uc  1 p 1 0 ]
 "247
+} 0
+"159
+[v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
+{
+"168
 } 0
 "142
 [v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
 {
 "151
-} 0
-"27 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c
-[v _INTERRUPT_MANAGER_HIGH_PRIORITY INTERRUPT_MANAGER_HIGH_PRIORITY `IIH(v  1 e 1 0 ]
-{
-"49
-} 0
-"114 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Timers/Timer0/HAL_TIMER0.c
-[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-{
-"124
-} 0
-"42 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/APP_Layer/Main.c
-[v _tmr0_app_handler tmr0_app_handler `(v  1 e 1 0 ]
-{
-"44
-} 0
-"159 /Users/mohammedel-ahmady/Data/Embedded Systems/MCU-Interfacing-PIC-AVR/01_PIC Families/MCU_PIC_Drivers.X/MCAL_Layer/Interrupt/HAL_EXT_INTERRUPT.c
-[v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
-{
-"168
 } 0
 "125
 [v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]

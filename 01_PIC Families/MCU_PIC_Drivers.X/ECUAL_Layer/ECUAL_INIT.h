@@ -28,6 +28,7 @@
 #include "../MCAL_Layer/ADC/HAL_ADC.h"
 
 #include "../MCAL_Layer/Timers/Timer0/HAL_TIMER0.h"
+#include "../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

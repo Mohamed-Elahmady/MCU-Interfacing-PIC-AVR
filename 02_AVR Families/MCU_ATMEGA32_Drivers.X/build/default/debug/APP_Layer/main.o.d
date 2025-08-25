@@ -73,7 +73,13 @@ build/default/debug/APP_Layer/Main.o.d \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../Interrupt/hal_int_interrupt.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/hal_gpio.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h \
- APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/hal_timer1.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/hal_timer1_cfg.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../GPIO/hal_gpio.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../Interrupt/hal_int_interrupt.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../mcal_std_types.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../device_cfg.h
 
 APP_Layer/Main.h:
 
@@ -224,3 +230,15 @@ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../GPIO/hal_gpio.h:
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/hal_timer0_cfg.h:
 
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer0/../../device_cfg.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/hal_timer1.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/hal_timer1_cfg.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../GPIO/hal_gpio.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../Interrupt/hal_int_interrupt.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../mcal_std_types.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/../../device_cfg.h:

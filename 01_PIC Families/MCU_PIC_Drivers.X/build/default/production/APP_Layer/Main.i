@@ -6036,22 +6036,64 @@ Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0);
 Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data);
 Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data);
 # 31 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 45 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h" 2
+# 50 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h"
+typedef void (* TIMER1_HANDLER)(void);
+
+typedef enum{
+    TIMER1_PRESCALER_DIV_1 = (uint8)0x00,
+    TIMER1_PRESCALER_DIV_2,
+    TIMER1_PRESCALER_DIV_4,
+    TIMER1_PRESCALER_DIV_8
+}TIMER1_PRESCALER;
+
+typedef enum{
+    TIMER1_TIMER_MODE = (uint8)0x00,
+    TIMER1_COUNTER_MODE
+}TIMER1_MODE;
+
+typedef enum{
+    TIMER1_SYNCHRONCE_COUNTER = (uint8)0x00,
+    TIMER1_ASYNCHRONCE_COUNTER
+}TIMER1_SYNCHRONIZATION;
+
+typedef enum{
+    TIMER1_OSCILLATOR_DISABLE = (uint8)0x00,
+    TIMER1_OSCILLATOR_ENABLE
+}TIMER1_OSCILLATOR;
+
+typedef enum{
+    TIMER1_8BIT_RW_MODE = (uint8)0x00,
+    TIMER1_16BIT_RW_MODE
+}TIMER1_RW_MODE;
+
+typedef struct{
+
+    TIMER1_HANDLER TIMER1_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint16 preloaded_value;
+    TIMER1_MODE mode;
+    TIMER1_SYNCHRONIZATION sync;
+    TIMER1_OSCILLATOR osc;
+    TIMER1_PRESCALER prescaler;
+    TIMER1_RW_MODE rw_reg;
+}TIMER1_CFG;
+
+
+
+Std_ReturnType TIMER1_INIT(const TIMER1_CFG *timer1);
+Std_ReturnType TIMER1_DEINIT(const TIMER1_CFG *timer1);
+Std_ReturnType TIMER1_WRITE_DATA(const TIMER1_CFG *timer1, uint16 data);
+Std_ReturnType TIMER1_READ_DATA(const TIMER1_CFG *timer1, uint16 *data);
+# 32 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 46 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
-# 27 "APP_Layer/Main.h"
-extern GPIO_LED led1;
-extern GPIO_BTN btn1;
-extern GPIO_RELAY relay1;
-extern GPIO_SEGMENT seg1;
-extern DC_MOTOR motor1;
-extern DC_MOTOR motor2;
-extern GPIO_KEYPAD keypad1;
-extern CHR_LCD_4BIT lcd1;
-extern CHR_LCD_8BIT lcd2;
-
-
-
+# 39 "APP_Layer/Main.h"
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 

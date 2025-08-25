@@ -49,6 +49,26 @@ ISR(TIMER0_COMP_vect){
     CTC_ISR();
 }
 
+#endif 
+
+#if ((Interrupt_Feature_Enable) == (Timer1_Interrupt_Feature))
+
+ISR(TIMER1_OVF_vect){
+    TMR1_ISR();
+}
+
+ISR(TIMER1_COMPA_vect){
+    CTC_OCRA_ISR();
+}
+
+ISR(TIMER1_COMPB_vect){
+    CTC_OCRB_ISR();
+}
+
+ISR(TIMER1_CAPT_vect){
+    CTC_ICR_ISR();
+}
+
 #endif
 
 /******************* Section 4:  Helper Functions Definitions *******************/

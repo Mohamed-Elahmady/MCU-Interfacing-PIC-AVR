@@ -6028,7 +6028,61 @@ Std_ReturnType TIMER0_DEINIT(const TIMER0_CFG *timer0);
 Std_ReturnType TIMER0_WRITE_DATA(const TIMER0_CFG *timer0, uint16 data);
 Std_ReturnType TIMER0_READ_DATA(const TIMER0_CFG *timer0, uint16 *data);
 # 31 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 45 "ECUAL_Layer/ECUAL_INIT.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h" 1
+# 16 "ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1_CFG.h" 1
+# 17 "ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h" 2
+# 50 "ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h"
+typedef void (* TIMER1_HANDLER)(void);
+
+typedef enum{
+    TIMER1_PRESCALER_DIV_1 = (uint8)0x00,
+    TIMER1_PRESCALER_DIV_2,
+    TIMER1_PRESCALER_DIV_4,
+    TIMER1_PRESCALER_DIV_8
+}TIMER1_PRESCALER;
+
+typedef enum{
+    TIMER1_TIMER_MODE = (uint8)0x00,
+    TIMER1_COUNTER_MODE
+}TIMER1_MODE;
+
+typedef enum{
+    TIMER1_SYNCHRONCE_COUNTER = (uint8)0x00,
+    TIMER1_ASYNCHRONCE_COUNTER
+}TIMER1_SYNCHRONIZATION;
+
+typedef enum{
+    TIMER1_OSCILLATOR_DISABLE = (uint8)0x00,
+    TIMER1_OSCILLATOR_ENABLE
+}TIMER1_OSCILLATOR;
+
+typedef enum{
+    TIMER1_8BIT_RW_MODE = (uint8)0x00,
+    TIMER1_16BIT_RW_MODE
+}TIMER1_RW_MODE;
+
+typedef struct{
+
+    TIMER1_HANDLER TIMER1_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint16 preloaded_value;
+    TIMER1_MODE mode;
+    TIMER1_SYNCHRONIZATION sync;
+    TIMER1_OSCILLATOR osc;
+    TIMER1_PRESCALER prescaler;
+    TIMER1_RW_MODE rw_reg;
+}TIMER1_CFG;
+
+
+
+Std_ReturnType TIMER1_INIT(const TIMER1_CFG *timer1);
+Std_ReturnType TIMER1_DEINIT(const TIMER1_CFG *timer1);
+Std_ReturnType TIMER1_WRITE_DATA(const TIMER1_CFG *timer1, uint16 data);
+Std_ReturnType TIMER1_READ_DATA(const TIMER1_CFG *timer1, uint16 *data);
+# 32 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 46 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
 # 81 "ECUAL_Layer/ECUAL_INIT.c"

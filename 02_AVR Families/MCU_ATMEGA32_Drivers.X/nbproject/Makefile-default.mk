@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/ADC/app1.c Codes/MCAL/EEPROM/app1.c Codes/MCAL/GPIO/app1.c Codes/MCAL/Interrupt/app1.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/ADC/hal_adc.c MCAL_Layer/EEPROM/hal_eeprom.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c MCAL_Layer/device_cfg.c Codes/MCAL/ADC/app2.c APP_Layer/Main.c MCAL_Layer/Timers/Timer0/hal_timer0.c Codes/MCAL/Timers/Timer0/app1.c Codes/MCAL/Timers/Timer0/app2.c Codes/MCAL/Timers/Timer0/app3.c Codes/MCAL/Timers/Timer0/app4.c
+SOURCEFILES_QUOTED_IF_SPACED=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/ADC/app1.c Codes/MCAL/ADC/app2.c Codes/MCAL/EEPROM/app1.c Codes/MCAL/GPIO/app1.c Codes/MCAL/Interrupt/app1.c Codes/MCAL/Timers/Timer0/app1.c Codes/MCAL/Timers/Timer0/app2.c Codes/MCAL/Timers/Timer0/app3.c Codes/MCAL/Timers/Timer0/app4.c APP_Layer/Main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/ADC/hal_adc.c MCAL_Layer/EEPROM/hal_eeprom.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c MCAL_Layer/Timers/Timer0/hal_timer0.c MCAL_Layer/device_cfg.c MCAL_Layer/Timers/Timer1/hal_timer1.c Codes/MCAL/Timers/Timer2/app1.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/ADC/app1.o ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/ADC/hal_adc.o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o ${OBJECTDIR}/APP_Layer/Main.o ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o.d ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o.d ${OBJECTDIR}/Codes/MCAL/ADC/app1.o.d ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o.d ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o.d ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o.d ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o.d ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d ${OBJECTDIR}/MCAL_Layer/ADC/hal_adc.o.d ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d ${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d ${OBJECTDIR}/APP_Layer/Main.o.d ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/ADC/app1.o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o ${OBJECTDIR}/APP_Layer/Main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/ADC/hal_adc.o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o.d ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o.d ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o.d ${OBJECTDIR}/Codes/ECUAL/LED/app1.o.d ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o.d ${OBJECTDIR}/Codes/MCAL/ADC/app1.o.d ${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o.d ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o.d ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d ${OBJECTDIR}/APP_Layer/Main.o.d ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o.d ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o.d ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o.d ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o.d ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o.d ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o.d ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o.d ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o.d ${OBJECTDIR}/MCAL_Layer/ADC/hal_adc.o.d ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o.d ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o.d ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/ADC/app1.o ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/ADC/hal_adc.o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o ${OBJECTDIR}/APP_Layer/Main.o ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o
+OBJECTFILES=${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o ${OBJECTDIR}/Codes/ECUAL/BTN/app1.o ${OBJECTDIR}/Codes/ECUAL/Chr_Lcd/app1.o ${OBJECTDIR}/Codes/ECUAL/DC_Motor/app1.o ${OBJECTDIR}/Codes/ECUAL/Keypad/app1.o ${OBJECTDIR}/Codes/ECUAL/LED/app1.o ${OBJECTDIR}/Codes/ECUAL/Relay/app1.o ${OBJECTDIR}/Codes/MCAL/ADC/app1.o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o ${OBJECTDIR}/Codes/MCAL/GPIO/app1.o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o ${OBJECTDIR}/APP_Layer/Main.o ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o ${OBJECTDIR}/ECUAL_Layer/BTN/ecual_btn.o ${OBJECTDIR}/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o ${OBJECTDIR}/ECUAL_Layer/DC_Motor/ecual_dc_motor.o ${OBJECTDIR}/ECUAL_Layer/Keypad/ecual_keypad.o ${OBJECTDIR}/ECUAL_Layer/LED/ecual_led.o ${OBJECTDIR}/ECUAL_Layer/Relay/ecual_relay.o ${OBJECTDIR}/ECUAL_Layer/ECUAL_INIT.o ${OBJECTDIR}/MCAL_Layer/ADC/hal_adc.o ${OBJECTDIR}/MCAL_Layer/EEPROM/hal_eeprom.o ${OBJECTDIR}/MCAL_Layer/GPIO/hal_gpio.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_ext_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_int_interrupt.o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o ${OBJECTDIR}/MCAL_Layer/device_cfg.o ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o
 
 # Source Files
-SOURCEFILES=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/ADC/app1.c Codes/MCAL/EEPROM/app1.c Codes/MCAL/GPIO/app1.c Codes/MCAL/Interrupt/app1.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/ADC/hal_adc.c MCAL_Layer/EEPROM/hal_eeprom.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c MCAL_Layer/device_cfg.c Codes/MCAL/ADC/app2.c APP_Layer/Main.c MCAL_Layer/Timers/Timer0/hal_timer0.c Codes/MCAL/Timers/Timer0/app1.c Codes/MCAL/Timers/Timer0/app2.c Codes/MCAL/Timers/Timer0/app3.c Codes/MCAL/Timers/Timer0/app4.c
+SOURCEFILES=Codes/ECUAL/7SEG/app1.c Codes/ECUAL/BTN/app1.c Codes/ECUAL/Chr_Lcd/app1.c Codes/ECUAL/DC_Motor/app1.c Codes/ECUAL/Keypad/app1.c Codes/ECUAL/LED/app1.c Codes/ECUAL/Relay/app1.c Codes/MCAL/ADC/app1.c Codes/MCAL/ADC/app2.c Codes/MCAL/EEPROM/app1.c Codes/MCAL/GPIO/app1.c Codes/MCAL/Interrupt/app1.c Codes/MCAL/Timers/Timer0/app1.c Codes/MCAL/Timers/Timer0/app2.c Codes/MCAL/Timers/Timer0/app3.c Codes/MCAL/Timers/Timer0/app4.c APP_Layer/Main.c ECUAL_Layer/7SEG/ecual_7seg.c ECUAL_Layer/BTN/ecual_btn.c ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.c ECUAL_Layer/DC_Motor/ecual_dc_motor.c ECUAL_Layer/Keypad/ecual_keypad.c ECUAL_Layer/LED/ecual_led.c ECUAL_Layer/Relay/ecual_relay.c ECUAL_Layer/ECUAL_INIT.c MCAL_Layer/ADC/hal_adc.c MCAL_Layer/EEPROM/hal_eeprom.c MCAL_Layer/GPIO/hal_gpio.c MCAL_Layer/Interrupt/hal_ext_interrupt.c MCAL_Layer/Interrupt/hal_int_interrupt.c MCAL_Layer/Interrupt/hal_interrupt_mng.c MCAL_Layer/Timers/Timer0/hal_timer0.c MCAL_Layer/device_cfg.c MCAL_Layer/Timers/Timer1/hal_timer1.c Codes/MCAL/Timers/Timer2/app1.c
 
 
 
@@ -136,6 +136,12 @@ ${OBJECTDIR}/Codes/MCAL/ADC/app1.o: Codes/MCAL/ADC/app1.c  .generated_files/flag
 	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/ADC/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/ADC/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/ADC/app1.o -o ${OBJECTDIR}/Codes/MCAL/ADC/app1.o Codes/MCAL/ADC/app1.c 
 	
+${OBJECTDIR}/Codes/MCAL/ADC/app2.o: Codes/MCAL/ADC/app2.c  .generated_files/flags/default/9c8e6e3997426d650eef98900ad3332a2c3ad00e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/ADC" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/ADC/app2.o -o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o Codes/MCAL/ADC/app2.c 
+	
 ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o: Codes/MCAL/EEPROM/app1.c  .generated_files/flags/default/6bb198598553665d702f5c209fea54760f9aaf3a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/EEPROM" 
 	@${RM} ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o.d 
@@ -153,6 +159,36 @@ ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o: Codes/MCAL/Interrupt/app1.c  .generate
 	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d 
 	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o -o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o Codes/MCAL/Interrupt/app1.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o: Codes/MCAL/Timers/Timer0/app1.c  .generated_files/flags/default/90facd7f9356e0f82e9f1c66ddc8f4993d398c1b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o Codes/MCAL/Timers/Timer0/app1.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o: Codes/MCAL/Timers/Timer0/app2.c  .generated_files/flags/default/b957e9e2155441d126aade14999ef04252eb29f6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o Codes/MCAL/Timers/Timer0/app2.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o: Codes/MCAL/Timers/Timer0/app3.c  .generated_files/flags/default/a1b81f455f854dbff421ad5174b8b832351d41f2 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o Codes/MCAL/Timers/Timer0/app3.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o: Codes/MCAL/Timers/Timer0/app4.c  .generated_files/flags/default/c8e40f43b4e22e5d915fa553cc739dec38e09a3d .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o Codes/MCAL/Timers/Timer0/app4.c 
+	
+${OBJECTDIR}/APP_Layer/Main.o: APP_Layer/Main.c  .generated_files/flags/default/8cb3097159eb3e8b8ca388654dbebe6cc7e5e9a3 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
+	@${RM} ${OBJECTDIR}/APP_Layer/Main.o.d 
+	@${RM} ${OBJECTDIR}/APP_Layer/Main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/APP_Layer/Main.o.d" -MT "${OBJECTDIR}/APP_Layer/Main.o.d" -MT ${OBJECTDIR}/APP_Layer/Main.o -o ${OBJECTDIR}/APP_Layer/Main.o APP_Layer/Main.c 
 	
 ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o: ECUAL_Layer/7SEG/ecual_7seg.c  .generated_files/flags/default/41b3113b6e6b0e8aa54e18a53639440dd787d862 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/7SEG" 
@@ -238,53 +274,29 @@ ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o: MCAL_Layer/Interrupt/hal_
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o -o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o MCAL_Layer/Interrupt/hal_interrupt_mng.c 
 	
-${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/bd9599922df068aa19a7903dd5b9d51efa554b4e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
-	
-${OBJECTDIR}/Codes/MCAL/ADC/app2.o: Codes/MCAL/ADC/app2.c  .generated_files/flags/default/9c8e6e3997426d650eef98900ad3332a2c3ad00e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/ADC" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/ADC/app2.o -o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o Codes/MCAL/ADC/app2.c 
-	
-${OBJECTDIR}/APP_Layer/Main.o: APP_Layer/Main.c  .generated_files/flags/default/8cb3097159eb3e8b8ca388654dbebe6cc7e5e9a3 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
-	@${RM} ${OBJECTDIR}/APP_Layer/Main.o.d 
-	@${RM} ${OBJECTDIR}/APP_Layer/Main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/APP_Layer/Main.o.d" -MT "${OBJECTDIR}/APP_Layer/Main.o.d" -MT ${OBJECTDIR}/APP_Layer/Main.o -o ${OBJECTDIR}/APP_Layer/Main.o APP_Layer/Main.c 
-	
 ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o: MCAL_Layer/Timers/Timer0/hal_timer0.c  .generated_files/flags/default/c0e45f26b3762ee88e48f6e7800ea1af56537856 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/Timers/Timer0" 
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d 
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o -o ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o MCAL_Layer/Timers/Timer0/hal_timer0.c 
 	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o: Codes/MCAL/Timers/Timer0/app1.c  .generated_files/flags/default/90facd7f9356e0f82e9f1c66ddc8f4993d398c1b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o Codes/MCAL/Timers/Timer0/app1.c 
+${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/bd9599922df068aa19a7903dd5b9d51efa554b4e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
 	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o: Codes/MCAL/Timers/Timer0/app2.c  .generated_files/flags/default/b957e9e2155441d126aade14999ef04252eb29f6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o Codes/MCAL/Timers/Timer0/app2.c 
+${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o: MCAL_Layer/Timers/Timer1/hal_timer1.c  .generated_files/flags/default/66581ac79de8946b6b598e546eec4831751c21c5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/Timers/Timer1" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o -o ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o MCAL_Layer/Timers/Timer1/hal_timer1.c 
 	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o: Codes/MCAL/Timers/Timer0/app3.c  .generated_files/flags/default/a1b81f455f854dbff421ad5174b8b832351d41f2 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o Codes/MCAL/Timers/Timer0/app3.c 
-	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o: Codes/MCAL/Timers/Timer0/app4.c  .generated_files/flags/default/c8e40f43b4e22e5d915fa553cc739dec38e09a3d .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o Codes/MCAL/Timers/Timer0/app4.c 
+${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o: Codes/MCAL/Timers/Timer2/app1.c  .generated_files/flags/default/39f12d5482a8a3b9f9d703f9c7398ca6c08e91c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer2" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o Codes/MCAL/Timers/Timer2/app1.c 
 	
 else
 ${OBJECTDIR}/Codes/ECUAL/7SEG/app1.o: Codes/ECUAL/7SEG/app1.c  .generated_files/flags/default/8240656e7ccbda6c2e75e7e13d0d59f75c906a1e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -335,6 +347,12 @@ ${OBJECTDIR}/Codes/MCAL/ADC/app1.o: Codes/MCAL/ADC/app1.c  .generated_files/flag
 	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/ADC/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/ADC/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/ADC/app1.o -o ${OBJECTDIR}/Codes/MCAL/ADC/app1.o Codes/MCAL/ADC/app1.c 
 	
+${OBJECTDIR}/Codes/MCAL/ADC/app2.o: Codes/MCAL/ADC/app2.c  .generated_files/flags/default/c435e68f20b7032b2720098abe2497bb65983f96 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/ADC" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/ADC/app2.o -o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o Codes/MCAL/ADC/app2.c 
+	
 ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o: Codes/MCAL/EEPROM/app1.c  .generated_files/flags/default/abca038e0807969a653491e19e0aeacbda05145e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/EEPROM" 
 	@${RM} ${OBJECTDIR}/Codes/MCAL/EEPROM/app1.o.d 
@@ -352,6 +370,36 @@ ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o: Codes/MCAL/Interrupt/app1.c  .generate
 	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d 
 	@${RM} ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o -o ${OBJECTDIR}/Codes/MCAL/Interrupt/app1.o Codes/MCAL/Interrupt/app1.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o: Codes/MCAL/Timers/Timer0/app1.c  .generated_files/flags/default/ee944cb4d2861032fabbbe549ee26d0d1a199e4f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o Codes/MCAL/Timers/Timer0/app1.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o: Codes/MCAL/Timers/Timer0/app2.c  .generated_files/flags/default/519678ae97162b795e915e02af6443a5be1d26ce .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o Codes/MCAL/Timers/Timer0/app2.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o: Codes/MCAL/Timers/Timer0/app3.c  .generated_files/flags/default/fadfd91d3a6c16db9901fb0d898bb6766fdf8dd4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o Codes/MCAL/Timers/Timer0/app3.c 
+	
+${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o: Codes/MCAL/Timers/Timer0/app4.c  .generated_files/flags/default/b9cb56d0a9743f2c8a8733a35945876477379e1c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o Codes/MCAL/Timers/Timer0/app4.c 
+	
+${OBJECTDIR}/APP_Layer/Main.o: APP_Layer/Main.c  .generated_files/flags/default/1df361bf10c0cccf5f976f81ea31dc370caa3076 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
+	@${RM} ${OBJECTDIR}/APP_Layer/Main.o.d 
+	@${RM} ${OBJECTDIR}/APP_Layer/Main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/APP_Layer/Main.o.d" -MT "${OBJECTDIR}/APP_Layer/Main.o.d" -MT ${OBJECTDIR}/APP_Layer/Main.o -o ${OBJECTDIR}/APP_Layer/Main.o APP_Layer/Main.c 
 	
 ${OBJECTDIR}/ECUAL_Layer/7SEG/ecual_7seg.o: ECUAL_Layer/7SEG/ecual_7seg.c  .generated_files/flags/default/cdd2cb4075df161a93e90a5ba157c253562c6623 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/ECUAL_Layer/7SEG" 
@@ -437,53 +485,29 @@ ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o: MCAL_Layer/Interrupt/hal_
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o -o ${OBJECTDIR}/MCAL_Layer/Interrupt/hal_interrupt_mng.o MCAL_Layer/Interrupt/hal_interrupt_mng.c 
 	
-${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/8d87f5f5545f140c360b944cd88d22a6160e7c75 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
-	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
-	
-${OBJECTDIR}/Codes/MCAL/ADC/app2.o: Codes/MCAL/ADC/app2.c  .generated_files/flags/default/c435e68f20b7032b2720098abe2497bb65983f96 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/ADC" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/ADC/app2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/ADC/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/ADC/app2.o -o ${OBJECTDIR}/Codes/MCAL/ADC/app2.o Codes/MCAL/ADC/app2.c 
-	
-${OBJECTDIR}/APP_Layer/Main.o: APP_Layer/Main.c  .generated_files/flags/default/1df361bf10c0cccf5f976f81ea31dc370caa3076 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/APP_Layer" 
-	@${RM} ${OBJECTDIR}/APP_Layer/Main.o.d 
-	@${RM} ${OBJECTDIR}/APP_Layer/Main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/APP_Layer/Main.o.d" -MT "${OBJECTDIR}/APP_Layer/Main.o.d" -MT ${OBJECTDIR}/APP_Layer/Main.o -o ${OBJECTDIR}/APP_Layer/Main.o APP_Layer/Main.c 
-	
 ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o: MCAL_Layer/Timers/Timer0/hal_timer0.c  .generated_files/flags/default/24dac67f99649bb1478c2bafecef03fa692aab74 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/Timers/Timer0" 
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d 
 	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o -o ${OBJECTDIR}/MCAL_Layer/Timers/Timer0/hal_timer0.o MCAL_Layer/Timers/Timer0/hal_timer0.c 
 	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o: Codes/MCAL/Timers/Timer0/app1.c  .generated_files/flags/default/ee944cb4d2861032fabbbe549ee26d0d1a199e4f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app1.o Codes/MCAL/Timers/Timer0/app1.c 
+${OBJECTDIR}/MCAL_Layer/device_cfg.o: MCAL_Layer/device_cfg.c  .generated_files/flags/default/8d87f5f5545f140c360b944cd88d22a6160e7c75 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/device_cfg.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT "${OBJECTDIR}/MCAL_Layer/device_cfg.o.d" -MT ${OBJECTDIR}/MCAL_Layer/device_cfg.o -o ${OBJECTDIR}/MCAL_Layer/device_cfg.o MCAL_Layer/device_cfg.c 
 	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o: Codes/MCAL/Timers/Timer0/app2.c  .generated_files/flags/default/519678ae97162b795e915e02af6443a5be1d26ce .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app2.o Codes/MCAL/Timers/Timer0/app2.c 
+${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o: MCAL_Layer/Timers/Timer1/hal_timer1.c  .generated_files/flags/default/48875c577351ecfb35d97975efc48e2192110e8b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/MCAL_Layer/Timers/Timer1" 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d 
+	@${RM} ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d" -MT "${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o.d" -MT ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o -o ${OBJECTDIR}/MCAL_Layer/Timers/Timer1/hal_timer1.o MCAL_Layer/Timers/Timer1/hal_timer1.c 
 	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o: Codes/MCAL/Timers/Timer0/app3.c  .generated_files/flags/default/fadfd91d3a6c16db9901fb0d898bb6766fdf8dd4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app3.o Codes/MCAL/Timers/Timer0/app3.c 
-	
-${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o: Codes/MCAL/Timers/Timer0/app4.c  .generated_files/flags/default/b9cb56d0a9743f2c8a8733a35945876477379e1c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer0" 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d 
-	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer0/app4.o Codes/MCAL/Timers/Timer0/app4.c 
+${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o: Codes/MCAL/Timers/Timer2/app1.c  .generated_files/flags/default/7989359b0b8b9ca95d1a20c0df3b4d46aa755cc7 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Codes/MCAL/Timers/Timer2" 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d 
+	@${RM} ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d" -MT "${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o.d" -MT ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o -o ${OBJECTDIR}/Codes/MCAL/Timers/Timer2/app1.o Codes/MCAL/Timers/Timer2/app1.c 
 	
 endif
 

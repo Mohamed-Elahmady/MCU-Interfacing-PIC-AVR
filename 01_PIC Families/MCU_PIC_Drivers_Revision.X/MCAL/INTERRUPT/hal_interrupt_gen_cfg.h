@@ -19,7 +19,7 @@
 #define interrupt_feature_disable                   0x00
 #define interrupt_feature_enable                    0x01
 
-#define interrupt_priority_levels                   (interrupt_feature_enable)
+//#define interrupt_priority_levels                   (interrupt_feature_enable)
 
 // for external interrupts
 
@@ -29,6 +29,7 @@
 // for internal interrupts
 #define int_interrupt_adc                           (interrupt_feature_enable)
 #define int_interrupt_timer0                        (interrupt_feature_enable)
+#define int_interrupt_timer1                        (interrupt_feature_enable)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

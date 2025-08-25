@@ -40,7 +40,7 @@ void rb7_isr(uint8 change);
 // for internal interrupts
 void adc_isr(void);
 void tmr0_isr(void);
-
+void tmr1_isr(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 
