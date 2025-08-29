@@ -91,6 +91,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6024
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 6024: extern volatile unsigned char RCON __attribute__((address(0xFD0)));
 [v _RCON `Vuc ~T0 @X0 0 e@4048 ]
+"6973
+[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 6973: extern volatile unsigned char INTCON2 __attribute__((address(0xFF1)));
+[v _INTCON2 `Vuc ~T0 @X0 0 e@4081 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -1225,15 +1228,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 "332
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 332:         (INTCON &= ~(uint8)((uint8)0x01 << 0x2));
 [e =& _INTCON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `i `Vuc ]
-"349
-[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 349:         (RCON &= ~(uint8)((uint8)0x01 << 0x7));
-[e =& _RCON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
-"350
-[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 350:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
+"334
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 334:         (RCON |= (uint8)((uint8)0x01 << 0x7));
+[e =| _RCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
+"335
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 335:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
-"351
-[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 351:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
+"336
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 336:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
+"337
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 337:         if(timer0->priority == INTERRUPT_HIGH_PRIORITY)
+[e $ ! == -> . *U _timer0 1 `ui -> . `E3730 1 `ui 363  ]
+"338
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 338:         {
+{
+"339
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 339:             (INTCON2 |= (uint8)((uint8)0x01 << 0x2));
+[e =| _INTCON2 -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `Vuc ]
+"340
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 340:         }
+}
+[e $U 364  ]
+"341
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 341:         else if(timer0->priority == INTERRUPT_LOW_PRIORITY)
+[e :U 363 ]
+[e $ ! == -> . *U _timer0 1 `ui -> . `E3730 0 `ui 365  ]
+"342
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 342:         {
+{
+"343
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 343:             (INTCON2 &= ~(uint8)((uint8)0x01 << 0x2));
+[e =& _INTCON2 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `i `Vuc ]
+"344
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 344:         }
+}
+[e $U 366  ]
+"345
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 345:         else {
+[e :U 365 ]
+{
+"346
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 346:             Retval= E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"347
+[; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 347:         }
+}
+[e :U 366 ]
+[e :U 364 ]
 "353
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 353:         TIMER0_HANDLER_FUNCTION = timer0->TIMER0_INTERRUPT;
 [e = _TIMER0_HANDLER_FUNCTION . *U _timer0 0 ]
@@ -1262,7 +1304,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "371
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 371:     if(((void*)0) == timer0){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _timer0 364  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _timer0 368  ]
 {
 "372
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 372:         Retval= E_NOT_OK;
@@ -1270,10 +1312,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "373
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 373:     }
 }
-[e $U 365  ]
+[e $U 369  ]
 "374
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 374:     else{
-[e :U 364 ]
+[e :U 368 ]
 {
 "375
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 375:         (T0CON |= (uint8)((uint8)0x01 << 0x7));
@@ -1281,12 +1323,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "376
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 376:     }
 }
-[e :U 365 ]
+[e :U 369 ]
 "377
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 377:     return Retval;
 [e ) _Retval ]
-[e $UE 363  ]
+[e $UE 367  ]
 "378
 [; ;MCAL_Layer/Timers/Timer0/HAL_TIMER0.c: 378: }
-[e :UE 363 ]
+[e :UE 367 ]
 }

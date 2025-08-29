@@ -61,6 +61,9 @@
             <itemPath>Codes/MCAL/Timers/Timer1/app2.c</itemPath>
             <itemPath>Codes/MCAL/Timers/Timer1/app3.c</itemPath>
           </logicalFolder>
+          <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
+            <itemPath>Codes/MCAL/Timers/Timer2/app1.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -130,6 +133,10 @@
             <itemPath>MCAL_Layer/Timers/Timer1/HAL_TIMER1.h</itemPath>
             <itemPath>MCAL_Layer/Timers/Timer1/HAL_TIMER1_CFG.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
+            <itemPath>MCAL_Layer/Timers/Timer2/HAL_TIMER2.h</itemPath>
+            <itemPath>MCAL_Layer/Timers/Timer2/HAL_TIMER2_CFG.h</itemPath>
+          </logicalFolder>
         </logicalFolder>
         <itemPath>MCAL_Layer/std_libraries.h</itemPath>
         <itemPath>MCAL_Layer/compiler.h</itemPath>
@@ -197,6 +204,9 @@
           </logicalFolder>
           <logicalFolder name="Timer1" displayName="Timer1" projectFiles="true">
             <itemPath>MCAL_Layer/Timers/Timer1/HAL_TIMER1.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
+            <itemPath>MCAL_Layer/Timers/Timer2/HAL_TIMER2.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <itemPath>MCAL_Layer/device_cfg.c</itemPath>

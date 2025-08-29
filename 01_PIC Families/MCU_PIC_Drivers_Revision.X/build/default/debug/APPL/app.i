@@ -6041,35 +6041,96 @@ Std_ReturnType timer0_deinit(const timer0_cfg *timer0);
 Std_ReturnType timer0_write_data(const timer0_cfg *timer0, uint16 data);
 Std_ReturnType timer0_read_data(const timer0_cfg *timer0, uint16 *data);
 # 31 "APPL/app.h" 2
+# 1 "APPL/../MCAL/Timers/Timer1/hal_timer1.h" 1
+# 16 "APPL/../MCAL/Timers/Timer1/hal_timer1.h"
+# 1 "APPL/../MCAL/Timers/Timer1/hal_timer1_cfg.h" 1
+# 17 "APPL/../MCAL/Timers/Timer1/hal_timer1.h" 2
+# 48 "APPL/../MCAL/Timers/Timer1/hal_timer1.h"
+typedef void (* timer1_handler)(void);
+
+typedef enum{
+    timer1_prescaler_div_1 = (uint8)0x00,
+    timer1_prescaler_div_2,
+    timer1_prescaler_div_4,
+    timer1_prescaler_div_8
+}timer1_prescaler_select;
+
+typedef enum{
+    timer1_timer_mode = (uint8)0x00,
+    timer1_counter_mode
+}timer1_mode;
+
+typedef enum{
+    timer1_counter_synchronous_mode = (uint8)0x00,
+    timer1_counter_asynchronous_mode
+}timer1_synchronization;
+
+typedef enum{
+    timer1_oscillator_disable = (uint8)0x00,
+    timer1_oscillator_enable
+}timer1_oscillator;
+
+typedef enum{
+    timer1_8bit_rw_mode = (uint8)0x00,
+    timer1_16bit_rw_mode
+}timer1_rw_mode;
+
+typedef struct{
+
+    timer1_handler timer1_interrupt;
+    interrupt_priority priority;
+
+    uint16 preloaded_value;
+    timer1_prescaler_select prescaler;
+    timer1_mode mode;
+    timer1_oscillator osc;
+    timer1_synchronization sync;
+    timer1_rw_mode rw_mode;
+}timer1_cfg;
+
+
+
+Std_ReturnType timer1_init(const timer1_cfg *timer1);
+Std_ReturnType timer1_deinit(const timer1_cfg *timer1);
+Std_ReturnType timer1_write_data(const timer1_cfg *timer1, uint16 data);
+Std_ReturnType timer1_read_data(const timer1_cfg *timer1, uint16 *data);
+# 32 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
-void t0_app_isr(void);
+void t1_app_isr(void);
 
-gpio_led led1 = {.pin.port = gpio_portC, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
                  .pin.logic = gpio_low, .con = led_source, .state = led_off};
-# 25 "APPL/app.c"
-timer0_cfg t0_counter = {
-    .timer0_interrupt = t0_app_isr,
-    .priority = interrupt_high_priority,
-    .mode = timer0_counter_mode,
-    .edge = timer0_counter_falling_edge,
-    .resolution = timer0_16bit_register_size,
-    .prescalar = timer0_prescaler_cfg_disable,
-    .timer0_preloaded_value = 0x0009
+# 26 "APPL/app.c"
+timer1_cfg t1_counter = {
+    .timer1_interrupt = t1_app_isr,
+    .priority = interrupt_low_priority,
+    .mode = timer1_counter_mode,
+    .osc = timer1_oscillator_disable,
+    .sync = timer1_counter_synchronous_mode,
+    .rw_mode = timer1_16bit_rw_mode,
+    .prescaler = timer1_prescaler_div_1,
+    .preloaded_value = 0x0000
 };
 
-uint16 indicator = 0;
+uint16 value = 0;
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-    timer0_init(&t0_counter);
+    timer1_init(&t1_counter);
     gpio_led_init(&led1);
     while(1){
-        timer0_read_data(&t0_counter, &indicator);
+        ret = timer1_read_data(&t1_counter, &value);
+        if(value % 5 == 0 && value != 0){
+            gpio_led_turn_on(&led1);
+        }
+        else{
+            gpio_led_turn_off(&led1);
+        }
     }
     return (0);
 }
 
-void t0_app_isr(void){
+void t1_app_isr(void){
 
 }

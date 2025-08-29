@@ -20,6 +20,10 @@
 
 /******************* Section 2 : Macros Declarations *******************/
 
+
+
+/******************* Section 3 : Macros Functions Declarations *******************/
+
 // Normal Mode
 #define Timer1_Waveform_Generation10_Normal_Mode()                  Clear_Bit(TCCR1A, WGM10)
 #define Timer1_Waveform_Generation11_Normal_Mode()                  Clear_Bit(TCCR1A, WGM11)
@@ -75,10 +79,6 @@
 // Input Capture Select Edge
 #define Timer1_Input_Capture_Falling_Edge()                          Clear_Bit(TCCR1B, ICES1)
 #define Timer1_Input_Capture_Rising_Edge()                          Set_Bit(TCCR1B, ICES1)
-
-/******************* Section 3 : Macros Functions Declarations *******************/
-
-
 
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 

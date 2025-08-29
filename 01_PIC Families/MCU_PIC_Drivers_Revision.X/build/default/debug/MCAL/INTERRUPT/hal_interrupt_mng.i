@@ -5662,7 +5662,7 @@ static uint8 rb4_flag = 0x01;
 static uint8 rb5_flag = 0x01;
 static uint8 rb6_flag = 0x01;
 static uint8 rb7_flag = 0x01;
-# 124 "MCAL/INTERRUPT/hal_interrupt_mng.c"
+# 130 "MCAL/INTERRUPT/hal_interrupt_mng.c"
 void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
 
     if ((INTCONbits.INT0IF == (uint8)0x01) && (INTCONbits.INT0IE == (uint8)0x01)) {
@@ -5677,8 +5677,14 @@ void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
     else { }
 
 
-    if ((INTCONbits.T0IF == (uint8)0x01) && (INTCONbits.TMR0IE == (uint8)0x01)) {
+    if ((INTCONbits.TMR0IF == (uint8)0x01) && (INTCONbits.TMR0IE == (uint8)0x01)) {
         tmr0_isr();
+    }
+    else { }
+
+
+    if ((PIR1bits.TMR1IF == (uint8)0x01) && (PIE1bits.TMR1IE == (uint8)0x01)) {
+        tmr1_isr();
     }
     else { }
 

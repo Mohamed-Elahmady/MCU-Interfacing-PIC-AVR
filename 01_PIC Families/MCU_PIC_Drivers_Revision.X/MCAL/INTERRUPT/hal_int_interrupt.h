@@ -21,6 +21,7 @@
 /******************* Section 3 : Macros Functions Declarations *******************/
 
 // ADC internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_adc))
 
 #define intenral_interrupt_adc_clear_flag()                      clear_bit(PIR1, _PIR1_ADIF_POSITION)
 
@@ -34,7 +35,10 @@
 
 #endif
 
+#endif
+
 // Timer0 internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_timer0))
 
 #define intenral_interrupt_timer0_clear_flag()                    clear_bit(INTCON, _INTCON_TMR0IF_POSITION)
 
@@ -48,7 +52,10 @@
 
 #endif
 
-// Timer0 internal interrupt Configurations
+#endif
+
+// Timer1 internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_timer1))
 
 #define intenral_interrupt_timer1_clear_flag()                    clear_bit(PIR1, _PIR1_TMR1IF_POSITION)
 
@@ -62,6 +69,24 @@
 
 #endif
 
+#endif
+
+// Timer2 internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_timer2))
+
+#define intenral_interrupt_timer2_clear_flag()                    clear_bit(PIR1, _PIR1_TMR2IF_POSITION)
+
+#define intenral_interrupt_timer2_disable()                       clear_bit(PIE1, _PIE1_TMR2IE_POSITION)
+#define intenral_interrupt_timer2_enable()                        set_bit(PIE1, _PIE1_TMR2IE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_timer2_low_priority()                  clear_bit(IPR1, _IPR1_TMR2IP_POSITION)
+#define intenral_interrupt_timer2_high_priority()                 set_bit(IPR1, _IPR1_TMR2IP_POSITION)
+
+#endif
+
+#endif
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

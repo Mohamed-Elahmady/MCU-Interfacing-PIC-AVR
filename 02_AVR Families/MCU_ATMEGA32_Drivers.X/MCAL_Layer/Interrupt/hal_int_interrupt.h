@@ -56,6 +56,17 @@
 #define Internal_Interrupt_Timer1_CTC_ICR_Disable()                Clear_Bit(TIMSK, TICIE1)
 #define Internal_Interrupt_Timer1_CTC_ICR_Enable()                 Set_Bit(TIMSK, TICIE1)
 
+// 4. For Timer2 Interrupts
+#define Internal_Interrupt_Timer2_Normal_Clear_Flag()              Set_Bit(TIFR, TOV2)
+
+#define Internal_Interrupt_Timer2_Normal_Disable()                 Clear_Bit(TIMSK, TOIE2)
+#define Internal_Interrupt_Timer2_Normal_Enable()                  Set_Bit(TIMSK, TOIE2)
+
+#define Internal_Interrupt_Timer2_CTC_Clear_Flag()                 Set_Bit(TIFR, OCF2)
+
+#define Internal_Interrupt_Timer2_CTC_Disable()                    Clear_Bit(TIMSK, OCIE2)
+#define Internal_Interrupt_Timer2_CTC_Enable()                     Set_Bit(TIMSK, OCIE2)
+
 /******************* Section 3 : Macros Functions Declarations *******************/
 
 

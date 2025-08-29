@@ -6090,7 +6090,57 @@ Std_ReturnType TIMER1_DEINIT(const TIMER1_CFG *timer1);
 Std_ReturnType TIMER1_WRITE_DATA(const TIMER1_CFG *timer1, uint16 data);
 Std_ReturnType TIMER1_READ_DATA(const TIMER1_CFG *timer1, uint16 *data);
 # 32 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 46 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/HAL_TIMER2.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/HAL_TIMER2.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/HAL_TIMER2_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/HAL_TIMER2.h" 2
+# 36 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/HAL_TIMER2.h"
+typedef void(*TIMER2_HANDLER)(void);
+
+typedef enum{
+    TIMER2_PRESCALER_DIV_1 = (uint8)0x00,
+    TIMER2_PRESCALER_DIV_4,
+    TIMER2_PRESCALER_DIV_16
+}TIMER2_PRESCALER_SELECT;
+
+typedef enum{
+    TIMER2_POSTSCALER_DIV_1 = (uint8)0x00,
+    TIMER2_POSTSCALER_DIV_2,
+    TIMER2_POSTSCALER_DIV_3,
+    TIMER2_POSTSCALER_DIV_4,
+    TIMER2_POSTSCALER_DIV_5,
+    TIMER2_POSTSCALER_DIV_6,
+    TIMER2_POSTSCALER_DIV_7,
+    TIMER2_POSTSCALER_DIV_8,
+    TIMER2_POSTSCALER_DIV_9,
+    TIMER2_POSTSCALER_DIV_10,
+    TIMER2_POSTSCALER_DIV_11,
+    TIMER2_POSTSCALER_DIV_12,
+    TIMER2_POSTSCALER_DIV_13,
+    TIMER2_POSTSCALER_DIV_14,
+    TIMER2_POSTSCALER_DIV_15,
+    TIMER2_POSTSCALER_DIV_16
+}TIMER2_POSTSCALER_SELECT;
+
+
+typedef struct{
+
+    TIMER2_HANDLER TIMER2_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint8 preloaded_value;
+    TIMER2_PRESCALER_SELECT prescaler;
+    TIMER2_POSTSCALER_SELECT postscaler;
+}TIMER2_CFG;
+
+
+
+Std_ReturnType TIMER2_INIT(const TIMER2_CFG *timer2);
+Std_ReturnType TIMER2_DEINIT(const TIMER2_CFG *timer2);
+Std_ReturnType TIMER2_WRITE_DATA(const TIMER2_CFG *timer2, uint8 data);
+Std_ReturnType TIMER2_READ_DATA(const TIMER2_CFG *timer2, uint8 *data);
+# 33 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 47 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 39 "APP_Layer/Main.h"

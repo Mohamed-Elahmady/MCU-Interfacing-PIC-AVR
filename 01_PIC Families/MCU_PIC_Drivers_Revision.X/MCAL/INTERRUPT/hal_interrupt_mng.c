@@ -65,6 +65,12 @@ void __interrupt(low_priority) interrupt_manager_low(void) {
     }
     else { /* Nothing*/ }
     
+    // for timer 2 internal interrupt
+    if ((PIR1bits.TMR2IF == interrupt_occur) && (PIE1bits.TMR2IE == interrupt_enable)) {
+        tmr2_isr();
+    }
+    else { /* Nothing*/ }
+    
     // FOR EXT RBX
     
     if((INTCONbits.RBIF == interrupt_occur) && (INTCONbits.RBIE == interrupt_enable)
@@ -149,6 +155,12 @@ void __interrupt() interrupt_manager(void) {
     // for timer 1 internal interrupt
     if ((PIR1bits.TMR1IF == interrupt_occur) && (PIE1bits.TMR1IE == interrupt_enable)) {
         tmr1_isr();
+    }
+    else { /* Nothing*/ }
+    
+    // for timer 2 internal interrupt
+    if ((PIR1bits.TMR2IF == interrupt_occur) && (PIE1bits.TMR2IE == interrupt_enable)) {
+        tmr2_isr();
     }
     else { /* Nothing*/ }
 

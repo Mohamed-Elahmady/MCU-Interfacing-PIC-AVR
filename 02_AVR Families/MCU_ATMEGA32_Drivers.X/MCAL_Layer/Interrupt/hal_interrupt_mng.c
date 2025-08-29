@@ -46,7 +46,7 @@ ISR(TIMER0_OVF_vect){
 }
 
 ISR(TIMER0_COMP_vect){
-    CTC_ISR();
+    CTC0_ISR();
 }
 
 #endif 
@@ -67,6 +67,18 @@ ISR(TIMER1_COMPB_vect){
 
 ISR(TIMER1_CAPT_vect){
     CTC_ICR_ISR();
+}
+
+#endif
+
+#if ((Interrupt_Feature_Enable) == (Timer2_Interrupt_Feature))
+
+ISR(TIMER2_OVF_vect){
+    TMR2_ISR();
+}
+
+ISR(TIMER2_COMP_vect){
+    CTC2_ISR();
 }
 
 #endif

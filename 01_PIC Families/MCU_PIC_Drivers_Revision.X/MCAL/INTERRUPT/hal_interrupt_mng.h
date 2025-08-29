@@ -41,6 +41,7 @@ void rb7_isr(uint8 change);
 void adc_isr(void);
 void tmr0_isr(void);
 void tmr1_isr(void);
+void tmr2_isr(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

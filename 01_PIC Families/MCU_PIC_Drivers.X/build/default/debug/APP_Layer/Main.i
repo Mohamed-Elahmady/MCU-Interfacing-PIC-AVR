@@ -6099,17 +6099,6 @@ void application_init(void);
 
 Std_ReturnType Ret = E_OK;
 
-void timer1_app_isr(void);
-void timer1_timer_init(void);
-void timer1_counter_init(void);
-
-GPIO_LED led1 = {.pin.PORT = GPIO_PORTD, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-TIMER1_CFG t1_timer;
-TIMER1_CFG t1_count;
-
-uint8 flag = 0;
-
 int main() {
     application_init();
     while (1) {
@@ -6120,36 +6109,4 @@ int main() {
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
-    timer1_counter_init();
-    GPIO_LED_INIT(&led1);
-}
-
-void timer1_timer_init(void){
-    t1_timer = {
-        .TIMER1_INTERRUPT = timer1_app_isr,
-        .priority = INTERRUPT_LOW_PRIORITY,
-        .mode = TIMER1_TIMER_MODE,
-        .prescaler = TIMER1_PRESCALER_DIV_8,
-        .rw_reg = TIMER1_16BIT_RW_MODE,
-        .preloaded_value = 0x3CB0
-    };
-    TIMER1_INIT(&t1_timer);
-}
-
-void timer1_counter_init(void){
-    t1_count = {
-        .TIMER1_INTERRUPT = timer1_app_isr,
-        .priority = INTERRUPT_LOW_PRIORITY,
-        .mode = TIMER1_COUNTER_MODE,
-        .sync = TIMER1_SYNCHRONCE_COUNTER,
-        .prescaler = TIMER1_PRESCALER_DIV_1,
-        .rw_reg = TIMER1_16BIT_RW_MODE,
-        .preloaded_value = 0x0000
-    };
-    TIMER1_INIT(&t1_count);
-}
-
-void timer1_app_isr(void){
-    flag++;
-    GPIO_LED_TURN_TOGGLE(&led1);
 }

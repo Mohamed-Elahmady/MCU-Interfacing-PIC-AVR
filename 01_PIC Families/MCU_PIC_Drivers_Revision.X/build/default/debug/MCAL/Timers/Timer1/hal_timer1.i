@@ -5794,6 +5794,8 @@ Std_ReturnType timer1_read_data(const timer1_cfg *timer1, uint16 *data){
     return Retval;
 }
 
+
+
 void tmr1_isr(void){
 
     (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
@@ -5805,6 +5807,8 @@ void tmr1_isr(void){
         timer1_handler_function();
     }
 }
+
+
 
 
 
@@ -5920,7 +5924,7 @@ Std_ReturnType timer1_configure_interrupt(const timer1_cfg *timer1){
         (PIE1 |= (uint8)((uint8)0x01 << 0x0));
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
-# 254 "MCAL/Timers/Timer1/hal_timer1.c"
+# 258 "MCAL/Timers/Timer1/hal_timer1.c"
         (RCONbits.IPEN = (uint8)0x00);
 
         (INTCONbits.GIE = (uint8)0x01);

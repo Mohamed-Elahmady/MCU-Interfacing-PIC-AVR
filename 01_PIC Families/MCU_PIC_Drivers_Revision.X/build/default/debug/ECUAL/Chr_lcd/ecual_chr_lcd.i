@@ -5704,11 +5704,11 @@ Std_ReturnType gpio_chr_lcd_4bit_init(const chr_lcd_4bit *lcd){
             Retval = gpio_pin_init(&(lcd->data_pins[i]));
         }
 
-        _delay((unsigned long)((20)*(8000000UL/4000.0)));
+        _delay((unsigned long)((20)*(4000000UL/4000.0)));
         Retval = gpio_chr_lcd_4bit_send_command(lcd, (uint8)0x38);
-        _delay((unsigned long)((5)*(8000000UL/4000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000.0)));
         Retval = gpio_chr_lcd_4bit_send_command(lcd, (uint8)0x38);
-        _delay((unsigned long)((150)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((150)*(4000000UL/4000000.0)));
         Retval = gpio_chr_lcd_4bit_send_command(lcd, (uint8)0x38);
 
 
@@ -5833,11 +5833,11 @@ Std_ReturnType gpio_chr_lcd_8bit_init(const chr_lcd_8bit *lcd){
         }
 
 
-        _delay((unsigned long)((20)*(8000000UL/4000.0)));
+        _delay((unsigned long)((20)*(4000000UL/4000.0)));
         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x38);
-        _delay((unsigned long)((5)*(8000000UL/4000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000.0)));
         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x38);
-        _delay((unsigned long)((150)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((150)*(4000000UL/4000000.0)));
         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x38);
 
         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x01);
@@ -6026,7 +6026,7 @@ static Std_ReturnType lcd_4bit_send_enable_signal(const chr_lcd_4bit *lcd){
     }
     else{
         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_high);
-        _delay((unsigned long)((5)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000000.0)));
         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_low);
     }
     return Retval;
@@ -6066,7 +6066,7 @@ static Std_ReturnType lcd_8bit_send_enable_signal(const chr_lcd_8bit *lcd){
     }
     else{
         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_high);
-        _delay((unsigned long)((5)*(8000000UL/4000000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000000.0)));
         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_low);
     }
     return Retval;

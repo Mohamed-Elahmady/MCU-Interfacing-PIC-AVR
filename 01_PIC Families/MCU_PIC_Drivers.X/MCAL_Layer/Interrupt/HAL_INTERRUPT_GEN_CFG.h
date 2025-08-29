@@ -31,6 +31,8 @@
 #define TIMER0_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
 // For Timer1 Internal Interrupts
 #define TIMER1_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
+// For Timer2 Internal Interrupts
+#define TIMER2_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

@@ -209,7 +209,7 @@ void TMR0_ISR(void) {
  * @return          : void
  */
 
-void CTC_ISR(void) {
+void CTC0_ISR(void) {
     // 1. Clear Timer0 flag
     Internal_Interrupt_Timer0_CTC_Clear_Flag();
     // 2. Code
@@ -359,7 +359,7 @@ static Std_ReturnType Timer0_Set_Prescaler(const Timer0_CFG *timer0) {
  */
 
 static void Timer0_Set_Force_Output(void) {
-    Set_Bit(TCCR0, FOC0);
+    Timer0_Force_Output_Compare_Enable();
 }
 
 #if ((Interrupt_Feature_Enable) == (Timer0_Interrupt_Feature))

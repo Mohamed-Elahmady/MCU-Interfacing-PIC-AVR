@@ -62,10 +62,18 @@ void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
     else{/* Nothing */}
 #endif
     
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER2_INTERRUPT_FEATURE))
+    /* ================== Timer2_Interrupt Service Routine ================== */
+    if((PIR1bits.TMR2IF == INTERRUPT_OCCUR) && (PIE1bits.TMR2IE == INTERRUPT_ENABLE)){
+        TMR2_ISR();
+    }
+    else{/* Nothing */}
+#endif
+    
     /* ================== PORTB Interrupt on Change each interrupt must have 2 ISR from high to low & from low to high ========================*/
     
     if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
-       &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG = 0x01)){
+       &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG == 0x01)){
         RB4_ISR(CHANGE_HIGH);
         RB4_ISR_FLAG = 0x00;
     }
@@ -150,6 +158,13 @@ void __interrupt() INTERRUPT_MANAGER(void){
     }
     else{/* Nothing */}
 #endif
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER2_INTERRUPT_FEATURE))
+    /* ================== Timer2_Interrupt Service Routine ================== */
+    if((PIR1bits.TMR2IF == INTERRUPT_OCCUR) && (PIE1bits.TMR2IE == INTERRUPT_ENABLE)){
+        TMR2_ISR();
+    }
+    else{/* Nothing */}
+#endif
     /* ================== INT1_Interrupt Service Routine ================== */
     if((INTCON3bits.INT1F == INTERRUPT_OCCUR) && (INTCON3bits.INT1IE == INTERRUPT_ENABLE)){
         INT1_ISR();
@@ -164,7 +179,7 @@ void __interrupt() INTERRUPT_MANAGER(void){
     /* ================== PORTB Interrupt on Change each interrupt must have 2 ISR from high to low & from low to high ========================*/
     /* ================== RBX _Interrupt Service Routine ================== */
     if((INTCONbits.RBIF == INTERRUPT_OCCUR) && (INTCONbits.RBIE == INTERRUPT_ENABLE) 
-       &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG = 0x01)){
+       &&(IOCBbits.IOCB4 == INTERRUPT_ENABLE) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG == 0x01)){
         RB4_ISR(CHANGE_HIGH);
         RB4_ISR_FLAG = 0x00;
     }

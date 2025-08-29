@@ -5708,11 +5708,7 @@ static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1);
 
 
 static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1);
-
-
-
-
-
+# 46 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 Std_ReturnType TIMER1_INIT(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5740,7 +5736,7 @@ Std_ReturnType TIMER1_INIT(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
+# 82 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 Std_ReturnType TIMER1_DEINIT(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5758,7 +5754,7 @@ Std_ReturnType TIMER1_DEINIT(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
+# 109 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 Std_ReturnType TIMER1_WRITE_DATA(const TIMER1_CFG *timer1, uint16 data){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5770,7 +5766,7 @@ Std_ReturnType TIMER1_WRITE_DATA(const TIMER1_CFG *timer1, uint16 data){
     }
     return Retval;
 }
-
+# 130 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 Std_ReturnType TIMER1_READ_DATA(const TIMER1_CFG *timer1, uint16 *data){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1 || ((void*)0) == data){
@@ -5786,9 +5782,7 @@ Std_ReturnType TIMER1_READ_DATA(const TIMER1_CFG *timer1, uint16 *data){
     }
     return Retval;
 }
-
-
-
+# 153 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 void TMR1_ISR(void){
 
     (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
@@ -5800,11 +5794,7 @@ void TMR1_ISR(void){
        TIMER1_HANDLER_FUNCTION();
     }
 }
-
-
-
-
-
+# 177 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_DISABLE(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5815,7 +5805,7 @@ static Std_ReturnType TIMER1_SET_DISABLE(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
+# 196 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_ENABLE(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5826,7 +5816,7 @@ static Std_ReturnType TIMER1_SET_ENABLE(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
+# 215 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_MODE(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5866,7 +5856,7 @@ static Std_ReturnType TIMER1_SET_MODE(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
+# 263 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_PRESCALER(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5877,7 +5867,7 @@ static Std_ReturnType TIMER1_SET_PRESCALER(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
+# 282 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5898,9 +5888,7 @@ static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-
-
-
+# 313 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5909,10 +5897,24 @@ static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1){
     else{
         (PIE1 |= (uint8)((uint8)0x01 << 0x0));
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
-# 249 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
-        (RCON &= ~(uint8)((uint8)0x01 << 0x7));
+
+        (RCON |= (uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x6));
+
+        if(timer1->priority == INTERRUPT_HIGH_PRIORITY){
+            (IPR1 |= (uint8)((uint8)0x01 << 0x0));
+        }
+        else if(timer1->priority == INTERRUPT_LOW_PRIORITY){
+            (IPR1 &= ~(uint8)((uint8)0x01 << 0x0));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
+
+
+
 
         TIMER1_HANDLER_FUNCTION = timer1->TIMER1_INTERRUPT;
     }
