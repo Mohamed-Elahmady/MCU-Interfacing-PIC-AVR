@@ -5643,6 +5643,8 @@ void RB7_ISR(uint8 change);
 void ADC_ISR(void);
 void TMR0_ISR(void);
 void TMR1_ISR(void);
+void TMR2_ISR(void);
+void TMR3_ISR(void);
 # 11 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c" 2
 
 
@@ -5692,8 +5694,24 @@ void __attribute__((picinterrupt(("low_priority")))) INTERRUPT_MANAGER_LOW_PRIOR
 
 
 
+    if((PIR1bits.TMR2IF == 0x01) && (PIE1bits.TMR2IE == 0x01)){
+        TMR2_ISR();
+    }
+    else{ }
+
+
+
+
+    if((PIR2bits.TMR3IF == 0x01) && (PIE2bits.TMR3IE == 0x01)){
+        TMR3_ISR();
+    }
+    else{ }
+
+
+
+
     if((INTCONbits.RBIF == 0x01) && (INTCONbits.RBIE == 0x01)
-       &&(IOCBbits.IOCB4 == 0x01) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG = 0x01)){
+       &&(IOCBbits.IOCB4 == 0x01) && (PORTBbits.RB4 == GPIO_HIGH) && (RB4_ISR_FLAG == 0x01)){
         RB4_ISR((uint8)0x01);
         RB4_ISR_FLAG = 0x00;
     }

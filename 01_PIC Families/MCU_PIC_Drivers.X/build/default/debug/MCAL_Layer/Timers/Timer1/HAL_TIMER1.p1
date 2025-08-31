@@ -9,7 +9,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [c E3742 0 1 .. ]
 [n E3742 . TIMER1_TIMER_MODE TIMER1_COUNTER_MODE  ]
 [c E3746 0 1 .. ]
-[n E3746 . TIMER1_SYNCHRONCE_COUNTER TIMER1_ASYNCHRONCE_COUNTER  ]
+[n E3746 . TIMER1_SYNCHRONOUS_COUNTER TIMER1_ASYNCHRONOUS_COUNTER  ]
 [c E3750 0 1 .. ]
 [n E3750 . TIMER1_OSCILLATOR_DISABLE TIMER1_OSCILLATOR_ENABLE  ]
 [c E3736 0 1 2 3 .. ]
@@ -62,8 +62,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/Timers/Timer1/../../GPIO/HAL_GPIO.h: 67: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . PORT PIN DIRECTION LOGIC ]
-"237 MCAL_Layer/Timers/Timer1/HAL_TIMER1.c
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 237:                 GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
+"231 MCAL_Layer/Timers/Timer1/HAL_TIMER1.c
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 231:                 GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
 [c E3666 0 1 2 3 4 .. ]
 [n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
 [c E3673 0 1 2 3 4 5 6 7 .. ]
@@ -917,43 +917,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "224
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 224:                 (T1CON &= ~(uint8)((uint8)0x01 << 0x1));
 [e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `i `Vuc ]
-"226
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 226:                 if(timer1->osc == TIMER1_OSCILLATOR_ENABLE){
-[e $ ! == -> . *U _timer1 5 `ui -> . `E3750 1 `ui 334  ]
-{
-"227
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 227:                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
-[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `Vuc ]
-"228
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 228:                 }
-}
-[e $U 335  ]
-"229
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 229:                 else{
-[e :U 334 ]
-{
-"230
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 230:                     (T1CON &= ~(uint8)((uint8)0x01 << 0x3));
-[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `i `Vuc ]
-"231
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 231:                 }
-}
-[e :U 335 ]
-"232
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 232:                 break;
+"225
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 225:                 break;
 [e $U 331  ]
-"233
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 233:             case TIMER1_COUNTER_MODE:
-[e :U 336 ]
-"235
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 235:                 (T1CON |= (uint8)((uint8)0x01 << 0x1));
+"226
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 226:             case TIMER1_COUNTER_MODE:
+[e :U 334 ]
+"228
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 228:                 (T1CON |= (uint8)((uint8)0x01 << 0x1));
 [e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `Vuc ]
 [v F3822 `S306 ~T0 @X0 1 s ]
 [i F3822
 :U ..
 :U ..
-"237
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 237:                 GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
+"231
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 231:                 GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
 -> . `E3666 2 `uc
 -> . `E3673 0 `uc
 -> . `E3683 1 `uc
@@ -962,164 +940,186 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _T13CKI_Pin `S306 ~T0 @X0 1 a ]
 [e = _T13CKI_Pin F3822 ]
-"238
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 238:                 Retval = GPIO_PIN_DIRECTION_INIT(&T13CKI_Pin);
+"232
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 232:                 Retval = GPIO_PIN_DIRECTION_INIT(&T13CKI_Pin);
 [e = _Retval ( _GPIO_PIN_DIRECTION_INIT (1 -> &U _T13CKI_Pin `*CS306 ]
+"235
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 235:                 if(timer1->osc == TIMER1_OSCILLATOR_ENABLE){
+[e $ ! == -> . *U _timer1 5 `ui -> . `E3750 1 `ui 335  ]
+{
+"236
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 236:                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
+[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `Vuc ]
+"237
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 237:                 }
+}
+[e $U 336  ]
+"238
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 238:                 else{
+[e :U 335 ]
+{
+"239
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 239:                     (T1CON &= ~(uint8)((uint8)0x01 << 0x3));
+[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `i `Vuc ]
 "240
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 240:                 if(timer1->sync == TIMER1_SYNCHRONCE_COUNTER){
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 240:                 }
+}
+[e :U 336 ]
+"243
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 243:                 if(timer1->sync == TIMER1_SYNCHRONOUS_COUNTER){
 [e $ ! == -> . *U _timer1 4 `ui -> . `E3746 0 `ui 337  ]
 {
-"241
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 241:                     (T1CON &= ~(uint8)((uint8)0x01 << 0x2));
-[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `i `Vuc ]
-"242
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 242:                 }
-}
-[e $U 338  ]
-"243
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 243:                 else{
-[e :U 337 ]
-{
 "244
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 244:                     (T1CON |= (uint8)((uint8)0x01 << 0x2));
-[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `Vuc ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 244:                     (T1CON &= ~(uint8)((uint8)0x01 << 0x2));
+[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `i `Vuc ]
 "245
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 245:                 }
 }
-[e :U 338 ]
+[e $U 338  ]
 "246
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 246:                 break;
-[e $U 331  ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 246:                 else{
+[e :U 337 ]
+{
 "247
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 247:             default :
-[e :U 339 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 247:                     (T1CON |= (uint8)((uint8)0x01 << 0x2));
+[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `Vuc ]
 "248
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 248:                 Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 248:                 }
+}
+[e :U 338 ]
 "249
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 249:                 break;
 [e $U 331  ]
 "250
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 250:         }
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 250:             default :
+[e :U 339 ]
+"251
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 251:                 Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"252
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 252:                 break;
+[e $U 331  ]
+"253
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 253:         }
 }
 [e $U 331  ]
 [e :U 332 ]
 [e [\ -> . *U _timer1 3 `ui , $ -> . `E3742 0 `ui 333
- , $ -> . `E3742 1 `ui 336
+ , $ -> . `E3742 1 `ui 334
  339 ]
 [e :U 331 ]
-"251
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 251:     }
+"254
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 254:     }
 }
 [e :U 330 ]
-"252
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 252:     return Retval;
+"255
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 255:     return Retval;
 [e ) _Retval ]
 [e $UE 328  ]
-"253
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 253: }
+"256
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 256: }
 [e :UE 328 ]
 }
-"263
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 263: static Std_ReturnType TIMER1_SET_PRESCALER(const TIMER1_CFG *timer1){
+"266
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 266: static Std_ReturnType TIMER1_SET_PRESCALER(const TIMER1_CFG *timer1){
 [v _TIMER1_SET_PRESCALER `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _TIMER1_SET_PRESCALER ]
 [v _timer1 `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"264
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 264:     Std_ReturnType Retval = E_OK;
+"267
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 267:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"265
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 265:     if(((void*)0) == timer1){
+"268
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 268:     if(((void*)0) == timer1){
 [e $ ! == -> -> -> 0 `i `*v `*CS307 _timer1 341  ]
 {
-"266
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 266:         Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"267
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 267:     }
-}
-[e $U 342  ]
-"268
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 268:     else{
-[e :U 341 ]
-{
 "269
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 269:         (T1CONbits.T1CKPS = timer1->prescaler);
-[e = . . _T1CONbits 1 4 -> . *U _timer1 6 `uc ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 269:         Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
 "270
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 270:     }
 }
-[e :U 342 ]
+[e $U 342  ]
 "271
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 271:     return Retval;
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 271:     else{
+[e :U 341 ]
+{
+"272
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 272:         (T1CONbits.T1CKPS = timer1->prescaler);
+[e = . . _T1CONbits 1 4 -> . *U _timer1 6 `uc ]
+"273
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 273:     }
+}
+[e :U 342 ]
+"274
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 274:     return Retval;
 [e ) _Retval ]
 [e $UE 340  ]
-"272
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 272: }
+"275
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 275: }
 [e :UE 340 ]
 }
-"282
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 282: static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1){
+"285
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 285: static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1){
 [v _TIMER1_SET_RW_MODE `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _TIMER1_SET_RW_MODE ]
 [v _timer1 `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"283
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 283:     Std_ReturnType Retval = E_OK;
+"286
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 286:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"284
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 284:     if(((void*)0) == timer1){
+"287
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 287:     if(((void*)0) == timer1){
 [e $ ! == -> -> -> 0 `i `*v `*CS307 _timer1 344  ]
 {
-"285
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 285:         Retval = E_NOT_OK;
+"288
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 288:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"286
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 286:     }
+"289
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 289:     }
 }
 [e $U 345  ]
-"287
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 287:     else{
+"290
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 290:     else{
 [e :U 344 ]
 {
-"288
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 288:         switch(timer1->rw_reg){
+"291
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 291:         switch(timer1->rw_reg){
 [e $U 347  ]
 {
-"289
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 289:             case TIMER1_8BIT_RW_MODE:
-[e :U 348 ]
-"290
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 290:                 (T1CON &= ~(uint8)((uint8)0x01 << 0x7));
-[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
-"291
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 291:                 break;
-[e $U 346  ]
 "292
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 292:             case TIMER1_16BIT_RW_MODE:
-[e :U 349 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 292:             case TIMER1_8BIT_RW_MODE:
+[e :U 348 ]
 "293
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 293:                 (T1CON |= (uint8)((uint8)0x01 << 0x7));
-[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 293:                 (T1CON &= ~(uint8)((uint8)0x01 << 0x7));
+[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
 "294
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 294:                 break;
 [e $U 346  ]
 "295
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 295:             default :
-[e :U 350 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 295:             case TIMER1_16BIT_RW_MODE:
+[e :U 349 ]
 "296
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 296:                 Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 296:                 (T1CON |= (uint8)((uint8)0x01 << 0x7));
+[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
 "297
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 297:                 break;
 [e $U 346  ]
 "298
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 298:         }
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 298:             default :
+[e :U 350 ]
+"299
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 299:                 Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"300
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 300:                 break;
+[e $U 346  ]
+"301
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 301:         }
 }
 [e $U 346  ]
 [e :U 347 ]
@@ -1127,106 +1127,106 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E3754 1 `ui 349
  350 ]
 [e :U 346 ]
-"299
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 299:     }
+"302
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 302:     }
 }
 [e :U 345 ]
-"300
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 300:     return Retval;
+"303
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 303:     return Retval;
 [e ) _Retval ]
 [e $UE 343  ]
-"301
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 301: }
+"304
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 304: }
 [e :UE 343 ]
 }
-"313
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 313: static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1){
+"316
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 316: static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1){
 [v _TIMER1_CONFIGURE_INTERRUPT `(E3659 ~T0 @X0 1 sf1`*CS307 ]
 {
 [e :U _TIMER1_CONFIGURE_INTERRUPT ]
 [v _timer1 `*CS307 ~T0 @X0 1 r1 ]
 [f ]
-"314
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 314:     Std_ReturnType Retval = E_OK;
+"317
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 317:     Std_ReturnType Retval = E_OK;
 [v _Retval `E3659 ~T0 @X0 1 a ]
 [e = _Retval . `E3659 1 ]
-"315
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 315:     if(((void*)0) == timer1){
+"318
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 318:     if(((void*)0) == timer1){
 [e $ ! == -> -> -> 0 `i `*v `*CS307 _timer1 352  ]
 {
-"316
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 316:         Retval = E_NOT_OK;
+"319
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 319:         Retval = E_NOT_OK;
 [e = _Retval . `E3659 0 ]
-"317
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 317:     }
+"320
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 320:     }
 }
 [e $U 353  ]
-"318
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 318:     else{
+"321
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 321:     else{
 [e :U 352 ]
 {
-"319
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 319:         (PIE1 |= (uint8)((uint8)0x01 << 0x0));
-[e =| _PIE1 -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `Vuc ]
-"320
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 320:         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
-[e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
 "322
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 322:         (RCON |= (uint8)((uint8)0x01 << 0x7));
-[e =| _RCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 322:         (PIE1 |= (uint8)((uint8)0x01 << 0x0));
+[e =| _PIE1 -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `Vuc ]
 "323
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 323:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
-[e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
-"324
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 324:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
-[e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 323:         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
+[e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
+"325
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 325:         (RCON |= (uint8)((uint8)0x01 << 0x7));
+[e =| _RCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
 "326
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 326:         if(timer1->priority == INTERRUPT_HIGH_PRIORITY){
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 326:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
+[e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
+"327
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 327:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
+[e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
+"329
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 329:         if(timer1->priority == INTERRUPT_HIGH_PRIORITY){
 [e $ ! == -> . *U _timer1 1 `ui -> . `E3730 1 `ui 354  ]
 {
-"327
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 327:             (IPR1 |= (uint8)((uint8)0x01 << 0x0));
-[e =| _IPR1 -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `Vuc ]
-"328
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 328:         }
-}
-[e $U 355  ]
-"329
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 329:         else if(timer1->priority == INTERRUPT_LOW_PRIORITY){
-[e :U 354 ]
-[e $ ! == -> . *U _timer1 1 `ui -> . `E3730 0 `ui 356  ]
-{
 "330
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 330:             (IPR1 &= ~(uint8)((uint8)0x01 << 0x0));
-[e =& _IPR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 330:             (IPR1 |= (uint8)((uint8)0x01 << 0x0));
+[e =| _IPR1 -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `Vuc ]
 "331
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 331:         }
 }
-[e $U 357  ]
+[e $U 355  ]
 "332
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 332:         else{
-[e :U 356 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 332:         else if(timer1->priority == INTERRUPT_LOW_PRIORITY){
+[e :U 354 ]
+[e $ ! == -> . *U _timer1 1 `ui -> . `E3730 0 `ui 356  ]
 {
 "333
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 333:             Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 333:             (IPR1 &= ~(uint8)((uint8)0x01 << 0x0));
+[e =& _IPR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
 "334
 [; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 334:         }
 }
+[e $U 357  ]
+"335
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 335:         else{
+[e :U 356 ]
+{
+"336
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 336:             Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"337
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 337:         }
+}
 [e :U 357 ]
 [e :U 355 ]
-"340
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 340:         TIMER1_HANDLER_FUNCTION = timer1->TIMER1_INTERRUPT;
+"343
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 343:         TIMER1_HANDLER_FUNCTION = timer1->TIMER1_INTERRUPT;
 [e = _TIMER1_HANDLER_FUNCTION . *U _timer1 0 ]
-"341
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 341:     }
+"344
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 344:     }
 }
 [e :U 353 ]
-"342
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 342:     return Retval;
+"345
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 345:     return Retval;
 [e ) _Retval ]
 [e $UE 351  ]
-"343
-[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 343: }
+"346
+[; ;MCAL_Layer/Timers/Timer1/HAL_TIMER1.c: 346: }
 [e :UE 351 ]
 }

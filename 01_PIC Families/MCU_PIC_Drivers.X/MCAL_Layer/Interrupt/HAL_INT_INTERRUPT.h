@@ -63,14 +63,14 @@
 // Timer1 Interrupt Configuration
 #if ((INTERRUPT_FEATURE_ENABLE) == (TIMER1_INTERRUPT_FEATURE))
 
-// Timer0 Flag bit
+// Timer1 Flag bit
 #define INT_INTERRUPT_TIMER1_CLEAR_FLAG()                     CLEAR_BIT(PIR1, _PIR1_TMR1IF_POSITION)
 
-// Timer0 Enable Bit
+// Timer1 Enable Bit
 #define INT_INTERRUPT_TIMER1_DISABLE()                        CLEAR_BIT(PIE1, _PIE1_TMR1IE_POSITION)
 #define INT_INTERRUPT_TIMER1_ENABLE()                         SET_BIT(PIE1, _PIE1_TMR1IE_POSITION)
 
-// Timer0 Priority Bit
+// Timer1 Priority Bit
 #if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
 
 #define INT_INTERRUPT_TIMER1_LOW_PRIORITY()                   CLEAR_BIT(IPR1, _IPR1_TMR1IP_POSITION)
@@ -80,21 +80,41 @@
 
 #endif
 
-// Timer1 Interrupt Configuration
+// Timer2 Interrupt Configuration
 #if ((INTERRUPT_FEATURE_ENABLE) == (TIMER2_INTERRUPT_FEATURE))
 
-// Timer0 Flag bit
+// Timer2 Flag bit
 #define INT_INTERRUPT_TIMER2_CLEAR_FLAG()                     CLEAR_BIT(PIR1, _PIR1_TMR2IF_POSITION)
 
-// Timer0 Enable Bit
+// Timer2 Enable Bit
 #define INT_INTERRUPT_TIMER2_DISABLE()                        CLEAR_BIT(PIE1, _PIE1_TMR2IE_POSITION)
 #define INT_INTERRUPT_TIMER2_ENABLE()                         SET_BIT(PIE1, _PIE1_TMR2IE_POSITION)
 
-// Timer0 Priority Bit
+// Timer2 Priority Bit
 #if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
 
 #define INT_INTERRUPT_TIMER2_LOW_PRIORITY()                   CLEAR_BIT(IPR1, _IPR1_TMR2IP_POSITION)
 #define INT_INTERRUPT_TIMER2_HIGH_PRIORITY()                  SET_BIT(IPR1, _IPR1_TMR2IP_POSITION)
+
+#endif
+
+#endif
+
+// Timer3 Interrupt Configuration
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER3_INTERRUPT_FEATURE))
+
+// Timer3 Flag bit
+#define INT_INTERRUPT_TIMER3_CLEAR_FLAG()                     CLEAR_BIT(PIR2, _PIR2_TMR3IF_POSITION)
+
+// Timer3 Enable Bit
+#define INT_INTERRUPT_TIMER3_DISABLE()                        CLEAR_BIT(PIE2, _PIE2_TMR3IE_POSITION)
+#define INT_INTERRUPT_TIMER3_ENABLE()                         SET_BIT(PIE2, _PIE2_TMR3IE_POSITION)
+
+// Timer3 Priority Bit
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+#define INT_INTERRUPT_TIMER3_LOW_PRIORITY()                   CLEAR_BIT(IPR2, _IPR2_TMR3IP_POSITION)
+#define INT_INTERRUPT_TIMER3_HIGH_PRIORITY()                  SET_BIT(IPR2, _IPR2_TMR3IP_POSITION)
 
 #endif
 

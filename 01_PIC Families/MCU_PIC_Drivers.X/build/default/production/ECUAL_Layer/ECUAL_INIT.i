@@ -6048,8 +6048,8 @@ typedef enum{
 }TIMER1_MODE;
 
 typedef enum{
-    TIMER1_SYNCHRONCE_COUNTER = (uint8)0x00,
-    TIMER1_ASYNCHRONCE_COUNTER
+    TIMER1_SYNCHRONOUS_COUNTER = (uint8)0x00,
+    TIMER1_ASYNCHRONOUS_COUNTER
 }TIMER1_SYNCHRONIZATION;
 
 typedef enum{
@@ -6132,7 +6132,56 @@ Std_ReturnType TIMER2_DEINIT(const TIMER2_CFG *timer2);
 Std_ReturnType TIMER2_WRITE_DATA(const TIMER2_CFG *timer2, uint8 data);
 Std_ReturnType TIMER2_READ_DATA(const TIMER2_CFG *timer2, uint8 *data);
 # 33 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 47 "ECUAL_Layer/ECUAL_INIT.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h" 1
+# 17 "ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3_CFG.h" 1
+# 18 "ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h" 2
+# 45 "ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h"
+typedef void (* TIMER3_HANDLER)(void);
+
+typedef enum{
+    TIMER3_PRESCALER_DIV_1 = (uint8)0x00,
+    TIMER3_PRESCALER_DIV_2,
+    TIMER3_PRESCALER_DIV_4,
+    TIMER3_PRESCALER_DIV_8
+}TIMER3_PRESCALER;
+
+typedef enum{
+    TIMER3_TIMER_MODE = (uint8)0X00,
+    TIMER3_COUNTER_MODE
+}TIMER3_MODE;
+
+typedef enum{
+    TIMER3_SYNCHRONOUS_COUNTER = (uint8)0x00,
+    TIMER3_ASYNCHRONOUS_COUNTER
+}TIMER3_SYNCHRONIZATION;
+
+typedef enum{
+    TIMER3_8BIT_RW_MODE = (uint8)0x00,
+    TIMER3_16BIT_RW_MODE
+}TIMER3_RW_MODE;
+
+typedef struct{
+
+    TIMER3_HANDLER TIMER3_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    uint16 preloaded_value;
+    TIMER3_PRESCALER prescaler;
+    TIMER1_OSCILLATOR osc;
+    TIMER3_MODE mode;
+    TIMER3_SYNCHRONIZATION sync;
+    TIMER3_RW_MODE rw_reg;
+}TIMER3_CFG;
+
+
+
+Std_ReturnType TIMER3_INIT(const TIMER3_CFG *timer3);
+Std_ReturnType TIMER3_DEINIT(const TIMER3_CFG *timer3);
+Std_ReturnType TIMER3_WRITE_DATA(const TIMER3_CFG *timer3, uint16 data);
+Std_ReturnType TIMER3_READ_DATA(const TIMER3_CFG *timer3, uint16 *data);
+# 34 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 48 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
 # 81 "ECUAL_Layer/ECUAL_INIT.c"

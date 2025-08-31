@@ -5843,6 +5843,13 @@ Std_ReturnType timer1_set_mode(const timer1_cfg *timer1){
         switch(timer1->mode){
             case timer1_timer_mode:{
                 (T1CON &= ~(uint8)((uint8)0x01 << 0x1));
+                break;
+            }
+            case timer1_counter_mode:{
+                (T1CON |= (uint8)((uint8)0x01 << 0x1));
+
+                gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
+                Retval = gpio_pin_direction_init(&t13cki_pin);
 
                 if(timer1->osc == timer1_oscillator_enable){
                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
@@ -5853,13 +5860,6 @@ Std_ReturnType timer1_set_mode(const timer1_cfg *timer1){
                 else{
                     Retval = E_NOT_OK;
                 }
-                break;
-            }
-            case timer1_counter_mode:{
-                (T1CON |= (uint8)((uint8)0x01 << 0x1));
-
-                gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
-                Retval = gpio_pin_direction_init(&t13cki_pin);
 
                 if(timer1->sync == timer1_counter_asynchronous_mode){
                     (T1CON |= (uint8)((uint8)0x01 << 0x2));

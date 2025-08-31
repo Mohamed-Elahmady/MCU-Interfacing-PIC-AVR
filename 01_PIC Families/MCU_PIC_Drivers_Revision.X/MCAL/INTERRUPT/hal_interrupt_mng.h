@@ -42,6 +42,7 @@ void adc_isr(void);
 void tmr0_isr(void);
 void tmr1_isr(void);
 void tmr2_isr(void);
+void tmr3_isr(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

@@ -5652,8 +5652,8 @@ typedef enum{
 }TIMER1_MODE;
 
 typedef enum{
-    TIMER1_SYNCHRONCE_COUNTER = (uint8)0x00,
-    TIMER1_ASYNCHRONCE_COUNTER
+    TIMER1_SYNCHRONOUS_COUNTER = (uint8)0x00,
+    TIMER1_ASYNCHRONOUS_COUNTER
 }TIMER1_SYNCHRONIZATION;
 
 typedef enum{
@@ -5827,6 +5827,15 @@ static Std_ReturnType TIMER1_SET_MODE(const TIMER1_CFG *timer1){
             case TIMER1_TIMER_MODE:
 
                 (T1CON &= ~(uint8)((uint8)0x01 << 0x1));
+                break;
+            case TIMER1_COUNTER_MODE:
+
+                (T1CON |= (uint8)((uint8)0x01 << 0x1));
+
+
+                GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
+                Retval = GPIO_PIN_DIRECTION_INIT(&T13CKI_Pin);
+
 
                 if(timer1->osc == TIMER1_OSCILLATOR_ENABLE){
                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
@@ -5834,15 +5843,9 @@ static Std_ReturnType TIMER1_SET_MODE(const TIMER1_CFG *timer1){
                 else{
                     (T1CON &= ~(uint8)((uint8)0x01 << 0x3));
                 }
-                break;
-            case TIMER1_COUNTER_MODE:
 
-                (T1CON |= (uint8)((uint8)0x01 << 0x1));
 
-                GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
-                Retval = GPIO_PIN_DIRECTION_INIT(&T13CKI_Pin);
-
-                if(timer1->sync == TIMER1_SYNCHRONCE_COUNTER){
+                if(timer1->sync == TIMER1_SYNCHRONOUS_COUNTER){
                     (T1CON &= ~(uint8)((uint8)0x01 << 0x2));
                 }
                 else{
@@ -5856,7 +5859,7 @@ static Std_ReturnType TIMER1_SET_MODE(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-# 263 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
+# 266 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_PRESCALER(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5867,7 +5870,7 @@ static Std_ReturnType TIMER1_SET_PRESCALER(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-# 282 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
+# 285 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){
@@ -5888,7 +5891,7 @@ static Std_ReturnType TIMER1_SET_RW_MODE(const TIMER1_CFG *timer1){
     }
     return Retval;
 }
-# 313 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
+# 316 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
 static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer1){

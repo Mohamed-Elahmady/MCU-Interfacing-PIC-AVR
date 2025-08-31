@@ -7,35 +7,34 @@
 
 #include "app.h"
 
-void t2_app_isr(void);
+void t3_app_isr(void);
 
 gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output, 
                  .pin.logic = gpio_low, .con = led_source, .state = led_off};
 
-volatile uint8 tim2_flag = 0;
+volatile uint8 tim3_flag = 0;
 
-timer2_cfg tim2_timer = {
-    .timer2_interrupt = t2_app_isr,
+timer3_cfg tim3_timer ={
+    .timer3_interrupt = t3_app_isr,
     .priority = interrupt_low_priority,
-    .prescaler = timer2_prescaler_div_1,
-    .postscaler = timer2_postscaler_div_16,
-    .preloaded_value = 0xF9
+    .mode = timer3_counter_mode,
+    .sync = timer3_counter_synchronous_mode,
+    .rw_mode = timer3_rw_16bit_mode,
+    .prescaler = timer3_prescaler_div_1,
+    .preloaded_value = 0x0000 
 };
 
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
     gpio_led_init(&led1);
-    timer2_init(&tim2_timer);
+    timer3_init(&tim3_timer);
     while(1){
-        if(tim2_flag == 150){
-            gpio_led_turn_toggle(&led1);
-            tim2_flag = 0;
-        }
+        timer3_read_data(&tim3_timer, &tim3_flag);
     }
     return (EXIT_SUCCESS);
 }
 
-void t2_app_isr(void){
-    tim2_flag++;
+void t3_app_isr(void){
+    gpio_led_turn_toggle(&led1);
 }

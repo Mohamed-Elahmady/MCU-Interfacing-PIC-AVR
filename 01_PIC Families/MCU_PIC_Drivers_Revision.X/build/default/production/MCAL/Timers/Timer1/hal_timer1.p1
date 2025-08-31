@@ -62,8 +62,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL/Timers/Timer1/../../GPIO/hal_gpio.h: 69: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . port pin direction logic ]
-"173 MCAL/Timers/Timer1/hal_timer1.c
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 173:                 gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
+"163 MCAL/Timers/Timer1/hal_timer1.c
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 163:                 gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
 [c E3672 0 1 2 3 4 .. ]
 [n E3672 . gpio_portA gpio_portB gpio_portC gpio_portD gpio_portE  ]
 [c E3679 0 1 2 3 4 5 6 7 .. ]
@@ -963,60 +963,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "157
 [; ;MCAL/Timers/Timer1/hal_timer1.c: 157:                 (T1CON &= ~(uint8)((uint8)0x01 << 0x1));
 [e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `i `Vuc ]
-"159
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 159:                 if(timer1->osc == timer1_oscillator_enable){
-[e $ ! == -> . *U _timer1 5 `ui -> . `E3756 1 `ui 334  ]
-{
-"160
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 160:                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
-[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `Vuc ]
-"161
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 161:                 }
-}
-[e $U 335  ]
-"162
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 162:                 else if(timer1->osc == timer1_oscillator_disable){
-[e :U 334 ]
-[e $ ! == -> . *U _timer1 5 `ui -> . `E3756 0 `ui 336  ]
-{
-"163
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 163:                     (T1CON &= ~(uint8)((uint8)0x01 << 0x3));
-[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `i `Vuc ]
-"164
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 164:                 }
-}
-[e $U 337  ]
-"165
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 165:                 else{
-[e :U 336 ]
-{
-"166
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 166:                     Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"167
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 167:                 }
-}
-[e :U 337 ]
-[e :U 335 ]
-"168
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 168:                 break;
+"158
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 158:                 break;
 [e $U 331  ]
-"169
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 169:             }
+"159
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 159:             }
 }
-"170
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 170:             case timer1_counter_mode:{
-[e :U 338 ]
+"160
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 160:             case timer1_counter_mode:{
+[e :U 334 ]
 {
-"171
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 171:                 (T1CON |= (uint8)((uint8)0x01 << 0x1));
+"161
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 161:                 (T1CON |= (uint8)((uint8)0x01 << 0x1));
 [e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `Vuc ]
 [v F3828 `S306 ~T0 @X0 1 s ]
 [i F3828
 :U ..
 :U ..
-"173
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 173:                 gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
+"163
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 163:                 gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
 -> . `E3672 2 `uc
 -> . `E3679 0 `uc
 -> . `E3689 1 `uc
@@ -1025,9 +990,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _t13cki_pin `S306 ~T0 @X0 1 a ]
 [e = _t13cki_pin F3828 ]
-"174
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 174:                 Retval = gpio_pin_direction_init(&t13cki_pin);
+"164
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 164:                 Retval = gpio_pin_direction_init(&t13cki_pin);
 [e = _Retval ( _gpio_pin_direction_init (1 -> &U _t13cki_pin `*CS306 ]
+"166
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 166:                 if(timer1->osc == timer1_oscillator_enable){
+[e $ ! == -> . *U _timer1 5 `ui -> . `E3756 1 `ui 335  ]
+{
+"167
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 167:                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
+[e =| _T1CON -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `Vuc ]
+"168
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 168:                 }
+}
+[e $U 336  ]
+"169
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 169:                 else if(timer1->osc == timer1_oscillator_disable){
+[e :U 335 ]
+[e $ ! == -> . *U _timer1 5 `ui -> . `E3756 0 `ui 337  ]
+{
+"170
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 170:                     (T1CON &= ~(uint8)((uint8)0x01 << 0x3));
+[e =& _T1CON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 3 `i `uc `i `Vuc ]
+"171
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 171:                 }
+}
+[e $U 338  ]
+"172
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 172:                 else{
+[e :U 337 ]
+{
+"173
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 173:                     Retval = E_NOT_OK;
+[e = _Retval . `E3659 0 ]
+"174
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 174:                 }
+}
+[e :U 338 ]
+[e :U 336 ]
 "176
 [; ;MCAL/Timers/Timer1/hal_timer1.c: 176:                 if(timer1->sync == timer1_counter_asynchronous_mode){
 [e $ ! == -> . *U _timer1 6 `ui -> . `E3752 1 `ui 339  ]
@@ -1084,7 +1084,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 331  ]
 [e :U 332 ]
 [e [\ -> . *U _timer1 4 `ui , $ -> . `E3748 0 `ui 333
- , $ -> . `E3748 1 `ui 338
+ , $ -> . `E3748 1 `ui 334
  343 ]
 [e :U 331 ]
 "191

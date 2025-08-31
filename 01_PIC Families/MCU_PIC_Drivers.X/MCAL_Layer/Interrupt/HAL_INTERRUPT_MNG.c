@@ -69,6 +69,14 @@ void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
     }
     else{/* Nothing */}
 #endif
+
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER3_INTERRUPT_FEATURE))
+    /* ================== Timer3_Interrupt Service Routine ================== */
+    if((PIR2bits.TMR3IF == INTERRUPT_OCCUR) && (PIE2bits.TMR3IE == INTERRUPT_ENABLE)){
+        TMR3_ISR();
+    }
+    else{/* Nothing */}
+#endif
     
     /* ================== PORTB Interrupt on Change each interrupt must have 2 ISR from high to low & from low to high ========================*/
     
@@ -162,6 +170,13 @@ void __interrupt() INTERRUPT_MANAGER(void){
     /* ================== Timer2_Interrupt Service Routine ================== */
     if((PIR1bits.TMR2IF == INTERRUPT_OCCUR) && (PIE1bits.TMR2IE == INTERRUPT_ENABLE)){
         TMR2_ISR();
+    }
+    else{/* Nothing */}
+#endif
+#if ((INTERRUPT_FEATURE_ENABLE) == (TIMER3_INTERRUPT_FEATURE))
+    /* ================== Timer3_Interrupt Service Routine ================== */
+    if((PIR2bits.TMR3IF == INTERRUPT_OCCUR) && (PIE2bits.TMR3IE == INTERRUPT_ENABLE)){
+        TMR3_ISR();
     }
     else{/* Nothing */}
 #endif

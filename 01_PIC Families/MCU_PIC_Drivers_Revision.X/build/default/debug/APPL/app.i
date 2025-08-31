@@ -6095,42 +6095,86 @@ Std_ReturnType timer1_deinit(const timer1_cfg *timer1);
 Std_ReturnType timer1_write_data(const timer1_cfg *timer1, uint16 data);
 Std_ReturnType timer1_read_data(const timer1_cfg *timer1, uint16 *data);
 # 32 "APPL/app.h" 2
+# 1 "APPL/../MCAL/Timers/Timer2/hal_timer2.h" 1
+# 15 "APPL/../MCAL/Timers/Timer2/hal_timer2.h"
+# 1 "APPL/../MCAL/Timers/Timer2/hal_timer2_cfg.h" 1
+# 16 "APPL/../MCAL/Timers/Timer2/hal_timer2.h" 2
+# 34 "APPL/../MCAL/Timers/Timer2/hal_timer2.h"
+typedef void (* timer2_handler)(void);
+
+typedef enum{
+    timer2_prescaler_div_1 = (uint8)0x00,
+    timer2_prescaler_div_4,
+    timer2_prescaler_div_16
+}timer2_prescaler_select;
+
+typedef enum{
+    timer2_postscaler_div_1 = (uint8)0x00,
+    timer2_postscaler_div_2,
+    timer2_postscaler_div_3,
+    timer2_postscaler_div_4,
+    timer2_postscaler_div_5,
+    timer2_postscaler_div_6,
+    timer2_postscaler_div_7,
+    timer2_postscaler_div_8,
+    timer2_postscaler_div_9,
+    timer2_postscaler_div_10,
+    timer2_postscaler_div_11,
+    timer2_postscaler_div_12,
+    timer2_postscaler_div_13,
+    timer2_postscaler_div_14,
+    timer2_postscaler_div_15,
+    timer2_postscaler_div_16
+}timer2_postscaler_select;
+
+typedef struct{
+
+    timer2_handler timer2_interrupt;
+    interrupt_priority priority;
+
+    uint8 preloaded_value;
+    timer2_prescaler_select prescaler;
+    timer2_postscaler_select postscaler;
+}timer2_cfg;
+
+
+
+Std_ReturnType timer2_init(const timer2_cfg *timer2);
+Std_ReturnType timer2_deinit(const timer2_cfg *timer2);
+Std_ReturnType timer2_write_data(const timer2_cfg *timer2, uint8 data);
+Std_ReturnType timer2_read_data(const timer2_cfg *timer2, uint8 *data);
+# 33 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
-void t1_app_isr(void);
+void t2_app_isr(void);
 
 gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
                  .pin.logic = gpio_low, .con = led_source, .state = led_off};
-# 26 "APPL/app.c"
-timer1_cfg t1_counter = {
-    .timer1_interrupt = t1_app_isr,
+
+volatile uint8 tim2_flag = 0;
+
+timer2_cfg tim2_timer = {
+    .timer2_interrupt = t2_app_isr,
     .priority = interrupt_low_priority,
-    .mode = timer1_counter_mode,
-    .osc = timer1_oscillator_disable,
-    .sync = timer1_counter_synchronous_mode,
-    .rw_mode = timer1_16bit_rw_mode,
-    .prescaler = timer1_prescaler_div_1,
-    .preloaded_value = 0x0000
+    .prescaler = timer2_prescaler_div_1,
+    .postscaler = timer2_postscaler_div_16,
+    .preloaded_value = 0xF9
 };
 
-uint16 value = 0;
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-    timer1_init(&t1_counter);
     gpio_led_init(&led1);
+    timer2_init(&tim2_timer);
     while(1){
-        ret = timer1_read_data(&t1_counter, &value);
-        if(value % 5 == 0 && value != 0){
-            gpio_led_turn_on(&led1);
-        }
-        else{
-            gpio_led_turn_off(&led1);
+        if(tim2_flag == 150){
+            gpio_led_turn_toggle(&led1);
+            tim2_flag = 0;
         }
     }
     return (0);
 }
 
-void t1_app_isr(void){
-
+void t2_app_isr(void){
+    tim2_flag++;
 }

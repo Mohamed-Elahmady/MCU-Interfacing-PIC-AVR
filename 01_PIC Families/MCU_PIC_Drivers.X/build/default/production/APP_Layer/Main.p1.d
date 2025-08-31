@@ -63,4 +63,10 @@ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/HAL_TIMER2_CFG.h  \
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../GPIO/HAL_GPIO.h  \
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../Interrupt/HAL_INT_INTERRUPT.h  \
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../mcal_std_types.h  \
-APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../device_cfg.h 
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../device_cfg.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/../../mcal_std_types.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3_CFG.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/../../GPIO/HAL_GPIO.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/../../Interrupt/HAL_INT_INTERRUPT.h  \
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/../Timer1/HAL_TIMER1.h 

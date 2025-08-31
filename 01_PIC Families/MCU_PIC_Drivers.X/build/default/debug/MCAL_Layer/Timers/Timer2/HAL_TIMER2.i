@@ -5703,10 +5703,7 @@ static Std_ReturnType TIMER2_SET_POSTSCALER(const TIMER2_CFG *timer2);
 
 
 static Std_ReturnType TIMER2_CONFIGURE_INTERRUPT(const TIMER2_CFG *timer2);
-
-
-
-
+# 45 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_INIT(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
@@ -5731,7 +5728,7 @@ Std_ReturnType TIMER2_INIT(const TIMER2_CFG *timer2){
     }
     return Retval;
 }
-
+# 78 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_DEINIT(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
@@ -5749,7 +5746,7 @@ Std_ReturnType TIMER2_DEINIT(const TIMER2_CFG *timer2){
     }
     return Retval;
 }
-
+# 105 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_WRITE_DATA(const TIMER2_CFG *timer2, uint8 data){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
@@ -5760,7 +5757,7 @@ Std_ReturnType TIMER2_WRITE_DATA(const TIMER2_CFG *timer2, uint8 data){
     }
     return Retval;
 }
-
+# 125 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_READ_DATA(const TIMER2_CFG *timer2, uint8 *data){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2 || ((void*)0) == data){
@@ -5771,31 +5768,41 @@ Std_ReturnType TIMER2_READ_DATA(const TIMER2_CFG *timer2, uint8 *data){
     }
     return Retval;
 }
+# 144 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
+void TMR2_ISR(void){
+
+    (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
+
+    TMR2 = timer2_preloaded_value;
 
 
-
+    if(TIMER2_HANDLER_FUNCTION){
+        TIMER2_HANDLER_FUNCTION();
+    }
+}
+# 168 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_SET_DISABLE(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
         Retval = E_NOT_OK;
     }
     else{
-        (T2CON &= ~(uint8)((uint8)0x01 << TMR2ON));
+        (T2CON &= ~(uint8)((uint8)0x01 << 0x2));
     }
     return Retval;
 }
-
+# 187 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_SET_ENABLE(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
         Retval = E_NOT_OK;
     }
     else{
-        (T2CON |= (uint8)((uint8)0x01 << TMR2ON));
+        (T2CON |= (uint8)((uint8)0x01 << 0x2));
     }
     return Retval;
 }
-
+# 206 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_SET_PRESCALER(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
@@ -5806,7 +5813,7 @@ Std_ReturnType TIMER2_SET_PRESCALER(const TIMER2_CFG *timer2){
     }
     return Retval;
 }
-
+# 225 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_SET_POSTSCALER(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
@@ -5817,9 +5824,7 @@ Std_ReturnType TIMER2_SET_POSTSCALER(const TIMER2_CFG *timer2){
     }
     return Retval;
 }
-
-
-
+# 246 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
 Std_ReturnType TIMER2_CONFIGURE_INTERRUPT(const TIMER2_CFG *timer2){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer2){
@@ -5830,7 +5835,25 @@ Std_ReturnType TIMER2_CONFIGURE_INTERRUPT(const TIMER2_CFG *timer2){
         (PIE1 |= (uint8)((uint8)0x01 << 0x1));
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
-# 169 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
+
+
+        (RCON |= (uint8)((uint8)0x01 << 0x7));
+        (INTCON |= (uint8)((uint8)0x01 << 0x7));
+        (INTCON |= (uint8)((uint8)0x01 << 0x6));
+        if(timer2->priority == INTERRUPT_HIGH_PRIORITY){
+            (IPR1 |= (uint8)((uint8)0x01 << 0x1));
+        }
+        else if(timer2->priority == INTERRUPT_LOW_PRIORITY){
+            (IPR1 &= ~(uint8)((uint8)0x01 << 0x1));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
+
+
+
+
         TIMER2_HANDLER_FUNCTION = timer2->TIMER2_INTERRUPT;
     }
     return Retval;

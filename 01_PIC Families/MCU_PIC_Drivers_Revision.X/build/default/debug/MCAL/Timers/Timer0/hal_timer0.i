@@ -5905,10 +5905,23 @@ static Std_ReturnType timer0_configure_interrupt(const timer0_cfg *timer0){
     else{
         (INTCON &= ~(uint8)((uint8)0x01 << 0x2));
         (INTCON |= (uint8)((uint8)0x01 << 0x5));
-# 230 "MCAL/Timers/Timer0/hal_timer0.c"
-        (RCONbits.IPEN = (uint8)0x00);
-        (INTCONbits.GIE = (uint8)0x01);
-        (INTCONbits.PEIE = (uint8)0x01);
+
+        (RCONbits.IPEN = (uint8)0x01);
+        (INTCONbits.GIEH = (uint8)0x01);
+        (INTCONbits.GIEL = (uint8)0x01);
+        if(timer0->priority == interrupt_high_priority){
+            (INTCON2 |= (uint8)((uint8)0x01 << 0x2));
+        }
+        else if(timer0->priority == interrupt_low_priority){
+            (INTCON2 &= ~(uint8)((uint8)0x01 << 0x2));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
+
+
+
 
       timer0_handler_function = timer0->timer0_interrupt;
     }

@@ -5843,6 +5843,13 @@ Std_ReturnType timer1_set_mode(const timer1_cfg *timer1){
         switch(timer1->mode){
             case timer1_timer_mode:{
                 (T1CON &= ~(uint8)((uint8)0x01 << 0x1));
+                break;
+            }
+            case timer1_counter_mode:{
+                (T1CON |= (uint8)((uint8)0x01 << 0x1));
+
+                gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
+                Retval = gpio_pin_direction_init(&t13cki_pin);
 
                 if(timer1->osc == timer1_oscillator_enable){
                     (T1CON |= (uint8)((uint8)0x01 << 0x3));
@@ -5853,13 +5860,6 @@ Std_ReturnType timer1_set_mode(const timer1_cfg *timer1){
                 else{
                     Retval = E_NOT_OK;
                 }
-                break;
-            }
-            case timer1_counter_mode:{
-                (T1CON |= (uint8)((uint8)0x01 << 0x1));
-
-                gpio_pin_cfg t13cki_pin = {.port = gpio_portC, .pin = gpio_pin0, .direction = gpio_input};
-                Retval = gpio_pin_direction_init(&t13cki_pin);
 
                 if(timer1->sync == timer1_counter_asynchronous_mode){
                     (T1CON |= (uint8)((uint8)0x01 << 0x2));
@@ -5924,13 +5924,24 @@ Std_ReturnType timer1_configure_interrupt(const timer1_cfg *timer1){
         (PIE1 |= (uint8)((uint8)0x01 << 0x0));
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
-# 258 "MCAL/Timers/Timer1/hal_timer1.c"
-        (RCONbits.IPEN = (uint8)0x00);
 
-        (INTCONbits.GIE = (uint8)0x01);
 
-        (INTCONbits.PEIE = (uint8)0x01);
+        (RCONbits.IPEN = (uint8)0x01);
 
+        (INTCONbits.GIEH = (uint8)0x01);
+
+        (INTCONbits.GIEL = (uint8)0x01);
+
+        if(timer1->priority == interrupt_high_priority){
+            (IPR1 |= (uint8)((uint8)0x01 << 0x0));
+        }
+        else if(timer1->priority == interrupt_high_priority){
+            (IPR1 &= ~(uint8)((uint8)0x01 << 0x0));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+# 264 "MCAL/Timers/Timer1/hal_timer1.c"
     timer1_handler_function = timer1->timer1_interrupt;
     }
     return Retval;

@@ -16,7 +16,6 @@
 #include "mcal_std_types.h"
 #include "device_cfg.h"
 
-
 /******************* Section 2 : Macros Declarations *******************/
 
 

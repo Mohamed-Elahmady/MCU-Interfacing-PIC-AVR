@@ -87,6 +87,24 @@
 #endif
 
 #endif
+
+// Timer3 internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_timer3))
+
+#define intenral_interrupt_timer3_clear_flag()                    clear_bit(PIR2, _PIR2_TMR3IF_POSITION)
+
+#define intenral_interrupt_timer3_disable()                       clear_bit(PIE2, _PIE2_TMR3IE_POSITION)
+#define intenral_interrupt_timer3_enable()                        set_bit(PIE2, _PIE2_TMR3IE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_timer3_low_priority()                  clear_bit(IPR2, _IPR2_TMR3IP_POSITION)
+#define intenral_interrupt_timer3_high_priority()                 set_bit(IPR2, _IPR2_TMR3IP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

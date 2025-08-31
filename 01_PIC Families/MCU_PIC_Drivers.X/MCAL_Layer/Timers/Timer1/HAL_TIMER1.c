@@ -222,26 +222,29 @@ static Std_ReturnType TIMER1_SET_MODE(const TIMER1_CFG *timer1){
             case TIMER1_TIMER_MODE:
                 // 1. Set Timer1 as timer mode
                 TIMER1_INTERNAL_TIMER_MODE();
-                // 2. Set Timer1 Oscillator
+                break;
+            case TIMER1_COUNTER_MODE:
+                // 1. Set Timer1 as counter mode
+                TIMER1_EXTERNAL_COUNTER_MODE();
+                
+                // 2. Initialize Pin as input
+                GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
+                Retval = GPIO_PIN_DIRECTION_INIT(&T13CKI_Pin);
+                
+                // 3. Set Timer1 Oscillator
                 if(timer1->osc == TIMER1_OSCILLATOR_ENABLE){
                     TIMER1_OSCILLATOR_ENABLE();
                 }
                 else{
                     TIMER1_OSCILLATOR_DISABLE();
                 }
-                break;
-            case TIMER1_COUNTER_MODE:
-                // 1. Set Timer1 as counter mode
-                TIMER1_EXTERNAL_COUNTER_MODE();
-                // 2. Initialize Pin as input
-                GPIO_PIN_CFG T13CKI_Pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN0, .DIRECTION = GPIO_INPUT};
-                Retval = GPIO_PIN_DIRECTION_INIT(&T13CKI_Pin);
-                // 3. set synchronous or asynchronous
-                if(timer1->sync == TIMER1_SYNCHRONCE_COUNTER){
-                    TIMER1_SYNCHRONCE_COUNTER_MODE();
+                
+                // 4. set synchronous or asynchronous
+                if(timer1->sync == TIMER1_SYNCHRONOUS_COUNTER){
+                    TIMER1_SYNCHRONOUS_COUNTER_MODE();
                 }
                 else{
-                    TIMER1_ASYNCHRONCE_COUNTER_MODE();
+                    TIMER1_ASYNCHRONOUS_COUNTER_MODE();
                 }
                 break;
             default :

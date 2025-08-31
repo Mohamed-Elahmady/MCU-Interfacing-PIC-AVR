@@ -5694,17 +5694,21 @@ Std_ReturnType timer2_read_data(const timer2_cfg *timer2, uint8 *data);
 
 
 
+static uint8 timer2_preloaded_value = 0;
 
 
 
 
-Std_ReturnType timer2_set_disable(const timer2_cfg *timer2);
-Std_ReturnType timer2_set_enable(const timer2_cfg *timer2);
-Std_ReturnType timer2_set_prescaler(const timer2_cfg *timer2);
-Std_ReturnType timer2_set_postscaler(const timer2_cfg *timer2);
+static timer2_handler timer2_handler_function = ((void*)0);
 
 
-Std_ReturnType timer2_configure_interrupt(const timer2_cfg *timer2);
+static Std_ReturnType timer2_set_disable(const timer2_cfg *timer2);
+static Std_ReturnType timer2_set_enable(const timer2_cfg *timer2);
+static Std_ReturnType timer2_set_prescaler(const timer2_cfg *timer2);
+static Std_ReturnType timer2_set_postscaler(const timer2_cfg *timer2);
+
+
+static Std_ReturnType timer2_configure_interrupt(const timer2_cfg *timer2);
 
 
 
@@ -5715,12 +5719,20 @@ Std_ReturnType timer2_init(const timer2_cfg *timer2){
     }
     else{
 
+        Retval = timer2_set_disable(timer2);
+
+        Retval = timer2_set_prescaler(timer2);
+
+        Retval = timer2_set_postscaler(timer2);
+
+        TMR2 = timer2->preloaded_value;
+        timer2_preloaded_value = timer2->preloaded_value;
 
 
+        Retval = timer2_configure_interrupt(timer2);
 
 
-
-
+        Retval = timer2_set_enable(timer2);
     }
     return Retval;
 }
@@ -5732,6 +5744,13 @@ Std_ReturnType timer2_deinit(const timer2_cfg *timer2){
     }
     else{
 
+        Retval = timer2_set_disable(timer2);
+
+
+        (PIE1 &= ~(uint8)((uint8)0x01 << 0x1));
+
+        (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
+
     }
     return Retval;
 }
@@ -5742,7 +5761,7 @@ Std_ReturnType timer2_write_data(const timer2_cfg *timer2, uint8 data){
         Retval = E_NOT_OK;
     }
     else{
-
+        TMR2 = data;
     }
     return Retval;
 }
@@ -5753,10 +5772,25 @@ Std_ReturnType timer2_read_data(const timer2_cfg *timer2, uint8 *data){
         Retval = E_NOT_OK;
     }
     else{
-
+        *data = TMR2;
     }
     return Retval;
 }
+
+
+
+void tmr2_isr(void){
+
+    (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
+
+    TMR2 = timer2_preloaded_value;
+
+    if(timer2_handler_function){
+        timer2_handler_function();
+    }
+}
+
+
 
 
 
@@ -5813,6 +5847,30 @@ Std_ReturnType timer2_configure_interrupt(const timer2_cfg *timer2){
     }
     else{
 
+        (PIE1 |= (uint8)((uint8)0x01 << 0x1));
+
+        (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
+
+
+        (RCONbits.IPEN = (uint8)0x01);
+        (INTCONbits.GIEH = (uint8)0x01);
+        (INTCONbits.GIEL = (uint8)0x01);
+
+        if(timer2->priority == interrupt_high_priority){
+            (IPR1 |= (uint8)((uint8)0x01 << 0x1));
+        }
+        else if(timer2->priority == interrupt_low_priority){
+            (IPR1 &= ~(uint8)((uint8)0x01 << 0x1));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
+
+
+
+
+        timer2_handler_function = timer2->timer2_interrupt;
     }
     return Retval;
 }
