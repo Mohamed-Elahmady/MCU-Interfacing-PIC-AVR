@@ -5900,24 +5900,10 @@ static Std_ReturnType TIMER1_CONFIGURE_INTERRUPT(const TIMER1_CFG *timer1){
     else{
         (PIE1 |= (uint8)((uint8)0x01 << 0x0));
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
-
-        (RCON |= (uint8)((uint8)0x01 << 0x7));
+# 339 "MCAL_Layer/Timers/Timer1/HAL_TIMER1.c"
+        (RCON &= ~(uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x6));
-
-        if(timer1->priority == INTERRUPT_HIGH_PRIORITY){
-            (IPR1 |= (uint8)((uint8)0x01 << 0x0));
-        }
-        else if(timer1->priority == INTERRUPT_LOW_PRIORITY){
-            (IPR1 &= ~(uint8)((uint8)0x01 << 0x0));
-        }
-        else{
-            Retval = E_NOT_OK;
-        }
-
-
-
-
 
         TIMER1_HANDLER_FUNCTION = timer1->TIMER1_INTERRUPT;
     }

@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;APPL/../ECUAL/LED/../../MCAL/GPIO/hal_gpio.h: 69: typedef struct{
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . port pin direction logic ]
-"12 APPL/app.c
-[; ;APPL/app.c: 12: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+"10 APPL/app.c
+[; ;APPL/app.c: 10: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
 [c E3736 0 1 .. ]
 [n E3736 . led_off led_on  ]
 [c E3740 0 1 .. ]
@@ -13,8 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;APPL/../ECUAL/LED/ecual_led.h: 38: typedef struct{
 [s S307 `S306 1 `E3736 1 `E3740 1 ]
 [n S307 . pin state con ]
-"12 APPL/app.c
-[; ;APPL/app.c: 12: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+"10 APPL/app.c
+[; ;APPL/app.c: 10: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
 [c E3672 0 1 2 3 4 .. ]
 [n E3672 . gpio_portA gpio_portB gpio_portC gpio_portD gpio_portE  ]
 [c E3679 0 1 2 3 4 5 6 7 .. ]
@@ -23,45 +23,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E3689 . gpio_output gpio_input  ]
 [c E3693 0 1 .. ]
 [n E3693 . gpio_low gpio_high  ]
-[v F4214 `(v ~T0 @X0 0 tf ]
-"17
-[; ;APPL/app.c: 17: timer3_cfg tim3_timer ={
-[c E3919 0 1 .. ]
-[n E3919 . interrupt_low_priority interrupt_high_priority  ]
-[c E4194 0 1 2 3 .. ]
-[n E4194 . timer3_prescaler_div_1 timer3_prescaler_div_2 timer3_prescaler_div_4 timer3_prescaler_div_8  ]
-[c E4200 0 1 .. ]
-[n E4200 . timer3_timer_mode timer3_counter_mode  ]
-[c E4204 0 1 .. ]
-[n E4204 . timer3_counter_synchronous_mode timer3_counter_asynchronous_mode  ]
-[c E4208 0 1 .. ]
-[n E4208 . timer3_rw_8bit_mode timer3_rw_16bit_mode  ]
-[c E4120 0 1 .. ]
-[n E4120 . timer1_oscillator_disable timer1_oscillator_enable  ]
-"67 APPL/../MCAL/Timers/Timer3/hal_timer3.h
-[; ;APPL/../MCAL/Timers/Timer3/hal_timer3.h: 67: typedef struct{
-[s S321 `*F4214 1 `E3919 1 `us 1 `E4194 1 `E4200 1 `E4204 1 `E4208 1 `E4120 1 ]
-[n S321 . timer3_interrupt priority preloaded_value prescaler mode sync rw_mode osc ]
-"10 APPL/app.c
-[; ;APPL/app.c: 10: void t3_app_isr(void);
-[v _t3_app_isr `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"29
-[; ;APPL/app.c: 29:     Std_ReturnType ret = E_NOT_OK;
+"15
+[; ;APPL/app.c: 15:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"46 APPL/../ECUAL/LED/ecual_led.h
-[; ;APPL/../ECUAL/LED/ecual_led.h: 46: Std_ReturnType gpio_led_init(const gpio_led *led);
-[v _gpio_led_init `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"82 APPL/../MCAL/Timers/Timer3/hal_timer3.h
-[; ;APPL/../MCAL/Timers/Timer3/hal_timer3.h: 82: Std_ReturnType timer3_init(const timer3_cfg *timer3);
-[v _timer3_init `(E3659 ~T0 @X0 0 ef1`*CS321 ]
-"85
-[; ;APPL/../MCAL/Timers/Timer3/hal_timer3.h: 85: Std_ReturnType timer3_read_data(const timer3_cfg *timer3, uint16 *data);
-[v _timer3_read_data `(E3659 ~T0 @X0 0 ef2`*CS321`*us ]
-"50 APPL/../ECUAL/LED/ecual_led.h
-[; ;APPL/../ECUAL/LED/ecual_led.h: 50: Std_ReturnType gpio_led_turn_toggle(const gpio_led *led);
-[v _gpio_led_turn_toggle `(E3659 ~T0 @X0 0 ef1`*CS307 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -503,8 +469,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 APPL/app.c
-[; ;APPL/app.c: 12: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+"10 APPL/app.c
+[; ;APPL/app.c: 10: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
 [v _led1 `S307 ~T0 @X0 1 e ]
 [i _led1
 :U ..
@@ -522,76 +488,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"15
-[; ;APPL/app.c: 15: volatile uint8 tim3_flag = 0;
-[v _tim3_flag `Vuc ~T0 @X0 1 e ]
-[i _tim3_flag
--> -> 0 `i `uc
-]
-"17
-[; ;APPL/app.c: 17: timer3_cfg tim3_timer ={
-[v _tim3_timer `S321 ~T0 @X0 1 e ]
-[i _tim3_timer
-:U ..
-:U ..
-&U _t3_app_isr
-. `E3919 0
--> -> 0 `i `us
-. `E4194 0
-. `E4200 1
-. `E4204 0
-. `E4208 1
-..
-..
-]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"28
-[; ;APPL/app.c: 28: int main(void) {
+"14
+[; ;APPL/app.c: 14: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"29
-[; ;APPL/app.c: 29:     Std_ReturnType ret = E_NOT_OK;
+"15
+[; ;APPL/app.c: 15:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"30
-[; ;APPL/app.c: 30:     gpio_led_init(&led1);
-[e ( _gpio_led_init (1 -> &U _led1 `*CS307 ]
-"31
-[; ;APPL/app.c: 31:     timer3_init(&tim3_timer);
-[e ( _timer3_init (1 -> &U _tim3_timer `*CS321 ]
-"32
-[; ;APPL/app.c: 32:     while(1){
+"16
+[; ;APPL/app.c: 16:     while(1){
 [e :U 324 ]
 {
-"33
-[; ;APPL/app.c: 33:         timer3_read_data(&tim3_timer, &tim3_flag);
-[e ( _timer3_read_data (2 , -> &U _tim3_timer `*CS321 -> &U _tim3_flag `*us ]
-"34
-[; ;APPL/app.c: 34:     }
+"18
+[; ;APPL/app.c: 18:     }
 }
 [e :U 323 ]
 [e $U 324  ]
 [e :U 325 ]
-"35
-[; ;APPL/app.c: 35:     return (0);
+"19
+[; ;APPL/app.c: 19:     return (0);
 [e ) -> 0 `i ]
 [e $UE 322  ]
-"36
-[; ;APPL/app.c: 36: }
+"20
+[; ;APPL/app.c: 20: }
 [e :UE 322 ]
-}
-"38
-[; ;APPL/app.c: 38: void t3_app_isr(void){
-[v _t3_app_isr `(v ~T0 @X0 1 ef ]
-{
-[e :U _t3_app_isr ]
-[f ]
-"39
-[; ;APPL/app.c: 39:     gpio_led_turn_toggle(&led1);
-[e ( _gpio_led_turn_toggle (1 -> &U _led1 `*CS307 ]
-"40
-[; ;APPL/app.c: 40: }
-[e :UE 326 ]
 }

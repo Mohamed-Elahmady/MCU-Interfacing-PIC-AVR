@@ -43,6 +43,8 @@ void tmr0_isr(void);
 void tmr1_isr(void);
 void tmr2_isr(void);
 void tmr3_isr(void);
+void ccp1_isr(void);
+void ccp2_isr(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

@@ -85,7 +85,16 @@ build/default/debug/APP_Layer/Main.o.d \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../GPIO/hal_gpio.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../Interrupt/hal_int_interrupt.h \
  APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/hal_timer2_cfg.h \
- APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../device_cfg.h
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../device_cfg.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/hal_pwm.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/hal_pwm_cfg.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../GPIO/hal_gpio.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer0/hal_timer0.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer1/hal_timer1.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer2/hal_timer2.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../mcal_std_types.h \
+ APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../device_cfg.h \
+ APP_Layer/../MCAL_Layer/PWM/hal_pwm.h
 
 APP_Layer/Main.h:
 
@@ -260,3 +269,21 @@ APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../Interrupt/hal_int_int
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/hal_timer2_cfg.h:
 
 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer2/../../device_cfg.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/hal_pwm.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/hal_pwm_cfg.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../GPIO/hal_gpio.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer0/hal_timer0.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer1/hal_timer1.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer2/hal_timer2.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../mcal_std_types.h:
+
+APP_Layer/../ECUAL_Layer/../MCAL_Layer/PWM/../device_cfg.h:
+
+APP_Layer/../MCAL_Layer/PWM/hal_pwm.h:

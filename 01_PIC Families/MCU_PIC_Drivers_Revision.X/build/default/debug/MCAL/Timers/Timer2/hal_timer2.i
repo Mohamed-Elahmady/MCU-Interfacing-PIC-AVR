@@ -5850,25 +5850,10 @@ Std_ReturnType timer2_configure_interrupt(const timer2_cfg *timer2){
         (PIE1 |= (uint8)((uint8)0x01 << 0x1));
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
-
-
-        (RCONbits.IPEN = (uint8)0x01);
-        (INTCONbits.GIEH = (uint8)0x01);
-        (INTCONbits.GIEL = (uint8)0x01);
-
-        if(timer2->priority == interrupt_high_priority){
-            (IPR1 |= (uint8)((uint8)0x01 << 0x1));
-        }
-        else if(timer2->priority == interrupt_low_priority){
-            (IPR1 &= ~(uint8)((uint8)0x01 << 0x1));
-        }
-        else{
-            Retval = E_NOT_OK;
-        }
-
-
-
-
+# 186 "MCAL/Timers/Timer2/hal_timer2.c"
+        (RCONbits.IPEN = (uint8)0x00);
+        (INTCONbits.GIE = (uint8)0x01);
+        (INTCONbits.PEIE = (uint8)0x01);
 
         timer2_handler_function = timer2->timer2_interrupt;
     }

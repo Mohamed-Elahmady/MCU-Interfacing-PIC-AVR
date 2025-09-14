@@ -150,9 +150,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7075
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7075: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS291 ~T0 @X0 0 e@4082 ]
-"3296
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 3296: extern volatile unsigned char IPR1 __attribute__((address(0xF9F)));
-[v _IPR1 `Vuc ~T0 @X0 0 e@3999 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -1253,50 +1250,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "238
 [; ;MCAL/Timers/Timer1/hal_timer1.c: 238:         (PIR1 &= ~(uint8)((uint8)0x01 << 0x0));
 [e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
-"241
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 241:         (RCONbits.IPEN = (uint8)0x01);
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-"243
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 243:         (INTCONbits.GIEH = (uint8)0x01);
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-"245
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 245:         (INTCONbits.GIEL = (uint8)0x01);
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-"247
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 247:         if(timer1->priority == interrupt_high_priority){
-[e $ ! == -> . *U _timer1 1 `ui -> . `E3736 1 `ui 358  ]
-{
-"248
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 248:             (IPR1 |= (uint8)((uint8)0x01 << 0x0));
-[e =| _IPR1 -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `Vuc ]
-"249
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 249:         }
-}
-[e $U 359  ]
-"250
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 250:         else if(timer1->priority == interrupt_high_priority){
-[e :U 358 ]
-[e $ ! == -> . *U _timer1 1 `ui -> . `E3736 1 `ui 360  ]
-{
-"251
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 251:             (IPR1 &= ~(uint8)((uint8)0x01 << 0x0));
-[e =& _IPR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 0 `i `uc `i `Vuc ]
-"252
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 252:         }
-}
-[e $U 361  ]
-"253
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 253:         else{
-[e :U 360 ]
-{
-"254
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 254:             Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"255
-[; ;MCAL/Timers/Timer1/hal_timer1.c: 255:         }
-}
-[e :U 361 ]
-[e :U 359 ]
+"258
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 258:         (RCONbits.IPEN = (uint8)0x00);
+[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
+"260
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 260:         (INTCONbits.GIE = (uint8)0x01);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"262
+[; ;MCAL/Timers/Timer1/hal_timer1.c: 262:         (INTCONbits.PEIE = (uint8)0x01);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "264
 [; ;MCAL/Timers/Timer1/hal_timer1.c: 264:     timer1_handler_function = timer1->timer1_interrupt;
 [e = _timer1_handler_function . *U _timer1 0 ]

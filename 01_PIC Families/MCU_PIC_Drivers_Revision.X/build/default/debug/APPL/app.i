@@ -6144,37 +6144,65 @@ Std_ReturnType timer2_deinit(const timer2_cfg *timer2);
 Std_ReturnType timer2_write_data(const timer2_cfg *timer2, uint8 data);
 Std_ReturnType timer2_read_data(const timer2_cfg *timer2, uint8 *data);
 # 33 "APPL/app.h" 2
-# 9 "APPL/app.c" 2
+# 1 "APPL/../MCAL/Timers/Timer3/hal_timer3.h" 1
+# 19 "APPL/../MCAL/Timers/Timer3/hal_timer3.h"
+# 1 "APPL/../MCAL/Timers/Timer3/hal_timer3_cfg.h" 1
+# 20 "APPL/../MCAL/Timers/Timer3/hal_timer3.h" 2
+# 43 "APPL/../MCAL/Timers/Timer3/hal_timer3.h"
+typedef void (* timer3_handler)(void);
 
-void t2_app_isr(void);
+typedef enum{
+    timer3_prescaler_div_1 = (uint8)0x00,
+    timer3_prescaler_div_2,
+    timer3_prescaler_div_4,
+    timer3_prescaler_div_8
+}timer3_prescaler_select;
+
+typedef enum{
+    timer3_timer_mode = (uint8)0x00,
+    timer3_counter_mode
+}timer3_mode;
+
+typedef enum{
+    timer3_counter_synchronous_mode = (uint8)0x00,
+    timer3_counter_asynchronous_mode
+}timer3_synchronization;
+
+typedef enum{
+    timer3_rw_8bit_mode = (uint8)0x00,
+    timer3_rw_16bit_mode
+}timer3_rw_mode;
+
+typedef struct{
+
+    timer3_handler timer3_interrupt;
+    interrupt_priority priority;
+
+    uint16 preloaded_value;
+    timer3_prescaler_select prescaler;
+    timer3_mode mode;
+    timer3_synchronization sync;
+    timer3_rw_mode rw_mode;
+    timer1_oscillator osc;
+}timer3_cfg;
+
+
+
+Std_ReturnType timer3_init(const timer3_cfg *timer3);
+Std_ReturnType timer3_deinit(const timer3_cfg *timer3);
+Std_ReturnType timer3_write_data(const timer3_cfg *timer3, uint16 data);
+Std_ReturnType timer3_read_data(const timer3_cfg *timer3, uint16 *data);
+# 34 "APPL/app.h" 2
+# 9 "APPL/app.c" 2
 
 gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
                  .pin.logic = gpio_low, .con = led_source, .state = led_off};
 
-volatile uint8 tim2_flag = 0;
-
-timer2_cfg tim2_timer = {
-    .timer2_interrupt = t2_app_isr,
-    .priority = interrupt_low_priority,
-    .prescaler = timer2_prescaler_div_1,
-    .postscaler = timer2_postscaler_div_16,
-    .preloaded_value = 0xF9
-};
-
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-    gpio_led_init(&led1);
-    timer2_init(&tim2_timer);
     while(1){
-        if(tim2_flag == 150){
-            gpio_led_turn_toggle(&led1);
-            tim2_flag = 0;
-        }
+
     }
     return (0);
-}
-
-void t2_app_isr(void){
-    tim2_flag++;
 }

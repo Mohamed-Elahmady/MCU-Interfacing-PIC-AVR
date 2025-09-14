@@ -5844,6 +5844,22 @@ Std_ReturnType timer3_read_data(const timer3_cfg *timer3, uint16 *data){
 
 
 
+void tmr3_isr(void){
+
+    (PIR2 &= ~(uint8)((uint8)0x01 << 0x1));
+
+    TMR3H = (uint8)((timer3_preloaded_value) >> 8);
+    TMR3L = (uint8)(timer3_preloaded_value);
+
+    if(timer3_handler_function){
+        timer3_handler_function();
+    }
+}
+
+
+
+
+
 static Std_ReturnType timer3_set_disable(const timer3_cfg *timer3){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == timer3){
@@ -5951,12 +5967,10 @@ static Std_ReturnType timer3_configure_interrupt(const timer3_cfg *timer3){
     else{
         (PIE2 |= (uint8)((uint8)0x01 << 0x1));
         (PIR2 &= ~(uint8)((uint8)0x01 << 0x1));
-
-
-
-
-
-
+# 247 "MCAL/Timers/Timer3/hal_timer3.c"
+        (RCONbits.IPEN = (uint8)0x00);
+        (INTCONbits.GIE = (uint8)0x01);
+        (INTCONbits.PEIE = (uint8)0x01);
 
         timer3_handler_function = timer3->timer3_interrupt;
     }

@@ -5835,24 +5835,10 @@ Std_ReturnType TIMER2_CONFIGURE_INTERRUPT(const TIMER2_CFG *timer2){
         (PIE1 |= (uint8)((uint8)0x01 << 0x1));
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
-
-
-        (RCON |= (uint8)((uint8)0x01 << 0x7));
+# 271 "MCAL_Layer/Timers/Timer2/HAL_TIMER2.c"
+        (RCON &= ~(uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x6));
-        if(timer2->priority == INTERRUPT_HIGH_PRIORITY){
-            (IPR1 |= (uint8)((uint8)0x01 << 0x1));
-        }
-        else if(timer2->priority == INTERRUPT_LOW_PRIORITY){
-            (IPR1 &= ~(uint8)((uint8)0x01 << 0x1));
-        }
-        else{
-            Retval = E_NOT_OK;
-        }
-
-
-
-
 
         TIMER2_HANDLER_FUNCTION = timer2->TIMER2_INTERRUPT;
     }

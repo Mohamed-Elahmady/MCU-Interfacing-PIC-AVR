@@ -32,6 +32,8 @@
 #include "../MCAL_Layer/Timers/Timer2/HAL_TIMER2.h"
 #include "../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h"
 
+#include "../MCAL_Layer/CCP/HAL_CCP.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

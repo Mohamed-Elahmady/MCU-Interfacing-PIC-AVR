@@ -29,6 +29,13 @@ void __interrupt() INTERRUPT_MANAGER_HIGH_PRIORITY(void){
         INT0_ISR();
     }
     else{/* Nothing */}
+#if ((INTERRUPT_FEATURE_ENABLE) == (CCP1_INTERRUPT_FEATURE))
+    /* ================== CCP2_Interrupt Service Routine ================== */
+    if((PIR2bits.CCP2IF == INTERRUPT_OCCUR) && (PIE2bits.CCP2IE == INTERRUPT_ENABLE)){
+        CCP2_ISR();
+    }
+    else{/* Nothing */}
+#endif
 #if ((INTERRUPT_FEATURE_ENABLE) == (ADC_INTERRUPT_FEATURE))
     if((PIR1bits.ADIF == INTERRUPT_OCCUR) && (PIE1bits.ADIE == INTERRUPT_ENABLE)){
         ADC_ISR();
@@ -53,6 +60,14 @@ void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
         INT1_ISR();
     }
     else{/* Nothing */}
+    
+#if ((INTERRUPT_FEATURE_ENABLE) == (CCP2_INTERRUPT_FEATURE))
+    /* ================== CCP2_Interrupt Service Routine ================== */
+    if((PIR2bits.CCP2IF == INTERRUPT_OCCUR) && (PIE2bits.CCP2IE == INTERRUPT_ENABLE)){
+        CCP2_ISR();
+    }
+    else{/* Nothing */}
+#endif
     
 #if ((INTERRUPT_FEATURE_ENABLE) == (TIMER1_INTERRUPT_FEATURE))
     /* ================== Timer1_Interrupt Service Routine ================== */
@@ -145,10 +160,24 @@ void __interrupt() INTERRUPT_MANAGER(void){
         INT0_ISR();
     }
     else{/* Nothing */}
+#if ((INTERRUPT_FEATURE_ENABLE) == (CCP1_INTERRUPT_FEATURE))
+    /* ================== CCP1_Interrupt Service Routine ================== */
+    if((PIR1bits.CCP1IF == INTERRUPT_OCCUR) && (PIE1bits.CCP1IE == INTERRUPT_ENABLE)){
+        CCP1_ISR();
+    }
+    else{/* Nothing */}
+#endif
 #if ((INTERRUPT_FEATURE_ENABLE) == (ADC_INTERRUPT_FEATURE))
     /* ================== ADC_Interrupt Service Routine ================== */
     if((PIR1bits.ADIF == INTERRUPT_OCCUR) && (PIE1bits.ADIE == INTERRUPT_ENABLE)){
         ADC_ISR();
+    }
+    else{/* Nothing */}
+#endif
+#if ((INTERRUPT_FEATURE_ENABLE) == (CCP2_INTERRUPT_FEATURE))
+    /* ================== CCP2_Interrupt Service Routine ================== */
+    if((PIR2bits.CCP2IF == INTERRUPT_OCCUR) && (PIE2bits.CCP2IE == INTERRUPT_ENABLE)){
+        CCP2_ISR();
     }
     else{/* Nothing */}
 #endif

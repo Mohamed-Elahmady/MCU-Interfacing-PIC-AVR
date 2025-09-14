@@ -67,9 +67,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7043
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7043: extern volatile unsigned char INTCON __attribute__((address(0xFF2)));
 [v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
-"3296
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 3296: extern volatile unsigned char IPR1 __attribute__((address(0xF9F)));
-[v _IPR1 `Vuc ~T0 @X0 0 e@3999 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -936,50 +933,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "255
 [; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 255:         (PIR1 &= ~(uint8)((uint8)0x01 << 0x1));
 [e =& _PIR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `i `Vuc ]
-"258
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 258:         (RCON |= (uint8)((uint8)0x01 << 0x7));
-[e =| _RCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
-"259
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 259:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
+"271
+[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 271:         (RCON &= ~(uint8)((uint8)0x01 << 0x7));
+[e =& _RCON -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
+"272
+[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 272:         (INTCON |= (uint8)((uint8)0x01 << 0x7));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `Vuc ]
-"260
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 260:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
+"273
+[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 273:         (INTCON |= (uint8)((uint8)0x01 << 0x6));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `Vuc ]
-"261
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 261:         if(timer2->priority == INTERRUPT_HIGH_PRIORITY){
-[e $ ! == -> . *U _timer2 1 `ui -> . `E3730 1 `ui 337  ]
-{
-"262
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 262:             (IPR1 |= (uint8)((uint8)0x01 << 0x1));
-[e =| _IPR1 -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `Vuc ]
-"263
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 263:         }
-}
-[e $U 338  ]
-"264
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 264:         else if(timer2->priority == INTERRUPT_LOW_PRIORITY){
-[e :U 337 ]
-[e $ ! == -> . *U _timer2 1 `ui -> . `E3730 0 `ui 339  ]
-{
-"265
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 265:             (IPR1 &= ~(uint8)((uint8)0x01 << 0x1));
-[e =& _IPR1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 1 `i `uc `i `Vuc ]
-"266
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 266:         }
-}
-[e $U 340  ]
-"267
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 267:         else{
-[e :U 339 ]
-{
-"268
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 268:             Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"269
-[; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 269:         }
-}
-[e :U 340 ]
-[e :U 338 ]
 "275
 [; ;MCAL_Layer/Timers/Timer2/HAL_TIMER2.c: 275:         TIMER2_HANDLER_FUNCTION = timer2->TIMER2_INTERRUPT;
 [e = _TIMER2_HANDLER_FUNCTION . *U _timer2 0 ]

@@ -6181,7 +6181,99 @@ Std_ReturnType TIMER3_DEINIT(const TIMER3_CFG *timer3);
 Std_ReturnType TIMER3_WRITE_DATA(const TIMER3_CFG *timer3, uint16 data);
 Std_ReturnType TIMER3_READ_DATA(const TIMER3_CFG *timer3, uint16 *data);
 # 34 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 48 "ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h" 1
+# 16 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP_CFG.h" 1
+# 17 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h" 2
+# 57 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
+typedef void (* CCP_HANDLER)(void);
+
+typedef enum{
+    CCP_CAPTURE_MODE = (uint8) 0x00,
+    CCP_COMPARE_MODE,
+    CCP_PWM_MODE
+}CCP_MODE;
+
+typedef enum{
+    CCP1_SOURCE = (uint8)0x00,
+    CCP2_SOURCE
+}CCP_SOURCE;
+
+typedef enum{
+    CCP_CFG_MODULE_DISABLE = (uint8)0x00,
+    CCP_CFG_CAPTURE_MODE_1_FALLING_EDGE = (uint8)0x04,
+    CCP_CFG_CAPTURE_MODE_1_RISING_EDGE,
+    CCP_CFG_CAPTURE_MODE_4_RISING_EDGE,
+    CCP_CFG_CAPTURE_MODE_16_RISING_EDGE,
+    CCP_CFG_COMPARE_MODE_CLEAR_LOGIC = (uint8)0x08,
+    CCP_CFG_COMPARE_MODE_SET_LOGIC,
+    CCP_CFG_COMPARE_MODE_TOGGLE_LOGIC = (uint8)0x02,
+    CCP_CFG_COMPARE_MODE_GEN_SW_INTERRUPT = (uint8)0x0A,
+    CCP_CFG_COMPARE_MODE_GEN_EVENT,
+    CCP_CFG_PWM
+}CCP_MODE_CONFIGURATION;
+
+
+
+typedef enum{
+    CCP1_CCP2_TIMER1 = (uint8)0x00,
+    CCP1_TIMER1_CCP2_TIMER3 = (uint8)0x01,
+    CCP1_CCP2_TIMER3 = (uint8)0x02
+}CCP_CAPTURE_COMPARE_TIMER;
+
+
+
+
+
+typedef enum{
+    CCP_CAPTURE_NOT_READY = (uint8)0x00,
+    CCP_CAPTURE_READY
+}CCP_CAPTURE_STATUS;
+# 112 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
+typedef union{
+    struct{
+        uint8 CCPR_LOW ;
+        uint8 CCPR_HIGH ;
+    };
+    uint16 CCPR_16BIT ;
+}CCP_REGISTER_SIZE;
+
+typedef struct {
+
+    CCP_HANDLER ccp_interrupt;
+    INTERRUPT_PRIORITY priority;
+
+
+    CCP_MODE ccp_mode;
+    CCP_MODE_CONFIGURATION ccp_cfg;
+    CCP_SOURCE ccp_src;
+
+
+    uint32 pwm_freq;
+    TIMER2_PRESCALER_SELECT pwm_prescaler;
+    TIMER2_POSTSCALER_SELECT pwm_postscaler;
+
+
+    CCP_CAPTURE_COMPARE_TIMER ccp_timer;
+
+
+}CCP_CFG;
+
+
+
+Std_ReturnType CCP_INIT(const CCP_CFG *ccp);
+Std_ReturnType CCP_DEINIT(const CCP_CFG *ccp);
+
+
+Std_ReturnType CCP_IS_CAPTURE_READY(const CCP_CFG *ccp, CCP_CAPTURE_STATUS *state);
+Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value);
+# 157 "ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
+Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp);
+Std_ReturnType CCP_STOP_PWM(const CCP_CFG *ccp);
+Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty);
+# 36 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 50 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
 # 81 "ECUAL_Layer/ECUAL_INIT.c"

@@ -6075,23 +6075,10 @@ static Std_ReturnType ADC_SET_INTERRUPT_CONFIGURATION(const ADC_CFG *adc) {
     } else {
         (PIE1 |= (uint8)((uint8)0x01 << 0x6));
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
-
-        (RCON |= (uint8)((uint8)0x01 << 0x7));
+# 553 "MCAL_Layer/ADC/HAL_ADC.c"
+        (RCON &= ~(uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x7));
         (INTCON |= (uint8)((uint8)0x01 << 0x6));
-        if (INTERRUPT_HIGH_PRIORITY == adc->priority) {
-            (IPR1 |= (uint8)((uint8)0x01 << 0x6));
-        }
-        else if (INTERRUPT_LOW_PRIORITY == adc->priority) {
-            (IPR1 &= ~(uint8)((uint8)0x01 << 0x6));
-        }
-        else {
-            Retval = E_NOT_OK;
-        }
-
-
-
-
 
         ADC_HANDLER_FUNCTION = adc->ADC_INTERRUPT;
     }

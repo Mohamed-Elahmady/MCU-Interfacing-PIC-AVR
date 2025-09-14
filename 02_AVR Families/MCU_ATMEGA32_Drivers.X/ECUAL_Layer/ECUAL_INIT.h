@@ -31,6 +31,8 @@
 #include "../MCAL_Layer/Timers/Timer1/hal_timer1.h"
 #include "../MCAL_Layer/Timers/Timer2/hal_timer2.h"
 
+#include "../MCAL_Layer/PWM/hal_pwm.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

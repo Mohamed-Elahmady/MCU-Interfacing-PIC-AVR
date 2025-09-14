@@ -32,6 +32,8 @@
 #define int_interrupt_timer1                        (interrupt_feature_enable)
 #define int_interrupt_timer2                        (interrupt_feature_enable)
 #define int_interrupt_timer3                        (interrupt_feature_enable)
+#define int_interrupt_ccp1                          (interrupt_feature_enable)
+#define int_interrupt_ccp2                          (interrupt_feature_enable)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

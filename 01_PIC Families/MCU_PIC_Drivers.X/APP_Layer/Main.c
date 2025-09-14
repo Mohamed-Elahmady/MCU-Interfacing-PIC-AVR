@@ -8,44 +8,38 @@
 #include "Main.h"
 
 Std_ReturnType Ret = E_OK;
+TIMER1_CFG t1_timer;
 
-void t3_app_isr(void);
+void ccp_capture_isr(void);
 
-GPIO_LED led1 = {.pin.PORT = GPIO_PORTD, .pin.PIN =  GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
+void tim1_isr(void);
 
-//TIMER3_CFG tim3_timer = {
-//    .TIMER3_INTERRUPT = t3_app_isr,
-//    .priority = INTERRUPT_LOW_PRIORITY,
-//    .mode = TIMER3_TIMER_MODE,
-//    .osc = TIMER1_OSCILLATOR_DISABLE,
-//    .rw_reg = TIMER3_16BIT_RW_MODE,
-//    .prescaler = TIMER3_PRESCALER_DIV_8,
-//    .preloaded_value = 0X3CB0,
-//};
-
-TIMER3_CFG tim3_counter = {
-    .TIMER3_INTERRUPT = t3_app_isr,
-    .priority = INTERRUPT_LOW_PRIORITY,
-    .mode = TIMER3_COUNTER_MODE,
-    .osc = TIMER1_OSCILLATOR_DISABLE,
-    .rw_reg = TIMER3_16BIT_RW_MODE,
-    .prescaler = TIMER3_PRESCALER_DIV_1,
-    .sync = TIMER3_SYNCHRONOUS_COUNTER,
-    .preloaded_value = 0x0000,
+CCP_CFG ccp1_com = {
+//    .ccp_interrupt = ccp_capture_isr,
+//    .priority = INTERRUPT_HIGH_PRIORITY,
+    .ccp_src = CCP1_SOURCE,
+    .ccp_mode = CCP_COMPARE_MODE,
+    .ccp_cfg = CCP_CFG_COMPARE_MODE_SET_LOGIC,
+    .ccp_timer = CCP1_CCP2_TIMER1
 };
 
-volatile uint32 tim3_flag = 0;
+void timer1_timer_init(void){
+    t1_timer.TIMER1_INTERRUPT = NULL;
+    t1_timer.priority = INTERRUPT_LOW_PRIORITY;
+    t1_timer.mode = TIMER1_TIMER_MODE;
+    t1_timer.prescaler = TIMER1_PRESCALER_DIV_1;
+    t1_timer.rw_reg = TIMER1_16BIT_RW_MODE;
+    t1_timer.preloaded_value = 0x0000;
+    TIMER1_INIT(&t1_timer);
+}
+
+uint8 flag = 0;
 
 int main() {
+    CCP_WRITE_COMPARE_SET_VALUE(&ccp1_com, 12500);
     application_init();
+
     while (1) {
-        Ret = TIMER3_READ_DATA(&tim3_counter, &tim3_flag);
-        if(tim3_flag%5 == 0 && tim3_flag != 0){
-            GPIO_LED_TURN_ON(&led1);
-        }
-        else{
-            GPIO_LED_TURN_OFF(&led1);
-        }
         
     }
     return (EXIT_SUCCESS);
@@ -53,11 +47,22 @@ int main() {
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
-    GPIO_LED_INIT(&led1);
-    TIMER3_INIT(&tim3_counter);
+    CCP_INIT(&ccp1_com);
+    timer1_timer_init();
+    
+    
 }
 
-void t3_app_isr(void){
-//    tim3_flag++;
-//    GPIO_LED_TURN_TOGGLE(&led1);
+void ccp_capture_isr(void){
+    flag++;
+    if(flag == 0){
+        CCP_WRITE_COMPARE_SET_VALUE(&ccp1_com, 12500);
+        CCP1_SET_MODE_CONFIGURATION(CCP_CFG_COMPARE_MODE_SET_LOGIC);
+    }
+    else if(flag == 1){
+        CCP_WRITE_COMPARE_SET_VALUE(&ccp1_com, 37500);
+        CCP1_SET_MODE_CONFIGURATION(CCP_CFG_COMPARE_MODE_CLEAR_LOGIC);
+        flag = 0;
+    }
+    TIMER1_WRITE_DATA(&t1_timer, 0x0000);
 }

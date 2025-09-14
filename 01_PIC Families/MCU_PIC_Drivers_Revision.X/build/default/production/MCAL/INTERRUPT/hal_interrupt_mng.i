@@ -5656,6 +5656,8 @@ void tmr0_isr(void);
 void tmr1_isr(void);
 void tmr2_isr(void);
 void tmr3_isr(void);
+void ccp1_isr(void);
+void ccp2_isr(void);
 # 11 "MCAL/INTERRUPT/hal_interrupt_mng.c" 2
 
 
@@ -5669,6 +5671,18 @@ void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
 
     if ((INTCONbits.INT0IF == (uint8)0x01) && (INTCONbits.INT0IE == (uint8)0x01)) {
         int0_isr();
+    }
+    else { }
+
+
+    if ((PIR1bits.CCP1IF == (uint8)0x01) && (PIE1bits.CCP1IE == (uint8)0x01)) {
+        ccp1_isr();
+    }
+    else { }
+
+
+    if ((PIR2bits.CCP2IF == (uint8)0x01) && (PIE2bits.CCP2IE == (uint8)0x01)) {
+        ccp2_isr();
     }
     else { }
 

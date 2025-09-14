@@ -146,6 +146,18 @@ void __interrupt() interrupt_manager(void) {
     }
     else { /* Nothing*/ }
     
+    // for CCP1 internal interrupt
+    if ((PIR1bits.CCP1IF == interrupt_occur) && (PIE1bits.CCP1IE == interrupt_enable)) {
+        ccp1_isr();
+    }
+    else { /* Nothing*/ }
+    
+    // for CCP2 internal interrupt
+    if ((PIR2bits.CCP2IF == interrupt_occur) && (PIE2bits.CCP2IE == interrupt_enable)) {
+        ccp2_isr();
+    }
+    else { /* Nothing*/ }
+    
     // for ADC internal interrupt
     if ((PIR1bits.ADIF == interrupt_occur) && (PIE1bits.ADIE == interrupt_enable)) {
         adc_isr();

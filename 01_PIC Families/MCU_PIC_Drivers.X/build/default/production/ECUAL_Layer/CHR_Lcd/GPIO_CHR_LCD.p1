@@ -552,20 +552,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 313 ]
 }
 "46
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 46:         _delay((unsigned long)((20)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 46:         _delay((unsigned long)((20)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "47
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 47:         Retval = GPIO_LCD_4BIT_SEND_COMMAND(lcd, (uint8)0x38);
 [e = _Retval ( _GPIO_LCD_4BIT_SEND_COMMAND (2 , _lcd -> -> 56 `i `uc ]
 "48
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 48:         _delay((unsigned long)((5)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 48:         _delay((unsigned long)((5)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "49
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 49:         Retval = GPIO_LCD_4BIT_SEND_COMMAND(lcd, (uint8)0x38);
 [e = _Retval ( _GPIO_LCD_4BIT_SEND_COMMAND (2 , _lcd -> -> 56 `i `uc ]
 "50
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 50:         _delay((unsigned long)((150)*(8000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 50:         _delay((unsigned long)((150)*(4000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
 "51
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 51:         Retval = GPIO_LCD_4BIT_SEND_COMMAND(lcd, (uint8)0x38);
 [e = _Retval ( _GPIO_LCD_4BIT_SEND_COMMAND (2 , _lcd -> -> 56 `i `uc ]
@@ -987,20 +987,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 343 ]
 }
 "196
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 196:         _delay((unsigned long)((20)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 196:         _delay((unsigned long)((20)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "197
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 197:         Retval = GPIO_LCD_8BIT_SEND_COMMAND(lcd, (uint8)0x38);
 [e = _Retval ( _GPIO_LCD_8BIT_SEND_COMMAND (2 , _lcd -> -> 56 `i `uc ]
 "198
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 198:         _delay((unsigned long)((5)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 198:         _delay((unsigned long)((5)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "199
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 199:         Retval = GPIO_LCD_8BIT_SEND_COMMAND(lcd, (uint8)0x38);
 [e = _Retval ( _GPIO_LCD_8BIT_SEND_COMMAND (2 , _lcd -> -> 56 `i `uc ]
 "200
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 200:         _delay((unsigned long)((150)*(8000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 200:         _delay((unsigned long)((150)*(4000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
 "201
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 201:         Retval = GPIO_LCD_8BIT_SEND_COMMAND(lcd, (uint8)0x38);
 [e = _Retval ( _GPIO_LCD_8BIT_SEND_COMMAND (2 , _lcd -> -> 56 `i `uc ]
@@ -1821,8 +1821,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 439:         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_HIGH);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U . *U _lcd 2 . `E3687 1 ]
 "440
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 440:         _delay((unsigned long)((5)*(8000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 440:         _delay((unsigned long)((5)*(4000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
 "441
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 441:         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_LOW);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U . *U _lcd 2 . `E3687 0 ]
@@ -1971,8 +1971,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 481:         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_HIGH);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U . *U _lcd 2 . `E3687 1 ]
 "482
-[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 482:         _delay((unsigned long)((5)*(8000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 482:         _delay((unsigned long)((5)*(4000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
 "483
 [; ;ECUAL_Layer/CHR_Lcd/GPIO_CHR_LCD.c: 483:         Retval = GPIO_PIN_WRITE_LOGIC(&(lcd->en_pin), GPIO_LOW);
 [e = _Retval ( _GPIO_PIN_WRITE_LOGIC (2 , &U . *U _lcd 2 . `E3687 0 ]

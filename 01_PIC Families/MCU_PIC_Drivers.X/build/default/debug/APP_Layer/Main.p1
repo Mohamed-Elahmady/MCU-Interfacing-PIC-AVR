@@ -3,68 +3,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;APP_Layer/Main.c: 10: Std_ReturnType Ret = E_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
-"67 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
-[; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 67: typedef struct{
-[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S306 . PORT PIN DIRECTION LOGIC ]
-"33 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 33: typedef struct{
-[s S307 `S306 1 ]
-[n S307 . pin ]
-"14 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 14: GPIO_LED led1 = {.pin.PORT = GPIO_PORTD, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-[c E3666 0 1 2 3 4 .. ]
-[n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
-[c E3673 0 1 2 3 4 5 6 7 .. ]
-[n E3673 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
-[c E3683 0 1 .. ]
-[n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
-[c E3687 0 1 .. ]
-[n E3687 . GPIO_LOW GPIO_HIGH  ]
-[v F4203 `(v ~T0 @X0 0 tf ]
-"26
-[; ;APP_Layer/Main.c: 26: TIMER3_CFG tim3_counter = {
+[v F4119 `(v ~T0 @X0 0 tf ]
+"11
+[; ;APP_Layer/Main.c: 11: TIMER1_CFG t1_timer;
 [c E3907 0 1 .. ]
 [n E3907 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
-[c E4183 0 1 2 3 .. ]
-[n E4183 . TIMER3_PRESCALER_DIV_1 TIMER3_PRESCALER_DIV_2 TIMER3_PRESCALER_DIV_4 TIMER3_PRESCALER_DIV_8  ]
+[c E4101 0 1 .. ]
+[n E4101 . TIMER1_TIMER_MODE TIMER1_COUNTER_MODE  ]
+[c E4105 0 1 .. ]
+[n E4105 . TIMER1_SYNCHRONOUS_COUNTER TIMER1_ASYNCHRONOUS_COUNTER  ]
 [c E4109 0 1 .. ]
 [n E4109 . TIMER1_OSCILLATOR_DISABLE TIMER1_OSCILLATOR_ENABLE  ]
-[c E4189 0 1 .. ]
-[n E4189 . TIMER3_TIMER_MODE TIMER3_COUNTER_MODE  ]
-[c E4193 0 1 .. ]
-[n E4193 . TIMER3_SYNCHRONOUS_COUNTER TIMER3_ASYNCHRONOUS_COUNTER  ]
-[c E4197 0 1 .. ]
-[n E4197 . TIMER3_8BIT_RW_MODE TIMER3_16BIT_RW_MODE  ]
-"69 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h
-[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h: 69: typedef struct{
-[s S321 `*F4203 1 `E3907 1 `us 1 `E4183 1 `E4109 1 `E4189 1 `E4193 1 `E4197 1 ]
-[n S321 . TIMER3_INTERRUPT priority preloaded_value prescaler osc mode sync rw_reg ]
-"12 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 12: void t3_app_isr(void);
-[v _t3_app_isr `(v ~T0 @X0 0 ef ]
+[c E4095 0 1 2 3 .. ]
+[n E4095 . TIMER1_PRESCALER_DIV_1 TIMER1_PRESCALER_DIV_2 TIMER1_PRESCALER_DIV_4 TIMER1_PRESCALER_DIV_8  ]
+[c E4113 0 1 .. ]
+[n E4113 . TIMER1_8BIT_RW_MODE TIMER1_16BIT_RW_MODE  ]
+"79 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h: 79: typedef struct{
+[s S319 `*F4119 1 `E3907 1 `us 1 `E4101 1 `E4105 1 `E4109 1 `E4095 1 `E4113 1 ]
+[n S319 . TIMER1_INTERRUPT priority preloaded_value mode sync osc prescaler rw_reg ]
+[v F4264 `(v ~T0 @X0 0 tf ]
+"15 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 15: CCP_CFG ccp1_cap = {
+[c E4224 0 1 2 .. ]
+[n E4224 . CCP_CAPTURE_MODE CCP_COMPARE_MODE CCP_PWM_MODE  ]
+[c E4233 0 4 5 6 7 8 9 2 10 11 12 .. ]
+[n E4233 . CCP_CFG_MODULE_DISABLE CCP_CFG_CAPTURE_MODE_1_FALLING_EDGE CCP_CFG_CAPTURE_MODE_1_RISING_EDGE CCP_CFG_CAPTURE_MODE_4_RISING_EDGE CCP_CFG_CAPTURE_MODE_16_RISING_EDGE CCP_CFG_COMPARE_MODE_CLEAR_LOGIC CCP_CFG_COMPARE_MODE_SET_LOGIC CCP_CFG_COMPARE_MODE_TOGGLE_LOGIC CCP_CFG_COMPARE_MODE_GEN_SW_INTERRUPT CCP_CFG_COMPARE_MODE_GEN_EVENT CCP_CFG_PWM  ]
+[c E4229 0 1 .. ]
+[n E4229 . CCP1_SOURCE CCP2_SOURCE  ]
+[c E4140 0 1 2 .. ]
+[n E4140 . TIMER2_PRESCALER_DIV_1 TIMER2_PRESCALER_DIV_4 TIMER2_PRESCALER_DIV_16  ]
+[c E4145 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E4145 . TIMER2_POSTSCALER_DIV_1 TIMER2_POSTSCALER_DIV_2 TIMER2_POSTSCALER_DIV_3 TIMER2_POSTSCALER_DIV_4 TIMER2_POSTSCALER_DIV_5 TIMER2_POSTSCALER_DIV_6 TIMER2_POSTSCALER_DIV_7 TIMER2_POSTSCALER_DIV_8 TIMER2_POSTSCALER_DIV_9 TIMER2_POSTSCALER_DIV_10 TIMER2_POSTSCALER_DIV_11 TIMER2_POSTSCALER_DIV_12 TIMER2_POSTSCALER_DIV_13 TIMER2_POSTSCALER_DIV_14 TIMER2_POSTSCALER_DIV_15 TIMER2_POSTSCALER_DIV_16  ]
+[c E4246 0 1 2 .. ]
+[n E4246 . CCP1_CCP2_TIMER1 CCP1_TIMER1_CCP2_TIMER3 CCP1_CCP2_TIMER3  ]
+"120 APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h: 120: typedef struct {
+[s S324 `*F4264 1 `E3907 1 `E4224 1 `E4233 1 `E4229 1 `ul 1 `E4140 1 `E4145 1 `E4246 1 ]
+[n S324 . ccp_interrupt priority ccp_mode ccp_cfg ccp_src pwm_freq pwm_prescaler pwm_postscaler ccp_timer ]
+"13 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 13: void ccp_capture_isr(void);
+[v _ccp_capture_isr `(v ~T0 @X0 0 ef ]
+[v F4300 `(v ~T0 @X0 0 tf ]
+"94 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer1/HAL_TIMER1.h: 94: Std_ReturnType TIMER1_INIT(const TIMER1_CFG *timer1);
+[v _TIMER1_INIT `(E3659 ~T0 @X0 0 ef1`*CS319 ]
 [p mainexit ]
 "39 APP_Layer/Main.h
 [; ;APP_Layer/Main.h: 39: void application_init(void);
 [v _application_init `(v ~T0 @X0 0 ef ]
-"87 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h
-[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h: 87: Std_ReturnType TIMER3_READ_DATA(const TIMER3_CFG *timer3, uint16 *data);
-[v _TIMER3_READ_DATA `(E3659 ~T0 @X0 0 ef2`*CS321`*us ]
-"42 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 42: Std_ReturnType GPIO_LED_TURN_ON(const GPIO_LED *led);
-[v _GPIO_LED_TURN_ON `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"41
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 41: Std_ReturnType GPIO_LED_TURN_OFF(const GPIO_LED *led);
-[v _GPIO_LED_TURN_OFF `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"48 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
-[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 48: void ECUAL_LAYER_INIT(void);
+"50 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
+[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 50: void ECUAL_LAYER_INIT(void);
 [v _ECUAL_LAYER_INIT `(v ~T0 @X0 0 ef ]
-"39 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
-[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 39: Std_ReturnType GPIO_LED_INIT(const GPIO_LED *led);
-[v _GPIO_LED_INIT `(E3659 ~T0 @X0 0 ef1`*CS307 ]
-"84 APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h
-[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/Timers/Timer3/HAL_TIMER3.h: 84: Std_ReturnType TIMER3_INIT(const TIMER3_CFG *timer3);
-[v _TIMER3_INIT `(E3659 ~T0 @X0 0 ef1`*CS321 ]
+"143 APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h: 143: Std_ReturnType CCP_INIT(const CCP_CFG *ccp);
+[v _CCP_INIT `(E3659 ~T0 @X0 0 ef1`*CS324 ]
+"148
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h: 148: Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value);
+[v _CCP_READ_CAPTURE_VALUE `(E3659 ~T0 @X0 0 ef2`*CS324`*us ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -512,125 +508,121 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _Ret
 . `E3659 1
 ]
-"14
-[; ;APP_Layer/Main.c: 14: GPIO_LED led1 = {.pin.PORT = GPIO_PORTD, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-[v _led1 `S307 ~T0 @X0 1 e ]
-[i _led1
+"11
+[; ;APP_Layer/Main.c: 11: TIMER1_CFG t1_timer;
+[v _t1_timer `S319 ~T0 @X0 1 e ]
+"15
+[; ;APP_Layer/Main.c: 15: CCP_CFG ccp1_cap = {
+[v _ccp1_cap `S324 ~T0 @X0 1 e ]
+[i _ccp1_cap
 :U ..
 :U ..
-:U ..
-:U ..
--> . `E3666 3 `uc
--> . `E3673 0 `uc
--> . `E3683 0 `uc
--> . `E3687 0 `uc
-..
-..
+&U _ccp_capture_isr
+. `E3907 1
+. `E4224 0
+. `E4233 2
+. `E4229 0
+-> -> 0 `i `ul
+-> -> 0 `i `E4140
+-> -> 0 `i `E4145
+. `E4246 0
 ..
 ..
 ]
+"24
+[; ;APP_Layer/Main.c: 24: void timer1_timer_init(void){
+[v _timer1_timer_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _timer1_timer_init ]
+[f ]
+"25
+[; ;APP_Layer/Main.c: 25:     t1_timer.TIMER1_INTERRUPT = ((void*)0);
+[e = . _t1_timer 0 -> -> -> 0 `i `*v `*F4300 ]
 "26
-[; ;APP_Layer/Main.c: 26: TIMER3_CFG tim3_counter = {
-[v _tim3_counter `S321 ~T0 @X0 1 e ]
-[i _tim3_counter
-:U ..
-:U ..
-&U _t3_app_isr
-. `E3907 0
+[; ;APP_Layer/Main.c: 26:     t1_timer.priority = INTERRUPT_LOW_PRIORITY;
+[e = . _t1_timer 1 . `E3907 0 ]
+"27
+[; ;APP_Layer/Main.c: 27:     t1_timer.mode = TIMER1_TIMER_MODE;
+[e = . _t1_timer 3 . `E4101 0 ]
+"28
+[; ;APP_Layer/Main.c: 28:     t1_timer.prescaler = TIMER1_PRESCALER_DIV_1;
+[e = . _t1_timer 6 . `E4095 0 ]
+"29
+[; ;APP_Layer/Main.c: 29:     t1_timer.rw_reg = TIMER1_8BIT_RW_MODE;
+[e = . _t1_timer 7 . `E4113 0 ]
+"30
+[; ;APP_Layer/Main.c: 30:     t1_timer.preloaded_value = 0x0000;
+[e = . _t1_timer 2 -> -> 0 `i `us ]
+"31
+[; ;APP_Layer/Main.c: 31:     TIMER1_INIT(&t1_timer);
+[e ( _TIMER1_INIT (1 -> &U _t1_timer `*CS319 ]
+"32
+[; ;APP_Layer/Main.c: 32: }
+[e :UE 325 ]
+}
+"34
+[; ;APP_Layer/Main.c: 34: uint16 capture_time = 0;
+[v _capture_time `us ~T0 @X0 1 e ]
+[i _capture_time
 -> -> 0 `i `us
-. `E4183 0
-. `E4109 0
-. `E4189 1
-. `E4193 0
-. `E4197 1
-..
-..
-]
-"37
-[; ;APP_Layer/Main.c: 37: volatile uint32 tim3_flag = 0;
-[v _tim3_flag `Vul ~T0 @X0 1 e ]
-[i _tim3_flag
--> -> -> 0 `i `l `ul
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"39
-[; ;APP_Layer/Main.c: 39: int main() {
+"36
+[; ;APP_Layer/Main.c: 36: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"40
-[; ;APP_Layer/Main.c: 40:     application_init();
+"37
+[; ;APP_Layer/Main.c: 37:     application_init();
 [e ( _application_init ..  ]
+"39
+[; ;APP_Layer/Main.c: 39:     while (1) {
+[e :U 328 ]
+{
 "41
-[; ;APP_Layer/Main.c: 41:     while (1) {
-[e :U 324 ]
-{
-"42
-[; ;APP_Layer/Main.c: 42:         Ret = TIMER3_READ_DATA(&tim3_counter, &tim3_flag);
-[e = _Ret ( _TIMER3_READ_DATA (2 , -> &U _tim3_counter `*CS321 -> &U _tim3_flag `*us ]
-"43
-[; ;APP_Layer/Main.c: 43:         if(tim3_flag%5 == 0 && tim3_flag != 0){
-[e $ ! && == % _tim3_flag -> -> -> 5 `i `l `ul -> -> -> 0 `i `l `ul != _tim3_flag -> -> -> 0 `i `l `ul 326  ]
-{
-"44
-[; ;APP_Layer/Main.c: 44:             GPIO_LED_TURN_ON(&led1);
-[e ( _GPIO_LED_TURN_ON (1 -> &U _led1 `*CS307 ]
-"45
-[; ;APP_Layer/Main.c: 45:         }
-}
-[e $U 327  ]
-"46
-[; ;APP_Layer/Main.c: 46:         else{
-[e :U 326 ]
-{
-"47
-[; ;APP_Layer/Main.c: 47:             GPIO_LED_TURN_OFF(&led1);
-[e ( _GPIO_LED_TURN_OFF (1 -> &U _led1 `*CS307 ]
-"48
-[; ;APP_Layer/Main.c: 48:         }
+[; ;APP_Layer/Main.c: 41:     }
 }
 [e :U 327 ]
-"50
-[; ;APP_Layer/Main.c: 50:     }
-}
-[e :U 323 ]
-[e $U 324  ]
-[e :U 325 ]
-"51
-[; ;APP_Layer/Main.c: 51:     return (0);
+[e $U 328  ]
+[e :U 329 ]
+"42
+[; ;APP_Layer/Main.c: 42:     return (0);
 [e ) -> 0 `i ]
-[e $UE 322  ]
-"52
-[; ;APP_Layer/Main.c: 52: }
-[e :UE 322 ]
+[e $UE 326  ]
+"43
+[; ;APP_Layer/Main.c: 43: }
+[e :UE 326 ]
 }
-"54
-[; ;APP_Layer/Main.c: 54: void application_init(void) {
+"45
+[; ;APP_Layer/Main.c: 45: void application_init(void) {
 [v _application_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_init ]
 [f ]
-"55
-[; ;APP_Layer/Main.c: 55:     ECUAL_LAYER_INIT();
+"46
+[; ;APP_Layer/Main.c: 46:     ECUAL_LAYER_INIT();
 [e ( _ECUAL_LAYER_INIT ..  ]
-"56
-[; ;APP_Layer/Main.c: 56:     GPIO_LED_INIT(&led1);
-[e ( _GPIO_LED_INIT (1 -> &U _led1 `*CS307 ]
-"57
-[; ;APP_Layer/Main.c: 57:     TIMER3_INIT(&tim3_counter);
-[e ( _TIMER3_INIT (1 -> &U _tim3_counter `*CS321 ]
-"58
-[; ;APP_Layer/Main.c: 58: }
-[e :UE 328 ]
+"47
+[; ;APP_Layer/Main.c: 47:     CCP_INIT(&ccp1_cap);
+[e ( _CCP_INIT (1 -> &U _ccp1_cap `*CS324 ]
+"48
+[; ;APP_Layer/Main.c: 48:     timer1_timer_init();
+[e ( _timer1_timer_init ..  ]
+"51
+[; ;APP_Layer/Main.c: 51: }
+[e :UE 330 ]
 }
-"60
-[; ;APP_Layer/Main.c: 60: void t3_app_isr(void){
-[v _t3_app_isr `(v ~T0 @X0 1 ef ]
+"53
+[; ;APP_Layer/Main.c: 53: void ccp_capture_isr(void){
+[v _ccp_capture_isr `(v ~T0 @X0 1 ef ]
 {
-[e :U _t3_app_isr ]
+[e :U _ccp_capture_isr ]
 [f ]
-"63
-[; ;APP_Layer/Main.c: 63: }
-[e :UE 329 ]
+"54
+[; ;APP_Layer/Main.c: 54:     CCP_READ_CAPTURE_VALUE(&ccp1_cap, &capture_time);
+[e ( _CCP_READ_CAPTURE_VALUE (2 , -> &U _ccp1_cap `*CS324 &U _capture_time ]
+"55
+[; ;APP_Layer/Main.c: 55: }
+[e :UE 331 ]
 }

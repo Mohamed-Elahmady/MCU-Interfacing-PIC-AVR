@@ -139,9 +139,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7075
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7075: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS291 ~T0 @X0 0 e@4082 ]
-"6973
-[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 6973: extern volatile unsigned char INTCON2 __attribute__((address(0xFF1)));
-[v _INTCON2 `Vuc ~T0 @X0 0 e@4081 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -1198,50 +1195,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "215
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 215:         (INTCON |= (uint8)((uint8)0x01 << 0x5));
 [e =| _INTCON -> -> << -> -> -> 1 `i `uc `i -> 5 `i `uc `Vuc ]
-"217
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 217:         (RCONbits.IPEN = (uint8)0x01);
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-"218
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 218:         (INTCONbits.GIEH = (uint8)0x01);
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-"219
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 219:         (INTCONbits.GIEL = (uint8)0x01);
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-"220
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 220:         if(timer0->priority == interrupt_high_priority){
-[e $ ! == -> . *U _timer0 1 `ui -> . `E3736 1 `ui 356  ]
-{
-"221
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 221:             (INTCON2 |= (uint8)((uint8)0x01 << 0x2));
-[e =| _INTCON2 -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `Vuc ]
-"222
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 222:         }
-}
-[e $U 357  ]
-"223
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 223:         else if(timer0->priority == interrupt_low_priority){
-[e :U 356 ]
-[e $ ! == -> . *U _timer0 1 `ui -> . `E3736 0 `ui 358  ]
-{
-"224
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 224:             (INTCON2 &= ~(uint8)((uint8)0x01 << 0x2));
-[e =& _INTCON2 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 2 `i `uc `i `Vuc ]
-"225
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 225:         }
-}
-[e $U 359  ]
-"226
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 226:         else{
-[e :U 358 ]
-{
-"227
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 227:             Retval = E_NOT_OK;
-[e = _Retval . `E3659 0 ]
-"228
-[; ;MCAL/Timers/Timer0/hal_timer0.c: 228:         }
-}
-[e :U 359 ]
-[e :U 357 ]
+"230
+[; ;MCAL/Timers/Timer0/hal_timer0.c: 230:         (RCONbits.IPEN = (uint8)0x00);
+[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
+"231
+[; ;MCAL/Timers/Timer0/hal_timer0.c: 231:         (INTCONbits.GIE = (uint8)0x01);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"232
+[; ;MCAL/Timers/Timer0/hal_timer0.c: 232:         (INTCONbits.PEIE = (uint8)0x01);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "234
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 234:       timer0_handler_function = timer0->timer0_interrupt;
 [e = _timer0_handler_function . *U _timer0 0 ]
@@ -1270,7 +1232,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _Retval . `E3659 1 ]
 "243
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 243:     if(((void*)0) == timer0){
-[e $ ! == -> -> -> 0 `i `*v `*CS307 _timer0 361  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _timer0 357  ]
 {
 "244
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 244:         Retval = E_NOT_OK;
@@ -1278,10 +1240,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "245
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 245:     }
 }
-[e $U 362  ]
+[e $U 358  ]
 "246
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 246:     else{
-[e :U 361 ]
+[e :U 357 ]
 {
 "247
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 247:         (T0CON |= (uint8)((uint8)0x01 << 0x7));
@@ -1289,12 +1251,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "248
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 248:     }
 }
-[e :U 362 ]
+[e :U 358 ]
 "249
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 249:     return Retval;
 [e ) _Retval ]
-[e $UE 360  ]
+[e $UE 356  ]
 "250
 [; ;MCAL/Timers/Timer0/hal_timer0.c: 250: }
-[e :UE 360 ]
+[e :UE 356 ]
 }

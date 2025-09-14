@@ -5763,23 +5763,10 @@ Std_ReturnType adc_init(const adc_cfg *adc){
 
         (PIR1 &= ~(uint8)((uint8)0x01 << 0x6));
         (PIE1 |= (uint8)((uint8)0x01 << 0x6));
-
-        (RCONbits.IPEN = (uint8)0x01);
-        (INTCONbits.GIEH = (uint8)0x01);
-        (INTCONbits.GIEL = (uint8)0x01);
-        if(interrupt_high_priority == adc->priority){
-            (IPR1 |= (uint8)((uint8)0x01 << 0x6));
-        }
-        else if(interrupt_low_priority == adc->priority){
-            (IPR1 &= ~(uint8)((uint8)0x01 << 0x6));
-        }
-        else{
-            Retval = E_NOT_OK;
-        }
-
-
-
-
+# 70 "MCAL/ADC/hal_adc.c"
+        (RCONbits.IPEN = (uint8)0x00);
+        (INTCONbits.GIE = (uint8)0x01);
+        (INTCONbits.PEIE = (uint8)0x01);
 
         adc_interrupt_handler = adc->adc_interrupt;
 

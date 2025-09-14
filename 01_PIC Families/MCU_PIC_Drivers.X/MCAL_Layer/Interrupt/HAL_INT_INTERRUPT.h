@@ -120,6 +120,47 @@
 
 #endif
 
+// CCP1 Module Interrupt Configuration
+#if ((INTERRUPT_FEATURE_ENABLE) == (CCP1_INTERRUPT_FEATURE))
+
+// CCP1 Module Flag Bit
+#define INT_INTERRUPT_CCP1_CLEAR_FLAG()                        CLEAR_BIT(PIR1, _PIR1_CCP1IF_POSITION)
+
+// CCP1 Module Enable Bit
+#define INT_INTERRUPT_CCP1_DISABLE()                           CLEAR_BIT(PIE1, _PIE1_CCP1IE_POSITION)
+#define INT_INTERRUPT_CCP1_ENABLE()                            SET_BIT(PIE1, _PIE1_CCP1IE_POSITION)
+
+// CCP1 Module Priority Bit
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+#define INT_INTERRUPT_CCP1_LOW_PRIORITY()                      CLEAR_BIT(IPR1, _IPR1_CCP1IP_POSITION)
+#define INT_INTERRUPT_CCP1_HIGH_PRIORITY()                     SET_BIT(IPR1, _IPR1_CCP1IP_POSITION)
+
+#endif
+
+#endif
+
+
+// CCP1 Module Interrupt Configuration
+#if ((INTERRUPT_FEATURE_ENABLE) == (CCP2_INTERRUPT_FEATURE))
+
+// CCP2 Module Flag Bit
+#define INT_INTERRUPT_CCP2_CLEAR_FLAG()                        CLEAR_BIT(PIR2, _PIR2_CCP2IF_POSITION)
+
+// CCP2 Module Enable Bit
+#define INT_INTERRUPT_CCP2_DISABLE()                           CLEAR_BIT(PIE2, _PIE2_CCP2IE_POSITION)
+#define INT_INTERRUPT_CCP2_ENABLE()                            SET_BIT(PIE2, _PIE2_CCP2IE_POSITION)
+
+// CCP2 Module Priority Bit
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+#define INT_INTERRUPT_CCP2_LOW_PRIORITY()                      CLEAR_BIT(IPR2, _IPR2_CCP2IP_POSITION)
+#define INT_INTERRUPT_CCP2_HIGH_PRIORITY()                     SET_BIT(IPR2, _IPR2_CCP2IP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

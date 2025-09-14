@@ -109,6 +109,10 @@
           <itemPath>MCAL_Layer/Interrupt/hal_interrupt_cfg.h</itemPath>
           <itemPath>MCAL_Layer/Interrupt/hal_interrupt_gen_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="PWM" displayName="PWM" projectFiles="true">
+          <itemPath>MCAL_Layer/PWM/hal_pwm.h</itemPath>
+          <itemPath>MCAL_Layer/PWM/hal_pwm_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
           <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
             <itemPath>MCAL_Layer/Timers/Timer0/hal_timer0.h</itemPath>
@@ -182,6 +186,9 @@
           <itemPath>MCAL_Layer/Interrupt/hal_ext_interrupt.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/hal_int_interrupt.c</itemPath>
           <itemPath>MCAL_Layer/Interrupt/hal_interrupt_mng.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="PWM" displayName="PWM" projectFiles="true">
+          <itemPath>MCAL_Layer/PWM/hal_pwm.c</itemPath>
         </logicalFolder>
         <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
           <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">

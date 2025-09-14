@@ -5747,7 +5747,7 @@ Std_ReturnType external_interrupt_intx_init(const interrupt_intx *inter){
         Retval = external_interrupt_intx_set_edge(inter);
 
 
-        Retval = external_interrupt_intx_set_priority(inter);
+
 
 
         Retval = external_interrupt_intx_pin_init(inter);
@@ -5818,7 +5818,7 @@ Std_ReturnType external_interrupt_rbx_init(const interrupt_rbx *inter){
         Retval = external_interrupt_OC_rbx_clear_flag(inter);
 
 
-        Retval = external_interrupt_OC_rbx_set_priority(inter);
+
 
 
         Retval = external_interrupt_OC_rbx_pin_init(inter);
@@ -5990,53 +5990,7 @@ static Std_ReturnType external_interrupt_intx_set_edge(const interrupt_intx *int
     }
     return Retval;
 }
-
-
-
-static Std_ReturnType external_interrupt_intx_set_priority(const interrupt_intx *inter){
-    Std_ReturnType Retval = E_OK;
-    if(((void*)0) == inter){
-        Retval = E_NOT_OK;
-    }
-    else{
-        switch(inter->src){
-            case interrupt_int0:
-                if(interrupt_high_priority != inter->priority){
-                    Retval = E_NOT_OK;
-                }
-                break;
-            case interrupt_int1:
-                if(interrupt_high_priority == inter->priority){
-                    (INTCON3bits.INT1IP = (uint8)0x01);
-                }
-                else if(interrupt_low_priority == inter->priority){
-                    (INTCON3bits.INT1IP = (uint8)0x00);
-                }
-                else{
-                    Retval = E_NOT_OK;
-                }
-                break;
-            case interrupt_int2:
-                if(interrupt_high_priority == inter->priority){
-                    (INTCON3bits.INT2IP = (uint8)0x01);
-                }
-                else if(interrupt_low_priority == inter->priority){
-                    (INTCON3bits.INT2IP = (uint8)0x00);
-                }
-                else{
-                    Retval = E_NOT_OK;
-                }
-                break;
-            default :
-                Retval = E_NOT_OK;
-                break;
-        }
-    }
-    return Retval;
-}
-
-
-
+# 365 "MCAL/INTERRUPT/hal_ext_interrupt.c"
 static Std_ReturnType external_interrupt_intx_clear_flag(const interrupt_intx *inter){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == inter){
@@ -6094,37 +6048,37 @@ static Std_ReturnType external_interrupt_intx_set_enable(const interrupt_intx *i
         switch(inter->src){
             case interrupt_int0:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCONbits.INT0IE = (uint8)0x01);
                 break;
             case interrupt_int1:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCON3bits.INT1IE = (uint8)0x01);
                 break;
             case interrupt_int2:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCON3bits.INT2IE = (uint8)0x01);
                 break;
@@ -6205,32 +6159,7 @@ static Std_ReturnType external_interrupt_OC_rbx_pin_init(const interrupt_rbx *in
     }
     return Retval;
 }
-
-
-
-static Std_ReturnType external_interrupt_OC_rbx_set_priority(const interrupt_rbx *inter){
-    Std_ReturnType Retval = E_OK;
-    if(((void*)0) == inter){
-        Retval = E_NOT_OK;
-    }
-    else{
-        switch(inter->priority){
-            case interrupt_high_priority:
-                (INTCON2bits.RBIP = (uint8)0x01);
-                break;
-            case interrupt_low_priority:
-                (INTCON2bits.RBIP = (uint8)0x00);
-                break;
-            default :
-                Retval = E_NOT_OK;
-                break;
-        }
-    }
-    return Retval;
-}
-
-
-
+# 559 "MCAL/INTERRUPT/hal_ext_interrupt.c"
 static Std_ReturnType external_interrupt_OC_rbx_clear_flag(const interrupt_rbx *inter){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == inter){
@@ -6282,52 +6211,52 @@ static Std_ReturnType external_interrupt_OC_rbx_set_enable(const interrupt_rbx *
         switch(inter->src){
             case interrupt_rb4:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCONbits.RBIE = (uint8)0x01);
                 (IOCBbits.IOCB4 = (uint8)0x01);
                 break;
             case interrupt_rb5:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCONbits.RBIE = (uint8)0x01);
                 (IOCBbits.IOCB5 = (uint8)0x01);
                 break;
             case interrupt_rb6:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCONbits.RBIE = (uint8)0x01);
                 (IOCBbits.IOCB6 = (uint8)0x01);
                 break;
             case interrupt_rb7:
 
-                (RCONbits.IPEN = (uint8)0x01);
-                (INTCONbits.GIEH = (uint8)0x01);
-                (INTCONbits.GIEL = (uint8)0x01);
 
 
 
 
+                (RCONbits.IPEN = (uint8)0x00);
+                (INTCONbits.GIE = (uint8)0x01);
+                (INTCONbits.PEIE = (uint8)0x01);
 
                 (INTCONbits.RBIE = (uint8)0x01);
                 (IOCBbits.IOCB7 = (uint8)0x01);

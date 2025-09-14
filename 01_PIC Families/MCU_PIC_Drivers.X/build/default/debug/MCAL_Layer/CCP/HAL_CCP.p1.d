@@ -1,0 +1,24 @@
+build/default/debug/MCAL_Layer/CCP/HAL_CCP.p1:  \
+MCAL_Layer/CCP/HAL_CCP.c  \
+MCAL_Layer/CCP/HAL_CCP.h  \
+MCAL_Layer/CCP/HAL_CCP_CFG.h  \
+MCAL_Layer/CCP/../mcal_std_types.h  \
+MCAL_Layer/CCP/../std_libraries.h  \
+MCAL_Layer/CCP/../compiler.h  \
+MCAL_Layer/CCP/../GPIO/HAL_GPIO.h  \
+MCAL_Layer/CCP/../GPIO/HAL_GPIO_CFG.h  \
+MCAL_Layer/CCP/../GPIO/../mcal_std_types.h  \
+MCAL_Layer/CCP/../GPIO/../device_cfg.h  \
+MCAL_Layer/CCP/../Interrupt/HAL_INT_INTERRUPT.h  \
+MCAL_Layer/CCP/../Interrupt/HAL_INTERRUPT_CFG.h  \
+MCAL_Layer/CCP/../Interrupt/HAL_INTERRUPT_GEN_CFG.h  \
+MCAL_Layer/CCP/../Interrupt/../GPIO/HAL_GPIO.h  \
+MCAL_Layer/CCP/../Interrupt/../mcal_std_types.h  \
+MCAL_Layer/CCP/../Interrupt/../device_cfg.h  \
+MCAL_Layer/CCP/../Timers/Timer2/HAL_TIMER2.h  \
+MCAL_Layer/CCP/../Timers/Timer2/HAL_TIMER2_CFG.h  \
+MCAL_Layer/CCP/../Timers/Timer2/../../GPIO/HAL_GPIO.h  \
+MCAL_Layer/CCP/../Timers/Timer2/../../Interrupt/HAL_INT_INTERRUPT.h  \
+MCAL_Layer/CCP/../Timers/Timer2/../../mcal_std_types.h  \
+MCAL_Layer/CCP/../Timers/Timer2/../../device_cfg.h  \
+MCAL_Layer/CCP/../device_cfg.h 

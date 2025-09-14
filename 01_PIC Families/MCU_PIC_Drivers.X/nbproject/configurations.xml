@@ -36,6 +36,10 @@
           <itemPath>Codes/MCAL/ADC/app4.c</itemPath>
           <itemPath>Codes/MCAL/ADC/app5.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="CCP" displayName="CCP" projectFiles="true">
+          <itemPath>Codes/MCAL/CCP/app1.c</itemPath>
+          <itemPath>Codes/MCAL/CCP/app2.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/app1.c</itemPath>
         </logicalFolder>
@@ -111,6 +115,10 @@
         <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
           <itemPath>MCAL_Layer/ADC/HAL_ADC.h</itemPath>
           <itemPath>MCAL_Layer/ADC/HAL_ADC_CFG.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="CCP" displayName="CCP" projectFiles="true">
+          <itemPath>MCAL_Layer/CCP/HAL_CCP.h</itemPath>
+          <itemPath>MCAL_Layer/CCP/HAL_CCP_CFG.h</itemPath>
         </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM.h</itemPath>
@@ -193,6 +201,9 @@
       <logicalFolder name="MCAL_Layer" displayName="MCAL_Layer" projectFiles="true">
         <logicalFolder name="ADC" displayName="ADC" projectFiles="true">
           <itemPath>MCAL_Layer/ADC/HAL_ADC.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="CCP" displayName="CCP" projectFiles="true">
+          <itemPath>MCAL_Layer/CCP/HAL_CCP.c</itemPath>
         </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM.c</itemPath>

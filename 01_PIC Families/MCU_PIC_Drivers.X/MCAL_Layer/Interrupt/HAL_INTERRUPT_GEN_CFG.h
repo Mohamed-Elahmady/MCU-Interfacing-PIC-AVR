@@ -19,7 +19,7 @@
 #define INTERRUPT_FEATURE_DISABLE                 0x00
 #define INTERRUPT_FEATURE_ENABLE                  0x01
 
-#define INTERRUPT_PRIORITY_LEVELS                 (INTERRUPT_FEATURE_ENABLE)
+//#define INTERRUPT_PRIORITY_LEVELS                 (INTERRUPT_FEATURE_ENABLE)
 
 // For EXT Interrupts
 #define EXTERNAL_INTERRUPT_INTX_ENABLE            (INTERRUPT_FEATURE_ENABLE)
@@ -35,6 +35,9 @@
 #define TIMER2_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
 // For Timer3 Internal Interrupts
 #define TIMER3_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
+// For CCP Modules Internal Interrupts
+//#define CCP1_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
+//#define CCP2_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

@@ -105,6 +105,40 @@
 
 #endif
 
+// CCP1 internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_ccp1))
+
+#define intenral_interrupt_ccp1_clear_flag()                    clear_bit(PIR1, _PIR1_CCP1IF_POSITION)
+
+#define intenral_interrupt_ccp1_disable()                       clear_bit(PIE1, _PIE1_CCP1IE_POSITION)
+#define intenral_interrupt_ccp1_enable()                        set_bit(PIE1, _PIE1_CCP1IE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_ccp1_low_priority()                  clear_bit(IPR1, _IPR1_CCP1IP_POSITION)
+#define intenral_interrupt_ccp1_high_priority()                 set_bit(IPR1, _IPR1_CCP1IP_POSITION)
+
+#endif
+
+#endif
+
+// CCP2 internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_ccp2))
+
+#define intenral_interrupt_ccp2_clear_flag()                    clear_bit(PIR2, _PIR2_CCP2IF_POSITION)
+
+#define intenral_interrupt_ccp2_disable()                       clear_bit(PIE2, _PIE2_CCP2IE_POSITION)
+#define intenral_interrupt_ccp2_enable()                        set_bit(PIE2, _PIE2_CCP2IE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_ccp2_low_priority()                  clear_bit(IPR2, _IPR2_CCP2IP_POSITION)
+#define intenral_interrupt_ccp2_high_priority()                 set_bit(IPR2, _IPR2_CCP2IP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 
