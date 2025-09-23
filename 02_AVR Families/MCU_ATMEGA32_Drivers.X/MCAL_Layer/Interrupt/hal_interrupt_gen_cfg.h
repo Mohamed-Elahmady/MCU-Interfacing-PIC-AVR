@@ -27,6 +27,7 @@
 #define Timer0_Interrupt_Feature                 (Interrupt_Feature_Enable)
 #define Timer1_Interrupt_Feature                 (Interrupt_Feature_Enable)
 #define Timer2_Interrupt_Feature                 (Interrupt_Feature_Enable)
+#define USART_Interrupt_Feature                  (Interrupt_Feature_Enable)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

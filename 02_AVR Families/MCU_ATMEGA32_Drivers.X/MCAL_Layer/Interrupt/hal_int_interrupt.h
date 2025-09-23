@@ -67,6 +67,26 @@
 #define Internal_Interrupt_Timer2_CTC_Disable()                    Clear_Bit(TIMSK, OCIE2)
 #define Internal_Interrupt_Timer2_CTC_Enable()                     Set_Bit(TIMSK, OCIE2)
 
+// 5. For USART Interrupts
+
+// this interrupt for each completed transmission
+
+#define Internal_Interrupt_TX_Clear_Flag()                        Set_Bit(UCSRA, TXC)
+
+#define Internal_Interrupt_TX_Disable()                           Clear_Bit(UCSRB, TXCIE)
+#define Internal_Interrupt_TX_Enable()                            Set_Bit(UCSRB, TXCIE)
+
+// this interrupt for happen when the transmission shift register is empty
+
+#define Internal_Interrupt_TSR_Disable()                           Clear_Bit(UCSRB, UDRIE)
+#define Internal_Interrupt_TSR_Enable()                            Set_Bit(UCSRB, UDRIE)
+
+// this interrupt for each completed Receiving
+
+#define Internal_Interrupt_RX_Disable()                           Clear_Bit(UCSRB, RXCIE)
+#define Internal_Interrupt_RX_Enable()                            Set_Bit(UCSRB, RXCIE)
+
+
 /******************* Section 3 : Macros Functions Declarations *******************/
 
 

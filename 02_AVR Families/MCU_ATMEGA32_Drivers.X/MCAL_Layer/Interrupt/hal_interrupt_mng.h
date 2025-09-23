@@ -43,6 +43,9 @@ void CTC_OCRB_ISR(void);
 void CTC_ICR_ISR(void);
 void TMR2_ISR(void);
 void CTC2_ISR(void);
+void USART_TX_ISR(void);
+void USART_TSR_ISR(void);
+void USART_RX_ISR(void);
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

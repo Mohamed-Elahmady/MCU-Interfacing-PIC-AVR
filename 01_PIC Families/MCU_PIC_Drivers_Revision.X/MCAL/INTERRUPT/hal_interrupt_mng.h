@@ -45,6 +45,8 @@ void tmr2_isr(void);
 void tmr3_isr(void);
 void ccp1_isr(void);
 void ccp2_isr(void);
+void eusart_tx_isr();
+void eusart_rx_isr();
 
 #endif	/* HAL_INTERRUPT_MNG_H */
 

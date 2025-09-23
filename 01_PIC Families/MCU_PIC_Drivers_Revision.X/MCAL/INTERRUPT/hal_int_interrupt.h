@@ -139,6 +139,40 @@
 
 #endif
 
+// EUSART TX internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_eusart))
+
+#define intenral_interrupt_eusart_tx_clear_flag()                    clear_bit(PIR1, _PIR1_TXIF_POSITION)
+
+#define intenral_interrupt_eusart_tx_disable()                       clear_bit(PIE1, _PIE1_TXIE_POSITION)
+#define intenral_interrupt_eusart_tx_enable()                        set_bit(PIE1, _PIE1_TXIE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_eusart_tx_low_priority()                  clear_bit(IPR1, _IPR1_TXIP_POSITION)
+#define intenral_interrupt_eusart_tx_high_priority()                 set_bit(IPR1, _IPR1_TXIP_POSITION)
+
+#endif
+
+#endif
+
+// EUSART RX internal interrupt Configurations
+#if ((interrupt_feature_enable) == (int_interrupt_eusart))
+
+#define intenral_interrupt_eusart_rx_clear_flag()                    clear_bit(PIR1, _PIR1_RCIF_POSITION)
+
+#define intenral_interrupt_eusart_rx_disable()                       clear_bit(PIE1, _PIE1_RCIE_POSITION)
+#define intenral_interrupt_eusart_rx_enable()                        set_bit(PIE1, _PIE1_RCIE_POSITION)
+
+#if ((interrupt_feature_enable) == (interrupt_priority_levels))
+
+#define intenral_interrupt_eusart_rx_low_priority()                  clear_bit(IPR1, _IPR1_RCIP_POSITION)
+#define intenral_interrupt_eusart_rx_high_priority()                 set_bit(IPR1, _IPR1_RCIP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

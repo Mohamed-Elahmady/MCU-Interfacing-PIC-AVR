@@ -5796,7 +5796,7 @@ Std_ReturnType ccp_deinit(const ccp_cfg *ccp){
     }
     return Retval;
 }
-# 145 "MCAL/CCP/hal_ccp.c"
+# 147 "MCAL/CCP/hal_ccp.c"
 Std_ReturnType ccp_is_compare_completed(const ccp_cfg *ccp, ccp_compare_status *state){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == ccp || ((void*)0) == state){
@@ -5807,6 +5807,7 @@ Std_ReturnType ccp_is_compare_completed(const ccp_cfg *ccp, ccp_compare_status *
             case ccp_source_ccp1:
                 if(((PIR1 >> 0x2) & (uint8)(uint8)0x01)){
                     *state = ccp_compare_ready;
+                    (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
                 }
                 else{
                     *state = ccp_compare_not_ready;
@@ -5815,6 +5816,7 @@ Std_ReturnType ccp_is_compare_completed(const ccp_cfg *ccp, ccp_compare_status *
             case ccp_source_ccp2:
                 if(((PIR2 >> 0x0) & (uint8)(uint8)0x01)){
                     *state = ccp_compare_ready;
+                    (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
                 }
                 else{
                     *state = ccp_compare_not_ready;
@@ -5837,10 +5839,10 @@ Std_ReturnType ccp_set_compare_value(const ccp_cfg *ccp, uint16 value){
     else{
         switch(ccp->ccp_src){
             case ccp_source_ccp1:
-                CCPR1 = value;
+                CCPR1 = (uint16)value;
                 break;
             case ccp_source_ccp2:
-                CCPR2 = value;
+                CCPR2 = (uint16)value;
                     break;
             default :
                 Retval = E_NOT_OK;
@@ -5862,11 +5864,23 @@ Std_ReturnType ccp_pwm_start(const ccp_cfg *ccp){
     else{
         switch(ccp->ccp_src){
             case ccp_source_ccp1:
-                (CCP1CONbits.CCP1M = ccp_cfg_pwm_mode);
+                if(ccp->ccp_mode == ccp_pwm_mode){
+                    Retval = ccp_pin_init(ccp);
+                    (CCP1CONbits.CCP1M = ccp_cfg_pwm_mode);
+                }
+                else{
+                    Retval = E_NOT_OK;
+                }
                 break;
             case ccp_source_ccp2:
-                (CCP1CONbits.CCP1M = ccp_cfg_pwm_mode);
-                    break;
+                if(ccp->ccp_mode == ccp_pwm_mode){
+                    Retval = ccp_pin_init(ccp);
+                    (CCP2CONbits.CCP2M = ccp_cfg_pwm_mode);
+                }
+                else{
+                    Retval = E_NOT_OK;
+                }
+                break;
             default :
                 Retval = E_NOT_OK;
                 break;
@@ -5883,11 +5897,21 @@ Std_ReturnType ccp_pwm_stop(const ccp_cfg *ccp){
     else{
         switch(ccp->ccp_src){
             case ccp_source_ccp1:
-                (CCP1CONbits.CCP1M = ccp_cfg_module_disable);
+                if(ccp->ccp_mode == ccp_pwm_mode){
+                    (CCP1CONbits.CCP1M = ccp_cfg_module_disable);
+                }
+                else{
+                    Retval = E_NOT_OK;
+                }
                 break;
             case ccp_source_ccp2:
-                (CCP1CONbits.CCP1M = ccp_cfg_module_disable);
-                    break;
+                if(ccp->ccp_mode == ccp_pwm_mode){
+                    (CCP2CONbits.CCP2M = ccp_cfg_module_disable);
+                }
+                else{
+                    Retval = E_NOT_OK;
+                }
+                break;
             default :
                 Retval = E_NOT_OK;
                 break;
@@ -5956,7 +5980,7 @@ static Std_ReturnType ccp_module_disable(const ccp_cfg *ccp){
                 (CCP1CONbits.CCP1M = ccp_cfg_module_disable);
                 break;
             case ccp_source_ccp2:
-                (CCP1CONbits.CCP1M = ccp_cfg_module_disable);
+                (CCP2CONbits.CCP2M = ccp_cfg_module_disable);
                     break;
             default :
                 Retval = E_NOT_OK;
@@ -6006,7 +6030,7 @@ static Std_ReturnType ccp_set_mode(const ccp_cfg *ccp){
                         (CCP1CONbits.CCP1M = ccp->ccp_cfg);
                     }
                     else if(ccp->ccp_src == ccp_source_ccp2){
-                        (CCP1CONbits.CCP1M = ccp->ccp_cfg);
+                        (CCP2CONbits.CCP2M = ccp->ccp_cfg);
                     }
                     else{
                         Retval = E_NOT_OK;
@@ -6019,12 +6043,13 @@ static Std_ReturnType ccp_set_mode(const ccp_cfg *ccp){
                 break;
             case ccp_compare_mode:
                 if(ccp->ccp_cfg == ccp_cfg_compare_clear_logic || ccp->ccp_cfg == ccp_cfg_compare_set_logic ||
-                   ccp->ccp_cfg == ccp_cfg_compare_toggle_logic || ccp->ccp_cfg == ccp_cfg_compare_gen_interrupt || ccp->ccp_cfg == ccp_cfg_compare_trigger_special_event){
+                   ccp->ccp_cfg == ccp_cfg_compare_toggle_logic || ccp->ccp_cfg == ccp_cfg_compare_gen_interrupt ||
+                   ccp->ccp_cfg == ccp_cfg_compare_trigger_special_event){
                     if(ccp->ccp_src == ccp_source_ccp1){
                         (CCP1CONbits.CCP1M = ccp->ccp_cfg);
                     }
                     else if(ccp->ccp_src == ccp_source_ccp2){
-                        (CCP1CONbits.CCP1M = ccp->ccp_cfg);
+                        (CCP2CONbits.CCP2M = ccp->ccp_cfg);
                     }
                     else{
                         Retval = E_NOT_OK;
@@ -6036,23 +6061,24 @@ static Std_ReturnType ccp_set_mode(const ccp_cfg *ccp){
                 Retval = ccp_select_capture_compare_timer(ccp);
                 break;
             case ccp_pwm_mode:
-
                 if(ccp->ccp_cfg == ccp_cfg_pwm_mode){
+
                     if(ccp->ccp_src == ccp_source_ccp1){
                         (CCP1CONbits.CCP1M = ccp->ccp_cfg);
                     }
                     else if(ccp->ccp_src == ccp_source_ccp2){
-                        (CCP1CONbits.CCP1M = ccp->ccp_cfg);
+                        (CCP2CONbits.CCP2M = ccp->ccp_cfg);
                     }
                     else{
                         Retval = E_NOT_OK;
                     }
+
+                    PR2 = (uint8)((8000000UL / (4.0 * (ccp->pwm_freq) * (ccp->pwm_prescaler) * (ccp->pwm_postscaler))) - 1);
                 }
+
                 else{
                     Retval = E_NOT_OK;
                 }
-                PR2 = (uint8)((4000000UL / (4.0 * (ccp->pwm_freq) * (ccp->pwm_prescaler) * (ccp->pwm_postscaler))) - 1);
-
                     break;
             default :
                 Retval = E_NOT_OK;
@@ -6075,8 +6101,8 @@ static Std_ReturnType ccp_pin_init(const ccp_cfg *ccp){
                     Retval = gpio_pin_direction_init(&ccp1_pin);
                 }
                 else if(ccp->ccp_src == ccp_source_ccp2){
-                    gpio_pin_cfg ccp1_pin = {.port = gpio_portC, .pin = gpio_pin1, .direction = gpio_input};
-                    Retval = gpio_pin_direction_init(&ccp1_pin);
+                    gpio_pin_cfg ccp2_pin = {.port = gpio_portC, .pin = gpio_pin1, .direction = gpio_input};
+                    Retval = gpio_pin_direction_init(&ccp2_pin);
                 }
                 else{
                     Retval = E_NOT_OK;
@@ -6088,8 +6114,8 @@ static Std_ReturnType ccp_pin_init(const ccp_cfg *ccp){
                     Retval = gpio_pin_init(&ccp1_pin);
                 }
                 else if(ccp->ccp_src == ccp_source_ccp2){
-                    gpio_pin_cfg ccp1_pin = {.port = gpio_portC, .pin = gpio_pin2, .direction = gpio_output, .logic = gpio_low};
-                    Retval = gpio_pin_init(&ccp1_pin);
+                    gpio_pin_cfg ccp2_pin = {.port = gpio_portC, .pin = gpio_pin2, .direction = gpio_output, .logic = gpio_low};
+                    Retval = gpio_pin_init(&ccp2_pin);
                 }
                 else{
                     Retval = E_NOT_OK;
@@ -6101,8 +6127,8 @@ static Std_ReturnType ccp_pin_init(const ccp_cfg *ccp){
                     Retval = gpio_pin_init(&ccp1_pin);
                 }
                 else if(ccp->ccp_src == ccp_source_ccp2){
-                    gpio_pin_cfg ccp1_pin = {.port = gpio_portC, .pin = gpio_pin2, .direction = gpio_output, .logic = gpio_low};
-                    Retval = gpio_pin_init(&ccp1_pin);
+                    gpio_pin_cfg ccp2_pin = {.port = gpio_portC, .pin = gpio_pin2, .direction = gpio_output, .logic = gpio_low};
+                    Retval = gpio_pin_init(&ccp2_pin);
                 }
                 else{
                     Retval = E_NOT_OK;
@@ -6128,7 +6154,7 @@ static Std_ReturnType ccp_configure_interrupt(const ccp_cfg *ccp){
             case ccp_source_ccp1:
                 (PIE1 |= (uint8)((uint8)0x01 << 0x2));
                 (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
-# 490 "MCAL/CCP/hal_ccp.c"
+# 518 "MCAL/CCP/hal_ccp.c"
                 (RCONbits.IPEN = (uint8)0x00);
                 (INTCONbits.GIE = (uint8)0x01);
                 (INTCONbits.PEIE = (uint8)0x01);
@@ -6138,7 +6164,7 @@ static Std_ReturnType ccp_configure_interrupt(const ccp_cfg *ccp){
             case ccp_source_ccp2:
                 (PIE2 |= (uint8)((uint8)0x01 << 0x0));
                 (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
-# 513 "MCAL/CCP/hal_ccp.c"
+# 541 "MCAL/CCP/hal_ccp.c"
                 (RCONbits.IPEN = (uint8)0x00);
                 (INTCONbits.GIE = (uint8)0x01);
                 (INTCONbits.PEIE = (uint8)0x01);

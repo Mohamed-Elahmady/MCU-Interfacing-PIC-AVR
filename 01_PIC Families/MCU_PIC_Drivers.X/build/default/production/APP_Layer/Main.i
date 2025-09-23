@@ -6247,8 +6247,8 @@ typedef union{
 
 typedef struct {
 
-
-
+    CCP_HANDLER ccp_interrupt;
+    INTERRUPT_PRIORITY priority;
 
 
     CCP_MODE ccp_mode;
@@ -6286,7 +6286,124 @@ Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_STOP_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty);
 # 36 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 50 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h" 2
+# 76 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h"
+typedef void (* EUSART_HANDLER)(void);
+
+
+
+typedef enum{
+    EUSART_ASYNC_TX_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_TX_ENABLE_STATE
+}EUSART_ASYNC_TX_STATE;
+
+typedef enum{
+    EUSART_ASYNC_TX_INTERRUPT_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_TX_INTERRUPT_ENABLE_STATE
+}EUSART_ASYNC_TX_INTERRUPT_STATE;
+
+typedef enum{
+    EUSART_ASYNC_TX_9BIT_SIZE_DISABLE = (uint8)0x00,
+    EUSART_ASYNC_TX_9BIT_SIZE_ENABLE
+}EUSART_ASYNC_TX_SIZE_STATE;
+
+typedef struct{
+    EUSART_HANDLER tx_interrupt;
+    INTERRUPT_PRIORITY tx_priority;
+
+    EUSART_ASYNC_TX_STATE state;
+    EUSART_ASYNC_TX_INTERRUPT_STATE interrupt_state;
+    EUSART_ASYNC_TX_SIZE_STATE tx_size;
+}EUSART_TX_CFG;
+
+
+
+typedef enum{
+    EUSART_ASYNC_RX_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_RX_ENABLE_STATE
+}EUSART_ASYNC_RX_STATE;
+
+typedef enum{
+    EUSART_ASYNC_RX_INTERRUPT_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_RX_INTERRUPT_ENABLE_STATE
+}EUSART_ASYNC_RX_INTERRUPT_STATE;
+
+typedef enum{
+    EUSART_ASYNC_RX_9BIT_SIZE_DISABLE = (uint8)0x00,
+    EUSART_ASYNC_RX_9BIT_SIZE_ENABLE
+}EUSART_ASYNC_RX_SIZE_STATE;
+
+typedef struct{
+    EUSART_HANDLER rx_interrupt;
+    INTERRUPT_PRIORITY rx_priority;
+    EUSART_HANDLER farming_interrupt;
+    EUSART_HANDLER overrun_interrupt;
+
+    EUSART_ASYNC_RX_STATE state;
+    EUSART_ASYNC_RX_INTERRUPT_STATE interrupt_state;
+    EUSART_ASYNC_RX_SIZE_STATE rx_size;
+}EUSART_RX_CFG;
+
+
+
+typedef enum {
+    EUSART_FRAMING_ERROR_CLEARED = (uint8)0x00,
+    EUSART_FRAMING_ERROR_DETECTED
+}EUSART_FRAMING_ERROR;
+
+typedef enum {
+    EUSART_OVERRUN_ERROR_CLEARED = (uint8)0x00,
+    EUSART_OVERRUN_ERROR_DETECTED
+}EUSART_OVERRUN_ERROR;
+
+typedef union{
+    struct{
+        uint8 EUSART_FARMING_STATE :1;
+        uint8 EUSART_OVERRUN_STATE :1;
+        uint8 EUSART_RESERVED :6;
+    };
+    uint8 status;
+}EUSART_ERROR_STATUS;
+
+
+
+typedef enum{
+    EUSART_BR_ASYNC_8BIT_LOW_SPEED = (uint8)0x00,
+    EUSART_BR_ASYNC_8BIT_HIGH_SPEED,
+    EUSART_BR_ASYNC_16BIT_LOW_SPEED,
+    EUSART_BR_ASYNC_16BIT_HIGH_SPEED,
+    EUSART_BR_SYNC_8BIT,
+    EUSART_BR_SYNC_16BIT
+}EUSART_BR_CONFIGURATION;
+
+typedef struct{
+    EUSART_TX_CFG eusart_tx_mode;
+    EUSART_RX_CFG eusart_rx_mode;
+    EUSART_ERROR_STATUS error_states;
+
+    uint32 baud_rate;
+    EUSART_BR_CONFIGURATION br_cfg;
+}EUSART_CFG;
+
+
+
+Std_ReturnType EUSART_ASYNC_INIT(const EUSART_CFG *eusart);
+Std_ReturnType EUSART_ASYNC_DEINIT(const EUSART_CFG *eusart);
+
+Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 data);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *str);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 data);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_BLOCKING(const EUSART_CFG *eusart, uint8 *str);
+
+Std_ReturnType EUSART_ASYNC_RX_RESTART(const EUSART_CFG *eusart);
+Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
+Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
+# 38 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 52 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 39 "APP_Layer/Main.h"
@@ -6294,37 +6411,11 @@ void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
 Std_ReturnType Ret = E_OK;
-TIMER1_CFG t1_timer;
 
-void ccp_capture_isr(void);
-
-void tim1_isr(void);
-
-CCP_CFG ccp1_com = {
-
-
-    .ccp_src = CCP1_SOURCE,
-    .ccp_mode = CCP_COMPARE_MODE,
-    .ccp_cfg = CCP_CFG_COMPARE_MODE_SET_LOGIC,
-    .ccp_timer = CCP1_CCP2_TIMER1
-};
-
-void timer1_timer_init(void){
-    t1_timer.TIMER1_INTERRUPT = ((void*)0);
-    t1_timer.priority = INTERRUPT_LOW_PRIORITY;
-    t1_timer.mode = TIMER1_TIMER_MODE;
-    t1_timer.prescaler = TIMER1_PRESCALER_DIV_1;
-    t1_timer.rw_reg = TIMER1_16BIT_RW_MODE;
-    t1_timer.preloaded_value = 0x0000;
-    TIMER1_INIT(&t1_timer);
-}
-
-uint8 flag = 0;
+GPIO_LED led1 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
 
 int main() {
-    CCP_WRITE_COMPARE_SET_VALUE(&ccp1_com, 12500);
     application_init();
-
     while (1) {
 
     }
@@ -6333,22 +6424,5 @@ int main() {
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
-    CCP_INIT(&ccp1_com);
-    timer1_timer_init();
-
-
-}
-
-void ccp_capture_isr(void){
-    flag++;
-    if(flag == 0){
-        CCP_WRITE_COMPARE_SET_VALUE(&ccp1_com, 12500);
-        (CCP1CONbits.CCP1M = CCP_CFG_COMPARE_MODE_SET_LOGIC);
-    }
-    else if(flag == 1){
-        CCP_WRITE_COMPARE_SET_VALUE(&ccp1_com, 37500);
-        (CCP1CONbits.CCP1M = CCP_CFG_COMPARE_MODE_CLEAR_LOGIC);
-        flag = 0;
-    }
-    TIMER1_WRITE_DATA(&t1_timer, 0x0000);
+    GPIO_LED_INIT(&led1);
 }

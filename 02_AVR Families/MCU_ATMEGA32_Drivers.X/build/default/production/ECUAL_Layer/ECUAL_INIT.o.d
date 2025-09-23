@@ -89,7 +89,13 @@ build/default/production/ECUAL_Layer/ECUAL_INIT.o.d \
  ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer1/hal_timer1.h \
  ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer2/hal_timer2.h \
  ECUAL_Layer/../MCAL_Layer/PWM/../mcal_std_types.h \
- ECUAL_Layer/../MCAL_Layer/PWM/../device_cfg.h
+ ECUAL_Layer/../MCAL_Layer/PWM/../device_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/USART/hal_usart.h \
+ ECUAL_Layer/../MCAL_Layer/USART/hal_usart_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/USART/../GPIO/hal_gpio.h \
+ ECUAL_Layer/../MCAL_Layer/USART/../Interrupt/hal_int_interrupt.h \
+ ECUAL_Layer/../MCAL_Layer/USART/../mcal_std_types.h \
+ ECUAL_Layer/../MCAL_Layer/USART/../device_cfg.h
 
 ECUAL_Layer/ECUAL_INIT.h:
 
@@ -278,3 +284,15 @@ ECUAL_Layer/../MCAL_Layer/PWM/../Timers/Timer2/hal_timer2.h:
 ECUAL_Layer/../MCAL_Layer/PWM/../mcal_std_types.h:
 
 ECUAL_Layer/../MCAL_Layer/PWM/../device_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/USART/hal_usart.h:
+
+ECUAL_Layer/../MCAL_Layer/USART/hal_usart_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/USART/../GPIO/hal_gpio.h:
+
+ECUAL_Layer/../MCAL_Layer/USART/../Interrupt/hal_int_interrupt.h:
+
+ECUAL_Layer/../MCAL_Layer/USART/../mcal_std_types.h:
+
+ECUAL_Layer/../MCAL_Layer/USART/../device_cfg.h:

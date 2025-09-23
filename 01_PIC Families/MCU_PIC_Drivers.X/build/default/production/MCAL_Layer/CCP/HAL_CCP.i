@@ -5740,8 +5740,8 @@ typedef union{
 
 typedef struct {
 
-
-
+    CCP_HANDLER ccp_interrupt;
+    INTERRUPT_PRIORITY priority;
 
 
     CCP_MODE ccp_mode;
@@ -5779,12 +5779,25 @@ Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_STOP_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty);
 # 11 "MCAL_Layer/CCP/HAL_CCP.c" 2
-# 25 "MCAL_Layer/CCP/HAL_CCP.c"
+# 20 "MCAL_Layer/CCP/HAL_CCP.c"
+static CCP_HANDLER CCP1_HANDLER_FUNCTION = ((void*)0);
+static CCP_HANDLER CCP2_HANDLER_FUNCTION = ((void*)0);
+
+
+
 static Std_ReturnType CCP_SET_DISABLE(const CCP_CFG *ccp);
 static Std_ReturnType CCP_PIN_INIT(const CCP_CFG *ccp);
 static Std_ReturnType CCP_SET_MODE(const CCP_CFG *ccp);
 static Std_ReturnType CCP_SET_CAPTURE_COMPARE_TIMER(const CCP_CFG *ccp);
-# 38 "MCAL_Layer/CCP/HAL_CCP.c"
+
+
+
+static Std_ReturnType CCP_CONFIGURE_INTERRUPT(const CCP_CFG *ccp);
+
+
+
+
+
 Std_ReturnType CCP_INIT(const CCP_CFG *ccp){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == ccp){
@@ -5802,7 +5815,7 @@ Std_ReturnType CCP_INIT(const CCP_CFG *ccp){
 
 
 
-
+        Retval = CCP_CONFIGURE_INTERRUPT(ccp);
 
     }
     return Retval;
@@ -5816,7 +5829,20 @@ Std_ReturnType CCP_DEINIT(const CCP_CFG *ccp){
     else{
 
         Retval = CCP_SET_DISABLE(ccp);
-# 83 "MCAL_Layer/CCP/HAL_CCP.c"
+
+
+        if(ccp->ccp_src == CCP1_SOURCE){
+            (PIE1 &= ~(uint8)((uint8)0x01 << 0x2));
+            (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
+        }
+        else if(ccp->ccp_src == CCP2_SOURCE){
+            (PIE2 &= ~(uint8)((uint8)0x01 << 0x0));
+            (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
     }
     return Retval;
 }
@@ -5832,7 +5858,7 @@ Std_ReturnType CCP_IS_COMPARE_COMPLETED(const CCP_CFG *ccp, CCP_COMPARE_STATUS *
                 if(((PIR1 >> 0x2) & (uint8)(uint8)0x01)){
                     *state = CCP_COMPARE_READY;
 
-
+                    (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
 
                 }
                 else{
@@ -5843,7 +5869,7 @@ Std_ReturnType CCP_IS_COMPARE_COMPLETED(const CCP_CFG *ccp, CCP_COMPARE_STATUS *
                 if(((PIR2 >> 0x0) & (uint8)(uint8)0x01)){
                     *state = CCP_COMPARE_READY;
 
-
+                    (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
 
                 }
                 else{
@@ -5970,7 +5996,39 @@ Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty){
     }
     return Retval;
 }
-# 332 "MCAL_Layer/CCP/HAL_CCP.c"
+
+
+
+
+
+void CCP1_ISR(void){
+
+    (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
+
+
+    if(CCP1_HANDLER_FUNCTION){
+        CCP1_HANDLER_FUNCTION();
+    }
+}
+
+
+
+
+
+void CCP2_ISR(void){
+
+    (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
+
+
+    if(CCP2_HANDLER_FUNCTION){
+        CCP2_HANDLER_FUNCTION();
+    }
+}
+
+
+
+
+
 static Std_ReturnType CCP_SET_DISABLE(const CCP_CFG *ccp){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == ccp){
@@ -6136,7 +6194,7 @@ static Std_ReturnType CCP_SET_MODE(const CCP_CFG *ccp){
                         Retval = E_NOT_OK;
                     }
 
-                     PR2 = (uint8)((4000000UL/ ((ccp->pwm_freq) * (ccp->pwm_prescaler) * (ccp->pwm_postscaler) * 4.0)) - 1);
+                     PR2 = (uint8)((8000000UL/ ((ccp->pwm_freq) * (ccp->pwm_prescaler) * (ccp->pwm_postscaler) * 4.0)) - 1);
 
                 }
                 else{
@@ -6148,6 +6206,47 @@ static Std_ReturnType CCP_SET_MODE(const CCP_CFG *ccp){
                 break;
         }
         Retval = CCP_PIN_INIT(ccp);
+    }
+    return Retval;
+}
+
+
+
+static Std_ReturnType CCP_CONFIGURE_INTERRUPT(const CCP_CFG *ccp){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == ccp){
+        Retval = E_NOT_OK;
+    }
+    else{
+        if(ccp->ccp_src == CCP1_SOURCE){
+
+            (PIE1 |= (uint8)((uint8)0x01 << 0x2));
+
+            (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
+# 541 "MCAL_Layer/CCP/HAL_CCP.c"
+            (RCON &= ~(uint8)((uint8)0x01 << 0x7));
+            (INTCON |= (uint8)((uint8)0x01 << 0x7));
+            (INTCON |= (uint8)((uint8)0x01 << 0x6));
+
+
+            CCP1_HANDLER_FUNCTION = ccp->ccp_interrupt;
+        }
+        else if(ccp->ccp_src == CCP2_SOURCE){
+
+            (PIE2 |= (uint8)((uint8)0x01 << 0x0));
+
+            (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
+# 568 "MCAL_Layer/CCP/HAL_CCP.c"
+            (RCON &= ~(uint8)((uint8)0x01 << 0x7));
+            (INTCON |= (uint8)((uint8)0x01 << 0x7));
+            (INTCON |= (uint8)((uint8)0x01 << 0x6));
+
+
+            CCP2_HANDLER_FUNCTION = ccp->ccp_interrupt;
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
     }
     return Retval;
 }

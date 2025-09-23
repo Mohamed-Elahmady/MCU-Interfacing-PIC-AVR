@@ -29,6 +29,18 @@ void __interrupt() INTERRUPT_MANAGER_HIGH_PRIORITY(void){
         INT0_ISR();
     }
     else{/* Nothing */}
+#if ((INTERRUPT_FEATURE_ENABLE) == (EUSART_INTERRUPT_FEATURE))
+    /* ================== EUSART_TX_Interrupt Service Routine ================== */
+    if((PIR1bits.TXIF == INTERRUPT_OCCUR) && (PIE1bits.TXIE == INTERRUPT_ENABLE)){
+        EUSART_TX_ISR();
+    }
+    else{/* Nothing */}
+    /* ================== EUSART_RX_Interrupt Service Routine ================== */
+    if((PIR1bits.RCIF == INTERRUPT_OCCUR) && (PIE1bits.RCIE == INTERRUPT_ENABLE)){
+        EUSART_RX_ISR();
+    }
+    else{/* Nothing */}
+#endif
 #if ((INTERRUPT_FEATURE_ENABLE) == (CCP1_INTERRUPT_FEATURE))
     /* ================== CCP2_Interrupt Service Routine ================== */
     if((PIR2bits.CCP2IF == INTERRUPT_OCCUR) && (PIE2bits.CCP2IE == INTERRUPT_ENABLE)){
@@ -164,6 +176,18 @@ void __interrupt() INTERRUPT_MANAGER(void){
     /* ================== CCP1_Interrupt Service Routine ================== */
     if((PIR1bits.CCP1IF == INTERRUPT_OCCUR) && (PIE1bits.CCP1IE == INTERRUPT_ENABLE)){
         CCP1_ISR();
+    }
+    else{/* Nothing */}
+#endif
+#if ((INTERRUPT_FEATURE_ENABLE) == (EUSART_INTERRUPT_FEATURE))
+    /* ================== EUSART_TX_Interrupt Service Routine ================== */
+    if((PIR1bits.TXIF == INTERRUPT_OCCUR) && (PIE1bits.TXIE == INTERRUPT_ENABLE)){
+        EUSART_TX_ISR();
+    }
+    else{/* Nothing */}
+    /* ================== EUSART_RX_Interrupt Service Routine ================== */
+    if((PIR1bits.RCIF == INTERRUPT_OCCUR) && (PIE1bits.RCIE == INTERRUPT_ENABLE)){
+        EUSART_RX_ISR();
     }
     else{/* Nothing */}
 #endif

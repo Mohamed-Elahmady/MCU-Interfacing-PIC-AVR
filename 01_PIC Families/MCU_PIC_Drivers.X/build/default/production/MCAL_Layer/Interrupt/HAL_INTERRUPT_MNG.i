@@ -5647,6 +5647,8 @@ void TMR2_ISR(void);
 void TMR3_ISR(void);
 void CCP1_ISR(void);
 void CCP2_ISR(void);
+void EUSART_TX_ISR(void);
+void EUSART_RX_ISR(void);
 # 11 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c" 2
 
 
@@ -5655,19 +5657,48 @@ static volatile uint8 RB4_ISR_FLAG = 0x01;
 static volatile uint8 RB5_ISR_FLAG = 0x01;
 static volatile uint8 RB6_ISR_FLAG = 0x01;
 static volatile uint8 RB7_ISR_FLAG = 0x01;
-# 157 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+# 169 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
 
     if((INTCONbits.INT0IF == 0x01) && (INTCONbits.INT0IE == 0x01)){
         INT0_ISR();
     }
     else{ }
-# 172 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+
+
+    if((PIR1bits.CCP1IF == 0x01) && (PIE1bits.CCP1IE == 0x01)){
+        CCP1_ISR();
+    }
+    else{ }
+
+
+
+    if((PIR1bits.TXIF == 0x01) && (PIE1bits.TXIE == 0x01)){
+        EUSART_TX_ISR();
+    }
+    else{ }
+
+    if((PIR1bits.RCIF == 0x01) && (PIE1bits.RCIE == 0x01)){
+        EUSART_RX_ISR();
+    }
+    else{ }
+
+
+
     if((PIR1bits.ADIF == 0x01) && (PIE1bits.ADIE == 0x01)){
         ADC_ISR();
     }
     else{ }
-# 186 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+
+
+
+    if((PIR2bits.CCP2IF == 0x01) && (PIE2bits.CCP2IE == 0x01)){
+        CCP2_ISR();
+    }
+    else{ }
+
+
+
     if((INTCONbits.TMR0IF == 0x01) && (INTCONbits.TMR0IE == 0x01)){
         TMR0_ISR();
     }

@@ -152,6 +152,18 @@ void __interrupt() interrupt_manager(void) {
     }
     else { /* Nothing*/ }
     
+    // for Eusart tx internal interrupt
+    if ((PIR1bits.TXIF == interrupt_occur) && (PIE1bits.TXIE == interrupt_enable)) {
+        eusart_tx_isr();
+    }
+    else { /* Nothing*/ }
+    
+    // for Eusart rx internal interrupt
+    if ((PIR1bits.RCIF == interrupt_occur) && (PIE1bits.RCIE == interrupt_enable)) {
+        eusart_rx_isr();
+    }
+    else { /* Nothing*/ }
+    
     // for CCP2 internal interrupt
     if ((PIR2bits.CCP2IF == interrupt_occur) && (PIE2bits.CCP2IE == interrupt_enable)) {
         ccp2_isr();

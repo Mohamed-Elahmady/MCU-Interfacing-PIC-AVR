@@ -5722,16 +5722,14 @@ typedef enum{
     CCP1_TIMER1_CCP2_TIMER3 = (uint8)0x01,
     CCP1_CCP2_TIMER3 = (uint8)0x02
 }CCP_CAPTURE_COMPARE_TIMER;
-
-
-
-
-
+# 105 "MCAL_Layer/CCP/HAL_CCP.h"
 typedef enum{
-    CCP_CAPTURE_NOT_READY = (uint8)0x00,
-    CCP_CAPTURE_READY
-}CCP_CAPTURE_STATUS;
-# 112 "MCAL_Layer/CCP/HAL_CCP.h"
+    CCP_COMPARE_NOT_READY = (uint8)0x00,
+    CCP_COMPARE_READY
+}CCP_COMPARE_STATUS;
+
+
+
 typedef union{
     struct{
         uint8 CCPR_LOW ;
@@ -5752,8 +5750,8 @@ typedef struct {
 
 
     uint32 pwm_freq;
-    TIMER2_PRESCALER_SELECT pwm_prescaler;
-    TIMER2_POSTSCALER_SELECT pwm_postscaler;
+    uint8 pwm_prescaler :2;
+    uint8 pwm_postscaler :5;
 
 
     CCP_CAPTURE_COMPARE_TIMER ccp_timer;
@@ -5767,9 +5765,16 @@ Std_ReturnType CCP_INIT(const CCP_CFG *ccp);
 Std_ReturnType CCP_DEINIT(const CCP_CFG *ccp);
 
 
-Std_ReturnType CCP_IS_CAPTURE_READY(const CCP_CFG *ccp, CCP_CAPTURE_STATUS *state);
-Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value);
-# 157 "MCAL_Layer/CCP/HAL_CCP.h"
+
+
+
+
+
+Std_ReturnType CCP_IS_COMPARE_COMPLETED(const CCP_CFG *ccp, CCP_COMPARE_STATUS *state);
+Std_ReturnType CCP_WRITE_COMPARE_SET_VALUE(const CCP_CFG *ccp, uint16 value);
+
+
+
 Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_STOP_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty);
@@ -5841,10 +5846,8 @@ Std_ReturnType CCP_DEINIT(const CCP_CFG *ccp){
     }
     return Retval;
 }
-
-
-
-Std_ReturnType CCP_IS_CAPTURE_READY(const CCP_CFG *ccp, CCP_CAPTURE_STATUS *state){
+# 150 "MCAL_Layer/CCP/HAL_CCP.c"
+Std_ReturnType CCP_IS_COMPARE_COMPLETED(const CCP_CFG *ccp, CCP_COMPARE_STATUS *state){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == ccp || ((void*)0) == state){
         Retval = E_NOT_OK;
@@ -5853,20 +5856,24 @@ Std_ReturnType CCP_IS_CAPTURE_READY(const CCP_CFG *ccp, CCP_CAPTURE_STATUS *stat
         switch(ccp->ccp_src){
             case CCP1_SOURCE:
                 if(((PIR1 >> 0x2) & (uint8)(uint8)0x01)){
-                    *state = CCP_CAPTURE_READY;
+                    *state = CCP_COMPARE_READY;
+
                     (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
+
                 }
                 else{
-                    *state = CCP_CAPTURE_NOT_READY;
+                    *state = CCP_COMPARE_NOT_READY;
                 }
                 break;
             case CCP2_SOURCE:
                 if(((PIR2 >> 0x0) & (uint8)(uint8)0x01)){
-                    *state = CCP_CAPTURE_READY;
+                    *state = CCP_COMPARE_READY;
+
                     (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
+
                 }
                 else{
-                    *state = CCP_CAPTURE_NOT_READY;
+                    *state = CCP_COMPARE_NOT_READY;
                 }
                 break;
             default :
@@ -5877,7 +5884,7 @@ Std_ReturnType CCP_IS_CAPTURE_READY(const CCP_CFG *ccp, CCP_CAPTURE_STATUS *stat
     return Retval;
 }
 
-Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value){
+Std_ReturnType CCP_WRITE_COMPARE_SET_VALUE(const CCP_CFG *ccp, uint16 value){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == ccp || ((void*)0) == value){
         Retval = E_NOT_OK;
@@ -5885,10 +5892,10 @@ Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value){
     else{
         switch(ccp->ccp_src){
             case CCP1_SOURCE:
-                *value = (uint16)CCPR1;
-                break;
+               CCPR1 = (uint16)value;
+               break;
             case CCP2_SOURCE:
-                *value = (uint16)CCPR2;
+               CCPR2 = (uint16)value;
                 break;
             default :
                 Retval = E_NOT_OK;
@@ -5897,7 +5904,11 @@ Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value){
     }
     return Retval;
 }
-# 203 "MCAL_Layer/CCP/HAL_CCP.c"
+
+
+
+
+
 Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == ccp){
@@ -5968,7 +5979,7 @@ Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty){
         Retval = E_NOT_OK;
     }
     else{
-        uint16 duty_cycle_temp = (uint16)(4.0 * (PR2 + 1) * (duty/100.0));
+        uint16 duty_cycle_temp = (uint16)(4.0 * (PR2 + 1) * (duty / 100.0));
         switch(ccp->ccp_src){
             case CCP1_SOURCE:
                 CCP1CONbits.DC1B = (uint8)(duty_cycle_temp & 0x0003);
@@ -5999,6 +6010,10 @@ void CCP1_ISR(void){
         CCP1_HANDLER_FUNCTION();
     }
 }
+
+
+
+
 
 void CCP2_ISR(void){
 
@@ -6179,7 +6194,7 @@ static Std_ReturnType CCP_SET_MODE(const CCP_CFG *ccp){
                         Retval = E_NOT_OK;
                     }
 
-                     PR2 = (uint8)((4000000UL/ ((ccp->pwm_freq) * (ccp->pwm_prescaler) * (ccp->pwm_postscaler) * 4.0)) - 1);
+                     PR2 = (uint8)((8000000UL/ ((ccp->pwm_freq) * (ccp->pwm_prescaler) * (ccp->pwm_postscaler) * 4.0)) - 1);
 
                 }
                 else{
@@ -6208,7 +6223,7 @@ static Std_ReturnType CCP_CONFIGURE_INTERRUPT(const CCP_CFG *ccp){
             (PIE1 |= (uint8)((uint8)0x01 << 0x2));
 
             (PIR1 &= ~(uint8)((uint8)0x01 << 0x2));
-# 528 "MCAL_Layer/CCP/HAL_CCP.c"
+# 541 "MCAL_Layer/CCP/HAL_CCP.c"
             (RCON &= ~(uint8)((uint8)0x01 << 0x7));
             (INTCON |= (uint8)((uint8)0x01 << 0x7));
             (INTCON |= (uint8)((uint8)0x01 << 0x6));
@@ -6221,7 +6236,7 @@ static Std_ReturnType CCP_CONFIGURE_INTERRUPT(const CCP_CFG *ccp){
             (PIE2 |= (uint8)((uint8)0x01 << 0x0));
 
             (PIR2 &= ~(uint8)((uint8)0x01 << 0x0));
-# 555 "MCAL_Layer/CCP/HAL_CCP.c"
+# 568 "MCAL_Layer/CCP/HAL_CCP.c"
             (RCON &= ~(uint8)((uint8)0x01 << 0x7));
             (INTCON |= (uint8)((uint8)0x01 << 0x7));
             (INTCON |= (uint8)((uint8)0x01 << 0x6));

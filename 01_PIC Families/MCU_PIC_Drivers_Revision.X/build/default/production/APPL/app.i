@@ -6193,16 +6193,266 @@ Std_ReturnType timer3_deinit(const timer3_cfg *timer3);
 Std_ReturnType timer3_write_data(const timer3_cfg *timer3, uint16 data);
 Std_ReturnType timer3_read_data(const timer3_cfg *timer3, uint16 *data);
 # 34 "APPL/app.h" 2
+
+# 1 "APPL/../MCAL/CCP/hal_ccp.h" 1
+# 17 "APPL/../MCAL/CCP/hal_ccp.h"
+# 1 "APPL/../MCAL/CCP/hal_ccp_cfg.h" 1
+# 18 "APPL/../MCAL/CCP/hal_ccp.h" 2
+# 55 "APPL/../MCAL/CCP/hal_ccp.h"
+typedef void (* ccp_handler)(void);
+
+typedef enum{
+    ccp_source_ccp1 = (uint8)0x00,
+    ccp_source_ccp2
+}ccp_source;
+
+typedef enum{
+    ccp_capture_mode = (uint8)0x00,
+    ccp_compare_mode,
+    ccp_pwm_mode
+}ccp_mode;
+
+typedef enum{
+    ccp_cfg_module_disable = (uint8)0x00,
+    ccp_cfg_capture_1_falling_edge = (uint8)0x04,
+    ccp_cfg_capture_1_rising_edge,
+    ccp_cfg_capture_4_rising_edge,
+    ccp_cfg_capture_16_rising_edge,
+    ccp_cfg_compare_clear_logic,
+    ccp_cfg_compare_set_logic,
+    ccp_cfg_compare_toggle_logic = (uint8)0x02,
+    ccp_cfg_compare_gen_interrupt = (uint8)0x0A,
+    ccp_cfg_compare_trigger_special_event,
+    ccp_cfg_pwm_mode
+}ccp_mode_configurations;
+
+
+
+typedef enum{
+    ccp1_ccp2_timer1 = (uint8)0x00,
+    ccp1_timer1_ccp2_timer3,
+    ccp1_ccp2_timer3
+}ccp_capture_compare_timer;
+
+typedef enum{
+    ccp_capture_not_ready = (uint8)0x00,
+    ccp_capture_ready
+}ccp_capture_status;
+
+typedef enum{
+    ccp_compare_not_ready = (uint8)0x00,
+    ccp_compare_ready
+}ccp_compare_status;
+
+
+
+typedef struct{
+
+    ccp_handler ccp_interrupt;
+    interrupt_priority priority;
+
+    ccp_source ccp_src;
+    ccp_mode ccp_mode;
+    ccp_mode_configurations ccp_cfg;
+
+
+    uint32 pwm_freq;
+    uint8 pwm_prescaler :2;
+    uint8 pwm_postscaler :5;
+
+
+    ccp_capture_compare_timer ccp_timer;
+
+
+}ccp_cfg;
+
+
+
+Std_ReturnType ccp_init(const ccp_cfg *ccp);
+Std_ReturnType ccp_deinit(const ccp_cfg *ccp);
+# 136 "APPL/../MCAL/CCP/hal_ccp.h"
+Std_ReturnType ccp_is_compare_completed(const ccp_cfg *ccp, ccp_compare_status *state);
+Std_ReturnType ccp_set_compare_value(const ccp_cfg *ccp, uint16 value);
+
+
+
+
+
+Std_ReturnType ccp_pwm_start(const ccp_cfg *ccp);
+Std_ReturnType ccp_pwm_stop(const ccp_cfg *ccp);
+Std_ReturnType ccp_set_pwm_duty_cycle(const ccp_cfg *ccp, uint8 duty);
+# 36 "APPL/app.h" 2
+
+# 1 "APPL/../MCAL/EUSART/hal_eusart.h" 1
+# 16 "APPL/../MCAL/EUSART/hal_eusart.h"
+# 1 "APPL/../MCAL/EUSART/hal_eusart_cfg.h" 1
+# 17 "APPL/../MCAL/EUSART/hal_eusart.h" 2
+# 74 "APPL/../MCAL/EUSART/hal_eusart.h"
+typedef void (* eusart_handler)(void);
+
+
+
+typedef enum{
+    eusart_tx_disable_state = (uint8)0x00,
+    eusart_tx_enable_state
+}eusart_tx_state;
+
+typedef enum{
+    eusart_tx_interrupt_disable_state = (uint8)0x00,
+    eusart_tx_interrupt_enable_state
+}eusart_tx_interrupt_state;
+
+typedef enum{
+    eusart_tx_9bit_disable_state = (uint8)0x00,
+    eusart_tx_9bit_enable_state
+}eusart_tx_9bit_state;
+
+typedef struct{
+
+    eusart_handler tx_interrupt;
+    interrupt_priority tx_priority;
+    eusart_tx_interrupt_state tx_int_state;
+
+
+    eusart_tx_state tx_state;
+    eusart_tx_9bit_state tx_9bit_state;
+}eusart_tx_cfg;
+
+
+
+typedef enum{
+    eusart_rx_disable_state = (uint8)0x00,
+    eusart_rx_enable_state
+}eusart_rx_state;
+
+typedef enum{
+    eusart_rx_interrupt_disable_state = (uint8)0x00,
+    eusart_rx_interrupt_enable_state
+}eusart_rx_interrupt_state;
+
+typedef enum{
+    eusart_rx_9bit_disable_state = (uint8)0x00,
+    eusart_rx_9bit_enable_state
+}eusart_rx_9bit_state;
+
+typedef struct{
+
+    eusart_handler rx_interrupt;
+    eusart_handler framing_interrupt;
+    eusart_handler ovverun_interrupt;
+    interrupt_priority rx_priority;
+    eusart_rx_interrupt_state rx_int_state;
+
+    eusart_rx_state rx_state;
+    eusart_rx_9bit_state rx_9bit_state;
+}eusart_rx_cfg;
+
+
+
+typedef enum{
+    eusart_framing_cleared = (uint8)0x00,
+    eusart_framing_detected
+}eusart_framing_status;
+
+typedef enum{
+    eusart_overrun_cleared = (uint8)0x00,
+    eusart_overrun_detected
+}eusart_overrun_status;
+
+typedef union{
+    struct{
+        uint8 framing_err : 1;
+        uint8 overrun_err : 1;
+        uint8 error_reserved : 6;
+    };
+    uint8 status;
+}eusart_errors_status;
+
+
+
+typedef enum{
+    eusart_async_8bit_low_speed = (uint8)0x00,
+    eusart_async_8bit_high_speed,
+    eusart_async_16bit_low_speed,
+    eusart_async_16bit_high_speed,
+    eusart_sync_8bit,
+    eusart_sync_16bit
+}eusart_baud_rate_cfg;
+
+typedef struct{
+    eusart_tx_cfg tx_transmitter;
+    eusart_rx_cfg rx_reciver;
+
+    uint16 baud_rate;
+    eusart_baud_rate_cfg baud_rate_cfg;
+}eusart_cfg;
+
+
+
+Std_ReturnType eusart_init(const eusart_cfg *eusart);
+Std_ReturnType eusart_deinit(const eusart_cfg *eusart);
+
+Std_ReturnType eusart_async_tx_write_byte_non_blocking(const eusart_cfg *eusart, uint8 data);
+Std_ReturnType eusart_async_tx_write_string_non_blocking(const eusart_cfg *eusart, uint8 *str);
+Std_ReturnType eusart_async_tx_write_byte_blocking(const eusart_cfg *eusart, uint8 data);
+Std_ReturnType eusart_async_tx_write_string_blocking(const eusart_cfg *eusart, uint8 *str);
+
+Std_ReturnType eusart_async_rx_reset(const eusart_cfg *eusart);
+Std_ReturnType eusart_async_rx_read_byte_non_blocking(const eusart_cfg *eusart, uint8 *data);
+Std_ReturnType eusart_async_rx_read_byte_blocking(const eusart_cfg *eusart, uint8 *data);
+# 38 "APPL/app.h" 2
 # 9 "APPL/app.c" 2
 
-gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
-                 .pin.logic = gpio_low, .con = led_source, .state = led_off};
+gpio_led led1 = {
+    .pin.port = gpio_portD,
+    .pin.pin = gpio_pin0,
+    .pin.direction = gpio_output,
+    .pin.logic = gpio_low,
+    .con = led_source,
+    .state = led_off
+};
 
+eusart_cfg eusart1 = {
+    .tx_transmitter = {
+        .tx_state = eusart_tx_enable_state,
+        .tx_9bit_state = eusart_tx_9bit_disable_state,
+
+        .tx_int_state = eusart_tx_interrupt_disable_state,
+        .tx_interrupt = ((void*)0),
+        .tx_priority = interrupt_low_priority,
+
+    },
+    .rx_reciver = {
+        .rx_state = eusart_rx_enable_state,
+        .rx_9bit_state = eusart_rx_9bit_disable_state,
+
+        .rx_int_state = eusart_rx_interrupt_disable_state,
+        .rx_interrupt = ((void*)0),
+        .framing_interrupt = ((void*)0),
+        .ovverun_interrupt = ((void*)0),
+        .rx_priority = interrupt_low_priority,
+
+    },
+    .baud_rate = 9600,
+    .baud_rate_cfg = eusart_async_16bit_low_speed
+};
+
+uint8 rx_data = 0;
 
 int main(void) {
     Std_ReturnType ret = E_NOT_OK;
-    while(1){
 
+
+
+    ret = eusart_init(&eusart1);
+    eusart_async_tx_write_string_blocking(&eusart1, (uint8*)"Loading 0.5 sec .....\r");
+    _delay((unsigned long)((500)*(8000000UL/4000.0)));
+    eusart_async_tx_write_string_blocking(&eusart1, (uint8*)"EUSART Echo Test Started...\r");
+    while(1){
+        ret = eusart_async_rx_read_byte_non_blocking(&eusart1, &rx_data);
+        eusart_async_tx_write_byte_blocking(&eusart1, rx_data);
+        rx_data = 0;
     }
+
     return (0);
 }

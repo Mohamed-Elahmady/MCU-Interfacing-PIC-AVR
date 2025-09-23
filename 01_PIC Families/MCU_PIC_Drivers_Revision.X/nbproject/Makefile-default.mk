@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=APPL/app.c ECUAL/7SEG/ecual_7seg.c ECUAL/BTN/ecual_btn.c ECUAL/Chr_lcd/ecual_chr_lcd.c ECUAL/DC_Motor/ecual_dc_motor.c ECUAL/Keypad/ecual_keypad.c ECUAL/LED/ecual_led.c ECUAL/Relay/ecual_relay.c MCAL/ADC/hal_adc.c MCAL/EEPROM/hal_eeprom.c MCAL/GPIO/hal_gpio.c MCAL/INTERRUPT/hal_ext_interrupt.c MCAL/INTERRUPT/hal_int_interrupt.c MCAL/INTERRUPT/hal_interrupt_mng.c MCAL/Timers/Timer0/hal_timer0.c MCAL/Timers/Timer1/hal_timer1.c MCAL/Timers/Timer2/hal_timer2.c MCAL/Timers/Timer3/hal_timer3.c MCAL/device_cfg.c MCAL/CCP/hal_ccp.c
+SOURCEFILES_QUOTED_IF_SPACED=APPL/app.c ECUAL/7SEG/ecual_7seg.c ECUAL/BTN/ecual_btn.c ECUAL/Chr_lcd/ecual_chr_lcd.c ECUAL/DC_Motor/ecual_dc_motor.c ECUAL/Keypad/ecual_keypad.c ECUAL/LED/ecual_led.c ECUAL/Relay/ecual_relay.c MCAL/ADC/hal_adc.c MCAL/CCP/hal_ccp.c MCAL/EEPROM/hal_eeprom.c MCAL/GPIO/hal_gpio.c MCAL/INTERRUPT/hal_ext_interrupt.c MCAL/INTERRUPT/hal_int_interrupt.c MCAL/INTERRUPT/hal_interrupt_mng.c MCAL/Timers/Timer0/hal_timer0.c MCAL/Timers/Timer1/hal_timer1.c MCAL/Timers/Timer2/hal_timer2.c MCAL/Timers/Timer3/hal_timer3.c MCAL/device_cfg.c MCAL/EUSART/hal_eusart.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/APPL/app.p1 ${OBJECTDIR}/ECUAL/7SEG/ecual_7seg.p1 ${OBJECTDIR}/ECUAL/BTN/ecual_btn.p1 ${OBJECTDIR}/ECUAL/Chr_lcd/ecual_chr_lcd.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ecual_dc_motor.p1 ${OBJECTDIR}/ECUAL/Keypad/ecual_keypad.p1 ${OBJECTDIR}/ECUAL/LED/ecual_led.p1 ${OBJECTDIR}/ECUAL/Relay/ecual_relay.p1 ${OBJECTDIR}/MCAL/ADC/hal_adc.p1 ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_ext_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_int_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_interrupt_mng.p1 ${OBJECTDIR}/MCAL/Timers/Timer0/hal_timer0.p1 ${OBJECTDIR}/MCAL/Timers/Timer1/hal_timer1.p1 ${OBJECTDIR}/MCAL/Timers/Timer2/hal_timer2.p1 ${OBJECTDIR}/MCAL/Timers/Timer3/hal_timer3.p1 ${OBJECTDIR}/MCAL/device_cfg.p1 ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/APPL/app.p1.d ${OBJECTDIR}/ECUAL/7SEG/ecual_7seg.p1.d ${OBJECTDIR}/ECUAL/BTN/ecual_btn.p1.d ${OBJECTDIR}/ECUAL/Chr_lcd/ecual_chr_lcd.p1.d ${OBJECTDIR}/ECUAL/DC_Motor/ecual_dc_motor.p1.d ${OBJECTDIR}/ECUAL/Keypad/ecual_keypad.p1.d ${OBJECTDIR}/ECUAL/LED/ecual_led.p1.d ${OBJECTDIR}/ECUAL/Relay/ecual_relay.p1.d ${OBJECTDIR}/MCAL/ADC/hal_adc.p1.d ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1.d ${OBJECTDIR}/MCAL/GPIO/hal_gpio.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/hal_ext_interrupt.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/hal_int_interrupt.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/hal_interrupt_mng.p1.d ${OBJECTDIR}/MCAL/Timers/Timer0/hal_timer0.p1.d ${OBJECTDIR}/MCAL/Timers/Timer1/hal_timer1.p1.d ${OBJECTDIR}/MCAL/Timers/Timer2/hal_timer2.p1.d ${OBJECTDIR}/MCAL/Timers/Timer3/hal_timer3.p1.d ${OBJECTDIR}/MCAL/device_cfg.p1.d ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/APPL/app.p1 ${OBJECTDIR}/ECUAL/7SEG/ecual_7seg.p1 ${OBJECTDIR}/ECUAL/BTN/ecual_btn.p1 ${OBJECTDIR}/ECUAL/Chr_lcd/ecual_chr_lcd.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ecual_dc_motor.p1 ${OBJECTDIR}/ECUAL/Keypad/ecual_keypad.p1 ${OBJECTDIR}/ECUAL/LED/ecual_led.p1 ${OBJECTDIR}/ECUAL/Relay/ecual_relay.p1 ${OBJECTDIR}/MCAL/ADC/hal_adc.p1 ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_ext_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_int_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_interrupt_mng.p1 ${OBJECTDIR}/MCAL/Timers/Timer0/hal_timer0.p1 ${OBJECTDIR}/MCAL/Timers/Timer1/hal_timer1.p1 ${OBJECTDIR}/MCAL/Timers/Timer2/hal_timer2.p1 ${OBJECTDIR}/MCAL/Timers/Timer3/hal_timer3.p1 ${OBJECTDIR}/MCAL/device_cfg.p1 ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/APPL/app.p1.d ${OBJECTDIR}/ECUAL/7SEG/ecual_7seg.p1.d ${OBJECTDIR}/ECUAL/BTN/ecual_btn.p1.d ${OBJECTDIR}/ECUAL/Chr_lcd/ecual_chr_lcd.p1.d ${OBJECTDIR}/ECUAL/DC_Motor/ecual_dc_motor.p1.d ${OBJECTDIR}/ECUAL/Keypad/ecual_keypad.p1.d ${OBJECTDIR}/ECUAL/LED/ecual_led.p1.d ${OBJECTDIR}/ECUAL/Relay/ecual_relay.p1.d ${OBJECTDIR}/MCAL/ADC/hal_adc.p1.d ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1.d ${OBJECTDIR}/MCAL/GPIO/hal_gpio.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/hal_ext_interrupt.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/hal_int_interrupt.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/hal_interrupt_mng.p1.d ${OBJECTDIR}/MCAL/Timers/Timer0/hal_timer0.p1.d ${OBJECTDIR}/MCAL/Timers/Timer1/hal_timer1.p1.d ${OBJECTDIR}/MCAL/Timers/Timer2/hal_timer2.p1.d ${OBJECTDIR}/MCAL/Timers/Timer3/hal_timer3.p1.d ${OBJECTDIR}/MCAL/device_cfg.p1.d ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/APPL/app.p1 ${OBJECTDIR}/ECUAL/7SEG/ecual_7seg.p1 ${OBJECTDIR}/ECUAL/BTN/ecual_btn.p1 ${OBJECTDIR}/ECUAL/Chr_lcd/ecual_chr_lcd.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ecual_dc_motor.p1 ${OBJECTDIR}/ECUAL/Keypad/ecual_keypad.p1 ${OBJECTDIR}/ECUAL/LED/ecual_led.p1 ${OBJECTDIR}/ECUAL/Relay/ecual_relay.p1 ${OBJECTDIR}/MCAL/ADC/hal_adc.p1 ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_ext_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_int_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_interrupt_mng.p1 ${OBJECTDIR}/MCAL/Timers/Timer0/hal_timer0.p1 ${OBJECTDIR}/MCAL/Timers/Timer1/hal_timer1.p1 ${OBJECTDIR}/MCAL/Timers/Timer2/hal_timer2.p1 ${OBJECTDIR}/MCAL/Timers/Timer3/hal_timer3.p1 ${OBJECTDIR}/MCAL/device_cfg.p1 ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1
+OBJECTFILES=${OBJECTDIR}/APPL/app.p1 ${OBJECTDIR}/ECUAL/7SEG/ecual_7seg.p1 ${OBJECTDIR}/ECUAL/BTN/ecual_btn.p1 ${OBJECTDIR}/ECUAL/Chr_lcd/ecual_chr_lcd.p1 ${OBJECTDIR}/ECUAL/DC_Motor/ecual_dc_motor.p1 ${OBJECTDIR}/ECUAL/Keypad/ecual_keypad.p1 ${OBJECTDIR}/ECUAL/LED/ecual_led.p1 ${OBJECTDIR}/ECUAL/Relay/ecual_relay.p1 ${OBJECTDIR}/MCAL/ADC/hal_adc.p1 ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_ext_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_int_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/hal_interrupt_mng.p1 ${OBJECTDIR}/MCAL/Timers/Timer0/hal_timer0.p1 ${OBJECTDIR}/MCAL/Timers/Timer1/hal_timer1.p1 ${OBJECTDIR}/MCAL/Timers/Timer2/hal_timer2.p1 ${OBJECTDIR}/MCAL/Timers/Timer3/hal_timer3.p1 ${OBJECTDIR}/MCAL/device_cfg.p1 ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1
 
 # Source Files
-SOURCEFILES=APPL/app.c ECUAL/7SEG/ecual_7seg.c ECUAL/BTN/ecual_btn.c ECUAL/Chr_lcd/ecual_chr_lcd.c ECUAL/DC_Motor/ecual_dc_motor.c ECUAL/Keypad/ecual_keypad.c ECUAL/LED/ecual_led.c ECUAL/Relay/ecual_relay.c MCAL/ADC/hal_adc.c MCAL/EEPROM/hal_eeprom.c MCAL/GPIO/hal_gpio.c MCAL/INTERRUPT/hal_ext_interrupt.c MCAL/INTERRUPT/hal_int_interrupt.c MCAL/INTERRUPT/hal_interrupt_mng.c MCAL/Timers/Timer0/hal_timer0.c MCAL/Timers/Timer1/hal_timer1.c MCAL/Timers/Timer2/hal_timer2.c MCAL/Timers/Timer3/hal_timer3.c MCAL/device_cfg.c MCAL/CCP/hal_ccp.c
+SOURCEFILES=APPL/app.c ECUAL/7SEG/ecual_7seg.c ECUAL/BTN/ecual_btn.c ECUAL/Chr_lcd/ecual_chr_lcd.c ECUAL/DC_Motor/ecual_dc_motor.c ECUAL/Keypad/ecual_keypad.c ECUAL/LED/ecual_led.c ECUAL/Relay/ecual_relay.c MCAL/ADC/hal_adc.c MCAL/CCP/hal_ccp.c MCAL/EEPROM/hal_eeprom.c MCAL/GPIO/hal_gpio.c MCAL/INTERRUPT/hal_ext_interrupt.c MCAL/INTERRUPT/hal_int_interrupt.c MCAL/INTERRUPT/hal_interrupt_mng.c MCAL/Timers/Timer0/hal_timer0.c MCAL/Timers/Timer1/hal_timer1.c MCAL/Timers/Timer2/hal_timer2.c MCAL/Timers/Timer3/hal_timer3.c MCAL/device_cfg.c MCAL/EUSART/hal_eusart.c
 
 
 
@@ -160,6 +160,14 @@ ${OBJECTDIR}/MCAL/ADC/hal_adc.p1: MCAL/ADC/hal_adc.c  nbproject/Makefile-${CND_C
 	@-${MV} ${OBJECTDIR}/MCAL/ADC/hal_adc.d ${OBJECTDIR}/MCAL/ADC/hal_adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL/ADC/hal_adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/MCAL/CCP/hal_ccp.p1: MCAL/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/CCP" 
+	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 MCAL/CCP/hal_ccp.c 
+	@-${MV} ${OBJECTDIR}/MCAL/CCP/hal_ccp.d ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1: MCAL/EEPROM/hal_eeprom.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/MCAL/EEPROM" 
 	@${RM} ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1.d 
@@ -240,13 +248,13 @@ ${OBJECTDIR}/MCAL/device_cfg.p1: MCAL/device_cfg.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/MCAL/device_cfg.d ${OBJECTDIR}/MCAL/device_cfg.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL/device_cfg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/MCAL/CCP/hal_ccp.p1: MCAL/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/MCAL/CCP" 
-	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
-	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 MCAL/CCP/hal_ccp.c 
-	@-${MV} ${OBJECTDIR}/MCAL/CCP/hal_ccp.d ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1: MCAL/EUSART/hal_eusart.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/EUSART" 
+	@${RM} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1 MCAL/EUSART/hal_eusart.c 
+	@-${MV} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.d ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/APPL/app.p1: APPL/app.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -320,6 +328,14 @@ ${OBJECTDIR}/MCAL/ADC/hal_adc.p1: MCAL/ADC/hal_adc.c  nbproject/Makefile-${CND_C
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/ADC/hal_adc.p1 MCAL/ADC/hal_adc.c 
 	@-${MV} ${OBJECTDIR}/MCAL/ADC/hal_adc.d ${OBJECTDIR}/MCAL/ADC/hal_adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL/ADC/hal_adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/MCAL/CCP/hal_ccp.p1: MCAL/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/CCP" 
+	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 MCAL/CCP/hal_ccp.c 
+	@-${MV} ${OBJECTDIR}/MCAL/CCP/hal_ccp.d ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/MCAL/EEPROM/hal_eeprom.p1: MCAL/EEPROM/hal_eeprom.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/MCAL/EEPROM" 
@@ -401,13 +417,13 @@ ${OBJECTDIR}/MCAL/device_cfg.p1: MCAL/device_cfg.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/MCAL/device_cfg.d ${OBJECTDIR}/MCAL/device_cfg.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/MCAL/device_cfg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/MCAL/CCP/hal_ccp.p1: MCAL/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/MCAL/CCP" 
-	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
-	@${RM} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1 MCAL/CCP/hal_ccp.c 
-	@-${MV} ${OBJECTDIR}/MCAL/CCP/hal_ccp.d ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MCAL/CCP/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1: MCAL/EUSART/hal_eusart.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/EUSART" 
+	@${RM} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1 MCAL/EUSART/hal_eusart.c 
+	@-${MV} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.d ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/EUSART/hal_eusart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

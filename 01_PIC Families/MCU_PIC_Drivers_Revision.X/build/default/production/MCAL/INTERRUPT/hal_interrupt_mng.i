@@ -5658,6 +5658,8 @@ void tmr2_isr(void);
 void tmr3_isr(void);
 void ccp1_isr(void);
 void ccp2_isr(void);
+void eusart_tx_isr();
+void eusart_rx_isr();
 # 11 "MCAL/INTERRUPT/hal_interrupt_mng.c" 2
 
 
@@ -5677,6 +5679,18 @@ void __attribute__((picinterrupt(("")))) interrupt_manager(void) {
 
     if ((PIR1bits.CCP1IF == (uint8)0x01) && (PIE1bits.CCP1IE == (uint8)0x01)) {
         ccp1_isr();
+    }
+    else { }
+
+
+    if ((PIR1bits.TXIF == (uint8)0x01) && (PIE1bits.TXIE == (uint8)0x01)) {
+        eusart_tx_isr();
+    }
+    else { }
+
+
+    if ((PIR1bits.RCIF == (uint8)0x01) && (PIE1bits.RCIE == (uint8)0x01)) {
+        eusart_rx_isr();
     }
     else { }
 

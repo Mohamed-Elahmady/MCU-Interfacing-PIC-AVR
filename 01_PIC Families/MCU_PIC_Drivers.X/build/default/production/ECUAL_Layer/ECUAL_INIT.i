@@ -6239,8 +6239,8 @@ typedef union{
 
 typedef struct {
 
-
-
+    CCP_HANDLER ccp_interrupt;
+    INTERRUPT_PRIORITY priority;
 
 
     CCP_MODE ccp_mode;
@@ -6278,7 +6278,124 @@ Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_STOP_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty);
 # 36 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 50 "ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h" 1
+# 16 "ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART_CFG.h" 1
+# 17 "ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h" 2
+# 76 "ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h"
+typedef void (* EUSART_HANDLER)(void);
+
+
+
+typedef enum{
+    EUSART_ASYNC_TX_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_TX_ENABLE_STATE
+}EUSART_ASYNC_TX_STATE;
+
+typedef enum{
+    EUSART_ASYNC_TX_INTERRUPT_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_TX_INTERRUPT_ENABLE_STATE
+}EUSART_ASYNC_TX_INTERRUPT_STATE;
+
+typedef enum{
+    EUSART_ASYNC_TX_9BIT_SIZE_DISABLE = (uint8)0x00,
+    EUSART_ASYNC_TX_9BIT_SIZE_ENABLE
+}EUSART_ASYNC_TX_SIZE_STATE;
+
+typedef struct{
+    EUSART_HANDLER tx_interrupt;
+    INTERRUPT_PRIORITY tx_priority;
+
+    EUSART_ASYNC_TX_STATE state;
+    EUSART_ASYNC_TX_INTERRUPT_STATE interrupt_state;
+    EUSART_ASYNC_TX_SIZE_STATE tx_size;
+}EUSART_TX_CFG;
+
+
+
+typedef enum{
+    EUSART_ASYNC_RX_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_RX_ENABLE_STATE
+}EUSART_ASYNC_RX_STATE;
+
+typedef enum{
+    EUSART_ASYNC_RX_INTERRUPT_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_RX_INTERRUPT_ENABLE_STATE
+}EUSART_ASYNC_RX_INTERRUPT_STATE;
+
+typedef enum{
+    EUSART_ASYNC_RX_9BIT_SIZE_DISABLE = (uint8)0x00,
+    EUSART_ASYNC_RX_9BIT_SIZE_ENABLE
+}EUSART_ASYNC_RX_SIZE_STATE;
+
+typedef struct{
+    EUSART_HANDLER rx_interrupt;
+    INTERRUPT_PRIORITY rx_priority;
+    EUSART_HANDLER farming_interrupt;
+    EUSART_HANDLER overrun_interrupt;
+
+    EUSART_ASYNC_RX_STATE state;
+    EUSART_ASYNC_RX_INTERRUPT_STATE interrupt_state;
+    EUSART_ASYNC_RX_SIZE_STATE rx_size;
+}EUSART_RX_CFG;
+
+
+
+typedef enum {
+    EUSART_FRAMING_ERROR_CLEARED = (uint8)0x00,
+    EUSART_FRAMING_ERROR_DETECTED
+}EUSART_FRAMING_ERROR;
+
+typedef enum {
+    EUSART_OVERRUN_ERROR_CLEARED = (uint8)0x00,
+    EUSART_OVERRUN_ERROR_DETECTED
+}EUSART_OVERRUN_ERROR;
+
+typedef union{
+    struct{
+        uint8 EUSART_FARMING_STATE :1;
+        uint8 EUSART_OVERRUN_STATE :1;
+        uint8 EUSART_RESERVED :6;
+    };
+    uint8 status;
+}EUSART_ERROR_STATUS;
+
+
+
+typedef enum{
+    EUSART_BR_ASYNC_8BIT_LOW_SPEED = (uint8)0x00,
+    EUSART_BR_ASYNC_8BIT_HIGH_SPEED,
+    EUSART_BR_ASYNC_16BIT_LOW_SPEED,
+    EUSART_BR_ASYNC_16BIT_HIGH_SPEED,
+    EUSART_BR_SYNC_8BIT,
+    EUSART_BR_SYNC_16BIT
+}EUSART_BR_CONFIGURATION;
+
+typedef struct{
+    EUSART_TX_CFG eusart_tx_mode;
+    EUSART_RX_CFG eusart_rx_mode;
+    EUSART_ERROR_STATUS error_states;
+
+    uint32 baud_rate;
+    EUSART_BR_CONFIGURATION br_cfg;
+}EUSART_CFG;
+
+
+
+Std_ReturnType EUSART_ASYNC_INIT(const EUSART_CFG *eusart);
+Std_ReturnType EUSART_ASYNC_DEINIT(const EUSART_CFG *eusart);
+
+Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 data);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *str);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 data);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_BLOCKING(const EUSART_CFG *eusart, uint8 *str);
+
+Std_ReturnType EUSART_ASYNC_RX_RESTART(const EUSART_CFG *eusart);
+Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
+Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
+# 38 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 52 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
 # 81 "ECUAL_Layer/ECUAL_INIT.c"

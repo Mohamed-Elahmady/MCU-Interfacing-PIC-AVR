@@ -39,9 +39,19 @@
         <logicalFolder name="CCP" displayName="CCP" projectFiles="true">
           <itemPath>Codes/MCAL/CCP/app1.c</itemPath>
           <itemPath>Codes/MCAL/CCP/app2.c</itemPath>
+          <itemPath>Codes/MCAL/CCP/app3.c</itemPath>
         </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/app1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="EUSART" displayName="EUSART" projectFiles="true">
+          <itemPath>Codes/MCAL/EUSART/app1.c</itemPath>
+          <itemPath>Codes/MCAL/EUSART/app2.c</itemPath>
+          <itemPath>Codes/MCAL/EUSART/app3.c</itemPath>
+          <itemPath>Codes/MCAL/EUSART/app4.c</itemPath>
+          <itemPath>Codes/MCAL/EUSART/app5.c</itemPath>
+          <itemPath>Codes/MCAL/EUSART/app6.c</itemPath>
+          <itemPath>Codes/MCAL/EUSART/app7.c</itemPath>
         </logicalFolder>
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>Codes/MCAL/GPIO/app2.c</itemPath>
@@ -123,6 +133,10 @@
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM.h</itemPath>
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM_CFG.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="EUSART" displayName="EUSART" projectFiles="true">
+          <itemPath>MCAL_Layer/EUSART/HAL_EUSART.h</itemPath>
+          <itemPath>MCAL_Layer/EUSART/HAL_EUSART_CFG.h</itemPath>
         </logicalFolder>
         <logicalFolder name="HAL_GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL_Layer/GPIO/HAL_GPIO.h</itemPath>
@@ -207,6 +221,9 @@
         </logicalFolder>
         <logicalFolder name="EEPROM" displayName="EEPROM" projectFiles="true">
           <itemPath>MCAL_Layer/EEPROM/HAL_EEPROM.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="EUSART" displayName="EUSART" projectFiles="true">
+          <itemPath>MCAL_Layer/EUSART/HAL_EUSART.c</itemPath>
         </logicalFolder>
         <logicalFolder name="HAL_GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL_Layer/GPIO/HAL_GPIO.c</itemPath>

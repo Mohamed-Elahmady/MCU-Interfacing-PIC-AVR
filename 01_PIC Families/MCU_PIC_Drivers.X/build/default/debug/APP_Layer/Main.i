@@ -6229,16 +6229,14 @@ typedef enum{
     CCP1_TIMER1_CCP2_TIMER3 = (uint8)0x01,
     CCP1_CCP2_TIMER3 = (uint8)0x02
 }CCP_CAPTURE_COMPARE_TIMER;
-
-
-
-
-
+# 105 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
 typedef enum{
-    CCP_CAPTURE_NOT_READY = (uint8)0x00,
-    CCP_CAPTURE_READY
-}CCP_CAPTURE_STATUS;
-# 112 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
+    CCP_COMPARE_NOT_READY = (uint8)0x00,
+    CCP_COMPARE_READY
+}CCP_COMPARE_STATUS;
+
+
+
 typedef union{
     struct{
         uint8 CCPR_LOW ;
@@ -6259,8 +6257,8 @@ typedef struct {
 
 
     uint32 pwm_freq;
-    TIMER2_PRESCALER_SELECT pwm_prescaler;
-    TIMER2_POSTSCALER_SELECT pwm_postscaler;
+    uint8 pwm_prescaler :2;
+    uint8 pwm_postscaler :5;
 
 
     CCP_CAPTURE_COMPARE_TIMER ccp_timer;
@@ -6274,63 +6272,194 @@ Std_ReturnType CCP_INIT(const CCP_CFG *ccp);
 Std_ReturnType CCP_DEINIT(const CCP_CFG *ccp);
 
 
-Std_ReturnType CCP_IS_CAPTURE_READY(const CCP_CFG *ccp, CCP_CAPTURE_STATUS *state);
-Std_ReturnType CCP_READ_CAPTURE_VALUE(const CCP_CFG *ccp, uint16 *value);
-# 157 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/CCP/HAL_CCP.h"
+
+
+
+
+
+Std_ReturnType CCP_IS_COMPARE_COMPLETED(const CCP_CFG *ccp, CCP_COMPARE_STATUS *state);
+Std_ReturnType CCP_WRITE_COMPARE_SET_VALUE(const CCP_CFG *ccp, uint16 value);
+
+
+
 Std_ReturnType CCP_START_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_STOP_PWM(const CCP_CFG *ccp);
 Std_ReturnType CCP_SET_DUTY_CYCLE(const CCP_CFG *ccp, uint8 duty);
 # 36 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 50 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h" 2
+# 76 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART.h"
+typedef void (* EUSART_HANDLER)(void);
+
+
+
+typedef enum{
+    EUSART_ASYNC_TX_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_TX_ENABLE_STATE
+}EUSART_ASYNC_TX_STATE;
+
+typedef enum{
+    EUSART_ASYNC_TX_INTERRUPT_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_TX_INTERRUPT_ENABLE_STATE
+}EUSART_ASYNC_TX_INTERRUPT_STATE;
+
+typedef enum{
+    EUSART_ASYNC_TX_9BIT_SIZE_DISABLE = (uint8)0x00,
+    EUSART_ASYNC_TX_9BIT_SIZE_ENABLE
+}EUSART_ASYNC_TX_SIZE_STATE;
+
+typedef struct{
+    EUSART_HANDLER tx_interrupt;
+    INTERRUPT_PRIORITY tx_priority;
+
+    EUSART_ASYNC_TX_STATE state;
+    EUSART_ASYNC_TX_INTERRUPT_STATE interrupt_state;
+    EUSART_ASYNC_TX_SIZE_STATE tx_size;
+}EUSART_TX_CFG;
+
+
+
+typedef enum{
+    EUSART_ASYNC_RX_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_RX_ENABLE_STATE
+}EUSART_ASYNC_RX_STATE;
+
+typedef enum{
+    EUSART_ASYNC_RX_INTERRUPT_DISABLE_STATE = (uint8)0x00,
+    EUSART_ASYNC_RX_INTERRUPT_ENABLE_STATE
+}EUSART_ASYNC_RX_INTERRUPT_STATE;
+
+typedef enum{
+    EUSART_ASYNC_RX_9BIT_SIZE_DISABLE = (uint8)0x00,
+    EUSART_ASYNC_RX_9BIT_SIZE_ENABLE
+}EUSART_ASYNC_RX_SIZE_STATE;
+
+typedef struct{
+    EUSART_HANDLER rx_interrupt;
+    INTERRUPT_PRIORITY rx_priority;
+    EUSART_HANDLER farming_interrupt;
+    EUSART_HANDLER overrun_interrupt;
+
+    EUSART_ASYNC_RX_STATE state;
+    EUSART_ASYNC_RX_INTERRUPT_STATE interrupt_state;
+    EUSART_ASYNC_RX_SIZE_STATE rx_size;
+}EUSART_RX_CFG;
+
+
+
+typedef enum {
+    EUSART_FRAMING_ERROR_CLEARED = (uint8)0x00,
+    EUSART_FRAMING_ERROR_DETECTED
+}EUSART_FRAMING_ERROR;
+
+typedef enum {
+    EUSART_OVERRUN_ERROR_CLEARED = (uint8)0x00,
+    EUSART_OVERRUN_ERROR_DETECTED
+}EUSART_OVERRUN_ERROR;
+
+typedef union{
+    struct{
+        uint8 EUSART_FARMING_STATE :1;
+        uint8 EUSART_OVERRUN_STATE :1;
+        uint8 EUSART_RESERVED :6;
+    };
+    uint8 status;
+}EUSART_ERROR_STATUS;
+
+
+
+typedef enum{
+    EUSART_BR_ASYNC_8BIT_LOW_SPEED = (uint8)0x00,
+    EUSART_BR_ASYNC_8BIT_HIGH_SPEED,
+    EUSART_BR_ASYNC_16BIT_LOW_SPEED,
+    EUSART_BR_ASYNC_16BIT_HIGH_SPEED,
+    EUSART_BR_SYNC_8BIT,
+    EUSART_BR_SYNC_16BIT
+}EUSART_BR_CONFIGURATION;
+
+typedef struct{
+    EUSART_TX_CFG eusart_tx_mode;
+    EUSART_RX_CFG eusart_rx_mode;
+    EUSART_ERROR_STATUS error_states;
+
+    uint32 baud_rate;
+    EUSART_BR_CONFIGURATION br_cfg;
+}EUSART_CFG;
+
+
+
+Std_ReturnType EUSART_ASYNC_INIT(const EUSART_CFG *eusart);
+Std_ReturnType EUSART_ASYNC_DEINIT(const EUSART_CFG *eusart);
+
+Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 data);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *str);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 data);
+Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_BLOCKING(const EUSART_CFG *eusart, uint8 *str);
+
+Std_ReturnType EUSART_ASYNC_RX_RESTART(const EUSART_CFG *eusart);
+Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
+Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
+# 38 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 52 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 39 "APP_Layer/Main.h"
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
+
 Std_ReturnType Ret = E_OK;
-TIMER1_CFG t1_timer;
 
-void ccp_capture_isr(void);
+void eusart_tx_isr(void);
+void eusart_rx_isr(void);
 
-CCP_CFG ccp1_cap = {
-    .ccp_interrupt = ccp_capture_isr,
-    .priority = INTERRUPT_HIGH_PRIORITY,
-    .ccp_src = CCP1_SOURCE,
-    .ccp_mode = CCP_CAPTURE_MODE,
-    .ccp_cfg = CCP_CFG_CAPTURE_MODE_1_RISING_EDGE,
-    .ccp_timer = CCP1_CCP2_TIMER1
+GPIO_LED led1 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
+
+EUSART_CFG usart_object = {
+    .eusart_tx_mode.interrupt_state = EUSART_ASYNC_TX_INTERRUPT_ENABLE_STATE,
+    .eusart_tx_mode.tx_interrupt = eusart_tx_isr,
+    .eusart_tx_mode.tx_priority = INTERRUPT_HIGH_PRIORITY,
+
+    .eusart_tx_mode.state = EUSART_ASYNC_TX_ENABLE_STATE,
+    .eusart_tx_mode.tx_size = EUSART_ASYNC_TX_9BIT_SIZE_DISABLE,
+
+    .eusart_rx_mode.interrupt_state = EUSART_ASYNC_RX_INTERRUPT_DISABLE_STATE,
+    .eusart_rx_mode.rx_priority = INTERRUPT_HIGH_PRIORITY,
+    .eusart_rx_mode.rx_interrupt = ((void*)0),
+    .eusart_rx_mode.farming_interrupt = ((void*)0),
+    .eusart_rx_mode.overrun_interrupt = ((void*)0),
+
+    .eusart_rx_mode.state = EUSART_ASYNC_RX_ENABLE_STATE,
+    .eusart_rx_mode.rx_size = EUSART_ASYNC_RX_9BIT_SIZE_DISABLE,
+
+    .baud_rate = 9600,
+    .br_cfg = EUSART_BR_ASYNC_8BIT_LOW_SPEED,
+
+    .error_states.status = 0x00
 };
-
-void timer1_timer_init(void){
-    t1_timer.TIMER1_INTERRUPT = ((void*)0);
-    t1_timer.priority = INTERRUPT_LOW_PRIORITY;
-    t1_timer.mode = TIMER1_TIMER_MODE;
-    t1_timer.prescaler = TIMER1_PRESCALER_DIV_1;
-    t1_timer.rw_reg = TIMER1_8BIT_RW_MODE;
-    t1_timer.preloaded_value = 0x0000;
-    TIMER1_INIT(&t1_timer);
-}
-
-uint16 capture_time = 0;
 
 int main() {
     application_init();
-
     while (1) {
-
+        EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(&usart_object, 'W');
+        _delay((unsigned long)((350)*(8000000UL/4000.0)));
     }
     return (0);
 }
 
 void application_init(void) {
     ECUAL_LAYER_INIT();
-    CCP_INIT(&ccp1_cap);
-    timer1_timer_init();
-
-
+    Ret = EUSART_ASYNC_INIT(&usart_object);
+    GPIO_LED_INIT(&led1);
 }
 
-void ccp_capture_isr(void){
-    CCP_READ_CAPTURE_VALUE(&ccp1_cap, &capture_time);
+void eusart_tx_isr(void){
+    GPIO_LED_TURN_TOGGLE(&led1);
+}
+
+void eusart_rx_isr(void){
+
 }

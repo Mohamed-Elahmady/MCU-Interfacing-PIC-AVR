@@ -552,20 +552,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 313 ]
 }
 "46
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 46:         _delay((unsigned long)((20)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 46:         _delay((unsigned long)((20)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "47
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 47:         Retval = gpio_chr_lcd_4bit_send_command(lcd, (uint8)0x38);
 [e = _Retval ( _gpio_chr_lcd_4bit_send_command (2 , _lcd -> -> 56 `i `uc ]
 "48
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 48:         _delay((unsigned long)((5)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 48:         _delay((unsigned long)((5)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "49
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 49:         Retval = gpio_chr_lcd_4bit_send_command(lcd, (uint8)0x38);
 [e = _Retval ( _gpio_chr_lcd_4bit_send_command (2 , _lcd -> -> 56 `i `uc ]
 "50
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 50:         _delay((unsigned long)((150)*(4000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 50:         _delay((unsigned long)((150)*(8000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
 "51
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 51:         Retval = gpio_chr_lcd_4bit_send_command(lcd, (uint8)0x38);
 [e = _Retval ( _gpio_chr_lcd_4bit_send_command (2 , _lcd -> -> 56 `i `uc ]
@@ -987,20 +987,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 343 ]
 }
 "175
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 175:         _delay((unsigned long)((20)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 175:         _delay((unsigned long)((20)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "176
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 176:         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x38);
 [e = _Retval ( _gpio_chr_lcd_8bit_send_command (2 , _lcd -> -> 56 `i `uc ]
 "177
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 177:         _delay((unsigned long)((5)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 177:         _delay((unsigned long)((5)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "178
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 178:         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x38);
 [e = _Retval ( _gpio_chr_lcd_8bit_send_command (2 , _lcd -> -> 56 `i `uc ]
 "179
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 179:         _delay((unsigned long)((150)*(4000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 179:         _delay((unsigned long)((150)*(8000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
 "180
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 180:         Retval = gpio_chr_lcd_8bit_send_command(lcd, (uint8)0x38);
 [e = _Retval ( _gpio_chr_lcd_8bit_send_command (2 , _lcd -> -> 56 `i `uc ]
@@ -1713,8 +1713,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 367:         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_high);
 [e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _lcd 2 . `E3693 1 ]
 "368
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 368:         _delay((unsigned long)((5)*(4000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 368:         _delay((unsigned long)((5)*(8000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
 "369
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 369:         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_low);
 [e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _lcd 2 . `E3693 0 ]
@@ -1863,8 +1863,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 407:         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_high);
 [e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _lcd 2 . `E3693 1 ]
 "408
-[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 408:         _delay((unsigned long)((5)*(4000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
+[; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 408:         _delay((unsigned long)((5)*(8000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
 "409
 [; ;ECUAL/Chr_lcd/ecual_chr_lcd.c: 409:         Retval = gpio_pin_write_logic(&(lcd->en_pin), gpio_low);
 [e = _Retval ( _gpio_pin_write_logic (2 , &U . *U _lcd 2 . `E3693 0 ]

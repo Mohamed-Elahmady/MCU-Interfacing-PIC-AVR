@@ -4,7 +4,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . port pin direction logic ]
 "10 APPL/app.c
-[; ;APPL/app.c: 10: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+[; ;APPL/app.c: 10: gpio_led led1 = {
 [c E3736 0 1 .. ]
 [n E3736 . led_off led_on  ]
 [c E3740 0 1 .. ]
@@ -14,7 +14,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S307 `S306 1 `E3736 1 `E3740 1 ]
 [n S307 . pin state con ]
 "10 APPL/app.c
-[; ;APPL/app.c: 10: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+[; ;APPL/app.c: 10: gpio_led led1 = {
 [c E3672 0 1 2 3 4 .. ]
 [n E3672 . gpio_portA gpio_portB gpio_portC gpio_portD gpio_portE  ]
 [c E3679 0 1 2 3 4 5 6 7 .. ]
@@ -23,11 +23,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E3689 . gpio_output gpio_input  ]
 [c E3693 0 1 .. ]
 [n E3693 . gpio_low gpio_high  ]
+[v F4315 `(v ~T0 @X0 0 tf ]
+"19
+[; ;APPL/app.c: 19: eusart_cfg eusart1 = {
+[c E3919 0 1 .. ]
+[n E3919 . interrupt_low_priority interrupt_high_priority  ]
+[c E4305 0 1 .. ]
+[n E4305 . eusart_tx_interrupt_disable_state eusart_tx_interrupt_enable_state  ]
+[c E4301 0 1 .. ]
+[n E4301 . eusart_tx_disable_state eusart_tx_enable_state  ]
+[c E4309 0 1 .. ]
+[n E4309 . eusart_tx_9bit_disable_state eusart_tx_9bit_enable_state  ]
+"93 APPL/../MCAL/EUSART/hal_eusart.h
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 93: typedef struct{
+[s S323 `*F4315 1 `E3919 1 `E4305 1 `E4301 1 `E4309 1 ]
+[n S323 . tx_interrupt tx_priority tx_int_state tx_state tx_9bit_state ]
+[v F4335 `(v ~T0 @X0 0 tf ]
+[v F4337 `(v ~T0 @X0 0 tf ]
+[v F4339 `(v ~T0 @X0 0 tf ]
+"19 APPL/app.c
+[; ;APPL/app.c: 19: eusart_cfg eusart1 = {
+[c E4325 0 1 .. ]
+[n E4325 . eusart_rx_interrupt_disable_state eusart_rx_interrupt_enable_state  ]
+[c E4321 0 1 .. ]
+[n E4321 . eusart_rx_disable_state eusart_rx_enable_state  ]
+[c E4329 0 1 .. ]
+[n E4329 . eusart_rx_9bit_disable_state eusart_rx_9bit_enable_state  ]
+"121 APPL/../MCAL/EUSART/hal_eusart.h
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 121: typedef struct{
+[s S324 `*F4335 1 `*F4337 1 `*F4339 1 `E3919 1 `E4325 1 `E4321 1 `E4329 1 ]
+[n S324 . rx_interrupt framing_interrupt ovverun_interrupt rx_priority rx_int_state rx_state rx_9bit_state ]
+"19 APPL/app.c
+[; ;APPL/app.c: 19: eusart_cfg eusart1 = {
+[c E4361 0 1 2 3 4 5 .. ]
+[n E4361 . eusart_async_8bit_low_speed eusart_async_8bit_high_speed eusart_async_16bit_low_speed eusart_async_16bit_high_speed eusart_sync_8bit eusart_sync_16bit  ]
+"165 APPL/../MCAL/EUSART/hal_eusart.h
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 165: typedef struct{
+[s S327 `S323 1 `S324 1 `us 1 `E4361 1 ]
+[n S327 . tx_transmitter rx_reciver baud_rate baud_rate_cfg ]
+[v F4401 `(v ~T0 @X0 0 tf ]
+[v F4402 `(v ~T0 @X0 0 tf ]
+[v F4403 `(v ~T0 @X0 0 tf ]
+[v F4404 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"15
-[; ;APPL/app.c: 15:     Std_ReturnType ret = E_NOT_OK;
+"47 APPL/app.c
+[; ;APPL/app.c: 47:     Std_ReturnType ret = E_NOT_OK;
 [c E3659 0 1 .. ]
 [n E3659 . E_NOT_OK E_OK  ]
+"175 APPL/../MCAL/EUSART/hal_eusart.h
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 175: Std_ReturnType eusart_init(const eusart_cfg *eusart);
+[v _eusart_init `(E3659 ~T0 @X0 0 ef1`*CS327 ]
+"181
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 181: Std_ReturnType eusart_async_tx_write_string_blocking(const eusart_cfg *eusart, uint8 *str);
+[v _eusart_async_tx_write_string_blocking `(E3659 ~T0 @X0 0 ef2`*CS327`*uc ]
+[v F3624 `(v ~T0 @X0 1 tf1`ul ]
+"20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
+[v __delay `JF3624 ~T0 @X0 0 e ]
+[p i __delay ]
+"184 APPL/../MCAL/EUSART/hal_eusart.h
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 184: Std_ReturnType eusart_async_rx_read_byte_non_blocking(const eusart_cfg *eusart, uint8 *data);
+[v _eusart_async_rx_read_byte_non_blocking `(E3659 ~T0 @X0 0 ef2`*CS327`*uc ]
+"180
+[; ;APPL/../MCAL/EUSART/hal_eusart.h: 180: Std_ReturnType eusart_async_tx_write_byte_blocking(const eusart_cfg *eusart, uint8 data);
+[v _eusart_async_tx_write_byte_blocking `(E3659 ~T0 @X0 0 ef2`*CS327`uc ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -470,7 +528,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "10 APPL/app.c
-[; ;APPL/app.c: 10: gpio_led led1 = {.pin.port = gpio_portD, .pin.pin = gpio_pin0, .pin.direction = gpio_output,
+[; ;APPL/app.c: 10: gpio_led led1 = {
 [v _led1 `S307 ~T0 @X0 1 e ]
 [i _led1
 :U ..
@@ -488,32 +546,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
+"19
+[; ;APPL/app.c: 19: eusart_cfg eusart1 = {
+[v _eusart1 `S327 ~T0 @X0 1 e ]
+[i _eusart1
+:U ..
+:U ..
+:U ..
+:U ..
+-> -> -> 0 `i `*v `*F4401
+. `E3919 0
+. `E4305 0
+. `E4301 1
+. `E4309 0
+..
+..
+:U ..
+:U ..
+-> -> -> 0 `i `*v `*F4402
+-> -> -> 0 `i `*v `*F4403
+-> -> -> 0 `i `*v `*F4404
+. `E3919 0
+. `E4325 0
+. `E4321 1
+. `E4329 0
+..
+..
+-> -> 9600 `i `us
+. `E4361 2
+..
+..
+]
+"44
+[; ;APPL/app.c: 44: uint8 rx_data = 0;
+[v _rx_data `uc ~T0 @X0 1 e ]
+[i _rx_data
+-> -> 0 `i `uc
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"14
-[; ;APPL/app.c: 14: int main(void) {
+"46
+[; ;APPL/app.c: 46: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"15
-[; ;APPL/app.c: 15:     Std_ReturnType ret = E_NOT_OK;
+"47
+[; ;APPL/app.c: 47:     Std_ReturnType ret = E_NOT_OK;
 [v _ret `E3659 ~T0 @X0 1 a ]
 [e = _ret . `E3659 0 ]
-"16
-[; ;APPL/app.c: 16:     while(1){
-[e :U 324 ]
+"51
+[; ;APPL/app.c: 51:     ret = eusart_init(&eusart1);
+[e = _ret ( _eusart_init (1 -> &U _eusart1 `*CS327 ]
+"52
+[; ;APPL/app.c: 52:     eusart_async_tx_write_string_blocking(&eusart1, (uint8*)"Loading 0.5 sec .....\r");
+[e ( _eusart_async_tx_write_string_blocking (2 , -> &U _eusart1 `*CS327 -> :s 1C `*uc ]
+"53
+[; ;APPL/app.c: 53:     _delay((unsigned long)((500)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"54
+[; ;APPL/app.c: 54:     eusart_async_tx_write_string_blocking(&eusart1, (uint8*)"EUSART Echo Test Started...\r");
+[e ( _eusart_async_tx_write_string_blocking (2 , -> &U _eusart1 `*CS327 -> :s 2C `*uc ]
+"55
+[; ;APPL/app.c: 55:     while(1){
+[e :U 330 ]
 {
-"18
-[; ;APPL/app.c: 18:     }
+"56
+[; ;APPL/app.c: 56:         ret = eusart_async_rx_read_byte_non_blocking(&eusart1, &rx_data);
+[e = _ret ( _eusart_async_rx_read_byte_non_blocking (2 , -> &U _eusart1 `*CS327 &U _rx_data ]
+"57
+[; ;APPL/app.c: 57:         eusart_async_tx_write_byte_blocking(&eusart1, rx_data);
+[e ( _eusart_async_tx_write_byte_blocking (2 , -> &U _eusart1 `*CS327 _rx_data ]
+"58
+[; ;APPL/app.c: 58:         rx_data = 0;
+[e = _rx_data -> -> 0 `i `uc ]
+"59
+[; ;APPL/app.c: 59:     }
 }
-[e :U 323 ]
-[e $U 324  ]
-[e :U 325 ]
-"19
-[; ;APPL/app.c: 19:     return (0);
+[e :U 329 ]
+[e $U 330  ]
+[e :U 331 ]
+"61
+[; ;APPL/app.c: 61:     return (0);
 [e ) -> 0 `i ]
-[e $UE 322  ]
-"20
-[; ;APPL/app.c: 20: }
-[e :UE 322 ]
+[e $UE 328  ]
+"62
+[; ;APPL/app.c: 62: }
+[e :UE 328 ]
 }
+[a 2C 69 85 83 65 82 84 32 69 99 104 111 32 84 101 115 116 32 83 116 97 114 116 101 100 46 46 46 13 0 ]
+[a 1C 76 111 97 100 105 110 103 32 48 46 53 32 115 101 99 32 46 46 46 46 46 13 0 ]

@@ -1,5 +1,35 @@
 Archive member included to satisfy reference by file (symbol)
 
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
+                              build/default/production/MCAL_Layer/USART/hal_usart.o (__subsf3)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o) (__addsf3x)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+                              build/default/production/MCAL_Layer/USART/hal_usart.o (__divsf3)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o) (__divsf3x)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                              build/default/production/MCAL_Layer/USART/hal_usart.o (__fixunssfsi)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+                              build/default/production/MCAL_Layer/USART/hal_usart.o (__floatunsisf)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o) (__fp_inf)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o) (__fp_nan)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o) (__fp_pscA)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o) (__fp_pscB)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o) (__fp_round)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o) (__fp_split3)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o) (__fp_zero)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+                              build/default/production/MCAL_Layer/USART/hal_usart.o (__mulsf3)
+/Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                              /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o) (__mulsf3x)
 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
                               build/default/production/MCAL_Layer/ADC/hal_adc.o (__tablejump2__)
 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
@@ -213,7 +243,7 @@ Discarded input sections
  .text.GPIO_Chr_Lcd_4Bit_Send_Command
                 0x0000000000000000       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_4Bit_INIT
-                0x0000000000000000       0xbc build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+                0x0000000000000000       0xb6 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.Chr_Lcd_4Bit_Set_Cursor
                 0x0000000000000000       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_4Bit_Send_Character
@@ -229,7 +259,7 @@ Discarded input sections
  .text.GPIO_Chr_Lcd_8Bit_Send_Command
                 0x0000000000000000       0x66 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_8Bit_INIT
-                0x0000000000000000       0xc6 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+                0x0000000000000000       0xc0 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.Chr_Lcd_8Bit_Set_Cursor
                 0x0000000000000000       0x4a build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .text.GPIO_Chr_Lcd_8Bit_Send_Character
@@ -251,7 +281,7 @@ Discarded input sections
                 0x0000000000000000       0xc6 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .debug_info    0x0000000000000000     0x1b6c build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .debug_abbrev  0x0000000000000000      0x28e build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
- .debug_loc     0x0000000000000000     0x1b48 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
+ .debug_loc     0x0000000000000000     0x1b44 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .debug_aranges
                 0x0000000000000000       0xc8 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
  .debug_ranges  0x0000000000000000       0xb8 build/default/production/ECUAL_Layer/Chr_Lcd/ecual_chr_lcd.o
@@ -439,6 +469,40 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
  .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
  .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Start
+                0x0000000000000000       0x34 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Set_Duty_Cycle
+                0x0000000000000000       0xe8 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Set_Disable
+                0x0000000000000000       0x3e build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_DEINIT
+                0x0000000000000000        0xe build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Stop
+                0x0000000000000000        0xe build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Set_Mode
+                0x0000000000000000       0xf4 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Set_Action
+                0x0000000000000000      0x118 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .rodata        0x0000000000000000        0x4 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Pin_INIT
+                0x0000000000000000       0x70 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_Set_Prescaler
+                0x0000000000000000       0x92 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text.PWM_INIT
+                0x0000000000000000       0x30 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_info    0x0000000000000000      0xb98 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_abbrev  0x0000000000000000      0x163 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_loc     0x0000000000000000      0x7d7 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_aranges
+                0x0000000000000000       0x68 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_ranges  0x0000000000000000       0x58 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_line    0x0000000000000000      0x6b6 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_str     0x0000000000000000       0x15 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .comment       0x0000000000000000       0x30 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_frame   0x0000000000000000       0xd0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
  .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
  .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
  .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
@@ -497,13 +561,89 @@ Discarded input sections
  .debug_line    0x0000000000000000        0x0 build/default/production/MCAL_Layer/device_cfg.o
  .debug_str     0x0000000000000000        0x0 build/default/production/MCAL_Layer/device_cfg.o
  .comment       0x0000000000000000       0x30 build/default/production/MCAL_Layer/device_cfg.o
- .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
- .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
- .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
- .text.PWM_DEINIT
-                0x0000000000000000        0xe build/default/production/MCAL_Layer/PWM/hal_pwm.o
- .text.PWM_Stop
-                0x0000000000000000        0xe build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .text          0x0000000000000000        0x0 build/default/production/MCAL_Layer/USART/hal_usart.o
+ .data          0x0000000000000000        0x0 build/default/production/MCAL_Layer/USART/hal_usart.o
+ .bss           0x0000000000000000        0x0 build/default/production/MCAL_Layer/USART/hal_usart.o
+ .text.USART_DEINIT
+                0x0000000000000000       0x18 build/default/production/MCAL_Layer/USART/hal_usart.o
+ .text.USART_Tx_Write_Byte_Non_Blocking
+                0x0000000000000000       0x7e build/default/production/MCAL_Layer/USART/hal_usart.o
+ .text.USART_Tx_Write_String_Non_Blocking
+                0x0000000000000000       0x4a build/default/production/MCAL_Layer/USART/hal_usart.o
+ .text.USART_Rx_Read_Byte_Non_Blocking
+                0x0000000000000000       0xc8 build/default/production/MCAL_Layer/USART/hal_usart.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/PWM/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/PWM/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/PWM/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/PWM/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/PWM/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/PWM/app1.o
+ .text          0x0000000000000000        0x0 build/default/production/Codes/MCAL/USART/app1.o
+ .data          0x0000000000000000        0x0 build/default/production/Codes/MCAL/USART/app1.o
+ .bss           0x0000000000000000        0x0 build/default/production/Codes/MCAL/USART/app1.o
+ .debug_line    0x0000000000000000        0x0 build/default/production/Codes/MCAL/USART/app1.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/Codes/MCAL/USART/app1.o
+ .comment       0x0000000000000000       0x30 build/default/production/Codes/MCAL/USART/app1.o
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
+ .stack.descriptors
+                0x0000000000000000       0x2c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
+ .stack.descriptors
+                0x0000000000000000       0x17 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+ .stack.descriptors
+                0x0000000000000000       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+ .stack.descriptors
+                0x0000000000000000       0x31 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .stack.descriptors
+                0x0000000000000000       0x1a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .stack.descriptors
+                0x0000000000000000       0x34 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .stack.descriptors
+                0x0000000000000000       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .stack.descriptors
+                0x0000000000000000       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .stack.descriptors
+                0x0000000000000000       0x17 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .stack.descriptors
+                0x0000000000000000       0x17 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+ .stack.descriptors
+                0x0000000000000000       0x18 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .stack.descriptors
+                0x0000000000000000       0x32 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .stack.descriptors
+                0x0000000000000000       0x2f /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .stack.descriptors
+                0x0000000000000000       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+ .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+ .stack.descriptors
+                0x0000000000000000       0x31 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
  .text          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .data          0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
  .bss           0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
@@ -882,11 +1022,14 @@ LOAD build/default/production/MCAL_Layer/GPIO/hal_gpio.o
 LOAD build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 LOAD build/default/production/MCAL_Layer/Interrupt/hal_int_interrupt.o
 LOAD build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+LOAD build/default/production/MCAL_Layer/PWM/hal_pwm.o
 LOAD build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 LOAD build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
 LOAD build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
 LOAD build/default/production/MCAL_Layer/device_cfg.o
-LOAD build/default/production/MCAL_Layer/PWM/hal_pwm.o
+LOAD build/default/production/MCAL_Layer/USART/hal_usart.o
+LOAD build/default/production/Codes/MCAL/PWM/app1.o
+LOAD build/default/production/Codes/MCAL/USART/app1.o
 START GROUP
 LOAD /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a
 END GROUP
@@ -997,7 +1140,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000       0xb4
+.text           0x0000000000000000       0xbc
  *(.vectors)
  .vectors       0x0000000000000000       0x54 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
                 0x0000000000000000                __vectors
@@ -1005,44 +1148,44 @@ END GROUP
  *(.vectors)
  *(.progmem.gcc*)
  *(.dinit)
- .dinit         0x0000000000000054        0xc data_init
-                0x0000000000000060                . = ALIGN (0x2)
- *fill*         0x0000000000000060        0x0 
-                0x0000000000000060                __trampolines_start = .
+ .dinit         0x0000000000000054       0x13 data_init
+                0x0000000000000068                . = ALIGN (0x2)
+ *fill*         0x0000000000000067        0x1 
+                0x0000000000000068                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000000000000060        0x0 linker stubs
+ .trampolines   0x0000000000000068        0x0 linker stubs
  *(.trampolines*)
-                0x0000000000000060                __trampolines_end = .
+                0x0000000000000068                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
-                0x0000000000000060                . = ALIGN (0x2)
+                0x0000000000000068                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000060                __ctors_start = .
+                0x0000000000000068                __ctors_start = .
  *(.ctors)
-                0x0000000000000060                __ctors_end = .
-                0x0000000000000060                __dtors_start = .
+                0x0000000000000068                __ctors_end = .
+                0x0000000000000068                __dtors_start = .
  *(.dtors)
-                0x0000000000000060                __dtors_end = .
+                0x0000000000000068                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000060        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
-                0x0000000000000060                __init
+ .init0         0x0000000000000068        0x0 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+                0x0000000000000068                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000060        0xc /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .init2         0x0000000000000068        0xc /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000000000006c       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x000000000000006c                __do_copy_data
-                0x000000000000009a                __do_clear_bss
+ .init4         0x0000000000000074       0x3c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000074                __do_copy_data
+                0x00000000000000a2                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -1053,12 +1196,12 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000000000000a8        0x8 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+ .init9         0x00000000000000b0        0x8 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
  *(.init9)
-                0x00000000000000b0                . = ALIGN (0x2)
+                0x00000000000000b8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000000b0        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x00000000000000b0                _exit
+ .fini9         0x00000000000000b8        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x00000000000000b8                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1077,11 +1220,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000000b0        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x00000000000000b8        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000000b4                _etext = .
+                0x00000000000000bc                _etext = .
 
-.data           0x0000000000800060        0x0 load address 0x00000000000000b4
+.data           0x0000000000800060        0x0 load address 0x00000000000000bc
                 [!provide]                        PROVIDE (__data_start, .)
  *(.gnu.linkonce.d*)
  *(.gnu.linkonce.r*)
@@ -1093,8 +1236,8 @@ END GROUP
                 [!provide]                        PROVIDE (__bss_start, .)
  *(COMMON)
                 [!provide]                        PROVIDE (__bss_end, .)
-                0x00000000000000b4                __data_load_start = LOADADDR (.data)
-                0x00000000000000b4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000000bc                __data_load_start = LOADADDR (.data)
+                0x00000000000000bc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000800060        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
@@ -1154,22 +1297,82 @@ END GROUP
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
  .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .comment       0x000000000000002f       0x30 build/default/production/MCAL_Layer/USART/hal_usart.o
  .comment       0x000000000000002f       0x2c /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
                                          0x2d (size before relaxing)
  .comment       0x000000000000005b       0x2d /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
 
 .stack.descriptors.hdr
-                0x0000000000000000       0x2a
+                0x0000000000000000       0xfc
  .stack.descriptors.hdr
-                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x0000000000000000        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
  .stack.descriptors.hdr
-                0x000000000000000e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
+                0x000000000000000e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
  .stack.descriptors.hdr
-                0x000000000000001c        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000001c        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+ .stack.descriptors.hdr
+                0x000000000000002a        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+ .stack.descriptors.hdr
+                0x0000000000000038        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .stack.descriptors.hdr
+                0x0000000000000046        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .stack.descriptors.hdr
+                0x0000000000000054        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .stack.descriptors.hdr
+                0x0000000000000062        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .stack.descriptors.hdr
+                0x0000000000000070        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .stack.descriptors.hdr
+                0x000000000000007e        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .stack.descriptors.hdr
+                0x000000000000008c        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+ .stack.descriptors.hdr
+                0x000000000000009a        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .stack.descriptors.hdr
+                0x00000000000000a8        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .stack.descriptors.hdr
+                0x00000000000000b6        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .stack.descriptors.hdr
+                0x00000000000000c4        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+ .stack.descriptors.hdr
+                0x00000000000000d2        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+ .stack.descriptors.hdr
+                0x00000000000000e0        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
+ .stack.descriptors.hdr
+                0x00000000000000ee        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
 
 .note.GNU-stack
                 0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
  .note.GNU-stack
@@ -1190,7 +1393,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x380
+.debug_aranges  0x0000000000000000      0x3a8
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x28 build/default/production/APP_Layer/Main.o
@@ -1203,98 +1406,98 @@ END GROUP
  .debug_aranges
                 0x0000000000000128       0x50 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
  .debug_aranges
-                0x0000000000000178       0x78 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000178       0x90 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
  .debug_aranges
-                0x00000000000001f0       0x58 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x0000000000000208       0x58 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
  .debug_aranges
-                0x0000000000000248       0x78 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x0000000000000260       0x78 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
  .debug_aranges
-                0x00000000000002c0       0x58 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+                0x00000000000002d8       0x58 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
  .debug_aranges
-                0x0000000000000318       0x68 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+                0x0000000000000330       0x78 build/default/production/MCAL_Layer/USART/hal_usart.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x6eda
+.debug_info     0x0000000000000000     0x7c1f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_info    0x00000000000004e6      0x889 build/default/production/APP_Layer/Main.o
- .debug_info    0x0000000000000d6f      0x321 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_info    0x0000000000001090     0x10bf build/default/production/MCAL_Layer/ADC/hal_adc.o
- .debug_info    0x000000000000214f      0x98d build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_info    0x0000000000002adc      0xabd build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_info    0x0000000000003599      0x567 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_info    0x0000000000003b00      0xccf build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_info    0x00000000000047cf      0xfbd build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_info    0x000000000000578c      0xbb6 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_info    0x0000000000006342      0xb98 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_info    0x00000000000004e6      0xccb build/default/production/APP_Layer/Main.o
+ .debug_info    0x00000000000011b1      0x321 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_info    0x00000000000014d2     0x10bf build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_info    0x0000000000002591      0x98d build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_info    0x0000000000002f1e      0xabd build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_info    0x00000000000039db      0x60c build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_info    0x0000000000003fe7      0xccf build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_info    0x0000000000004cb6      0xfbd build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_info    0x0000000000005c73      0xbb6 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_info    0x0000000000006829     0x13f6 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.debug_abbrev   0x0000000000000000     0x151d
+.debug_abbrev   0x0000000000000000     0x166e
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_abbrev  0x00000000000004a3      0x17c build/default/production/APP_Layer/Main.o
- .debug_abbrev  0x000000000000061f       0x6d build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_abbrev  0x000000000000068c      0x22d build/default/production/MCAL_Layer/ADC/hal_adc.o
- .debug_abbrev  0x00000000000008b9      0x1ce build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_abbrev  0x0000000000000a87      0x20a build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_abbrev  0x0000000000000c91       0x6a build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_abbrev  0x0000000000000cfb      0x22c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_abbrev  0x0000000000000f27      0x24d build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_abbrev  0x0000000000001174      0x246 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_abbrev  0x00000000000013ba      0x163 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_abbrev  0x00000000000004a3      0x1c9 build/default/production/APP_Layer/Main.o
+ .debug_abbrev  0x000000000000066c       0x6d build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_abbrev  0x00000000000006d9      0x22d build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_abbrev  0x0000000000000906      0x1ce build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_abbrev  0x0000000000000ad4      0x20a build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_abbrev  0x0000000000000cde       0x6a build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_abbrev  0x0000000000000d48      0x22c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_abbrev  0x0000000000000f74      0x24d build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_abbrev  0x00000000000011c1      0x246 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_abbrev  0x0000000000001407      0x267 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.debug_line     0x0000000000000000     0x24f3
+.debug_line     0x0000000000000000     0x2672
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x116 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_line    0x0000000000000116      0x205 build/default/production/APP_Layer/Main.o
- .debug_line    0x000000000000031b       0x83 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_line    0x000000000000039e      0x3fa build/default/production/MCAL_Layer/ADC/hal_adc.o
- .debug_line    0x0000000000000798      0x3cb build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_line    0x0000000000000b63      0x3c7 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_line    0x0000000000000f2a      0x1b0 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_line    0x00000000000010da      0x3f5 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_line    0x00000000000014cf      0x5e2 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_line    0x0000000000001ab1      0x38c build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_line    0x0000000000001e3d      0x6b6 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_line    0x0000000000000116      0x1cc build/default/production/APP_Layer/Main.o
+ .debug_line    0x00000000000002e2       0x83 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_line    0x0000000000000365      0x3fa build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_line    0x000000000000075f      0x3cb build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_line    0x0000000000000b2a      0x3c7 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_line    0x0000000000000ef1      0x207 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_line    0x00000000000010f8      0x3f5 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_line    0x00000000000014ed      0x5e2 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_line    0x0000000000001acf      0x38c build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_line    0x0000000000001e5b      0x817 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.debug_frame    0x0000000000000000      0xa40
+.debug_frame    0x0000000000000000      0xb90
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x34 build/default/production/APP_Layer/Main.o
  .debug_frame   0x0000000000000034       0x24 build/default/production/ECUAL_Layer/ECUAL_INIT.o
  .debug_frame   0x0000000000000058       0xf0 build/default/production/MCAL_Layer/ADC/hal_adc.o
  .debug_frame   0x0000000000000148       0xec build/default/production/MCAL_Layer/GPIO/hal_gpio.o
  .debug_frame   0x0000000000000234       0x9c build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_frame   0x00000000000002d0      0x434 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_frame   0x0000000000000704       0xb0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_frame   0x00000000000007b4      0x10c build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_frame   0x00000000000008c0       0xb0 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_frame   0x0000000000000970       0xd0 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_frame   0x00000000000002d0      0x53c build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_frame   0x000000000000080c       0xb0 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_frame   0x00000000000008bc      0x10c build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_frame   0x00000000000009c8       0xb0 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_frame   0x0000000000000a78      0x118 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.debug_str      0x0000000000000000      0x34b
+.debug_str      0x0000000000000000      0x3e8
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
- .debug_str     0x0000000000000196       0x31 build/default/production/APP_Layer/Main.o
- .debug_str     0x00000000000001c7        0x0 build/default/production/ECUAL_Layer/ECUAL_INIT.o
- .debug_str     0x00000000000001c7       0x1d build/default/production/MCAL_Layer/ADC/hal_adc.o
- .debug_str     0x00000000000001e4       0x1c build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_str     0x0000000000000200       0x24 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_str     0x0000000000000224       0x6e build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_str     0x0000000000000292       0x3c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_str     0x00000000000002ce       0x3c build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_str     0x000000000000030a       0x2c build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_str     0x0000000000000336       0x15 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_str     0x0000000000000196       0x7b build/default/production/APP_Layer/Main.o
+ .debug_str     0x0000000000000211        0x0 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+ .debug_str     0x0000000000000211       0x1d build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_str     0x000000000000022e       0x1c build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_str     0x000000000000024a       0x24 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_str     0x000000000000026e       0x96 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_str     0x0000000000000304       0x3c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_str     0x0000000000000340       0x3c build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_str     0x000000000000037c       0x2c build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_str     0x00000000000003a8       0x40 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.debug_loc      0x0000000000000000     0x2706
+.debug_loc      0x0000000000000000     0x2749
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x65 build/default/production/APP_Layer/Main.o
- .debug_loc     0x0000000000000065      0x88b build/default/production/MCAL_Layer/ADC/hal_adc.o
- .debug_loc     0x00000000000008f0      0x65e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
- .debug_loc     0x0000000000000f4e      0x345 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_loc     0x0000000000001293      0x3b6 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_loc     0x0000000000001649      0x580 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_loc     0x0000000000001bc9      0x366 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_loc     0x0000000000001f2f      0x7d7 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_loc     0x0000000000000000       0x48 build/default/production/APP_Layer/Main.o
+ .debug_loc     0x0000000000000048      0x88b build/default/production/MCAL_Layer/ADC/hal_adc.o
+ .debug_loc     0x00000000000008d3      0x65e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+ .debug_loc     0x0000000000000f31      0x345 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+ .debug_loc     0x0000000000001276      0x3b6 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_loc     0x000000000000162c      0x580 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_loc     0x0000000000001bac      0x366 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_loc     0x0000000000001f12      0x837 build/default/production/MCAL_Layer/USART/hal_usart.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1314,18 +1517,18 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x380
+.debug_ranges   0x0000000000000000      0x3e8
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x18 build/default/production/APP_Layer/Main.o
  .debug_ranges  0x0000000000000018       0x10 build/default/production/ECUAL_Layer/ECUAL_INIT.o
  .debug_ranges  0x0000000000000028       0x80 build/default/production/MCAL_Layer/ADC/hal_adc.o
  .debug_ranges  0x00000000000000a8       0x68 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
  .debug_ranges  0x0000000000000110       0x58 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
- .debug_ranges  0x0000000000000168       0x68 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
- .debug_ranges  0x00000000000001d0       0x78 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
- .debug_ranges  0x0000000000000248       0x80 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
- .debug_ranges  0x00000000000002c8       0x60 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
- .debug_ranges  0x0000000000000328       0x58 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+ .debug_ranges  0x0000000000000168       0x80 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+ .debug_ranges  0x00000000000001e8       0x78 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+ .debug_ranges  0x0000000000000260       0x80 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+ .debug_ranges  0x00000000000002e0       0x60 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+ .debug_ranges  0x0000000000000340       0xa8 build/default/production/MCAL_Layer/USART/hal_usart.o
 
 .debug_macro
  *(.debug_macro)
@@ -1338,335 +1541,437 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
 
+.bss.data       0x00000000008000af        0x2
+ .bss.data      0x00000000008000af        0x2 build/default/production/APP_Layer/Main.o
+                0x00000000008000af                data
+
 .bss.ADC_Interrupt_Handler
-                0x0000000000800088        0x2
+                0x00000000008000b1        0x2
  .bss.ADC_Interrupt_Handler
-                0x0000000000800088        0x2 build/default/production/MCAL_Layer/ADC/hal_adc.o
+                0x00000000008000b1        0x2 build/default/production/MCAL_Layer/ADC/hal_adc.o
 
 .bss.INT2_Handler
-                0x000000000080008a        0x2
+                0x00000000008000b3        0x2
  .bss.INT2_Handler
-                0x000000000080008a        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x00000000008000b3        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 
 .bss.INT1_Handler
-                0x000000000080008c        0x2
+                0x00000000008000b5        0x2
  .bss.INT1_Handler
-                0x000000000080008c        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x00000000008000b5        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 
 .bss.INT0_Handler
-                0x000000000080008e        0x2
+                0x00000000008000b7        0x2
  .bss.INT0_Handler
-                0x000000000080008e        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x00000000008000b7        0x2 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
 
 .bss.Timer0_Handler_Function
-                0x0000000000800090        0x2
+                0x00000000008000b9        0x2
  .bss.Timer0_Handler_Function
-                0x0000000000800090        0x2 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x00000000008000b9        0x2 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
 .bss.preloaded_value
-                0x0000000000800098        0x1
+                0x00000000008000cb        0x1
  .bss.preloaded_value
-                0x0000000000800098        0x1 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x00000000008000cb        0x1 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
 
 .bss.Timer1_Handler_Function
-                0x0000000000800092        0x2
+                0x00000000008000bb        0x2
  .bss.Timer1_Handler_Function
-                0x0000000000800092        0x2 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x00000000008000bb        0x2 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
 
 .bss.timer1_preloaded_value
-                0x0000000000800094        0x2
+                0x00000000008000bd        0x2
  .bss.timer1_preloaded_value
-                0x0000000000800094        0x2 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x00000000008000bd        0x2 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
 
 .bss.Timer2_Handler_Function
-                0x0000000000800096        0x2
+                0x00000000008000bf        0x2
  .bss.Timer2_Handler_Function
-                0x0000000000800096        0x2 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+                0x00000000008000bf        0x2 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
 
 .bss.timer2_preloaded_value
-                0x0000000000800099        0x1
+                0x00000000008000cc        0x1
  .bss.timer2_preloaded_value
-                0x0000000000800099        0x1 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+                0x00000000008000cc        0x1 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
 
-.text.PWM_Set_Action
-                0x00000000000000b4      0x118
- .text.PWM_Set_Action
-                0x00000000000000b4      0x118 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x00000000000000b4                PWM_Set_Action
+.bss.Overrun_Handler_Function
+                0x00000000008000c1        0x2
+ .bss.Overrun_Handler_Function
+                0x00000000008000c1        0x2 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.text.PWM_Set_Mode
-                0x00000000000001cc       0xf4
- .text.PWM_Set_Mode
-                0x00000000000001cc       0xf4 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x00000000000001cc                PWM_Set_Mode
+.bss.Framming_Handler_Function
+                0x00000000008000c3        0x2
+ .bss.Framming_Handler_Function
+                0x00000000008000c3        0x2 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.text.PWM_Set_Duty_Cycle
-                0x00000000000002c0       0xe8
- .text.PWM_Set_Duty_Cycle
-                0x00000000000002c0       0xe8 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x00000000000002c0                PWM_Set_Duty_Cycle
+.bss.Rx_Handler_Function
+                0x00000000008000c5        0x2
+ .bss.Rx_Handler_Function
+                0x00000000008000c5        0x2 build/default/production/MCAL_Layer/USART/hal_usart.o
 
-.text.PWM_Set_Prescaler
-                0x00000000000003a8       0x92
- .text.PWM_Set_Prescaler
-                0x00000000000003a8       0x92 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x00000000000003a8                PWM_Set_Prescaler
+.bss.TSR_Handler_Function
+                0x00000000008000c7        0x2
+ .bss.TSR_Handler_Function
+                0x00000000008000c7        0x2 build/default/production/MCAL_Layer/USART/hal_usart.o
+
+.bss.Tx_Handler_Function
+                0x00000000008000c9        0x2
+ .bss.Tx_Handler_Function
+                0x00000000008000c9        0x2 build/default/production/MCAL_Layer/USART/hal_usart.o
+
+.text.USART_INIT
+                0x00000000000000bc      0x33e
+ .text.USART_INIT
+                0x00000000000000bc      0x33e build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x00000000000000bc                USART_INIT
+
+.text           0x00000000000003fa       0xde
+ .text          0x00000000000003fa       0xde /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3x.o)
+                0x00000000000003fa                __divsf3x
+                0x0000000000000422                __divsf3_pse
+
+.text           0x00000000000004d8       0xd4
+ .text          0x00000000000004d8       0xd4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x00000000000004d8                __mulsf3x
+                0x00000000000004fe                __mulsf3_pse
+
+.text           0x00000000000005ac       0xce
+ .text          0x00000000000005ac       0xce /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3x.o)
+                0x00000000000005ac                __addsf3x
+
+.text.USART_Rx_Read_Byte_Blocking
+                0x000000000000067a       0xb4
+ .text.USART_Rx_Read_Byte_Blocking
+                0x000000000000067a       0xb4 build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x000000000000067a                USART_Rx_Read_Byte_Blocking
 
 .text.GPIO_Pin_Direction_INIT
-                0x000000000000043a       0x8e
+                0x000000000000072e       0x8e
  .text.GPIO_Pin_Direction_INIT
-                0x000000000000043a       0x8e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x000000000000043a                GPIO_Pin_Direction_INIT
+                0x000000000000072e       0x8e build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x000000000000072e                GPIO_Pin_Direction_INIT
 
 .text.GPIO_Pin_Write_Logic
-                0x00000000000004c8       0x84
+                0x00000000000007bc       0x84
  .text.GPIO_Pin_Write_Logic
-                0x00000000000004c8       0x84 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x00000000000004c8                GPIO_Pin_Write_Logic
+                0x00000000000007bc       0x84 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x00000000000007bc                GPIO_Pin_Write_Logic
 
-.text.PWM_Pin_INIT
-                0x000000000000054c       0x70
- .text.PWM_Pin_INIT
-                0x000000000000054c       0x70 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x000000000000054c                PWM_Pin_INIT
+.text           0x0000000000000840       0x7a
+ .text          0x0000000000000840       0x7a /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x0000000000000840                __floatunsisf
+                0x0000000000000844                __floatsisf
 
-.text.main      0x00000000000005bc       0x62
- .text.main     0x00000000000005bc       0x62 build/default/production/APP_Layer/Main.o
-                0x00000000000005bc                main
+.text.USART_Tx_Write_Byte_Blocking
+                0x00000000000008ba       0x6a
+ .text.USART_Tx_Write_Byte_Blocking
+                0x00000000000008ba       0x6a build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x00000000000008ba                USART_Tx_Write_Byte_Blocking
+
+.text           0x0000000000000924       0x5e
+ .text          0x0000000000000924       0x5e /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x0000000000000924                __fixunssfsi
+
+.text.main      0x0000000000000982       0x54
+ .text.main     0x0000000000000982       0x54 build/default/production/APP_Layer/Main.o
+                0x0000000000000982                main
 
 .text.__vector_1
-                0x000000000000061e       0x48
+                0x00000000000009d6       0x48
  .text.__vector_1
-                0x000000000000061e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x000000000000061e                __vector_1
+                0x00000000000009d6       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x00000000000009d6                __vector_1
 
 .text.__vector_2
-                0x0000000000000666       0x48
+                0x0000000000000a1e       0x48
  .text.__vector_2
-                0x0000000000000666       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x0000000000000666                __vector_2
+                0x0000000000000a1e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000a1e                __vector_2
 
 .text.__vector_3
-                0x00000000000006ae       0x48
+                0x0000000000000a66       0x48
  .text.__vector_3
-                0x00000000000006ae       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000006ae                __vector_3
+                0x0000000000000a66       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000a66                __vector_3
 
 .text.__vector_16
-                0x00000000000006f6       0x48
+                0x0000000000000aae       0x48
  .text.__vector_16
-                0x00000000000006f6       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000006f6                __vector_16
+                0x0000000000000aae       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000aae                __vector_16
 
 .text.__vector_11
-                0x000000000000073e       0x48
+                0x0000000000000af6       0x48
  .text.__vector_11
-                0x000000000000073e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x000000000000073e                __vector_11
+                0x0000000000000af6       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000af6                __vector_11
 
 .text.__vector_10
-                0x0000000000000786       0x48
+                0x0000000000000b3e       0x48
  .text.__vector_10
-                0x0000000000000786       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x0000000000000786                __vector_10
+                0x0000000000000b3e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000b3e                __vector_10
 
 .text.__vector_9
-                0x00000000000007ce       0x48
+                0x0000000000000b86       0x48
  .text.__vector_9
-                0x00000000000007ce       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000007ce                __vector_9
+                0x0000000000000b86       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000b86                __vector_9
 
 .text.__vector_7
-                0x0000000000000816       0x48
+                0x0000000000000bce       0x48
  .text.__vector_7
-                0x0000000000000816       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x0000000000000816                __vector_7
+                0x0000000000000bce       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000bce                __vector_7
 
 .text.__vector_8
-                0x000000000000085e       0x48
+                0x0000000000000c16       0x48
  .text.__vector_8
-                0x000000000000085e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x000000000000085e                __vector_8
+                0x0000000000000c16       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000c16                __vector_8
 
 .text.__vector_6
-                0x00000000000008a6       0x48
+                0x0000000000000c5e       0x48
  .text.__vector_6
-                0x00000000000008a6       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000008a6                __vector_6
+                0x0000000000000c5e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000c5e                __vector_6
 
 .text.__vector_5
-                0x00000000000008ee       0x48
+                0x0000000000000ca6       0x48
  .text.__vector_5
-                0x00000000000008ee       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x00000000000008ee                __vector_5
+                0x0000000000000ca6       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000ca6                __vector_5
 
 .text.__vector_4
-                0x0000000000000936       0x48
+                0x0000000000000cee       0x48
  .text.__vector_4
-                0x0000000000000936       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
-                0x0000000000000936                __vector_4
+                0x0000000000000cee       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000cee                __vector_4
 
-.text.PWM_Set_Disable
-                0x000000000000097e       0x3e
- .text.PWM_Set_Disable
-                0x000000000000097e       0x3e build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x000000000000097e                PWM_Set_Disable
+.text.__vector_15
+                0x0000000000000d36       0x48
+ .text.__vector_15
+                0x0000000000000d36       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000d36                __vector_15
 
-.text.PWM_Start
-                0x00000000000009bc       0x34
- .text.PWM_Start
-                0x00000000000009bc       0x34 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x00000000000009bc                PWM_Start
+.text.__vector_14
+                0x0000000000000d7e       0x48
+ .text.__vector_14
+                0x0000000000000d7e       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000d7e                __vector_14
 
-.text.PWM_INIT  0x00000000000009f0       0x30
- .text.PWM_INIT
-                0x00000000000009f0       0x30 build/default/production/MCAL_Layer/PWM/hal_pwm.o
-                0x00000000000009f0                PWM_INIT
+.text.__vector_13
+                0x0000000000000dc6       0x48
+ .text.__vector_13
+                0x0000000000000dc6       0x48 build/default/production/MCAL_Layer/Interrupt/hal_interrupt_mng.o
+                0x0000000000000dc6                __vector_13
 
-.text.Application_Init
-                0x0000000000000a20       0x26
- .text.Application_Init
-                0x0000000000000a20       0x26 build/default/production/APP_Layer/Main.o
-                0x0000000000000a20                Application_Init
+.text.USART_Tx_Write_String_Blocking
+                0x0000000000000e0e       0x46
+ .text.USART_Tx_Write_String_Blocking
+                0x0000000000000e0e       0x46 build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x0000000000000e0e                USART_Tx_Write_String_Blocking
+
+.text           0x0000000000000e54       0x44
+ .text          0x0000000000000e54       0x44 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x0000000000000e54                __fp_split3
+                0x0000000000000e64                __fp_splitA
+
+.text.USART_RX_ISR
+                0x0000000000000e98       0x2c
+ .text.USART_RX_ISR
+                0x0000000000000e98       0x2c build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x0000000000000e98                USART_RX_ISR
 
 .text.GPIO_Pin_INIT
-                0x0000000000000a46       0x26
+                0x0000000000000ec4       0x26
  .text.GPIO_Pin_INIT
-                0x0000000000000a46       0x26 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000000a46                GPIO_Pin_INIT
+                0x0000000000000ec4       0x26 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x0000000000000ec4                GPIO_Pin_INIT
 
-.text.TMR1_ISR  0x0000000000000a6c       0x22
+.text.TMR1_ISR  0x0000000000000eea       0x22
  .text.TMR1_ISR
-                0x0000000000000a6c       0x22 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
-                0x0000000000000a6c                TMR1_ISR
+                0x0000000000000eea       0x22 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x0000000000000eea                TMR1_ISR
 
-.text.TMR0_ISR  0x0000000000000a8e       0x1c
+.text           0x0000000000000f0c       0x22
+ .text          0x0000000000000f0c       0x22 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x0000000000000f0c                __fp_round
+
+.text.TMR0_ISR  0x0000000000000f2e       0x1c
  .text.TMR0_ISR
-                0x0000000000000a8e       0x1c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
-                0x0000000000000a8e                TMR0_ISR
+                0x0000000000000f2e       0x1c build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x0000000000000f2e                TMR0_ISR
 
-.text.TMR2_ISR  0x0000000000000aaa       0x1c
+.text.TMR2_ISR  0x0000000000000f4a       0x1c
  .text.TMR2_ISR
-                0x0000000000000aaa       0x1c build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
-                0x0000000000000aaa                TMR2_ISR
+                0x0000000000000f4a       0x1c build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+                0x0000000000000f4a                TMR2_ISR
 
-.text.INT0_ISR  0x0000000000000ac6       0x16
+.text.INT0_ISR  0x0000000000000f66       0x16
  .text.INT0_ISR
-                0x0000000000000ac6       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
-                0x0000000000000ac6                INT0_ISR
+                0x0000000000000f66       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x0000000000000f66                INT0_ISR
 
-.text.INT1_ISR  0x0000000000000adc       0x16
+.text.INT1_ISR  0x0000000000000f7c       0x16
  .text.INT1_ISR
-                0x0000000000000adc       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
-                0x0000000000000adc                INT1_ISR
+                0x0000000000000f7c       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x0000000000000f7c                INT1_ISR
 
-.text.INT2_ISR  0x0000000000000af2       0x16
+.text.INT2_ISR  0x0000000000000f92       0x16
  .text.INT2_ISR
-                0x0000000000000af2       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
-                0x0000000000000af2                INT2_ISR
+                0x0000000000000f92       0x16 build/default/production/MCAL_Layer/Interrupt/hal_ext_interrupt.o
+                0x0000000000000f92                INT2_ISR
 
-.text.CTC0_ISR  0x0000000000000b08       0x16
+.text.CTC0_ISR  0x0000000000000fa8       0x16
  .text.CTC0_ISR
-                0x0000000000000b08       0x16 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
-                0x0000000000000b08                CTC0_ISR
+                0x0000000000000fa8       0x16 build/default/production/MCAL_Layer/Timers/Timer0/hal_timer0.o
+                0x0000000000000fa8                CTC0_ISR
 
 .text.CTC_OCRA_ISR
-                0x0000000000000b1e       0x16
+                0x0000000000000fbe       0x16
  .text.CTC_OCRA_ISR
-                0x0000000000000b1e       0x16 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
-                0x0000000000000b1e                CTC_OCRA_ISR
+                0x0000000000000fbe       0x16 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x0000000000000fbe                CTC_OCRA_ISR
 
 .text.CTC_OCRB_ISR
-                0x0000000000000b34       0x16
+                0x0000000000000fd4       0x16
  .text.CTC_OCRB_ISR
-                0x0000000000000b34       0x16 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
-                0x0000000000000b34                CTC_OCRB_ISR
+                0x0000000000000fd4       0x16 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x0000000000000fd4                CTC_OCRB_ISR
 
 .text.CTC_ICR_ISR
-                0x0000000000000b4a       0x16
+                0x0000000000000fea       0x16
  .text.CTC_ICR_ISR
-                0x0000000000000b4a       0x16 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
-                0x0000000000000b4a                CTC_ICR_ISR
+                0x0000000000000fea       0x16 build/default/production/MCAL_Layer/Timers/Timer1/hal_timer1.o
+                0x0000000000000fea                CTC_ICR_ISR
 
-.text.CTC2_ISR  0x0000000000000b60       0x16
+.text.CTC2_ISR  0x0000000000001000       0x16
  .text.CTC2_ISR
-                0x0000000000000b60       0x16 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
-                0x0000000000000b60                CTC2_ISR
+                0x0000000000001000       0x16 build/default/production/MCAL_Layer/Timers/Timer2/hal_timer2.o
+                0x0000000000001000                CTC2_ISR
 
-.text.exit      0x0000000000000b76       0x16
- .text.exit     0x0000000000000b76       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x0000000000000b76                exit
+.text.USART_Rx_Restart
+                0x0000000000001016       0x16
+ .text.USART_Rx_Restart
+                0x0000000000001016       0x16 build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x0000000000001016                USART_Rx_Restart
 
-.text.ADC_ISR   0x0000000000000b8c       0x12
- .text.ADC_ISR  0x0000000000000b8c       0x12 build/default/production/MCAL_Layer/ADC/hal_adc.o
-                0x0000000000000b8c                ADC_ISR
+.text.exit      0x000000000000102c       0x16
+ .text.exit     0x000000000000102c       0x16 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x000000000000102c                exit
 
-.text           0x0000000000000b9e        0x4
- .text          0x0000000000000b9e        0x4 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
-                0x0000000000000b9e                __vector_20
-                0x0000000000000b9e                __bad_interrupt
-                0x0000000000000b9e                __vector_13
-                0x0000000000000b9e                __vector_17
-                0x0000000000000b9e                __vector_19
-                0x0000000000000b9e                __vector_15
-                0x0000000000000b9e                __vector_14
-                0x0000000000000b9e                __vector_18
-                0x0000000000000b9e                __vector_12
+.text.ADC_ISR   0x0000000000001042       0x12
+ .text.ADC_ISR  0x0000000000001042       0x12 build/default/production/MCAL_Layer/ADC/hal_adc.o
+                0x0000000000001042                ADC_ISR
 
-.text._Exit     0x0000000000000ba2        0x4
- .text._Exit    0x0000000000000ba2        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
-                0x0000000000000ba2                _Exit
+.text.USART_TX_ISR
+                0x0000000000001054       0x12
+ .text.USART_TX_ISR
+                0x0000000000001054       0x12 build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x0000000000001054                USART_TX_ISR
+
+.text.USART_TSR_ISR
+                0x0000000000001066       0x10
+ .text.USART_TSR_ISR
+                0x0000000000001066       0x10 build/default/production/MCAL_Layer/USART/hal_usart.o
+                0x0000000000001066                USART_TSR_ISR
+
+.text.Application_Init
+                0x0000000000001076        0xe
+ .text.Application_Init
+                0x0000000000001076        0xe build/default/production/APP_Layer/Main.o
+                0x0000000000001076                Application_Init
+
+.text           0x0000000000001084        0xe
+ .text          0x0000000000001084        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(addsf3.o)
+                0x0000000000001084                __subsf3
+                0x0000000000001086                __addsf3
+
+.text           0x0000000000001092        0xe
+ .text          0x0000000000001092        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x0000000000001092                __fp_pscA
+
+.text           0x00000000000010a0        0xe
+ .text          0x00000000000010a0        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x00000000000010a0                __fp_pscB
+
+.text           0x00000000000010ae        0xe
+ .text          0x00000000000010ae        0xe /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x00000000000010ae                __fp_zero
+                0x00000000000010b0                __fp_szero
+
+.text           0x00000000000010bc        0xc
+ .text          0x00000000000010bc        0xc /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x00000000000010bc                __fp_inf
+
+.text           0x00000000000010c8        0x8
+ .text          0x00000000000010c8        0x8 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(divsf3.o)
+                0x00000000000010c8                __divsf3
+
+.text           0x00000000000010d0        0x8
+ .text          0x00000000000010d0        0x8 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x00000000000010d0                __mulsf3
+
+.text           0x00000000000010d8        0x6
+ .text          0x00000000000010d8        0x6 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x00000000000010d8                __fp_nan
+
+.text           0x00000000000010de        0x4
+ .text          0x00000000000010de        0x4 /Applications/microchip/mplabx/v6.25/packs/Microchip/ATmega_DFP/3.3.279/xc8/avr/lib/avr5/crtatmega32.o
+                0x00000000000010de                __vector_12
+                0x00000000000010de                __bad_interrupt
+                0x00000000000010de                __vector_17
+                0x00000000000010de                __vector_19
+                0x00000000000010de                __vector_18
+                0x00000000000010de                __vector_20
+
+.text._Exit     0x00000000000010e2        0x4
+ .text._Exit    0x00000000000010e2        0x4 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(_Exit.o)
+                0x00000000000010e2                _Exit
 
 .text.Ecual_Init
-                0x0000000000000ba6        0x2
+                0x00000000000010e6        0x2
  .text.Ecual_Init
-                0x0000000000000ba6        0x2 build/default/production/ECUAL_Layer/ECUAL_INIT.o
-                0x0000000000000ba6                Ecual_Init
+                0x00000000000010e6        0x2 build/default/production/ECUAL_Layer/ECUAL_INIT.o
+                0x00000000000010e6                Ecual_Init
 
 .text.__dummy_fini
-                0x0000000000000ba8        0x2
+                0x00000000000010e8        0x2
  .text.__dummy_fini
-                0x0000000000000ba8        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x0000000000000ba8                _fini
+                0x00000000000010e8        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x00000000000010e8                _fini
 
 .text.__dummy_funcs_on_exit
-                0x0000000000000baa        0x2
+                0x00000000000010ea        0x2
  .text.__dummy_funcs_on_exit
-                0x0000000000000baa        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x0000000000000baa                __funcs_on_exit
+                0x00000000000010ea        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x00000000000010ea                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x0000000000000bac        0x2
+                0x00000000000010ec        0x2
  .text.__dummy_simulator_exit
-                0x0000000000000bac        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
-                0x0000000000000bac                __simulator_exit
+                0x00000000000010ec        0x2 /Applications/microchip/xc8/v3.00/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/libc.a(exit.o)
+                0x00000000000010ec                __simulator_exit
+
+.rodata         0x0000000000800060       0x23 load address 0x00000000000010ee
+ .rodata        0x0000000000800060       0x23 build/default/production/APP_Layer/Main.o
+
+.data.usart1    0x0000000000800083       0x1c load address 0x0000000000001111
+ .data.usart1   0x0000000000800083       0x1c build/default/production/APP_Layer/Main.o
+                0x0000000000800083                usart1
 
 .data.PORT_REGs
-                0x0000000000800060        0x8 load address 0x0000000000000bae
+                0x000000000080009f        0x8 load address 0x000000000000112d
  .data.PORT_REGs
-                0x0000000000800060        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000800060                PORT_REGs
+                0x000000000080009f        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x000000000080009f                PORT_REGs
 
-.data.DDR_REGs  0x0000000000800068        0x8 load address 0x0000000000000bb6
+.data.DDR_REGs  0x00000000008000a7        0x8 load address 0x0000000000001135
  .data.DDR_REGs
-                0x0000000000800068        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
-                0x0000000000800068                DDR_REGs
+                0x00000000008000a7        0x8 build/default/production/MCAL_Layer/GPIO/hal_gpio.o
+                0x00000000008000a7                DDR_REGs
 
-.data.pwm2      0x0000000000800070        0x5 load address 0x0000000000000bbe
- .data.pwm2     0x0000000000800070        0x5 build/default/production/APP_Layer/Main.o
-                0x0000000000800070                pwm2
-
-.data.pwm1B     0x0000000000800075        0x5 load address 0x0000000000000bc3
- .data.pwm1B    0x0000000000800075        0x5 build/default/production/APP_Layer/Main.o
-                0x0000000000800075                pwm1B
-
-.data.pwm1A     0x000000000080007a        0x5 load address 0x0000000000000bc8
- .data.pwm1A    0x000000000080007a        0x5 build/default/production/APP_Layer/Main.o
-                0x000000000080007a                pwm1A
-
-.data.pwm0      0x000000000080007f        0x5 load address 0x0000000000000bcd
- .data.pwm0     0x000000000080007f        0x5 build/default/production/APP_Layer/Main.o
-                0x000000000080007f                pwm0
-
-.rodata         0x0000000000800084        0x4 load address 0x0000000000000bd2
- .rodata        0x0000000000800084        0x4 build/default/production/MCAL_Layer/PWM/hal_pwm.o
+.rodata         0x00000000008000cd        0x1 load address 0x000000000000113d
+ .rodata        0x00000000008000cd        0x1 build/default/production/MCAL_Layer/USART/hal_usart.o

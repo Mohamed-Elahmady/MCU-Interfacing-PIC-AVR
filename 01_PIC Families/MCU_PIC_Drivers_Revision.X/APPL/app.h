@@ -32,6 +32,10 @@
 #include "../MCAL/Timers/Timer2/hal_timer2.h"
 #include "../MCAL/Timers/Timer3/hal_timer3.h"
 
+#include "../MCAL/CCP/hal_ccp.h"
+
+#include "../MCAL/EUSART/hal_eusart.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

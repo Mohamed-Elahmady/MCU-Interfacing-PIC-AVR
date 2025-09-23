@@ -34,6 +34,8 @@
 
 #include "../MCAL_Layer/CCP/HAL_CCP.h"
 
+#include "../MCAL_Layer/EUSART/HAL_EUSART.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

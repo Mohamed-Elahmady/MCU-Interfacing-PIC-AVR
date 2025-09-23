@@ -39,6 +39,9 @@
         <logicalFolder name="Interrupt" displayName="Interrupt" projectFiles="true">
           <itemPath>Codes/MCAL/Interrupt/app1.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="PWM" displayName="PWM" projectFiles="true">
+          <itemPath>Codes/MCAL/PWM/app1.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="Timers" displayName="Timers" projectFiles="true">
           <logicalFolder name="Timer0" displayName="Timer0" projectFiles="true">
             <itemPath>Codes/MCAL/Timers/Timer0/app1.c</itemPath>
@@ -49,6 +52,9 @@
           <logicalFolder name="Timer1" displayName="Timer1" projectFiles="true">
             <itemPath>Codes/MCAL/Timers/Timer1/app1.c</itemPath>
           </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="USART" displayName="USART" projectFiles="true">
+          <itemPath>Codes/MCAL/USART/app1.c</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -127,6 +133,10 @@
             <itemPath>MCAL_Layer/Timers/Timer2/hal_timer2_cfg.h</itemPath>
           </logicalFolder>
         </logicalFolder>
+        <logicalFolder name="USART" displayName="USART" projectFiles="true">
+          <itemPath>MCAL_Layer/USART/hal_usart.h</itemPath>
+          <itemPath>MCAL_Layer/USART/hal_usart_cfg.h</itemPath>
+        </logicalFolder>
         <itemPath>MCAL_Layer/device_cfg.h</itemPath>
         <itemPath>MCAL_Layer/mcal_std_types.h</itemPath>
         <itemPath>MCAL_Layer/mcal_std_libraries.h</itemPath>
@@ -200,6 +210,9 @@
           <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
             <itemPath>MCAL_Layer/Timers/Timer2/hal_timer2.c</itemPath>
           </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="USART" displayName="USART" projectFiles="true">
+          <itemPath>MCAL_Layer/USART/hal_usart.c</itemPath>
         </logicalFolder>
         <itemPath>MCAL_Layer/device_cfg.c</itemPath>
       </logicalFolder>

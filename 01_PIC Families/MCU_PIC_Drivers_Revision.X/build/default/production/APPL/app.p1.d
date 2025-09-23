@@ -62,4 +62,14 @@ APPL/../MCAL/Timers/Timer3/../../mcu_cfg.h  \
 APPL/../MCAL/Timers/Timer3/../../GPIO/hal_gpio.h  \
 APPL/../MCAL/Timers/Timer3/../../INTERRUPT/hal_int_interrupt.h  \
 APPL/../MCAL/Timers/Timer3/../Timer1/hal_timer1.h  \
-APPL/../MCAL/Timers/Timer3/hal_timer3_cfg.h 
+APPL/../MCAL/Timers/Timer3/hal_timer3_cfg.h  \
+APPL/../MCAL/CCP/hal_ccp.h  \
+APPL/../MCAL/CCP/../mcu_cfg.h  \
+APPL/../MCAL/CCP/hal_ccp_cfg.h  \
+APPL/../MCAL/CCP/../GPIO/hal_gpio.h  \
+APPL/../MCAL/CCP/../INTERRUPT/hal_int_interrupt.h  \
+APPL/../MCAL/EUSART/hal_eusart.h  \
+APPL/../MCAL/EUSART/../mcu_cfg.h  \
+APPL/../MCAL/EUSART/hal_eusart_cfg.h  \
+APPL/../MCAL/EUSART/../GPIO/hal_gpio.h  \
+APPL/../MCAL/EUSART/../INTERRUPT/hal_int_interrupt.h 

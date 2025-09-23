@@ -33,6 +33,8 @@
 
 #include "../MCAL_Layer/PWM/hal_pwm.h"
 
+#include "../MCAL_Layer/USART/hal_usart.h"
+
 /******************* Section 2 : Macros Declarations *******************/
 
 

@@ -6,82 +6,55 @@
  */
 
 #include "Main.h"
-#include <util/delay.h>
-#include "../MCAL_Layer/PWM/hal_pwm.h"
-
-/* PWM Configurations */
-PWM_CFG pwm0 = {
-    .pwm_src = PWM_OC0,
-    .pwm_mode = PWM_Fast_Mode,
-    .pwm_res = PWM_8Bit,
-    .pwm_act = PWM_Non_Inverting_OCXX_Clear_Pin,
-    .pwm_prescaler = PWM_Prescaler_DIV_1
-};
-
-PWM_CFG pwm1A = {
-    .pwm_src = PWM_OCA1,
-    .pwm_mode = PWM_Fast_Mode,
-    .pwm_res = PWM_8Bit,
-    .pwm_act = PWM_Non_Inverting_OCXX_Clear_Pin,
-    .pwm_prescaler = PWM_Prescaler_DIV_1
-};
-
-PWM_CFG pwm1B = {
-    .pwm_src = PWM_OCB1,
-    .pwm_mode = PWM_Fast_Mode,
-    .pwm_res = PWM_8Bit,
-    .pwm_act = PWM_Non_Inverting_OCXX_Clear_Pin,
-    .pwm_prescaler = PWM_Prescaler_DIV_1
-};
-
-PWM_CFG pwm2 = {
-    .pwm_src = PWM_OC2,
-    .pwm_mode = PWM_Fast_Mode,
-    .pwm_res = PWM_8Bit,
-    .pwm_act = PWM_Non_Inverting_OCXX_Clear_Pin,
-    .pwm_prescaler = PWM_Prescaler_DIV_1
-};
 
 void Application_Init(void);
 
+USART_CFG usart1 = {
+    .tx_transmitter = {
+        .tx_interrupt = NULL,
+        .tx_tsr_interrupt = NULL,
+        .tx_state = USART_Tx_Enable,
+        .tx_int_state = USART_Tx_Interrupt_Disable,
+        .tsr_int_state = USART_TSR_Interrupt_Disable,
+    },
+    .rx_receiver = {
+        .rx_interrupt = NULL,
+        .framing_interrupt = NULL,
+        .overrun_interrupt = NULL,
+        .rx_state = USART_Rx_Enable,
+        .rx_int_state = USART_Rx_Interrupt_Disable,
+    },
+    
+    .mode = USART_Asynchronous,
+.data_classification = USART_Transmit_Receive_Data_Address,
+    .data_size = USART_Data_8Bit,
+    .parity = USART_Disable_Parity,
+    .stop_bits = USART_1Stop_Bit,
+    
+    .br_speed = USART_Baud_Rate_X1Doubling,
+    .baud_rate = 9600,
+    
+    .error_states = 0x00,
+};
+
+uint16 data = 0x00;
+
 int main(void) {
     Application_Init();
-
+    USART_Tx_Write_String_Blocking(&usart1, "Loading...\r");
+    _delay_ms(200);
+    USART_Tx_Write_String_Blocking(&usart1, "Welcome to USART Test\r");
     while (1) {
-        /* ===== Run all PWM channels together ===== */
-        PWM_Start(&pwm0);
-        PWM_Start(&pwm1A);
-        PWM_Start(&pwm1B);
-        PWM_Start(&pwm2);
+        USART_Rx_Read_Byte_Blocking(&usart1, &data);
+        USART_Tx_Write_Byte_Blocking(&usart1, data);
+        data = 0;
 
-        for (uint8 duty = 0; duty <= 255; duty += 5) {
-            PWM_Set_Duty_Cycle(&pwm0, duty);
-            PWM_Set_Duty_Cycle(&pwm1A, duty);
-            PWM_Set_Duty_Cycle(&pwm1B, duty);
-            PWM_Set_Duty_Cycle(&pwm2, duty);
-            _delay_ms(1);
-        }
-
-        _delay_ms(1000);
-
-        for (uint16 duty = 255; duty >= 0; duty -= 5) {
-            PWM_Set_Duty_Cycle(&pwm0, duty);
-            PWM_Set_Duty_Cycle(&pwm1A, duty);
-            PWM_Set_Duty_Cycle(&pwm1B, duty);
-            PWM_Set_Duty_Cycle(&pwm2, duty);
-            _delay_ms(1);
-        }
-
-        _delay_ms(1000);
     }
-
+    
     return EXIT_SUCCESS;
 }
 
 void Application_Init(void) {
     Ecual_Init();
-    PWM_INIT(&pwm0);
-    PWM_INIT(&pwm1A);
-    PWM_INIT(&pwm1B);
-    PWM_INIT(&pwm2);
+    USART_INIT(&usart1);
 }

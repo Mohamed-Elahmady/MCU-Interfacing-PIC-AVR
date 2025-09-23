@@ -83,5 +83,21 @@ ISR(TIMER2_COMP_vect){
 
 #endif
 
+#if ((Interrupt_Feature_Enable) == (USART_Interrupt_Feature))
+
+ISR(USART_TXC_vect){
+    USART_TX_ISR();
+}
+
+ISR(USART_UDRE_vect){
+    USART_TSR_ISR();
+}
+
+ISR(USART_RXC_vect){
+    USART_RX_ISR();
+}
+
+#endif
+
 /******************* Section 4:  Helper Functions Definitions *******************/
 
