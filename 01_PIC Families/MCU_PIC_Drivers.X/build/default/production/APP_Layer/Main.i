@@ -6403,7 +6403,74 @@ Std_ReturnType EUSART_ASYNC_RX_RESTART(const EUSART_CFG *eusart);
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 # 38 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 52 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 2
+# 52 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+typedef void (* SPI_HANDLER)(void);
+
+typedef enum{
+    SPI_SLAVE_MODE = (uint8)0x00,
+    SPI_MASTER_MODE
+}SPI_MODE;
+
+typedef enum{
+    SPI_MASTER_CLOCK_FOSC_DIV_4 = (uint8)0x00,
+    SPI_MASTER_CLOCK_FOSC_DIV_16,
+    SPI_MASTER_CLOCK_FOSC_DIV_64,
+    SPI_MASTER_CLOCK_TMR2,
+    SPI_SLAVE_CLOCK_SCK_SS_ENABLE,
+    SPI_SLAVE_CLOCK_SCK_SS_DISABLE
+}SPI_MODE_CFG;
+
+typedef enum{
+    SPI_IDLE_STATE_LOW_LEVEL = (uint8)0x00,
+    SPI_IDLE_STATE_HIGH_LEVEL
+}SPI_CLOCK_POLARITY;
+
+typedef enum{
+    SPI_TRANSMISSION_IDLE_ACTIVE = (uint8)0x00,
+    SPI_TRANSMISSION_ACTIVE_IDLE
+}SPI_CLOCK_PHASE;
+
+typedef enum{
+    SPI_MASTER_SLAVE_RECEIVING_MIDDLE_SAMPLING = (uint8)0x00,
+    SPI_MASTER_RECEIVING_END_SAMPLING
+}SPI_CLOCK_SAMPLE;
+
+typedef struct{
+    SPI_MODE mode;
+    SPI_MODE_CFG mode_cfg;
+    SPI_CLOCK_POLARITY clk_polarity;
+    SPI_CLOCK_PHASE clk_phase;
+    SPI_CLOCK_SAMPLE clk_sample;
+}SPI_SYNCHRONIZATION_CFG;
+
+typedef struct{
+
+    SPI_HANDLER SPI_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+
+    SPI_SYNCHRONIZATION_CFG spi_cfg;
+    GPIO_PIN_CFG ss_pin;
+}SPI_CFG;
+
+
+
+Std_ReturnType SPI_INIT(const SPI_CFG *spi);
+Std_ReturnType SPI_DEINIT(const SPI_CFG *spi);
+
+Std_ReturnType SPI_WRITE_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 data);
+Std_ReturnType SPI_WRITE_STRING_NON_BLOCKING(const SPI_CFG *spi, uint8 *str);
+Std_ReturnType SPI_WRITE_BYTE_BLOCKING(const SPI_CFG *spi, uint8 data);
+Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str);
+
+Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data);
+Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data);
+# 39 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 53 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 39 "APP_Layer/Main.h"
@@ -6412,17 +6479,14 @@ void application_init(void);
 
 Std_ReturnType Ret = E_OK;
 
-GPIO_LED led1 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-int main() {
+int main(void) {
     application_init();
-    while (1) {
 
+    while(1){
     }
     return (0);
 }
 
-void application_init(void) {
+void application_init(void){
     ECUAL_LAYER_INIT();
-    GPIO_LED_INIT(&led1);
 }

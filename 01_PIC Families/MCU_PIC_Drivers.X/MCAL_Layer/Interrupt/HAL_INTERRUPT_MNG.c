@@ -73,6 +73,14 @@ void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
     }
     else{/* Nothing */}
     
+#if ((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE))
+    /* ================== SPI_Interrupt Service Routine ================== */
+    if((PIR1bits.SSPIF == INTERRUPT_OCCUR) && (PIE1bits.SSPIE == INTERRUPT_ENABLE)){
+        SPI_ISR();
+    }
+    else{/* Nothing */}
+#endif
+
 #if ((INTERRUPT_FEATURE_ENABLE) == (CCP2_INTERRUPT_FEATURE))
     /* ================== CCP2_Interrupt Service Routine ================== */
     if((PIR2bits.CCP2IF == INTERRUPT_OCCUR) && (PIE2bits.CCP2IE == INTERRUPT_ENABLE)){
@@ -195,6 +203,13 @@ void __interrupt() INTERRUPT_MANAGER(void){
     /* ================== ADC_Interrupt Service Routine ================== */
     if((PIR1bits.ADIF == INTERRUPT_OCCUR) && (PIE1bits.ADIE == INTERRUPT_ENABLE)){
         ADC_ISR();
+    }
+    else{/* Nothing */}
+#endif
+#if ((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE))
+    /* ================== SPI_Interrupt Service Routine ================== */
+    if((PIR1bits.SSPIF == INTERRUPT_OCCUR) && (PIE1bits.SSPIE == INTERRUPT_ENABLE)){
+        SPI_ISR();
     }
     else{/* Nothing */}
 #endif

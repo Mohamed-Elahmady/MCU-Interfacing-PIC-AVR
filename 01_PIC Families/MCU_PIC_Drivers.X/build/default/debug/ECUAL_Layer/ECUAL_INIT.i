@@ -6395,7 +6395,85 @@ Std_ReturnType EUSART_ASYNC_RX_RESTART(const EUSART_CFG *eusart);
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 # 38 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 52 "ECUAL_Layer/ECUAL_INIT.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 1
+# 14 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI_CFG.h" 1
+# 15 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 2
+# 62 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+typedef void (* SPI_HANDLER)(void);
+
+typedef enum{
+    SPI_COLLISION_CLEARED = 0x00,
+    SPI_COLLISION_DETECTED
+}SPI_COLLISION_STATE;
+
+typedef enum{
+    SPI_OVERFLOW_CLEARED = 0x00,
+    SPI_OVERFLOW_DETECTED
+}SPI_OVERFLOW_STATE;
+
+typedef enum{
+    SPI_SLAVE_MODE = 0x00,
+    SPI_MASTER_MODE
+}SPI_MODE;
+
+typedef enum{
+    SPI_MASTER_MODE_CLOCK_FOSC_DIV_4 = 0x00,
+    SPI_MASTER_MODE_CLOCK_FOSC_DIV_16,
+    SPI_MASTER_MODE_CLOCK_FOSC_DIV_64,
+    SPI_SLAVE_MODE_CLOCK_SCK_ENABLE_SLAVE_SELECT,
+    SPI_SLAVE_MODE_CLOCK_SCK_DISABLE_SLAVE_SELECT
+}SPI_MODE_CFG;
+
+typedef enum{
+    SPI_IDLE_LOW_LEVEL = 0x00,
+    SPI_IDLE_HIGH_LEVEL
+}SPI_IDLE_STATE;
+
+typedef enum{
+    SPI_TRANSMISSION_IDLE_TO_ACTIVE = 0x00,
+    SPI_TRANSMISSION_ACTIVE_TO_IDLE
+}SPI_TRANSMISSION_STATE;
+
+typedef enum{
+    SPI_MASTER_SLAVE_RECEIVING_IN_MIDDLE_OF_DATA = 0x00,
+    SPI_MASTER_RECEIVING_IN_END_OF_DATA
+}SPI_RECEIVING_STATE;
+
+typedef struct{
+    SPI_MODE mode;
+    SPI_MODE_CFG mode_cfg;
+    SPI_IDLE_STATE clk_polarity;
+    SPI_TRANSMISSION_STATE clk_phase;
+    SPI_RECEIVING_STATE clk_sample;
+}SPI_SYNCHRONIZATION_CFG;
+
+typedef struct{
+
+    SPI_HANDLER SPI_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    SPI_SYNCHRONIZATION_CFG spi_cfg;
+    GPIO_PIN_CFG ss_pin;
+}SPI_CFG;
+
+
+
+Std_ReturnType SPI_INIT(const SPI_CFG *spi);
+Std_ReturnType SPI_DEINIT(const SPI_CFG *spi);
+
+Std_ReturnType SPI_WRITE_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 data);
+Std_ReturnType SPI_WRITE_STRING_NON_BLOCKING(const SPI_CFG *spi, uint8 *str);
+Std_ReturnType SPI_WRITE_BYTE_BLOCKING(const SPI_CFG *spi, uint8 data);
+Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str);
+
+Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data);
+Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data);
+
+
+void SPI_ISR(void);
+# 39 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 53 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
 # 81 "ECUAL_Layer/ECUAL_INIT.c"

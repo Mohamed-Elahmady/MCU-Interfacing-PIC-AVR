@@ -6403,63 +6403,110 @@ Std_ReturnType EUSART_ASYNC_RX_RESTART(const EUSART_CFG *eusart);
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 # 38 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
-# 52 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 1
+# 16 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+# 1 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI_CFG.h" 1
+# 17 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 2
+# 58 "APP_Layer/../ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+typedef void (* SPI_HANDLER)(void);
+
+
+typedef enum{
+    SPI_COLLISION_CLEARED = (uint8)0x00,
+    SPI_COLLISION_DETECTED
+}SPI_COLLISION_STATE;
+
+typedef enum{
+    SPI_OVERFLOW_CLEARED = (uint8)0x00,
+    SPI_OVERFLOW_DETECTED
+}SPI_OVERFLOW_STATE;
+
+typedef union{
+    struct{
+    uint8 collision_state :1;
+    uint8 overflow_state :1;
+    uint8 reserved :6;
+    };
+    uint8 error_states;
+}SPI_ERRORS_STATES;
+
+
+
+typedef enum{
+    SPI_SLAVE_MODE = (uint8)0x00,
+    SPI_MASTER_MODE
+}SPI_MODE;
+
+typedef enum{
+    SPI_MASTER_MODE_CLOCK_FOSC_DIV_4 = (uint8)0x00,
+    SPI_MASTER_MODE_CLOCK_FOSC_DIV_16,
+    SPI_MASTER_MODE_CLOCK_FOSC_DIV_64,
+    SPI_SLAVE_MODE_CLOCK_SCK_ENABLE_SLAVE_SELECT,
+    SPI_SLAVE_MODE_CLOCK_SCK_DISABLE_SLAVE_SELECT
+}SPI_MODE_CFG;
+
+typedef enum{
+    SPI_IDLE_LOW_LEVEL = (uint8)0x00,
+    SPI_IDLE_HIGH_LEVEL
+}SPI_IDLE_STATE;
+
+typedef enum{
+    SPI_TRANSMISSION_IDLE_TO_ACTIVE = (uint8)0x00,
+    SPI_TRANSMISSION_ACTIVE_TO_IDLE
+}SPI_TRANSMISSION_STATE;
+
+typedef enum{
+    SPI_MASTER_SLAVE_RECEIVING_IN_MIDDLE_OF_DATA = (uint8)0x00,
+    SPI_MASTER_RECEIVING_IN_END_OF_DATA
+}SPI_RECEIVING_STATE;
+
+typedef struct{
+    SPI_MODE mode;
+    SPI_MODE_CFG mode_cfg;
+
+    SPI_IDLE_STATE clk_polarity;
+    SPI_TRANSMISSION_STATE clk_phase;
+    SPI_RECEIVING_STATE clk_sample;
+}SPI_SYNCHRONIZATION_CFG;
+
+typedef struct{
+
+    SPI_HANDLER SPI_INTERRUPT;
+    INTERRUPT_PRIORITY priority;
+
+    SPI_SYNCHRONIZATION_CFG spi_cfg;
+    GPIO_PIN_CFG ss_pin;
+}SPI_CFG;
+
+
+
+Std_ReturnType SPI_INIT(const SPI_CFG *spi);
+Std_ReturnType SPI_DEINIT(const SPI_CFG *spi);
+
+Std_ReturnType SPI_WRITE_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 data);
+Std_ReturnType SPI_WRITE_STRING_NON_BLOCKING(const SPI_CFG *spi, uint8 *str);
+Std_ReturnType SPI_WRITE_BYTE_BLOCKING(const SPI_CFG *spi, uint8 data);
+Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str);
+
+Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data);
+Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data);
+# 39 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h" 2
+# 53 "APP_Layer/../ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 16 "APP_Layer/Main.h" 2
 # 39 "APP_Layer/Main.h"
 void application_init(void);
 # 9 "APP_Layer/Main.c" 2
 
-
-Std_ReturnType Ret = E_OK;
-
-void eusart_tx_isr(void);
-void eusart_rx_isr(void);
-
-GPIO_LED led1 = {.pin.PORT = GPIO_PORTC, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
-
-EUSART_CFG usart_object = {
-    .eusart_tx_mode.interrupt_state = EUSART_ASYNC_TX_INTERRUPT_ENABLE_STATE,
-    .eusart_tx_mode.tx_interrupt = eusart_tx_isr,
-    .eusart_tx_mode.tx_priority = INTERRUPT_HIGH_PRIORITY,
-
-    .eusart_tx_mode.state = EUSART_ASYNC_TX_ENABLE_STATE,
-    .eusart_tx_mode.tx_size = EUSART_ASYNC_TX_9BIT_SIZE_DISABLE,
-
-    .eusart_rx_mode.interrupt_state = EUSART_ASYNC_RX_INTERRUPT_DISABLE_STATE,
-    .eusart_rx_mode.rx_priority = INTERRUPT_HIGH_PRIORITY,
-    .eusart_rx_mode.rx_interrupt = ((void*)0),
-    .eusart_rx_mode.farming_interrupt = ((void*)0),
-    .eusart_rx_mode.overrun_interrupt = ((void*)0),
-
-    .eusart_rx_mode.state = EUSART_ASYNC_RX_ENABLE_STATE,
-    .eusart_rx_mode.rx_size = EUSART_ASYNC_RX_9BIT_SIZE_DISABLE,
-
-    .baud_rate = 9600,
-    .br_cfg = EUSART_BR_ASYNC_8BIT_LOW_SPEED,
-
-    .error_states.status = 0x00
-};
-
-int main() {
+int main(void) {
     application_init();
-    while (1) {
-        EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(&usart_object, 'W');
-        _delay((unsigned long)((350)*(8000000UL/4000.0)));
+
+    while(1){
+
     }
     return (0);
 }
 
-void application_init(void) {
+void application_init(void){
     ECUAL_LAYER_INIT();
-    Ret = EUSART_ASYNC_INIT(&usart_object);
-    GPIO_LED_INIT(&led1);
-}
-
-void eusart_tx_isr(void){
-    GPIO_LED_TURN_TOGGLE(&led1);
-}
-
-void eusart_rx_isr(void){
-
 }

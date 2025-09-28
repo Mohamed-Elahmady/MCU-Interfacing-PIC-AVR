@@ -5649,6 +5649,7 @@ void CCP1_ISR(void);
 void CCP2_ISR(void);
 void EUSART_TX_ISR(void);
 void EUSART_RX_ISR(void);
+void SPI_ISR(void);
 # 11 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c" 2
 
 
@@ -5657,7 +5658,7 @@ static volatile uint8 RB4_ISR_FLAG = 0x01;
 static volatile uint8 RB5_ISR_FLAG = 0x01;
 static volatile uint8 RB6_ISR_FLAG = 0x01;
 static volatile uint8 RB7_ISR_FLAG = 0x01;
-# 169 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+# 177 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
 
     if((INTCONbits.INT0IF == 0x01) && (INTCONbits.INT0IE == 0x01)){
@@ -5687,6 +5688,13 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
 
     if((PIR1bits.ADIF == 0x01) && (PIE1bits.ADIE == 0x01)){
         ADC_ISR();
+    }
+    else{ }
+
+
+
+    if((PIR1bits.SSPIF == 0x01) && (PIE1bits.SSPIE == 0x01)){
+        SPI_ISR();
     }
     else{ }
 

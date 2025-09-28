@@ -34,6 +34,7 @@
 #include "../MCAL_Layer/PWM/hal_pwm.h"
 
 #include "../MCAL_Layer/USART/hal_usart.h"
+#include "../MCAL_Layer/SPI/hal_spi.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

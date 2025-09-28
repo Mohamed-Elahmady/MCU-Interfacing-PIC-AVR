@@ -186,6 +186,26 @@
 
 #endif
 
+// SPI Interrupt Configuration
+#if ((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE))
+
+// SPI Flag bit
+#define INT_INTERRUPT_SPI_CLEAR_FLAG()                        CLEAR_BIT(PIR1, _PIR1_SSPIF_POSITION)
+
+// SPI Enable Bit
+#define INT_INTERRUPT_SPI_DISABLE()                           CLEAR_BIT(PIE1, _PIE1_SSPIE_POSITION)
+#define INT_INTERRUPT_SPI_ENABLE()                            SET_BIT(PIE1, _PIE1_SSPIE_POSITION)
+
+// SPI Priority Bit
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+
+#define INT_INTERRUPT_SPI_LOW_PRIORITY()                      CLEAR_BIT(IPR1, _IPR1_SSPIP_POSITION)
+#define INT_INTERRUPT_SPI_HIGH_PRIORITY()                     SET_BIT(IPR1, _IPR1_SSPIP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

@@ -36,10 +36,12 @@
 // For Timer3 Internal Interrupts
 #define TIMER3_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
 // For CCP Modules Internal Interrupts
-#define CCP1_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
-#define CCP2_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
+#define CCP1_INTERRUPT_FEATURE                    (INTERRUPT_FEATURE_ENABLE)
+#define CCP2_INTERRUPT_FEATURE                    (INTERRUPT_FEATURE_ENABLE)
 // For EUSART Internal Interrupts
 #define EUSART_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
+// For SPI Internal Interrupts
+#define SPI_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

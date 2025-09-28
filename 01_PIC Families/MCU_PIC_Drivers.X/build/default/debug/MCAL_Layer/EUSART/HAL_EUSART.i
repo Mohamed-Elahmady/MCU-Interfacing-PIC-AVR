@@ -5812,10 +5812,13 @@ Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(const EUSART_CFG *eusart,
     }
     else{
         if(((TXSTA >> 0x1) & (uint8)(uint8)0x01)){
+
+            (PIE1 |= (uint8)((uint8)0x01 << 0x4));
+
             TXREG = data;
         }
         else{
-
+            Retval = E_NOT_OK;
         }
     }
     return Retval;
@@ -5828,6 +5831,7 @@ Std_ReturnType EUSART_ASYNC_TX_WRITE_STRING_NON_BLOCKING(const EUSART_CFG *eusar
     }
     else{
         while(*str){
+            while(!((TXSTA >> 0x1) & (uint8)(uint8)0x01));
             Retval = EUSART_ASYNC_TX_WRITE_BYTE_NON_BLOCKING(eusart, *str);
             str++;
         }
@@ -5842,6 +5846,9 @@ Std_ReturnType EUSART_ASYNC_TX_WRITE_BYTE_BLOCKING(const EUSART_CFG *eusart, uin
     }
     else{
         while(!((TXSTA >> 0x1) & (uint8)(uint8)0x01));
+
+        (PIE1 |= (uint8)((uint8)0x01 << 0x4));
+
         TXREG = data;
     }
     return Retval;
@@ -5979,7 +5986,7 @@ static Std_ReturnType EUSART_ASYNC_TX_INIT(const EUSART_CFG *eusart){
 
             if(EUSART_ASYNC_TX_INTERRUPT_ENABLE_STATE == eusart->eusart_tx_mode.interrupt_state){
                 (PIE1 |= (uint8)((uint8)0x01 << 0x4));
-# 256 "MCAL_Layer/EUSART/HAL_EUSART.c"
+# 263 "MCAL_Layer/EUSART/HAL_EUSART.c"
                 (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));
@@ -6036,7 +6043,7 @@ static Std_ReturnType EUSART_ASYNC_RX_INIT(const EUSART_CFG *eusart){
 
             if(EUSART_ASYNC_RX_INTERRUPT_ENABLE_STATE == eusart->eusart_rx_mode.interrupt_state){
                 (PIE1 |= (uint8)((uint8)0x01 << 0x5));
-# 326 "MCAL_Layer/EUSART/HAL_EUSART.c"
+# 333 "MCAL_Layer/EUSART/HAL_EUSART.c"
                 (RCON &= ~(uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x7));
                 (INTCON |= (uint8)((uint8)0x01 << 0x6));

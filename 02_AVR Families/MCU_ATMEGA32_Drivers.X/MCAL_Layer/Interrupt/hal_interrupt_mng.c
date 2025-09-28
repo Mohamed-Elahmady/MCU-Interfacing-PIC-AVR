@@ -99,5 +99,13 @@ ISR(USART_RXC_vect){
 
 #endif
 
+#if ((Interrupt_Feature_Enable) == (SPI_Interrupt_Feature))
+
+ISR(SPI_STC_vect){
+    SPI_ISR();
+}
+
+#endif
+
 /******************* Section 4:  Helper Functions Definitions *******************/
 

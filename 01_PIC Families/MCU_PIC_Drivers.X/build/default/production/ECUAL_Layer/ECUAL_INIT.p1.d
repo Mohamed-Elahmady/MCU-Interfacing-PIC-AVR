@@ -81,4 +81,10 @@ ECUAL_Layer/../MCAL_Layer/EUSART/HAL_EUSART_CFG.h  \
 ECUAL_Layer/../MCAL_Layer/EUSART/../GPIO/HAL_GPIO.h  \
 ECUAL_Layer/../MCAL_Layer/EUSART/../Interrupt/HAL_INT_INTERRUPT.h  \
 ECUAL_Layer/../MCAL_Layer/EUSART/../mcal_std_types.h  \
-ECUAL_Layer/../MCAL_Layer/EUSART/../device_cfg.h 
+ECUAL_Layer/../MCAL_Layer/EUSART/../device_cfg.h  \
+ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h  \
+ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI_CFG.h  \
+ECUAL_Layer/../MCAL_Layer/SPI/../GPIO/HAL_GPIO.h  \
+ECUAL_Layer/../MCAL_Layer/SPI/../Interrupt/HAL_INT_INTERRUPT.h  \
+ECUAL_Layer/../MCAL_Layer/SPI/../mcal_std_types.h  \
+ECUAL_Layer/../MCAL_Layer/SPI/../device_cfg.h 

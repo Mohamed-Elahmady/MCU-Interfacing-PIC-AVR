@@ -188,13 +188,7 @@ Std_ReturnType USART_Rx_Restart(const USART_CFG *usart){
         Retval = E_NOT_OK;
     }
     else{
-        uint8 dummy = 0;
-        
         USART_Receiving_Disable();
-        
-        while(USART_Read_Receiving_Shift_Register_Status());
-        dummy = (uint8)(UDR & 0xFF);
-        
         USART_Receiving_Enable();
     }
     return Retval;
@@ -553,9 +547,9 @@ static Std_ReturnType USART_Set_TX_Configurations(const USART_CFG *usart){
                 Retval = E_NOT_OK;
             }
 #endif
-//            // 3. Tx Pin initialize
-//            GPIO_Pin_CFG tx_pin = {.Port = GPIO_PortD, .Pin = GPIO_Pin1, .Direction = GPIO_Output, .Logic = GPIO_Low};
-//            GPIO_Pin_INIT(&tx_pin);
+            // 3. Tx Pin initialize
+            GPIO_Pin_CFG tx_pin = {.Port = GPIO_PortD, .Pin = GPIO_Pin1, .Direction = GPIO_Output, .Logic = GPIO_Low};
+            GPIO_Pin_INIT(&tx_pin);
         }
         else if(usart->tx_transmitter.tx_state == USART_Tx_Disable){
             USART_Transmission_Disable();

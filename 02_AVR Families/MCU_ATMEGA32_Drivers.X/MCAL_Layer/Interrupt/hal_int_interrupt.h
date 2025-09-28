@@ -86,6 +86,10 @@
 #define Internal_Interrupt_RX_Disable()                           Clear_Bit(UCSRB, RXCIE)
 #define Internal_Interrupt_RX_Enable()                            Set_Bit(UCSRB, RXCIE)
 
+// 6. For SPI Interrupts
+
+#define Internal_Interrupt_SPI_Disable()                          Clear_Bit(SPCR, SPIE)
+#define Internal_Interrupt_SPI_Enable()                           Set_Bit(SPCR, SPIE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 
