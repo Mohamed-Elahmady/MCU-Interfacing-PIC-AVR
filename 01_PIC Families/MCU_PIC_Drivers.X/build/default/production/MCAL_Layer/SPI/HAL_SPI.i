@@ -5678,8 +5678,8 @@ typedef struct{
 
 typedef struct{
 
-    SPI_HANDLER SPI_INTERRUPT;
-    INTERRUPT_PRIORITY priority;
+
+
 
 
     SPI_SYNCHRONIZATION_CFG spi_cfg;
@@ -5699,31 +5699,13 @@ Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str);
 Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data);
 Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data);
 # 11 "MCAL_Layer/SPI/HAL_SPI.c" 2
-
-
-
-
-
-
-
-
-static SPI_HANDLER SPI_HANDLER_FUNCTION = ((void*)0);
-
-
+# 22 "MCAL_Layer/SPI/HAL_SPI.c"
 static Std_ReturnType SPI_SET_DISABLE(const SPI_CFG *spi);
 static Std_ReturnType SPI_SET_ENABLE(const SPI_CFG *spi);
 static Std_ReturnType SPI_SET_MODE_CONFIG(const SPI_CFG *spi);
 static Std_ReturnType SPI_PINS_INIT(const SPI_CFG *spi);
 static Std_ReturnType SPI_SET_CLOCK_CONFIGURATIONS(const SPI_CFG *spi);
-
-
-
-static Std_ReturnType SPI_CONFIGURE_INTERRUPT(const SPI_CFG *spi);
-
-
-
-
-
+# 36 "MCAL_Layer/SPI/HAL_SPI.c"
 Std_ReturnType SPI_INIT(const SPI_CFG *spi){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == spi){
@@ -5740,7 +5722,7 @@ Std_ReturnType SPI_INIT(const SPI_CFG *spi){
         Retval = SPI_SET_CLOCK_CONFIGURATIONS(spi);
 
 
-        Retval = SPI_CONFIGURE_INTERRUPT(spi);
+
 
 
         Retval = SPI_SET_ENABLE(spi);
@@ -5757,8 +5739,8 @@ Std_ReturnType SPI_DEINIT(const SPI_CFG *spi){
 
         Retval = SPI_SET_DISABLE(spi);
 
-        (PIE1 &= ~(uint8)((uint8)0x01 << 0x3));
-        (PIR1 &= ~(uint8)((uint8)0x01 << 0x3));
+
+
 
     }
     return Retval;
@@ -5798,7 +5780,9 @@ Std_ReturnType SPI_WRITE_STRING_NON_BLOCKING(const SPI_CFG *spi, uint8 *str){
             else if(((PIR1 >> 0x3) & (uint8)(uint8)0x01)){
                 SSPBUF = *str;
                 str++;
-                (PIR1 &= ~(uint8)((uint8)0x01 << 0x3));
+
+
+
             }
             else{
                 Retval = E_NOT_OK;
@@ -5872,23 +5856,7 @@ Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data){
     }
     return Retval;
 }
-
-
-
-void SPI_ISR(void){
-
-    (PIR1 &= ~(uint8)((uint8)0x01 << 0x3));
-
-
-    if(SPI_HANDLER_FUNCTION){
-        SPI_HANDLER_FUNCTION();
-    }
-}
-
-
-
-
-
+# 203 "MCAL_Layer/SPI/HAL_SPI.c"
 static Std_ReturnType SPI_SET_DISABLE(const SPI_CFG *spi){
     Std_ReturnType Retval = E_OK;
     if(((void*)0) == spi){
@@ -6026,29 +5994,6 @@ static Std_ReturnType SPI_SET_CLOCK_CONFIGURATIONS(const SPI_CFG *spi){
                 Retval = E_NOT_OK;
                 break;
         }
-    }
-    return Retval;
-}
-
-
-
-static Std_ReturnType SPI_CONFIGURE_INTERRUPT(const SPI_CFG *spi){
-    Std_ReturnType Retval = E_OK;
-    if(((void*)0) == spi){
-        Retval = E_NOT_OK;
-    }
-    else{
-
-        (PIE1 |= (uint8)((uint8)0x01 << 0x3));
-
-        (PIR1 &= ~(uint8)((uint8)0x01 << 0x3));
-# 369 "MCAL_Layer/SPI/HAL_SPI.c"
-        (RCON &= ~(uint8)((uint8)0x01 << 0x7));
-        (INTCON |= (uint8)((uint8)0x01 << 0x7));
-        (INTCON |= (uint8)((uint8)0x01 << 0x6));
-
-
-        SPI_HANDLER_FUNCTION = spi->SPI_INTERRUPT;
     }
     return Retval;
 }

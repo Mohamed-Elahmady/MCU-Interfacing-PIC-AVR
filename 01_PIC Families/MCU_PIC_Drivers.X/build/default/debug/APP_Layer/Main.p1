@@ -1,11 +1,87 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"84 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 84: Std_ReturnType Ret = E_OK;
+[c E3659 0 1 .. ]
+[n E3659 . E_NOT_OK E_OK  ]
+"67 APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h
+[; ;APP_Layer/../ECUAL_Layer/LED/../../MCAL_Layer/GPIO/HAL_GPIO.h: 67: typedef struct{
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . PORT PIN DIRECTION LOGIC ]
+"33 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
+[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 33: typedef struct{
+[s S307 `S306 1 ]
+[n S307 . pin ]
+"88 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 88: GPIO_LED led1 = {.pin.PORT = GPIO_PORTD, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
+[c E3666 0 1 2 3 4 .. ]
+[n E3666 . GPIO_PORTA GPIO_PORTB GPIO_PORTC GPIO_PORTD GPIO_PORTE  ]
+[c E3673 0 1 2 3 4 5 6 7 .. ]
+[n E3673 . GPIO_PIN0 GPIO_PIN1 GPIO_PIN2 GPIO_PIN3 GPIO_PIN4 GPIO_PIN5 GPIO_PIN6 GPIO_PIN7  ]
+[c E3683 0 1 .. ]
+[n E3683 . GPIO_OUTPUT GPIO_INPUT  ]
+[c E3687 0 1 .. ]
+[n E3687 . GPIO_LOW GPIO_HIGH  ]
+[v F4492 `(v ~T0 @X0 0 tf ]
+[v F4494 `(v ~T0 @X0 0 tf ]
+[v F4496 `(v ~T0 @X0 0 tf ]
+"90
+[; ;APP_Layer/Main.c: 90: I2C_CFG i2c1 = {
+[c E3907 0 1 .. ]
+[n E3907 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+[c E4453 0 1 .. ]
+[n E4453 . I2C_SLAVE_MODE I2C_MASTER_MODE  ]
+[c E4457 6 7 8 11 14 15 .. ]
+[n E4457 . I2C_SLAVE_MODE_7BIT_ADD I2C_SLAVE_MODE_10BIT_ADD I2C_MASTER_MODE_CLK I2C_MASTER_MODE_FIRMWARE I2C_SLAVE_MODE_7BIT_ADD_SP_INTERRUPTS I2C_SLAVE_MODE_10BIT_ADD_SP_INTERRUPTS  ]
+[c E4465 0 1 .. ]
+[n E4465 . I2C_SLEW_RATE_100KHZ_DISABLE I2C_SLEW_RATE_400KHZ_ENABLE  ]
+[c E4469 0 1 .. ]
+[n E4469 . I2C_SMBUS_DISABLE I2C_SMBUS_ENABLE  ]
+[c E4473 0 1 .. ]
+[n E4473 . I2C_GENERAL_CALL_DISABLE I2C_GENERAL_CALL_ENABLE  ]
+[c E4477 0 1 .. ]
+[n E4477 . I2C_RECEIVE_DISABLE I2C_RECEIVE_ENABLE  ]
+"134 APP_Layer/../ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h: 134: typedef struct{
+[s S332 `E4453 1 `E4457 1 `us 1 `E4465 1 `E4469 1 `E4473 1 `E4477 1 ]
+[n S332 . mode mode_cfg i2c_slave_add slew_rate smbus general_call receive_mode ]
+"144
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h: 144: typedef struct{
+[s S333 `*F4492 1 `*F4494 1 `*F4496 1 `E3907 1 `E3907 1 `ul 1 `S332 1 ]
+[n S333 . I2C_INTERRUPT I2C_COL_INTERRUPT I2C_OVF_INTERRUPT i2c_priority col_priority i2c_clock i2c_frame ]
+"86 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 86: void i2c_isr(void);
+[v _i2c_isr `(v ~T0 @X0 0 ef ]
+[v F4543 `(v ~T0 @X0 0 tf ]
+[v F4544 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
 "39 APP_Layer/Main.h
 [; ;APP_Layer/Main.h: 39: void application_init(void);
 [v _application_init `(v ~T0 @X0 0 ef ]
-"53 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
-[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 53: void ECUAL_LAYER_INIT(void);
+"5705 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
+[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 5705: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"54 APP_Layer/../ECUAL_Layer/ECUAL_INIT.h
+[; ;APP_Layer/../ECUAL_Layer/ECUAL_INIT.h: 54: void ECUAL_LAYER_INIT(void);
 [v _ECUAL_LAYER_INIT `(v ~T0 @X0 0 ef ]
+"158 APP_Layer/../ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h
+[; ;APP_Layer/../ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h: 158: Std_ReturnType I2C_INIT(const I2C_CFG *i2c);
+[v _I2C_INIT `(E3659 ~T0 @X0 0 ef1`*CS333 ]
+"39 APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h
+[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 39: Std_ReturnType GPIO_LED_INIT(const GPIO_LED *led);
+[v _GPIO_LED_INIT `(E3659 ~T0 @X0 0 ef1`*CS307 ]
+"43
+[; ;APP_Layer/../ECUAL_Layer/LED/ECUAL_LED.h: 43: Std_ReturnType GPIO_LED_TURN_TOGGLE(const GPIO_LED *led);
+[v _GPIO_LED_TURN_TOGGLE `(E3659 ~T0 @X0 0 ef1`*CS307 ]
+[v F3624 `(v ~T0 @X0 1 tf1`ul ]
+"20 /Applications/microchip/xc8/v3.00/pic/include/builtins.h
+[v __delay `JF3624 ~T0 @X0 0 e ]
+[p i __delay ]
+"5473 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
+[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 5473: extern volatile unsigned char SSPSTAT __attribute__((address(0xFC7)));
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@4039 ]
+"5403
+[; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 5403: extern volatile unsigned char SSPCON1 __attribute__((address(0xFC6)));
+[v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
 "54 /Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -447,44 +523,174 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;/Applications/microchip/mplabx/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8/pic/include/proc/pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"84 APP_Layer/Main.c
+[; ;APP_Layer/Main.c: 84: Std_ReturnType Ret = E_OK;
+[v _Ret `E3659 ~T0 @X0 1 e ]
+[i _Ret
+. `E3659 1
+]
+"88
+[; ;APP_Layer/Main.c: 88: GPIO_LED led1 = {.pin.PORT = GPIO_PORTD, .pin.PIN = GPIO_PIN0, .pin.DIRECTION = GPIO_OUTPUT, .pin.LOGIC = GPIO_LOW};
+[v _led1 `S307 ~T0 @X0 1 e ]
+[i _led1
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3666 3 `uc
+-> . `E3673 0 `uc
+-> . `E3683 0 `uc
+-> . `E3687 0 `uc
+..
+..
+..
+..
+]
+"90
+[; ;APP_Layer/Main.c: 90: I2C_CFG i2c1 = {
+[v _i2c1 `S333 ~T0 @X0 1 e ]
+[i _i2c1
+:U ..
+:U ..
+&U _i2c_isr
+-> -> -> 0 `i `*v `*F4543
+-> -> -> 0 `i `*v `*F4544
+. `E3907 1
+-> -> 0 `i `E3907
+-> -> 0 `i `ul
+:U ..
+:U ..
+. `E4453 0
+. `E4457 0
+-> -> 96 `i `us
+. `E4465 0
+. `E4469 0
+. `E4473 0
+. `E4477 1
+..
+..
+..
+..
+]
+"106
+[; ;APP_Layer/Main.c: 106: volatile uint8 counter = 0;
+[v _counter `Vuc ~T0 @X0 1 e ]
+[i _counter
+-> -> 0 `i `uc
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"10 APP_Layer/Main.c
-[; ;APP_Layer/Main.c: 10: int main(void) {
+"108
+[; ;APP_Layer/Main.c: 108: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"11
-[; ;APP_Layer/Main.c: 11:     application_init();
+"109
+[; ;APP_Layer/Main.c: 109:     application_init();
 [e ( _application_init ..  ]
-"13
-[; ;APP_Layer/Main.c: 13:     while(1){
+"111
+[; ;APP_Layer/Main.c: 111:     while(1){
 [e :U 336 ]
 {
-"15
-[; ;APP_Layer/Main.c: 15:     }
+"112
+[; ;APP_Layer/Main.c: 112:         uint8 data = SSPBUF;
+[v _data `uc ~T0 @X0 1 a ]
+[e = _data _SSPBUF ]
+"114
+[; ;APP_Layer/Main.c: 114:     }
 }
 [e :U 335 ]
 [e $U 336  ]
 [e :U 337 ]
-"16
-[; ;APP_Layer/Main.c: 16:     return (0);
+"115
+[; ;APP_Layer/Main.c: 115:     return (0);
 [e ) -> 0 `i ]
 [e $UE 334  ]
-"17
-[; ;APP_Layer/Main.c: 17: }
+"116
+[; ;APP_Layer/Main.c: 116: }
 [e :UE 334 ]
 }
-"19
-[; ;APP_Layer/Main.c: 19: void application_init(void){
+"118
+[; ;APP_Layer/Main.c: 118: void application_init(void){
 [v _application_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_init ]
 [f ]
-"20
-[; ;APP_Layer/Main.c: 20:     ECUAL_LAYER_INIT();
+"119
+[; ;APP_Layer/Main.c: 119:     ECUAL_LAYER_INIT();
 [e ( _ECUAL_LAYER_INIT ..  ]
-"21
-[; ;APP_Layer/Main.c: 21: }
+"120
+[; ;APP_Layer/Main.c: 120:     Ret = I2C_INIT(&i2c1);
+[e = _Ret ( _I2C_INIT (1 -> &U _i2c1 `*CS333 ]
+"121
+[; ;APP_Layer/Main.c: 121:     Ret = GPIO_LED_INIT(&led1);
+[e = _Ret ( _GPIO_LED_INIT (1 -> &U _led1 `*CS307 ]
+"122
+[; ;APP_Layer/Main.c: 122:     GPIO_LED_TURN_TOGGLE(&led1);
+[e ( _GPIO_LED_TURN_TOGGLE (1 -> &U _led1 `*CS307 ]
+"123
+[; ;APP_Layer/Main.c: 123:     _delay((unsigned long)((300)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"124
+[; ;APP_Layer/Main.c: 124:     GPIO_LED_TURN_TOGGLE(&led1);
+[e ( _GPIO_LED_TURN_TOGGLE (1 -> &U _led1 `*CS307 ]
+"125
+[; ;APP_Layer/Main.c: 125: }
 [e :UE 338 ]
+}
+"127
+[; ;APP_Layer/Main.c: 127: volatile uint8 received_data = 0;
+[v _received_data `Vuc ~T0 @X0 1 e ]
+[i _received_data
+-> -> 0 `i `uc
+]
+"129
+[; ;APP_Layer/Main.c: 129: void i2c_isr(void){
+[v _i2c_isr `(v ~T0 @X0 1 ef ]
+{
+[e :U _i2c_isr ]
+[f ]
+"130
+[; ;APP_Layer/Main.c: 130:     uint8 dummy = 0;
+[v _dummy `uc ~T0 @X0 1 a ]
+[e = _dummy -> -> 0 `i `uc ]
+"132
+[; ;APP_Layer/Main.c: 132:     if (((SSPSTAT >> 0x5) & (uint8)(uint8)0x01)) {
+[e $ ! != & >> -> _SSPSTAT `i -> 5 `i -> -> -> 1 `i `uc `i -> 0 `i 340  ]
+{
+"133
+[; ;APP_Layer/Main.c: 133:         received_data = SSPBUF;
+[e = _received_data _SSPBUF ]
+"134
+[; ;APP_Layer/Main.c: 134:         GPIO_LED_TURN_TOGGLE(&led1);
+[e ( _GPIO_LED_TURN_TOGGLE (1 -> &U _led1 `*CS307 ]
+"135
+[; ;APP_Layer/Main.c: 135:     } else {
+}
+[e $U 341  ]
+[e :U 340 ]
+{
+"136
+[; ;APP_Layer/Main.c: 136:         dummy = SSPBUF;
+[e = _dummy _SSPBUF ]
+"137
+[; ;APP_Layer/Main.c: 137:     }
+}
+[e :U 341 ]
+"139
+[; ;APP_Layer/Main.c: 139:     if (((SSPCON1 >> 0x6) & (uint8)(uint8)0x01)) (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x6));
+[e $ ! != & >> -> _SSPCON1 `i -> 6 `i -> -> -> 1 `i `uc `i -> 0 `i 342  ]
+[e =& _SSPCON1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 6 `i `uc `i `Vuc ]
+[e :U 342 ]
+"140
+[; ;APP_Layer/Main.c: 140:     if (((SSPCON1 >> 0x7) & (uint8)(uint8)0x01)) (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x7));
+[e $ ! != & >> -> _SSPCON1 `i -> 7 `i -> -> -> 1 `i `uc `i -> 0 `i 343  ]
+[e =& _SSPCON1 -> ~ -> -> << -> -> -> 1 `i `uc `i -> 7 `i `uc `i `Vuc ]
+[e :U 343 ]
+"142
+[; ;APP_Layer/Main.c: 142:     (SSPCON1 |= (uint8)((uint8)0x01 << 0x4));
+[e =| _SSPCON1 -> -> << -> -> -> 1 `i `uc `i -> 4 `i `uc `Vuc ]
+"143
+[; ;APP_Layer/Main.c: 143: }
+[e :UE 339 ]
 }

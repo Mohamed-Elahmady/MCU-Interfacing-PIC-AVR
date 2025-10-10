@@ -140,6 +140,10 @@
             <itemPath>MCAL_Layer/Timers/Timer2/hal_timer2_cfg.h</itemPath>
           </logicalFolder>
         </logicalFolder>
+        <logicalFolder name="TWI" displayName="TWI" projectFiles="true">
+          <itemPath>MCAL_Layer/TWI/hal_twi.h</itemPath>
+          <itemPath>MCAL_Layer/TWI/hal_twi_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="USART" displayName="USART" projectFiles="true">
           <itemPath>MCAL_Layer/USART/hal_usart.h</itemPath>
           <itemPath>MCAL_Layer/USART/hal_usart_cfg.h</itemPath>
@@ -220,6 +224,9 @@
           <logicalFolder name="Timer2" displayName="Timer2" projectFiles="true">
             <itemPath>MCAL_Layer/Timers/Timer2/hal_timer2.c</itemPath>
           </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="TWI" displayName="TWI" projectFiles="true">
+          <itemPath>MCAL_Layer/TWI/hal_twi.c</itemPath>
         </logicalFolder>
         <logicalFolder name="USART" displayName="USART" projectFiles="true">
           <itemPath>MCAL_Layer/USART/hal_usart.c</itemPath>

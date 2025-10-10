@@ -101,7 +101,13 @@ build/default/production/ECUAL_Layer/ECUAL_INIT.o.d \
  ECUAL_Layer/../MCAL_Layer/SPI/../GPIO/hal_gpio.h \
  ECUAL_Layer/../MCAL_Layer/SPI/../Interrupt/hal_int_interrupt.h \
  ECUAL_Layer/../MCAL_Layer/SPI/../mcal_std_types.h \
- ECUAL_Layer/../MCAL_Layer/SPI/../device_cfg.h
+ ECUAL_Layer/../MCAL_Layer/SPI/../device_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/TWI/hal_twi.h \
+ ECUAL_Layer/../MCAL_Layer/TWI/hal_twi_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/TWI/../mcal_std_types.h \
+ ECUAL_Layer/../MCAL_Layer/TWI/../device_cfg.h \
+ ECUAL_Layer/../MCAL_Layer/TWI/../GPIO/hal_gpio.h \
+ ECUAL_Layer/../MCAL_Layer/TWI/../Interrupt/hal_int_interrupt.h
 
 ECUAL_Layer/ECUAL_INIT.h:
 
@@ -314,3 +320,15 @@ ECUAL_Layer/../MCAL_Layer/SPI/../Interrupt/hal_int_interrupt.h:
 ECUAL_Layer/../MCAL_Layer/SPI/../mcal_std_types.h:
 
 ECUAL_Layer/../MCAL_Layer/SPI/../device_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/TWI/hal_twi.h:
+
+ECUAL_Layer/../MCAL_Layer/TWI/hal_twi_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/TWI/../mcal_std_types.h:
+
+ECUAL_Layer/../MCAL_Layer/TWI/../device_cfg.h:
+
+ECUAL_Layer/../MCAL_Layer/TWI/../GPIO/hal_gpio.h:
+
+ECUAL_Layer/../MCAL_Layer/TWI/../Interrupt/hal_int_interrupt.h:

@@ -29,6 +29,17 @@ void __interrupt() INTERRUPT_MANAGER_HIGH_PRIORITY(void){
         INT0_ISR();
     }
     else{/* Nothing */}
+#if (((INTERRUPT_FEATURE_ENABLE) == (I2C_INTERRUPT_FEATURE)) && ((INTERRUPT_FEATURE_DISABLE) == (SPI_INTERRUPT_FEATURE)))
+    /* ================== I2C_Interrupt Service Routine ================== */
+    if((PIR1bits.SSPIF == INTERRUPT_OCCUR) && (PIE1bits.SSPIE == INTERRUPT_ENABLE)){
+        I2C_ISR();
+    }
+    else{/* Nothing */}
+    if((PIR2bits.BCLIF == INTERRUPT_OCCUR) && (PIE2bits.BCLIE == INTERRUPT_ENABLE)){
+        I2C_BC_ISR();
+    }
+    else{/* Nothing */}
+#endif
 #if ((INTERRUPT_FEATURE_ENABLE) == (EUSART_INTERRUPT_FEATURE))
     /* ================== EUSART_TX_Interrupt Service Routine ================== */
     if((PIR1bits.TXIF == INTERRUPT_OCCUR) && (PIE1bits.TXIE == INTERRUPT_ENABLE)){
@@ -73,7 +84,7 @@ void __interrupt(low_priority) INTERRUPT_MANAGER_LOW_PRIORITY(void){
     }
     else{/* Nothing */}
     
-#if ((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE))
+#if (((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE)) && ((INTERRUPT_FEATURE_DISABLE) == (I2C_INTERRUPT_FEATURE)))
     /* ================== SPI_Interrupt Service Routine ================== */
     if((PIR1bits.SSPIF == INTERRUPT_OCCUR) && (PIE1bits.SSPIE == INTERRUPT_ENABLE)){
         SPI_ISR();
@@ -187,6 +198,17 @@ void __interrupt() INTERRUPT_MANAGER(void){
     }
     else{/* Nothing */}
 #endif
+#if (((INTERRUPT_FEATURE_ENABLE) == (I2C_INTERRUPT_FEATURE)) && ((INTERRUPT_FEATURE_DISABLE) == (SPI_INTERRUPT_FEATURE)))
+    /* ================== I2C_Interrupt Service Routine ================== */
+    if((PIR1bits.SSPIF == INTERRUPT_OCCUR) && (PIE1bits.SSPIE == INTERRUPT_ENABLE)){
+        I2C_ISR();
+    }
+    else{/* Nothing */}
+    if((PIR2bits.BCLIF == INTERRUPT_OCCUR) && (PIE2bits.BCLIE == INTERRUPT_ENABLE)){
+        I2C_BC_ISR();
+    }
+    else{/* Nothing */}
+#endif
 #if ((INTERRUPT_FEATURE_ENABLE) == (EUSART_INTERRUPT_FEATURE))
     /* ================== EUSART_TX_Interrupt Service Routine ================== */
     if((PIR1bits.TXIF == INTERRUPT_OCCUR) && (PIE1bits.TXIE == INTERRUPT_ENABLE)){
@@ -206,7 +228,7 @@ void __interrupt() INTERRUPT_MANAGER(void){
     }
     else{/* Nothing */}
 #endif
-#if ((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE))
+#if (((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE)) && ((INTERRUPT_FEATURE_DISABLE) == (I2C_INTERRUPT_FEATURE)))
     /* ================== SPI_Interrupt Service Routine ================== */
     if((PIR1bits.SSPIF == INTERRUPT_OCCUR) && (PIE1bits.SSPIE == INTERRUPT_ENABLE)){
         SPI_ISR();

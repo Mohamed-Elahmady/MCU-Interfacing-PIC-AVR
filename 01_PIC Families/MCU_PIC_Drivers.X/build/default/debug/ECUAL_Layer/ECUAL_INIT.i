@@ -6396,62 +6396,54 @@ Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_NON_BLOCKING(const EUSART_CFG *eusart, 
 Std_ReturnType EUSART_ASYNC_RX_READ_BYTE_BLOCKING(const EUSART_CFG *eusart, uint8 *data);
 # 38 "ECUAL_Layer/ECUAL_INIT.h" 2
 # 1 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 1
-# 14 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+# 16 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
 # 1 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI_CFG.h" 1
-# 15 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 2
-# 62 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
+# 17 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h" 2
+# 52 "ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI.h"
 typedef void (* SPI_HANDLER)(void);
 
 typedef enum{
-    SPI_COLLISION_CLEARED = 0x00,
-    SPI_COLLISION_DETECTED
-}SPI_COLLISION_STATE;
-
-typedef enum{
-    SPI_OVERFLOW_CLEARED = 0x00,
-    SPI_OVERFLOW_DETECTED
-}SPI_OVERFLOW_STATE;
-
-typedef enum{
-    SPI_SLAVE_MODE = 0x00,
+    SPI_SLAVE_MODE = (uint8)0x00,
     SPI_MASTER_MODE
 }SPI_MODE;
 
 typedef enum{
-    SPI_MASTER_MODE_CLOCK_FOSC_DIV_4 = 0x00,
-    SPI_MASTER_MODE_CLOCK_FOSC_DIV_16,
-    SPI_MASTER_MODE_CLOCK_FOSC_DIV_64,
-    SPI_SLAVE_MODE_CLOCK_SCK_ENABLE_SLAVE_SELECT,
-    SPI_SLAVE_MODE_CLOCK_SCK_DISABLE_SLAVE_SELECT
+    SPI_MASTER_CLOCK_FOSC_DIV_4 = (uint8)0x00,
+    SPI_MASTER_CLOCK_FOSC_DIV_16,
+    SPI_MASTER_CLOCK_FOSC_DIV_64,
+    SPI_MASTER_CLOCK_TMR2,
+    SPI_SLAVE_CLOCK_SCK_SS_ENABLE,
+    SPI_SLAVE_CLOCK_SCK_SS_DISABLE
 }SPI_MODE_CFG;
 
 typedef enum{
-    SPI_IDLE_LOW_LEVEL = 0x00,
-    SPI_IDLE_HIGH_LEVEL
-}SPI_IDLE_STATE;
+    SPI_IDLE_STATE_LOW_LEVEL = (uint8)0x00,
+    SPI_IDLE_STATE_HIGH_LEVEL
+}SPI_CLOCK_POLARITY;
 
 typedef enum{
-    SPI_TRANSMISSION_IDLE_TO_ACTIVE = 0x00,
-    SPI_TRANSMISSION_ACTIVE_TO_IDLE
-}SPI_TRANSMISSION_STATE;
+    SPI_TRANSMISSION_IDLE_ACTIVE = (uint8)0x00,
+    SPI_TRANSMISSION_ACTIVE_IDLE
+}SPI_CLOCK_PHASE;
 
 typedef enum{
-    SPI_MASTER_SLAVE_RECEIVING_IN_MIDDLE_OF_DATA = 0x00,
-    SPI_MASTER_RECEIVING_IN_END_OF_DATA
-}SPI_RECEIVING_STATE;
+    SPI_MASTER_SLAVE_RECEIVING_MIDDLE_SAMPLING = (uint8)0x00,
+    SPI_MASTER_RECEIVING_END_SAMPLING
+}SPI_CLOCK_SAMPLE;
 
 typedef struct{
     SPI_MODE mode;
     SPI_MODE_CFG mode_cfg;
-    SPI_IDLE_STATE clk_polarity;
-    SPI_TRANSMISSION_STATE clk_phase;
-    SPI_RECEIVING_STATE clk_sample;
+    SPI_CLOCK_POLARITY clk_polarity;
+    SPI_CLOCK_PHASE clk_phase;
+    SPI_CLOCK_SAMPLE clk_sample;
 }SPI_SYNCHRONIZATION_CFG;
 
 typedef struct{
 
-    SPI_HANDLER SPI_INTERRUPT;
-    INTERRUPT_PRIORITY priority;
+
+
+
 
     SPI_SYNCHRONIZATION_CFG spi_cfg;
     GPIO_PIN_CFG ss_pin;
@@ -6469,11 +6461,88 @@ Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str);
 
 Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data);
 Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data);
-
-
-void SPI_ISR(void);
 # 39 "ECUAL_Layer/ECUAL_INIT.h" 2
-# 53 "ECUAL_Layer/ECUAL_INIT.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h" 1
+# 16 "ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h"
+# 1 "ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C_CFG.h" 1
+# 17 "ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h" 2
+# 98 "ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h"
+typedef void (*I2C_HANDLER)(void);
+
+typedef enum{
+    I2C_SLAVE_MODE = (uint8)0x00,
+    I2C_MASTER_MODE
+}I2C_MODE;
+
+typedef enum{
+    I2C_SLAVE_MODE_7BIT_ADD = (uint8)0x06,
+    I2C_SLAVE_MODE_10BIT_ADD,
+    I2C_MASTER_MODE_CLK,
+    I2C_MASTER_MODE_FIRMWARE = (uint8)0x0B,
+    I2C_SLAVE_MODE_7BIT_ADD_SP_INTERRUPTS = (uint8)0x0E,
+    I2C_SLAVE_MODE_10BIT_ADD_SP_INTERRUPTS
+}I2C_MODE_CFG;
+
+typedef enum{
+    I2C_SLEW_RATE_100KHZ_DISABLE = (uint8)0x00,
+    I2C_SLEW_RATE_400KHZ_ENABLE
+}I2C_SLEW_RATE;
+
+typedef enum{
+    I2C_SMBUS_DISABLE = (uint8)0x00,
+    I2C_SMBUS_ENABLE
+}I2C_SMBUS;
+
+typedef enum{
+    I2C_GENERAL_CALL_DISABLE = (uint8)0x00,
+    I2C_GENERAL_CALL_ENABLE
+}I2C_SLAVE_GENERAL_CALL_STATE;
+
+typedef enum{
+    I2C_RECEIVE_DISABLE = (uint8)0x00,
+    I2C_RECEIVE_ENABLE
+}I2C_MASTER_RECEIVE_STATE;
+
+typedef struct{
+    I2C_MODE mode;
+    I2C_MODE_CFG mode_cfg;
+    uint16 i2c_slave_add;
+    I2C_SLEW_RATE slew_rate;
+    I2C_SMBUS smbus;
+    I2C_SLAVE_GENERAL_CALL_STATE general_call;
+    I2C_MASTER_RECEIVE_STATE receive_mode;
+}I2C_FRAME_CFG;
+
+typedef struct{
+
+    I2C_HANDLER I2C_INTERRUPT;
+    I2C_HANDLER I2C_COL_INTERRUPT;
+    I2C_HANDLER I2C_OVF_INTERRUPT;
+    INTERRUPT_PRIORITY i2c_priority;
+    INTERRUPT_PRIORITY col_priority;
+
+    uint32 i2c_clock;
+    I2C_FRAME_CFG i2c_frame;
+}I2C_CFG;
+
+
+
+Std_ReturnType I2C_INIT(const I2C_CFG *i2c);
+Std_ReturnType I2C_DEINIT(const I2C_CFG *i2c);
+
+Std_ReturnType I2C_MASTER_SEND_START_CONDITION(const I2C_CFG *i2c);
+Std_ReturnType I2C_MASTER_SEND_STOP_CONDITION(const I2C_CFG *i2c);
+Std_ReturnType I2C_MASTER_SEND_REPEATED_START_CONDITION(const I2C_CFG *i2c);
+
+Std_ReturnType I2C_MASTER_WRITE_BYTE_BLOCKING(const I2C_CFG *i2c, uint8 data, uint8 *ack);
+Std_ReturnType I2C_MASTER_WRITE_STRING_BLOCKING(const I2C_CFG *i2c, uint8 *str,uint8 *ack);
+Std_ReturnType I2C_SLAVE_WRITE_BYTE_BLOCKING(const I2C_CFG *i2c, uint8 data, uint8 *ack);
+Std_ReturnType I2C_SLAVE_WRITE_STRING_BLOCKING(const I2C_CFG *i2c, uint8 *str,uint8 *ack);
+
+Std_ReturnType I2C_MASTER_READ_BYTE_BLOCKING(const I2C_CFG *i2c, uint8 *data, uint8 ack);
+Std_ReturnType I2C_SLAVE_READ_BYTE_BLOCKING(const I2C_CFG *i2c, uint8 *data, uint8 ack);
+# 40 "ECUAL_Layer/ECUAL_INIT.h" 2
+# 54 "ECUAL_Layer/ECUAL_INIT.h"
 void ECUAL_LAYER_INIT(void);
 # 11 "ECUAL_Layer/ECUAL_INIT.c" 2
 # 81 "ECUAL_Layer/ECUAL_INIT.c"

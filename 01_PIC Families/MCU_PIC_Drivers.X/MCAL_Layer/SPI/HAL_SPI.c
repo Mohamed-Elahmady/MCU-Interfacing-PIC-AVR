@@ -107,7 +107,9 @@ Std_ReturnType SPI_WRITE_STRING_NON_BLOCKING(const SPI_CFG *spi, uint8 *str){
             else if(SPI_TRANSMISSION_STATUS()){
                 SSPBUF = *str;
                 str++;
+#if ((INTERRUPT_FEATURE_ENABLE) == (SPI_INTERRUPT_FEATURE))
                 INT_INTERRUPT_SPI_CLEAR_FLAG();
+#endif
             }
             else{
                 Retval = E_NOT_OK;

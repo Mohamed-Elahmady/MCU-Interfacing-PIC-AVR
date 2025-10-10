@@ -87,4 +87,10 @@ ECUAL_Layer/../MCAL_Layer/SPI/HAL_SPI_CFG.h  \
 ECUAL_Layer/../MCAL_Layer/SPI/../GPIO/HAL_GPIO.h  \
 ECUAL_Layer/../MCAL_Layer/SPI/../Interrupt/HAL_INT_INTERRUPT.h  \
 ECUAL_Layer/../MCAL_Layer/SPI/../mcal_std_types.h  \
-ECUAL_Layer/../MCAL_Layer/SPI/../device_cfg.h 
+ECUAL_Layer/../MCAL_Layer/SPI/../device_cfg.h  \
+ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C.h  \
+ECUAL_Layer/../MCAL_Layer/I2C/HAL_I2C_CFG.h  \
+ECUAL_Layer/../MCAL_Layer/I2C/../GPIO/HAL_GPIO.h  \
+ECUAL_Layer/../MCAL_Layer/I2C/../Interrupt/HAL_INT_INTERRUPT.h  \
+ECUAL_Layer/../MCAL_Layer/I2C/../mcal_std_types.h  \
+ECUAL_Layer/../MCAL_Layer/I2C/../device_cfg.h 

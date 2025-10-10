@@ -7,12 +7,15 @@
 
 #include "Main.h"
 
+// Master
+
 Std_ReturnType Ret = E_OK;
 
 int main(void) {
     application_init();
-
+        
     while(1){
+        
     }
     return (EXIT_SUCCESS);
 }

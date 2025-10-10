@@ -36,6 +36,7 @@
 
 #include "../MCAL_Layer/EUSART/HAL_EUSART.h"
 #include "../MCAL_Layer/SPI/HAL_SPI.h"
+#include "../MCAL_Layer/I2C/HAL_I2C.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

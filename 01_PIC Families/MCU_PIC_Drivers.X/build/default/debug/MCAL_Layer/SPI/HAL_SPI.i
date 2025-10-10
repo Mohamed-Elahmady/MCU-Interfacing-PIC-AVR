@@ -5636,30 +5636,8 @@ typedef enum {
 }INTERRUPT_PRIORITY;
 # 16 "MCAL_Layer/SPI/../Interrupt/HAL_INT_INTERRUPT.h" 2
 # 19 "MCAL_Layer/SPI/HAL_SPI.h" 2
-# 58 "MCAL_Layer/SPI/HAL_SPI.h"
+# 52 "MCAL_Layer/SPI/HAL_SPI.h"
 typedef void (* SPI_HANDLER)(void);
-
-
-typedef enum{
-    SPI_COLLISION_CLEARED = (uint8)0x00,
-    SPI_COLLISION_DETECTED
-}SPI_COLLISION_STATE;
-
-typedef enum{
-    SPI_OVERFLOW_CLEARED = (uint8)0x00,
-    SPI_OVERFLOW_DETECTED
-}SPI_OVERFLOW_STATE;
-
-typedef union{
-    struct{
-    uint8 collision_state :1;
-    uint8 overflow_state :1;
-    uint8 reserved :6;
-    };
-    uint8 error_states;
-}SPI_ERRORS_STATES;
-
-
 
 typedef enum{
     SPI_SLAVE_MODE = (uint8)0x00,
@@ -5667,41 +5645,42 @@ typedef enum{
 }SPI_MODE;
 
 typedef enum{
-    SPI_MASTER_MODE_CLOCK_FOSC_DIV_4 = (uint8)0x00,
-    SPI_MASTER_MODE_CLOCK_FOSC_DIV_16,
-    SPI_MASTER_MODE_CLOCK_FOSC_DIV_64,
-    SPI_SLAVE_MODE_CLOCK_SCK_ENABLE_SLAVE_SELECT,
-    SPI_SLAVE_MODE_CLOCK_SCK_DISABLE_SLAVE_SELECT
+    SPI_MASTER_CLOCK_FOSC_DIV_4 = (uint8)0x00,
+    SPI_MASTER_CLOCK_FOSC_DIV_16,
+    SPI_MASTER_CLOCK_FOSC_DIV_64,
+    SPI_MASTER_CLOCK_TMR2,
+    SPI_SLAVE_CLOCK_SCK_SS_ENABLE,
+    SPI_SLAVE_CLOCK_SCK_SS_DISABLE
 }SPI_MODE_CFG;
 
 typedef enum{
-    SPI_IDLE_LOW_LEVEL = (uint8)0x00,
-    SPI_IDLE_HIGH_LEVEL
-}SPI_IDLE_STATE;
+    SPI_IDLE_STATE_LOW_LEVEL = (uint8)0x00,
+    SPI_IDLE_STATE_HIGH_LEVEL
+}SPI_CLOCK_POLARITY;
 
 typedef enum{
-    SPI_TRANSMISSION_IDLE_TO_ACTIVE = (uint8)0x00,
-    SPI_TRANSMISSION_ACTIVE_TO_IDLE
-}SPI_TRANSMISSION_STATE;
+    SPI_TRANSMISSION_IDLE_ACTIVE = (uint8)0x00,
+    SPI_TRANSMISSION_ACTIVE_IDLE
+}SPI_CLOCK_PHASE;
 
 typedef enum{
-    SPI_MASTER_SLAVE_RECEIVING_IN_MIDDLE_OF_DATA = (uint8)0x00,
-    SPI_MASTER_RECEIVING_IN_END_OF_DATA
-}SPI_RECEIVING_STATE;
+    SPI_MASTER_SLAVE_RECEIVING_MIDDLE_SAMPLING = (uint8)0x00,
+    SPI_MASTER_RECEIVING_END_SAMPLING
+}SPI_CLOCK_SAMPLE;
 
 typedef struct{
     SPI_MODE mode;
     SPI_MODE_CFG mode_cfg;
-
-    SPI_IDLE_STATE clk_polarity;
-    SPI_TRANSMISSION_STATE clk_phase;
-    SPI_RECEIVING_STATE clk_sample;
+    SPI_CLOCK_POLARITY clk_polarity;
+    SPI_CLOCK_PHASE clk_phase;
+    SPI_CLOCK_SAMPLE clk_sample;
 }SPI_SYNCHRONIZATION_CFG;
 
 typedef struct{
 
-    SPI_HANDLER SPI_INTERRUPT;
-    INTERRUPT_PRIORITY priority;
+
+
+
 
     SPI_SYNCHRONIZATION_CFG spi_cfg;
     GPIO_PIN_CFG ss_pin;
@@ -5720,4 +5699,301 @@ Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str);
 Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data);
 Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data);
 # 11 "MCAL_Layer/SPI/HAL_SPI.c" 2
+# 22 "MCAL_Layer/SPI/HAL_SPI.c"
+static Std_ReturnType SPI_SET_DISABLE(const SPI_CFG *spi);
+static Std_ReturnType SPI_SET_ENABLE(const SPI_CFG *spi);
+static Std_ReturnType SPI_SET_MODE_CONFIG(const SPI_CFG *spi);
+static Std_ReturnType SPI_PINS_INIT(const SPI_CFG *spi);
+static Std_ReturnType SPI_SET_CLOCK_CONFIGURATIONS(const SPI_CFG *spi);
+# 36 "MCAL_Layer/SPI/HAL_SPI.c"
+Std_ReturnType SPI_INIT(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
 
+        Retval = SPI_SET_DISABLE(spi);
+
+        Retval = SPI_SET_MODE_CONFIG(spi);
+
+        Retval = SPI_PINS_INIT(spi);
+
+        Retval = SPI_SET_CLOCK_CONFIGURATIONS(spi);
+
+
+
+
+
+        Retval = SPI_SET_ENABLE(spi);
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_DEINIT(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+
+        Retval = SPI_SET_DISABLE(spi);
+
+
+
+
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_WRITE_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 data){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+        if(((SSPCON1 >> 0x7) & (uint8)(uint8)0x01)){
+            (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x7));
+            Retval = E_NOT_OK;
+        }
+        else{
+            if(((PIR1 >> 0x3) & (uint8)(uint8)0x01)){
+                SSPBUF = data;
+            }
+            else{ }
+        }
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_WRITE_STRING_NON_BLOCKING(const SPI_CFG *spi, uint8 *str){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi || ((void*)0) == str){
+        Retval = E_NOT_OK;
+    }
+    else{
+        while(*str){
+            if(((SSPCON1 >> 0x7) & (uint8)(uint8)0x01)){
+                (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x7));
+                Retval = E_NOT_OK;
+            }
+            else if(((PIR1 >> 0x3) & (uint8)(uint8)0x01)){
+                SSPBUF = *str;
+                str++;
+
+
+
+            }
+            else{
+                Retval = E_NOT_OK;
+            }
+        }
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_WRITE_BYTE_BLOCKING(const SPI_CFG *spi, uint8 data){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+        if(((SSPCON1 >> 0x7) & (uint8)(uint8)0x01)){
+            (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x7));
+            uint8 dummy = SSPBUF;
+            Retval = E_NOT_OK;
+        }
+        else{
+            SSPBUF = data;
+            while(!((PIR1 >> 0x3) & (uint8)(uint8)0x01));
+            uint8 dummy = SSPBUF;
+        }
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_WRITE_STRING_BLOCKING(const SPI_CFG *spi, uint8 *str){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi || ((void*)0) == str){
+        Retval = E_NOT_OK;
+    }
+    else{
+        while(*str){
+            Retval = SPI_WRITE_BYTE_BLOCKING(spi, *str);
+            str++;
+        }
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_READ_BYTE_NON_BLOCKING(const SPI_CFG *spi, uint8 *data){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi || ((void*)0) == data){
+        Retval = E_NOT_OK;
+    }
+    else{
+        if(((SSPSTAT >> 0x0) & (uint8)(uint8)0x01)){
+            *data = SSPBUF;
+        }
+        else{ }
+    }
+    return Retval;
+}
+
+Std_ReturnType SPI_READ_BYTE_BLOCKING(const SPI_CFG *spi, uint8 *data){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi || ((void*)0) == data){
+        Retval = E_NOT_OK;
+    }
+    else{
+        while(!((SSPSTAT >> 0x0) & (uint8)(uint8)0x01));
+        *data = SSPBUF;
+
+        if(((SSPCON1 >> 0x6) & (uint8)(uint8)0x01) && spi->spi_cfg.mode == SPI_SLAVE_MODE){
+            (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x6));
+        }
+        else{ }
+    }
+    return Retval;
+}
+# 203 "MCAL_Layer/SPI/HAL_SPI.c"
+static Std_ReturnType SPI_SET_DISABLE(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+        (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x5));
+    }
+    return Retval;
+}
+
+static Std_ReturnType SPI_SET_ENABLE(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+        (SSPCON1 |= (uint8)((uint8)0x01 << 0x5));
+    }
+    return Retval;
+}
+
+static Std_ReturnType SPI_SET_MODE_CONFIG(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+        switch(spi->spi_cfg.mode_cfg){
+            case SPI_MASTER_CLOCK_FOSC_DIV_4:
+                (SSPCON1bits.SSPM = (SPI_MASTER_CLOCK_FOSC_DIV_4 & 0x0F));
+                break;
+            case SPI_MASTER_CLOCK_FOSC_DIV_16:
+                (SSPCON1bits.SSPM = (SPI_MASTER_CLOCK_FOSC_DIV_16 & 0x0F));
+                break;
+            case SPI_MASTER_CLOCK_FOSC_DIV_64:
+                (SSPCON1bits.SSPM = (SPI_MASTER_CLOCK_FOSC_DIV_64 & 0x0F));
+                break;
+            case SPI_MASTER_CLOCK_TMR2:
+                (SSPCON1bits.SSPM = (SPI_MASTER_CLOCK_TMR2 & 0x0F));
+                break;
+            case SPI_SLAVE_CLOCK_SCK_SS_ENABLE:
+                (SSPCON1bits.SSPM = (SPI_SLAVE_CLOCK_SCK_SS_ENABLE & 0x0F));
+                break;
+            case SPI_SLAVE_CLOCK_SCK_SS_DISABLE:
+                (SSPCON1bits.SSPM = (SPI_SLAVE_CLOCK_SCK_SS_DISABLE & 0x0F));
+                break;
+            default :
+                Retval = E_NOT_OK;
+                break;
+        }
+    }
+    return Retval;
+}
+
+static Std_ReturnType SPI_PINS_INIT(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+
+        GPIO_PIN_CFG SDI_pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN4, .DIRECTION = GPIO_INPUT};
+        GPIO_PIN_CFG SDO_pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN5, .DIRECTION = GPIO_OUTPUT, .LOGIC = GPIO_LOW};
+
+        Retval = GPIO_PIN_DIRECTION_INIT(&SDI_pin);
+        Retval = GPIO_PIN_INIT(&SDO_pin);
+
+        switch(spi->spi_cfg.mode){
+            case SPI_MASTER_MODE:{
+
+                GPIO_PIN_CFG SCK_pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN3, .DIRECTION = GPIO_OUTPUT, .LOGIC = GPIO_LOW};
+
+                Retval = GPIO_PIN_INIT(&SCK_pin);
+                Retval = GPIO_PIN_INIT(&(spi->ss_pin));
+                break;
+            }
+            case SPI_SLAVE_MODE:
+
+                GPIO_PIN_CFG SCK_pin = {.PORT = GPIO_PORTC, .PIN = GPIO_PIN3, .DIRECTION = GPIO_INPUT};
+                GPIO_PIN_CFG SS_pin = {.PORT = GPIO_PORTA, .PIN = GPIO_PIN5, .DIRECTION = GPIO_INPUT};
+
+                Retval = GPIO_PIN_DIRECTION_INIT(&SCK_pin);
+                Retval = GPIO_PIN_DIRECTION_INIT(&SS_pin);
+                break;
+        }
+    }
+    return Retval;
+}
+
+static Std_ReturnType SPI_SET_CLOCK_CONFIGURATIONS(const SPI_CFG *spi){
+    Std_ReturnType Retval = E_OK;
+    if(((void*)0) == spi){
+        Retval = E_NOT_OK;
+    }
+    else{
+
+        if(spi->spi_cfg.clk_polarity == SPI_IDLE_STATE_HIGH_LEVEL){
+            (SSPCON1 |= (uint8)((uint8)0x01 << 0x4));
+        }
+        else if(spi->spi_cfg.clk_polarity == SPI_IDLE_STATE_LOW_LEVEL){
+            (SSPCON1 &= ~(uint8)((uint8)0x01 << 0x4));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
+        if(spi->spi_cfg.clk_phase == SPI_TRANSMISSION_ACTIVE_IDLE){
+            (SSPSTAT |= (uint8)((uint8)0x01 << 0x6));
+        }
+        else if(spi->spi_cfg.clk_phase == SPI_TRANSMISSION_IDLE_ACTIVE){
+            (SSPSTAT &= ~(uint8)((uint8)0x01 << 0x6));
+        }
+        else{
+            Retval = E_NOT_OK;
+        }
+
+
+        switch(spi->spi_cfg.mode){
+            case SPI_MASTER_MODE:
+                if(spi->spi_cfg.clk_sample == SPI_MASTER_SLAVE_RECEIVING_MIDDLE_SAMPLING){
+                    (SSPSTAT &= ~(uint8)((uint8)0x01 << 0x7));
+                }
+                else if(spi->spi_cfg.clk_sample == SPI_MASTER_RECEIVING_END_SAMPLING){
+                    (SSPSTAT |= (uint8)((uint8)0x01 << 0x7));
+                }
+                else{
+                    Retval = E_NOT_OK;
+                }
+                break;
+            case SPI_SLAVE_MODE:
+                    (SSPSTAT &= ~(uint8)((uint8)0x01 << 0x7));
+                break;
+            default :
+                Retval = E_NOT_OK;
+                break;
+        }
+    }
+    return Retval;
+}

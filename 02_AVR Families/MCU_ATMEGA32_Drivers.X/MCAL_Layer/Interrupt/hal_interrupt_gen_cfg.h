@@ -29,6 +29,7 @@
 #define Timer2_Interrupt_Feature                 (Interrupt_Feature_Enable)
 #define USART_Interrupt_Feature                  (Interrupt_Feature_Enable)
 #define SPI_Interrupt_Feature                    (Interrupt_Feature_Enable)
+#define TWI_Interrupt_Feature                    (Interrupt_Feature_Enable)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

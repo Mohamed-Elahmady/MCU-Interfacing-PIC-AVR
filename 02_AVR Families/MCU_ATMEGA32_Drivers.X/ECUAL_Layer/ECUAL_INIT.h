@@ -35,6 +35,7 @@
 
 #include "../MCAL_Layer/USART/hal_usart.h"
 #include "../MCAL_Layer/SPI/hal_spi.h"
+#include "../MCAL_Layer/TWI/hal_twi.h"
 
 /******************* Section 2 : Macros Declarations *******************/
 

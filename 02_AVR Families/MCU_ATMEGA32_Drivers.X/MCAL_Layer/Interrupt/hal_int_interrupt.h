@@ -71,10 +71,10 @@
 
 // this interrupt for each completed transmission
 
-#define Internal_Interrupt_TX_Clear_Flag()                        Set_Bit(UCSRA, TXC)
+#define Internal_Interrupt_TX_Clear_Flag()                         Set_Bit(UCSRA, TXC)
 
-#define Internal_Interrupt_TX_Disable()                           Clear_Bit(UCSRB, TXCIE)
-#define Internal_Interrupt_TX_Enable()                            Set_Bit(UCSRB, TXCIE)
+#define Internal_Interrupt_TX_Disable()                            Clear_Bit(UCSRB, TXCIE)
+#define Internal_Interrupt_TX_Enable()                             Set_Bit(UCSRB, TXCIE)
 
 // this interrupt for happen when the transmission shift register is empty
 
@@ -83,13 +83,19 @@
 
 // this interrupt for each completed Receiving
 
-#define Internal_Interrupt_RX_Disable()                           Clear_Bit(UCSRB, RXCIE)
-#define Internal_Interrupt_RX_Enable()                            Set_Bit(UCSRB, RXCIE)
+#define Internal_Interrupt_RX_Disable()                            Clear_Bit(UCSRB, RXCIE)
+#define Internal_Interrupt_RX_Enable()                             Set_Bit(UCSRB, RXCIE)
 
 // 6. For SPI Interrupts
 
-#define Internal_Interrupt_SPI_Disable()                          Clear_Bit(SPCR, SPIE)
-#define Internal_Interrupt_SPI_Enable()                           Set_Bit(SPCR, SPIE)
+#define Internal_Interrupt_SPI_Disable()                           Clear_Bit(SPCR, SPIE)
+#define Internal_Interrupt_SPI_Enable()                            Set_Bit(SPCR, SPIE)
+
+// 7. For TWI Interrupt
+#define Internal_Interrupt_TWI_Clear_Flag()                        Set_Bit(TWCR, TWINT)
+
+#define Internal_Interrupt_TWI_Disable()                           Clear_Bit(TWCR, TWIE)
+#define Internal_Interrupt_TWI_Enable()                            Set_Bit(TWCR, TWIE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

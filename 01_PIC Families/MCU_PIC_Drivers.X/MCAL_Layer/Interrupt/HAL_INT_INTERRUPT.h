@@ -206,6 +206,38 @@
 
 #endif
 
+// I2C Interrupt Configuration
+#if ((INTERRUPT_FEATURE_ENABLE) == (I2C_INTERRUPT_FEATURE))
+
+// I2C Flag bit
+
+// I2C Main Interrupt Flag
+#define INT_INTERRUPT_I2C_CLEAR_FLAG()                        CLEAR_BIT(PIR1, _PIR1_SSPIF_POSITION)
+// I2C Bus Collision Interrupt Flag
+#define INT_INTERRUPT_I2C_BUS_COL_CLEAR_FLAG()                CLEAR_BIT(PIR2, _PIR2_BCLIF_POSITION)
+
+// I2C Enable Bit
+
+// I2C Main Interrupt Enable
+#define INT_INTERRUPT_I2C_DISABLE()                           CLEAR_BIT(PIE1, _PIE1_SSPIE_POSITION)
+#define INT_INTERRUPT_I2C_ENABLE()                            SET_BIT(PIE1, _PIE1_SSPIE_POSITION)
+// I2C Bus Collision Interrupt Enable
+#define INT_INTERRUPT_I2C_BUS_COL_DISABLE()                   CLEAR_BIT(PIE2, _PIE2_BCLIE_POSITION)
+#define INT_INTERRUPT_I2C_BUS_COL_ENABLE()                    SET_BIT(PIE2, _PIE2_BCLIE_POSITION)
+
+// I2C Priority Bit
+#if ((INTERRUPT_FEATURE_ENABLE) == (INTERRUPT_PRIORITY_LEVELS))
+// I2C Main Interrupt
+#define INT_INTERRUPT_I2C_LOW_PRIORITY()                      CLEAR_BIT(IPR1, _IPR1_SSPIP_POSITION)
+#define INT_INTERRUPT_I2C_HIGH_PRIORITY()                     SET_BIT(IPR1, _IPR1_SSPIP_POSITION)
+// I2C Bus Collision Interrupt Priority
+#define INT_INTERRUPT_I2C_BUS_COL_LOW_PRIORITY()              CLEAR_BIT(IPR2, _IPR2_BCLIP_POSITION)
+#define INT_INTERRUPT_I2C_BUS_COL_HIGH_PRIORITY()             SET_BIT(IPR2, _IPR2_BCLIP_POSITION)
+
+#endif
+
+#endif
+
 /******************* Section 4 : User Defined Data Types & Variables Declarations *******************/
 
 

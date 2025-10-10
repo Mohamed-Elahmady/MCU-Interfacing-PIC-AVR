@@ -41,7 +41,9 @@
 // For EUSART Internal Interrupts
 #define EUSART_INTERRUPT_FEATURE                  (INTERRUPT_FEATURE_ENABLE)
 // For SPI Internal Interrupts
-#define SPI_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
+#define SPI_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_DISABLE)
+// For I2C Internal Interrupts
+#define I2C_INTERRUPT_FEATURE                     (INTERRUPT_FEATURE_ENABLE)
 
 /******************* Section 3 : Macros Functions Declarations *******************/
 

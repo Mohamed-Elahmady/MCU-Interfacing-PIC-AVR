@@ -5650,6 +5650,8 @@ void CCP2_ISR(void);
 void EUSART_TX_ISR(void);
 void EUSART_RX_ISR(void);
 void SPI_ISR(void);
+void I2C_ISR(void);
+void I2C_BC_ISR(void);
 # 11 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c" 2
 
 
@@ -5658,7 +5660,7 @@ static volatile uint8 RB4_ISR_FLAG = 0x01;
 static volatile uint8 RB5_ISR_FLAG = 0x01;
 static volatile uint8 RB6_ISR_FLAG = 0x01;
 static volatile uint8 RB7_ISR_FLAG = 0x01;
-# 177 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
+# 188 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
 
     if((INTCONbits.INT0IF == 0x01) && (INTCONbits.INT0IE == 0x01)){
@@ -5669,6 +5671,17 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
 
     if((PIR1bits.CCP1IF == 0x01) && (PIE1bits.CCP1IE == 0x01)){
         CCP1_ISR();
+    }
+    else{ }
+
+
+
+    if((PIR1bits.SSPIF == 0x01) && (PIE1bits.SSPIE == 0x01)){
+        I2C_ISR();
+    }
+    else{ }
+    if((PIR2bits.BCLIF == 0x01) && (PIE2bits.BCLIE == 0x01)){
+        I2C_BC_ISR();
     }
     else{ }
 
@@ -5690,16 +5703,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_MANAGER(void){
         ADC_ISR();
     }
     else{ }
-
-
-
-    if((PIR1bits.SSPIF == 0x01) && (PIE1bits.SSPIE == 0x01)){
-        SPI_ISR();
-    }
-    else{ }
-
-
-
+# 240 "MCAL_Layer/Interrupt/HAL_INTERRUPT_MNG.c"
     if((PIR2bits.CCP2IF == 0x01) && (PIE2bits.CCP2IE == 0x01)){
         CCP2_ISR();
     }

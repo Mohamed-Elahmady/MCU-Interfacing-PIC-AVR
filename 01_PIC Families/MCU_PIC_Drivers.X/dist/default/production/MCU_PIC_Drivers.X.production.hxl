@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- /tmp/xc13Bb6C6/driver_tmp_3.o
+ /tmp/xcINjBEqK/driver_tmp_3.o
  -Odist/default/production/MCU_PIC_Drivers.X.production.hex
  -logfile=dist/default/production/MCU_PIC_Drivers.X.production.hxl
  -addressing=1
@@ -9,21 +9,21 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(/tmp/xc13Bb6C6/driver_tmp_3.o)
-  8h - 439h		(/tmp/xc13Bb6C6/driver_tmp_3.o)
-  1000h - 1014h		(/tmp/xc13Bb6C6/driver_tmp_3.o)
-  1016h - 1187h		(/tmp/xc13Bb6C6/driver_tmp_3.o)
-  300000h - 30000Dh		(/tmp/xc13Bb6C6/driver_tmp_3.o)
+  0h - 3h		(/tmp/xcINjBEqK/driver_tmp_3.o)
+  8h - 459h		(/tmp/xcINjBEqK/driver_tmp_3.o)
+  1000h - 1014h		(/tmp/xcINjBEqK/driver_tmp_3.o)
+  1016h - 118Dh		(/tmp/xcINjBEqK/driver_tmp_3.o)
+  300000h - 30000Dh		(/tmp/xcINjBEqK/driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  43Ah - FFFh
+  45Ah - FFFh
   1015h - 1015h
-  1188h - 2FFFFFh
+  118Eh - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (/tmp/xc13Bb6C6/driver_tmp_3.o)
+  H1 = Input file             (/tmp/xcINjBEqK/driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -94,7 +94,9 @@
 00000400 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000410 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000420 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+00000430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000440 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000450 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
 ----------------------------------------------------------
 00001000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001010 | H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -120,7 +122,7 @@
 00001150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001160 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001170 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001180 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00001180 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
 00300000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 00300010 | --
