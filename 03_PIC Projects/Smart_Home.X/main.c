@@ -56,3 +56,6 @@ void System_Init(void){
     INTERRUPT_Init();
     I2C_Init(I2C_MODE_MASTER, 0x00);
 }
+
+void EEPROM_24C02C_Write_Byte(uint8 slave_add, uint8 byte_add, uint8 data){}
+uint8  EEPROM_24C02C_Read_Byte(uint8 slave_add, uint8 byte_add){}

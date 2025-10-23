@@ -14,6 +14,7 @@
 #include "configurations/i2c.h"
 #include "configurations/interrupts.h"
 #include "RTCDS1307/rtcds1307.h"
+#include "EXT EEPROM/EE24C02C.h"
 
 
 void System_Init(void);
